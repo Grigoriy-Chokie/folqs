@@ -1,0 +1,335 @@
+{{ 'section-informative-banner.css' | asset_url | stylesheet_tag }}
+{{- 'cta-banner-with-media.css' | asset_url | stylesheet_tag -}}
+
+
+{%- style -%}
+  .section-{{ section.id }}--padding {
+    padding-top: {{ section.settings.padding_top_mobile }}px;
+    padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+  }
+
+  @media screen and (min-width: 767px) {
+    .section-{{ section.id }}--padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div
+  class="informative-banner section-{{ section.id }}--padding"
+  {%- if section.settings.add_background_gradient -%}
+    style="background: linear-gradient(0deg, {{section.settings.gradient_color_to}} 0%, {{section.settings.gradient_color_from}} 48.5%);"
+  {%- endif -%}
+>
+  <div class="informative-banner__wrapper">
+    {%- unless section.settings.title == blank -%}
+      <h2 class="informative-banner__title">{{ section.settings.title }}</h2>
+    {%- endunless -%}
+    <div class="informative-banner__rating">
+      {%- render 'icon-stars' -%}
+      {%- unless section.settings.rating_text == blank -%}
+        <p>{{ section.settings.rating_text }}</p>
+      {%- endunless -%}
+    </div>
+    <div class="informative-banner__body">
+      <div class="informative-banner__main-image">
+        {%- unless section.settings.main_image == blank -%}
+          <picture>
+            <source media="(max-width: 768px)" srcset="{{section.settings.main_image_mobile | image_url }}">
+            <img src="{{ section.settings.main_image | image_url }}" alt="{{ section.settings.main_image.alt }}">
+          </picture>
+          <div class="main-image__background">
+            {%- render 'icon-main-image-background' -%}
+          </div>
+        {%- endunless -%}
+      </div>
+      <div class="informative-banner__text-info">
+        <div class="informative-banner__benefits-list">
+          {%- for block in section.blocks -%}
+            {%- unless block.settings.text == blank -%}
+              <div class="benefits-list__benefit benefits-list__benefit--{{ block.settings.shown_device }}">
+                {%- unless section.settings.benefits_icon == blank -%}
+                  <img
+                    src="{{ section.settings.benefits_icon | image_url }}"
+                    alt="{{ section.settings.benefits_icon.alt }}"
+                  >
+                {%- endunless -%}
+                <p>{{ block.settings.text }}</p>
+              </div>
+            {%- endunless -%}
+          {%- endfor -%}
+        </div>
+        {%- unless section.settings.description == blank -%}
+          <div class="informative-banner__description">{{ section.settings.description }}</div>
+        {%- endunless -%}
+        {%- if section.settings.first_button_text != blank or section.settings.second_button_text != blank -%}
+          <div class="informative-banner__buttons-container">
+            {% liquid
+              assign text = section.settings.first_button_text
+              assign popup_title = section.settings.popup_heading
+              assign popup_metaobject_handle = section.settings.popup_metaobject_handle
+              assign popup_metaobject = shop.metaobjects.supplement_facts[popup_metaobject_handle]
+              assign popup_metaobject_handle_second = section.settings.popup_metaobject_handle_second
+              assign popup_metaobject_second = shop.metaobjects.supplement_facts[popup_metaobject_handle_second]
+            %}
+            {% if text != blank and popup_metaobject != blank %}
+              <div class="article-grid__popup informative-banner__first-button">
+                <span onclick="activatePopup(this.closest('.article-grid__popup'))" class="">
+                    {{ text }}
+                </span>
+                <div class="cta-banner__popup-overlay" onclick="deactivatePopup(event)" style="visibility: hidden;">
+                  <div style="--primary-color: {{ section.settings.primary_color }}" class="cta-banner__popup">
+                    {% unless popup_title == blank %}
+                      <div class = "popup__heading-wrapper">
+                        <h5 class = "popup__title">
+                          {{ popup_title }}
+                        </h5>
+                        <div class="popup__close-button" onclick="deactivatePopup(event)">
+                          {% render 'popup-close-icon' %}
+                        </div>
+                      </div>
+                    {% endunless %}
+                    {% if popup_metaobject != blank and popup_metaobject_second != blank %}
+                      <ul onchange="handlePopupChanges(event)" class="popup__tabs">
+                        <li>
+                          <label>
+                            <input class="hidden" value="{{ popup_metaobject_handle }}" type="radio" checked name="popup-tabs-{{ seciton.id }}">
+                            {{ popup_metaobject.title }}
+                          </label>
+                        </li>
+                        <li>
+                          <label>
+                            <input class="hidden" value="{{ popup_metaobject_handle_second }}" type="radio" name="popup-tabs-{{ seciton.id }}">
+                            {{ popup_metaobject_second.title }}
+                          </label>
+                        </li>
+                      </ul>
+                    {% endif %}
+                    <div class="popup__image-wrapper">
+                      {% if popup_metaobject %}
+                        <div data-metaobject-handle="{{ popup_metaobject_handle }}" class="popup__content-wrapper">
+                          {% render 'supplement-facts-popup', metaobject: popup_metaobject %}
+                        </div>
+                      {% endif %}
+                      {% if popup_metaobject_second %}
+                        <div data-metaobject-handle="{{ popup_metaobject_handle_second }}" class="popup__content-wrapper hidden">
+                          {% render 'supplement-facts-popup', metaobject: popup_metaobject_second %}
+                        </div>
+                      {% endif %}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            {% endif %}
+            {%- unless section.settings.second_button_text == blank -%}
+              <a class="informative-banner__second-button" href="{{ section.settings.second_button_url }}">
+                {%- unless section.settings.second_button_text_mobile == blank -%}
+                  <span class="second-button__text--mobile">
+                    {{- section.settings.second_button_text_mobile -}}
+                  </span>
+                {%- endunless -%}
+                <span class="second-button__text--desktop">
+                  {{- section.settings.second_button_text -}}
+                </span>
+                {%- render 'icon-arrow-right' -%}
+              </a>
+            {%- endunless -%}
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+  </div>
+</div>
+
+
+{{- 'cta-banner-popup.js' | asset_url | script_tag -}}
+
+{% schema %}
+{
+  "name": "Informative banner",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "add_background_gradient",
+      "label": "Add background gradient",
+      "default": true
+    },
+    {
+      "type": "color_background",
+      "id": "gradient_color_from",
+      "label": "Gradient color (from)",
+      "default": "rgba(193, 149, 81, 0.1)"
+    },
+    {
+      "type": "color_background",
+      "id": "gradient_color_to",
+      "label": "Gradient color (to)",
+      "default": "rgba(193, 149, 81, 0)"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Nature’s Most Powerful Gut and Immune Protector"
+    },
+    {
+      "type": "text",
+      "id": "rating_text",
+      "label": "Rating text",
+      "default": "3,500+ Five Star Reviews"
+    },
+    {
+      "type": "image_picker",
+      "id": "main_image",
+      "label": "Main image"
+    },
+    {
+      "type": "image_picker",
+      "id": "main_image_mobile",
+      "label": "Main image mobile"
+    },
+    {
+      "type": "image_picker",
+      "id": "benefits_icon",
+      "label": "Benefits icon"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description"
+    },
+    {
+      "type": "text",
+      "id": "first_button_text",
+      "label": "First button text",
+      "default": "Supplement Facts"
+    },
+    {
+      "type": "text",
+      "id": "popup_heading",
+      "label": "popup heading",
+      "default": "Supplement Facts"
+    },
+    {
+      "type": "text",
+      "id": "popup_metaobject_handle",
+      "label": "Content Metaobject handle",
+      "info": "Add handle of created metaobject."
+    },
+    {
+      "type": "text",
+      "id": "popup_metaobject_handle_second",
+      "label": "Content Metaobject handle(second)",
+      "info": "Add handle of created metaobject."
+    },
+    {
+      "type": "text",
+      "id": "second_button_text",
+      "label": "Second button text",
+      "default": "Try Risk Free Today!"
+    },
+    {
+      "type": "text",
+      "id": "second_button_text_mobile",
+      "label": "Second button text mobile",
+      "default": "Try Now"
+    },
+    {
+      "type": "url",
+      "id": "second_button_url",
+      "label": "Second button URL"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "unit": "px",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 75
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding top mobile",
+      "default": 44
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding bottom mobile",
+      "default": 28
+    },
+    {
+      "type": "header",
+      "content": "Styles"
+    },
+    {
+      "type": "color",
+      "id": "primary_color",
+      "label": "Primary color",
+      "default": "#005eb8"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Benefit",
+      "type": "benefit",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "Benefit"
+        },
+        {
+          "type": "select",
+          "id": "shown_device",
+          "label": "Show on device",
+          "default": "both",
+          "options": [
+            {
+              "label": "Desktop",
+              "value": "desktop"
+            },
+            {
+              "label": "Mobile",
+              "value": "mobile"
+            },
+            {
+              "label": "Both",
+              "value": "both"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Informative banner"
+    }
+  ]
+}
+{% endschema %}

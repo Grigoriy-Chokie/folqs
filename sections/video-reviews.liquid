@@ -1,0 +1,292 @@
+{%- if section.blocks.size > 0 -%}
+    {{ 'video-reviews.css' | asset_url | stylesheet_tag }}
+    {%- style -%}
+        .section-{{ section.id }} {
+            padding-top: {{ section.settings.padding_top }}px;
+            padding-bottom: {{ section.settings.padding_bottom }}px;
+        }
+
+        .testimonial {
+            position: relative;
+            {%- if section.settings.background_color != blank %}
+                background: {{ section.settings.background_color }};
+            {%- endif -%}
+        }
+        {%- if section.settings.background_image != blank -%}
+            .testimonial::before {
+                 background-image: url('{{ section.settings.background_image | img_url: "master" }}');
+            }
+        {%- endif -%}
+        @media(max-width: 850px){
+            .section-{{ section.id }}::before{
+            display: none;
+            }
+        }
+        @media(max-width: 768px) {
+            .section-{{ section.id }} {
+                padding-top: {{ section.settings.padding_top_mobile }}px;
+                padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+            }
+
+            {%- if section.settings.background_image_mobile != blank -%}
+                .testimonial::before {
+                    background-size: 104% 100%;
+                    background-image: url('{{ section.settings.background_image_mobile | img_url: "master" }}');
+                    background-position: bottom;
+                }
+            {%- endif -%}
+
+        }
+
+        @media screen and (max-width: 1650px){
+            .section-{{ section.id }}::before{
+                 width: 42%;
+            }
+        }
+    {%- endstyle -%}
+    {% capture style_variables %}
+        --columns-desktop: {{ section.settings.columns_desktop }};
+        --columns-mobile: {{ section.settings.columns_mobile }};
+    {% endcapture %}
+    <div class="section-{{ section.id }} page-width video-reviews--{{ section.settings.container }}">
+        <div style="{{ style_variables }}" class="video-reviews">
+            <div class="video-reviews__items">
+                <div class="video-reviews__item">
+                    {%- if section.settings.heading != blank -%}
+                        <div class="video-reviews__heading">{{ section.settings.heading }}</div>
+                    {%- endif -%}
+                    {%- if section.settings.subheading != blank -%}
+                        <div class="video-reviews__subheading">{{ section.settings.subheading }}</div>
+                    {%- endif -%}
+                    {%- if section.settings.review_count != blank -%}
+                        <div class="video-reviews__rating">
+                            <div class="video-reviews__star">
+                                {% for i in (1..5) %}
+                                    {% render 'icon-star', class: 'icon-star__full' %}{% endfor %}
+                            </div>
+                            {{ section.settings.review_count }}</div>
+                    {%- endif -%}
+                </div>
+                <div class="video-reviews__item">
+                    <div class="video-reviews-grid">
+                        {%- for block in section.blocks -%}
+                            <div class="video-review__item-inner">
+                                {% assign poster = blank %}
+                                {% if block.settings.poster != blank %}
+                                    {% assign poster = block.settings.poster | img_url: "master" %}
+                                    {{ block.settings.video | video_tag: loop: false, autoplay: false, muted: false, playsinline: true, image_size: '500x', preload: 'none', poster: poster }}
+                                {% else %}
+                                  {{ block.settings.video | video_tag: loop: false, autoplay: false, muted: false, playsinline: true, image_size: '500x', preload: 'none' }}
+                                {% endif %}
+                              <button type="button" class="video-review__button" title="{{ 'products.product.media.play_video' | t }}">
+                                   {% render 'icon-play-video' %}
+                                </button>
+                            </div>
+                        {%- endfor -%}
+                    </div>
+                    {% if section.settings.button_text != blank and section.settings.button_url != blank %}
+                        <a class="video-reviews__button" href="{{ section.settings.button_url }}">
+                            {{ section.settings.button_text }}
+                            {% render 'icon-arrow-right' %}
+                        </a>
+                    {% endif %}
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="{{ 'video-reviews.js' | asset_url }}"></script>
+{%- endif -%}
+{% schema %}
+{
+  "name": "Video reviews",
+  "class": "video-reviews__section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Animation"
+    },
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "review_count",
+      "default": "3,500+ Five Star Reviews",
+      "label": "Review count"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "default": "Highly Rated<br>By Our Customers",
+      "label": "Heading"
+    },
+    {
+      "type": "textarea",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Lorem ipsum dolor sit amet consectetur. Gravida facilisi eleifend sit quam morbi risus id. Nisl massa donec tincidunt."
+    },
+    {
+      "type": "text",
+      "id": "certified_buyer",
+      "label": "Text",
+      "default": "Certified buyer"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button text"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "columns_desktop",
+      "min": 3,
+      "max": 6,
+      "step": 1,
+      "unit": "col",
+      "label": "Columns on desktop",
+      "default": 5
+    },
+    {
+      "type": "range",
+      "id": "columns_mobile",
+      "min": 2,
+      "max": 6,
+      "step": 1,
+      "unit": "col",
+      "label": "Columns on mobile",
+      "default": 3
+    },
+    {
+      "type": "select",
+      "id": "container",
+      "options": [
+        {
+          "value": "default",
+          "label": "Default"
+        },
+        {
+          "value": "small",
+          "label": "Small"
+        }
+      ],
+      "default": "default",
+      "label": "Container width"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding top(desktop)",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding bottom(desktop)",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding top(mobile)",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding bottom(mobile)",
+      "default": 0
+    }
+  ],
+  "blocks": [
+    {
+      "type": "review",
+      "name": "Review",
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "type_buyer",
+          "label": "Type buyer",
+          "info": "Press on checkbox if buyer 'certified'"
+        },
+        {
+          "type": "video",
+          "id": "video",
+          "label": "Video"
+        },
+        {
+          "type": "image_picker",
+          "id": "poster",
+          "label": "Poster"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image member"
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Name"
+        },
+        {
+          "type": "range",
+          "id": "rating_buyer",
+          "min": 1,
+          "max": 5,
+          "step": 1,
+          "unit": "str",
+          "label": "Rating buyer",
+          "default": 5
+        },
+        {
+          "type": "range",
+          "id": "speed_anim",
+          "label": "Speed to move to another slide",
+          "unit": "s",
+          "min": 5,
+          "max": 500,
+          "step": 5,
+          "default": 5
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Video reviews"
+    }
+  ]
+}
+{% endschema %}

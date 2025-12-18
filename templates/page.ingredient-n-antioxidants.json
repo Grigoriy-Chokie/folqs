@@ -1,0 +1,167 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "rich_text_F4VmRi": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_QATDPG": {
+          "type": "heading",
+          "settings": {
+            "heading": "Talk about your brand",
+            "heading_size": "h1"
+          }
+        },
+        "text_6JAJjM": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>"
+          }
+        },
+        "button_jexaPM": {
+          "type": "button",
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_QATDPG",
+        "text_6JAJjM",
+        "button_jexaPM"
+      ],
+      "disabled": true,
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "ingredient_content_hUfQb8": {
+      "type": "ingredient-content",
+      "blocks": {
+        "percentage_island_AQzCb9": {
+          "type": "percentage_island",
+          "settings": {
+            "percentage": "40%",
+            "description": "increase in macular pigment optical density"
+          }
+        },
+        "percentage_island_8Y8h8N": {
+          "type": "percentage_island",
+          "settings": {
+            "percentage": "20%",
+            "description": "improvement in endothelial function"
+          }
+        }
+      },
+      "block_order": [
+        "percentage_island_AQzCb9",
+        "percentage_island_8Y8h8N"
+      ],
+      "settings": {
+        "list_of_badges": "///Skin Resilience, ///Eye Health, ///Cardiovascular Support, ///Comprehensive Anti-Inflammatory, ///Vascular and Circulatory Health, ///UV Protection",
+        "button_label": "Learn more",
+        "main_text": "<p>This blend of natural antioxidants and anti-inflammatory agents is crafted to combat oxidative stress and inflammation, key contributors to aging and disease. Astaxanthin, known for its superior antioxidant capacity, supports skin resilience against UV rays. Lutein, crucial for eye health, filters harmful light wavelengths. Lycopene, a potent antioxidant, supports cardiovascular health. Resveratrol, often associated with the benefits of red wine, promotes heart health and longevity. Rutin, with its vascular benefits, supports blood vessel strength and integrity.</p>",
+        "main_text_hidden": "<h2>What to Expect</h2><ul><li>Expect enhanced protection against environmental stressors with astaxanthin and lutein, supporting skin and eye health.</li><li>Lycopene and resveratrol contribute to a robust cardiovascular system, supporting heart function and vascular health.</li><li>Experience reduced inflammation and strengthened blood vessels, thanks to the combined effects of rutin and the antioxidant blend.</li></ul>",
+        "show_page_title": true
+      }
+    },
+    "natural_ingredients_fJGhb3": {
+      "type": "natural-ingredients",
+      "blocks": {
+        "ingredient_jQFn4Y": {
+          "type": "ingredient",
+          "settings": {
+            "img": "shopify://shop_images/Rectangle_15_31.png",
+            "title": "Astaxanthin",
+            "subtitle": "from Haematococcus pluviialis",
+            "info": "3 mg"
+          }
+        },
+        "ingredient_wdLMhn": {
+          "type": "ingredient",
+          "settings": {
+            "img": "shopify://shop_images/Rectangle_15_32.png",
+            "title": "Lutein",
+            "subtitle": "",
+            "info": "4 mg"
+          }
+        },
+        "ingredient_zVA3MV": {
+          "type": "ingredient",
+          "settings": {
+            "img": "shopify://shop_images/Rectangle_15_33.png",
+            "title": "Lycopene",
+            "subtitle": "from tomato peel extract",
+            "info": "2 mg"
+          }
+        },
+        "ingredient_JGzimG": {
+          "type": "ingredient",
+          "settings": {
+            "img": "shopify://shop_images/Rectangle_15_34.png",
+            "title": "Resveratrol",
+            "subtitle": "Polygonum Cuspidatum Root Extract",
+            "info": "75 mg"
+          }
+        },
+        "ingredient_bzfiMx": {
+          "type": "ingredient",
+          "settings": {
+            "img": "shopify://shop_images/Rectangle_15_35.png",
+            "title": "Rutin Powder",
+            "subtitle": "from Sophora japonica",
+            "info": "150 mg"
+          }
+        }
+      },
+      "block_order": [
+        "ingredient_jQFn4Y",
+        "ingredient_wdLMhn",
+        "ingredient_zVA3MV",
+        "ingredient_JGzimG",
+        "ingredient_bzfiMx"
+      ],
+      "settings": {
+        "padding_top": 40,
+        "padding_bottom": 100,
+        "padding_top_mobile": 24,
+        "padding_bottom_mobile": 100,
+        "heading": "",
+        "sub_heading": "",
+        "name_button": "",
+        "url_button": "/"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "rich_text_F4VmRi",
+    "ingredient_content_hUfQb8",
+    "natural_ingredients_fJGhb3"
+  ]
+}

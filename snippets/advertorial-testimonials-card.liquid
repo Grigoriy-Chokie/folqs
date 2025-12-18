@@ -1,0 +1,28 @@
+<div class="advertorial-main-review">
+  <div class="advertorial-main-review__image">
+    {%- if review.settings.image != blank -%}
+      {{ review.settings.image |  image_url: width: 720 |  image_tag }}
+    {%- else -%}
+        {{ 'image' |  placeholder_svg_tag }}
+    {%- endif -%}
+  </div>
+  <div class="advertorial-main-review__content">
+    <div class="advertorial-main-review__stars">
+      {% render 'icon-advertorial-stars' %}
+    </div>
+    {% if review.settings.title != blank %}
+      <p class="advertorial-main-review__title"><strong>{{ review.settings.title }}</strong></p>
+    {% endif %}
+    {%- if review.settings.text != blank -%}
+      <p class="advertorial-main-review__text">{{ review.settings.text }}</p>
+    {%- endif -%}
+    <div class="advertorial-main-review__footer">
+      {% if review.settings.name_location != blank %}
+        <p class="advertorial-main-review__name-location">{{ review.settings.name_location }}</p>
+      {% endif %}
+      {% if review.settings.accent_text != blank %}
+        <p class="advertorial-main-review__accent-text">{{ review.settings.accent_text }}</p>
+      {% endif %}
+    </div>
+  </div>
+</div>

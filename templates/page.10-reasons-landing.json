@@ -1,0 +1,820 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "is_heading_hidden": false,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "banner_with_gradient_a9dPqk": {
+      "type": "banner-with-gradient",
+      "settings": {
+        "title": "9 Reasons",
+        "title_color": "#005eb8",
+        "heading": "<p><strong>Why Folqs Multivitamin Will Boost Your Health — Without Harmful Fillers, Even If Other Multivitamins Have Failed You</strong></p>",
+        "heading_color": "#005eb8",
+        "subheading": "<p>Most of us believe that as long as we’re taking a multivitamin, we’re doing something good for our health. Whether it’s from a trusted retail chain or a popular online platform, we assume it’s helping us.</p><p><br/></p><p>But <strong>what if that assumption is completely wrong</strong>?</p><p><br/></p><p>The sad truth is, most multivitamins are packed with <strong>cheap, synthetic ingredients</strong> that your body struggles to absorb. You might be getting little to no benefit from them—or worse, they might be doing <strong>more harm than good</strong>.</p><p><br/></p><p>That’s why it’s time to stop trusting your health to the wrong products and start choosing a multivitamin that’s truly designed to support your body’s longevity and vitality.<br/><br/>Let’s break it down into <strong>9 powerful reasons why Folqs Multivitamin Longevity Powder</strong> is the <strong>only</strong> multivitamin designed to work with your body, giving you real results without harmful side effects.</p><p></p><p></p>",
+        "subheading_align": "center",
+        "decor_desktop": "",
+        "decor_mobile": "",
+        "background": "linear-gradient(0deg, rgba(228, 240, 255, 0), rgba(228, 240, 255, 1) 48.5%)",
+        "padding_top": 112,
+        "padding_bottom": 120,
+        "padding_top_mobile": 70,
+        "padding_bottom_mobile": 42
+      }
+    },
+    "process_fqnPmk": {
+      "type": "process",
+      "blocks": {
+        "media_7yj8Fq": {
+          "type": "media",
+          "settings": {
+            "type_media": "image",
+            "video_desktop": "shopify://files/videos/video_preview_h264.mp4",
+            "image": "shopify://shop_images/biovalibility.png",
+            "image_as_code": "",
+            "image_frame": "bottom-not-rounded",
+            "media_height": "400",
+            "object_fit": "cover",
+            "section_number": 1
+          }
+        },
+        "content_YxknbL": {
+          "type": "content",
+          "settings": {
+            "title": "<p>Bioavailability – Your Body Can Absorb It</p>",
+            "title_font_size": "36",
+            "subtitle": "",
+            "text": "<p>Most multivitamins use synthetic versions of vitamins that your body simply can’t recognize or absorb. This means that <strong>you’re flushing expensive nutrients down the drain</strong>—literally.<br/><br/></p><p>Folqs Multivitamin is formulated with <strong>natural, bioavailable forms</strong> of each nutrient, meaning your body knows exactly how to absorb them, ensuring you get the maximum benefit from every dose.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "media_7yj8Fq",
+        "content_YxknbL"
+      ],
+      "settings": {
+        "padding_top": 0,
+        "padding_bottom": 100,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 60,
+        "hide_media_on_mobile": false
+      }
+    },
+    "process_aFmnPj": {
+      "type": "process",
+      "blocks": {
+        "media_ymbKNT": {
+          "type": "media",
+          "settings": {
+            "type_media": "image",
+            "video_desktop": "shopify://files/videos/video_preview_h264.mp4",
+            "image": "shopify://shop_images/vasyl8956_Bright_and_vivid_Vitamin_D3_Cholecalciferol_from_plan_bf22927e-0fd4-432c-a444-be0a8c121520.png",
+            "image_as_code": "",
+            "image_frame": "bottom-not-rounded",
+            "media_height": "400",
+            "object_fit": "cover",
+            "section_number": 2
+          }
+        },
+        "content_gmJp6r": {
+          "type": "content",
+          "settings": {
+            "title": "<p>Clinically Effective Dosages</p>",
+            "title_font_size": "36",
+            "subtitle": "",
+            "text": "<p>It’s not just about what’s in your multivitamin—it’s about how much of each nutrient is present. Many brands use <strong>tiny, ineffective doses</strong> just to fill out the label.</p><p><br/>But Folqs is designed with <strong>clinically effective dosages</strong>, ensuring that you’re getting the right amount of each nutrient to make a real impact on your health.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "media_ymbKNT",
+        "content_gmJp6r"
+      ],
+      "settings": {
+        "padding_top": 20,
+        "padding_bottom": 100,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 60,
+        "hide_media_on_mobile": false
+      }
+    },
+    "slider_members_jyUtAb": {
+      "type": "slider-members",
+      "blocks": {
+        "block_fEPNar": {
+          "type": "block",
+          "settings": {
+            "image_member": "shopify://shop_images/Doctor.jpg",
+            "name": "Dr. Dantley Davis",
+            "role": "Brazilian Olimpics Team Certified Medical Consultant",
+            "review": "“Lorem ipsum dolor sit amet consectetur. Ultricies ornare adipiscing lorem amet sit. Consequat amet eu sed imperdiet nec dui. Tempus eget nec nulla diam donec dolor convallis ultrices diam.”",
+            "icon": "shopify://shop_images/icon-doctor.svg"
+          }
+        },
+        "block_63bn7j": {
+          "type": "block",
+          "settings": {
+            "image_member": "shopify://shop_images/member2.jpg",
+            "name": "Dr. Dantley Davis2",
+            "role": "Brazilian Olimpics Team Certified Medical Consultant",
+            "review": "“Lorem ipsum dolor sit amet consectetur. Ultricies ornare adipiscing lorem amet sit. Consequat amet eu sed imperdiet nec dui. Tempus eget nec nulla diam donec dolor convallis ultrices diam.”",
+            "icon": "shopify://shop_images/icon-doctor.svg"
+          }
+        },
+        "block_aetrVG": {
+          "type": "block",
+          "settings": {
+            "image_member": "shopify://shop_images/member3.jpg",
+            "name": "Dr. Dantley Davis3",
+            "role": "Brazilian Olimpics Team Certified Medical Consultant",
+            "review": "“Lorem ipsum dolor sit amet consectetur. Ultricies ornare adipiscing lorem amet sit. Consequat amet eu sed imperdiet nec dui. Tempus eget nec nulla diam donec dolor convallis ultrices diam.”",
+            "icon": "shopify://shop_images/icon-doctor.svg"
+          }
+        },
+        "block_L4Jwfx": {
+          "type": "block",
+          "settings": {
+            "image_member": "shopify://shop_images/member4.jpg",
+            "name": "Dr. Dantley Davis4",
+            "role": "Brazilian Olimpics Team Certified Medical Consultant",
+            "review": "“Lorem ipsum dolor sit amet consectetur. Ultricies ornare adipiscing lorem amet sit. Consequat amet eu sed imperdiet nec dui. Tempus eget nec nulla diam donec dolor convallis ultrices diam.”",
+            "icon": "shopify://shop_images/icon-doctor.svg"
+          }
+        },
+        "block_7rMXFk": {
+          "type": "block",
+          "settings": {
+            "image_member": "shopify://shop_images/member5.jpg",
+            "name": "Dr. Dantley Davis5",
+            "role": "Brazilian Olimpics Team Certified Medical Consultant",
+            "review": "“Lorem ipsum dolor sit amet consectetur. Ultricies ornare adipiscing lorem amet sit. Consequat amet eu sed imperdiet nec dui. Tempus eget nec nulla diam donec dolor convallis ultrices diam.”",
+            "icon": "shopify://shop_images/icon-doctor.svg"
+          }
+        }
+      },
+      "block_order": [
+        "block_fEPNar",
+        "block_63bn7j",
+        "block_aetrVG",
+        "block_L4Jwfx",
+        "block_7rMXFk"
+      ],
+      "disabled": true,
+      "settings": {
+        "title": "Trusted by Doctors and Olimpians",
+        "background_color": "#f9f9f9",
+        "background_image": "shopify://shop_images/background-doctor.svg",
+        "background_image_mobile": "shopify://shop_images/mobile-svg.svg",
+        "timer_delay": 10,
+        "padding_top": 120,
+        "padding_bottom": 120,
+        "padding_top_mobile": 60,
+        "padding_bottom_mobile": 60
+      }
+    },
+    "process_rAmYpn": {
+      "type": "process",
+      "blocks": {
+        "media_kRdU4b": {
+          "type": "media",
+          "settings": {
+            "type_media": "image",
+            "video_desktop": "shopify://files/videos/video_preview_h264.mp4",
+            "image": "shopify://shop_images/Rectangle_398_6d04c8a9-98ab-4373-a673-ba0ebe5b958e.png",
+            "image_as_code": "",
+            "image_frame": "bottom-not-rounded",
+            "media_height": "400",
+            "object_fit": "cover",
+            "section_number": 3
+          }
+        },
+        "content_mNMjbp": {
+          "type": "content",
+          "settings": {
+            "title": "<p>Free From Harmful Contaminants</p>",
+            "title_font_size": "36",
+            "subtitle": "",
+            "text": "<p>Up to <strong>92% of supplements</strong> tested in recent studies were found to be contaminated with bacteria or fungi—some even contained dangerous heavy metals. Taking these contaminants every day can do more harm than good, compromising your immune system and overall health.</p><p><br/></p><p><strong>Folqs</strong> undergoes rigorous <strong>third-party testing</strong> to ensure every batch is pure, safe, and free from any contaminants. When you take Folqs, you’re getting nothing but clean, effective nutrients.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "media_kRdU4b",
+        "content_mNMjbp"
+      ],
+      "settings": {
+        "padding_top": 0,
+        "padding_bottom": 100,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 60,
+        "hide_media_on_mobile": false
+      }
+    },
+    "process_CHqhPj": {
+      "type": "process",
+      "blocks": {
+        "media_VBdc6V": {
+          "type": "media",
+          "settings": {
+            "type_media": "image",
+            "video_desktop": "shopify://files/videos/video_preview_h264.mp4",
+            "image": "shopify://shop_images/Rectangle_3981.png",
+            "image_as_code": "",
+            "image_frame": "bottom-not-rounded",
+            "media_height": "400",
+            "object_fit": "cover",
+            "section_number": 4
+          }
+        },
+        "content_ceqktC": {
+          "type": "content",
+          "settings": {
+            "title": "<p>Packed with Antioxidants for Longevity</p>",
+            "title_font_size": "36",
+            "subtitle": "",
+            "text": "<p>One of the most powerful ingredients in Folqs is <strong>Astaxanthin</strong>, a natural antioxidant that’s 6,000 times more effective than Vitamin C at fighting free radicals. Free radicals are responsible for aging and cellular damage, so keeping them in check is essential for long-term health.</p><p><br/></p><p>Astaxanthin helps your body fight oxidative stress, ensuring you age more gracefully with fewer signs of wear and tear.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "media_VBdc6V",
+        "content_ceqktC"
+      ],
+      "settings": {
+        "padding_top": 20,
+        "padding_bottom": 100,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 60,
+        "hide_media_on_mobile": false
+      }
+    },
+    "process_bPdR7r": {
+      "type": "process",
+      "blocks": {
+        "media_bBF8ag": {
+          "type": "media",
+          "settings": {
+            "type_media": "image",
+            "video_desktop": "shopify://files/videos/video_preview_h264.mp4",
+            "image": "shopify://shop_images/Screenshot_2024-08-03_at_2.26.54_PM.png",
+            "image_as_code": "",
+            "image_frame": "bottom-not-rounded",
+            "media_height": "400",
+            "object_fit": "cover",
+            "section_number": 5
+          }
+        },
+        "content_QW8UpN": {
+          "type": "content",
+          "settings": {
+            "title": "<p>Enhanced Energy with CAVAQ10®</p>",
+            "title_font_size": "36",
+            "subtitle": "",
+            "text": "<p>If you’re feeling sluggish and tired, chances are your cells need a boost. <strong>Folqs includes CAVAQ10®</strong>, a highly advanced form of CoQ10 that is <strong>18x more bioavailable</strong> than regular CoQ10. This means your body absorbs it faster and more efficiently, powering up your cells’ energy production like never before.</p><p><br/>Whether you need to power through the workday or recover faster from workouts, Folqs ensures you’ll feel <strong>recharged and energized</strong> from Day 1—giving you the vitality to perform at your best.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "media_bBF8ag",
+        "content_QW8UpN"
+      ],
+      "settings": {
+        "padding_top": 20,
+        "padding_bottom": 100,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 60,
+        "hide_media_on_mobile": false
+      }
+    },
+    "reviews_HtzjX7": {
+      "type": "reviews",
+      "blocks": {
+        "review_b6R7rt": {
+          "type": "review",
+          "settings": {
+            "image": "shopify://shop_images/Rectangle_13_1.png",
+            "full_name": "Tristan Blaze",
+            "role": "Olimpics Team Certified Medical Consultant",
+            "quote": "<p>“Lorem ipsum dolor sit amet consectetur. Ultricies ornare adipiscing lorem amet sit. Consequat amet eu sed imperdiet nec dui. Tempus eget nec nulla diam donec dolor convallis ultrices diam.”</p>"
+          }
+        },
+        "review_YAaEGh": {
+          "type": "review",
+          "settings": {
+            "image": "shopify://shop_images/Rectangle_13.png",
+            "full_name": "Tristan Blaze",
+            "role": "Olimpics Team Certified Medical Consultant",
+            "quote": "<p>“Lorem ipsum dolor sit amet consectetur. Ultricies ornare adipiscing lorem amet sit. Consequat amet eu sed imperdiet nec dui. Tempus eget nec nulla diam donec dolor convallis ultrices diam.”</p>"
+          }
+        }
+      },
+      "block_order": [
+        "review_b6R7rt",
+        "review_YAaEGh"
+      ],
+      "disabled": true,
+      "settings": {
+        "padding_top": 20,
+        "padding_bottom": 20,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "process_EmdXLe": {
+      "type": "process",
+      "blocks": {
+        "media_hgKREw": {
+          "type": "media",
+          "settings": {
+            "type_media": "image",
+            "video_desktop": "shopify://files/videos/video_preview_h264.mp4",
+            "image": "shopify://shop_images/Rectangle_398_12.png",
+            "image_as_code": "",
+            "image_frame": "bottom-not-rounded",
+            "media_height": "400",
+            "object_fit": "cover",
+            "section_number": 6
+          }
+        },
+        "content_7T6TCA": {
+          "type": "content",
+          "settings": {
+            "title": "<p>Scientifically Backed Anti-Aging Properties</p>",
+            "title_font_size": "36",
+            "subtitle": "",
+            "text": "<p>Want to <strong>slow down aging</strong> from the inside out? Folqs includes <strong>Resveratrol</strong>, a compound found in red wine that’s been linked to longevity and improved heart health.</p><p><br/>By incorporating Resveratrol, Folqs works to <strong>reduce inflammation</strong> and support a healthier, longer life—keeping you feeling younger and stronger as you age.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "media_hgKREw",
+        "content_7T6TCA"
+      ],
+      "settings": {
+        "padding_top": 0,
+        "padding_bottom": 100,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 60,
+        "hide_media_on_mobile": false
+      }
+    },
+    "process_q3YW9x": {
+      "type": "process",
+      "blocks": {
+        "media_QFEMjf": {
+          "type": "media",
+          "settings": {
+            "type_media": "image",
+            "video_desktop": "shopify://files/videos/video_preview_h264.mp4",
+            "image": "shopify://shop_images/Rectangle_419-8.png",
+            "image_as_code": "",
+            "image_frame": "bottom-not-rounded",
+            "media_height": "400",
+            "object_fit": "cover",
+            "section_number": 7
+          }
+        },
+        "content_iTF6dD": {
+          "type": "content",
+          "settings": {
+            "title": "<p>Protects and Supports Immunity</p>",
+            "title_font_size": "36",
+            "subtitle": "",
+            "text": "<p>Do you feel like your immune system isn’t as strong as it used to be? Most multivitamins do little to support immunity because they’re filled with synthetic fillers.</p><p><br/>Folqs, however, is packed with natural ingredients like <strong>Vitamin D</strong> and <strong>Zinc</strong>, both clinically proven to boost your immune system and keep you healthier year-round.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "media_QFEMjf",
+        "content_iTF6dD"
+      ],
+      "settings": {
+        "padding_top": 20,
+        "padding_bottom": 100,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 60,
+        "hide_media_on_mobile": false
+      }
+    },
+    "testimonial_QbknYF": {
+      "type": "testimonial",
+      "disabled": true,
+      "settings": {
+        "testimonial": "<p>“Lorem ipsum dolor sit amet consectetur. Ultricies ornare adipiscing lorem amet sit. Consequat amet eu sed imperdiet nec dui. Tempus eget nec nulla diam donec dolor convallis ultrices diam.”</p>",
+        "name": "Dantley Davis",
+        "role": "<p>Brazilian Olimpics Team Certified Medical Consultant</p>",
+        "background_color": "linear-gradient(0deg, rgba(249, 249, 249, 1), rgba(249, 249, 249, 1) 100%)",
+        "background_image": "shopify://shop_images/review_svg.svg",
+        "background_image_mobile": "shopify://shop_images/image_background.svg",
+        "image_member": "shopify://shop_images/Rectangle_28_2.png",
+        "image_member_mobile": "shopify://shop_images/Rectangle_28_3.png",
+        "icon": "shopify://shop_images/icon-doctor.svg",
+        "button_label": "Explore All Benefits",
+        "button_url": "",
+        "button_background": "rgba(0, 94, 184, 1)",
+        "padding_top": 20,
+        "padding_bottom": 120,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 60
+      }
+    },
+    "process_Epi7EQ": {
+      "type": "process",
+      "blocks": {
+        "media_fJmtQd": {
+          "type": "media",
+          "settings": {
+            "type_media": "image",
+            "video_desktop": "shopify://files/videos/video_preview_h264.mp4",
+            "image": "shopify://shop_images/Rectangle_39802.png",
+            "image_as_code": "",
+            "image_frame": "bottom-not-rounded",
+            "media_height": "400",
+            "object_fit": "cover",
+            "section_number": 8
+          }
+        },
+        "content_YacB4x": {
+          "type": "content",
+          "settings": {
+            "title": "<p>Transparent, Clean Label</p>",
+            "title_font_size": "36",
+            "subtitle": "",
+            "text": "<p>More than <strong>55% of multivitamins</strong> on the market have inaccurate labels—what’s on the bottle isn’t what’s inside. But Folqs is different. Every batch is third-party tested for purity and potency, ensuring you get exactly what’s listed on the label.</p><p><br/>No misleading claims. No cutting corners. Just pure, effective ingredients.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "media_fJmtQd",
+        "content_YacB4x"
+      ],
+      "settings": {
+        "padding_top": 0,
+        "padding_bottom": 100,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 60,
+        "hide_media_on_mobile": false
+      }
+    },
+    "process_NN9xzn": {
+      "type": "process",
+      "blocks": {
+        "media_VWpfN7": {
+          "type": "media",
+          "settings": {
+            "type_media": "image",
+            "image": "shopify://shop_images/Rectangle_2001.png",
+            "image_as_code": "",
+            "image_frame": "bottom-not-rounded",
+            "media_height": "400",
+            "object_fit": "cover",
+            "section_number": 9
+          }
+        },
+        "content_gDHgRn": {
+          "type": "content",
+          "settings": {
+            "title": "<p>No Fillers, Just Pure Nutrition</p>",
+            "title_font_size": "36",
+            "subtitle": "",
+            "text": "<p>Many supplements on the market contain unnecessary fillers, binders, and artificial additives that offer no health benefit—and may even cause harm. </p><p></p><p><strong>Folqs Multivitamin Longevity Powder</strong> is completely free from these useless fillers. Every ingredient is there for a purpose: to boost your health and longevity. With Folqs, you’re only getting <strong>pure, active nutrients</strong> your body can truly use.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "media_VWpfN7",
+        "content_gDHgRn"
+      ],
+      "settings": {
+        "padding_top": 20,
+        "padding_bottom": 0,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "hide_media_on_mobile": false
+      }
+    },
+    "banner_with_buttons_FKeJ4L": {
+      "type": "banner-with-buttons",
+      "blocks": {
+        "button_YYaJan": {
+          "type": "button",
+          "settings": {
+            "button_label": "Get Your",
+            "icon_after_text": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"48\" height=\"24\" viewbox=\"0 0 48 24\" fill=\"none\">\n  <path d=\"M11.3045 5.26003C10.8148 5.26003 10.3496 5.35789 9.90882 5.52915C9.46807 5.72486 9.0763 5.96951 8.75798 6.28756C8.41517 6.6056 8.14583 6.99704 7.94994 7.4374C7.75405 7.87777 7.63162 8.3426 7.58265 8.85636C7.53367 9.32119 7.50919 9.78603 7.50919 10.2753H11.3045V11.8166H7.53367V19.205H5.99105V11.8166H3.49347V10.2753H5.99105C5.99105 10.0062 5.99105 9.76156 5.99105 9.54138C5.99105 9.32119 6.01554 9.07655 6.01554 8.8319C6.06451 8.09795 6.23591 7.41294 6.52974 6.80132C6.82358 6.1897 7.19087 5.65147 7.68059 5.18664C8.14583 4.72181 8.709 4.3793 9.32116 4.11019C9.93331 3.84107 10.5944 3.71875 11.3045 3.71875V5.26003Z\" fill=\"white\"></path>\n  <path d=\"M17.4503 8.53809C18.1849 8.53809 18.8705 8.68488 19.5316 8.95399C20.1928 9.24757 20.7559 9.61454 21.2212 10.1038C21.7109 10.5931 22.0782 11.1558 22.372 11.7919C22.6659 12.4525 22.7883 13.1375 22.7883 13.8714C22.7883 14.6054 22.6414 15.2904 22.372 15.9509C22.0782 16.6115 21.7109 17.1742 21.2212 17.639C20.7315 18.1283 20.1683 18.4953 19.5316 18.7644C18.8705 19.0335 18.1849 19.1803 17.4503 19.1803C16.7157 19.1803 16.0301 19.0335 15.369 18.7644C14.7079 18.4953 14.1447 18.1038 13.6795 17.639C13.1897 17.1497 12.8225 16.587 12.5531 15.9509C12.2838 15.2904 12.1368 14.6054 12.1368 13.8714C12.1368 13.1375 12.2838 12.4525 12.5531 11.7919C12.8225 11.1314 13.2142 10.5687 13.6795 10.1038C14.1692 9.61454 14.7324 9.24757 15.369 8.95399C16.0301 8.68488 16.7157 8.53809 17.4503 8.53809ZM17.4503 17.639C17.9645 17.639 18.4543 17.5411 18.9195 17.3454C19.3847 17.1497 19.801 16.8806 20.1438 16.5381C20.4866 16.1956 20.7559 15.8041 20.9518 15.3393C21.1477 14.8745 21.2457 14.3852 21.2457 13.8714C21.2457 13.3577 21.1477 12.8684 20.9518 12.4035C20.7559 11.9387 20.4866 11.5228 20.1438 11.1803C19.801 10.8378 19.3847 10.5687 18.9195 10.3729C18.4543 10.1772 17.9645 10.0794 17.4503 10.0794C16.9361 10.0794 16.4464 10.1772 15.9812 10.3729C15.5159 10.5687 15.1241 10.8378 14.7813 11.1803C14.4385 11.5228 14.1692 11.9387 13.9733 12.4035C13.7774 12.8684 13.6795 13.3577 13.6795 13.8714C13.6795 14.3852 13.7774 14.8745 13.9733 15.3393C14.1692 15.8041 14.4385 16.1956 14.7813 16.5381C15.1241 16.8806 15.5159 17.1497 15.9812 17.3454C16.4464 17.5411 16.9361 17.639 17.4503 17.639Z\" fill=\"white\"></path>\n  <path d=\"M25.7264 19.1805H24.1837V3.71875H25.7264V19.1805Z\" fill=\"white\"></path>\n  <path d=\"M27.0984 13.847C27.0984 13.113 27.2453 12.428 27.5147 11.7919C27.784 11.1558 28.1758 10.5931 28.641 10.1038C29.1307 9.61454 29.6939 9.24757 30.3306 8.95399C30.9672 8.66041 31.6528 8.53809 32.3874 8.53809C33.1709 8.53809 33.881 8.70934 34.5422 9.05185C35.2033 9.39436 35.742 9.85919 36.1582 10.4219V8.53809H37.7009V23.9999H36.1582V17.2965C35.742 17.8592 35.1788 18.324 34.5422 18.6421C33.881 18.9846 33.1709 19.1558 32.3874 19.1558C31.6528 19.1558 30.9672 19.009 30.3306 18.7399C29.6939 18.4708 29.1307 18.0794 28.641 17.6145C28.1513 17.1252 27.784 16.5626 27.5147 15.9265C27.2208 15.2659 27.0984 14.5809 27.0984 13.847ZM28.6165 13.847C28.6165 14.3607 28.7145 14.8255 28.9104 15.2904C29.1062 15.7552 29.3756 16.1466 29.7184 16.4892C30.0612 16.8317 30.453 17.1008 30.9182 17.321C31.3835 17.5167 31.8732 17.639 32.3874 17.639C32.9016 17.639 33.3668 17.5411 33.8321 17.3454C34.2973 17.1497 34.6891 16.8806 35.0319 16.5381C35.3747 16.1956 35.644 15.8041 35.8644 15.3393C36.0603 14.8745 36.1827 14.3852 36.1827 13.847C36.1827 13.3332 36.0848 12.8684 35.8889 12.4035C35.693 11.9387 35.4237 11.5473 35.0809 11.2048C34.738 10.8622 34.3463 10.5931 33.881 10.3729C33.4158 10.1772 32.9261 10.0549 32.3874 10.0549C31.8732 10.0549 31.3835 10.1528 30.9427 10.3485C30.502 10.5442 30.0857 10.8133 29.7674 11.1558C29.4246 11.4983 29.1552 11.8898 28.9593 12.3546C28.739 12.8439 28.641 13.3332 28.6165 13.847Z\" fill=\"white\"></path>\n  <path d=\"M43.3573 13.0641C43.7736 13.0885 44.2143 13.1864 44.6795 13.3087C45.1448 13.4555 45.5855 13.6512 46.0018 13.8959C46.4181 14.1405 46.7609 14.4586 47.0302 14.85C47.2996 15.2414 47.422 15.6818 47.422 16.1956C47.422 16.7093 47.2996 17.1497 47.0302 17.5167C46.7609 17.8837 46.4181 18.2017 46.0263 18.4463C45.61 18.691 45.1693 18.8622 44.6795 18.9846C44.1898 19.1069 43.7246 19.1558 43.3083 19.1558C42.5248 19.1558 41.7412 18.9846 40.9821 18.6665C40.2231 18.3485 39.6109 17.8592 39.0967 17.2231L40.3455 16.2934C40.6883 16.7583 41.1291 17.0763 41.6922 17.2965C42.2554 17.5167 42.8186 17.6145 43.4063 17.6145C43.6021 17.6145 43.847 17.5901 44.1408 17.5411C44.4347 17.4922 44.704 17.4188 44.9489 17.2965C45.2182 17.1742 45.4386 17.0274 45.61 16.8561C45.7814 16.6849 45.8794 16.4402 45.8794 16.1711C45.8794 15.902 45.7814 15.6574 45.5855 15.4616C45.3896 15.2659 45.1448 15.0947 44.8754 14.9723C44.5816 14.85 44.2878 14.7522 43.9694 14.6788C43.6511 14.6298 43.3818 14.5809 43.1614 14.5809C42.7451 14.5564 42.3044 14.4586 41.8392 14.3363C41.3739 14.1895 40.9332 13.9937 40.5169 13.7491C40.1006 13.5044 39.7578 13.1864 39.4885 12.795C39.2191 12.4035 39.0967 11.9632 39.0967 11.4494C39.0967 10.9356 39.2191 10.5197 39.4885 10.1528C39.7578 9.78579 40.1006 9.49221 40.4924 9.24757C40.9087 9.00292 41.3494 8.83166 41.8147 8.70934C42.3044 8.58702 42.7696 8.53809 43.2104 8.53809C43.9939 8.53809 44.7775 8.70934 45.5121 9.02738C46.2466 9.34543 46.8833 9.83472 47.3975 10.4708L46.1487 11.4249C45.8059 10.9601 45.3652 10.6176 44.802 10.3974C44.2388 10.1772 43.6511 10.0794 43.0879 10.0794C42.8921 10.0794 42.6472 10.1038 42.3778 10.1528C42.084 10.2017 41.8147 10.2751 41.5698 10.3974C41.3005 10.5197 41.0801 10.6665 40.9087 10.8378C40.7373 11.009 40.6393 11.2537 40.6393 11.5228C40.6393 11.7919 40.7373 12.0366 40.9332 12.2323C41.1291 12.428 41.3739 12.5992 41.6678 12.7216C41.9616 12.8439 42.2554 12.9418 42.5737 13.0152C42.8431 13.0396 43.1124 13.0641 43.3573 13.0641Z\" fill=\"white\"></path>\n  <path d=\"M3.49209 5.82263C1.87601 5.82263 0.578247 4.50153 0.578247 2.91131C0.578247 1.3211 1.9005 0 3.49209 0C5.08369 0 6.43042 1.29664 6.43042 2.91131C6.43042 4.52599 5.10817 5.82263 3.49209 5.82263ZM3.49209 1.46789C2.68405 1.46789 2.04741 2.12844 2.04741 2.91131C2.04741 3.71865 2.70854 4.35474 3.49209 4.35474C4.30013 4.35474 4.93677 3.69419 4.93677 2.91131C4.96126 2.10397 4.30013 1.46789 3.49209 1.46789Z\" fill=\"white\"></path>\n</svg>",
+            "url": "#product-information__reviews--2",
+            "padding": 60,
+            "ground_color": "#ff6a13",
+            "text_color": "#ffffff",
+            "ground_color_hover": "#cf4c00",
+            "text_color_hover": "#ffffff"
+          }
+        },
+        "button_rnwKCQ": {
+          "type": "button",
+          "settings": {
+            "button_label": "Learn More",
+            "icon_after_text": "<svg width=\"18\" height=\"18\" viewbox=\"0 0 18 18\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d=\"M10.8225 14.115C10.68 14.115 10.5375 14.0625 10.425 13.95C10.2075 13.7325 10.2075 13.3725 10.425 13.155L14.58 8.99997L10.425 4.84497C10.2075 4.62747 10.2075 4.26747 10.425 4.04997C10.6425 3.83247 11.0025 3.83247 11.22 4.04997L15.7725 8.60247C15.99 8.81997 15.99 9.17997 15.7725 9.39747L11.22 13.95C11.1075 14.0625 10.965 14.115 10.8225 14.115Z\" fill=\"#005EB8\"></path>\n<path d=\"M15.2475 9.5625H2.625C2.3175 9.5625 2.0625 9.3075 2.0625 9C2.0625 8.6925 2.3175 8.4375 2.625 8.4375H15.2475C15.555 8.4375 15.81 8.6925 15.81 9C15.81 9.3075 15.555 9.5625 15.2475 9.5625Z\" fill=\"#005EB8\"></path>\n</svg>",
+            "url": "https://folqs.co/pages/main-page#product-information__reviews--2",
+            "padding": 40,
+            "ground_color": "#ffffff",
+            "text_color": "#005eb8",
+            "ground_color_hover": "#ffffff",
+            "text_color_hover": "#243c92"
+          }
+        }
+      },
+      "block_order": [
+        "button_YYaJan",
+        "button_rnwKCQ"
+      ],
+      "disabled": true,
+      "settings": {
+        "heading_desktop": "<p>Experience the health transformation you deserve!</p>",
+        "heading_mobile": "<p>Health transformation you deserve!</p>",
+        "subheading": "<p>Try our scientifically formulated supplement today and feel the difference!</p>",
+        "product_image": "shopify://shop_images/blue_concept_1_1.png",
+        "ground_image": "shopify://shop_images/Group_1415.png",
+        "ground_image_mobile": "shopify://shop_images/Group_1415_1.png",
+        "padding_top": 62,
+        "padding_bottom": 50,
+        "padding_top_mobile": 50,
+        "padding_bottom_mobile": 50
+      }
+    },
+    "cta_banner_with_media_GAj9c3": {
+      "type": "cta-banner-with-media",
+      "settings": {
+        "padding_top": 0,
+        "padding_bottom": 80,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 80,
+        "title": "",
+        "title_mobile": "",
+        "title_weight": 500,
+        "title_size": 48,
+        "title_size_mobile": 32,
+        "is_full_width": false,
+        "is_flipped": false,
+        "restrict_section_width": false,
+        "popup_heading": "Supplement Facts",
+        "popup_metaobject_handle": "supplement-facts",
+        "image_popup": "shopify://shop_images/TEXTS-min.png",
+        "image_popup_mobile": "shopify://shop_images/TEXTS-desktop.png",
+        "button_text": "Full Supplement Facts",
+        "button_link": "",
+        "is_button_hidden": false,
+        "is_cta_button_centered": true,
+        "button_background": "#005EB8"
+      }
+    },
+    "rich_text_9m3wRd": {
+      "type": "rich-text",
+      "blocks": {
+        "caption_GMKgAY": {
+          "type": "caption",
+          "settings": {
+            "caption": "Ready to Embrace a New Level of Wellness?",
+            "text_style": "subtitle",
+            "text_size": "medium"
+          }
+        },
+        "heading_UViL33": {
+          "type": "heading",
+          "settings": {
+            "heading": "Order Folqs Now, Before We Sell Out!",
+            "heading_size": "h1"
+          }
+        },
+        "text_D9fqH3": {
+          "type": "text",
+          "settings": {
+            "text": "<p>With only <strong>123 units</strong> of <strong>Folqs Multivitamin Longevity Powder</strong> left in stock, now is your chance to claim the product that will help you feel more energized, focused, and healthier every day. </p><p>Don’t miss out—order now before we sell out and start experiencing the benefits today!</p>"
+          }
+        },
+        "button_YRjRYD": {
+          "type": "button",
+          "disabled": true,
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "caption_GMKgAY",
+        "heading_UViL33",
+        "text_D9fqH3",
+        "button_YRjRYD"
+      ],
+      "settings": {
+        "background_color": "",
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "scheme-5",
+        "full_width": true,
+        "is_section_narrow": false,
+        "padding_top": 40,
+        "padding_bottom": 52,
+        "margin_bottom": -100,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "margin_bottom_mobile": 0
+      }
+    },
+    "landing_product_alternative_8GVN6Y": {
+      "type": "landing-product-alternative",
+      "blocks": {
+        "title_6eXp4r": {
+          "type": "title",
+          "settings": {
+            "text": "<p>Unlock Your Body's Full Potential</p>",
+            "highlighted_color": "#005EB8",
+            "text_mobile": ""
+          }
+        },
+        "reviews_THEC86": {
+          "type": "reviews",
+          "settings": {
+            "text": "1,571+ Five Star Reviews"
+          }
+        },
+        "feature_WTxBVW": {
+          "type": "feature",
+          "disabled": true,
+          "settings": {
+            "icon": "shopify://shop_images/check.svg",
+            "title": "Third-Party Tested",
+            "text": "Rigorously third-party tested, our product assures unmatched quality, delivering purity and potency you can trust."
+          }
+        },
+        "feature_7pJgyz": {
+          "type": "feature",
+          "disabled": true,
+          "settings": {
+            "icon": "shopify://shop_images/check.svg",
+            "title": "Supports Healthy Aging",
+            "text": "Our vitamin blend promotes vitality and wellness, precisely addressing age-specific health concerns for optimal well-being."
+          }
+        },
+        "price_fTk8JJ": {
+          "type": "price",
+          "settings": {
+            "text": "$1,20 per serving [dot] 10 month supply",
+            "name_plan_display": "",
+            "name_plan": "Subscribe & Save",
+            "information": "Free Shipping\nPause, Skip, Cancel at Any Time for Any Reason\n90-Day Money-Back Guarantee",
+            "enable_one_purchase": true,
+            "heading": "One-time Purchase",
+            "use_quantity_box": false,
+            "primary_color": "#ff6a13",
+            "badge_color": "#ff6a13",
+            "badge_background": "#ffe1d0",
+            "shadow": true
+          }
+        },
+        "buy_buttons_qmmJYW": {
+          "type": "buy_buttons",
+          "settings": {
+            "benefits_text1": "Ships in 30 days",
+            "benefits_text2": "Free US Shipping",
+            "benefits_text3": "Cancel Anytime"
+          }
+        },
+        "advantages_list_4eKpab": {
+          "type": "advantages_list",
+          "settings": {
+            "advantages_list": "lock.svg;Secure Checkout, shield-tick.svg;90-Day Money-Back Guarantee, clock-icon.svg;Refill Every 30 Days",
+            "advantages_list_one_time": "lock.svg;Secure Checkout, shield-tick.svg;90-Day Money-Back Guarantee, made-in-usa.svg;Made In USA"
+          }
+        }
+      },
+      "block_order": [
+        "title_6eXp4r",
+        "reviews_THEC86",
+        "feature_WTxBVW",
+        "feature_7pJgyz",
+        "price_fTk8JJ",
+        "buy_buttons_qmmJYW",
+        "advantages_list_4eKpab"
+      ],
+      "settings": {
+        "style_type": "default",
+        "use_gallery": false,
+        "gallery_view": "slider",
+        "gallery_full_width": false,
+        "background": "linear-gradient(0deg, rgba(228, 240, 255, 1) 29.75%, rgba(228, 240, 255, 0) 100%)",
+        "primary_color": "",
+        "background_icon": "<svg width=\"495\" height=\"553\" viewbox=\"100 0 575 553\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<g clip-path=\"url(#clip0_2_86)\" class=\"rotate-right\" style=\" transform-origin: 276.5px 276.5px;\n\">\n<mask id=\"mask0_2_86\" style=\"mask-type:luminance\" maskunits=\"userSpaceOnUse\" x=\"0\" y=\"0\" width=\"575\" height=\"553\">\n<path d=\"M575 0H0V553H575V0Z\" fill=\"white\"></path>\n</mask>\n<g mask=\"url(#mask0_2_86)\">\n<path d=\"M223.171 132.081C196.236 140.299 172.112 155.834 153.485 176.954C134.859 198.074 122.462 223.951 117.675 251.702C112.888 279.453 115.9 307.987 126.375 334.127C136.849 360.267 154.375 382.986 177.001 399.752C199.626 416.519 226.462 426.675 254.518 429.088C282.575 431.502 310.751 426.079 335.908 413.424C361.064 400.768 382.213 381.376 396.999 357.41C411.784 333.443 419.625 305.842 419.649 277.681\" stroke=\"#005EB8\" stroke-width=\"2\"></path>\n<path d=\"M524.325 233.321C515.902 184.425 493.693 138.951 460.31 102.245C426.927 65.539 383.757 39.1281 335.877 26.1175C287.997 13.107 237.398 14.0379 190.029 28.8007C142.66 43.564 100.49 71.544 68.4796 109.453C36.469 147.362 15.9477 193.623 9.32891 242.796C2.71001 291.968 10.2688 342.009 31.1164 387.032C51.964 432.056 85.2337 470.192 127.013 496.954C168.793 523.717 217.345 537.994 266.961 538.107\" stroke=\"#005EB8\" stroke-width=\"2\"></path>\n<path d=\"M528.736 232.428C504.157 232.428 484.233 252.352 484.233 276.931C484.233 301.51 504.157 321.434 528.736 321.434C553.315 321.434 573.239 301.51 573.239 276.931C573.239 252.352 553.315 232.428 528.736 232.428Z\" stroke=\"#005EB8\" stroke-width=\"2\"></path>\n<path d=\"M268.185 81.582C243.606 81.582 223.682 101.506 223.682 126.085C223.682 150.664 243.606 170.588 268.185 170.588C292.764 170.588 312.688 150.664 312.688 126.085C312.688 101.506 292.764 81.582 268.185 81.582Z\" stroke=\"#005EB8\" stroke-width=\"2\"></path>\n<g filter=\"url(#filter0_f_2_86)\">\n<path d=\"M47 337.637C47 426.703 119.202 498.905 208.268 498.905H343.732C432.798 498.905 505 426.703 505 337.637V214.268C505 125.202 432.798 53 343.732 53H208.268C119.202 53 47 125.202 47 214.268V337.637Z\" fill=\"url(#paint0_linear_2_86)\" fill-opacity=\"0.7\"></path>\n</g>\n</g>\n</g>\n<defs>\n<filter id=\"filter0_f_2_86\" x=\"-53\" y=\"-47\" width=\"658\" height=\"645.905\" filterunits=\"userSpaceOnUse\" color-interpolation-filters=\"sRGB\">\n<feflood flood-opacity=\"0\" result=\"BackgroundImageFix\"></feflood>\n<feblend mode=\"normal\" in=\"SourceGraphic\" in2=\"BackgroundImageFix\" result=\"shape\"></feblend>\n<fegaussianblur stddeviation=\"50\" result=\"effect1_foregroundBlur_2_86\"></fegaussianblur>\n</filter>\n<lineargradient id=\"paint0_linear_2_86\" x1=\"276\" y1=\"53\" x2=\"276\" y2=\"498.905\" gradientunits=\"userSpaceOnUse\">\n<stop offset=\"0.0246052\" stop-color=\"#E4F0FF\" stop-opacity=\"0\"></stop>\n<stop offset=\"1\" stop-color=\"#E4F0FF\"></stop>\n</lineargradient>\n<clippath id=\"clip0_2_86\">\n<rect width=\"575\" height=\"553\" fill=\"white\"></rect>\n</clippath>\n</defs>\n</svg>",
+        "padding_top": 100,
+        "padding_bottom": 60,
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 40,
+        "heading": "Only Natural Ungredients",
+        "sub_heading": "Lorem ipsum dolor sit amet consectetur. Gravida facilisi eleifend sit quam morbi risus id. Nisl massa donec tincidunt.",
+        "landing_product": "multivitamin-super-powder-copy",
+        "enable_style": true,
+        "property_value": ""
+      }
+    },
+    "benefits_marquee_GYihXG": {
+      "type": "benefits-marquee",
+      "blocks": {
+        "text_label_CNXHMA": {
+          "type": "text_label",
+          "settings": {
+            "text": "MADE IN USA"
+          }
+        },
+        "text_label_dPegdx": {
+          "type": "text_label",
+          "settings": {
+            "text": "NATURAL INGREDIENTS"
+          }
+        },
+        "text_label_hAcmxm": {
+          "type": "text_label",
+          "settings": {
+            "text": "SCIENTIFICALLY PROVED"
+          }
+        },
+        "text_label_RfRUjR": {
+          "type": "text_label",
+          "settings": {
+            "text": "MADE IN USA"
+          }
+        },
+        "text_label_gnLAQP": {
+          "type": "text_label",
+          "settings": {
+            "text": "NATURAL INGREDIENTS"
+          }
+        },
+        "text_label_NRRJfk": {
+          "type": "text_label",
+          "settings": {
+            "text": "SCIENTIFICALLY PROVED"
+          }
+        }
+      },
+      "block_order": [
+        "text_label_CNXHMA",
+        "text_label_dPegdx",
+        "text_label_hAcmxm",
+        "text_label_RfRUjR",
+        "text_label_gnLAQP",
+        "text_label_NRRJfk"
+      ],
+      "settings": {
+        "background": "#005EB8",
+        "color_text": "#fff",
+        "autoscroll": true,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "decor_label": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"10\" height=\"8\" viewbox=\"0 0 10 8\" fill=\"none\">\n<path d=\"M3.5775 7.58352C3.3775 7.58352 3.1875 7.50352 3.0475 7.36352L0.2175 4.53352C-0.0725 4.24352 -0.0725 3.76352 0.2175 3.47352C0.5075 3.18352 0.9875 3.18352 1.2775 3.47352L3.5775 5.77352L8.7175 0.633516C9.0075 0.343516 9.4875 0.343516 9.7775 0.633516C10.0675 0.923516 10.0675 1.40352 9.7775 1.69352L4.1075 7.36352C3.9675 7.50352 3.7775 7.58352 3.5775 7.58352Z\" fill=\"white\"></path>\n</svg>"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "banner_with_gradient_a9dPqk",
+    "process_fqnPmk",
+    "process_aFmnPj",
+    "slider_members_jyUtAb",
+    "process_rAmYpn",
+    "process_CHqhPj",
+    "process_bPdR7r",
+    "reviews_HtzjX7",
+    "process_EmdXLe",
+    "process_q3YW9x",
+    "testimonial_QbknYF",
+    "process_Epi7EQ",
+    "process_NN9xzn",
+    "banner_with_buttons_FKeJ4L",
+    "cta_banner_with_media_GAj9c3",
+    "rich_text_9m3wRd",
+    "landing_product_alternative_8GVN6Y",
+    "benefits_marquee_GYihXG"
+  ]
+}

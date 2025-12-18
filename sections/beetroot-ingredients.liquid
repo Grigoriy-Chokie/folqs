@@ -1,0 +1,155 @@
+{{ 'section-beetroot-ingredients.css' | asset_url | stylesheet_tag }}
+
+<beetroot-ingredients class="beetroot-ingredients__container page-width">
+  {%- if section.settings.title != blank -%}
+    <h2 class="beetroot-ingredients__title">{{ section.settings.title }}</h2>
+  {%- endif -%}
+  {%- if section.settings.text != blank -%}
+    <p class="beetroot-ingredients__text">{{ section.settings.text }}</p>
+  {%- endif -%}
+
+  <div class="beetroot-ingredients__items-grid">
+    {%- for block in section.blocks -%}
+      <div class="beetroot-ingredients-item">
+        <div class="beetroot-ingredients-item__image">
+          {%- if block.settings.image != blank -%}
+            {{ block.settings.image | image_url: width: 870 | image_tag }}
+          {%- else -%}
+            {{ 'image' | placeholder_svg_tag }}
+          {%- endif -%}
+        </div>
+        {%- if block.settings.title != blank -%}
+          <h3 class="beetroot-ingredients-item__title">{{ block.settings.title }}</h3>
+        {%- endif -%}
+        {%- if block.settings.mg_count != blank -%}
+          <p class="beetroot-ingredients-item__mg-count">{{ block.settings.mg_count }}</p>
+        {%- endif -%}
+        {%- if block.settings.text != blank -%}
+          <p class="beetroot-ingredients-item__text">{{ block.settings.text }}</p>
+        {%- endif -%}
+      </div>
+    {%- endfor -%}
+  </div>
+  <button class="beetroot-ingredients__toggle-show-button">
+    <span class="beetroot-ingredients__show-more-text">{{ 'products.facets.show_more' | t }}</span>
+    <span class="beetroot-ingredients__show-less-text">{{ 'products.facets.show_less' | t }}</span>
+  </button>
+</beetroot-ingredients>
+
+<script src="{{ 'beetroot-ingredients.js' |  asset_url }}" defer></script>
+
+{% schema %}
+{
+    "name": "Beetroot Ingredients",
+    "class": "beetroot-ingredients",
+    "tag": "section",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "title",
+        "default": "Ingredients"
+      },
+      {
+        "type": "text",
+        "id": "text",
+        "label": "Text",
+        "default": "Lorem ipsum dolor sit amet consectetur. Gravida facilisi eleifend sit quam morbi risus id. Nisl massa donec tincidunt."
+      }
+    ],
+    "blocks": [
+      {
+        "name": "Ingredient",
+        "type": "ingredient",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          },
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title",
+            "default": "Organic Beet Root Extract"
+          },
+          {
+            "type": "text",
+            "id": "mg_count",
+            "label": "Mg count",
+            "default": "500 mg"
+          },
+          {
+            "type": "text",
+            "id": "text",
+            "label": "text",
+            "default": "Naturally rich in dietary nitrates that convert to nitric oxide, supporting healthy blood flow and circulation."
+          }
+        ]
+      }
+    ],
+    "presets": [
+    {
+      "name": "Beetroot Ingredients",
+      "blocks": [
+        {
+          "type": "ingredient",
+          "settings": {
+            "title": "Organic Beet Root Extract",
+            "mg_count": "500 mg",
+            "text": "Naturally rich in dietary nitrates that convert to nitric oxide, supporting healthy blood flow and circulation."
+          }
+        },
+        {
+          "type": "ingredient",
+          "settings": {
+            "title": "Grape Seed Extract",
+            "mg_count": "150 mg",
+            "text": " Packed with proanthocyanidins to protect blood vessels from oxidative stress and support normal blood pressure."
+          }
+        },
+        {
+          "type": "ingredient",
+          "settings": {
+            "title": "CoQ10",
+            "mg_count": "50 mg",
+            "text": "A vital coenzyme that helps energize heart cells and promote overall cardiovascular function."
+          }
+        },
+        {
+          "type": "ingredient",
+          "settings": {
+            "title": "Magnesium Glycinate",
+            "mg_count": "150 mg",
+            "text": "Highly absorbable form of magnesium to aid in blood pressure regulation, muscle function, and energy metabolism."
+          }
+        },
+        {
+          "type": "ingredient",
+          "settings": {
+            "title": "Hibiscus Extract",
+            "mg_count": "100 mg",
+            "text": "Known for its potential to naturally support healthy blood pressure levels and fluid balance."
+          }
+        },
+        {
+          "type": "ingredient",
+          "settings": {
+            "title": "Olive Leaf Extract",
+            "mg_count": "100 mg",
+            "text": "Contains powerful antioxidants like oleuropein that protect against oxidative stress and support vascular health."
+          }
+        },
+        {
+          "type": "ingredient",
+          "settings": {
+            "title": "Pomegranate Extract",
+            "mg_count": "50 mg",
+            "text": "Rich in polyphenols to combat free radicals and assist in maintaining healthy blood pressure and cholesterol levels."
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

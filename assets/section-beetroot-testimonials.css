@@ -1,0 +1,117 @@
+.beetroot-testimonials {
+    max-width: 1085px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+}
+
+.beetroot-testimonials__beetroot-testimonial:nth-child(2n - 1) {
+    justify-self: start;
+}
+
+.beetroot-testimonials__beetroot-testimonial:nth-child(2n) {
+    justify-self: end;
+}
+
+.beetroot-testimonials__beetroot-testimonial {
+    max-width: 460px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    align-items: center;
+}
+
+.beetroot-testimonial__stars {
+    width: 96px;
+    height: 18px;
+}
+
+.beetroot-testimonial__stars svg {
+    width: 100%;
+    height: 100%;
+}
+
+.beetroot-testimonial__body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.beetroot-testimonial__title {
+    font-family: Raleway, sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 28px;
+    letter-spacing: 0;
+    text-align: center;
+    margin: 0;
+    font-variant-numeric: lining-nums proportional-nums;
+
+    color: #000000;
+}
+
+.beetroot-testimonial__text {
+    font-family: Raleway;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 160%;
+    letter-spacing: 0;
+    text-align: center;
+    font-variant-numeric: lining-nums proportional-nums;
+
+    color: rgba(0, 0, 0, 0.7);
+}
+
+.beetroot-testimonial__text p {
+    margin: 0;
+}
+
+.beetroot-testimonial__footer {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.beetroot-testimonial__author {
+    font-family: Raleway;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: 0;
+    text-align: center;
+    margin: 0;
+    font-variant-numeric: lining-nums proportional-nums;
+
+    color: #000000;
+}
+
+.beetroot-testimonial__verified-buyer {
+    display: flex;
+    gap: 3px;
+    font-family: Raleway;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 24px;
+    letter-spacing: 0;
+    font-variant-numeric: lining-nums proportional-nums;
+
+    color: rgba(0, 0, 0, 0.7);
+}
+
+@media screen and (max-width: 768px) {
+    .beetroot-testimonials {
+        grid-template-columns: 1fr;
+        justify-items: center;
+    }
+
+    .beetroot-testimonials__beetroot-testimonial:nth-child(2n - 1) {
+        justify-self: unset;
+    }
+
+    .beetroot-testimonials__beetroot-testimonial:nth-child(2n) {
+        justify-self: unset;
+    }
+}

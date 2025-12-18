@@ -1,0 +1,130 @@
+{{ 'section-account-tabs.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  #section-{{section.id}} {
+    padding-top: {{ section.settings.padding_top_mobile }}px;
+    padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+  }
+
+  @media screen and (min-width: 767px) {
+    #section-{{section.id}} {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+{%- if customer -%}
+  <div id="section-{{section.id}}" class="account-tabs__content">
+    <div class="account-tabs__wrapper">
+      {% if section.settings.title != blank %}
+        <h1 class="account-tabs__title">
+          {{ section.settings.title }}
+        </h1>
+      {% endif %}
+      <ul class="account-tabs__list">
+        {% for block in section.blocks %}
+          {% if block.settings.title != blank and block.settings.link != blank %}
+            <li class="account-tabs__item{% if block.settings.link == request.path %} account-tabs__item--active{% endif %}">
+              <a
+                class="account-tabs__link"
+                href="{% if block.settings.link == request.path %}javasctipt:void(0){% else %}{{ block.settings.link }}{% endif %}"
+                {% if block.settings.target_blank != false %}target="_blank"{% endif %}
+              >
+                {{ block.settings.title }}
+              </a>
+            </li>
+          {% endif %}
+        {% endfor %}
+      </ul>
+    </div>
+  </div>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Account tabs",
+  "class": "section__account-tabs",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "My account"
+    },
+    {
+      "type": "header",
+      "content": "Layout settings"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "unit": "px",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "unit": "px",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Padding top mobile",
+      "unit": "px",
+      "min": 1,
+      "max": 100,
+      "step": 1,
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Padding bottom mobile",
+      "unit": "px",
+      "min": 1,
+      "max": 100,
+      "step": 1,
+      "default": 20
+    }
+  ],
+  "blocks": [
+    {
+      "type": "account_tab",
+      "name": "Account tab",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Tab title"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Tab link"
+        },
+        {
+          "type": "checkbox",
+          "id": "target_blank",
+          "label": "Open in new window",
+          "default": false
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Account tabs"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,121 @@
+.rich-text-v2 .c-container {
+  max-width: 14440px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+.rich-text-v2-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  text-align: center;
+}
+
+.rich-text-v2-block.type-heading h2 {
+  font-weight: 600;
+  margin: 0;
+  font-size: 26px;
+  line-height: 130%;
+  letter-spacing: -0.8px;
+  color: #101828;
+  font-family: "DM Sans", sans-serif;
+}
+
+.rich-text-v2-block.type-contnet {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.rich-text-v2-block.type-contnet * {
+  margin: 0;
+  padding: 0;
+  font-weight: 400;
+  font-size: 15px;
+  line-height: 150%;
+  color: #394152;
+  letter-spacing: normal;
+}
+
+.rich-text-v2-block.type-image {
+  width: calc(100% + 40px);
+  margin-left: -20px;
+  position: relative;
+  max-width: initial;
+}
+
+.rich-text-v2-block.type-image img {
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.rich-text-v2-block.type-image::before {
+  content: "";
+  display: block;
+  padding-top: 57.4%;
+}
+
+.rich-text-v2-block.type-colored-content {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.rich-text-v2-block.type-colored-content * {
+  font-size: 18px;
+  line-height: 130%;
+  letter-spacing: -0.5px;
+  color: #005EB8;
+  font-family: "DM Sans", sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+@media screen and (min-width: 991px) {
+  .rich-text-v2-block.type-image {
+    width: 100%;
+    margin: 0 auto;
+    max-width: 788px;
+  }
+
+  .rich-text-v2-block.type-heading h2 {
+    font-size: 40px;
+    line-height: 120%;
+    letter-spacing: -1px;
+    max-width: 788px;
+    margin: 0 auto;
+  }
+
+  .rich-text-v2-block.type-contnet {
+    max-width: 776px;
+    margin: 0 auto;
+    gap: 0;
+  }
+
+  .rich-text-v2-wrapper {
+    gap: 20px;
+  }
+
+  .rich-text-v2-block.type-colored-content {
+    max-width: 788px;
+    margin: 0 auto;
+    gap: 20px;
+  }
+
+  .rich-text-v2-block.type-contnet * {
+    font-size: 16px;
+    line-height: 160%;
+    letter-spacing: -.16px;
+  }
+}
+
+@media screen and (min-width: 1480px) {
+  .rich-text-v2 {
+    background-position-y: top !important;
+  }
+}

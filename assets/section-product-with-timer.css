@@ -1,0 +1,583 @@
+.landing-product-with-timer-alternative .product-with-timer-information__price-badge {
+    position: absolute;
+    top: -12px;
+    padding: 2px 6px;
+    border-radius: 6px;
+    background: #FFF;
+    color: #FF6A13;
+    transition: all .3s;
+    font-variant-numeric: lining-nums proportional-nums;
+    font-family: Raleway;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 20px;
+    text-transform: uppercase;
+    left: 48px
+}
+
+.product-with-timer-information__selling-plan-wrapper {
+    justify-content: space-between;
+    display: flex;
+    position: relative;
+    border-radius: 20px;
+    background: rgba(255, 255, 255, 0.50);
+    padding: 14px;
+    align-items: center;
+    transition: all .3s;
+}
+
+.product-with-timer-information__plan-label:hover {
+    cursor: pointer;
+}
+
+.product-with-timer-information__selling-plan-wrapper.active {
+    background: #fff;
+}
+
+.product-with-timer-information__plan-name {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 6px;
+    width: 55%;
+    padding-left: 14px;
+}
+
+.product-with-timer-block__title {
+    text-align: center;
+    font-family: Raleway;
+    font-size: 40px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 48px;
+    color: #000;
+    margin-top: 0;
+    margin-bottom: 18px;
+}
+
+#landing-product-with-timer-alternative .product-with-timer-information__reviews-text {
+    color: #000;
+    font-variant-numeric: lining-nums proportional-nums;
+    font-family: Raleway;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    margin-top: 4px;
+}
+
+.product-with-timer-information__reviews-icon {
+    display: contents;
+}
+
+.product-with-timer-information__reviews {
+    display: flex;
+    top: -27px;
+    left: 0;
+    position: absolute;
+    flex-direction: column;
+    padding: 8px;
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.70);
+    backdrop-filter: blur(10px);
+    z-index: 2;
+    align-items: center;
+}
+
+.product-with-timer-information__feature-content h4 {
+    color: #000;
+    font-family: Raleway;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    margin-top: 0;
+    margin-bottom: 4px;
+}
+
+.product-with-timer-information__feature-content p {
+    color: rgba(0, 0, 0, 0.70);
+    font-variant-numeric: lining-nums proportional-nums;
+    font-family: Raleway;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    margin-bottom: 10px;
+    margin-top: 0;
+}
+
+.product-with-timer-information__feature-content p:last-child {
+    margin-bottom: 0;
+}
+
+#landing-product-with-timer-alternative .product-with-timer-information__buy-buttons {
+    font-family: Raleway;
+}
+
+.product-with-timer-information__description {
+    color: rgba(0, 0, 0, 0.70);
+    font-variant-numeric: lining-nums proportional-nums;
+    font-family: Raleway;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+}
+
+.product-with-timer-information__description p {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.product-with-timer-information__description p:last-child {
+    margin-bottom: 8px;
+}
+
+.shopify-payment-button__button--unbranded {
+    opacity: 0;
+}
+
+.product-with-timer-information__plan-label {
+    display: flex;
+    width: 100%;
+}
+
+.landing-product-with-timer__title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.landing-product-with-timer__offer {
+    border-radius: 8px;
+    background: rgba(255, 106, 19, 0.20);
+    display: flex;
+    padding: 6px 12px;
+    justify-content: center;
+    align-items: center;
+    color: #FF6A13;
+    font-variant-numeric: lining-nums proportional-nums;
+    font-family: Raleway;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+}
+
+.product-with-timer-informatio__button {
+    width: 100%;
+    display: flex;
+    border-radius: 100px;
+    background: #FF6A13;
+    padding: 17px 0;
+    justify-content: center;
+    align-items: center;
+    color: #FFF;
+    font-variant-numeric: lining-nums proportional-nums;
+    font-family: Raleway;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 28px;
+    text-transform: uppercase;
+    text-decoration: none;
+    margin-top: 24px;
+    transition: all .3s;
+}
+
+.product-with-timer-informatio__button:hover {
+    background: #cf4c00;
+}
+
+.landing-product-with-timer-alternative .product-with-timer-information__price {
+    margin-top: 0;
+    border: 0;
+    justify-content: end;
+    gap: 6px;
+    width: fit-content;
+    padding-top: 0;
+    width: 45%;
+    row-gap: 0;
+}
+
+.product-with-timer-information__offer {
+    display: flex;
+    gap: 12px;
+    width: 100%;
+    margin-top: 40px;
+}
+
+.offer__text {
+    color: #000;
+    font-family: Raleway;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+}
+
+.offer__timer {
+    color: #FF6A13;
+    font-variant-numeric: lining-nums proportional-nums;
+    font-family: Raleway;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px;
+}
+
+.landing-product-with-timer__container-wrapper {
+    max-width: 1100px;
+}
+
+.product-with-timer-form .shopify-payment-button__button>div {
+    opacity: 0 !important;
+}
+
+.landing-product-with-timer-alternative .product-with-timer-form__input--pill {
+    border: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding-top: 40px;
+    margin: 0;
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.product-with-timer-information__radio {
+    margin: 0;
+    width: 0;
+    opacity: 0;
+
+}
+
+.product-with-timer-information__selling-plan-wrapper .radio-icon__checked {
+    display: none;
+}
+
+.product-with-timer-information__selling-plan-wrapper.active .radio-icon__checked {
+    display: block;
+}
+
+.product-with-timer-information__selling-plan-wrapper.active .radio-icon__default {
+    display: none;
+    margin-top: 5px;
+}
+
+.product-with-timer-information__selling-plan-wrapper.active .product-with-timer-information__price-badge {
+    background: #FFE1D0;
+}
+
+.product-with-timer-information__selling-plan-wrapper.active .product-with-timer-information__price-regular {
+    color: #FF6A13;
+}
+
+.plan-name__heading {
+    color: #000;
+    font-family: Raleway;
+    font-variant-numeric: lining-nums proportional-nums;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 28px;
+    text-transform: capitalize;
+}
+
+.plan-name__subheading {
+    color: rgba(0, 0, 0, 0.30);
+    font-variant-numeric: lining-nums proportional-nums;
+    font-family: Raleway;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px;
+    letter-spacing: 0;
+}
+
+.landing-product-with-timer-alternative .product-with-timer-information__price-regular {
+    font-variant-numeric: lining-nums proportional-nums;
+    font-family: Raleway;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 32px;
+    color: #000;
+    transition: color .3s;
+}
+
+.landing-product-with-timer-alternative .product-with-timer-information__price-compare {
+    color: rgba(0, 0, 0, 0.30);
+    flex: none;
+    font-variant-numeric: lining-nums proportional-nums;
+    font-family: Raleway;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    text-decoration-line: none;
+    text-decoration-line: line-through;
+    text-decoration-thickness: 1px;
+    position: relative;
+}
+
+
+.landing-product-with-timer-alternative .product-with-timer-information__price-text {
+    justify-content: end;
+    color: #000;
+    font-variant-numeric: lining-nums proportional-nums;
+    font-family: Raleway;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+}
+
+.product-with-timer-information__advantages-wrapper {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.product-with-timer-information__advantages-item {
+    display: flex;
+    align-items: center;
+    gap: 6px
+}
+
+.landing-product-with-timer-alternative .landing-product-with-timer__container {
+    display: flex;
+    align-items: center;
+    margin-top: 60px;
+    justify-content: space-between;
+}
+
+.landing-product-with-timer-alternative .landing-product-with-timer__item {
+    height: fit-content;
+    max-width: calc(50% - 47px);
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.landing-product-with-timer-alternative .advantages-item__label {
+    color: rgba(0, 0, 0, 0.70);
+    font-variant-numeric: lining-nums proportional-nums;
+    font-family: Raleway;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 20px;
+    letter-spacing: 0;
+}
+
+.landing-product-with-timer__image {
+    max-width: 100%;
+    height: auto;
+}
+
+.landing-product-with-timer-alternative .landing-product-with-timer__decor {
+    position: absolute;
+    left: 0;
+    bottom: 370px;
+}
+
+.landing-product-with-timer-alternative .product-with-timer-information__price-text {
+    align-items: start;
+    height: 100%;
+}
+
+.product-with-timer-information__price-text--mobile {
+    display: none;
+}
+
+.product-with-timer-information__selling-plans-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    padding-top: 24px;
+}
+
+.landing-product-with-timer-alternative .radio-icon__default,
+.landing-product-with-timer-alternative .radio-icon__checked {
+    min-width: 24px;
+    margin-top: 5px;
+}
+
+.landing-product-with-timer-alternative .product-with-timer-information__selling-plan-wrapper .radio-icon__default circle {
+    transition: all .3s;
+}
+
+.landing-product-with-timer-alternative .product-with-timer-information__selling-plan-wrapper:hover .radio-icon__default circle {
+    stroke: #ff6a13;
+}
+
+.landing-product-with-timer__information .product-with-timer-information__feature {
+    margin-top: 32px;
+    display: flex;
+    gap: 26px;
+    align-items: center;
+}
+
+.product-with-timer-information__feature-icon {
+    min-width: 80px;
+    max-width: 80px;
+}
+
+.product-with-timer-information__feature-icon img {
+    height: auto;
+    width: 100%;
+    max-width: 100%;
+}
+
+.landing-product-with-timer__information .product-with-timer-information__feature+.product-with-timer-information__feature {
+    margin-top: 32px;
+}
+
+.landing-product-with-timer__image {
+    position: relative;
+}
+
+.product-with-timer-information__description--mobile {
+    display: none;
+}
+
+@media screen and (max-width: 850px) {
+    .product-with-timer-information__description--desktop {
+        display: none;
+    }
+
+    .product-with-timer-information__advantages-wrapper {
+        margin-top: 24px;
+    }
+
+    .product-with-timer-information__description--mobile {
+        display: block;
+    }
+
+    .landing-product-with-timer-alternative .advantages-item__label {
+        max-width: 58px;
+    }
+
+    .product-with-timer-information__description {
+        color: rgba(0, 0, 0, 0.70);
+        text-align: center;
+        font-variant-numeric: lining-nums proportional-nums;
+        font-family: Raleway;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 24px;
+        margin-bottom: 0;
+    }
+
+    .product-with-timer-information__feature-icon {
+        min-width: 60px;
+        max-width: 60px;
+    }
+
+    .landing-product-with-timer__container {
+        flex-direction: column;
+    }
+
+    .product-with-timer-information__feature-content h4 {
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 24px;
+        letter-spacing: 0;
+    }
+
+    .product-with-timer-information__feature-content p {
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 20px;
+        letter-spacing: 0;
+    }
+
+    .landing-product-with-timer__information .product-with-timer-information__feature {
+        gap: 14px;
+    }
+
+    .landing-product-with-timer-alternative .landing-product-with-timer__item {
+        max-width: 100%;
+    }
+
+    .landing-product-with-timer__image {
+        margin-bottom: 24px;
+    }
+
+    .product-with-timer-information__reviews {
+        top: auto;
+        bottom: 20px;
+    }
+
+    .product-with-timer-block__title {
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 32px;
+        margin-bottom: 12px;
+    }
+
+    .landing-product-with-timer-alternative .landing-product-with-timer__container {
+        margin-top: 50px;
+    }
+
+    .landing-product-with-timer__information .product-with-timer-information__feature {
+        margin-top: 24px;
+    }
+
+    .landing-product-with-timer__information .product-with-timer-information__feature+.product-with-timer-information__feature {
+        margin-top: 24px;
+    }
+
+    .landing-product-with-timer__decor {
+        display: none;
+    }
+
+    .product-with-timer-information__offer {
+        justify-content: center;
+        margin-top: 32px;
+    }
+
+    #landing-product-with-timer-alternative .product-with-timer-information__reviews-text {
+        letter-spacing: 0;
+    }
+
+    .product-with-timer-information__selling-plans-wrapper {
+        border-top: 1px solid rgba(0, 94, 184, 0.10);
+        padding-top: 30px;
+    }
+
+    .product-with-timer-information__price-text--mobile {
+        display: block;
+    }
+
+    .landing-product-with-timer-alternative .product-with-timer-information__plan-label {
+        width: 100%;
+    }
+
+    .landing-product-with-timer-alternative .product-with-timer-information__plan-name {
+        width: 100%;
+        justify-content: start;
+        margin-right: 24px;
+        gap: 0;
+    }
+
+    .landing-product-with-timer-alternative .product-with-timer-information__price .product-with-timer-information__price-text {
+        display: none;
+    }
+
+    .landing-product-with-timer-alternative .product-with-timer-information__plan-label .product-with-timer-information__price {
+        justify-content: start;
+        gap: 0;
+        flex-direction: column;
+    }
+}

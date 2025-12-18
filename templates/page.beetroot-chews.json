@@ -1,0 +1,912 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "announcement_line_NjwgE8": {
+      "type": "announcement-line",
+      "disabled": true,
+      "settings": {
+        "text": "FREE SHIPPING ON ALL ORDERS",
+        "background_color": "#FFFEED",
+        "text_color": "#000000"
+      }
+    },
+    "landing_product_alternative_xejNda": {
+      "type": "landing-product-alternative",
+      "blocks": {
+        "subtitle_LGzAg6": {
+          "type": "subtitle",
+          "settings": {
+            "subtitle": "A Delicious Way to"
+          }
+        },
+        "title_6H8HGR": {
+          "type": "title",
+          "settings": {
+            "text": "<p>Support Blood Pressure Naturally</p>",
+            "highlighted_color": "#005eb8",
+            "text_mobile": "<strong>Support Blood Pressure Naturally</strong>"
+          }
+        },
+        "reviews_PMt77M": {
+          "type": "reviews",
+          "settings": {
+            "stars_type": "yellow",
+            "text": "3,500+ Five Star Reviews"
+          }
+        },
+        "feature_z6BHRN": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/heart_1_121fb1c5-6487-4cd3-8961-1d4fb63a2753.svg",
+            "title": "Promotes Blood Flow",
+            "text": ""
+          }
+        },
+        "feature_BUNiay": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/human-brain_1_a2191433-0cef-4e8f-bfeb-62dcd74699d4.svg",
+            "title": "Boosts Nitric Oxide",
+            "text": ""
+          }
+        },
+        "feature_3EwyDH": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/health-podcast_1_1ca13e96-710b-4f5f-b17c-e4a0d663de97.svg",
+            "title": "Boosts Energy ",
+            "text": ""
+          }
+        },
+        "price_cahnQm": {
+          "type": "price",
+          "settings": {
+            "text": "$1,20 per serving [dot] 10 month supply",
+            "name_plan_display": "Subscribe & Save",
+            "name_plan": "Subscribe & Save",
+            "information": "Free Shipping\nPause, Skip, Cancel at Any Time \n90-Day Money-Back Guarantee",
+            "enable_one_purchase": true,
+            "heading": "One-time Purchase",
+            "use_quantity_box": true,
+            "add_quantity_styles": false,
+            "background_color": "#fff",
+            "primary_color": "#d9024d",
+            "badge_color": "#ffffff",
+            "badge_background": "#d9024d",
+            "shadow": false
+          }
+        },
+        "buy_buttons_UEGH88": {
+          "type": "buy_buttons",
+          "settings": {
+            "background_color": "#ff6a13",
+            "color": "#ffffff",
+            "bottom_text": "",
+            "benefits_text1": "Ships in 30 days",
+            "benefits_text2": "Free US Shipping",
+            "benefits_text3": "Cancel Anytime"
+          }
+        },
+        "advantages_list_Ch88hy": {
+          "type": "advantages_list",
+          "settings": {
+            "advantages_list": "shield-tick_1489816c-d5ec-4487-8536-ca7a6a30724c.svg;90-Day Money-Back Guarantee",
+            "advantages_list_one_time": "shield-tick_1489816c-d5ec-4487-8536-ca7a6a30724c.svg;90-Day Money-Back Guarantee"
+          }
+        },
+        "image_6xEbkd": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/beetroot_main_90173845-39b4-425e-8d5e-6c5dfe01706c.png"
+          }
+        },
+        "image_rCmRK4": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/beetroot_suplemental_facts_6b147b05-63f0-44c1-9a72-9a1b8b809718.png"
+          }
+        },
+        "image_VyQdck": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/beetroot_secondary_4435f8be-1517-4f4c-b3bf-73a015b1fbfa.png"
+          }
+        },
+        "collapsible_row_YmFyPp": {
+          "type": "collapsible_row",
+          "settings": {
+            "question": "Health Benefits",
+            "answer": "<ul><li>Supports Healthy Blood Pressure *</li><li>Promotes Circulation & Blood Flow *</li><li>Aids Heart Health & Energy *</li><li>Helps Defend Against Oxidative Stress *</li><li>Encourages Arterial Health & Flexibility *</li><li>Aids Healthy Blood Sugar Balance *</li><li>Helps Maintain Healthy Cholesterol *</li><li>Provides Gentle, Non-Stimulant Energy *</li><li>Eases Mild Fluid Retention *</li><li>Addresses Common Magnesium Gaps *</li></ul><p><em>Individual Results May Vary</em></p>",
+            "default_list": false
+          }
+        },
+        "collapsible_row_3BJB7H": {
+          "type": "collapsible_row",
+          "settings": {
+            "question": "How To Use",
+            "answer": "<p>Simply enjoy <strong>2 chews a day</strong>, daily — either both at once or split throughout the day, whichever fits your routine. </p><p>Consistency is key, so make them part of your daily habit to support healthy blood pressure and overall heart wellness.</p>",
+            "default_list": false
+          }
+        },
+        "collapsible_row_j3wJJp": {
+          "type": "collapsible_row",
+          "settings": {
+            "question": "Product Features",
+            "answer": "<ul><li>Multi-Action Formula for Heart & Healthy Blood Pressure</li><li>Convenient, Great-Tasting Chewable Formula</li><li>Non-GMO, No Artificial Sweeteners or Fillers</li><li>Third-Party Tested for Purity and Quality</li></ul><p><em>Individual results may vary. These statements are not intended to diagnose, treat, cure, or prevent any disease.</em></p>",
+            "default_list": false
+          }
+        },
+        "collapsible_row_GDjUrU": {
+          "type": "collapsible_row",
+          "settings": {
+            "question": "Ingredients",
+            "answer": "<ul><li><strong>Organic Beet Root Extract (500 mg)<br/></strong>Naturally rich in dietary nitrates to help support healthy blood flow and circulation.<br/><br/></li><li><strong>Grape Seed Extract (150 mg)<br/></strong>Packed with proanthocyanidins to help defend blood vessels from oxidative stress and maintain healthy blood pressure.<br/><br/></li><li><strong>CoQ10 (50 mg)<br/></strong>A vital coenzyme that helps energize heart cells and support overall cardiovascular function.<br/><br/></li><li><strong>Magnesium Glycinate (150 mg)<br/></strong>Highly absorbable form of magnesium that supports healthy blood pressure, muscle function, and energy metabolism.<br/><br/></li><li><strong>Hibiscus Extract (100 mg)<br/></strong>Known for its potential to support healthy blood pressure levels and assist in fluid balance.<br/><br/></li><li><strong>Olive Leaf Extract (100 mg)<br/></strong>Provides antioxidants like oleuropein to help combat oxidative stress and support vascular health.<br/><br/></li><li><strong>Pomegranate Extract (50 mg)<br/></strong>Rich in polyphenols to assist in maintaining healthy blood pressure and cholesterol levels.</li></ul><p><em>Individual results may vary. These statements are not intended to diagnose, treat, cure, or prevent any disease.</em></p>",
+            "default_list": false
+          }
+        },
+        "collapsible_row_kT6mwn": {
+          "type": "collapsible_row",
+          "settings": {
+            "question": "No Artificial Anything",
+            "answer": "<ul><li>No Artificial Flavors</li><li>No Artificial Sweeteners</li><li>No Artificial Colors</li><li>No Synthetic Preservatives</li><li>Non-GMO Ingredients</li><li>No Synthetic Fillers or Binders</li></ul>",
+            "default_list": false
+          }
+        }
+      },
+      "block_order": [
+        "subtitle_LGzAg6",
+        "title_6H8HGR",
+        "reviews_PMt77M",
+        "feature_z6BHRN",
+        "feature_BUNiay",
+        "feature_3EwyDH",
+        "price_cahnQm",
+        "buy_buttons_UEGH88",
+        "advantages_list_Ch88hy",
+        "image_6xEbkd",
+        "image_rCmRK4",
+        "image_VyQdck",
+        "collapsible_row_YmFyPp",
+        "collapsible_row_3BJB7H",
+        "collapsible_row_j3wJJp",
+        "collapsible_row_GDjUrU",
+        "collapsible_row_kT6mwn"
+      ],
+      "custom_css": [
+        ".product-offer-v2-media__thumbs {margin-top: 8px;}"
+      ],
+      "settings": {
+        "style_type": "compact",
+        "use_gallery": true,
+        "gallery_view": "grid",
+        "is_show_pagination": false,
+        "is_show_pagination_fraction": false,
+        "gallery_full_width": true,
+        "background": "",
+        "primary_color": "#d9024d",
+        "background_icon": "",
+        "padding_top": 56,
+        "padding_bottom": 65,
+        "padding_top_mobile": 15,
+        "padding_bottom_mobile": 60,
+        "heading": "Only Natural Ungredients",
+        "sub_heading": "Lorem ipsum dolor sit amet consectetur. Gravida facilisi eleifend sit quam morbi risus id. Nisl massa donec tincidunt.",
+        "landing_product": "beet-root-chews",
+        "enable_style": true,
+        "additional_style_files": "",
+        "property_value": ""
+      }
+    },
+    "beetroot_trusted_icons_PQXrpD": {
+      "type": "beetroot-trusted-icons",
+      "blocks": {
+        "icon_text_8KHxg8": {
+          "type": "icon_text",
+          "settings": {
+            "image": "shopify://shop_images/sweet_1.svg",
+            "text": "<p>Sugar-Free</p>"
+          }
+        },
+        "icon_text_iEJz8f": {
+          "type": "icon_text",
+          "settings": {
+            "image": "shopify://shop_images/dna_1.svg",
+            "text": "<p>NO ARTIFICIAL </p><p>SWEETENERS</p>"
+          }
+        },
+        "icon_text_FVfxez": {
+          "type": "icon_text",
+          "settings": {
+            "image": "shopify://shop_images/flag_1.svg",
+            "text": "<p>Made in USA</p>"
+          }
+        }
+      },
+      "block_order": [
+        "icon_text_8KHxg8",
+        "icon_text_iEJz8f",
+        "icon_text_FVfxez"
+      ],
+      "settings": {
+        "title": "Trusted by 5,000+ People",
+        "title_size": "h3",
+        "text": "",
+        "background_color": "#f7fdf2"
+      }
+    },
+    "image_with_text_q7VGLq": {
+      "type": "image-with-text",
+      "blocks": {
+        "heading_Q7JP9t": {
+          "type": "heading",
+          "settings": {
+            "heading": "What Are Beet Root Chews?",
+            "heading_size": "h1"
+          }
+        },
+        "text_twJwE6": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Our Beet Root Chews combine nutrient-dense beets with powerful plant extracts—like <strong>Grape Seed, Hibiscus, and Olive Leaf—plus energizing CoQ10 and essential magnesium.</strong> Together, they support healthy blood pressure, circulation, and overall cardiovascular function in one convenient, delicious chew. *</p>",
+            "text_style": "subtitle"
+          }
+        },
+        "landing_cta_9Dktje": {
+          "type": "landing_cta",
+          "settings": {
+            "title": "Try it Risk-Free",
+            "url": "#shopify-section-template--17619544637494__landing_product_alternative_xejNda",
+            "primary_color": "#d9024d",
+            "usp_icon_1": "shopify://shop_images/shield-tick_1489816c-d5ec-4487-8536-ca7a6a30724c.svg",
+            "usp_text_1": "90-Day Money-Back Guarantee",
+            "usp_text_2": "",
+            "usp_text_3": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_Q7JP9t",
+        "text_twJwE6",
+        "landing_cta_9Dktje"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/Pngtree_beet_or_beets_beetroot_vegetable_14972212_1.png",
+        "image_fit": "contain",
+        "height": "medium",
+        "desktop_image_width": "medium",
+        "text_below_image": "<p>Brimming with natural nitrates, antioxidants, and key minerals, Beet Root Chews <strong>help boost nitric oxide levels, defend against oxidative stress, and maintain healthy energy</strong>—all without the hassle of pills or messy powders. It’s a simple, tasty way to nurture your cardiovascular wellness and feel your best every day. *<br/><br/>Individual Results May Vary</p>",
+        "text_image_style": "subtitle",
+        "layout": "text_first",
+        "desktop_content_position": "middle",
+        "desktop_content_alignment": "left",
+        "content_layout": "no-overlap",
+        "section_color_scheme": "scheme-8460acc8-563c-4380-bb2a-5e9fd4b74657",
+        "color_scheme": "scheme-8460acc8-563c-4380-bb2a-5e9fd4b74657",
+        "background": "",
+        "image_behavior": "none",
+        "mobile_content_alignment": "left",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "is_heading_hidden": false,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "beetroot_image_benefits_list_gkkKVH": {
+      "type": "beetroot-image-benefits-list",
+      "blocks": {
+        "benefit_ftUtR6": {
+          "type": "benefit",
+          "settings": {
+            "text": "Supports Healthy Blood Pressure *"
+          }
+        },
+        "benefit_n4KG6h": {
+          "type": "benefit",
+          "settings": {
+            "text": "Promotes Circulation & Blood Flow *"
+          }
+        },
+        "benefit_dba6q9": {
+          "type": "benefit",
+          "settings": {
+            "text": "Provides Natural, Sustained Energy *"
+          }
+        },
+        "benefit_dyGXtD": {
+          "type": "benefit",
+          "settings": {
+            "text": "Eases Mild Fluid Retention *"
+          }
+        },
+        "benefit_HAXXzj": {
+          "type": "benefit",
+          "settings": {
+            "text": "Defends Against Oxidative Stress *"
+          }
+        },
+        "benefit_f4dCyj": {
+          "type": "benefit",
+          "settings": {
+            "text": "Supports Overall Heart Vitality *"
+          }
+        }
+      },
+      "block_order": [
+        "benefit_ftUtR6",
+        "benefit_n4KG6h",
+        "benefit_dba6q9",
+        "benefit_dyGXtD",
+        "benefit_HAXXzj",
+        "benefit_f4dCyj"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/6864ec4deddeb7aff1d9204e4aea58d1_042d7228-26d1-48f0-9086-e1f3d92f5827.gif",
+        "image_benefit": "shopify://shop_images/check_1_1_2d76f396-eb5b-492e-b09a-b071fd304f69.svg",
+        "title": "Folqs Beetroot Chews Health Benefits",
+        "text": "<p>At Folqs, we go beyond ordinary beet products. Our Beet Root Chews combine organic beet root with a complementary blend of Grape Seed Extract, Hibiscus, and Olive Leaf—chosen to help maintain healthy blood pressure. We also fortify our formula with CoQ10 and Magnesium Glycinate, offering nitric oxide support plus heart-energizing nutrients your body can rely on every day.</p>",
+        "background_color": "#f7fdf2"
+      }
+    },
+    "beetroot_ingredients_ptDj43": {
+      "type": "beetroot-ingredients",
+      "blocks": {
+        "ingredient_Tf4HwE": {
+          "type": "ingredient",
+          "settings": {
+            "image": "shopify://shop_images/3526d37e1cac1bd678f575fdde01bb03.png",
+            "title": "Organic Beet Root Extract",
+            "mg_count": "500 mg",
+            "text": "Naturally rich in nitrates that convert to nitric oxide, supporting healthy circulation and natural energy levels."
+          }
+        },
+        "ingredient_CgAm9W": {
+          "type": "ingredient",
+          "settings": {
+            "image": "shopify://shop_images/eb02e97d033f6e9b35e88006bdad2343.png",
+            "title": "Grape Seed Extract",
+            "mg_count": "150 mg",
+            "text": "Packed with antioxidants like proanthocyanidins to defend arteries from oxidative stress and help maintain healthy blood pressure within the normal range."
+          }
+        },
+        "ingredient_LBy3zf": {
+          "type": "ingredient",
+          "settings": {
+            "image": "shopify://shop_images/84b26c8eed9034df909d49d7ecae1ec7.png",
+            "title": "CoQ10",
+            "mg_count": "50 mg",
+            "text": "An essential coenzyme that supports energy production in heart cells, promoting daily vitality and efficient cardiovascular function."
+          }
+        },
+        "ingredient_qjUpFF": {
+          "type": "ingredient",
+          "settings": {
+            "image": "shopify://shop_images/Frame_1982248335_99ef78cb-ac30-4656-9493-f0e0e42564a7.png",
+            "title": "Magnesium Glycinate",
+            "mg_count": "150 mg",
+            "text": "A highly absorbable form of magnesium that helps maintain blood pressure already within the normal range, supports relaxed blood vessels, and promotes overall cardiovascular function."
+          }
+        },
+        "ingredient_7YJHtV": {
+          "type": "ingredient",
+          "settings": {
+            "image": "shopify://shop_images/5c0c8e4ac8eb96eeae5cad12f34a9326.png",
+            "title": "Hibiscus Extract",
+            "mg_count": "100 mg",
+            "text": "Traditionally used to support normal blood pressure levels and fluid balance for overall cardiovascular wellness."
+          }
+        },
+        "ingredient_e9Q7Kp": {
+          "type": "ingredient",
+          "settings": {
+            "image": "shopify://shop_images/bcbcf3dcb601d560262a9e2138bcd4e4.png",
+            "title": "Olive Leaf Extract",
+            "mg_count": "100 mg",
+            "text": "Rich in oleuropein, which helps fight free radicals and encourages arterial flexibility, promoting healthy circulation."
+          }
+        },
+        "ingredient_79fcRb": {
+          "type": "ingredient",
+          "settings": {
+            "image": "shopify://shop_images/e541bc7b31eefd8a8e49a41c4b32cba0.png",
+            "title": "Pomegranate Extract",
+            "mg_count": "50 mg",
+            "text": "Contains potent polyphenols that assist in maintaining healthy cholesterol levels already within the normal range and overall arterial wellness."
+          }
+        }
+      },
+      "block_order": [
+        "ingredient_Tf4HwE",
+        "ingredient_CgAm9W",
+        "ingredient_LBy3zf",
+        "ingredient_qjUpFF",
+        "ingredient_7YJHtV",
+        "ingredient_e9Q7Kp",
+        "ingredient_79fcRb"
+      ],
+      "settings": {
+        "title": "Clinically Studied & Formulated Ingredients",
+        "text": "Beyond Basic Beet Formulas — This Advanced Blend Covers All Your Heart Needs"
+      }
+    },
+    "benefits_marquee_GCgm6a": {
+      "type": "benefits-marquee",
+      "blocks": {
+        "text_label_FWy4Na": {
+          "type": "text_label",
+          "settings": {
+            "text": "No Artificial Flavors"
+          }
+        },
+        "text_label_WCTLkr": {
+          "type": "text_label",
+          "settings": {
+            "text": "No Artificial Sweeteners"
+          }
+        },
+        "text_label_i8z9WW": {
+          "type": "text_label",
+          "settings": {
+            "text": "No Artificial Sweeteners"
+          }
+        },
+        "text_label_6fi3AT": {
+          "type": "text_label",
+          "settings": {
+            "text": "No Synthetic Preservatives"
+          }
+        },
+        "text_label_JzdFym": {
+          "type": "text_label",
+          "settings": {
+            "text": "Non-GMO Ingredients"
+          }
+        },
+        "text_label_3BqGjf": {
+          "type": "text_label",
+          "settings": {
+            "text": ""
+          }
+        },
+        "text_label_ngYww3": {
+          "type": "text_label",
+          "settings": {
+            "text": ""
+          }
+        }
+      },
+      "block_order": [
+        "text_label_FWy4Na",
+        "text_label_WCTLkr",
+        "text_label_i8z9WW",
+        "text_label_6fi3AT",
+        "text_label_JzdFym",
+        "text_label_3BqGjf",
+        "text_label_ngYww3"
+      ],
+      "settings": {
+        "background": "#FFFEED",
+        "color_text": "#000000",
+        "autoscroll": true,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "decor_label": ""
+      }
+    },
+    "beetroot_image_text_wK3HDL": {
+      "type": "beetroot-image-text",
+      "blocks": {
+        "title_pihrMf": {
+          "type": "title",
+          "settings": {
+            "title": "How Folqs Beet Root Chews Work"
+          }
+        },
+        "text_FTRMhG": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Imagine your cardiovascular system as a network of highways delivering nutrients and oxygen throughout your body. Over time, factors like stress, aging, and an unbalanced diet can narrow these “highways,” affecting blood flow and placing extra strain on the heart.</p>"
+          }
+        },
+        "accent_text_nhGkdH": {
+          "type": "accent_text",
+          "settings": {
+            "accent_text": "<p>Folqs Beet Root Chews may help keep these pathways open and flexible.</p>"
+          }
+        },
+        "text_DmEhgt": {
+          "type": "text",
+          "settings": {
+            "text": "<p><strong>Folqs Beet Root Chews deliver natural nitrates from beets to promote relaxed blood vessels and healthy circulation</strong>, plus antioxidants from Grape Seed, Hibiscus, Olive Leaf, and Pomegranate to help defend arteries against oxidative stress. Magnesium Glycinate and CoQ10 fuel energy production and help maintain blood pressure already within the normal range—all to encourage overall cardiovascular wellness in one delicious chew.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "title_pihrMf",
+        "text_FTRMhG",
+        "accent_text_nhGkdH",
+        "text_DmEhgt"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/body-image.png",
+        "background_color": "#F9F9F9",
+        "accent_color": "#d9024d"
+      }
+    },
+    "landing_button_7d4A3E": {
+      "type": "landing-button",
+      "blocks": {
+        "ups_8FTiNN": {
+          "type": "ups",
+          "settings": {
+            "icon": "shopify://shop_images/shield-tick_1489816c-d5ec-4487-8536-ca7a6a30724c.svg",
+            "title": "90-Day Money-Back Guarantee"
+          }
+        }
+      },
+      "block_order": [
+        "ups_8FTiNN"
+      ],
+      "settings": {
+        "title": "Try it Risk-Free",
+        "secondary_text": "",
+        "url": "#shopify-section-template--17619544637494__landing_product_alternative_xejNda",
+        "cta_background": "#ff6a13",
+        "cta_text_color": "#ffffff",
+        "section_color_scheme": "scheme-f6210bac-8961-4c2e-acd1-305603c846f8",
+        "padding_top": 0,
+        "padding_bottom": 60,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 20
+      }
+    },
+    "compare_tabel_PaQTiU": {
+      "type": "compare-tabel",
+      "blocks": {
+        "heading_rXhGkU": {
+          "type": "heading",
+          "settings": {
+            "title_store": "Folqs Beet Root Chews",
+            "image_store": "shopify://shop_images/blue_concept_2_bd21d940-0de2-49c0-837c-d4c42d4f712a.png",
+            "title_another": "Other Brands",
+            "image_another": "shopify://shop_images/Pouch-Mockup_1.png"
+          }
+        },
+        "row_aGTCHQ": {
+          "type": "row",
+          "settings": {
+            "row_title": "Comprehensive Formula",
+            "row_description": ""
+          }
+        },
+        "row_D7JNQd": {
+          "type": "row",
+          "settings": {
+            "row_title": "Full-Spectrum Ingredients",
+            "row_description": "Beet + Grape Seed + Hibiscus + Olive Leaf +\nPomegranade + CoQ10 + Magnesium"
+          }
+        },
+        "row_VMKBm4": {
+          "type": "row",
+          "settings": {
+            "row_title": "No Artificial Anything",
+            "row_description": ""
+          }
+        },
+        "row_Ldb8Ar": {
+          "type": "row",
+          "settings": {
+            "row_title": "Great Taste & Convenient Chews",
+            "row_description": ""
+          }
+        },
+        "row_KrN3nh": {
+          "type": "row",
+          "settings": {
+            "row_title": "Third-Party Tested",
+            "row_description": ""
+          }
+        },
+        "row_f3Yqmh": {
+          "type": "row",
+          "settings": {
+            "row_title": "Non-GMO & Clean Label",
+            "row_description": ""
+          }
+        },
+        "row_G73fBh": {
+          "type": "row",
+          "settings": {
+            "row_title": "Money-Back Guarantee",
+            "row_description": ""
+          }
+        },
+        "row_FhjPq7": {
+          "type": "row",
+          "settings": {
+            "row_title": "Supports Multiple Heart-Health Mechanisms",
+            "row_description": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_rXhGkU",
+        "row_aGTCHQ",
+        "row_D7JNQd",
+        "row_VMKBm4",
+        "row_Ldb8Ar",
+        "row_KrN3nh",
+        "row_f3Yqmh",
+        "row_G73fBh",
+        "row_FhjPq7"
+      ],
+      "settings": {
+        "padding_top": 100,
+        "padding_bottom": 80,
+        "padding_top_mobile": 60,
+        "padding_bottom_mobile": 40,
+        "title": "Best On The Market of Beet Root Chews",
+        "title_max_width": 370,
+        "icon": "shopify://shop_images/solar-power_1.svg",
+        "information": "Choose Folqs Beet Root Chews for a truly comprehensive, clean, and delicious way to support healthy blood pressure and overall heart wellness—no compromises."
+      }
+    },
+    "beetroot_testimonials_tpeDzL": {
+      "type": "beetroot-testimonials",
+      "blocks": {
+        "testimonial_Gi7yij": {
+          "type": "testimonial",
+          "settings": {
+            "title": "I've used CoQ10 for Years",
+            "text": "<p>I like that these chews are individually wrapped to stay fresh, and the taste reminds me of fruity candy. I’ve used CoQ10 for years, so I’m excited this combines Beet Root and other natural ingredients for added heart support. </p>",
+            "author": "Adam J.",
+            "is_verified": true
+          }
+        },
+        "testimonial_CPzhnY": {
+          "type": "testimonial",
+          "settings": {
+            "title": "Nitric Oxide Levels Suppot",
+            "text": "<p>I appreciate that these chews are formulated to support nitric oxide levels for better circulation and steady energy. They’re easy to take, have a pleasant taste, and fit nicely into my daily routine. I’m excited to keep using them as part of my overall wellness plan.</p>",
+            "author": "Veronica K.",
+            "is_verified": true
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_Gi7yij",
+        "testimonial_CPzhnY"
+      ],
+      "settings": {
+        "padding_top": 0,
+        "padding_bottom": 80,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 40
+      }
+    },
+    "beetroot_image_text_v2_wHB9EJ": {
+      "type": "beetroot-image-text-v2",
+      "blocks": {
+        "title_L4HMhJ": {
+          "type": "title",
+          "settings": {
+            "text": "How To Use"
+          }
+        },
+        "text_L9hbap": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Simply enjoy <strong>2 chews a day</strong>, daily — either both at once or split throughout the day, whichever fits your routine. </p><p>Consistency is key, so make them part of your daily habit to support healthy blood pressure and overall heart wellness.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "title_L4HMhJ",
+        "text_L9hbap"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/beetroot_secondary_4435f8be-1517-4f4c-b3bf-73a015b1fbfa.png",
+        "image_position": "right",
+        "background": "rgba(255, 235, 219, 0.5)",
+        "add_icon": true,
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 40
+      }
+    },
+    "landing_product_alternative_xejNsa": {
+      "type": "landing-product-alternative",
+      "blocks": {
+        "subtitle_LGzAg6": {
+          "type": "subtitle",
+          "settings": {
+            "subtitle": "A Delicious Way to"
+          }
+        },
+        "title_6H8HGR": {
+          "type": "title",
+          "settings": {
+            "text": "<p>Support Blood Pressure Naturally</p>",
+            "highlighted_color": "#005eb8",
+            "text_mobile": "<strong>Support Blood Pressure Naturally</strong>"
+          }
+        },
+        "reviews_PMt77M": {
+          "type": "reviews",
+          "settings": {
+            "stars_type": "yellow",
+            "text": "3,500+ Five Star Reviews"
+          }
+        },
+        "feature_z6BHRN": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/heart_1_121fb1c5-6487-4cd3-8961-1d4fb63a2753.svg",
+            "title": "Promotes Blood Flow",
+            "text": ""
+          }
+        },
+        "feature_BUNiay": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/human-brain_1_a2191433-0cef-4e8f-bfeb-62dcd74699d4.svg",
+            "title": "Boosts Nitric Oxide",
+            "text": ""
+          }
+        },
+        "feature_3EwyDH": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/health-podcast_1_1ca13e96-710b-4f5f-b17c-e4a0d663de97.svg",
+            "title": "Boosts Energy ",
+            "text": ""
+          }
+        },
+        "price_cahnQm": {
+          "type": "price",
+          "settings": {
+            "text": "$1,20 per serving [dot] 10 month supply",
+            "name_plan_display": "Subscribe & Save",
+            "name_plan": "Subscribe & Save",
+            "information": "Free Shipping\nPause, Skip, Cancel at Any Time \n90-Day Money-Back Guarantee",
+            "enable_one_purchase": true,
+            "heading": "One-time Purchase",
+            "use_quantity_box": true,
+            "add_quantity_styles": false,
+            "background_color": "#fff",
+            "primary_color": "#d9024d",
+            "badge_color": "#ffffff",
+            "badge_background": "#d9024d",
+            "shadow": false
+          }
+        },
+        "buy_buttons_UEGH88": {
+          "type": "buy_buttons",
+          "settings": {
+            "background_color": "#ff6a13",
+            "color": "#ffffff",
+            "bottom_text": "",
+            "benefits_text1": "Ships in 30 days",
+            "benefits_text2": "Free US Shipping",
+            "benefits_text3": "Cancel Anytime"
+          }
+        },
+        "advantages_list_Ch88hy": {
+          "type": "advantages_list",
+          "settings": {
+            "advantages_list": "shield-tick_1489816c-d5ec-4487-8536-ca7a6a30724c.svg;90-Day Money-Back Guarantee",
+            "advantages_list_one_time": "shield-tick_1489816c-d5ec-4487-8536-ca7a6a30724c.svg;90-Day Money-Back Guarantee"
+          }
+        }
+      },
+      "block_order": [
+        "subtitle_LGzAg6",
+        "title_6H8HGR",
+        "reviews_PMt77M",
+        "feature_z6BHRN",
+        "feature_BUNiay",
+        "feature_3EwyDH",
+        "price_cahnQm",
+        "buy_buttons_UEGH88",
+        "advantages_list_Ch88hy"
+      ],
+      "custom_css": [
+        ".product-offer-v2-media__thumbs {margin-top: 8px;}"
+      ],
+      "settings": {
+        "style_type": "default",
+        "use_gallery": false,
+        "gallery_view": "slider",
+        "is_show_pagination": false,
+        "is_show_pagination_fraction": false,
+        "gallery_full_width": true,
+        "background": "",
+        "primary_color": "#d9024d",
+        "background_icon": "",
+        "padding_top": 56,
+        "padding_bottom": 65,
+        "padding_top_mobile": 15,
+        "padding_bottom_mobile": 60,
+        "heading": "Only Natural Ungredients",
+        "sub_heading": "Lorem ipsum dolor sit amet consectetur. Gravida facilisi eleifend sit quam morbi risus id. Nisl massa donec tincidunt.",
+        "landing_product": "beet-root-chews",
+        "enable_style": true,
+        "additional_style_files": "",
+        "property_value": ""
+      }
+    },
+    "beetroot_trusted_icons_tUwGaX": {
+      "type": "beetroot-trusted-icons",
+      "blocks": {
+        "icon_text_XeMf9R": {
+          "type": "icon_text",
+          "settings": {
+            "image": "shopify://shop_images/ecology_1.svg",
+            "text": "<p>NON-GMO</p>"
+          }
+        },
+        "icon_text_Myr44C": {
+          "type": "icon_text",
+          "settings": {
+            "image": "shopify://shop_images/microscope_2.svg",
+            "text": "<p>THIRD-PARTY LAB TESTED</p>"
+          }
+        },
+        "icon_text_FjfAPP": {
+          "type": "icon_text",
+          "settings": {
+            "image": "shopify://shop_images/sweet_1_f8dfdd88-13db-4410-b835-fb33f136f1bc.svg",
+            "text": "<p>NO ARTIFICIAL SWEETENERS</p>"
+          }
+        }
+      },
+      "block_order": [
+        "icon_text_XeMf9R",
+        "icon_text_Myr44C",
+        "icon_text_FjfAPP"
+      ],
+      "settings": {
+        "title": "We’re committed to purity and potency",
+        "title_size": "h3",
+        "text": "<p>Our chews are non-GMO, third-party tested, and free from artificial flavors or sweeteners. What you get is a delicious, convenient chew designed to help keep your cardiovascular system resilient—so you can feel confident in your heart health with every bite.</p>",
+        "background_color": "#fffeed"
+      }
+    }
+  },
+  "order": [
+    "announcement_line_NjwgE8",
+    "landing_product_alternative_xejNda",
+    "beetroot_trusted_icons_PQXrpD",
+    "image_with_text_q7VGLq",
+    "main",
+    "beetroot_image_benefits_list_gkkKVH",
+    "beetroot_ingredients_ptDj43",
+    "benefits_marquee_GCgm6a",
+    "beetroot_image_text_wK3HDL",
+    "landing_button_7d4A3E",
+    "compare_tabel_PaQTiU",
+    "beetroot_testimonials_tpeDzL",
+    "beetroot_image_text_v2_wHB9EJ",
+    "landing_product_alternative_xejNsa",
+    "beetroot_trusted_icons_tUwGaX"
+  ]
+}

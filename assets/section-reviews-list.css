@@ -1,0 +1,207 @@
+.reviews-list__heading{
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.reviews-list__heading > p{
+    color: rgba(0, 0, 0, 0.70);
+    text-align: center;
+    font-family: Raleway;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    margin: 0;
+}
+
+.reviews-list__heading h2{
+    color: #000;
+    font-family: Raleway;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 60px; /* 125% */
+    margin: 0;
+    margin-bottom: 24px;
+}
+
+.reviews-list__heading{
+    color: rgba(0, 0, 0, 0.70);
+    text-align: center;
+    font-family: Raleway;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+.reviews-list__total{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #000;
+    font-family: Raleway;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    gap: 13px;
+    margin-bottom: 40px;
+}
+
+.reviews-list__total svg{
+    width: 130px;
+}
+
+.reviews-list__items{
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+}
+
+.reviews-list__wrapper{
+    max-width: 900px;
+}
+
+.reviews-list__items > li:not(:last-child){
+    margin-bottom: 47px;
+    padding-bottom: 47px;
+    border-bottom: 1px solid #D9D9D9;
+}
+
+.reviews-list__item > svg{
+    width: 97px;
+    margin-bottom: 14px;
+    display: block;
+}
+
+.reviews-list__items h3{
+    color: #000;
+    font-family: Raleway;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 28px; /* 155.556% */
+    margin: 0;
+}
+
+.reviews-list__items .items__content{
+    color: rgba(0, 0, 0, 0.70);
+    font-family: Raleway;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    margin-bottom: 14px;
+}
+
+.reviews-list__items .items__content > *:first-child{
+    margin-top: 0;
+}
+
+.reviews-list__items .items__content > *:last-child{
+    margin-bottom: 0;
+}
+
+.reviews-list__item > p{
+    color: #000;
+    font-family: Raleway;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 24px; /* 171.429% */
+    margin: 0;
+}
+
+.reviews-list__item > span{
+    color: rgba(0, 0, 0, 0.70);
+    font-family: Raleway;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px; /* 171.429% */
+    display: flex;
+    align-items: center;
+}
+
+.reviews-list__item > span svg{
+    width: 14px;
+}
+
+.reviews-list__button{
+    color: #FFF;
+    font-family: Raleway;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 32px;
+    padding: 14px;
+    width: 100%;
+    max-width: 565px;
+    border-radius: 100px;
+    background: #FF6A13;
+    margin: 0 auto;
+    margin-top: 80px;
+    margin-bottom: 18px;
+    text-decoration: none;
+    display: block;
+    text-align: center;
+}
+
+.reviews-list__icon-text{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #000;
+    font-feature-settings: 'liga' off, 'clig' off;
+    font-family: Raleway;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 142.857% */
+    gap: 4px;
+}
+
+.reviews-list__icon-text img{
+    width: 18px;
+    height: auto;
+}
+
+.reviews-list__bottom{
+    color: #000;
+    font-family: Raleway;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 20px; /* 166.667% */
+    margin: 0;
+    margin-top: 100px;
+}
+
+@media screen and (max-width: 750px) {
+    .reviews-list__total{
+        flex-direction: column;
+    }
+
+    .reviews-list__heading h2{
+        font-size: 32px;
+        line-height: 42px; /* 131.25% */
+        margin-bottom: 12px;
+    }
+    .reviews-list__items > li:not(:last-child){
+        margin-bottom: 24px;
+        padding-bottom: 24px;
+    }
+
+    .reviews-list__button{
+        margin-top: 24px;
+        font-size: 18px;
+    }
+
+    .reviews-list__bottom{
+        margin-top: 60px;
+    }
+}
+
+
+

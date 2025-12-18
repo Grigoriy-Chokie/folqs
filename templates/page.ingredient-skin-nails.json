@@ -1,0 +1,147 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "rich_text_F4VmRi": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_QATDPG": {
+          "type": "heading",
+          "settings": {
+            "heading": "Talk about your brand",
+            "heading_size": "h1"
+          }
+        },
+        "text_6JAJjM": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>"
+          }
+        },
+        "button_jexaPM": {
+          "type": "button",
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_QATDPG",
+        "text_6JAJjM",
+        "button_jexaPM"
+      ],
+      "disabled": true,
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "ingredient_content_hUfQb8": {
+      "type": "ingredient-content",
+      "settings": {
+        "list_of_badges": "///Joint Comfort, ///Mobility, ///Skin, ///Nails & Hair, ///Tissue Repair, ///Body Structural Intergity",
+        "button_label": "Learn more",
+        "main_text": "<p>This category is designed to support the structural elements of the body, including joints, skin, hair, and nails, through a potent blend of ingredients. Glucosamine and chondroitin are well-known for their joint support, aiding in cartilage health and joint lubrication. Bovine collagen provides the essential building blocks for skin and nail vitality, while MSM supports overall tissue repair and reduces inflammation. Boswellia extract adds an anti-inflammatory component, further supporting joint health and comfort.</p>",
+        "main_text_hidden": "<h2>What to Expect</h2><ul><li>Experience enhanced joint mobility and reduced discomfort, thanks to the synergistic effects of glucosamine and chondroitin.</li><li>Expect improvements in skin hydration, elasticity, and nail strength from the high-dose bovine collagen.</li><li>MSM and Boswellia extract work together to modulate inflammation, aiding in the relief of joint pain and supporting overall structural health.</li></ul>",
+        "show_page_title": true
+      }
+    },
+    "natural_ingredients_fJGhb3": {
+      "type": "natural-ingredients",
+      "blocks": {
+        "ingredient_jQFn4Y": {
+          "type": "ingredient",
+          "settings": {
+            "img": "shopify://shop_images/Rectangle_15_36.png",
+            "title": "Glucosamine Sulfate 2KCl",
+            "subtitle": "",
+            "info": "300 mg"
+          }
+        },
+        "ingredient_wdLMhn": {
+          "type": "ingredient",
+          "settings": {
+            "img": "shopify://shop_images/Rectangle_15_37.png",
+            "title": "Bovine Collagen",
+            "subtitle": "",
+            "info": "5000 mg"
+          }
+        },
+        "ingredient_zVA3MV": {
+          "type": "ingredient",
+          "settings": {
+            "img": "shopify://shop_images/Rectangle_15_38.png",
+            "title": "Chondroitin Sulfate",
+            "subtitle": "",
+            "info": "300 mg"
+          }
+        },
+        "ingredient_JGzimG": {
+          "type": "ingredient",
+          "settings": {
+            "img": "shopify://shop_images/Rectangle_15_39.png",
+            "title": "Methyl-sulfonylmethane",
+            "subtitle": "MSM",
+            "info": "200 mg"
+          }
+        },
+        "ingredient_bzfiMx": {
+          "type": "ingredient",
+          "settings": {
+            "img": "shopify://shop_images/Rectangle_15_40.png",
+            "title": "Boswellia Serrata Extract",
+            "subtitle": "std. to 65% boswellic acid",
+            "info": "25 mg"
+          }
+        }
+      },
+      "block_order": [
+        "ingredient_jQFn4Y",
+        "ingredient_wdLMhn",
+        "ingredient_zVA3MV",
+        "ingredient_JGzimG",
+        "ingredient_bzfiMx"
+      ],
+      "settings": {
+        "padding_top": 40,
+        "padding_bottom": 100,
+        "padding_top_mobile": 24,
+        "padding_bottom_mobile": 100,
+        "heading": "",
+        "sub_heading": "",
+        "name_button": "",
+        "url_button": "/"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "rich_text_F4VmRi",
+    "ingredient_content_hUfQb8",
+    "natural_ingredients_fJGhb3"
+  ]
+}

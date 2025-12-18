@@ -1,0 +1,77 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "account_tabs_qdrpjT": {
+      "type": "account-tabs",
+      "blocks": {
+        "account_tab_Axrgw8": {
+          "type": "account_tab",
+          "settings": {
+            "title": "Addresses",
+            "link": "/account/addresses",
+            "target_blank": false
+          }
+        },
+        "account_tab_7aJzaA": {
+          "type": "account_tab",
+          "settings": {
+            "title": "Order history",
+            "link": "/account",
+            "target_blank": false
+          }
+        },
+        "account_tab_P89WBb": {
+          "type": "account_tab",
+          "settings": {
+            "title": "My Subscription",
+            "link": "/tools/recurring/login",
+            "target_blank": false
+          }
+        },
+        "account_tab_QqfPAt": {
+          "type": "account_tab",
+          "settings": {
+            "title": "My Rewards",
+            "link": "https://folqs.refr.cc/join/default",
+            "target_blank": true
+          }
+        }
+      },
+      "block_order": [
+        "account_tab_Axrgw8",
+        "account_tab_7aJzaA",
+        "account_tab_P89WBb",
+        "account_tab_QqfPAt"
+      ],
+      "settings": {
+        "title": "My account",
+        "padding_top": 130,
+        "padding_bottom": 0,
+        "padding_top_mobile": 100,
+        "padding_bottom_mobile": 1
+      }
+    },
+    "main": {
+      "type": "main-account",
+      "settings": {
+        "button_label": "SHOP NOW",
+        "button_url": "/#product-information__reviews--2",
+        "are_only_orders_shown": true,
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    }
+  },
+  "order": [
+    "account_tabs_qdrpjT",
+    "main"
+  ]
+}

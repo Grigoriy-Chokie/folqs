@@ -1,0 +1,156 @@
+{% liquid
+  assign text = block.settings.text
+  assign icon = block.settings.icon
+  assign link = block.settings.link
+  assign text_color = block.settings.text_color
+  assign background_color = block.settings.background_color
+  assign border_color = block.settings.border_color
+  assign text_color_hover = block.settings.text_color_hover
+  assign background_color_hover = block.settings.background_color_hover
+  assign border_color_hover = block.settings.border_color_hover
+
+  assign tag = 'button'
+  if link != blank
+    assign tag = 'a'
+  endif
+  assign tag_attributes = 'type="button"'
+  if tag == 'button'
+    assign tag_attributes = 'href="' | append: link | append: '"'
+  endif
+%}
+
+
+{% stylesheet %}
+  .button-block {
+    cursor: pointer;
+    padding: 16px 42px;
+    width: 100%;
+    max-width: 270px;
+    outline: transparent;
+    box-shadow: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    background: var(--background-color);
+    border: 1px solid var(--border-color);
+    border-radius: 150px;
+
+    color: var(--text-color);
+    text-align: center;
+    font-family: var(--body-font-family);
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: -0.32px;
+    text-transform: uppercase;
+    transition: .3s ease-in-out;
+    text-decoration: none;
+  }
+
+  .button-block:hover {
+    background: var(--background-color-hover);
+    border: 1px solid var(--border-color-hover);
+    color: var(--text-color-hover);
+  }
+
+  .button-block img {
+    width: 6px;
+    height: auto;
+  }
+
+  .button-block__icon-container {
+    line-height: 0;
+    padding: 5px 7px;
+  }
+{% endstylesheet %}
+
+
+<{{ tag }} href={{ link }} {{ tag_attributes }} class="button-block"
+          style="--text-color: {{ text_color }};
+          --background-color: {{ background_color }};
+          --border-color: {{ border_color }};
+          --text-color-hover: {{ text_color_hover }};
+          --background-color-hover: {{ background_color_hover }};
+          --border-color-hover: {{ border_color_hover }};"
+        {{ block.shopify_attributes }}
+>
+  {{- text -}}
+  {%- if icon != blank -%}
+    <div class="button-block__icon-container">
+      {{ icon | image_url: width: 300 | image_tag }}
+    </div>
+  {%- endif -%}
+</{{ tag }}>
+
+{% schema %}
+{
+  "name": "Button",
+  "settings": [
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Text",
+      "default": "Shop Multivitamin"
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "Link"
+    },
+    {
+      "type": "image_picker",
+      "id": "icon",
+      "label": "Icon"
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color_background",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#005EB8"
+    },
+    {
+      "type": "color",
+      "id": "border_color",
+      "label": "Border color",
+      "default": "#005EB8"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#fff"
+    },
+        {
+      "type": "header",
+      "content": "Colors hover"
+    },
+    {
+      "type": "color_background",
+      "id": "background_color_hover",
+      "label": "Background color hover",
+      "default": "#004a91"
+    },
+    {
+      "type": "color",
+      "id": "border_color_hover",
+      "label": "Border color hover",
+      "default": "#004a91"
+    },
+    {
+      "type": "color",
+      "id": "text_color_hover",
+      "label": "Text color hover",
+      "default": "#fff"
+    }
+  ],
+  "presets": [
+    { "name": "Button" }
+  ]
+}
+{% endschema %}

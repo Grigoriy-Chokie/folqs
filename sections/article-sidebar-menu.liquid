@@ -1,0 +1,111 @@
+{%- if section.blocks.size > 0 -%}
+{{ 'section-article-sidebar-menu.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  body:not(:has(.article-content)) #shopify-section-{{ section.id }} {
+    display: none;
+  }
+  #shopify-section-{{ section.id }} {
+      position: sticky;
+      top: 54px;
+      z-index: 10;
+  }
+  @media (max-width: 750px) {
+    #shopify-section-{{ section.id }} {
+      padding: 0 8px;
+    }
+  }
+{%- endstyle -%}
+
+{%- assign title = 'sections.article_sidebar_menu.title' | t -%}
+<div class="article-sidebar-menu-wrapper">
+  <sidebar-anchors class="article-sidebar-menu" {% if section.settings.selector_to_hide != blank %}data-selector-to-hide="{{ section.settings.selector_to_hide }}"{% endif %}>
+    <p class="article-sidebar-menu__title">{{ section.settings.title | default: title }}</p>
+    <div class="article-sidebar-menu__anchors-list">
+      {%- for block in section.blocks -%}
+        {%- unless block.settings.title == blank -%}
+          <a href="#{{ block.settings.section_id }}" data-anchor-link class="article-sidebar-menu__anchor-link">
+            {{ block.settings.title }}
+          </a>
+        {%- endunless -%}
+      {%- endfor -%}
+    </div>
+  </sidebar-anchors>
+</div>
+
+<div class="article-menu-mobile">
+  <div class="article-menu-mobile__opener">
+    {{ section.settings.title | default: title }}
+    {%- render 'icon-chevron' -%}
+    <input type="radio" data-article-menu-open name="article_menu_mobile">
+  </div>
+  <div class="article-menu-mobile__background-layout">
+    <input type="radio" data-article-menu-close name="article_menu_mobile" checked>
+  </div>
+  <sidebar-anchors class="article-menu-mobile__menu">
+    <div class="article-menu-mobile__heading">
+      {{ section.settings.title | default: title }}
+      <span class="article-menu-mobile__close">
+        <input type="radio" data-article-menu-close name="article_menu_mobile">
+        {%- render 'icon-close' -%}
+        </span>
+    </div>
+    <div class="article-menu-mobile__list">
+      {%- for block in section.blocks -%}
+        {%- unless block.settings.title == blank -%}
+          <a href="#{{ block.settings.section_id }}" data-anchor-link class="article-menu-mobile__link">
+            {{ block.settings.title }}
+          </a>
+        {%- endunless -%}
+      {%- endfor -%}
+    </div>
+  </sidebar-anchors>
+</div>
+{%- endif -%}
+{% schema %}
+{
+  "name": "Article sidebar menu",
+  "tag": "section",
+  "limit": 1,
+  "class": "page-width",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Table of Contents"
+    },
+    {
+      "type": "text",
+      "id": "selector_to_hide",
+      "label": "Selector to hide menu",
+      "default": "footer"
+    },
+  ],
+  "blocks": [
+    {
+      "name": "Anchor link",
+      "type": "anchor_link",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Section title"
+        },
+        {
+          "type": "text",
+          "id": "section_id",
+          "label": "Target section id",
+          "default": "content-1"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Article sidebar menu"
+    }
+  ]
+}
+{% endschema %}

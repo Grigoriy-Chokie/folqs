@@ -1,0 +1,79 @@
+{% comment %}
+  Renders a header drawer menu for mobile and desktop.
+
+  Usage:
+  {% render 'header-drawer' %}
+{% endcomment %}
+
+<header-drawer data-breakpoint="{% if section.settings.menu_type_desktop == 'drawer' %}desktop{% else %}tablet{% endif %}" class="is-loading">
+  <details id="Details-menu-drawer-container" class="menu-drawer-container">
+    <summary
+      class="header__icon header__icon--menu header__icon--summary link focus-inset"
+      aria-label="{{ 'sections.header.menu' | t }}"
+    >
+      <span class = "header__icon-wrapper ">
+            {% render 'icon-hamburger' %}
+      </span>
+    </summary>
+      <div id="menu-drawer" class="drawer-menu__drawer">
+          <div class="drawer-menu__header">
+              <a href="/" class="drawer-menu__logo-link">
+                  {%- render "icon-logo" -%}
+              </a>
+              <div data-drawer-close class="drawer-menu__close" style="max-width: 20px">
+                  {%- render "icon-close" -%}
+              </div>
+          </div>
+          <div class="drawer-menu__main">
+              {% for block in section.blocks %}
+                  {% if block.type == "drawer-menu" %}
+                      <ul class="drawer-menu__main-menu">
+                          {% for link in block.settings.menu.links %}
+                              <li class="drawer-menu__main-menu-item {% if link.active %}drawer-menu__main-menu-item--active{% endif %}">
+                                  <a {% if link.url contains "#" %}data-drawer-close {% endif %} class="drawer-menu__main-menu-link" href="{{ link.url }}">{{ link.title }}</a>
+                              </li>
+                          {% endfor %}
+                      </ul>
+                  {% elsif block.type == "drawer-menu-secondary" %}
+                      <ul class="drawer-menu__second-menu">
+                          {% for link in block.settings.menu.links %}
+                              <li class="drawer-menu__second-menu-item {% if link.active %}drawer-menu__second-menu-item--active{% endif %}">
+                                  <a class="drawer-menu__second-menu-link" href="{{ link.url }}">{{ link.title }}</a>
+                              </li>
+                          {% endfor %}
+                      </ul>
+                  {% endif %}
+              {% endfor %}
+          </div>
+          <div class="drawer-menu__footer">
+              <a href="/account" class="drawer-menu__link drawer-menu__link--account">
+                  <span class="button__icon">
+                    {% render 'icon-user' %}
+                  </span>
+                  {% unless customer.has_account %}
+                        {{ 'customer.login_page.title' | t }}
+                    {% else %}
+                        {{ 'customer.account.title' | t }}
+                  {% endunless %}
+              </a>
+              {% if section.settings.drawer_button_url != blank and section.settings.drawer_button_text != blank %}
+                  <a href="{{ section.settings.drawer_button_url | replace: '/', ''  }}" class="drawer-menu__link" data-drawer-close>
+                      {{ section.settings.drawer_button_text }}
+                      <span class="button__icon button__icon--right">
+                    {%- render "icon-arrow-right" -%}
+                  </span>
+                  </a>
+              {% endif %}
+          </div>
+
+          <div class="drawer-menu__ripple">
+              {% for i in (1..6) %}
+                  <div class="drawer-menu__ripple-item" style="--item-index: {{ i | plus: 1.0 | divided_by: 2 }}"></div>
+              {% endfor %}
+          </div>
+      </div>
+  </details>
+</header-drawer>
+
+
+

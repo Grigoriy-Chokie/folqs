@@ -1,0 +1,801 @@
+{% liquid
+  assign table_of_contents_block = blank
+  for block in section.blocks
+    if block.type == 'table_of_contents'
+      assign table_of_contents_block = block
+    endif
+  endfor
+%}
+<div class="advertorial-heading">
+  <div class="advertorial-container">
+    <div class="advertorial--blocks-wrapper">
+      <div class="advertorial-heading--heading">
+        {% if section.settings.enable_breadcrumbs %}
+          <div class="advertorial-heading-breadcrumbs">
+            <a href="{{ routes.root_url }}" class="advertorial-heading-breadcrumbs-item">
+              {{ 'general.home' | t }}
+            </a>
+            <span class="advertorial-heading-breadcrumbs-separator"> > </span>
+            {% if section.settings.cstm_breadcrumbs_url != blank and section.settings.cstm_breadcrumbs_title != blank %}
+              <a href="{{ section.settings.cstm_breadcrumbs_url }}" class="advertorial-heading-breadcrumbs-item">
+                {{ section.settings.cstm_breadcrumbs_title }}
+              </a>
+              <span class="advertorial-heading-breadcrumbs-separator"> > </span>
+            {% endif %}
+            <span class="advertorial-heading-breadcrumbs-item">
+              {{ page.title }}
+            </span>
+          </div>
+        {% endif %}
+        {% if section.settings.title %}
+          <h1 class="advertorial-heading-title">
+            {{ section.settings.title }}
+          </h1>
+        {% endif %}
+        {% if section.settings.icon != blank or section.settings.name != blank or section.settings.read_time != blank %}
+          <div class="advertorial-heading-info">
+            {% if section.settings.icon != blank %}
+              {{ section.settings.icon | image_url: width: 36 | image_tag: class: 'advertorial-info-icon' }}
+            {% endif %}
+            {% if section.settings.name != blank %}
+              <span class="advertorial-info-name">{{ section.settings.name }}</span>
+            {% endif %}
+            {% if section.settings.read_time != blank %}
+              <span class="advertorial-info-read-time">{{ section.settings.read_time }}</span>
+            {% endif %}
+          </div>
+        {% endif %}
+        <div class="advertorial-heading-share-blocks">
+          <a
+            {% if section.settings.share_on_facebook_link != blank %}
+              href="{{ section.settings.share_on_facebook_link }}"
+            {% else %}
+              href="https://www.facebook.com/sharer/sharer.php?u={{ shop.url }}{{ request.path }}"
+            {% endif %}
+            target="_blank"
+            rel="noopener"
+          >
+            {% render 'icon-facebook-colored' %}
+            {{- section.settings.share_on_facebook_count | default: '565' -}}
+          </a>
+
+          <a
+            {% if section.settings.share_on_whatsapp_link != blank %}
+              href="{{ section.settings.share_on_whatsapp_link }}"
+            {% else %}
+              href="https://api.whatsapp.com/send?text={{ shop.url }}{{ request.path }}"
+            {% endif %}
+            target="_blank"
+            rel="noopener"
+          >
+            {% render 'icon-whatsapp-colored' %}
+            {{- section.settings.share_on_whatsapp_count | default: '565' -}}
+          </a>
+
+          <a
+            {% if section.settings.share_on_x_link != blank %}
+              href="{{ section.settings.share_on_x_link }}"
+            {% else %}
+              href="https://twitter.com/intent/tweet?url={{ shop.url }}{{ request.path }}"
+            {% endif %}
+            target="_blank"
+            rel="noopener"
+          >
+            {% render 'icon-x-colored' %}
+            {{- section.settings.share_on_x_count | default: '123' -}}
+          </a>
+
+          <a
+            {% if section.settings.share_on_instagram_link != blank %}
+              href="{{ section.settings.share_on_instagram_link }}"
+            {% else %}
+              href="https://www.instagram.com/"
+            {% endif %}
+            target="_blank"
+            rel="noopener"
+          >
+            {% render 'icon-instagram-colored' %}
+            {{- section.settings.share_on_instagram_count | default: '456' -}}
+          </a>
+
+          <a
+            {% if section.settings.share_on_pinterest_link != blank %}
+              href="{{ section.settings.share_on_pinterest_link }}"
+            {% else %}
+              href="https://pinterest.com/pin/create/button/?url={{ shop.url }}{{ request.path }}"
+            {% endif %}
+            target="_blank"
+            rel="noopener"
+          >
+            {% render 'icon-pinterest-colored' %}
+            {{- section.settings.share_on_pinterest_count | default: '789' -}}
+          </a>
+        </div>
+      </div>
+      {% if section.blocks.size > 0 %}
+        <div class="advertorial-blocks">
+          {% for block in section.blocks %}
+            {% case block.type %}
+              {% when 'image' %}
+                {% if block.settings.image != blank %}
+                  <div class="advertorial-block-image{% if block.settings.full_width_mobile %} full-width--mobile{% endif %}" {{ block.shopify_attributes }}>
+                    <picture>
+                      <source
+                        srcset="{{ block.settings.image | image_url: width: block.settings.image.width }}"
+                        media="(min-width: 1024px)"
+                      >
+                      {% if block.settings.image_tablet != blank %}
+                        <source
+                          srcset="{{ block.settings.image_tablet | image_url: width: block.settings.image_tablet.width }}"
+                          media="(min-width: 768px)"
+                        >
+                      {% endif %}
+                      {% if block.settings.image_mobile != blank %}
+                        <source
+                          srcset="{{ block.settings.image_mobile | image_url: width: block.settings.image_mobile.width }}"
+                          media="(max-width: 767px)"
+                        >
+                      {% endif %}
+                      <img
+                        src="{{ block.settings.image | image_url: width: block.settings.image.width }}"
+                        alt="{{ block.settings.image.alt }}"
+                        width="{{ block.settings.image.width }}"
+                        height="{{ block.settings.image.height }}"
+                        loading="lazy"
+                      >
+                    </picture>
+                  </div>
+                {% endif %}
+
+              {% when 'text' %}
+                {% if block.settings.text != blank %}
+                  {% assign text_type = block.settings.text_type | default: 'default' %}
+                  {% case text_type %}
+                    {% when 'in_box' %}
+                      <div class="advertorial-block-list-text-in-box" {{ block.shopify_attributes }}>
+                        {{ block.settings.text }}
+                      </div>
+                    {% when 'quote' %}
+                      <div class="advertorial-block-list-text-quote" {{ block.shopify_attributes }}>
+                        {{ block.settings.text }}
+                      </div>
+                    {% when 'list' %}
+                      <div
+                        class="advertorial-block-list-text {{ block.settings.buller_color }}"
+                        {{ block.shopify_attributes }}
+                      >
+                        {{ block.settings.text }}
+                      </div>
+                    {% else %}
+                      <div
+                        class="advertorial-block-text {{ block.settings.special_text_type }}"
+                        {{ block.shopify_attributes }}
+                      >
+                        {{ block.settings.text }}
+                      </div>
+                  {% endcase %}
+                {% endif %}
+              {% when 'cost_comparison' %}
+                <div class="advertorial-block-cost-comparison" {{ block.shopify_attributes }}>
+                  {% if block.settings.title != blank %}
+                    <h2 class="advertorial-block-cost-comparison-title">
+                      {{ block.settings.title }}
+                    </h2>
+                    <div class="cost_comparison--blocks">
+                      <div class="cost_comparison--block">
+                        {% if block.settings.first_block_title != blank %}
+                          <span class="cost_comparison--block-title">
+                            {{ block.settings.first_block_title }}
+                          </span>
+                        {% endif %}
+                        {% if block.settings.first_block_value != blank %}
+                          <h4 class="cost_comparison--block-value">
+                            {{ block.settings.first_block_value }}
+                          </h4>
+                        {% endif %}
+                        {% if block.settings.first_block_text != blank %}
+                          <span class="cost_comparison--block-text">
+                            {{ block.settings.first_block_text }}
+                          </span>
+                        {% endif %}
+                      </div>
+                      <div class="cost_comparison--block">
+                        {% if block.settings.second_block_title != blank %}
+                          <span class="cost_comparison--block-title">
+                            {{ block.settings.second_block_title }}
+                          </span>
+                        {% endif %}
+                        {% if block.settings.second_block_value != blank %}
+                          <h4 class="cost_comparison--block-value">
+                            {{ block.settings.second_block_value }}
+                          </h4>
+                        {% endif %}
+                        {% if block.settings.second_block_text != blank %}
+                          <span class="cost_comparison--block-text">
+                            {{ block.settings.second_block_text }}
+                          </span>
+                        {% endif %}
+                      </div>
+                    </div>
+                  {% endif %}
+                </div>
+              {% when 'card' %}
+                <div class="advertorial-block-card" {{ block.shopify_attributes }}>
+                  <div class="advertorial-card--content">
+                    {% if block.settings.icon != blank %}
+                      {{ block.settings.icon | image_url: width: 106 | image_tag: class: 'advertorial-card--icon' }}
+                    {% endif %}
+                    <div class="advertorial-card--text-content">
+                      {% if block.settings.title != blank %}
+                        <h2 class="advertorial-card--title">
+                          {{ block.settings.title }}
+                        </h2>
+                      {% endif %}
+                      {% if block.settings.text != blank %}
+                        <div class="advertorial-card--text">
+                          {{ block.settings.text }}
+                        </div>
+                      {% endif %}
+                    </div>
+                  </div>
+                  <div class="advertorial-card--button-wrapper">
+                    {% if block.settings.btn_text != blank and block.settings.btn_link != blank %}
+                      <a href="{{ block.settings.btn_link }}" class="advertorial-card--btn">
+                        {{ block.settings.btn_text }}
+                        {% render 'icon-arrow-button' %}
+                      </a>
+                    {% endif %}
+                    {% if block.settings.info != blank %}
+                      <div class="advertorial-card--info">
+                        {{ block.settings.info }}
+                      </div>
+                    {% endif %}
+                  </div>
+                  <div class="advertorial-card--badges">
+                    {% if block.settings.firts_badge_icon != blank or block.settings.firts_badge_text != blank %}
+                      <div class="advertorial-card--badge">
+                        {% if block.settings.firts_badge_icon != blank %}
+                          {{
+                            block.settings.firts_badge_icon
+                            | image_url: width: 28
+                            | image_tag: class: 'advertorial-card--badge-icon'
+                          }}
+                        {% endif %}
+                        {% if block.settings.firts_badge_text != blank %}
+                          <span class="advertorial-card--badge-text">
+                            {{ block.settings.firts_badge_text }}
+                          </span>
+                        {% endif %}
+                      </div>
+                    {% endif %}
+                    {% if block.settings.second_badge_icon != blank or block.settings.second_badge_text != blank %}
+                      <div class="advertorial-card--badge">
+                        {% if block.settings.second_badge_icon != blank %}
+                          {{
+                            block.settings.second_badge_icon
+                            | image_url: width: 28
+                            | image_tag: class: 'advertorial-card--badge-icon'
+                          }}
+                        {% endif %}
+                        {% if block.settings.second_badge_text != blank %}
+                          <span class="advertorial-card--badge-text">
+                            {{ block.settings.second_badge_text }}
+                          </span>
+                        {% endif %}
+                      </div>
+                    {% endif %}
+                    {% if block.settings.third_badge_icon != blank or block.settings.third_badge_text != blank %}
+                      <div class="advertorial-card--badge">
+                        {% if block.settings.third_badge_icon != blank %}
+                          {{
+                            block.settings.third_badge_icon
+                            | image_url: width: 28
+                            | image_tag: class: 'advertorial-card--badge-icon'
+                          }}
+                        {% endif %}
+                        {% if block.settings.third_badge_text != blank %}
+                          <span class="advertorial-card--badge-text">
+                            {{ block.settings.third_badge_text }}
+                          </span>
+                        {% endif %}
+                      </div>
+                    {% endif %}
+                  </div>
+                </div>
+            {% endcase %}
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+    {% if table_of_contents_block != blank %}
+      <div class="advertorial-table-of-contents">
+        <div class="advertorial-table-of-contents--content">
+          <h2 class="advertorial-table-of-contents--title">{{ 'general.table_of_contents' | t }}</h2>
+          <div class="advertorial-table-of-contents--list" data-table-of-contents-list></div>
+        </div>
+        {% if table_of_contents_block.settings.show_social_follow != blank %}
+          <div class="advertorial-table-of-contents--social">
+            <h4 class="advertorial-table-of-contents--social-title">{{ 'general.follow_us_on_social' | t }}</h4>
+            <div class="advertorial-table-of-contents--social-links">
+              {% if table_of_contents_block.settings.facebook_url != blank or settings.social_facebook != blank %}
+              <a href="{{ table_of_contents_block.settings.facebook_url }}" target="_blank" rel="noopener">
+                {% render 'icon-facebook-toc' %}
+              </a>
+              {% endif %}
+              {% if table_of_contents_block.settings.x_url != blank or settings.social_x != blank %}
+              <a href="{{ table_of_contents_block.settings.x_url | default: settings.social_x }}" target="_blank" rel="noopener">
+                {% render 'icon-x-toc' %}
+              </a>
+              {% endif %}
+              {% if table_of_contents_block.settings.linkedin_url != blank or settings.social_linkedin != blank %}
+                <a href="{{ table_of_contents_block.settings.linkedin_url | default: settings.social_linkedin }}" target="_blank" rel="noopener">
+                  {% render 'icon-linkedin-toc' %}
+                </a>
+              {% endif %}
+            </div>
+          </div>
+        {% endif %}
+      </div>
+      <div class="advertorial-scroll-progress"><div></div></div>
+
+      <script>
+        document.addEventListener('DOMContentLoaded', () => {
+          window.addEventListener('scroll', () => {
+            const scrollTop = window.scrollY || document.documentElement.scrollTop;
+            const scrollHeight = document.documentElement.scrollHeight - window.innerHeight;
+            const progress = (scrollTop / scrollHeight) * 100;
+            document.querySelector('.advertorial-scroll-progress div').style.width = progress + '%';
+          });
+        });
+
+        class AdvertorialTableOfContents {
+          constructor() {
+            this.tocList = document.querySelector('[data-table-of-contents-list]');
+            if (!this.tocList) return;
+            this.headings = [];
+            this.activeItem = null;
+            this.observer = null;
+            this.OFFSET = 100;
+            this.init();
+          }
+
+          init() {
+            this.collectHeadings();
+            if (!this.headings.length) {
+              this.tocList.innerHTML = '<p>No headings found</p>';
+              return;
+            }
+            this.renderTOC();
+            this.bindEvents();
+            this.observeHeadings();
+          }
+
+          collectHeadings() {
+            const selector = '.advertorial--blocks-wrapper h1, .advertorial--blocks-wrapper h2';
+            this.headings = [...document.querySelectorAll(selector)].map((h, i) => {
+              if (!h.id) h.id = this.slugify(h.textContent) || 'heading-' + i;
+              const text = this.trimWords(h.textContent.trim(), 7);
+              return { el: h, id: h.id, text, lvl: +h.tagName[1] };
+            });
+          }
+
+          trimWords(text, n) {
+            const cleaned = text.replace(/[$,€£]/g, '').replace(/[^\p{L}\p{N}\s]/gu, '');
+            const words = (cleaned.match(/\b[\p{L}\p{N}]+\b/gu) || []).slice(0, n);
+            return words.join(' ');
+          }
+
+          slugify(text) {
+            return text
+              .toLowerCase()
+              .replace(/[^\w\s-]/g, '')
+              .trim()
+              .replace(/\s+/g, '-');
+          }
+
+          renderTOC() {
+            this.tocList.innerHTML = this.headings
+              .map(
+                (h) => `
+              <div class="advertorial-table-of-contents--list-item toc-level-${h.lvl}" data-id="${h.id}">
+                <span>${h.text}</span>
+              </div>
+            `
+              )
+              .join('');
+          }
+
+          bindEvents() {
+            this.tocList.addEventListener('click', (e) => {
+              const item = e.target.closest('[data-id]');
+              if (!item) return;
+              const h = document.getElementById(item.dataset.id);
+              if (!h) return;
+              const y = h.getBoundingClientRect().top + window.pageYOffset - this.OFFSET;
+              window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' });
+            });
+          }
+
+          observeHeadings() {
+            this.observer?.disconnect();
+            const options = { rootMargin: `-${this.OFFSET}px 0px -50% 0px`, threshold: [0, 0.25, 0.5, 0.75, 1] };
+            this.observer = new IntersectionObserver((entries) => {
+              const visible = entries.filter((e) => e.isIntersecting);
+              if (!visible.length) return;
+              const best = visible.reduce((a, b) => (b.intersectionRatio > a.intersectionRatio ? b : a));
+              const item = this.tocList.querySelector(`[data-id="${best.target.id}"]`);
+              if (item) this.setActive(item);
+            }, options);
+            this.headings.forEach((h) => this.observer.observe(h.el));
+          }
+
+          setActive(item) {
+            if (this.activeItem === item) return;
+            this.activeItem?.classList.remove('active');
+            item.classList.add('active');
+            this.activeItem = item;
+          }
+
+          update() {
+            this.init();
+          }
+          destroy() {
+            this.observer?.disconnect();
+          }
+        }
+
+        document.addEventListener('DOMContentLoaded', () => (window.advertorialTOC = new AdvertorialTableOfContents()));
+        document.addEventListener('shopify:section:load', () => {
+          window.advertorialTOC?.destroy();
+          window.advertorialTOC = new AdvertorialTableOfContents();
+        });
+      </script>
+    {% endif %}
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Advertorial Content",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "enable_breadcrumbs",
+      "label": "Enable breadcrumbs",
+      "default": true
+    },
+    {
+      "type": "text",
+      "id": "cstm_breadcrumbs_title",
+      "label": "Custom breadcrumbs title"
+    },
+    {
+      "type": "url",
+      "id": "cstm_breadcrumbs_url",
+      "label": "Custom breadcrumbs URL"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "image_picker",
+      "id": "icon",
+      "label": "Icon"
+    },
+    {
+      "type": "text",
+      "id": "name",
+      "label": "Name"
+    },
+    {
+      "type": "text",
+      "id": "read_time",
+      "label": "Read time"
+    },
+    {
+      "type": "url",
+      "id": "share_on_facebook_link",
+      "label": "Share on Facebook link"
+    },
+    {
+      "type": "text",
+      "id": "share_on_facebook_count",
+      "label": "Share on Facebook count"
+    },
+    {
+      "type": "url",
+      "id": "share_on_whatsapp_link",
+      "label": "Share on WhatsApp link"
+    },
+    {
+      "type": "text",
+      "id": "share_on_whatsapp_count",
+      "label": "Share on WhatsApp count"
+    },
+    {
+      "type": "url",
+      "id": "share_on_x_link",
+      "label": "Share on X link"
+    },
+    {
+      "type": "text",
+      "id": "share_on_x_count",
+      "label": "Share on X count"
+    },
+    {
+      "type": "url",
+      "id": "share_on_instagram_link",
+      "label": "Share on Instagram link"
+    },
+    {
+      "type": "text",
+      "id": "share_on_instagram_count",
+      "label": "Share on Instagram count"
+    },
+    {
+      "type": "url",
+      "id": "share_on_pinterest_link",
+      "label": "Share on Pinterest link"
+    },
+    {
+      "type": "text",
+      "id": "share_on_pinterest_count",
+      "label": "Share on Pinterest count"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image",
+      "name": "Image",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image desktop"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_tablet",
+          "label": "Image tablet (optional)"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_mobile",
+          "label": "Image mobile (optional)"
+        },
+        {
+          "type": "checkbox",
+          "id": "full_width_mobile",
+          "label": "Full width mobile",
+          "default": false
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "name": "Text",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text"
+        },
+        {
+          "type": "select",
+          "id": "text_type",
+          "label": "Text type",
+          "options": [
+            {
+              "value": "default",
+              "label": "Default"
+            },
+            {
+              "value": "in_box",
+              "label": "In box"
+            },
+            {
+              "value": "quote",
+              "label": "Quote"
+            },
+            {
+              "value": "list",
+              "label": "List"
+            }
+          ],
+          "default": "default"
+        },
+        {
+          "type": "select",
+          "id": "special_text_type",
+          "label": "Special text type",
+          "options": [
+            {
+              "value": "none",
+              "label": "None"
+            },
+            {
+              "value": "type_1",
+              "label": "Type 1"
+            },
+            {
+              "value": "type_2",
+              "label": "Type 2"
+            }
+          ],
+          "default": "none",
+          "visible_if": "{{ block.settings.text_type == 'default' }}"
+        },
+        {
+          "type": "select",
+          "id": "buller_color",
+          "label": "Bullet color",
+          "options": [
+            {
+              "value": "green",
+              "label": "Green"
+            },
+            {
+              "value": "blue",
+              "label": "Blue (default)"
+            }
+          ],
+          "default": "blue",
+          "visible_if": "{{ block.settings.text_type == 'list' }}"
+        }
+      ]
+    },
+    {
+      "type": "cost_comparison",
+      "name": "Cost comparison",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "header",
+          "content": "First block"
+        },
+        {
+          "type": "text",
+          "id": "first_block_title",
+          "label": "First block title"
+        },
+        {
+          "type": "text",
+          "id": "first_block_value",
+          "label": "First block value"
+        },
+        {
+          "type": "text",
+          "id": "first_block_text",
+          "label": "First block text"
+        },
+        {
+          "type": "header",
+          "content": "Second block"
+        },
+        {
+          "type": "text",
+          "id": "second_block_title",
+          "label": "Second block title"
+        },
+        {
+          "type": "text",
+          "id": "second_block_value",
+          "label": "Second block value"
+        },
+        {
+          "type": "text",
+          "id": "second_block_text",
+          "label": "Second block text"
+        }
+      ]
+    },
+    {
+      "type": "card",
+      "name": "Card",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text"
+        },
+        {
+          "type": "text",
+          "id": "btn_text",
+          "label": "Button text"
+        },
+        {
+          "type": "url",
+          "id": "btn_link",
+          "label": "Button link"
+        },
+        {
+          "type": "text",
+          "id": "info",
+          "label": "Info"
+        },
+        {
+          "type": "image_picker",
+          "id": "firts_badge_icon",
+          "label": "First badge icon"
+        },
+        {
+          "type": "header",
+          "content": "Badges"
+        },
+        {
+          "type": "text",
+          "id": "firts_badge_text",
+          "label": "First badge text"
+        },
+        {
+          "type": "image_picker",
+          "id": "second_badge_icon",
+          "label": "Second badge icon"
+        },
+        {
+          "type": "text",
+          "id": "second_badge_text",
+          "label": "Second badge text"
+        },
+        {
+          "type": "image_picker",
+          "id": "third_badge_icon",
+          "label": "Third badge icon"
+        },
+        {
+          "type": "text",
+          "id": "third_badge_text",
+          "label": "Third badge text"
+        }
+      ]
+    },
+    {
+      "type": "table_of_contents",
+      "name": "Table of Contents",
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "show_social_follow",
+          "label": "Show social follow section",
+          "default": true
+        },
+        {
+          "type": "url",
+          "id": "facebook_url",
+          "label": "Facebook URL"
+        },
+        {
+          "type": "url",
+          "id": "x_url",
+          "label": "X (Twitter) URL"
+        },
+        {
+          "type": "url",
+          "id": "linkedin_url",
+          "label": "LinkedIn URL"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Advertorial heading"
+    }
+  ]
+}
+{% endschema %}

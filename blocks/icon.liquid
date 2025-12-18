@@ -1,0 +1,57 @@
+{% liquid
+  assign icon = block.settings.icon
+  assign max_width = block.settings.max_width
+  assign render_width = max_width | times: 3
+%}
+
+
+{% stylesheet %}
+  .icon-block {
+    position: relative;
+    max-width: var(--max-width);
+  }
+
+  .icon-block img,
+  .icon-block svg {
+    width: 100%;
+    height: auto;
+  }
+{% endstylesheet %}
+
+
+<div class="icon-block"
+          style="--max-width: {{ max_width | append: 'px' }};"
+        {{ block.shopify_attributes }}
+>
+  {%- if icon != blank -%}
+    {{ icon | image_url: width: render_width | image_tag }}
+  {%- else -%}
+    {{ 'image' | placeholder_svg_tag }}
+  {%- endif -%}
+</div>
+
+{% schema %}
+{
+  "name": "Icon",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "icon",
+      "label": "Icon"
+    },
+    {
+      "type": "range",
+      "id": "max_width",
+      "label": "Max width",
+      "min": 10,
+      "max": 500,
+      "step": 5,
+      "unit": "px",
+      "default": 100
+    }
+  ],
+  "presets": [
+    { "name": "Icon" }
+  ]
+}
+{% endschema %}

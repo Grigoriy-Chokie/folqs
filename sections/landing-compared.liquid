@@ -1,0 +1,277 @@
+{% liquid
+  assign image = section.settings.image
+  assign image_mobile = section.settings.image_mobile
+  assign title = section.settings.title
+  assign button_text = section.settings.button_text
+  assign button_url = section.settings.button_url
+  assign icon = section.settings.icon
+  assign subtext = section.settings.subtext
+%}
+
+{%- style -%}
+  .section-{{section.id}} {
+    padding-top: {{ section.settings.padding_top_mobile }}px;
+    padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+  }
+
+  @media screen and (min-width: 767px) {
+    .section-{{section.id}} {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+{{ 'section-landing-compared.css' | asset_url | stylesheet_tag }}
+<div class="landing-compared section-{{section.id}}">
+  <div class="landing-compared__wrapper page-width">
+    {% if title != blank %}
+      <h2>{{ title }}</h2>
+    {% endif %}
+    {% if image != blank %}
+      <picture>
+        {% if image_mobile != blank %}
+          <source srcset="{{ image_mobile | img_url: "master" }}" media="(max-width: 750px)">
+        {% endif %}
+        {{ image | image_url: width: 1500 | image_tag: loading: 'lazy', alt: image_popup.alt }}
+      </picture>
+    {% endif %}
+    <ul class="landing-compared__rows">
+      {% for block in section.blocks %}
+        {% liquid
+          assign circle_type_other = block.settings.circle_type_other
+          assign circle_color_other = block.settings.circle_color_other
+          assign circle_content_other = block.settings.circle_content_other
+          assign circle_type_our = block.settings.circle_type_our
+          assign circle_color_our = block.settings.circle_color_our
+          assign circle_content_our = block.settings.circle_content_our
+          assign text = block.settings.text
+        %}
+        <li {{ block.shopify_attributes }}>
+          <div style="--background: {{circle_color_other  }}" class="landing-compared__row-state">
+            <span class="row-state__wrapper">
+              {% if circle_type_other == "true" %}
+                {% render 'icon-compare-true' %}
+              {% elsif circle_type_other == "false" %}
+                {% render 'icon-compare-false' %}
+              {% else %}
+                {{ circle_content_other }}
+              {% endif %}
+            </span>
+          </div>
+          <span class="landing-compared__row-content">
+            {{ text }}
+          </span>
+          <div style="--background: {{circle_color_our  }}" class="landing-compared__row-state">
+            <span class="row-state__wrapper">
+              {% if circle_type_our == "true" %}
+                {% render 'icon-compare-true' %}
+              {% elsif circle_type_our == "false" %}
+                {% render 'icon-compare-false' %}
+              {% else %}
+                {{ circle_content_our }}
+              {% endif %}
+            </span>
+          </div>
+        </li>
+      {% endfor %}
+    </ul>
+    {% if button_text != blank and button_url != blank %}
+      <a class="landing-compared__button" href="{{ button_url }}">
+        {{ button_text }}
+      </a>
+    {% endif %}
+    {% if icon != blank and subtext != blank %}
+      <div class="landing-compared__bottom">
+        {{ icon | image_url: width: 50 | image_tag }}
+        {{ subtext }}
+      </div>
+    {% endif %}
+  </div>
+</div>
+
+{% schema %}
+{
+    "name": "Landing compared",
+    "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Why Folqs is a Better Choice"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "Image mobile"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "Try it Risk-Free"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button url",
+      "default": "/"
+    },
+    {
+      "type": "header",
+      "content": "Text under button"
+    },
+    {
+      "type": "image_picker",
+      "id": "icon",
+      "label": "Icon"
+    },
+    {
+      "type": "text",
+      "id": "subtext",
+      "label": "Text",
+      "default": "90-Day Money-Back Guarantee"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "unit": "px",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "unit": "px",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Padding top mobile",
+      "unit": "px",
+      "min": 1,
+      "max": 100,
+      "step": 1,
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Padding bottom mobile",
+      "unit": "px",
+      "min": 1,
+      "max": 100,
+      "step": 1,
+      "default": 20
+    }
+  ],
+  "blocks": [
+    {
+      "type": "block",
+      "name": "row",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Other"
+        },
+        {
+          "type": "select",
+          "id": "circle_type_other",
+          "label": "Circle content",
+          "default": "false",
+          "options": [
+            {
+              "label": "Yes",
+              "value": "true"
+            },
+            {
+              "label": "Not",
+              "value": "false"
+            },
+            {
+              "label": "Text",
+              "value": "text"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "circle_content_other",
+          "label": "Background",
+          "default": "text"
+        },
+        {
+          "type": "color",
+          "id": "circle_color_other",
+          "label": "Text in circle",
+          "default": "#FFE5E5"
+        },
+        {
+          "type": "header",
+          "content": "Other"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "Default text"
+        },
+        {
+          "type": "header",
+          "content": "Our"
+        },
+        {
+          "type": "select",
+          "id": "circle_type_our",
+          "label": "Circle content",
+          "default": "true",
+          "options": [
+            {
+              "label": "Yes",
+              "value": "true"
+            },
+            {
+              "label": "Not",
+              "value": "false"
+            },
+            {
+              "label": "Text",
+              "value": "text"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "circle_content_our",
+          "label": "Text in circle",
+          "default": "Text"
+        },
+        {
+          "type": "color",
+          "id": "circle_color_our",
+          "label": "Background",
+          "default": "#00A30B"
+        }
+      ]
+    }
+  ],
+  "presets": [
+  {
+    "name": "Landing compared"
+  }
+]
+}
+{% endschema %}

@@ -1,0 +1,157 @@
+{% comment %}
+ Accept:
+  product
+  block
+{% endcomment %}
+
+{{ 'component-sticky-add-cart.css' | asset_url | stylesheet_tag }}
+
+{% liquid
+  assign variant = product.selected_or_first_available_variant
+  assign price = variant.price
+  assign price_compare = variant.compare_at_price | default: price
+  if variant.selling_plan_allocations != blank
+    assign price = variant.selling_plan_allocations[0].price
+    assign selling_plan = variant.selling_plan_allocations[0].selling_plan.id
+    if price_compare == blank
+      assign price_compare = variant.price
+    endif
+  endif
+
+  assign compare_at_price_difference = price_compare | divided_by: 100.0 | times: product.selling_plan_groups.last.selling_plans.first.price_adjustments.first.value
+
+  assign price_block = section.blocks | find: 'type', 'price'
+  assign discount_percent = plan.selling_plans.first.price_adjustments.first.value
+  assign has_custom_percentage = false
+  
+  if price_block and price_block.settings.use_custom_percentage and price_block.settings.custom_percentage != blank
+    assign has_custom_percentage = true
+    assign discount_percent = price_block.settings.custom_percentage
+    assign compare_at_price_difference = price_compare | divided_by: 100.0 | times: discount_percent
+    assign percent_from_full = 100 | minus: discount_percent
+    assign price = price | divided_by: 100 | times: percent_from_full
+  endif
+
+  assign percentage_formatted = discount_percent | ceil | append: '%'
+  assign buy_buttons_block = section.blocks | where: "type", "buy_buttons" | first
+%}
+
+{% capture subscribe_button_text %}
+  {% if block.settings.widget_regular_price != blank %}
+    
+    <span class='sticky-add-cart__compare-price '> {{block.settings.widget_compare_price }}  </span>
+ {{block.settings.widget_regular_price }} - {{ 'products.product.landing.subscribe_now' | t }}
+{% else %}
+
+  <span class='sticky-add-cart__compare-price '>{{ price_compare | money }}</span>
+  {{ price_compare | minus: compare_at_price_difference | money }} - {{ 'products.product.landing.subscribe_now' | t }}
+  {% endif %}
+{% endcapture %}
+{%- capture onetime_button_text -%}
+  {{ price_compare | money }} - {{ 'products.product.landing.buy_once' | t }}
+{%- endcapture -%}
+
+{%- assign product_form_id = 'sticky-add-' | append: section.id -%}
+<sticky-add-cart class="sticky-add-cart sticky-add-cart--hidden"
+  data-subscribe-button-text="{{ subscribe_button_text }}"
+  data-onetime-button-text="{{ onetime_button_text }}"
+>
+  <div class="sticky-add-cart__wrapper">
+    <div class="sticky-add-cart__container page-width">
+    <div class="sticky-add-cart__info">
+      <div class="sticky-add-cart__product-image">
+        {{ block.settings.image | default: product.featured_image | image_url: width: 180 | image_tag }}
+      </div>
+      <h3 class="sticky-add-cart__product-title">
+        {{ block.settings.title | default: product.title }}
+      </h3>
+        <div class="sticky-add-cart__product-reviews">
+          <div class="reviews-image">{{ 'icon-reviews-stars-5.svg' | inline_asset_content }}</div>
+          <p class="reviews-text">{{ block.settings.reviews_text }}</p>
+        </div>
+    </div>
+    <div class="sticky-add-cart__form-container">
+      <div class="sticky-add-cart__options-container">
+        {% if section.settings.property_value != blank %}
+          <input
+            form="{{ product_form_id }}"
+            type="hidden"
+            name="properties[_target_page]"
+            value="{{- section.settings.property_value -}}"
+          >
+        {% endif %}
+        {% for plan in product.selling_plan_groups %}
+          {%- liquid 
+            assign compare_at_price_difference = price_compare | divided_by: 100.0 | times: plan.selling_plans.first.price_adjustments.first.value
+            if has_custom_percentage
+              assign compare_at_price_difference = price_compare | divided_by: 100.0 | times: discount_percent
+            endif
+          -%}
+          <label for="{{ section.id }}--{{ forloop.index0 }}"
+            class="sticky-add-cart__option"
+            data-value="{{ plan.selling_plans.first.id | escape }}"
+            data-price="{{ price_compare | minus: compare_at_price_difference | money }}"
+            data-compare-price="{{ price_compare }}"
+            {% if buy_buttons_block.settings.gift_product and buy_buttons_block.settings.gift_product != blank %} has-gift {% endif %}
+            >
+            <input
+              type="radio"
+              id="{{ section.id }}--{{ forloop.index0 }}"
+              name="option"
+              value="{{ plan.selling_plans.first.id | escape }}"
+              form="{{ product_form_id }}"
+              class=""
+              {% if buy_buttons_block.settings.gift_product and buy_buttons_block.settings.gift_product != blank %} has-gift {% endif %}
+              data-price="{{ price_compare | minus: compare_at_price_difference | money_without_currency }}"
+              {% if forloop.index == 1 %}
+                checked
+              {% endif %}
+            >
+            <p class="sticky-add-cart__option-text">
+              <span>{{ 'products.product.landing.subscribe_and_save' | t }}</span>
+              <br>
+              <span class="sticky-add-cart__option-text--discount">
+                {{ 'products.product.landing.save_money_percent' | t: money: percentage_formatted }}
+              </span>
+            </p>
+          </label>
+        {% endfor %}
+        <label for="{{ section.id }}--one-time" class="sticky-add-cart__option" data-value="one-time">
+          <input
+            type="radio"
+            id="{{ section.id }}--one-time"
+            name="option"
+            value=""
+            form="{{ product_form_id }}"
+            class=""
+            data-price="{{ price_compare }}"
+          >
+          <p class="sticky-add-cart__option-text">{{ 'products.product.landing.buy_once' | t }}</p>
+        </label>
+      </div>
+      <div class="product-information__buy-buttons" style="--primary-color: {{ block.settings.background_color | default: "#ff0000" }}; --text-color: {{ block.settings.text_color | default: '#fff' }};">
+        <input
+          type="hidden"
+          name="selling_plan"
+          value="{{ product.selling_plan_groups.last.selling_plans.first.id }}"
+          form="{{ product_form_id }}"
+        >
+        {%- render 'buy-buttons',
+          gift_product: buy_buttons_block.settings.gift_product,
+          block: block,
+          product: product,
+          product_form_id: product_form_id,
+          section_id: section.id,
+          show_bynamic_button: false,
+          additional_bottom_text: block.settings.bottom_text
+          custom_add_text: subscribe_button_text
+        -%}
+      </div>
+    </div>
+    {% comment %} <a href="#selling-plans-wrapper--{{ section.id }}" class="sticky-add-cart__anchor product-form__submit button button--full-width button--primary">{{ 'products.product.landing.try_now' | t }}</a> {% endcomment %}
+     <button class="sticky-add-cart__anchor product-form__submit button button--full-width button--primary">{{ 'products.product.landing.try_now' | t }}</button>
+  </div>
+  </div>
+</sticky-add-cart>
+
+<script src="{{ 'sticky-add-cart.js' | asset_url }}" defer></script>

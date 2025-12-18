@@ -1,0 +1,574 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "page_gradient_QwQ7bj": {
+      "type": "page-gradient",
+      "settings": {
+        "gradient": "linear-gradient(180deg, rgba(0, 130, 255, 0.08), rgba(255, 255, 255, 0.2) 100%)",
+        "height": 680
+      }
+    },
+    "main": {
+      "type": "main-article",
+      "blocks": {
+        "featured_image": {
+          "type": "featured_image",
+          "settings": {
+            "image_height": "adapt"
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {
+            "blog_show_date": true,
+            "blog_show_author": false
+          }
+        },
+        "share": {
+          "type": "share",
+          "settings": {
+            "share_label": "Share"
+          }
+        },
+        "content": {
+          "type": "content",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "featured_image",
+        "title",
+        "share",
+        "content"
+      ],
+      "disabled": true,
+      "settings": {}
+    },
+    "article_header_Cp9HNh": {
+      "type": "article-header",
+      "settings": {
+        "title": "<p><strong>Colostrum:<\/strong><\/p><p>Nature’s First Food for Optimal Wellness<\/p>",
+        "title_tag": "h1",
+        "title_highlight_color": "#005eb8",
+        "time_to_read": "7 min read",
+        "facebook_share_link": "#",
+        "x_share_link": "#",
+        "instagram_share_link": "#",
+        "pinterest_share_link": "#"
+      }
+    },
+    "article_sidebar_menu_QmYTgy": {
+      "type": "article-sidebar-menu",
+      "blocks": {
+        "anchor_link_W9V3fR": {
+          "type": "anchor_link",
+          "settings": {
+            "title": "<p>A Brief Look at Colostrum’s History<\/p>",
+            "section_id": "content-1"
+          }
+        },
+        "anchor_link_pTPJfc": {
+          "type": "anchor_link",
+          "settings": {
+            "title": "<p>How These Nutrients<\/p><p>Benefit Your Health<\/p>",
+            "section_id": "content-2"
+          }
+        },
+        "anchor_link_wf6edN": {
+          "type": "anchor_link",
+          "settings": {
+            "title": "<p>Why Quality<\/p><p>Sourcing Matters<\/p>",
+            "section_id": "content-3"
+          }
+        }
+      },
+      "block_order": [
+        "anchor_link_W9V3fR",
+        "anchor_link_pTPJfc",
+        "anchor_link_wf6edN"
+      ],
+      "settings": {
+        "title": "Table of Contents",
+        "selector_to_hide": ".references"
+      }
+    },
+    "article_content_TPMBqw": {
+      "type": "article-content",
+      "blocks": {
+        "content_UpgP3k": {
+          "type": "content",
+          "settings": {
+            "title": "A Nutrient-Dense Powerhouse",
+            "title_tag": "h3",
+            "title_color": "#000000",
+            "title_underlined": true,
+            "title_underline_color": "#005eb8",
+            "subtitle": "",
+            "subtitle_color": "#000000",
+            "content": "<p>What truly distinguishes colostrum from other functional foods is the synergy of its many components. Unlike mature milk, bovine colostrum is naturally richer in <strong>proteins, growth factors, immune-boosting substances, vitamins, and minerals<\/strong>. Below are key aspects of its nutrient profile.<\/p>",
+            "add_background": false,
+            "background": "",
+            "block_underlined": false,
+            "block_underline_color": ""
+          }
+        },
+        "content_EkKiPH": {
+          "type": "content",
+          "settings": {
+            "title": "Proteins & Amino Acids",
+            "title_tag": "h3",
+            "title_color": "#000000",
+            "title_underlined": true,
+            "title_underline_color": "#005eb8",
+            "subtitle": "",
+            "subtitle_color": "#000000",
+            "content": "<p>Colostrum contains a <strong>complete amino acid profile<\/strong>, including all essential and non-essential amino acids your body requires for tissue repair, enzyme function, and more. Many users also appreciate its high content of <strong>branched-chain amino acids (BCAAs)<\/strong>—particularly leucine, isoleucine, and valine—for <strong>muscle maintenance<\/strong> and reduced recovery time. Beyond these foundational proteins, colostrum stands out for its <strong>immunoglobulins (IgG, IgA, IgM)<\/strong>, which can bind and neutralize pathogens in the digestive tract. This fusion of<strong> muscle-building proteins<\/strong> and immune-specific proteins gives colostrum a dual advantage few other supplements can match.<\/p>",
+            "add_background": false,
+            "background": "",
+            "block_underlined": false,
+            "block_underline_color": ""
+          }
+        },
+        "content_4mPUcM": {
+          "type": "content",
+          "settings": {
+            "title": "Growth Factors",
+            "title_tag": "h3",
+            "title_color": "#000000",
+            "title_underlined": true,
+            "title_underline_color": "#005eb8",
+            "subtitle": "",
+            "subtitle_color": "#000000",
+            "content": "<p>From <strong>IGF-1 (Insulin-Like Growth Factor 1) to TGF-β (Transforming Growth Factor Beta) and EGF (Epidermal Growth Factor)<\/strong>, colostrum is brimming with growth-stimulating compounds. These hormone-like factors play a role in <strong>cellular regeneration<\/strong> and help maintain a robust intestinal lining. Athletes often find that these growth factors aid post-workout recovery, while others benefit from their overall support for tissue repair and <strong>healthy aging<\/strong>.<\/p>",
+            "add_background": false,
+            "background": "",
+            "block_underlined": false,
+            "block_underline_color": ""
+          }
+        },
+        "content_mNYgdC": {
+          "type": "content",
+          "settings": {
+            "title": "Immune-Boosting Compounds",
+            "title_tag": "h3",
+            "title_color": "#000000",
+            "title_underlined": true,
+            "title_underline_color": "#005eb8",
+            "subtitle": "",
+            "subtitle_color": "#000000",
+            "content": "<p>Another vital element within colostrum is its suite of <strong>immune-modulatory compounds<\/strong>. This includes lactoferrin, an iron-binding protein that can inhibit the growth of bacteria and viruses, as well as <strong>proline-rich polypeptides (PRPs)<\/strong>, known to help regulate immune responses. By delivering these specialized components in tandem with immunoglobulins, colostrum provides <strong>holistic support<\/strong> for your body’s natural defenses.<\/p>",
+            "add_background": false,
+            "background": "",
+            "block_underlined": false,
+            "block_underline_color": ""
+          }
+        },
+        "content_3JNb3V": {
+          "type": "content",
+          "settings": {
+            "title": "Vitamins & Minerals",
+            "title_tag": "h3",
+            "title_color": "#000000",
+            "title_underlined": true,
+            "title_underline_color": "#005eb8",
+            "subtitle": "",
+            "subtitle_color": "#000000",
+            "content": "<p>While proteins and growth factors often grab the headlines, colostrum’s <strong>micronutrient richness<\/strong> deserves equal recognition. It contains elevated levels of vitamins A, D, E, plus multiple B vitamins crucial for energy production and cellular function. Essential minerals, such as calcium, phosphorus, magnesium, and zinc, contribute to everything from <strong>bone strength to immune regulation<\/strong>, making colostrum an all-around nutritional powerhouse.<\/p>",
+            "add_background": false,
+            "background": "",
+            "block_underlined": false,
+            "block_underline_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "content_UpgP3k",
+        "content_EkKiPH",
+        "content_4mPUcM",
+        "content_mNYgdC",
+        "content_3JNb3V"
+      ],
+      "settings": {
+        "section_id": "content-1",
+        "is_section_first": true,
+        "image": "shopify:\/\/shop_images\/Rectangle_1474.png",
+        "image_aspect_ratio": "standart",
+        "title": "<p>A Brief Look at Colostrum’s History<\/p>",
+        "title_tag": "h2",
+        "title_color": "#000000",
+        "title_highlight_color": "#005eb8",
+        "content": "<p>Across different cultures and eras, colostrum has been prized for its <strong>restorative properties<\/strong>. Traditional Ayurveda, for instance, viewed cow colostrum as a rejuvenating food capable of boosting vitality. In modern times, researchers have discovered that its potency lies in a <strong>complex nutritional matrix<\/strong>, which sets colostrum apart from regular milk or common protein supplements. Thanks to low-heat processing techniques, it’s now possible to harness colostrum’s bioactive potential in supplement form without compromising its delicate components.<\/p>",
+        "make_content_gap_larger": true,
+        "add_background": false,
+        "backround": "",
+        "padding_top": 80,
+        "padding_bottom": 0,
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "article_content_4VFybH": {
+      "type": "article-content",
+      "blocks": {
+        "content_YCQC6A": {
+          "type": "content",
+          "settings": {
+            "title": "Immune System Support",
+            "title_tag": "h3",
+            "title_color": "#000000",
+            "title_underlined": false,
+            "title_underline_color": "rgba(0,0,0,0)",
+            "subtitle": "",
+            "subtitle_color": "#01bd0e",
+            "content": "<p>A robust immune system is essential for fending off everyday threats, and colostrum’s unique composition can strengthen your body’s <strong>first lines of defense<\/strong>. Immunoglobulins and lactoferrin help neutralize pathogens, potentially shortening the duration of common infections. By introducing a steady supply of <strong>immune-regulating proteins and PRPs<\/strong>, colostrum can also help maintain a balanced response—ramping up when confronted with germs, yet avoiding overreaction that leads to chronic inflammation. Many who take colostrum regularly report fewer sick days and faster recovery when they do fall ill.<\/p>",
+            "add_background": true,
+            "background": "#01bd0e",
+            "block_underlined": false,
+            "block_underline_color": "#01bd0e"
+          }
+        },
+        "content_hpbcUH": {
+          "type": "content",
+          "settings": {
+            "title": "Gut Health & Digestive Resilience",
+            "title_tag": "h3",
+            "title_color": "#000000",
+            "title_underlined": false,
+            "title_underline_color": "#005eb8",
+            "subtitle": "",
+            "subtitle_color": "#01bd0e",
+            "content": "<p>Few health factors are as critical as a <strong>well-functioning gut<\/strong>, and colostrum’s impact here can be profound. Growth factors like IGF-1 and TGF-β stimulate <strong>cellular repair<\/strong> along the intestinal lining, helping fortify a gut barrier that often becomes compromised by stress, poor diet, or certain medications. By supporting tighter junctions between cells, colostrum may reduce “leaky gut,” a condition linked to fatigue, bloating, and systemic inflammation.<\/p><p>Additionally, colostrum’s high content of immunoglobulins can bind to harmful microorganisms in the gut, potentially lowering the burden of pathogens that trigger digestive upset. Many individuals with <strong>IBS (Irritable Bowel Syndrome)<\/strong> or other GI sensitivities find that colostrum supplementation helps <strong>calm discomfort<\/strong>, encourage regularity, and improve overall digestive resilience.<\/p>",
+            "add_background": true,
+            "background": "#01bd0e",
+            "block_underlined": false,
+            "block_underline_color": "#01bd0e"
+          }
+        },
+        "content_brBzmd": {
+          "type": "content",
+          "settings": {
+            "title": "Athletic Performance & Recovery",
+            "title_tag": "h3",
+            "title_color": "#000000",
+            "title_underlined": false,
+            "title_underline_color": "#005eb8",
+            "subtitle": "",
+            "subtitle_color": "#01bd0e",
+            "content": "<p>Colostrum has long been a favorite among athletes seeking a <strong>natural edge<\/strong>. Thanks to its <strong>complete amino acid profile<\/strong>, it can serve as a high-quality protein source for muscle repair and growth. More uniquely, the growth factors in colostrum—especially IGF-1—are known to support tissue regeneration post-exercise. Some research also suggests that colostrum may help <strong>reduce gut permeability<\/strong> during intense workouts, a factor known to cause cramps and digestive issues in endurance athletes. Overall, those who include colostrum in their regimen often report <strong>faster recovery, less muscle soreness, and an added layer of immune protection during heavy training phases<\/strong>.<\/p>",
+            "add_background": true,
+            "background": "#01bd0e",
+            "block_underlined": false,
+            "block_underline_color": ""
+          }
+        },
+        "content_LHMH6Y": {
+          "type": "content",
+          "settings": {
+            "title": "Promoting Healthy Skin & Tissue Repair",
+            "title_tag": "h3",
+            "title_color": "#000000",
+            "title_underlined": false,
+            "title_underline_color": "#005eb8",
+            "subtitle": "",
+            "subtitle_color": "#000000",
+            "content": "<p>One of the lesser-known advantages of colostrum is its potential impact on <strong>skin health<\/strong>. Rich in growth factors such as EGF (Epidermal Growth Factor) and TGF-β, colostrum can help support <strong>cellular regeneration<\/strong>, aiding in wound healing and maintaining a smoother, more resilient complexion. Lactoferrin and immunoglobulins also play a role in <strong>balancing skin flora<\/strong>, which may reduce occasional breakouts or redness linked to imbalanced bacteria on the skin’s surface. Over time, consistent colostrum use—alongside a balanced diet—may contribute to a <strong>healthier, more youthful appearance<\/strong>, thanks to its unique blend of regenerative proteins and anti-inflammatory compounds.<\/p>",
+            "add_background": false,
+            "background": "",
+            "block_underlined": false,
+            "block_underline_color": ""
+          }
+        },
+        "content_R9nVfW": {
+          "type": "content",
+          "settings": {
+            "title": "Fostering Healthy Aging & Overall Vitality",
+            "title_tag": "h3",
+            "title_color": "#000000",
+            "title_underlined": false,
+            "title_underline_color": "#005eb8",
+            "subtitle": "",
+            "subtitle_color": "#000000",
+            "content": "<p>As people age, the body’s production of natural growth factors gradually declines, potentially affecting <strong>muscle mass, skin elasticity, and general energy levels<\/strong>. Colostrum’s suite of growth factors can supplement these diminishing levels, helping older adults support lean tissue and metabolic health. Moreover, its robust nutrient profile—rich in vitamins, minerals, and <strong>antioxidant-like compounds<\/strong>—offers broad support for cellular function. The <strong>immune-balancing<\/strong> properties of colostrum can also be beneficial in modulating age-related inflammation, promoting a sense of vitality that goes beyond simple nutrition.<\/p>",
+            "add_background": false,
+            "background": "",
+            "block_underlined": false,
+            "block_underline_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "content_YCQC6A",
+        "content_hpbcUH",
+        "content_brBzmd",
+        "content_LHMH6Y",
+        "content_R9nVfW"
+      ],
+      "settings": {
+        "section_id": "content-2",
+        "is_section_first": false,
+        "image": "shopify:\/\/shop_images\/Rectangle_1102.png",
+        "image_aspect_ratio": "standart",
+        "title": "<p>How These Nutrients <\/p><p><strong>Benefit Your Health<\/strong><\/p>",
+        "title_tag": "h2",
+        "title_color": "#000000",
+        "title_highlight_color": "#01bd0e",
+        "content": "<p>Research on colostrum dosages can vary, but several general tiers have emerged based on user experiences and clinical observations. Below are three common dosage ranges, along with potential scenarios for each.<\/p>",
+        "make_content_gap_larger": false,
+        "add_background": false,
+        "backround": "",
+        "padding_top": 80,
+        "padding_bottom": 0,
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "article_content_RGrEQQ": {
+      "type": "article-content",
+      "blocks": {
+        "content_dYAR6M": {
+          "type": "content",
+          "settings": {
+            "title": "",
+            "title_tag": "h3",
+            "title_color": "#000000",
+            "title_underlined": false,
+            "title_underline_color": "#005eb8",
+            "subtitle": "",
+            "subtitle_color": "#000000",
+            "content": "<p>Because colostrum is such a delicate substance, it is crucial to find a product that preserves its <strong>full array of bioactive components<\/strong>. Many manufacturers focus heavily on IgG content as a marketing point, often skimming the colostrum to artificially boost IgG levels. While immunoglobulins are important, skimming can <strong>remove beneficial fats, enzymes, and other growth factors<\/strong> that naturally appear in colostrum. The result is a product that might tout high IgG numbers but lacks the holistic synergy of authentic, <strong>unskimmed colostrum<\/strong>.<\/p><p>Equally important is how colostrum is processed. <strong>Low-heat techniques<\/strong> help maintain the structure of fragile proteins, while <strong>lab testing<\/strong> ensures purity and potency. Ethical sourcing is another key consideration—ideally, calves should receive their required colostrum first, ensuring their health isn’t compromised. This combination of <strong>ethical harvesting and minimal processing<\/strong> ensures you get a truly comprehensive supplement that aligns with nature’s original blueprint.<\/p>",
+            "add_background": false,
+            "background": "",
+            "block_underlined": false,
+            "block_underline_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "content_dYAR6M"
+      ],
+      "settings": {
+        "section_id": "content-3",
+        "is_section_first": false,
+        "image": "shopify:\/\/shop_images\/Rectangle_1476.png",
+        "image_aspect_ratio": "standart",
+        "title": "<p><strong>Why Quality <\/strong><\/p><p><strong>Sourcing Matters<\/strong><\/p>",
+        "title_tag": "h2",
+        "title_color": "#005eb8",
+        "title_highlight_color": "#005eb8",
+        "content": "",
+        "make_content_gap_larger": false,
+        "add_background": false,
+        "backround": "",
+        "padding_top": 80,
+        "padding_bottom": 0,
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "article_content_time_steps_twDMaC": {
+      "type": "article-content-time-steps",
+      "blocks": {
+        "time_step_Qz6cGL": {
+          "type": "time_step",
+          "settings": {
+            "time": "1 Week",
+            "title": "Initial boost in immune function",
+            "subtitle": "from high levels of immunoglobulins, or antibodies (IgA and IgG).",
+            "advantages_list": "<ul><li>Enhanced immune response*<\/li><li>Harmful pathogens are neutralized*<\/li><\/ul>"
+          }
+        },
+        "time_step_7E8xcU": {
+          "type": "time_step",
+          "settings": {
+            "time": "1 months",
+            "title": "Improved gut health and digestive comfort",
+            "subtitle": "subtitle",
+            "advantages_list": "<ul><li>Gut lining grows stronger (good for leaky gut syndrome & IBS)*<\/li><li>Relief from digestive discomfort*<\/li><li>Reduction in bloating*<\/li><li>Less digestive issues*<\/li><\/ul>"
+          }
+        },
+        "time_step_J9y9NJ": {
+          "type": "time_step",
+          "settings": {
+            "time": "2 months",
+            "title": "enhanced recovery, muscle growth and reduced inflammation",
+            "subtitle": "from natural growth factors like IGF-1 and proline-rich-peptides (PRPs).",
+            "advantages_list": "<ul><li>Enhanced athletic performance & endurance*<\/li><li>Muscle and tissue heal faster*<\/li><li>Quicker recovery from physical exertion*<\/li><li>Less inflammation*<\/li><\/ul>"
+          }
+        },
+        "time_step_jPMN3J": {
+          "type": "time_step",
+          "settings": {
+            "time": "3 MONTHS",
+            "title": "Strengthened immune resilience and skin improvements",
+            "subtitle": "from more pronounced immune-modulating properties, growth factors, and cytokines.",
+            "advantages_list": "<ul><li>Fortified response against cold & flu*<\/li><li>Better overall immune system health*<\/li><li>Enhanced skin elasticity*<\/li><li>Healthy, youthful complexion*<\/li><\/ul>"
+          }
+        },
+        "time_step_jwNfhd": {
+          "type": "time_step",
+          "settings": {
+            "time": "6 MONTHS",
+            "title": "Sustained energy, vitality, and beauty enhancements",
+            "subtitle": "from bioactive peptides and growth factors (TFG and EFG).",
+            "advantages_list": "<ul><li>Gut lining grows stronger (good for leaky gut syndrome & IBS)*<\/li><li>Relief from digestive discomfort*<\/li><li>Reduction in bloating*<\/li><li>Less digestive issues*<\/li><\/ul>"
+          }
+        },
+        "time_step_6iACzh": {
+          "type": "time_step",
+          "settings": {
+            "time": "12 MONTHS",
+            "title": "long-term immune, phusiological, and arsthetic benefits",
+            "subtitle": "from one year of consistent supplementation.",
+            "advantages_list": "<ul><li>Robust improvements in immune health*<\/li><li>Potentially fewer seasonal illnesses*<\/li><li>Better overall physiological resilience*<\/li><li>Enhanced skin health*<\/li><li>Clearer complexion*<\/li><li>More youthful appearance*<\/li><li>Aging process slows down*<\/li><\/ul>"
+          }
+        }
+      },
+      "block_order": [
+        "time_step_Qz6cGL",
+        "time_step_7E8xcU",
+        "time_step_J9y9NJ",
+        "time_step_jPMN3J",
+        "time_step_jwNfhd",
+        "time_step_6iACzh"
+      ],
+      "settings": {
+        "section_id": "",
+        "is_section_first": false,
+        "section_main_color": "#01bd0e",
+        "title": "<p><strong>Benefits <\/strong><\/p><p>of Daily Use<\/p>",
+        "title_tag": "h2",
+        "title_color": "#000000",
+        "title_highlight_color": "#01bd0e",
+        "subtitle": "HOW YOUR HEALTH WILL CHANGE",
+        "padding_top": 80,
+        "padding_bottom": 0,
+        "padding_top_mobile": 60,
+        "padding_bottom_mobile": 20
+      }
+    },
+    "references_xJbtNq": {
+      "type": "references",
+      "blocks": {
+        "reference_8LEEWq": {
+          "type": "reference",
+          "settings": {
+            "text": "Bagwe S et al. “Bovine colostrum: An emerging nutraceutical.” Journal of Complementary & Integrative Medicine, 2021.",
+            "url": "#"
+          }
+        },
+        "reference_96mHg6": {
+          "type": "reference",
+          "settings": {
+            "text": "Playford RJ et al. “Bovine colostrum and gut-related benefits.” Clinical Science, 2019.",
+            "url": ""
+          }
+        },
+        "reference_Gmj7Ga": {
+          "type": "reference",
+          "settings": {
+            "text": "Gapper LW et al. “Nutritional and immune components of bovine colostrum.” International Dairy Journal, 2018.",
+            "url": ""
+          }
+        },
+        "reference_3TJXKK": {
+          "type": "reference",
+          "settings": {
+            "text": "Davison G et al. “Colostrum supplementation and upper respiratory tract infections in athletes.” Journal of Sports Sciences, 2016.",
+            "url": ""
+          }
+        },
+        "reference_9gK89f": {
+          "type": "reference",
+          "settings": {
+            "text": "Rathe M et al. “Clinical applications of bovine colostrum therapy: Review.” Frontiers in Nutrition, 2020.",
+            "url": ""
+          }
+        },
+        "reference_bJ3zEQ": {
+          "type": "reference",
+          "settings": {
+            "text": "German JB et al. “Bovine lactoferrin’s antibacterial role.” Journal of Dairy Science, 2017.",
+            "url": ""
+          }
+        },
+        "reference_n7B7JG": {
+          "type": "reference",
+          "settings": {
+            "text": "Krissansen GW. “Emerging health properties of whey proteins and their clinical implications.” Journal of the American College of Nutrition, 2018.",
+            "url": ""
+          }
+        },
+        "reference_tM96bE": {
+          "type": "reference",
+          "settings": {
+            "text": "Coombes JS et al. “Dose-dependent effects of bovine colostrum on exercise performance.” European Journal of Applied Physiology, 2020.",
+            "url": ""
+          }
+        },
+        "reference_rBEA6D": {
+          "type": "reference",
+          "settings": {
+            "text": "Marchbank T et al. “Bovine colostrum helps prevent NSAID-induced gut damage.” Gut, 2015.",
+            "url": ""
+          }
+        },
+        "reference_XqrCP8": {
+          "type": "reference",
+          "settings": {
+            "text": "Shing CM et al. “Bovine colostrum supplementation and immune function in athletes.” Nutrition & Dietetics, 2014.",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "reference_8LEEWq",
+        "reference_96mHg6",
+        "reference_Gmj7Ga",
+        "reference_3TJXKK",
+        "reference_9gK89f",
+        "reference_bJ3zEQ",
+        "reference_n7B7JG",
+        "reference_tM96bE",
+        "reference_rBEA6D",
+        "reference_XqrCP8"
+      ],
+      "settings": {
+        "title": "References",
+        "padding_top": 80,
+        "padding_bottom": 80,
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 40
+      }
+    },
+    "article_bottom_text_AUKUQi": {
+      "type": "article-bottom-text",
+      "settings": {
+        "text": "Disclaimer: This article is intended for informational purposes only. Consult your healthcare professional before starting any supplement, especially if you have existing medical conditions or concerns.",
+        "padding_top": 0,
+        "padding_bottom": 35,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 47
+      }
+    }
+  },
+  "order": [
+    "page_gradient_QwQ7bj",
+    "main",
+    "article_header_Cp9HNh",
+    "article_sidebar_menu_QmYTgy",
+    "article_content_TPMBqw",
+    "article_content_4VFybH",
+    "article_content_RGrEQQ",
+    "article_content_time_steps_twDMaC",
+    "references_xJbtNq",
+    "article_bottom_text_AUKUQi"
+  ]
+}

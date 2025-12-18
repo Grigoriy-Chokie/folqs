@@ -1,0 +1,216 @@
+{{ 'section-reverse-counter.css' | asset_url | stylesheet_tag }}
+
+{% capture offer_counter_html %}
+  {% if section.settings.show_days %}
+    <div class="reverse-counter__time-block" data-time-type="D">
+      <div class="time-block__container">
+        <span class="time-block__value">
+          {{ 'sections.reverse_counter.value.placeholder' | t }}
+        </span>
+        <span class="time-block__unit">
+          {{ 'sections.reverse_counter.units.days' | t }}
+        </span>
+      </div>
+    </div>
+  {% endif %}
+  <div class="reverse-counter__time-block" data-time-type="H">
+    <div class="time-block__container">
+      <span class="time-block__value">
+        {{'sections.reverse_counter.value.placeholder' | t}}
+      </span>
+      <span class="time-block__unit">
+        {{'sections.reverse_counter.units.hours' | t}}
+      </span>
+    </div>
+  </div>
+  <div class="reverse-counter__time-block" data-time-type="M">
+    <div class="time-block__container">
+      <span class="time-block__value">
+        {{'sections.reverse_counter.value.placeholder' | t}}
+      </span>
+      <span class="time-block__unit">
+        {{'sections.reverse_counter.units.minutes' | t}}
+      </span>
+    </div>
+  </div>
+  <div class="reverse-counter__time-block" data-time-type="S">
+    <div class="time-block__container">
+      <span class="time-block__value">
+        {{'sections.reverse_counter.value.placeholder' | t}}
+      </span>
+      <span class="time-block__unit">
+        {{ 'sections.reverse_counter.units.seconds' | t }}
+      </span>
+    </div>
+  </div>
+{% endcapture %}
+
+{% if section.settings.event_date != blank %}
+  <reverse-counter
+    data-event-date="{{ section.settings.event_date }}T23:59:00-04:00"
+    class="reverse-counter reverse-counter--{{ section.settings.timer_style }}"
+  >
+    {%- unless section.settings.background == blank -%}
+      {% render 'picture',
+        image: section.settings.background,
+        image_mobile: section.settings.background_mobile,
+        mobile_breakpoint: 750,
+        loading: 'eager',
+        fetchpriority: 'high',
+        class: 'reverse-counter__background'
+      %}
+    {%- endunless -%}
+    <div class="reverse-counter__content page-width">
+      <div class="reverse-counter__logo reverse-counter__logo--desktop no-empty">
+        {%- unless section.settings.logo == blank -%}
+          {{ section.settings.logo | image_url: width: 1000 | image_tag }}
+          
+        {%- endunless -%}
+      </div>
+      <div class="reverse-counter__logo reverse-counter__logo--mobile no-empty">
+        {%- unless section.settings.logo == blank -%}
+          {% assign logo_mobile = section.settings.logo_mobile | default: section.settings.logo %}
+          {{ logo_mobile | image_url: width: 1000 | image_tag }}
+        {%- endunless -%}
+      </div>
+      <div class="reverese-counter__timer-container">
+        <div class="reverese-counter__timer">
+          {{ offer_counter_html }}
+        </div>
+        {% if section.settings.timer_text != blank %}
+          <span class="reverse-counter__time-text">
+            {{ section.settings.timer_text }}
+          </span>
+        {% endif %}
+      </div>
+      <div class="no-empty">
+              {%- unless section.settings.button_text == blank -%}
+        <div class="reverse-counter__button-wrapper">
+          {% liquid 
+              assign button_url = section.settings.button_url
+  
+              assign second_button_url = section.settings.second_button_url
+              assign templates = section.settings.templates | split: ","
+
+              for item in templates
+                assign handle_template = item | strip | downcase
+                if handle_template == template.suffix
+                  assign button_url = second_button_url
+                endif
+              endfor
+          %}
+          <a
+            href="{{ button_url }}"
+            class="reverse-counter__button"
+            style="--background: {{ section.settings.button_color }}"
+          >
+            {{ section.settings.button_text }}
+          </a>
+        </div>
+      {%- endunless -%}
+
+      </div>
+    </div>
+  </reverse-counter>
+
+  {{ 'component-reverse-counter.js' | asset_url | script_tag }}
+{% endif %}
+
+{% schema %}
+{
+  "name": "Reverse counter",
+   "class": "reverse-counter__wrapper",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "background",
+      "label": "Background"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_mobile",
+      "label": "Background mobile"
+    },
+    {
+      "type": "select",
+      "id": "timer_style",
+      "label": "Timer Style",
+      "options": [
+        {
+          "value": "default",
+          "label": "Default"
+        },
+        {
+          "value": "secondary",
+          "label": "Secondary"
+        }
+      ],
+      "default": "default"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_days",
+      "label": "Show days",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo"
+    },
+    {
+      "type": "image_picker",
+      "id": "logo_mobile",
+      "label": "Logo Mobile"
+    },
+    {
+      "type": "text",
+      "id": "event_date",
+      "label": "Event date",
+      "info": "'Year-month-day"
+    },
+    {
+      "type": "richtext",
+      "id": "timer_text",
+      "label": "Timer text",
+      "default": "<p>Hurry up!</br>Limited Time Offer</p>"    
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "Get 60% OFF"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button URL"
+    },
+    {
+      "type": "url",
+      "id": "second_button_url",
+      "label": "Second Button URL"
+    },
+    {
+      "type": "textarea",
+      "id": "templates",
+      "label": "Templates",
+      "info": "Templates on which to use the second link"
+    },
+    {
+      "type": "color",
+      "id": "button_color",
+      "label": "Button color",
+      "default": "#000000"
+
+    }
+  ],
+  "enabled_on": { "groups": ["header"] },
+  "presets": [
+    {
+      "name": "Reverse counter"
+    }
+  ]
+}
+{% endschema %}

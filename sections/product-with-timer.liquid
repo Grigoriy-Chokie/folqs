@@ -1,0 +1,411 @@
+{{ 'section-landing-page.css' | asset_url | stylesheet_tag }}
+{{ 'section-product-with-timer.css' | asset_url | stylesheet_tag }}
+
+{% style %}
+  .section-{{ section.id }}--padding {
+    position: relative;
+    background: {{ section.settings.background }};
+    padding-top: {{ section.settings.padding_top_mobile }}px;
+    padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}--padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{% endstyle %}
+{% liquid
+  assign product = section.settings.landing_product
+  assign reviews = section.blocks | where: 'type', 'reviews'
+  assign offer = section.blocks | where: 'type', 'offer'
+  assign typesStrings = 'desktop,mobile' | split: ','
+%}
+{% if product != blank %}
+  <div class="landing-product-with-timer section-{{ section.id }}--padding">
+    <div class="landing-product-with-timer__container-wrapper page-width">
+      {% unless section.settings.heading == blank %}
+        <div class="landing-product-with-timer__title product-with-timer-block">
+          <h2 id="landing-product-with-timer-alternative" class="product-with-timer-block__title">
+            {%- if section.settings.heading != blank -%}
+              {{- section.settings.heading -}}
+            {%- else -%}
+              {{- product.title -}}
+            {%- endif -%}
+          </h2>
+          {% unless offer == blank %}
+            <span class="landing-product-with-timer__offer">
+              {{ offer[0].settings.content }}
+            </span>
+          {% endunless %}
+        </div>
+      {% endunless %}
+      <div class="landing-product-with-timer__container">
+        {% if product.featured_image != blank -%}
+          <div class="landing-product-with-timer__item landing-product-with-timer__image">
+            {% unless reviews == blank %}
+              <div class="product-with-timer-information__reviews product-with-timer-block">
+                <span class="product-with-timer-information__reviews-icon">
+                  {%- render 'icon-stars' -%}
+                </span>
+                {% if reviews[0].settings.text != blank %}
+                  <span class="product-with-timer-information__reviews-text">{{- reviews[0].settings.text }}</span>
+                {% endif %}
+              </div>
+            {% endunless %}
+            <div class="landing-product-with-timer__image-wrapper">
+              {% unless section.settings.featured_image == blank %}
+                {{
+                  section.settings.featured_image
+                  | image_url: width: 1500
+                  | image_tag:
+                    widths: '900',
+                    alt: product.featured_image.alt,
+                    loading: 'lazy',
+                    class: 'landing-product-with-timer__image'
+                }}
+              {% else %}
+                {{
+                  product.featured_image
+                  | image_url: width: 1500
+                  | image_tag:
+                    widths: '900',
+                    alt: product.featured_image.alt,
+                    loading: 'lazy',
+                    class: 'landing-product-with-timer__image'
+                }}
+              {% endunless %}
+            </div>
+          </div>
+        {% endif %}
+
+        <div class="landing-product-with-timer__item landing-product-with-timer__information">
+          {% for block in section.blocks %}
+            {%- case block.type -%}
+              {%- when 'description' -%}
+                {% unless block.settings.content_desktop == blank or block.settings.content_mobile == blank %}
+                  {% for typesString in typesStrings %}
+                    {%- capture descriptionKey -%}content_{{- typesString -}}{%- endcapture -%}
+                    {%- unless block.settings[descriptionKey] == blank -%}
+                      <span class="product-with-timer-information__description product-with-timer-information__description--{{ typesString }}">
+                        {{ block.settings[descriptionKey] }}
+                      </span>
+                    {% endunless %}
+                  {% endfor %}
+                {% endunless %}
+              {%- when 'feature' -%}
+                {% if block.settings.icon and block.settings.title != blank %}
+                  <div class="product-with-timer-information__feature product-with-timer-block">
+                    <div class="product-with-timer-information__feature-icon">
+                      {{
+                        block.settings.icon
+                        | image_url: width: 200
+                        | image_tag: widths: '100', alt: block.settings.icon.alt, loading: 'lazy'
+                      }}
+                    </div>
+                    <div class="product-with-timer-information__feature-content">
+                      <h4>
+                        {{ block.settings.title }}
+                      </h4>
+                      {% if block.settings.text != blank %}
+                        <p>
+                          {{ block.settings.text }}
+                        </p>
+                      {% endif %}
+                    </div>
+                  </div>
+                {% endif %}
+              {% when 'button' %}
+                {% unless block.settings.label == blank or block.settings.link == blank %}
+                  <a href="{{ block.settings.link }}" class="product-with-timer-informatio__button">
+                    {{ block.settings.label }}
+                  </a>
+                {% endunless %}
+              {% when 'time_offer' %}
+                {% unless block.settings.time_limit == blank %}
+                  <div class="product-with-timer-information__offer">
+                    {% unless block.settings.content == blank %}
+                      <span class="offer__text">
+                        {{ block.settings.content }}
+                      </span>
+                    {% endunless %}
+                    <div class="offer__timer"></div>
+                    <script>
+                      let endedOfferText = '{{ block.settings.content_ended }}';
+                      let offerTimer = {{ block.settings.time_limit }};
+                    </script>
+                    {{ 'section-landing-page-alternative-timer.js' | asset_url | script_tag }}
+                  </div>
+                {% endunless %}
+              {%- when 'advantages_list' -%}
+                {% if block.settings.advantages_list != blank %}
+                  <div class="product-with-timer-information__advantages-wrapper">
+                    {% assign advantages_list_separated = block.settings.advantages_list | split: ', ' %}
+                    {% for advantage in advantages_list_separated %}
+                      <div class="product-with-timer-information__advantages-item">
+                        {% unless block.settings.icon == blank %}
+                          {{ block.settings.icon }}
+                        {% else %}
+                          {% if forloop.index == 1 %}
+                            {% render 'icon-shipping' %}
+                          {% elsif forloop.index == 2 %}
+                            {% render 'icon-clock' %}
+                          {% elsif forloop.index == 3 %}
+                            {% render 'icon-protect' %}
+                          {% endif %}
+                        {% endunless %}
+                        <span class="advantages-item__label">{{ advantage }}</span>
+                      </div>
+                    {% endfor %}
+                  </div>
+                {% endif %}
+            {%- endcase -%}
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+{% endif %}
+
+{% schema %}
+{
+  "name": "product with timer",
+  "tag": "section",
+  "class": "landing-product-with-timer-alternative",
+  "blocks": [
+    {
+      "type": "description",
+      "name": "Description",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "Both settings are supposed to be filled for this block to be displayed!"
+        },
+        {
+          "type": "richtext",
+          "id": "content_desktop",
+          "label": "Content",
+          "default": "<p>Lorem ipsum dolor sit amet consectetur. In ac elementum suspendisse viverra dui nisi. Sit elit id tellus id iaculis volutpat lorem. Vel a id justo diam. Cursus magna mauris nulla id metus.</p>"
+        },
+        {
+          "type": "richtext",
+          "id": "content_mobile",
+          "label": "Content",
+          "default": "<p>Lorem ipsum dolor sit amet consectetur. Gravida facilisi eleifend sit quam morbi risus id. Nisl massa donec tincidunt.</p>"
+        }
+      ]
+    },
+    {
+      "type": "offer",
+      "name": "Offer",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "content",
+          "label": "Content",
+          "default": "Try it Today for Up to 50% OFF",
+          "info": "Small orange tag below the title"
+        }
+      ]
+    },
+    {
+      "type": "time_offer",
+      "name": "Time offer",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "content",
+          "label": "Content",
+          "default": "OFFER ENDS IN"
+        },
+        {
+          "type": "number",
+          "label": "Time limit",
+          "id": "time_limit",
+          "default": 155,
+          "info": "Number of minutes left till 'offer ends'"
+        },
+        {
+          "type": "text",
+          "id": "content_ended",
+          "label": "Content when time ran out",
+          "default": "OFFER ENDED :c"
+        }
+      ]
+    },
+    {
+      "type": "reviews",
+      "name": "Review",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "3,500+ Five Star Reviews"
+        }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "Feature",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Default title"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text,",
+          "default": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, natus, neque! Eaque ipsum iusto laborum?"
+        }
+      ]
+    },
+    {
+      "type": "button",
+      "name": "Button",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label",
+          "default": "Save Up to 50% TODAY"
+        },
+        {
+          "type": "url",
+          "label": "Link",
+          "id": "link"
+        }
+      ]
+    },
+    {
+      "type": "advantages_list",
+      "name": "Advantages list",
+      "settings": [
+        {
+          "type": "text",
+          "label": "Advantages list",
+          "id": "advantages_list",
+          "placeholder": "Ships in 30 days, Update or Cancel Anytime, 90-Day Money Back Guarantee"
+        },
+        {
+          "type": "html",
+          "label": "Icon",
+          "id": "icon"
+        }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "color_background",
+      "id": "background",
+      "label": "Background",
+      "default": "linear-gradient(#E4F0FF 29.75%, rgba(228, 240, 255, 0.00) 100%)"
+    },
+    {
+      "type": "paragraph",
+      "content": "Space between sections on the desktop"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "unit": "px",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "unit": "px",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 0
+    },
+    {
+      "type": "paragraph",
+      "content": "Space between sections on the mobile"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Padding top",
+      "unit": "px",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Padding bottom",
+      "unit": "px",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 0
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Only Natural Ungredients"
+    },
+    {
+      "type": "product",
+      "id": "landing_product",
+      "label": "Landing product"
+    },
+    {
+      "type": "image_picker",
+      "label": "Featured image",
+      "id": "featured_image",
+      "info": "Will replace product image if filled."
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_style",
+      "label": "Enable extra style for this section",
+      "default": false
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product  with timer",
+      "blocks": [
+        {
+          "type": "reviews"
+        },
+        {
+          "type": "feature"
+        },
+        {
+          "type": "feature"
+        },
+        {
+          "type": "feature"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,430 @@
+{%- style -%}
+  .ingredients--{{section.id}} .ingredients__title{
+    text-align:{{ section.settings.text_align }};
+  }
+  {% if  section.settings.text_align == "left"%}
+  .ingredients--{{section.id}} .ingredients__subtitle{
+    margin-left: 0;
+    text-align:{{ section.settings.text_align }};
+    max-width:  743px;
+  }
+  {% endif %}
+  .ingredients--{{section.id}} {
+    padding-top: {{section.settings.padding_top}}px;
+    padding-bottom: {{section.settings.padding_bottom}}px;
+  }
+  @media(max-width: 850px) {
+    .ingredients--{{section.id}} {
+      padding-top: {{section.settings.padding_top_mobile}}px;
+      padding-bottom: {{section.settings.padding_bottom_mobile}}px;
+    }
+  }
+{%- endstyle -%}
+{% assign popupBlocks = section.blocks | where: 'type', 'popup' %}
+{{ 'component-ingredients.css' | asset_url | stylesheet_tag }}
+<div class="ingredients ingredients--{{section.id}}">
+  {% for block in section.blocks %}
+    {% if block.type == 'popup' %}
+      {% unless block.settings.image == blank %}
+        <div class="ingredients__popup-overlay" onclick="deactivatePopup(event)">
+          <div class="ingredients__popup">
+            {% unless block.settings.heading == blank %}
+              <div class="popup__heading-wrapper">
+                <h5 class="popup__title">
+                  {{ block.settings.heading }}
+                </h5>
+                <div class="popup__close-button" onclick="deactivatePopup(event)">
+                  {% render 'popup-close-icon' %}
+                </div>
+              </div>
+            {% endunless %}
+            {% liquid
+              assign popup_metaobject_handle = block.settings.popup_metaobject_handle
+              assign popup_metaobject = shop.metaobjects.supplement_facts[popup_metaobject_handle]
+            %}
+            {% if popup_metaobject %}
+              <div class="popup__content-wrapper">
+                {% render 'supplement-facts-popup' | metaobject: popup_metaobject %}
+              </div>
+            {% else %}
+              <div class="popup__image-wrapper">
+                <picture>
+                  {% if block.settings.image_mobile != blank %}
+                    <source srcset="{{ block.settings.image_mobile | img_url: "master" }}" media="(max-width: 750px)">
+                  {% endif %}
+                  {{ block.settings.image | image_url: width: 2000 | image_tag: loading: 'lazy', class: 'popup__image' }}
+                </picture>
+              </div>
+            {% endif %}
+          </div>
+        </div>
+      {% endunless %}
+    {% endif %}
+  {% endfor %}
+  <div class="ingredients__container page-width ingredients__container-{{ section.settings.columns_number }}-columns">
+    {% if section.settings.heading != blank %}
+      <div class="ingredients__title">
+        <span class="ingredients__title-content {% unless section.settings.heading_mobile == blank %}ingredients__title-content--desktop {% endunless %}">{{- section.settings.heading -}}</span>
+        {% unless section.settings.heading_mobile == blank %}
+          <span class="ingredients__title-content ingredients__title-content--mobile">{{- section.settings.heading_mobile -}}</span>
+        {% endunless %}
+      </div>
+    {% endif %}
+    {% if section.settings.sub_heading != blank %}
+      <p class="ingredients__subtitle" class="">{{- section.settings.sub_heading -}}</p>
+    {% endif %}
+    <div class="ingredients__grid ingredients__grid-{{ section.settings.columns_number }}-columns {% if section.blocks.size > section.settings.number_of_items_shown %} ingredients__grid--restricted {% endif %}">
+      {% for block in section.blocks %}
+        {% if block.settings.content_page != blank and block.type == 'ingredient' %}
+          {% if section.settings.content_type == 'popup' %}
+            <div class="ingredients__popup-overlay" index="{{ forloop.index}}">
+              <div class="ingredients-popup__wrapper">
+                <div class="ingredients-popup__close-button">
+                  {% render 'popup-close-icon' %}
+                </div>
+                <div
+                  class="ingredients-popup__content"
+                  id="popup-content-{{ forloop.index }}"
+                  page-link="{{block.settings.content_page}}"
+                ></div>
+              </div>
+            </div>
+          {% endif %}
+          <div
+            class="ingredients__item ingredients__item--{{section.settings.content_type }} {% if forloop.index > section.settings.number_of_items_shown and section.settings.content_type == 'popup' %} ingredients__item--desktop-hidden {% endif %}{% if forloop.index > section.settings.number_of_items_shown_mobile and section.settings.content_type == 'popup' %} ingredients__item--mobile-hidden{%elsif  forloop.index == section.settings.number_of_items_shown_mobile and section.settings.content_type == 'popup' %} ingredients__item--mobile-with-overlay{% endif %}"
+            index="{{ forloop.index}}"
+          >
+            {% if block.settings.img != blank %}
+              <div class="ingredients__item-image {% if block.settings.image_mobile != blank %} ingredients__item-image--desktop{% endif %} ">
+                {{
+                  block.settings.img
+                  | image_url: width: 1000
+                  | image_tag: widths: '300,400,500,600,700', alt: block.settings.img.alt
+                  | default: '', loading: 'lazy'
+                }}
+              </div>
+              {% if block.settings.image_mobile != blank %}
+                <div class="ingredients__item-image ingredients__item-image--mobile" style="display:none;">
+                  {{
+                    block.settings.image_mobile
+                    | image_url: width: 1000
+                    | image_tag: widths: '300,400,500,600,700', alt: block.settings.image_mobile.alt
+                    | default: '', loading: 'lazy'
+                  }}
+                </div>
+              {% endif %}
+            {% endif %}
+            {% if block.settings.title != blank or block.settings.button_label != blank %}
+              <div class="ingredients__item-text-wrapper">
+                {% if block.settings.title != blank %}
+                  <h3 class="ingredients__item-title">{{- block.settings.title -}}</h3>
+                {% endif %}
+                {% if block.settings.button_label != blank %}
+                  <span class="ingredients__item-button">
+                    {{ block.settings.button_label }}
+                    {% render 'icon-learn-more' %}
+                  </span>
+                {% endif %}
+                {% if section.settings.content_type == 'collapsible' and block.settings.close_button_label != blank %}
+                  <span class="ingredients__item-button ingredients__item-button--close">
+                    {{ block.settings.close_button_label }}
+                    {% render 'icon-learn-more' %}
+                  </span>
+                {% endif %}
+              </div>
+            {% endif %}
+          </div>
+          {% if section.settings.content_type == 'collapsible' %}
+            <div
+              class="ingredients__collapsible-content"
+              index="{{ forloop.index}}"
+              id="collapsible-content-{{ forloop.index }}"
+              page-link="{{block.settings.content_page}}"
+            ></div>
+          {% endif %}
+        {% endif %}
+      {% endfor %}
+      {% unless popupBlocks.size == 0 %}
+        {% for block in section.blocks %}
+          {% if block.type == 'popup' and block.settings.button_label != blank %}
+            <div class="ingredients__popup-controls">
+              {% unless block.settings.button_description == blank %}
+                <div class="ingredients__popup-button-description">
+                  {{ block.settings.button_description }}
+                </div>
+              {% endunless %}
+              <div onclick="activatePopup(this.closest('.ingredients'))" class="ingredients__popup-button">
+                {{ block.settings.button_label }}
+                {% render 'icon-arrow-right' %}
+              </div>
+            </div>
+          {% endif %}
+        {% endfor %}
+      {% endunless %}
+    </div>
+    {% if section.settings.content_type == 'popup'
+      and section.settings.button_load_more != blank
+      and section.blocks.size > section.settings.number_of_items_shown_mobile
+      or section.blocks.size > section.settings.number_of_items_shown
+    %}
+      <button
+        class="ingredients__load-more-button {% if section.blocks.size > section.settings.number_of_items_shown %} ingredients__load-more-button--desktop {% endif %} {% if section.blocks.size > section.settings.number_of_items_shown_mobile %} ingredients__load-more-button--mobile {% endif %}"
+        onclick="this.closest('.ingredients__container')?.classList.add('ingredients__container--all-itmes-shown');"
+      >
+        {{ section.settings.button_load_more }}
+      </button>
+    {% endif %}
+  </div>
+</div>
+{% if section.settings.content_type == 'popup' %}
+  <script src="{{ 'natural-ingredients-alternative-popup-renderer.js' | asset_url }}" defer></script>
+{% else %}
+  <script src="{{ 'natural-ingredients-alternative-collapsible-renderer.js' | asset_url }}" defer></script>
+{% endif %}
+{% unless popupBlocks.size == 0 %}
+  <script src="{{ 'cta-banner-popup.js' | asset_url }}" defer></script>
+{% endunless %}
+{% schema %}
+{
+  "name": "Ingredients",
+  "tag": "section",
+  "presets": [
+    {
+      "name": "Ingredients"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "ingredient",
+      "name": "Ingredient",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "img",
+          "label": "Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_mobile",
+          "label": "Image mobile"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Lorem ipsum dolor sit amet"
+        },
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "Button label",
+          "default": "Learn more"
+        },
+        {
+          "type": "url",
+          "label": "Popup page",
+          "id": "content_page"
+        },
+        {
+          "type": "text",
+          "id": "close_button_label",
+          "label": "Close button label",
+          "default": "Got It"
+        }
+      ]
+    },
+    {
+      "type": "popup",
+      "name": "Popup",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "richtext",
+          "label": "Popup heading",
+          "id": "heading"
+        },
+        {
+          "type": "image_picker",
+          "label": "Image",
+          "id": "image"
+        },
+        {
+          "type": "image_picker",
+          "label": "Image for mobile",
+          "id": "image_mobile"
+        },
+        {
+          "type": "text",
+          "id": "popup_metaobject_handle",
+          "label": "Content Metaobject handle",
+          "info": "Add handle of created metaobject."
+        },
+        {
+          "type": "text",
+          "label": "Button label",
+          "id": "button_label"
+        },
+        {
+          "type": "richtext",
+          "label": "Button description",
+          "id": "button_description"
+        }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "Space between sections on the desktop"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "unit": "px",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "unit": "px",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 0
+    },
+    {
+      "type": "paragraph",
+      "content": "Space between sections on the mobile"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Padding top",
+      "unit": "px",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Padding bottom",
+      "unit": "px",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 0
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Only Natural Ungredients"
+    },
+    {
+      "type": "text",
+      "id": "heading_mobile",
+      "label": "Heading mobile"
+    },
+    {
+      "type": "text",
+      "id": "sub_heading",
+      "label": "Sub-heading",
+      "default": "Lorem ipsum dolor sit amet consectetur. Gravida facilisi eleifend sit quam morbi risus id. Nisl massa donec tincidunt."
+    },
+    {
+      "type": "select",
+      "label": "Heading aligh",
+      "id": "text_align",
+      "default": "center",
+      "options": [
+        {
+          "label": "Center",
+          "value": "center"
+        },
+        {
+          "label": "Left",
+          "value": "left"
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "id": "button_load_more",
+      "label": "Load more button label",
+      "default": "See All Ingredients",
+      "info": "Will be displayed if there are any hiddel blocks"
+    },
+    {
+      "type": "url",
+      "id": "url_button",
+      "label": "Url for the button",
+      "default": "/"
+    },
+    {
+      "type": "select",
+      "label": "Content type",
+      "id": "content_type",
+      "default": "popup",
+      "options": [
+        {
+          "label": "Collapsible content",
+          "value": "collapsible"
+        },
+        {
+          "label": "Popup",
+          "value": "popup"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "label": "Columns number",
+      "id": "columns_number",
+      "default": "two",
+      "options": [
+        {
+          "label": "Two columns",
+          "value": "two"
+        },
+        {
+          "label": "One column",
+          "value": "one"
+        }
+      ]
+    },
+    {
+      "type": "paragraph",
+      "content": "Desktop"
+    },
+    {
+      "type": "range",
+      "id": "number_of_items_shown",
+      "label": "How many items are shown",
+      "min": 1,
+      "max": 50,
+      "step": 1,
+      "default": 15
+    },
+    {
+      "type": "paragraph",
+      "content": "Mobile"
+    },
+    {
+      "type": "range",
+      "id": "number_of_items_shown_mobile",
+      "label": "How many items are shown",
+      "min": 1,
+      "max": 50,
+      "step": 1,
+      "default": 4
+    }
+  ]
+}
+{% endschema %}

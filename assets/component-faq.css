@@ -1,0 +1,244 @@
+.faq-item__answer,
+.faq-item__question,
+.faq__text-information,
+.faq__text-title {
+  font-family: Raleway;
+  font-style: normal;
+}
+.faq--row .faq__container {
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+  column-gap: 120px;
+}
+
+.faq--row .faq__text {
+  max-width: 376px;
+  width: 100%;
+  flex: 1 0 auto;
+}
+.faq__text-title {
+  color: #000;
+  font-size: 48px;
+  font-weight: 500;
+  line-height: 60px;
+  margin: 0 0 12px;
+  letter-spacing: 0;
+}
+
+.faq--column .faq__text-title {
+  color: #000;
+  text-align: center;
+  font-family: Raleway;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 40px; /* 125% */
+  margin-bottom: 40px;
+}
+
+.faq__text-information {
+  color: rgba(0, 0, 0, 0.7);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+  margin: 0;
+  padding: 0;
+}
+.faq__content {
+  max-width: 100%;
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+}
+
+.faq__content--alternative {
+  background: #F4FAFF;
+  border-radius: 16px;
+  padding: 4px 20px;
+}
+
+.faq__content--alternative svg {
+  width: 26px;
+  height: 26px;
+}
+
+.faq__content--alternative  .collapse-row[data-open=true] .collapse-row__button svg {
+  transform: none;
+}
+
+.faq__content--alternative .faq-item[data-open=true] .faq-item__question svg rect:nth-child(2n) {
+  display: none;
+}
+
+.faq__content--alternative .faq-item {
+  background: transparent;
+  border-radius: 0;
+}
+
+.faq__content--alternative .landing-product__item .collapse-row__content ul {
+  margin-top: 14px;
+}
+
+.faq__content--alternative .faq-item__question {
+  padding: 14px 0;
+}
+
+.faq__content--alternative .faq-item {
+  border-bottom: 1px solid rgba(49, 55, 65, 0.15);
+}
+
+.faq__content--alternative .faq-item:last-child {
+  border-bottom: none;
+} 
+
+.faq__content--alternative .faq-item__question {
+  font-size: 18px;
+}
+
+.faq__content--alternative .faq-item__answer * {
+  font-size: 15px;
+  letter-spacing: 0;
+}
+
+.faq__content--alternative .collapse-row[data-open=true] .collapse-row__content {
+  margin-top: 0;
+  padding-right: 0;
+}
+
+.faq__content--alternative .faq-item[data-open=true] .faq-item__question {
+  padding-bottom: 0;
+}
+
+.faq__content--alternative .faq-item__answer * {
+  margin-top: 14px;
+}
+
+@media screen and (max-width: 749px) {
+
+  .faq__content--alternative {
+    padding: 2px 16px;
+    border-radius: 16px;
+  }
+
+  .faq__content--alternative .faq-item__question {
+    font-size: 16px;
+    padding: 10px 0;
+  }
+}
+
+.faq--column .faq__content {
+  max-width: 740px;
+  margin: 0 auto;
+}
+.faq-item__question {
+  color: #000;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 32px;
+  border-bottom: 1px solid #f1f1f1;
+  padding-bottom: 10px;
+  padding-top: 24px;
+  transition: 0.3s linear;
+  text-align: left;
+}
+.faq-item__answer {
+  color: rgba(0, 0, 0, 0.7);
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+.faq-item__answer p:has(svg) {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 10px;
+}
+.faq--row .faq-item[data-open="true"] .faq-item__question {
+  color: #005eb8;
+  border-bottom: 1px solid #005eb8;
+}
+.faq-item[data-open="true"] .faq-item__question svg path {
+  fill: #c4c4c4;
+}
+.faq__text-title--mobile {
+  display: none;
+}
+.faq__text-title--mobile p {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+.faq__text-title--mobile p:last-child {
+  margin-bottom: 0;
+}
+@media (max-width: 998px) {
+  .faq__text-title--with-mobile .faq__text-title--mobile {
+    display: block;
+  }
+  .faq__text-title--with-mobile .faq__text-title--desktop {
+    display: none;
+  }
+  .faq__container {
+    column-gap: 0;
+    row-gap: 40px;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: flex-start;
+  }
+  .faq__content,
+  .faq__text {
+    max-width: 100%;
+    width: 100%;
+    flex: 1 1 100%;
+  }
+  .faq__text-title {
+    font-size: 32px;
+    line-height: 42px;
+  }
+}
+
+/* bovine-colostrum-v3 styles update */
+.faq--bovine-colostrum-v3 .faq__container {
+  max-width: 900px;
+}
+
+.faq--bovine-colostrum-v3 .faq-item[data-open="true"] .faq-item__question,
+.faq--bovine-colostrum-v3 .collapse-row__button:hover {
+  color: initial;
+  border-color: #f1f1f1;
+}
+
+.landing-product__item .collapse-row__button:hover,
+.landing-product__item .faq-item[data-open="true"] .faq-item__question {
+  color: initial;
+}
+
+.faq--bovine-colostrum-v3 .collapse-row__content ul,
+.landing-product__item .collapse-row__content ul {
+  margin: 0;
+  padding: 0 0 0 25px;
+}
+
+.faq--bovine-colostrum-v3 .collapse-row__content ul li,
+.landing-product__item .collapse-row__content ul li {
+  list-style-image: url('data:image/svg+xml,<svg width="16" height="14" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M16.5654 1.00568C18.3718 0.847357 20.2019 0.985169 21.9664 1.40353C22.329 1.47654 22.7079 1.60122 22.9409 1.9072C23.3388 2.3715 23.3543 3.1188 22.9475 3.58228C22.6218 3.98177 22.0582 4.1565 21.5636 4.00966C18.8557 3.3165 15.9469 3.442 13.3072 4.35911C10.6157 5.27704 8.20481 7.00708 6.492 9.27853C4.78903 11.527 3.80383 14.2931 3.62583 17.1027C3.44044 19.9377 4.08684 22.8342 5.53879 25.2828C8.09571 29.628 13.0323 32.4671 18.0806 32.4384C21.7613 32.4343 25.4027 30.9299 28.04 28.3672C30.0046 26.4813 31.4082 24.022 32.0332 21.3716C32.5829 19.0821 32.5615 16.6597 31.9766 14.3792C31.8019 13.7418 32.1989 13.0192 32.8273 12.819C33.3671 12.6229 34.011 12.8477 34.3318 13.3194C34.5196 13.5876 34.5606 13.9207 34.6386 14.2308C35.4827 17.9394 35.0364 21.9261 33.3958 25.3575C32.2063 27.8561 30.3885 30.0488 28.1638 31.6927C25.652 33.5631 22.6177 34.7254 19.4972 34.9978C15.0462 35.4079 10.4722 33.9502 7.05473 31.0759C4.61594 29.0423 2.75465 26.3156 1.78751 23.2886C0.778522 20.1493 0.72028 16.7229 1.56766 13.5401C2.32727 10.6616 3.84977 7.98243 5.9752 5.89392C8.78887 3.09173 12.6107 1.34036 16.5654 1.00568Z" fill="%2300A30B"/><path d="M32.8206 4.10736C33.3021 3.59713 34.1979 3.59795 34.6802 4.10818C35.1855 4.59135 35.1806 5.47975 34.6761 5.96209C29.5123 11.1333 24.3394 16.2956 19.1755 21.4676C18.8851 21.8171 18.484 22.1304 18.0041 22.1042C17.5472 22.1304 17.1469 21.8524 16.8688 21.5136C15.0846 19.713 13.2848 17.9296 11.4974 16.1331C10.9986 15.6516 10.9994 14.7698 11.5007 14.2907C11.9781 13.7829 12.8665 13.778 13.3505 14.2792C14.9017 15.8255 16.4504 17.3743 17.9975 18.9255C22.944 13.9921 27.8782 9.04564 32.8206 4.10736Z" fill="%2300A30B"/></svg>');
+
+  line-height: 1.1;
+  margin: 8px 0;
+}
+
+.faq--bovine-colostrum-v3 .collapse-row__content ul li::marker,
+.landing-product__item .collapse-row__content ul li::marker {
+  line-height: 0;
+  position: relative;
+  top: 5px;
+}
+
+.landing-product__item .collapse-row__button:hover {
+  border-color: var(--primary-color);
+}
+
+.landing-product__item .collapse-row__button svg path {
+  fill: black;
+  stroke-width: 2;
+}

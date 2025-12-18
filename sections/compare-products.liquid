@@ -1,0 +1,296 @@
+{%- if section.blocks.size > 0 -%}
+{{ 'compare-products.css' | asset_url | stylesheet_tag }}
+{%- style -%}
+  .section-{{ section.id }} {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+  
+  @media(max-width: 768px) {
+    .section-{{ section.id }} {
+      padding-top: {{ section.settings.padding_top_mobile }}px;
+      padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+    }
+  }
+{%- endstyle -%}
+<div class="compare-products section-{{ section.id }} page-width">
+  <div class="compare-products__header">
+    {%- if section.settings.title != blank -%}
+      <div class="compare-products__title">{{ section.settings.title }}</div>
+    {%- endif -%}
+    {%- if section.settings.subtitle != blank -%}
+      <div class="compare-products__subtitle">{{ section.settings.subtitle }}</div>
+    {%- endif -%}
+  </div>
+  <div class="compare-products__table">
+    {%- if section.settings.image != blank -%}
+      <div class="compare-products__image">
+        {{
+          section.settings.image
+          | image_url: width: 1000
+          | image_tag: width: 320, alt: section.settings.image.alt
+          | default: '', loading: 'lazy'
+        }}
+      </div>
+    {%- endif -%}
+    <div class="compare-products__top">
+      {% assign columnOrderStrings = 'first,second' | split: ',' %}
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'table_top' %}
+          {% for orderString in columnOrderStrings %}
+            {%- capture imageSettingKey -%} image_{{ orderString }}_column {%- endcapture -%}
+            {%- capture titleSettingKey -%} title_{{ orderString }}_column {%- endcapture -%}
+            {%- capture titleSettingKeyMobile -%} title_{{ orderString }}_column_mobile {%- endcapture -%}
+            <div class="compare-products__product">
+              {%- if block.settings[imageSettingKey] != blank -%}
+                {{
+                  block.settings[imageSettingKey]
+                  | image_url: width: 1000
+                  | image_tag: width: 150, height: 194, alt: block.settings[imageSettingKey].alt
+                  | default: '', loading: 'lazy'
+                }}
+              {%- endif -%}
+              {% if block.settings[titleSettingKey] != blank and block.settings[titleSettingKeyMobile] != blank %}
+                <p class="compare-product__title--desktop">{{ block.settings[titleSettingKey] }}</p>
+                <p class="compare-product__title--mobile">{{ block.settings[titleSettingKeyMobile] }}</p>
+              {% endif %}
+            </div>
+          {% endfor %}
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+    <div class="compare-products__content">
+      {%- for block in section.blocks -%}
+        {%- if block.type == 'table_content' %}
+          <div class="compare-products__item {% if block.settings.is_line_hidden %} compare-products__item--mobile-hidden{% endif %}">
+            {%- if block.settings.text != blank %}
+              <div class="compare-products__content-title ">
+                <span class="{% if block.settings.text_mobile !=blank %}compare-products__content-title--desktop {% endif %}">
+                  {{ block.settings.text }}
+                </span>
+                {% if block.settings.text_mobile != blank %}
+                  <span class="compare-products__content-title--mobile">{{ block.settings.text_mobile }} </span>
+                {% endif %}
+              </div>
+            {%- endif -%}
+            {% for orderString in columnOrderStrings %}
+              {%- capture settingKey -%} checked_{{ orderString }}_column {%- endcapture -%}
+              <div class="compare-products__checkbox">
+                {%- assign devices = 'desktop, mobile' | split: ', ' -%}
+                {%- for device in devices -%}
+                  <span class="compare-products__{{block.settings[settingKey] }} compare-products__{{ block.settings[settingKey]}}--{{ device }}">
+                    {%- if block.settings[settingKey] == 'checked' -%}
+                      {% assign labelKey = 'checked_label_' | append: device %}
+                      {% if block.settings[labelKey] == blank %}
+                        {%- render 'icon-checked' -%}
+                      {% else %}
+                        {{ block.settings[labelKey] }}
+                      {% endif %}
+                    {%- else -%}
+                      {% assign labelKey = 'unchecked_label_' | append: device %}
+                      {% if block.settings[labelKey] == blank %}
+                        {%- render 'icon-unchecked' -%}
+                      {% else %}
+                        {{ block.settings[labelKey] }}
+                      {% endif %}
+                    {%- endif %}
+                  </span>
+                {%- endfor -%}
+              </div>
+            {% endfor %}
+          </div>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+{% endif %}
+{% schema %}
+{
+  "name": "Compare products",
+  "limit": 1,
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "title",
+      "default": "<p>Not Just Another Multivitaminor Green Powder</p>",
+      "label": "Title"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Expertly crafted with a premium selection of ingredients, every component is meticulously picked for its clinically-backed health benefits. Designed to tackle unique body health challenges associated with aging, ensuring the most thorough support available today."
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding top(desktop)",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding bottom(desktop)",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding top(mobile)",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding bottom(mobile)",
+      "default": 0
+    }
+  ],
+  "blocks": [
+    {
+      "type": "table_top",
+      "name": "Table top",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "header",
+          "content": "First column"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_first_column",
+          "label": "Image product"
+        },
+        {
+          "type": "header",
+          "content": "Second column"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_second_column",
+          "label": "Image product"
+        },
+        {
+          "type": "text",
+          "id": "title_second_column",
+          "label": "Title(desktop)"
+        },
+        {
+          "type": "text",
+          "id": "title_second_column_mobile",
+          "label": "Title(mobile)"
+        }
+      ]
+    },
+    {
+      "type": "table_content",
+      "name": "Table content",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text"
+        },
+        {
+          "type": "text",
+          "id": "text_mobile",
+          "label": "Mobile text"
+        },
+        {
+          "type": "select",
+          "id": "checked_first_column",
+          "label": "Checkbox first column",
+          "options": [
+            {
+              "value": "checked",
+              "label": "Checked"
+            },
+            {
+              "value": "unchecked",
+              "label": "Unchecked"
+            }
+          ],
+          "default": "checked"
+        },
+        {
+          "type": "select",
+          "id": "checked_second_column",
+          "label": "Checkbox second column",
+          "options": [
+            {
+              "value": "checked",
+              "label": "Checked"
+            },
+            {
+              "value": "unchecked",
+              "label": "Unchecked"
+            }
+          ],
+          "default": "checked"
+        },
+        {
+          "type": "inline_richtext",
+          "label": "Checked label",
+          "id": "checked_label_desktop",
+          "info": "Will be displayed instead of the tick icon only on desktop"
+        },
+        {
+          "type": "inline_richtext",
+          "label": "Unchecked label",
+          "id": "unchecked_label_desktop",
+          "info": "Will be displayed instead of the minus icon only on desktop"
+        },
+        {
+          "type": "inline_richtext",
+          "label": "Checked label mobile",
+          "id": "checked_label_mobile",
+          "info": "Will be displayed instead of the tick icon on mobile"
+        },
+        {
+          "type": "inline_richtext",
+          "label": "Unchecked label mobile",
+          "id": "unchecked_label_mobile",
+          "info": "Will be displayed instead of the minus icon on mobile"
+        },
+        {
+          "type": "checkbox",
+          "label": "Hide this line on mobile",
+          "id": "is_line_hidden",
+          "default": false
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Compare products"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,177 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "rich_text_F4VmRi": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_QATDPG": {
+          "type": "heading",
+          "settings": {
+            "heading": "Talk about your brand",
+            "heading_size": "h1"
+          }
+        },
+        "text_6JAJjM": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>"
+          }
+        },
+        "button_jexaPM": {
+          "type": "button",
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_QATDPG",
+        "text_6JAJjM",
+        "button_jexaPM"
+      ],
+      "disabled": true,
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "ingredient_content_hUfQb8": {
+      "type": "ingredient-content",
+      "blocks": {
+        "percentage_island_AQzCb9": {
+          "type": "percentage_island",
+          "settings": {
+            "percentage": "20%",
+            "description": "might boost a key antioxidant enzyme's activity"
+          }
+        },
+        "percentage_island_8Y8h8N": {
+          "type": "percentage_island",
+          "settings": {
+            "percentage": "500%",
+            "description": "more Bioavailable Magnesium Byglicenate than magnesium oxide"
+          }
+        }
+      },
+      "block_order": [
+        "percentage_island_AQzCb9",
+        "percentage_island_8Y8h8N"
+      ],
+      "settings": {
+        "list_of_badges": "///Heart Rhythm, ///Bone Density, ///Cellular Longevity, ///Metabolic Balance",
+        "button_label": "Learn more",
+        "main_text": "<p>Our mineral formula is designed for maximum bioavailability, supporting cellular, skeletal, and metabolic health effectively. Magnesium aids heart and muscle function, while Calcium strengthens bones. Trace minerals like Manganese, Zinc, and Selenium, in their most absorbable forms, protect cellular health. Chromium, essential for blood sugar regulation, maintains metabolic balance. This blend offers daily support against the natural effects of aging, providing essential nutrients your body needs.</p>",
+        "main_text_hidden": "<h2>What to Expect</h2><ul><li>Expect an improvement in heart rhythm and potential blood pressure regulation, contributing to overall cardiovascular health.</li><li>Anticipate a more vigilant immune system, capable of effectively warding off infections and supporting overall immune health.</li><li>A crucial element in maintaining blood sugar levels, chromium supplementation can lead to better metabolic balance and energy regulation.</li><li>This trace mineral is vital for bone formation and maintaining proper enzyme function, contributing to overall well-being.</li></ul>",
+        "show_page_title": true
+      }
+    },
+    "natural_ingredients_fJGhb3": {
+      "type": "natural-ingredients",
+      "blocks": {
+        "ingredient_jQFn4Y": {
+          "type": "ingredient",
+          "settings": {
+            "img": "shopify://shop_images/Rectangle_15_16.png",
+            "title": "Magnesium",
+            "subtitle": "as Magnesium Bisglycinate Chelate",
+            "info": "100 mg"
+          }
+        },
+        "ingredient_wdLMhn": {
+          "type": "ingredient",
+          "settings": {
+            "img": "shopify://shop_images/Rectangle_15_17.png",
+            "title": "Calcium",
+            "subtitle": "as calcium citrate",
+            "info": "100 mg"
+          }
+        },
+        "ingredient_zVA3MV": {
+          "type": "ingredient",
+          "settings": {
+            "img": "shopify://shop_images/Rectangle_15_18.png",
+            "title": "Manganese",
+            "subtitle": "as manganese citrate",
+            "info": "2 mg"
+          }
+        },
+        "ingredient_JGzimG": {
+          "type": "ingredient",
+          "settings": {
+            "img": "shopify://shop_images/Rectangle_15_19.png",
+            "title": "Zinc",
+            "subtitle": "as Zinc Glycinate Chelate",
+            "info": "15 mg"
+          }
+        },
+        "ingredient_NqVkxr": {
+          "type": "ingredient",
+          "settings": {
+            "img": "shopify://shop_images/Rectangle_15_20.png",
+            "title": "Selenium",
+            "subtitle": "as Selenocysteine",
+            "info": "40 mcg"
+          }
+        },
+        "ingredient_bzfiMx": {
+          "type": "ingredient",
+          "settings": {
+            "img": "shopify://shop_images/Rectangle_15_21.png",
+            "title": "Chromium",
+            "subtitle": "as chromium polynicotinate",
+            "info": "100 mcg"
+          }
+        }
+      },
+      "block_order": [
+        "ingredient_jQFn4Y",
+        "ingredient_wdLMhn",
+        "ingredient_zVA3MV",
+        "ingredient_JGzimG",
+        "ingredient_NqVkxr",
+        "ingredient_bzfiMx"
+      ],
+      "settings": {
+        "padding_top": 40,
+        "padding_bottom": 100,
+        "padding_top_mobile": 24,
+        "padding_bottom_mobile": 100,
+        "heading": "",
+        "sub_heading": "",
+        "name_button": "",
+        "url_button": "/"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "rich_text_F4VmRi",
+    "ingredient_content_hUfQb8",
+    "natural_ingredients_fJGhb3"
+  ]
+}

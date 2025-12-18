@@ -1,0 +1,106 @@
+{{ 'section-deep-sleep-trusted-icons.css' | asset_url | stylesheet_tag }}
+
+<div class="deep-sleep-trusted-icons__wrapper" style="--background-color: {{ section.settings.background_color }};">
+  <div class="page-width deep-sleep-trusted-icons">
+    {%- unless section.settings.title == blank -%}
+      <{{ section.settings.title_tag }} class="deep-sleep-trusted-icons__title">
+        {{ section.settings.title }}
+      </{{ section.settings.title_tag }}>
+    {%- endunless -%}
+    {%- if section.blocks.size > 0 -%}
+      <div class="deep-sleep-trusted-icons__icons-list">
+        {%- for block in section.blocks -%}
+          <div class="deep-sleep-trusted-icons__icon-with-text">
+            {%- unless block.settings.icon == blank -%}
+              <div class="deep-sleep-trusted-icons__icon">
+                {{ block.settings.icon | image_url: width: 100 | image_tag }}
+              </div>
+            {%- endunless -%}
+            {%- unless block.settings.text == blank -%}
+              <span class="deep-sleep-trusted-icons__text">
+                {{ block.settings.text }}
+              </span>
+            {%- endunless -%}
+          </div>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Deep Sleep/ Trusted Icons",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Trusted by 5,000+ People"
+    },
+    {
+      "type": "select",
+      "id": "title_tag",
+      "label": "Title tag",
+      "options": [
+        {
+          "value": "h1",
+          "label": "H1"
+        },
+        {
+          "value": "h2",
+          "label": "H2"
+        },
+        {
+          "value": "h3",
+          "label": "H3"
+        },
+        {
+          "value": "h4",
+          "label": "H4"
+        },
+        {
+          "value": "h5",
+          "label": "H5"
+        },
+        {
+          "value": "h6",
+          "label": "H6"
+        }
+      ],
+      "default": "h2"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#E6EFF8"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Icon with text",
+      "type": "icon_with_text",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "Title"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Deep Sleep/ Trusted Icons"
+    }
+  ]
+}
+{% endschema %}

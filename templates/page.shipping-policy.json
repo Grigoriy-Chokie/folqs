@@ -1,0 +1,63 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "rich_text_jz78XM": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_JMdwdP": {
+          "type": "heading",
+          "settings": {
+            "heading": "{{ page.title }}",
+            "heading_size": "h1"
+          }
+        },
+        "text_cNRWUb": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Last updated: Jun 26, 2024</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_JMdwdP",
+        "text_cNRWUb"
+      ],
+      "settings": {
+        "background_color": "",
+        "desktop_content_position": "left",
+        "content_alignment": "left",
+        "color_scheme": "",
+        "full_width": false,
+        "is_section_narrow": true,
+        "padding_top": 140,
+        "padding_bottom": 4,
+        "margin_bottom": 0,
+        "padding_top_mobile": 83,
+        "padding_bottom_mobile": 0,
+        "margin_bottom_mobile": 0
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "is_heading_hidden": true,
+        "padding_top": 28,
+        "padding_bottom": 60,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 40
+      }
+    }
+  },
+  "order": [
+    "rich_text_jz78XM",
+    "main"
+  ]
+}

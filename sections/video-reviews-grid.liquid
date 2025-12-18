@@ -1,0 +1,312 @@
+{%- assign blocks_review = section.blocks | where: 'type', 'review' -%}
+{%- assign blocks_reviews_summary = section.blocks | where: 'type', 'reviews_summary' -%}
+{%- if section.settings.extra_styles -%}
+  {{ 'section-video-reviews-grid-extra.css' | asset_url | stylesheet_tag }}
+{%- else -%}
+  {{ 'section-video-reviews-grid.css' | asset_url | stylesheet_tag }}
+{%- endif -%}
+
+{%- if blocks_reviews_summary.size > 0 -%}
+  {{ 'component-summary-review.css' | asset_url | stylesheet_tag }}
+{%- endif -%}
+{%- if blocks_review.size > 0 -%}
+  {%- if section.settings.extra_styles -%}
+      {{ 'component-video-review-extra.css' | asset_url | stylesheet_tag }}
+  {%- else -%}
+      {{ 'component-video-review.css' | asset_url | stylesheet_tag }}
+  {%- endif -%}
+{%- endif -%}
+
+{%- style -%}
+  #shopify-section-{{ section.id }} {
+      background: {{ section.settings.prev_background }};
+  }
+
+  .{{ section.id }}--padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+      background: {{ section.settings.background }};
+      {% unless section.settings.extra_styles %}
+        border-radius: 50px 50px 0 0;
+      {% endunless %}
+  }
+  @media screen and (max-width: 768px) {
+      .{{ section.id }}--padding {
+          padding-top: {{ section.settings.padding_top_mobile }}px;
+          padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+          border-radius: 20px 20px 0 0;
+      }
+  }
+{%- endstyle -%}
+{%- assign stars_filled = 'icon-stars-filled.svg' | asset_url -%}
+{%- assign stars_unfilled = 'icon-stars-unfilled.svg' | asset_url -%}
+{%- assign v3_styles = section.settings.enable_v3_styles -%}
+
+{%- capture blocks_settings -%}
+{% for block in blocks_review %}{ 'url': '{% for source in block.settings.video.sources %}{% if source.format == 'mp4' %}{{ source.url }}{% break %}{% endif %}{% endfor %}','poster': '{{ block.settings.poster | default: block.settings.video.preview_image | image_url: width: 400 }}','rating': '{{ block.settings.rating }}','author': '{{ block.settings.author }}' }{% if forloop.last == false %}|{%endif%}{% endfor %}
+{%- endcapture -%}
+
+{{ 'component-video-reviews-v3.css' | asset_url | stylesheet_tag }}
+
+<div class="video-reviews {% if section.settings.style_type == 'new' %} video-reviews--new {% endif %} video-reviews--{{ template.suffix | default: template.name }} {{ section.id }}--padding {% if v3_styles == true %}video-reviews-v3{% endif %}">
+  <div class="video-reviews__wrapper page-width{% if section.settings.extra_styles %} page-width--extra{% endif %}">
+    <div class="video-reviews__header">
+      {%- unless section.settings.title == blank -%}
+        <h2 class="video-reviews__title">{{ section.settings.title }}</h2>
+      {%- endunless -%}
+      {%- unless section.settings.subtitle == blank -%}
+        <p class="video-reviews__subtitle {% unless section.settings.style_subtitle == false %} video-reviews__text--heading-style {% endunless %}">
+          {{ section.settings.subtitle }}
+        </p>
+      {%- endunless -%}
+      {%- unless section.settings.body_text == blank -%}
+        <p class="video-reviews__text">{{ section.settings.body_text | newline_to_br }}</p>
+      {%- endunless -%}
+      {% if blocks_reviews_summary.size > 0 %}
+        <div class="video-reviews__socials-wrapper">
+          {% for block in blocks_reviews_summary %}
+            <div class="video-reviews__social">
+              <div class="video-reviews__social-icon">
+                {{ block.settings.social_icon }}
+              </div>
+              <div class="video-reviews__social-content">
+                <div class="video-reviews__social-stars">
+                  {{ block.settings.stars }}
+                </div>
+                {% if block.settings.text != blank %}
+                  <div class="video-reviews__social-text">{{ block.settings.text }}</div>
+                {% endif %}
+              </div>
+            </div>
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+    <video-reviews-grid
+      class="video-reviews__grid"
+      data-block-settings="{{blocks_settings}}"
+      data-total-videos="{{ blocks_review.size }}"
+      data-stars-filled="{{ 'icon-stars-filled-small.svg' | asset_url }}"
+      data-stars-unfilled="{{ 'icon-stars-unfilled-small.svg' | asset_url }}"
+      data-load-by-page="{{ section.settings.load_count }}"
+    >
+      <div class="video-reviews__grid-wrapper" data-grid-wrapper>
+        {%- for block in blocks_review limit: 5 -%}
+          {%- render 'video-review',
+            video: block.settings.video,
+            author: block.settings.author,
+            poster: block.settings.poster,
+            rating: block.settings.rating
+          -%}
+        {%- endfor -%}
+      </div>
+      {% if blocks_review.size > 5 %}
+        <button class="video-reviews__load-more" data-load-more type="button">
+          <span>{{ 'sections.video_reviews.load_more' | t }}</span>
+          <div class="loader load-more__preloader"></div>
+        </button>
+      {% endif %}
+    </video-reviews-grid>
+  </div>
+</div>
+
+{{ 'component-video-reviews-grid.js' | asset_url | script_tag }}
+
+{% schema %}
+{
+  "name": "Video Reviews Grid",
+  "tag": "section",
+  "limit": 1,
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "enable_v3_styles",
+      "label": "Enable v3 styles",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "style_type",
+      "label": "Style Type",
+      "options": [
+        {
+          "value": "default",
+          "label": "Default"
+        },
+        {
+          "value": "new",
+          "label": "New"
+        }
+      ],
+      "default": "default"
+    },
+    {
+      "type": "checkbox",
+      "id": "extra_styles",
+      "label": "Extra styles",
+      "default": false
+    },
+    {
+      "type": "range",
+      "id": "rating",
+      "min": 0,
+      "max": 5.0,
+      "step": 0.1,
+      "label": "Rating",
+      "default": 5.0
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "What Makes Fabula a Favorite?"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Hear Directly from Our Customers"
+    },
+    {
+      "type": "checkbox",
+      "id": "style_subtitle",
+      "label": "Set a different style for subtitle",
+      "default": false
+    },
+    {
+      "type": "textarea",
+      "id": "body_text",
+      "label": "Body text"
+    },
+    {
+      "type": "range",
+      "id": "load_count",
+      "min": 2,
+      "max": 10,
+      "step": 1,
+      "label": "Videos to load on click button",
+      "default": 5
+    },
+    {
+      "type": "header",
+      "content": "Background"
+    },
+    {
+      "type": "color_background",
+      "id": "prev_background",
+      "label": "Previous section background color",
+      "default": "#F5F0EB"
+    },
+    {
+      "type": "color_background",
+      "id": "background",
+      "label": "Background color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "header",
+      "content": "Paddings"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding top mobile",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding bottom mobile",
+      "default": 50
+    }
+  ],
+  "blocks": [
+    {
+      "type": "reviews_summary",
+      "name": "Review summary",
+      "settings": [
+        {
+          "type": "html",
+          "id": "social_icon",
+          "label": "Social Icon (SVG)"
+        },
+        {
+          "type": "html",
+          "id": "stars",
+          "label": "Stars icon (SVG)"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Info text"
+        }
+      ]
+    },
+    {
+      "name": "Review",
+      "type": "review",
+      "settings": [
+        {
+          "type": "video",
+          "id": "video",
+          "label": "Video"
+        },
+        {
+          "type": "image_picker",
+          "id": "poster",
+          "label": "Poster"
+        },
+        {
+          "type": "text",
+          "id": "author",
+          "label": "Author",
+          "default": "John Dou"
+        },
+        {
+          "type": "range",
+          "id": "rating",
+          "min": 0,
+          "max": 5.0,
+          "step": 0.1,
+          "label": "Rating",
+          "default": 5.0
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Video Reviews Grid",
+      "settings": {}
+    }
+  ]
+}
+{% endschema %}

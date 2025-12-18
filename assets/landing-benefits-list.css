@@ -1,0 +1,554 @@
+.benefits__items {
+  display: flex;
+  gap: 136px;
+  align-items: center;
+}
+
+.benefits__inner {
+  display: flex;
+  flex-direction: column;
+  gap: 69px;
+}
+
+.benefits__inner--with-image {
+  gap: 48px;
+}
+
+.benefits__icon {
+  position: absolute;
+  top: 540px;
+  right: 0;
+  width: 300px;
+  height: 419px;
+}
+
+.benefits__inner:first-child {
+  width: 100%;
+  max-width: 466px;
+  height: max-content;
+}
+
+.benefits__inner:last-child {
+  width: 100%;
+}
+
+.benefits__video,
+.benefits__image {
+  overflow: hidden;
+  border-radius: 80px;
+  width: 100%;
+  display: flex;
+}
+
+.benefits__video video,
+.benefits__icon img,
+.benefits__image img {
+  width: 100%;
+}
+
+.benefits__label {
+  width: fit-content;
+  padding: 2px;
+  color: #005eb8;
+  text-align: center;
+  font-variant-numeric: lining-nums proportional-nums;
+  font-family: var(--font-body-family);
+  background: #e9f4ff;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 130%;
+  letter-spacing: -0.5px;
+  margin: 0;
+  margin-bottom: 12px;
+}
+
+.benefits__title,
+.list-item__description,
+.list-item__title {
+  font-family: 'Raleway', sans-serif;
+  letter-spacing: 0;
+}
+
+.benefits__items .benefits__inner .benefits__title {
+  margin-bottom: 0;
+}
+
+.benefits__title p {
+  margin-top: 0;
+  margin-bottom: 10px;
+}
+
+.benefits__title p:last-child {
+  margin-bottom: 0;
+}
+
+.benefits__title {
+  color: #000;
+  font-variant-numeric: lining-nums proportional-nums;
+  font-family: Raleway;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 40px;
+}
+
+.benefits__title-content h2 {
+  color: #005EB8;
+  font-variant-numeric: lining-nums proportional-nums;
+  font-family: "Crimson Pro";
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 56px;
+  letter-spacing: -0.4px;
+  margin: 0;
+}
+
+.benefits__title-content strong {
+  position: relative;
+  font-weight: 500;
+}
+
+.benefits__title-content strong::after {
+  content: '';
+  position: absolute;
+  bottom: -20px;
+  left: 0;
+
+  width: 100%;
+  height: 20px;
+  background-image: url('icon-benefits-list.svg');
+  background-repeat: no-repeat;
+}
+
+.benefits__subtitle {
+  color: #000;
+  font-variant-numeric: lining-nums proportional-nums;
+  font-family: Raleway;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  letter-spacing: 0;
+
+  margin: 0;
+}
+
+.benefits__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 48px 40px;
+}
+
+.benefits__list-item {
+  width: calc(50% - 20px);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.list-item__content {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.list-item__image {
+  width: 40px;
+  height: 40px;
+}
+
+.list-item__title,
+.list-item__title p,
+.list-item__title li {
+  color: #000;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 28px;
+  margin: 0;
+}
+
+.list-item__description,
+.list-item__description p,
+.list-item__description li {
+  color: rgba(0, 0, 0, 0.70);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  margin: 0;
+}
+
+.benefits__title-content--mobile {
+  display: none;
+}
+
+
+.benefits__button-wrapper {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.benefits__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 100%;
+  width: 100%;
+  max-width: 360px;
+  height: 60px;
+  padding: 0 60px;
+  gap: 10px;
+  margin-top: 40px;
+  border-radius: 100px;
+  border: 1px solid transparent;
+  background: #005eb8;
+  color: #fff;
+  font-family: Raleway;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 28px;
+  text-decoration: none;
+  letter-spacing: normal;
+  transition: all .3s;
+}
+
+.benefits__button:hover {
+  border: 1px solid #004A91;
+  background: #004A91;
+}
+
+@media screen and (max-width: 1299px) {
+  .benefits__items {
+      gap: 40px;
+  }
+
+  .benefits__list {
+      gap: 24px;
+  }
+
+  .benefits__list-item {
+      width: calc(50% - 12px);
+  }
+
+}
+
+@media screen and (max-width: 991px) {
+  .benefits__title-content--mobile {
+      display: block;
+  }
+
+  .benefits__button {
+      max-width: 100%;
+      width: 100%;
+      margin: 20px 20px 0 20px;
+  }
+
+  .benefits__title-content--desktop {
+      display: none;
+  }
+
+  .benefits__label {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .benefits__items {
+      flex-direction: column;
+  }
+
+  .benefits__inner:first-child {
+      max-width: 600px;
+  }
+
+  .benefits__inner {
+      gap: 34px;
+  }
+
+  .benefits__title {
+      text-align: center;
+  }
+
+  .benefits__subtitle {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 768px) {
+
+  .benefits__items {
+    gap: 24px;
+  }
+
+  .benefits__title {
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  .benefits__title-content h2 {
+    font-size: 32px;
+    line-height: 40px;
+  }
+
+  .list-item__title p {
+      font-size: 18px;
+  }
+
+  .list-item__image {
+    min-width: 32px;
+    width: 32px;
+    min-height: 32px;
+    height: 32px;
+  }
+
+  .list-item__image img {
+    width: 100%;
+    height: 100%;
+  }
+
+  .benefits__list-item {
+      width: 100%;
+      max-width: 260px;
+      margin: 0 auto;
+  }
+
+  .list-item__title {
+      font-size: 18px;
+      line-height: 24px;
+  }
+
+  .list-item__description {
+      display: none;
+  }
+
+  .benefits__list {
+      flex-direction: column;
+  }
+
+  .benefits__icon {
+      width: 97px;
+      height: 200px;
+      right: 0;
+      top: 283px;
+  }
+
+  .benefits__icon img {
+      width: 100%;
+      height: 100%;
+  }
+}
+
+/* bovine-colostrum-v3 styles */
+
+.benefits-list--bovine-colostrum-v3.page-width {
+  max-width: 1016px;
+}
+
+.benefits-list--bovine-colostrum-v3 .benefits__items {
+  gap: 60px;
+}
+
+.benefits-list--bovine-colostrum-v3 .benefits__image {
+  padding-top: 100%;
+  position: relative;
+  border-radius: 50%;
+}
+
+.benefits-list--bovine-colostrum-v3 .benefits__image img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.benefits-list--bovine-colostrum-v3 .benefits__list {
+  flex-direction: column;
+  gap: 40px;
+}
+
+.benefits-list--bovine-colostrum-v3 .benefits__list-item {
+  width: auto;
+  gap: 18px;
+  margin: 0;
+}
+
+@media screen and (max-width: 991px) {
+  .benefits-list--bovine-colostrum-v3 .benefits__items {
+      flex-direction: row;
+      gap: 32px;
+  }
+}
+
+@media screen and (max-width: 749px) {
+  .benefits-list--bovine-colostrum-v3.page-width {
+      padding-left: 0;
+      overflow: hidden;
+  }
+
+  .benefits-list--bovine-colostrum-v3 .benefits__items {
+      transform: translateX(-10%);
+  }
+
+  .benefits-list--bovine-colostrum-v3 .benefits__image {
+      padding-top: 278.57%;
+      border-radius: 0px 100px 100px 0px;
+  }
+
+  .benefits-list--bovine-colostrum-v3 .benefits__list-item {
+      gap: 14px;
+  }
+
+  .benefits-list--bovine-colostrum-v3 .list-item__image,
+  .benefits-list--bovine-colostrum-v3 .list-item__image img {
+      width: 32px;
+      height: 32px;
+  }
+
+  .benefits-list--bovine-colostrum-v3 .benefits__list {
+      gap: 24px;
+  }
+}
+
+.benefits-list--alternative .benefits__inner {
+  gap: 0;
+}
+
+.benefits-list--alternative .benefits__title-content  {
+  margin-bottom: 20px;
+  font-family: var(--font-dm-sans);
+}
+
+.benefits-list--alternative .benefits__subtitle {
+  margin-bottom: 30px;
+  font-family: var(--font-dm-sans);
+  font-weight: 400;
+  line-height: 160%;
+  letter-spacing: -0.16px;
+}
+
+.benefits-list--alternative .benefits__subtitle p {
+  font: inherit;
+}
+
+.benefits-list--alternative .benefits__image {
+  border-radius: 22px;
+}
+
+.benefits-list--alternative  .list-item__image {
+  min-width: 32px;
+  width: 32px;
+  height: 32px;
+}
+
+.benefits-list--alternative  .list-item__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.benefits-list--alternative  .benefits__items {
+  gap: 80px;
+}
+
+.benefits-list--alternative  .benefits__list {
+  gap: 20px;
+}
+
+.benefits-list--alternative  .benefits__list-item  {
+  padding: 22px 24px;
+  background: #FFFFFF;
+}
+
+.benefits-list--alternative  .list-item__title, 
+.benefits-list--alternative  .list-item__title p, 
+.benefits-list--alternative  .list-item__title li {
+  font-family: var(--font-dm-sans);
+  letter-spacing: -0.5px;
+  font-weight: 600;
+}
+
+.benefits-list--alternative  .benefits__title p {
+  font-size: 40px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 120%;
+  letter-spacing: -1px;
+}
+
+.benefits-list--alternative .benefits__list-item {
+  border-radius: 22px;
+}
+
+@media screen and (max-width: 749px) {
+  .benefits-list--alternative .benefits__items {
+    gap: 20px;
+  }
+
+  .benefits-list--alternative .benefits__list {
+    gap: 6px;
+  }
+
+  .benefits-list--alternative .list-item__image {
+    min-width: 20px;
+    width: 20px;
+    height: 20px;
+    min-height: 20px;
+  }
+
+  .benefits-list--alternative .list-item__title br {
+    display: none;
+  }
+
+  .benefits-list--alternative .benefits__list-item {
+    padding: 12px;
+    border-radius: 16px;
+    max-width: 100%;
+    gap: 10px;
+  }
+
+  .benefits-list--alternative .benefits__title p {
+    font-size: 26px;
+    line-height: 130%;
+    letter-spacing: -0.8px;
+  }
+
+  .benefits-list--alternative  .list-item__title p {
+    font-size: 16px;
+  }
+
+  .benefits-list--alternative .benefits__image {
+    border-radius: 16px;
+  }
+
+  .benefits-list--alternative .benefits__inner {
+    align-items: center;
+  }
+
+  .benefits__label {
+    font-size: 18px;
+  }
+}
+
+.benefits-list-reviews {
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  margin-top: 50px;
+}
+
+.benefits-list-reviews .cta-block__button {
+  --color-button: #ff6a13;
+  background: #ff6a13;
+}
+
+@media screen and (max-width: 749px) {
+  .benefits-list-reviews .rating-block__text--mobile {
+    display: block;
+  }
+}

@@ -1,0 +1,120 @@
+.beetroot-trusted-icons__wrapper {
+  padding: 40px 0;
+  background-color: var(--background-color);
+}
+
+.beetroot-trusted-icons__flex-container {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+.beetroot-trusted-icons__title {
+  color: #000;
+  font-family: 'Raleway', sans-serif;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 140%;
+  flex: 1 1 469px;
+  margin: 0;
+}
+
+.beetroot-trusted-icons__title--h2 {
+  font-size: 40px;
+}
+
+.beetroot-trusted-icons__title--h3 {
+  font-size: 32px;
+}
+
+.beetroot-trusted-icons__icons-container {
+  display: flex;
+  gap: 48px;
+  align-items: center;
+  justify-content: space-between;
+  flex: 1 1 707px;
+}
+
+.beetroot-trusted-icons__icon-block {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.beetroot-trusted-icons__icon {
+  width: 60px;
+  min-width: 60px;
+}
+
+.beetroot-trusted-icons__icon img,
+.beetroot-trusted-icons__icon svg {
+  width: 100%;
+  height: auto;
+}
+
+.beetroot-trusted-icons__icon-text {
+  color: #000;
+  font-family: 'Raleway', sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 28px;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.beetroot-trusted-icons__text {
+  color: #666;
+  font-family: 'Raleway', sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 180%;
+  margin: 32px 0 0;
+}
+
+@media screen and (max-width:989px) {
+  .beetroot-trusted-icons__wrapper {
+    padding: 20px 0;
+  }
+
+  .beetroot-trusted-icons__flex-container {
+    flex-direction: column;
+  }
+
+  .beetroot-trusted-icons__title {
+    flex: auto;
+    font-size: 24px;
+  }
+
+  .beetroot-trusted-icons__title--h2 {
+    font-size: 32px;
+  }
+
+  .beetroot-trusted-icons__title--h3 {
+    font-size: 24px;
+  }
+
+  .beetroot-trusted-icons__icons-container {
+    flex: auto;
+  }
+
+  .beetroot-trusted-icons__icon-block {
+   flex-direction: column;
+  }
+
+  .beetroot-trusted-icons__icon {
+    min-width: 48px;
+    width: 48px;
+  }
+
+  .beetroot-trusted-icons__icon-text {
+    font-size: 14px;
+    text-align: center;
+  }
+
+  .beetroot-trusted-icons__text {
+    font-size: 16px;
+  }
+}

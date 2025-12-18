@@ -1,0 +1,391 @@
+{{ 'accordion-slider-v3.css' | asset_url | stylesheet_tag }}
+
+{% liquid
+  assign padding_top = section.settings.padding_top
+  assign padding_bottom = section.settings.padding_bottom
+  assign padding_top_mobile = section.settings.padding_top_mobile
+  assign padding_bottom_mobile = section.settings.padding_bottom_mobile
+  assign sizes = '(min-width: 750px) 50vw, 100vw'
+  assign widths = '375, 550, 750, 1100, 1500, 1780'
+  assign fetch_priority = 'auto'
+  if section.index == 1
+    assign fetch_priority = 'high'
+  endif
+%}
+
+{% render 'section-paddings-v3',
+  padding_top: padding_top,
+  padding_bottom: padding_bottom,
+  padding_top_mobile: padding_top_mobile,
+  padding_bottom_mobile: padding_bottom_mobile
+%}
+
+{% if section.settings.image != blank %}
+  <style>
+    #section-id-{{ section.id }} {
+      background: url("{{ section.settings.image | img_url: 'master' }}") center center/cover no-repeat;
+    }
+  </style>
+{% endif %}
+
+{% if section.settings.image_mobile != blank %}
+  <style>
+    @media screen and (max-width: 767px) {
+      #section-id-{{ section.id }} {
+        background: url("{{ section.settings.image_mobile | img_url: 'master' }}") center center/cover no-repeat;
+      }
+    }
+  </style>
+{% endif %}
+
+{% if section.settings.background_color_mobile != blank %}
+  <style>
+    @media screen and (max-width: 990px) {
+      #section-id-{{ section.id }} {
+        background: {{ section.settings.background_color_mobile | append: '!important'}};
+      }
+    }
+  </style>
+{% endif %}
+
+<section class="accordion__slider section-{{ section.id }}--padding {% if section.settings.enable_margin_top_minus == true %}is--margin-minus-value{% endif %}{% if section.settings.enable_extra_styles == true %} is--extra-styles{% endif %}" id="section-id-{{ section.id }}">
+  <div class="c-container">
+    <div class="c-container-content">
+      {% if section.settings.subtitle != blank %}
+        <div class="accordion__slider-subtitle
+        {% if section.settings.hide_subtitle_mob == true %}c-hide-mob{% endif %}
+        {% if section.settings.hide_subtitle_desk == true %}c-hide-desk{% endif %}">{{ section.settings.subtitle }}</div>
+      {% endif %}
+      {% if section.settings.title != blank %}
+        <div class="accordion__slider-title
+        {% if section.settings.hide_title_mob == true %}c-hide-mob{% endif %}
+        {% if section.settings.hide_title_desk == true %}c-hide-desk{% endif %}">{{ section.settings.title }}</div>
+      {% endif %}
+      {% if section.settings.content_mobile != blank %}
+        <div class="accordion__slider-content mobile 
+        {% if section.settings.hide_content_mob == true %}c-hide-mob{% endif %}
+        {% if section.settings.hide_content_desk == true %}c-hide-desk{% endif %}">{{ section.settings.content_mobile }}</div>
+      {% endif %}
+      {% if section.settings.content_desktop != blank %}
+        <div class="accordion__slider-content
+        {% if section.settings.hide_content_mob == true %}c-hide-mob{% endif %}
+        {% if section.settings.hide_content_desk == true %}c-hide-desk{% endif %}">{{ section.settings.content_desktop }}</div>
+      {% endif %}
+
+      <div class="accordion-container {% if section.settings.disable_top_margin_mobile == true %}mob-margin-no{% endif %}">
+        <div class="accorionds accordion">
+          {% for block in section.blocks %}
+            {% if block.settings.title != blank and block.settings.content != blank %}
+              {% if block.settings.icon != blank and block.settings.disable_icon_list_type != true %}
+                <style>
+                  #{{ block.id }} .accordion__content li::before {
+                    content: "";
+                    display: block;
+                    width: 16px;
+                    min-width: 16px;
+                    height: 16px;
+                    background: url("{{ block.settings.icon | img_url: 'master' }}") center center/contain no-repeat;
+                  }
+                </style>
+              {% endif %}
+
+              
+              <div class="accordion__item {% if forloop.index == 1 %}open{% endif %}" id="{{ block.id }}" {{ block.shopify_attributes }}>
+                <div class="accordion__trigger">{{ block.settings.title }}
+                  <div class="icons">
+                    <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <rect width="36" height="36" rx="18" fill="white"/>
+                      <rect x="6" y="6" width="24" height="24" rx="12" fill="white"/>
+                      <rect x="17" y="12" width="2" height="12" fill="#005EB8"/>
+                      <rect x="12" y="17" width="12" height="2" fill="#005EB8"/>
+                    </svg>
+                    <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                      <rect width="36" height="36" rx="18" fill="white"/>
+                      <rect x="6" y="6" width="24" height="24" rx="12" fill="white"/>
+                      <rect x="12" y="17" width="12" height="2" fill="#005EB8"/>
+                    </svg>
+                  </div>
+                </div>
+                
+                <div class="accordion__content {% if block.settings.disable_icon_list_type == true %}disable-list-style-type{% endif %}" {% if forloop.index != 1 %}style="display: none;"{% endif %}>
+                    {% if block.settings.image_mobile != blank %}
+                      <div class="image">
+                        {{
+                          block.settings.image_mobile
+                          | image_url: width: 990
+                          | image_tag:
+                            width: block.settings.image_mobile.width,
+                            sizes: sizes,
+                            widths: '375, 550, 750, 990',
+                            fetchpriority: fetch_priority,
+                            alt: block.settings.image_mobile.alt
+                        }}
+                      </div>
+                    {% elsif block.settings.image_desktop != blank %}
+                      <div class="image">
+                        {{
+                          block.settings.image_desktop
+                          | image_url: width: 990
+                          | image_tag:
+                            width: block.settings.image_desktop.width,
+                            sizes: sizes,
+                            widths: '375, 550, 750, 990',
+                            fetchpriority: fetch_priority,
+                            alt: block.settings.image_desktop.alt
+                        }}
+                      </div>
+                    {% endif %}
+                  {{ block.settings.content }}
+                </div>
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+        <div class="accordion-swiper swiper">
+          <div class="swiper-wrapper">
+            {% for block in section.blocks %}
+              {% if block.settings.image_desktop != blank %}
+                <div class="swiper-slide" {{ block.shopify_attributes }}>
+                  {{
+                    block.settings.image_desktop
+                    | image_url: width: 1780
+                    | image_tag:
+                      width: block.settings.image_desktop.width,
+                      sizes: sizes,
+                      widths: widths,
+                      fetchpriority: fetch_priority,
+                      alt: block.settings.image_desktop.alt
+                  }}
+                </div>
+              {% endif %}
+            {% endfor %}
+          </div>
+          <div class="accordion-swiper-ctas">
+            <div class="swiper-button-prev">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <foreignObject x="-14" y="-14" width="68" height="68"><div xmlns="http://www.w3.org/1999/xhtml" style="backdrop-filter:blur(7px);clip-path:url(#bgblur_0_132_20457_clip_path);height:100%;width:100%"></div></foreignObject><g data-figma-bg-blur-radius="14">
+                <rect x="40" y="40" width="40" height="40" rx="20" transform="rotate(-180 40 40)" fill="white" fill-opacity="0.9"/>
+                <path d="M15.5366 20C15.5366 19.2732 15.8169 18.5463 16.3672 17.996L23.1374 11.2258C23.4385 10.9247 23.9369 10.9247 24.238 11.2258C24.5391 11.527 24.5391 12.0254 24.238 12.3265L17.4679 19.0966C16.9695 19.595 16.9695 20.405 17.4679 20.9034L24.238 27.6735C24.5391 27.9746 24.5391 28.473 24.238 28.7742C23.9369 29.0753 23.4385 29.0753 23.1374 28.7742L16.3672 22.004C15.8169 21.4537 15.5366 20.7269 15.5366 20Z" fill="#101828"/>
+                </g>
+                <defs>
+                <clipPath id="bgblur_0_132_20457_clip_path" transform="translate(14 14)"><rect x="40" y="40" width="40" height="40" rx="20" transform="rotate(-180 40 40)"/>
+                </clipPath></defs>
+              </svg>
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="swiper-button-next">
+              <svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <foreignObject x="-14" y="-14" width="68" height="68"><div xmlns="http://www.w3.org/1999/xhtml" style="backdrop-filter:blur(7px);clip-path:url(#bgblur_0_132_20464_clip_path);height:100%;width:100%"></div></foreignObject><g data-figma-bg-blur-radius="14">
+                <rect width="40" height="40" rx="20" fill="white" fill-opacity="0.9"/>
+                <path d="M24.4634 20C24.4634 20.7269 24.1831 21.4537 23.6328 22.004L16.8626 28.7742C16.5615 29.0753 16.0631 29.0753 15.762 28.7742C15.4609 28.473 15.4609 27.9746 15.762 27.6735L22.5321 20.9034C23.0305 20.405 23.0305 19.595 22.5321 19.0966L15.762 12.3265C15.4609 12.0254 15.4609 11.527 15.762 11.2258C16.0631 10.9247 16.5615 10.9247 16.8626 11.2258L23.6328 17.996C24.1831 18.5463 24.4634 19.2731 24.4634 20Z" fill="#101828"/>
+                </g>
+                <defs>
+                <clipPath id="bgblur_0_132_20464_clip_path" transform="translate(14 14)"><rect width="40" height="40" rx="20"/>
+                </clipPath></defs>
+              </svg>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    {% if section.settings.icon != blank %}
+    <div class="accordion__slider-icon">
+      <img src="{{ section.settings.icon | img_url: 'master' }}" alt="{{ section.settings.icon.alt }}" loading="lazy" width="656" height="656">
+    </div>
+  {% endif %}
+  </div>
+</section>
+
+{% schema %}
+  {
+    "name": "Accordion slider",
+    "settings": [
+      {
+        "type": "checkbox",
+        "id": "enable_margin_top_minus",
+        "label": "Enable margin top minus",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "disable_top_margin_mobile",
+        "label": "Disable top margin (mobile)",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "enable_extra_styles",
+        "label": "Enable extra styles",
+        "default": false
+      },
+      {
+        "type": "color_background",
+        "id": "background_color_mobile",
+        "label": "Background color mobile"
+      },
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "image_mobile",
+        "label": "Image mobile"
+      },
+      {
+        "type": "image_picker",
+        "id": "icon",
+        "label": "Icon"
+      },
+      {
+        "type": "text",
+        "id": "subtitle",
+        "label": "Subtitle"
+      },
+      {
+        "type": "checkbox",
+        "id": "hide_subtitle_desk",
+        "label": "Hide subtitle desktop",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "hide_subtitle_mob",
+        "label": "Hide subtitle mobile",
+        "default": false
+      },
+      {
+        "type": "richtext",
+        "id": "title",
+        "label": "Title",
+        "default": "<p></p>"
+      },
+      {
+        "type": "checkbox",
+        "id": "hide_title_desk",
+        "label": "Hide title desktop",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "hide_title_mob",
+        "label": "Hide title mobile",
+        "default": false
+      },
+      {
+        "type": "textarea",
+        "id": "content_desktop",
+        "label": "Content desktop",
+        "default": "More than ingredients-bioactives that work across your whole body."
+      },
+      {
+        "type": "textarea",
+        "id": "content_mobile",
+        "label": "Content mobile",
+        "default": "What makes colostrum unique isn't just what it contains-it's how those nutrients work together throughout your entire body."
+      },
+      {
+        "type": "checkbox",
+        "id": "hide_content_desk",
+        "label": "Hide content desktop",
+        "default": false
+      },
+      {
+        "type": "checkbox",
+        "id": "hide_content_mob",
+        "label": "Hide content mobile",
+        "default": false
+      },
+      {
+        "type": "header",
+        "content": "Paddings"
+      },
+      {
+        "type": "range",
+        "id": "padding_top",
+        "label": "Padding top",
+        "min": 0,
+        "max": 200,
+        "step": 2,
+        "unit": "px",
+        "default": 120
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom",
+        "label": "Padding bottom",
+        "min": 0,
+        "max": 200,
+        "step": 2,
+        "unit": "px",
+        "default": 90
+      },
+      {
+        "type": "range",
+        "id": "padding_top_mobile",
+        "label": "Padding top mobile",
+        "min": 0,
+        "max": 200,
+        "step": 2,
+        "unit": "px",
+        "default": 66
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom_mobile",
+        "label": "Padding bottom mobile",
+        "min": 0,
+        "max": 200,
+        "step": 2,
+        "unit": "px",
+        "default": 40
+      }
+    ],
+    "blocks": [
+      {
+        "type": "content",
+        "name": "Content",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image_desktop",
+            "label": "Image desktop"
+          },          
+          {
+            "type": "image_picker",
+            "id": "image_mobile",
+            "label": "Image mobile"
+          },
+          {
+            "type": "image_picker",
+            "id": "icon",
+            "label": "Icon"
+          },
+          {
+            "type": "checkbox",
+            "id": "disable_icon_list_type",
+            "label": "Disable icon list-type",
+            "default": false
+          },
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title"
+          },
+          {
+            "type": "richtext",
+            "id": "content",
+            "label": "Content",
+            "default": "<p></p>"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Accordion slider"
+      }
+    ]
+  }
+{% endschema %}

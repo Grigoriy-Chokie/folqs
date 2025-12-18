@@ -1,0 +1,190 @@
+.icon-with-text__wrapper {
+  max-width: 922px;
+  padding-left: 20px;
+  padding-right: 20px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.icon-with-text__wrapper--bovine-landing-folqs-gift {
+  max-width: 1040px;
+}
+
+.icon-with-text__title {
+  width: max-content;
+  margin: 0 auto 4px auto;
+  color: var(--title-color);
+}
+
+.icon-with-text__title * {
+  color: inherit;
+  text-align: center;
+  font-family: var(--font-heading-secondary);
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 54px;
+
+  margin: 0;
+}
+ 
+.icon-with-text__wrapper--extra .icon-with-text__title * {
+  font-size: 40px;
+}
+
+.icon-with-text__title strong {
+  position: relative;
+}
+
+.icon-with-text__title strong::after {
+  content: '';
+  position: absolute;
+  top: -20px;
+  left: -25px;
+
+  background-image: url(./icon-with-text-title.svg);
+  background-repeat: no-repeat;
+  width: 33px;
+  height: 36px;
+}
+
+.icon-with-text__subtitle {
+  color: #000;
+  text-align: center;
+  font-variant-numeric: lining-nums proportional-nums;
+  font-feature-settings: 'liga' off;
+  font-family: Raleway;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 40px;
+
+  margin: 0;
+}
+
+.icon-with-text__wrapper--extra .icon-with-text__subtitle {
+  font-size: 16px;
+  font-family: var(--font-heading-secondary);
+}
+
+.icon-with-text {
+  display: flex;
+  gap: 40px;
+
+  margin-top: 40px;
+}
+
+.icon-with-text__wrapper--bovine-landing-folqs-gift .icon-with-text {
+  gap: 30px;
+}
+
+.icon-with-text__item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  width: 114px;
+}
+
+.icon-with-text__wrapper--bovine-landing-folqs-gift .icon-with-text__item {
+  width: 141px;
+}
+
+.icon-with-text__icon {
+  width: 80px;
+  height: 80px;
+}
+
+.icon-with-text__icon img {
+  width: 100%;
+  height: 100%;
+  display: block;
+  object-fit: cover;
+}
+
+.icon-with-text__text {
+  color: #000;
+  text-align: center;
+  font-family: var(--font-heading-secondary);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 130%;
+  letter-spacing: 0;
+
+  margin: 0;
+}
+
+.icon-with-text__wrapper--extra .icon-with-text__text {
+  font-size: 16px;
+}
+
+@media screen and (max-width: 767px) {
+
+  .icon-with-text__wrapper--bovine-landing-folqs-gift .icon-with-text__title {
+    margin: 0 auto 10px;
+  }
+
+  .icon-with-text {
+    margin-top: 25px;
+    gap: 24px;
+    flex-wrap: wrap;
+  }
+
+  .icon-with-text__wrapper--bovine-landing-folqs-gift .icon-with-text {
+    margin-top: 32px;
+  }
+
+  .icon-with-text__item {
+    flex: 1 0 calc(100% / 3 - 24px * 3 / 3);
+    width: auto;
+
+    gap: 8px;
+  }
+
+  .icon-with-text__icon {
+    width: 60px;
+    height: 60px;
+  }
+
+  .icon-with-text__title {
+    max-width: 90%;
+  }
+
+  .icon-with-text__title * {
+    font-size: 32px;
+    line-height: 40px;
+  }
+
+  .icon-with-text__wrapper--extra .icon-with-text__title * {
+    font-size: 26px;
+  }
+
+  .icon-with-text__text {
+    max-width: 96px;
+    width: 100%;
+
+    font-size: 14px;
+    line-height: 130%;
+  }
+
+  .icon-with-text__wrapper--extra .icon-with-text__title br {
+    display: none;
+  }
+
+  .icon-with-text__wrapper--extra .icon-with-text__subtitle,
+  .icon-with-text__wrapper--extra .icon-with-text__text {
+    font-size: 15px;
+    line-height: normal;
+  }
+
+  .icon-with-text__title strong::after {
+    width: 21px;
+    height: 23px;
+    background-size: cover;
+
+    top: -10px;
+    left: -20px;
+  }
+
+}

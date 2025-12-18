@@ -1,0 +1,130 @@
+{% liquid
+    assign image = section.settings.image
+    assign title = section.settings.title
+    assign text = section.settings.text
+    assign background_color = section.settings.background_color
+%}
+
+{% style %}
+    .section-{{ section.id }}--padding {
+        --background-color: {{ background_color }};
+        padding-top: {{ section.settings.padding_top_mobile }}px;
+        padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+    }
+
+    @media screen and (min-width: 750px) {
+        .section-{{ section.id }}--padding {
+            padding-top: {{ section.settings.padding_top }}px;
+            padding-bottom: {{ section.settings.padding_bottom }}px;
+        }
+    }
+{% endstyle %}
+
+{% if image != blank and title != blank %}
+    {{- 'section-guarantee.css' | asset_url | stylesheet_tag -}}
+    <div class="guarantee section-{{ section.id }}--padding">
+        <div class="guarantee__wrapper page-width page-width--narrow">
+            <div class="guarantee__media">
+                {{ image | image_url: width: 500 | image_tag }}
+            </div>
+            <div class="guarantee__content">
+                <h2>{{ title }}</h2>
+                {% if text != blank %}
+                    <div class="guarantee__text">
+                        {{ text }}
+                    </div>
+                {% endif %}
+            </div>
+        </div>
+    </div>
+{% endif %}
+
+
+
+{% schema %}
+{
+  "name": "Guarantee",
+  "tag": "section",
+  "presets": [
+    {
+      "name": "Guarantee"
+    }
+  ],
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Default title"
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text"
+    },
+    {
+      "type": "paragraph",
+      "content": "Space between sections on the desktop"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "unit": "px",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "unit": "px",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 0
+    },
+    {
+      "type": "paragraph",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#FEF8EE"
+    },
+    {
+      "type": "paragraph",
+      "content": "Space between sections on the mobile"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Padding top",
+      "unit": "px",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Padding bottom",
+      "unit": "px",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 0
+    }
+  ]
+}
+{% endschema %}

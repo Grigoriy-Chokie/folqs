@@ -1,0 +1,14 @@
+.video-reviews.video-reviews-v3 .video-reviews__header {
+  gap: 10px;
+}
+
+.video-reviews.video-reviews-v3 .video-reviews__text {
+  color: #101828;
+  font-family: "DM Sans", sans-serif;
+}
+
+.video-reviews.video-reviews-v3 .video-review__author {
+  font-family: "Inter", sans-serif;
+  font-weight: 600;
+  letter-spacing: 0;
+}

@@ -1,0 +1,29 @@
+{%- unless video == blank -%}
+  {%- assign stars_filled = 'icon-stars-filled-small.svg' | asset_url -%}
+  {%- assign stars_unfilled = 'icon-stars-unfilled-small.svg' | asset_url -%}
+  <div class="video-review">
+    <div class="video-review__controls">
+      {%- if section.settings.extra_styles -%}
+        {%- render 'icon-video-controls-extra' -%}
+      {% else if section.settings.style_type and section.settings.style_type == 'new' %}
+        {%- render 'icon-video-controls-new' -%}
+      {%- else -%}
+        {%- render 'icon-video-controls' -%}
+      {%- endif -%}
+    </div>
+    <div class="video-review__video">
+      {%- assign poster_url = poster | default: video.preview_image | image_url -%}
+      {{ video | video_tag: image_size: '400x', poster: poster_url, preload: 'metadata' }}
+    </div>
+    {%- if section.settings.extra_styles -%}
+      <div class="video-review__info">
+        <div class="video-review__rating">
+          {%- render 'icon-rating-extra' -%}
+        </div>
+        {%- unless author == blank -%}
+          <p class="video-review__author">{{ author }}</p>
+        {%- endunless -%}
+      </div>
+    {%- endif -%}
+  </div>
+{%- endunless -%}

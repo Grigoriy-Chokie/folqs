@@ -1,0 +1,117 @@
+.grid__information .c-container {
+  max-width: 1240px;
+  padding: 0 20px;
+  margin: 0 auto;
+}
+
+.grid__information-title {
+  font-family: "DM Sans", sans-serif;
+  font-weight: 600;
+  margin: 0 0 40px 0;
+  font-size: 40px;
+  line-height: 120%;
+  letter-spacing: -1px;
+  color: #101828;
+  text-align: center;
+}
+
+.grid__information-items {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 20px;
+  align-items: flex-start;
+}
+
+.grid__information-item {
+  border-radius: 22px;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  gap: 14px;
+  padding: 30px;
+  height: 100%;
+}
+
+.grid__information-item img {
+  width: 48px;
+  height: 48px;
+  object-fit: contain;
+  margin: 0 auto;
+}
+
+.grid__information-item span {
+  font-family: "DM Sans", sans-serif;
+  font-weight: 600;
+  line-height: 130%;
+  font-size: 24px;
+  letter-spacing: -0.5px;
+  text-align: center;
+  color: #101828;
+}
+
+.grid__information-subtitle * {
+  margin: 0;
+  padding: 0;
+
+}
+
+.grid__information-subtitle {
+  font-family: "DM Sans", sans-serif;
+  font-size: 15px;
+  line-height: 150%;
+  font-weight: 400;
+  letter-spacing: 0;
+  color: #394152;
+  margin: 25px 0 0 0;
+  text-align: center;
+}
+
+.grid__information-subtitle strong {
+  font-weight: 600;
+}
+
+@media screen and (max-width: 1200px) {
+  .grid__information-items {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media screen and (max-width: 990px) {
+  .grid__information-title {
+    line-height: 130%;
+    font-size: 26px;
+    letter-spacing: -0.8px;
+    margin-bottom: 25px;
+  }
+
+  .grid__information-items {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+
+  .grid__information-item {
+    padding: 16px;
+    border-radius: 16px;
+    flex-direction: row;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .grid__information-item img {
+    width: 34px;
+    height: 34px;
+    min-width: 34px;
+    margin: 0;
+  }
+
+  .grid__information-item span {
+    font-size: 18px;
+    text-align: left;
+  }
+
+  .grid__information-subtitle {
+    font-size: 14px;
+    line-height: 130%;
+    margin-top: 20px;
+  }
+}

@@ -1,0 +1,120 @@
+{{ 'section-beetroot-trusted-icons.css' |  asset_url | stylesheet_tag }}
+
+<div class="beetroot-trusted-icons__wrapper" style="--background-color: {{ section.settings.background_color }};">
+  <div class="beetroot-trusted-icons__container page-width">
+    <div class="beetroot-trusted-icons__flex-container">
+      {% if section.settings.title != blank %}
+        <h2 class="beetroot-trusted-icons__title beetroot-trusted-icons__title--{{ section.settings.title_size }}">
+          {{ section.settings.title }}
+        </h2>
+      {% endif %}
+
+      <div class="beetroot-trusted-icons__icons-container">
+        {% for block in section.blocks %}
+          <div class="beetroot-trusted-icons__icon-block">
+            <div class="beetroot-trusted-icons__icon">
+              {% if block.settings.image != blank %}
+                {{ block.settings.image | image_url: width: 120 | image_tag }}
+              {% else %}
+                {{ 'image' | placeholder_svg_tag }}
+              {% endif %}
+            </div>
+            {% if block.settings.text != blank %}
+              <p class="beetroot-trusted-icons__icon-text">{{ block.settings.text }}</p>
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+    {%- if section.settings.text != blank -%}
+      <p class="beetroot-trusted-icons__text">
+        {{ section.settings.text }}
+      </p>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Beetroot Trusted Icons",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "title",
+      "default": "Trusted by 5,000+ People"
+    },
+    {
+      "type": "select",
+      "id": "title_size",
+      "label": "Title size",
+      "default": "h3",
+      "options": [
+        {
+          "value": "h2",
+          "label": "h2"
+        },
+        {
+          "value": "h3",
+          "label": "h3"
+        }
+      ]
+    },
+    {
+      "type": "richtext",
+      "id": "text",
+      "label": "Text"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color"
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Icon text",
+      "type": "icon_text",
+      "limit": 3,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "text",
+          "default": "Sugar-Free"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Beetroot Trusted Icons",
+      "blocks": [
+        {
+          "type": "icon_text",
+          "settings": {
+            "text": "Sugar-Free"
+          }
+        },
+        {
+          "type": "icon_text",
+          "settings": {
+            "text": "NO ARTIFICIAL SWEETENERS"
+          }
+        },
+        {
+          "type": "icon_text",
+          "settings": {
+            "text": "Made in USA"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

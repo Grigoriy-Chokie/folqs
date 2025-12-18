@@ -1,0 +1,223 @@
+{% if section.blocks.size > 0 %}
+    {{ 'slider-members.css' | asset_url | stylesheet_tag }}
+    {%- style -%}
+        .section-{{ section.id }} {
+        padding-top: {{ section.settings.padding_top }}px;
+        padding-bottom: {{ section.settings.padding_bottom }}px;
+        }
+        .members__items {
+        background-repeat: no-repeat;
+        {%- if section.settings.background_color != blank %}
+            background-color: {{ section.settings.background_color }};
+        {%- endif -%}
+        {%- if section.settings.background_image != blank -%}
+            background-image: url('{{ section.settings.background_image | img_url: "master" }}');
+        {%- endif -%}
+        }
+        @media(max-width: 768px) {
+        .section-{{ section.id }} {
+        padding-top: {{ section.settings.padding_top_mobile }}px;
+        padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+        }
+
+        .members__items {
+        {%- if section.settings.background_image_mobile != blank -%}
+            background-image: url('{{ section.settings.background_image_mobile | img_url: "master" }}');
+        {%- endif -%}
+        }
+        }
+    {%- endstyle -%}
+
+    <div class="section-{{ section.id }} members page-width scroll-trigger">
+        <div class="members__items">
+            <div class="members__item">
+                {%- if section.settings.title != blank -%}
+                    <div class="member__title">{{ section.settings.title }}</div>
+                {%- endif -%}
+            </div>
+            <div class="members__item">
+                <div class="members-slider__thumbnails">
+                    {% assign zIndex = section.blocks.size %}
+                    {%- for block in section.blocks -%}
+                        {%- if block.settings.image_member != blank -%}
+                            <div data-thumbnail-index="{{ forloop.index }}" style = "order:{{  forloop.index }};" class="member-slider__image" style="z-index: {{ zIndex }}">
+                                <img src="{{ block.settings.image_member | img_url: "400x" }}"
+                                     alt="{{ block.settings.image_member | default: block.settings.name }}">
+                            </div>
+                            {% assign zIndex = zIndex | minus: 1 %}
+                        {%- endif -%}
+                    {%- endfor -%}
+                </div>
+                <div class="members-slider">
+                    <div class="swiper-wrapper">
+                        {%- for block in section.blocks -%}
+                            {%- if block.settings.image_member != blank -%}
+                                <div class="swiper-slide scroll-trigger animate--slide-in">
+                                    <div class="member-slider__information">
+                                        {%- if block.settings.name != blank or
+                                        block.settings.role != blank or
+                                        block.settings.name -%}
+                                            <div class="members-slider__content">
+                                                {%- if block.settings.name != blank or block.settings.role != blank -%}
+                                                    <div class="members-slider__member-info">
+                                                        {%- if block.settings.name != blank -%}
+                                                            <div class="member-slider__name">{{ block.settings.name }}</div>
+                                                        {%- endif -%}
+                                                        {%- if block.settings.role != blank -%}
+                                                            <div class="member-slider__role">{{ block.settings.role }}</div>
+                                                        {%- endif -%}
+                                                    </div>
+                                                {%- endif -%}
+                                                {%- if block.settings.icon != blank -%}
+                                                    <div class="member-slider__icon">
+                                                        <img src="{{ block.settings.icon | img_url: "177x" }}"
+                                                             alt="{{ block.settings.icon.alt | default: block.settings.name }}">
+                                                    </div>
+                                                {%- endif -%}
+                                            </div>
+                                        {%- endif -%}
+                                        {%- if block.settings.review != blank -%}
+                                            <div class="member-slider__description">
+                                                {{ block.settings.review }}
+                                            </div>
+                                        {%- endif -%}
+                                    </div>
+                                </div>
+                            {%- endif -%}
+                        {%- endfor -%}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="{{ 'slider-members.js' | asset_url }}"></script>
+    <script>
+      const timerDelay = {{section.settings.timer_delay}};
+    </script>
+{% endif %}
+
+
+{% schema %}
+{
+  "name": "Slider members",
+  "max_blocks": 5,
+  "limit": 1,
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "default": "Trusted by Doctors and Olimpians",
+      "label": "Title"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#f9f9f9"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background image(desktop)"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image_mobile",
+      "label": "Background image(mobile)"
+    },
+    {
+      "type": "range",
+      "label": "Timer delay",
+      "id": "timer_delay",
+      "default": 10,
+      "info": "Number of seconds to change slides",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "s"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding top(desktop)",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding bottom(desktop)",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding top(mobile)",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding bottom(mobile)",
+      "default": 0
+    }
+  ],
+  "blocks": [
+    {
+      "type": "block",
+      "name": "Block",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image_member",
+          "label": "Image member"
+        },
+        {
+          "type": "text",
+          "id": "name",
+          "label": "Name"
+        },
+        {
+          "type": "text",
+          "id": "role",
+          "label": "Role"
+        },
+        {
+          "type": "textarea",
+          "id": "review",
+          "label": "Review"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Slider members"
+    }
+  ]
+}
+{% endschema %}

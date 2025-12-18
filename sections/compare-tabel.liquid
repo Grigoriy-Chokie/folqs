@@ -1,0 +1,263 @@
+{%- liquid
+  assign padding_top = section.settings.padding_top | append: 'px'
+  assign padding_bottom = section.settings.padding_bottom | append: 'px'
+  assign padding_top_mobile = section.settings.padding_top_mobile | append: 'px'
+  assign padding_bottom_mobile = section.settings.padding_bottom_mobile | append: 'px'
+
+  assign title = section.settings.title
+  assign icon = section.settings.icon
+  assign icon_alt = icon.alt | default: shop.name
+  assign information = section.settings.information
+-%}
+
+{%- style -%}
+  .compare-tabel--{{section.id}} {
+      padding-top: {{padding_top_mobile}};
+      padding-bottom: {{padding_bottom_mobile}};
+  }
+  @media(min-width: 750px) {
+      .compare-tabel--{{section.id}} {
+          padding-top: {{padding_top}};
+          padding-bottom: {{padding_bottom}};
+      }
+  }
+{%- endstyle -%}
+
+{{ 'section-compare-tabel.css' | asset_url | stylesheet_tag }}
+<div class="compare-tabel compare-tabel--{{section.id}}">
+  <div class="compare-tabel__container page-width">
+    {%- if title != blank -%}
+      <h2 class="compare-tabel__title" style="--title-max-width: {{ section.settings.title_max_width }}px;">{{- title -}}</h2>
+    {%- endif -%}
+    {%- if section.blocks.size != 0 -%}
+      <div class="compare-tabel__grid compare-grid">
+        {%- for block in section.blocks -%}
+          {%- case block.type -%}
+            {%- when 'heading' -%}
+              {% liquid
+                assign title_store = block.settings.title_store
+                assign image_store = block.settings.image_store
+                assign image_store_alt = image_store.alt | default: shop.name
+                assign title_another = block.settings.title_another
+                assign image_another = block.settings.image_another
+                assign image_another_alt = image_another.alt | default: title_another
+              %}
+
+              <div class="compare-grid__heading compare-heading" {{ block.shopify_attributes }}>
+                <div class="compare-heading__cell compare-heading__cell--left">
+                  {%- if title_store != blank -%}
+                    <h3>{{ title_store }}</h3>
+                  {%- endif -%}
+                </div>
+                <div class="compare-heading__cell compare-heading__cell--center">
+                  {%- if title_store != blank -%}
+                    <span>{{- title_store -}}</span>
+                  {%- endif -%}
+                  {%- if image_store != blank -%}
+                    {{
+                      image_store
+                      | image_url: width: 250, height: 250
+                      | image_tag: loading: 'lazy', alt: image_store_alt
+                    }}
+                  {%- endif -%}
+                </div>
+                <div class="compare-heading__cell compare-heading__cell--right">
+                  {%- if title_another != blank -%}
+                    <span>{{- title_another -}}</span>
+                  {%- endif -%}
+                  {%- if image_another != blank -%}
+                    {{
+                      image_another
+                      | image_url: width: 150, height: 200
+                      | image_tag: loading: 'lazy', alt: image_another_alt
+                    }}
+                  {%- endif -%}
+                </div>
+              </div>
+            {%- when 'row' -%}
+              {%- liquid
+                assign row_title = block.settings.row_title
+                assign row_description = block.settings.row_description
+              -%}
+              {%- if row_title != blank -%}
+                <div class="compare-grid__row" {{ block.shopify_attributes }}>
+                  <div class="compare-grid__row-text">
+                    <h4>{{ row_title }}</h4>
+                    {%- if row_description != blank -%}
+                      <p>{{ row_description }}</p>
+                    {%- endif -%}
+                  </div>
+                  <div class="compare-grid__row-value compare-grid__row-value--store">
+                    {% render 'icon-checkmark-compare' %}
+                  </div>
+                  <div class="compare-grid__row-value compare-grid__row-value--another">
+                    {% render 'icon-close-compare' %}
+                  </div>
+                </div>
+              {%- endif -%}
+          {%- endcase -%}
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+    {%- if information != blank -%}
+      <div class="compare-tabel__footer">
+        {%- if icon != blank -%}
+          <div class="compare-tabel__footer-icon">
+            {{ icon | image_url: width: 80, height: 80 | image_tag: loading: 'lazy', alt: icon_alt }}
+          </div>
+        {%- endif -%}
+        <p class="compare-tabel__footer-text">{{- information -}}</p>
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Compare tabel",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "Space between template sections(Desktop)"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 0
+    },
+    {
+      "type": "paragraph",
+      "content": "Space between template sections(Mobile)"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding top mobile",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding bottom mobile",
+      "default": 0
+    },
+    {
+      "type": "paragraph",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Best On The Market of Beet Root Chews"
+    },
+    {
+      "type": "range",
+      "id": "title_max_width",
+      "min": 300,
+      "max": 500,
+      "step": 5,
+      "unit": "px",
+      "label": "Title max width",
+      "default": 370
+    },
+    {
+      "type": "paragraph",
+      "content": "Bottom content"
+    },
+    {
+      "type": "image_picker",
+      "id": "icon",
+      "label": "Icon"
+    },
+    {
+      "type": "textarea",
+      "id": "information",
+      "label": "Content",
+      "default": "Choose Folqs Beet Root Chews for a truly comprehensive, clean, and delicious way to support your blood pressure and heart health-no compromises."
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Heading",
+      "type": "heading",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "Store product"
+        },
+        {
+          "type": "text",
+          "id": "title_store",
+          "label": "Title"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_store",
+          "label": "Image"
+        },
+        {
+          "type": "paragraph",
+          "content": "Another product"
+        },
+        {
+          "type": "text",
+          "id": "title_another",
+          "label": "Title"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_another",
+          "label": "Image"
+        }
+      ]
+    },
+    {
+      "type": "row",
+      "name": "Row",
+      "settings": [
+        {
+          "type": "text",
+          "id": "row_title",
+          "label": "Row Title"
+        },
+        {
+          "type": "textarea",
+          "id": "row_description",
+          "label": "Row Description"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Compare Tabel"
+    }
+  ]
+}
+{% endschema %}

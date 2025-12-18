@@ -1,0 +1,479 @@
+{{ 'section-benefits-banner-with-tabs.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .banner-with-tabs__padding-wrapper--{{ section.id }} {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+
+  {% unless section.settings.button_background == blank %}
+    .banner-with-tabs__padding-wrapper--{{ section.id }} .banner-with-tabs__button{
+      background: {{section.settings.button_background}};
+      border: 1px solid {{section.settings.button_background}};
+    }
+
+    .banner-with-tabs__padding-wrapper--{{ section.id }} .banner-with-tabs__button:hover {
+      background: transparent;
+      color: {{section.settings.button_background}};
+    }
+  {% endunless %}
+  @media screen and (max-width: 768px) {
+      .banner-with-tabs__padding-wrapper--{{ section.id }} {
+          padding-top: {{ section.settings.padding_top_mobile }}px;
+          padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+      }
+  }
+{%- endstyle -%}
+{% capture styleVariables %}
+  --primary-color: {{ section.settings.primary_color }};
+{%endcapture%}
+{% unless section.blocks.size == 0 %}
+  {% assign typesStrings = 'desktop,mobile' | split: ',' %}
+  <div
+    style="{{ styleVariables }}"
+    class="banner-with-tabs__padding-wrapper banner-with-tabs__padding-wrapper--{{ section.id }}"
+    data-time="{{section.settings.slide_time | times: 1000}}"
+  >
+    {% liquid 
+      assign popup_heading = section.settings.popup_heading
+      assign popup_metaobject_handle = section.settings.popup_metaobject_handle
+      assign popup_metaobject = shop.metaobjects.supplement_facts[popup_metaobject_handle]
+      assign image_popup = section.settings.image_popup
+      assign image_popup_mobile = section.settings.image_popup_mobile
+    %}
+
+    {% unless popup_metaobject_handle == blank and image_popup == blank %}
+      <div class="cta-banner__popup-overlay" onclick="deactivatePopup(event)" style="visibility: hidden;">
+        <div class="cta-banner__popup">
+          {% unless popup_heading == blank %}
+            <div class = "popup__heading-wrapper">
+              <h5 class = "popup__title">
+                {{ popup_heading }}
+              </h5>
+              <div class="popup__close-button" onclick="deactivatePopup(event)">
+                {% render 'popup-close-icon' %}
+              </div>
+            </div>
+          {% endunless %}
+
+          {% if popup_metaobject %}
+            <div class="popup__content-wrapper">
+              {% render 'supplement-facts-popup' | metaobject: popup_metaobject %}
+            </div>
+          {% else %}
+            <div class="popup__image-wrapper">
+              <picture>
+                {% if image_popup_mobile != blank %}
+                  <source srcset="{{ image_popup_mobile | img_url: "master" }}" media="(max-width: 750px)">
+                {% endif %}
+                {{ image_popup | image_url: width: 700 | image_tag: loading: 'lazy', class: 'popup__image', alt: image_popup.alt }}
+              </picture>
+            </div>
+          {% endif %}
+        </div>
+      </div>
+    {% endunless %}
+
+    {% unless section.settings.heading == blank %}
+      <h2 class="banner-with-tabs__heading">
+        {{ section.settings.heading }}
+      </h2>
+    {% endunless %}
+    {% unless section.settings.subheading == blank %}
+      <p class="banner-with-tabs__subheading">
+        {{ section.settings.subheading }}
+      </p>
+    {% endunless %}
+    <div class="banner-with-tabs__content
+    {% if section.settings.use_more_padding == true %}
+    banner-with-tabs__content--more-padding
+    {% endif %}
+    ">
+      {% render 'icon-circle-benefits', className: 'banner-with-tabs__decor' %}
+      <div class="banner-with-tabs__slider swiper">
+        <div class="banner-with-tabs__tabs swiper-wrapper">
+          {% for block in section.blocks %}
+            {% unless block.settings.tag_desktop == blank %}
+              <div
+                id="{{ block.id }}"
+                class="tabs__heading swiper-slide {% if block.settings.is_opened_by_default %}tabs__heading--active-mobile{% endif %}{% if forloop.index == 1 %} tabs__heading--active{% endif %} {% unless block.settings.tag_mobile == blank %} tabs__heading--with-mobile {% endunless %}"
+              >
+                {% for typesString in typesStrings %}
+                  {%- capture tagKey -%}tag_{{- typesString -}}{%- endcapture -%}
+                  {%- unless block.settings[tagKey] == blank -%}
+                    <div class="headting__text heading__text--{{ typesString }}">
+                      <span class="headting__text-content">{{ block.settings[tagKey] }}</span>
+                      {% render 'icon-collapsible-benefits' %}
+                    </div>
+                  {% endunless %}
+                {% endfor %}
+                <div class="icons-island__progress-bar">
+                  {% render 'progress-bar', time: section.settings.slide_time, index: forloop.index %}
+                </div>
+                {% unless block.settings.icons_island == blank and block.settings.text_island == blank %}
+                  <div class="tab-contents__item tab-contents__item--mobile tab-contents__item--{{block.id}}">
+                    <div class="tab-contents__icons-islands">
+                      {% assign iconsIslandInputPairs = block.settings.icons_island | split: '|' %}
+                      {% for iconsPair in iconsIslandInputPairs %}
+                        {% assign isHidden = false %}
+                        {% if iconsPair contains 'HIDDEN' %}
+                          {% assign isHidden = true %}
+                        {% endif %}
+                        {% assign iconsPairNew = iconsPair | remove: 'HIDDEN' %}
+                        <div class="icons-islands__icons-island {% if isHidden %} icons-islands__icons-island--mobile-hidden{% endif %}">
+                          {% assign iconContentDivided = iconsPairNew | split: ';' %}
+                          <img src="{{ iconContentDivided[0] | file_url }}" class="icons-islands__icon">
+                          <div class="icons-island__content">
+                            {% unless iconContentDivided[1] == blank %}
+                              <span class="icons-island__text">
+                              {{ iconContentDivided[1] }}
+                            </span>
+                            {% endunless %}
+                            {% unless iconContentDivided[2] == blank %}
+                              <span class="icons-island__subtext">
+                              {{ iconContentDivided[2] }}
+                            </span>
+                            {% endunless %}
+                          </div>
+                        </div>
+                      {% endfor %}
+                    </div>
+                  </div>
+                {% endunless %}
+              </div>
+            {% endunless %}
+          {% endfor %}
+        </div>
+      </div>
+      {% unless section.settings.image == blank %}
+        <div class="banner-with-tabs__image
+          {% if section.settings.use_smaller_image == true %}
+            banner-with-tabs__image--smaller
+          {% endif %}
+          ">
+          {% render 'icon-circle-benefits' %}
+          {{ section.settings.image | image_url: width: 2000 | image_tag: loading: 'lazy', alt:  section.settings.image.alt }}
+        </div>
+      {% endunless %}
+      <div class="banner-with-tabs__tab-contents banner-with-tabs__tab-contents--desktop">
+        {% for block in section.blocks %}
+          {% unless block.settings.icons_island == blank and block.settings.text_island == blank %}
+            <div class="tab-contents__item tab-contents__item--desktop tab-contents__item--{{block.id}}{% if forloop.index == 1 %} tab-contents__item--active {% endif %}">
+              <div class="tab-contents__icons-islands">
+                {% assign iconsIslandInputPairs = block.settings.icons_island | split: '|' %}
+                {% for iconsPair in iconsIslandInputPairs %}
+                  {% assign isHidden = false %}
+                  {% if iconsPair contains 'HIDDEN' %}
+                    {% assign isHidden = true %}
+                  {% endif %}
+                  {% assign iconsPairNew = iconsPair | remove: 'HIDDEN' %}
+                  <div class="icons-islands__icons-island {% if isHidden %} icons-islands__icons-island--mobile-hidden{% endif %}">
+                    {% assign iconContentDivided = iconsPairNew | split: ';' %}
+                    <img src="{{ iconContentDivided[0] | file_url }}" class="icons-islands__icon">
+                    <div class="icons-island__content">
+                      {% unless iconContentDivided[1] == blank %}
+                        <span class="icons-island__text">
+                        {{ iconContentDivided[1] }}
+                      </span>
+                      {% endunless %}
+                      {% unless iconContentDivided[2] == blank %}
+                        <span class="icons-island__subtext">
+                              {{ iconContentDivided[2] }}
+                            </span>
+                      {% endunless %}
+                    </div>
+                  </div>
+                {% endfor %}
+              </div>
+              {% if block.settings.text_island != blank %}
+                <div class="tab-contents__text-islands {% if block.settings.fist_element == "text" %}tab-contents__text-islands--first{% endif %}">
+                  {% assign textIslandInputPairs = block.settings.text_island | split: '|' %}
+                  {% assign textIslandInputPairsCenter = textIslandInputPairs.size | divided_by: 2 | plus: 1 %}
+                  {% for textPair in textIslandInputPairs %}
+                    {% if forloop.index == 1 or forloop.index0 == textIslandInputPairsCenter %}
+                      <div class="text-islands__column  text-islands__column--{{ block.settings.style_text_island }}">
+                    {% endif %}
+                    <div class="text-islands__text-island">
+                      {% assign textContentDivided = textPair | split: ';' %}
+                      <span class="text-island__heading">
+                      {{ textContentDivided[0] }}
+                    </span>
+                      {% unless textContentDivided[1] == blank %}
+                        <span class="text-island__subheading">
+                        {{ textContentDivided[1] }}
+                      </span>
+                      {% endunless %}
+                    </div>
+                    {% if forloop.index == textIslandInputPairs.size or forloop.index == textIslandInputPairsCenter %}
+                      </div>
+                    {% endif %}
+                  {% endfor %}
+                </div>
+              {% endif %}
+            </div>
+          {% endunless %}
+        {% endfor %}
+      </div>
+    </div>
+    {% unless section.settings.button_label == blank and section.settings.button_url == blank %}
+      <div class="banner-with-tabs__button-wrapper {% if section.settings.is_button_hidden_on_mobile %}banner-with-tabs__button-wrapper--mobile-hidden {% endif %}">
+        <a href="{{section.settings.button_url}}" class="banner-with-tabs__button">
+          {{ section.settings.button_label }}
+          {% render 'icon-arrow' %}
+        </a>
+      </div>
+    {% endunless %}
+
+    {% if section.settings.popup_button_label != blank %}
+    <div onclick="activatePopup(this.closest('.section__banner-with-tabs'))" 
+         class="banner-with-tabs__button--popup">
+        {{ section.settings.popup_button_label }}
+      {% render 'icon-arrow-right' %}
+    </div>
+  {% endif %}
+  </div>
+{% endunless %}
+{{ 'section-benefits-banner-with-tabs.js' | asset_url | script_tag }}
+{% schema %}
+{
+  "name": "Benefits list banner",
+  "tag": "section",
+  "class": "section__banner-with-tabs",
+  "settings": [
+    {
+      "type": "range",
+      "id": "slide_time",
+      "label": "Slide change time",
+      "unit": "s",
+      "min": 1,
+      "max": 60,
+      "step": 1,
+      "default": 5
+    },
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "richtext",
+      "label": "Heading",
+      "id": "heading"
+    },
+    {
+      "type": "inline_richtext",
+      "label": "Subheading",
+      "id": "subheading"
+    },
+    {
+      "type": "text",
+      "label": "Button label",
+      "id": "button_label",
+      "default": "Explore All Benefits"
+    },
+    {
+      "type": "url",
+      "label": "Button url",
+      "id": "button_url"
+    },
+    {
+      "type": "color_background",
+      "label": "Button background",
+      "id": "button_background",
+      "default": "rgba(0, 94, 184, 1)"
+    },
+    {
+      "type": "checkbox",
+      "label": "Hide button on mobile",
+      "id": "is_button_hidden_on_mobile",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "label": "Main image",
+      "id": "image"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "paragraph",
+      "content": "Desktop"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    },
+    {
+      "type": "paragraph",
+      "content": "Mobile"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    },
+    {
+      "type": "paragraph",
+      "content": "Popup"
+    },
+    {
+      "type": "text",
+      "id": "popup_heading",
+      "label": "popup heading",
+      "default": "Supplement Facts"
+    },
+    {
+      "type": "text",
+      "id": "popup_metaobject_handle",
+      "label": "Content Metaobject handle",
+      "info": "Add handle of created metaobject."
+    },
+    {
+      "type": "image_picker",
+      "id": "image_popup",
+      "label": "Popup image",
+      "info": "Will be displayed as pop up image linked to button click"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_popup_mobile",
+      "label": "Popup image for mobile"
+    },
+    {
+      "type": "text",
+      "id": "popup_button_label",
+      "label": "Popup trigger text",
+      "info": "Required to show popup!"
+    },
+    {
+      "type": "header",
+      "content": "Styles"
+    },
+    {
+      "type": "color",
+      "id": "primary_color",
+      "label": "Primary color",
+      "default": "#005eb8"
+    },
+    {
+      "type": "checkbox",
+      "id": "use_smaller_image",
+      "label": "Use smaller image",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "use_more_padding",
+      "label": "Use more padding between elements",
+      "default": false
+    }
+  ],
+  "blocks": [
+    {
+      "type": "benefit",
+      "name": "Benefit",
+      "settings": [
+        {
+          "type": "checkbox",
+          "label": "Open content by default on mobile",
+          "id": "is_opened_by_default",
+          "default": true
+        },
+        {
+          "type": "richtext",
+          "label": "Tag",
+          "id": "tag_desktop"
+        },
+        {
+          "type": "richtext",
+          "label": "Tag mobile",
+          "id": "tag_mobile"
+        },
+        {
+          "type": "html",
+          "label": "Icons island",
+          "id": "icons_island",
+          "placeholder": "filename.ext;line|filename.ext2;line2",
+          "info": "Please specify the file and text to all the lines you want to use in following format(if you want to fide this line on mobile - start it with HIDDEN word): 'HIDDEN filename.ext;line|filename.ext2;line2'"
+        },
+        {
+          "type": "html",
+          "label": "Text island",
+          "id": "text_island",
+          "placeholder": "B Vitamins;B1, B2, B3, B5, B6|Lion’s Mane",
+          "info": "Please specify the main text and description in following format: 'mainText;description|mainText2;description2'"
+        },
+        {
+          "type": "select",
+          "label": "Style text island",
+          "id": "style_text_island",
+          "default": "short",
+          "options": [
+            {
+              "value": "wide",
+              "label": "Wide"
+            },
+            {
+              "value": "short",
+              "label": "Short"
+            }
+          ]
+        },
+        {
+          "type": "select",
+          "label": "Fist element",
+          "id": "fist_element",
+          "default": "icons",
+          "options": [
+            {
+              "value": "icons",
+              "label": "Icons"
+            },
+            {
+              "value": "text",
+              "label": "Text"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Benefits list banner"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,1003 @@
+{%- liquid
+  assign breadcrumbs = section.blocks | where: 'type', 'breadcrumbs'
+-%}
+
+{% style %}
+  .section-{{ section.id }}--padding {
+    padding-top: {{ section.settings.padding_top_mobile }}px;
+    padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+  }
+
+  .article-grid__item--padding {
+    padding-top: var(--space-top-mobile);
+    padding-bottom: var(--space-bottom-mobile);
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}--padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+
+    .article-grid__item--padding {
+        padding-top: var(--space-top);
+        padding-bottom: var(--space-bottom);
+    }
+  }
+{% endstyle %}
+
+{{- 'section-article-banner.css' | asset_url | stylesheet_tag -}}
+{{- 'cta-banner-with-media.css' | asset_url | stylesheet_tag -}}
+
+<div class="article-banner section-{{ section.id }}--padding">
+  <div class="article-banner__container page-width page-width--narrow">
+    {% if breadcrumbs.size != 0 %}
+      <div class="article-banner__breadcrumbs article-breadcrumbs">
+        <ul class="article-breadcrumbs__list list-unstyled" role="list">
+          {% for breadcrumbs in breadcrumbs %}
+            {%- liquid
+              assign nameLink = breadcrumbs.settings.name_link
+              assign urlLink = breadcrumbs.settings.url_link
+            -%}
+            <li class="article-breadcrumbs__item">
+              {% if urlLink != blank %}
+                <a href="{{urlLink}}" title="{{- nameLink -}}">{{- nameLink -}}</a>
+              {%- else -%}
+                <span>{{- nameLink -}}</span>
+              {% endif %}
+              {%- unless forloop.last -%}
+                <span> > </span>
+              {%- endunless -%}
+            </li>
+          {% endfor %}
+        </ul>
+      </div>
+    {% endif %}
+    <div class="article-banner__grid article-grid">
+      {% for block in section.blocks %}
+        {% unless block.type == 'breadcrumbs' %}
+          {%- liquid
+            assign paddingTop = block.settings.padding_top | append: 'px'
+            assign paddingBottom = block.settings.padding_bottom | append: 'px'
+            assign paddingTopMobile = block.settings.padding_top_mobile | append: 'px'
+            assign paddingBottomMobile = block.settings.padding_bottom_mobile | append: 'px'
+          -%}
+          <div
+            class="article-grid__item article-grid__item--{{block.type}} article-grid__item--padding"
+            {{ block.shopify_attributes }}
+            style="--space-top: {{paddingTop}}; --space-bottom: {{paddingBottom}}; --space-top-mobile: {{paddingTopMobile}};  --space-bottom-mobile: {{paddingBottomMobile}};"
+          >
+            {%- case block.type -%}
+              {%- when 'title' -%}
+                {% if block.settings.title != blank %}
+                  {% liquid
+                    assign title = block.settings.title
+                    assign title_parts = title | split: "<em>"
+                    for part_title in title_parts
+                      if forloop.first == true
+                        continue
+                      endif
+
+                      assign italic_part = part_title | split: "</em>" | first
+                      assign splited_italic_part = italic_part  | split: " "
+                      assign updated_italic_part = ""
+                      capture updated_italic_part
+                        for italic_word in splited_italic_part
+                          echo "<em>" | append: italic_word | append: " </em>"
+                        endfor
+                      endcapture
+
+                      assign updated_italic_part_echo = updated_italic_part | escape | escape
+
+                      assign origin_part = "<em>" | append: italic_part | append: "</em>"
+
+                      assign title = title | replace: origin_part, updated_italic_part
+                    endfor
+                  %}
+
+
+                  <h1 class="article-grid__item-title">{{- title -}}</h1>
+                {% endif %}
+              {%- when 'information' -%}
+                {%- liquid
+                  assign articleBy = block.settings.article_by
+                  assign authorName = block.settings.author_name
+                  assign updated = block.settings.updated
+                  assign date = block.settings.date
+                -%}
+                <div class="article-grid__item-information article-information">
+                  {% if articleBy != blank and authorName != blank %}
+                    <p class="article-information__author">
+                      <span>{{- articleBy -}}</span>
+                      <span>{{- authorName -}}</span>
+                    </p>
+                  {% endif %}
+                  {% if updated != blank and date != blank %}
+                    <p class="article-information__date">
+                      <span>{{- updated -}}</span>
+                      <span>{{- date-}}</span>
+                    </p>
+                  {% endif %}
+                </div>
+              {%- when 'media' -%}
+                <ul class="article-grid__item-media article-media list-unstyled" role="list">
+                  {% for i in (1..5) %}
+                    {%- liquid
+                      assign keyBackground = 'background_' | append: i
+                      assign keyColorText = 'color_text_' | append: i
+                      assign keyLink = 'link_' | append: i
+                      assign keyIcon = 'icon_' | append: i
+                      assign keyCount = 'count_review_' | append: i
+
+                      assign background = block.settings[keyBackground]
+                      assign colorText = block.settings[keyColorText]
+                      assign link = block.settings[keyLink]
+                      assign icon = block.settings[keyIcon]
+                      assign count = block.settings[keyCount]
+
+                      assign showMedia = false
+                      if count != blank and icon != blank
+                        assign showMedia = true
+                      endif
+                    -%}
+                    {% if showMedia %}
+                      <li
+                        class="article-media__item"
+                        style="--background: {{ background }}; --color: {{ colorText }}"
+                      >
+                        <div class="article-media__link">
+                          {{
+                            icon
+                            | image_url: width: 32, height: 32
+                            | image_tag: loading: 'lazy', class: 'article-media__link-icon'
+                          }}
+                          <span class="article-media__link-count">{{- count -}}</span>
+                        </div>
+                      </li>
+                    {% endif %}
+                  {% endfor %}
+                </ul>
+              {%- when 'image' -%}
+                {%- liquid
+                  assign image = block.settings.image
+                  assign image_mobile = block.settings.image_mobile
+                -%}
+                {% if image != blank %}
+                  <div class="article-grid__item-image article-image 
+                    {% if block.settings.full_width_mobile %}
+                      article-image--full-width
+                    {% endif %}
+                    {% if block.settings.use_original_ratio == true %}
+                    article-image--origin
+                  {% endif %}">
+                      <picture>
+                          {% if image_mobile != blank %}
+                              <source srcset="{{ image_mobile | img_url: "master" }}" media="(max-width: 750px)">
+                          {% endif %}
+                          {{ image | image_url: width: 2000 | image_tag: loading: 'lazy' }}
+                      </picture>
+                  </div>
+                {% endif %}
+              {%- when 'text' -%}
+                  {% if block.settings.text != blank %}
+                    {% liquid
+                      assign text = block.settings.text
+                      assign text_parts = text | split: "<em>"
+                      for part_text in text_parts
+                        if forloop.first == true
+                          continue
+                        endif
+
+                        assign italic_part = part_text | split: "</em>" | first
+                        assign splited_italic_part = italic_part  | split: " "
+                        assign updated_italic_part = ""
+                        capture updated_italic_part
+                          for italic_word in splited_italic_part
+                            echo "<em>" | append: italic_word | append: " </em>"
+                          endfor
+                        endcapture
+
+                        assign updated_italic_part_echo = updated_italic_part | escape | escape
+
+                        assign origin_part = "<em>" | append: italic_part | append: "</em>"
+
+                        assign text = text | replace: origin_part, updated_italic_part
+                      endfor
+                    %}
+                    <div class="article-grid__item-text article-text">
+                        {{- text -}}
+                    </div>
+                  {% endif %}
+                {%- when 'button' -%}
+                    {% liquid
+                        assign text = block.settings.text
+                        assign popup_title = block.settings.title
+                        assign popup_metaobject_handle = block.settings.popup_metaobject_handle
+                        assign popup_metaobject = shop.metaobjects.supplement_facts[popup_metaobject_handle]
+                    %}
+                    {% if text != blank and popup_metaobject != blank %}
+                      <div class="article-grid__popup">
+                          <span onclick="activatePopup(this.closest('.article-grid__popup'))" class="article-grid__button">
+                              {{ text }}
+                          </span>
+
+                        <div class="cta-banner__popup-overlay" onclick="deactivatePopup(event)" style="visibility: hidden;">
+                          <div class="cta-banner__popup">
+                            {% unless popup_title == blank %}
+                              <div class = "popup__heading-wrapper">
+                                <h5 class = "popup__title">
+                                  {{ popup_title }}
+                                </h5>
+                                <div class="popup__close-button" onclick="deactivatePopup(event)">
+                                  {% render 'popup-close-icon' %}
+                                </div>
+                              </div>
+                            {% endunless %}
+
+                              <div class="popup__image-wrapper">
+                                {% if popup_metaobject %}
+                                    <div class="popup__content-wrapper">
+                                      {% render 'supplement-facts-popup' | metaobject: popup_metaobject %}
+                                    </div>
+                                {% endif %}
+                              </div>
+                          </div>
+                        </div>
+                      </div>
+                    {% endif %}
+            {%- endcase -%}
+          </div>
+        {% endunless %}
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+
+<script src="{{ 'cta-banner-popup.js' | asset_url }}" defer></script>
+
+{% schema %}
+{
+  "name": "Article banner",
+  "tag": "section",
+  "presets": [
+    {
+      "name": "Article banner"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "breadcrumbs",
+      "name": "Breadcrumbs item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "name_link",
+          "label": "Name for link"
+        },
+        {
+          "type": "url",
+          "id": "url_link",
+          "label": "Url for link"
+        }
+      ]
+    },
+    {
+      "type": "title",
+      "name": "Title",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "Space between blocks on the desktop"
+        },
+        {
+          "type": "range",
+          "id": "padding_top",
+          "label": "Padding top",
+          "unit": "px",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default": 14
+        },
+        {
+          "type": "range",
+          "id": "padding_bottom",
+          "label": "Padding bottom",
+          "unit": "px",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default": 0
+        },
+        {
+          "type": "paragraph",
+          "content": "Space between blocks on the mobile"
+        },
+        {
+          "type": "range",
+          "id": "padding_top_mobile",
+          "label": "Padding top",
+          "unit": "px",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default": 14
+        },
+        {
+          "type": "range",
+          "id": "padding_bottom_mobile",
+          "label": "Padding bottom",
+          "unit": "px",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default": 0
+        },
+        {
+          "type": "richtext",
+          "id": "title",
+          "label": "Title",
+          "default": "<p>Breaking News: The Vitamins You Take Every Day Could Be Harming Your Health - Here’s How to Protect Yourself</p>"
+        }
+      ]
+    },
+    {
+      "type": "information",
+      "name": "Information",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "Space between blocks on the desktop"
+        },
+        {
+          "type": "range",
+          "id": "padding_top",
+          "label": "Padding top",
+          "unit": "px",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default": 14
+        },
+        {
+          "type": "range",
+          "id": "padding_bottom",
+          "label": "Padding bottom",
+          "unit": "px",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default": 0
+        },
+        {
+          "type": "paragraph",
+          "content": "Space between blocks on the mobile"
+        },
+        {
+          "type": "range",
+          "id": "padding_top_mobile",
+          "label": "Padding top",
+          "unit": "px",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default": 14
+        },
+        {
+          "type": "range",
+          "id": "padding_bottom_mobile",
+          "label": "Padding bottom",
+          "unit": "px",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default": 0
+        },
+        {
+          "type": "paragraph",
+          "content": "Who is the author of the article"
+        },
+        {
+          "type": "text",
+          "id": "article_by",
+          "label": "Article by:",
+          "default": "Article by:"
+        },
+        {
+          "type": "text",
+          "id": "author_name",
+          "label": "Author's name",
+          "default": "Laura L. MD"
+        },
+        {
+          "type": "paragraph",
+          "content": "Date of publication of the article"
+        },
+        {
+          "type": "text",
+          "id": "updated",
+          "label": "Updated",
+          "default": "Updated"
+        },
+        {
+          "type": "text",
+          "id": "date",
+          "label": "Date(desktop)",
+          "default": "12 August 2024 at 6:48 AM / 7 min. read"
+        }
+      ]
+    },
+    {
+      "type": "media",
+      "name": "Media item",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "Space between blocks on the desktop"
+        },
+        {
+          "type": "range",
+          "id": "padding_top",
+          "label": "Padding top",
+          "unit": "px",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default": 18
+        },
+        {
+          "type": "range",
+          "id": "padding_bottom",
+          "label": "Padding bottom",
+          "unit": "px",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default": 0
+        },
+        {
+          "type": "paragraph",
+          "content": "Space between blocks on the mobile"
+        },
+        {
+          "type": "range",
+          "id": "padding_top_mobile",
+          "label": "Padding top",
+          "unit": "px",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default": 14
+        },
+        {
+          "type": "range",
+          "id": "padding_bottom_mobile",
+          "label": "Padding bottom",
+          "unit": "px",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default": 0
+        },
+        {
+          "type": "header",
+          "content": "The first media"
+        },
+        {
+          "type": "paragraph",
+          "content": "Color schema"
+        },
+        {
+          "type": "color_background",
+          "id": "background_1",
+          "label": "Background"
+        },
+        {
+          "type": "color",
+          "id": "color_text_1",
+          "label": "Color text",
+          "default": "#fff"
+        },
+        {
+          "type": "paragraph",
+          "content": "Other"
+        },
+        {
+          "type": "url",
+          "id": "link_1",
+          "label": "Link to the media"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon_1",
+          "label": "Icon"
+        },
+        {
+          "type": "number",
+          "id": "count_review_1",
+          "label": "Overview for each media",
+          "default": 0
+        },
+        {
+          "type": "header",
+          "content": "The second media"
+        },
+        {
+          "type": "paragraph",
+          "content": "Color schema"
+        },
+        {
+          "type": "color_background",
+          "id": "background_2",
+          "label": "Background"
+        },
+        {
+          "type": "color",
+          "id": "color_text_2",
+          "label": "Color text",
+          "default": "#fff"
+        },
+        {
+          "type": "paragraph",
+          "content": "Other"
+        },
+        {
+          "type": "url",
+          "id": "link_2",
+          "label": "Link to the media"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon_2",
+          "label": "Icon"
+        },
+        {
+          "type": "number",
+          "id": "count_review_2",
+          "label": "Overview for each media",
+          "default": 0
+        },
+        {
+          "type": "header",
+          "content": "The third media"
+        },
+        {
+          "type": "paragraph",
+          "content": "Color schema"
+        },
+        {
+          "type": "color_background",
+          "id": "background_3",
+          "label": "Background"
+        },
+        {
+          "type": "color",
+          "id": "color_text_3",
+          "label": "Color text",
+          "default": "#fff"
+        },
+        {
+          "type": "paragraph",
+          "content": "Other"
+        },
+        {
+          "type": "url",
+          "id": "link_3",
+          "label": "Link to the media"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon_3",
+          "label": "Icon"
+        },
+        {
+          "type": "number",
+          "id": "count_review_3",
+          "label": "Overview for each media",
+          "default": 0
+        },
+        {
+          "type": "header",
+          "content": "The fourth media"
+        },
+        {
+          "type": "paragraph",
+          "content": "Color schema"
+        },
+        {
+          "type": "color_background",
+          "id": "background_4",
+          "label": "Background"
+        },
+        {
+          "type": "color",
+          "id": "color_text_4",
+          "label": "Color text",
+          "default": "#fff"
+        },
+        {
+          "type": "paragraph",
+          "content": "Other"
+        },
+        {
+          "type": "url",
+          "id": "link_4",
+          "label": "Link to the media"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon_4",
+          "label": "Icon"
+        },
+        {
+          "type": "number",
+          "id": "count_review_4",
+          "label": "Overview for each media",
+          "default": 0
+        },
+        {
+          "type": "header",
+          "content": "The fifth media"
+        },
+        {
+          "type": "paragraph",
+          "content": "Color schema"
+        },
+        {
+          "type": "color_background",
+          "id": "background_5",
+          "label": "Background"
+        },
+        {
+          "type": "color",
+          "id": "color_text_5",
+          "label": "Color text",
+          "default": "#fff"
+        },
+        {
+          "type": "paragraph",
+          "content": "Other"
+        },
+        {
+          "type": "url",
+          "id": "link_5",
+          "label": "Link to the media"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon_5",
+          "label": "Icon"
+        },
+        {
+          "type": "number",
+          "id": "count_review_5",
+          "label": "Overview for each media",
+          "default": 0
+        }
+      ]
+    },
+    {
+      "type": "button",
+      "name": "Button",
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "Space between blocks on the desktop"
+        },
+        {
+          "type": "range",
+          "id": "padding_top",
+          "label": "Padding top",
+          "unit": "px",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default": 18
+        },
+        {
+          "type": "range",
+          "id": "padding_bottom",
+          "label": "Padding bottom",
+          "unit": "px",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default": 0
+        },
+        {
+          "type": "paragraph",
+          "content": "Space between blocks on the mobile"
+        },
+        {
+          "type": "range",
+          "id": "padding_top_mobile",
+          "label": "Padding top",
+          "unit": "px",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default": 24
+        },
+        {
+          "type": "range",
+          "id": "padding_bottom_mobile",
+          "label": "Padding bottom",
+          "unit": "px",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default": 0
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "See Supplement Facts"
+        },
+        {
+          "type": "text",
+          "id": "popup_metaobject_handle",
+          "label": "Content Metaobject handle",
+          "info": "Add handle of created metaobject.",
+          "default": "supplement-facts"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Supplement Facts"
+        }
+      ]
+    },
+    {
+      "type": "image",
+      "name": "Image",
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "Space between blocks on the desktop"
+        },
+        {
+          "type": "range",
+          "id": "padding_top",
+          "label": "Padding top",
+          "unit": "px",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default": 18
+        },
+        {
+          "type": "range",
+          "id": "padding_bottom",
+          "label": "Padding bottom",
+          "unit": "px",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default": 0
+        },
+        {
+          "type": "paragraph",
+          "content": "Space between blocks on the mobile"
+        },
+        {
+          "type": "range",
+          "id": "padding_top_mobile",
+          "label": "Padding top",
+          "unit": "px",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default": 24
+        },
+        {
+          "type": "range",
+          "id": "padding_bottom_mobile",
+          "label": "Padding bottom",
+          "unit": "px",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default": 0
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image",
+          "info": "Recommended size 800 * 480"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_mobile",
+          "label": "Image for mobile",
+          "info": "Recommended size 800 * 480"
+        },
+        {
+          "type": "checkbox",
+          "id": "use_original_ratio",
+          "label": "Use original ratio"
+        },
+        {
+          "type": "checkbox",
+          "id": "full_width_mobile",
+          "label": "Full width mobile",
+          "default": true
+        }
+      ]
+    },
+    {
+      "type": "text",
+      "name": "Text",
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "Space between blocks on the desktop"
+        },
+        {
+          "type": "range",
+          "id": "padding_top",
+          "label": "Padding top",
+          "unit": "px",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default": 24
+        },
+        {
+          "type": "range",
+          "id": "padding_bottom",
+          "label": "Padding bottom",
+          "unit": "px",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default": 0
+        },
+        {
+          "type": "paragraph",
+          "content": "Space between blocks on the mobile"
+        },
+        {
+          "type": "range",
+          "id": "padding_top_mobile",
+          "label": "Padding top",
+          "unit": "px",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default": 24
+        },
+        {
+          "type": "range",
+          "id": "padding_bottom_mobile",
+          "label": "Padding bottom",
+          "unit": "px",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default": 0
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text"
+        }
+      ]
+    },
+    {
+      "type": "comparison",
+      "name": "Comparison",
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "Space between blocks on the desktop"
+        },
+        {
+          "type": "range",
+          "id": "padding_top",
+          "label": "Padding top",
+          "unit": "px",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default": 24
+        },
+        {
+          "type": "range",
+          "id": "padding_bottom",
+          "label": "Padding bottom",
+          "unit": "px",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default": 0
+        },
+        {
+          "type": "paragraph",
+          "content": "Space between blocks on the mobile"
+        },
+        {
+          "type": "range",
+          "id": "padding_top_mobile",
+          "label": "Padding top",
+          "unit": "px",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default": 24
+        },
+        {
+          "type": "range",
+          "id": "padding_bottom_mobile",
+          "label": "Padding bottom",
+          "unit": "px",
+          "min": 0,
+          "max": 100,
+          "step": 1,
+          "default": 0
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text"
+        }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "Space between sections on the desktop"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "unit": "px",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "unit": "px",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 0
+    },
+    {
+      "type": "paragraph",
+      "content": "Space between sections on the mobile"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Padding top",
+      "unit": "px",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Padding bottom",
+      "unit": "px",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 0
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,31 @@
+{%- comment -%}
+  Example of a snippet
+  {% render "collapse-row"
+      title:question, // Text for the button
+      content:answer, // Content for hide a section
+      class_name_row:class_name_row, // Special class for the <collapse-row> tag
+      class_name_title:class_name_title, // Special class for the <button> tag
+      class_name_content:class_name_content Special class for the <div> tag %}
+{%- endcomment -%}
+{% liquid 
+ assign is_row_opened = false
+ if is_first_opened and index == 0 
+   assign is_row_opened = true 
+endif 
+%}
+
+{% if title != blank and content != blank %}
+  <collapse-row class="collapse-row {{class_name_row}}" data-open="{{ is_row_opened }}">
+    <button class="collapse-row__button {{class_name_title}}">
+      <span class="collapse-row__button-title">{{- title -}}</span>
+      {% if icon_style and icon_style == 'new' %}
+        <span class="collapse-row">
+          {{ 'icon-collapsible-row-new.svg' | inline_asset_content }}
+        </span>
+      {% else %}
+        {% render 'icon-arrow-down' %}
+      {% endif %}
+    </button>
+    <div class="collapse-row__content {{class_name_content}}">{{- content -}}</div>
+  </collapse-row>
+{% endif %}

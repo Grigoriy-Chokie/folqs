@@ -1,0 +1,149 @@
+{{ 'section-beetroot-image-benefits.css' | asset_url | stylesheet_tag }}
+
+<div class="beetroot-image-benefits__wrapper" style="--background-color: {{ section.settings.background_color }};">
+  <div class="beetroot-image-benefits__container page-width">
+    <div class="beetroot-image-benefits__image-text-container">
+      {% liquid
+        assign ratio_percent = 100 | append: '%'
+
+        if section.settings.image != blank
+          assign ratio_percent = 1 | divided_by: section.settings.image.aspect_ratio | times: 100 | append: '%'
+        endif
+      %}
+
+      <div class="beetroot-image-benefits__image" style="--ratio-percent: {{ ratio_percent }};">
+        {% if section.settings.image != blank %}
+          {{ section.settings.image | image_url: width: 900 | image_tag: fetchpriority: 'high' }}
+        {%- else -%}
+          {{ 'image' |  placeholder_svg_tag }}
+        {% endif %}
+      </div>
+
+      <div class="beetroot-image-benefits__content">
+        {%- if section.settings.title != blank -%}
+          <h2 class="beetroot-image-benefits__title">{{ section.settings.title }}</h2>
+        {%- endif -%}
+        {%- if section.settings.text != blank -%}
+          <div class="beetroot-image-benefits__text rte">
+            {{ section.settings.text }}
+          </div>
+        {%- endif -%}
+      </div>
+    </div>
+    <div class="beetroot-image-benefits__benefits-container">
+        {%- for block in section.blocks -%}
+          <div class="beetroot-image-benefits__benefit">
+            <div class="benefit__image">
+              {%- if block.settings.image != blank -%}
+                {{ block.settings.image |  image_url: width: 120 | image_tag }}
+              {%- elsif section.settings.image_benefit != blank -%}
+                {{ section.settings.image_benefit | image_url: width: 120 | image_tag }}
+              {%- endif -%}
+            </div>
+            {%- if block.settings.text != blank -%}
+              <p class="benefit__text">{{ block.settings.text }}</p>
+            {%- endif -%}
+          </div>
+        {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+    "name": "Beetroot image benefits",
+    "class": "beetroot-image-benefits",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      },
+      {
+        "type": "image_picker",
+        "id": "image_benefit",
+        "label": "Image benefit"
+      },
+      {
+        "type": "text",
+        "id": "title",
+        "label": "title",
+        "default": "Foolqs Beetroot Chews Health Benefits"
+      },
+      {
+        "type": "richtext",
+        "id": "text",
+        "label": "text",
+        "default": "<p>At Folqs, we go beyond ordinary beet products. Our Beet Root Chews are meticulously crafted with organic beet root plus a complementary blend of ingredients—like Grape Seed Extract, Hibiscus, and Olive Leaf—chosen to support healthy blood pressure from multiple angles. We fortify our formula with CoQ10 and Magnesium Glycinate, ensuring you get not just nitric oxide support, but also the heart-energizing nutrients your body needs every day.</p>"
+      },
+      {
+        "type": "color",
+        "id": "background_color",
+        "label": "background_color",
+        "default": "#F7FDF2"
+      }
+    ],
+    "blocks": [
+      {
+        "name": "Benefit",
+        "type": "benefit",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          },
+          {
+            "type": "text",
+            "id": "text",
+            "label": "text",
+            "default": "Helps Maintain Healthy Blood Pressure"
+          }
+        ]
+      }
+    ],
+    "presets": [
+    {
+        "name": "Beetroot image benefits",
+        "blocks": [
+          {
+            "type": "benefit",
+            "settings": {
+              "text": "Helps Maintain Healthy Blood Pressure"
+            }
+          },
+          {
+            "type": "benefit",
+            "settings": {
+              "text": "Improves Circulation and Blood Flow"
+            }
+          },
+          {
+            "type": "benefit",
+            "settings": {
+              "text": "Provides Gentle, Non-Stimulant Energy"
+            }
+          },
+          {
+            "type": "benefit",
+            "settings": {
+              "text": "Supports Heart Energy and Function"
+            }
+          },
+          {
+            "type": "benefit",
+            "settings": {
+              "text": "Helps Maintain Healthy Cholesterol Levels"
+            }
+          },
+          {
+            "type": "benefit",
+            "settings": {
+              "text": "Protects Against Oxidative Stress and Inflammation"
+            }
+          }
+        ]
+    }
+  ]
+}
+{% endschema %}

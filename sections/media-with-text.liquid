@@ -1,0 +1,447 @@
+{{ 'section-media-with-text.css' | asset_url | stylesheet_tag }}
+{% style %}
+  .media-with-text__content--{{ section.id }} {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+
+    @media screen and (min-width: 768px) {
+ br{
+      display:none;
+    }
+      video{
+  max-width:100%;
+  max-height:480px;
+  width: 480px;
+  object-fit: cover;
+    border-radius:8px;
+
+}
+    }
+  @media screen and (max-width: 768px) {
+    .media-with-text__content--{{ section.id }} {
+      padding-top: {{ section.settings.padding_top_mobile }}px;
+      padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+    }
+  video{
+  max-width:100%;
+  max-height:380px;
+  width: 100%;
+  object-fit: cover;
+    border-radius:8px;
+}
+    {% unless section.settings.mobile_gap  == '40'%}
+        .media-with-text__content--{{ section.id }} .media-with-text__text-wrapper {
+          gap: {{ section.settings.mobile_gap }}px;
+        }
+    {% endunless %}
+  }
+{% endstyle %}
+{% assign type_strings = 'desktop,mobile' | split: ',' %}
+{% capture imageBlock %}
+<div class="media-with-text__image-wrapper {% unless section.settings.image_mobile == blank %} media-with-text__image-wrapper--with-mobile {% endunless %}">
+  {% if section.settings.video == blank  %}
+
+
+    {% for type_string in type_strings %}
+      {%- capture imageKey -%}image_{{ type_string }}{%- endcapture -%}
+      {%- unless section.settings[imageKey] == blank -%}
+        {{
+          section.settings[imageKey]
+          | image_url: width: 3200
+          | image_tag:
+            loading: 'lazy',
+            widths: '50, 75, 100, 150, 200, 300, 400, 500, 750, 1000, 1250, 1500, 1750, 2000, 2250, 2500, 2750, 3000, 3200',
+            class: 'media-with-text__image-item'
+        }}
+      {% endunless %}
+    {% endfor %}
+{% else %}
+{{
+            section.settings.video
+            | video_tag: image_size: '1100x', loop: true, controls: false, muted: true, autoplay:true
+          }}
+{% endif %}
+  </div>
+{% endcapture %}
+<div class="color-{{ section.settings.section_color_scheme }}" style="width: 100%;">
+  <div class="media-with-text__content media-with-text__content--{{ section.settings.proportion }}
+  media-with-text__content--image-{{ section.settings.image_position }}
+  media-with-text__content--image-mobile--{{ section.settings.image_position_mobile }}
+  media-with-text__content--{{ section.id }}">
+    <div class="media-with-text__text-wrapper {% unless section.settings.main_content_mobile == blank %} media-with-text__text-wrapper--with-mobile {% endunless %}">
+      {%- if section.blocks.size > 0 -%}
+        <div class="media-with-text__percentages-blocks">
+          {%- for block in section.blocks -%}
+            {%- case block.type -%}
+              {%- when 'percentage' -%}
+                <div class="percentages_blocks__percentage-item {%- unless block.settings.percentage_mobile == blank -%} percentages_blocks__percentage-item--with-percentage-mobile {%- endunless -%}{%- unless block.settings.is_description_below -%} percentages_blocks__percentage-item--divided{%- endunless -%}">
+                  {%- for type_string in type_strings -%}
+                    {%- capture percentageKey -%}percentage_{{- type_string -}}{%- endcapture -%}
+                    {%- unless block.settings[percentageKey] == blank -%}
+                      <span class="percentage-item__title percentage-item__title--{{ type_string }}">
+                        {{ block.settings[percentageKey] | replace: '%', "<span class = 'title--small'>%</span>" }}
+                      </span>
+                    {%- endunless -%}
+                  {%- endfor -%}
+                  {%- unless block.settings.description_desktop == blank or block.settings.subheading_desktop == blank -%}
+                    <div class="percentage-item__details {%- unless block.settings.description_mobile == blank -%} percentage-item__details--with-description-mobile {%- endunless -%} {%- unless block.settings.subheading_mobile == blank -%} percentage-item__details--with-subheading-mobile {%- endunless -%}">
+                      {%- for type_string in type_strings -%}
+                        {%- capture descriptionKey -%}description_{{- type_string -}}{%- endcapture -%}
+                        {%- unless block.settings[descriptionKey] == blank -%}
+                          <span class="percentage-item__description percentage-item__description--{{ type_string }}">
+                            {{ block.settings[descriptionKey] }}
+                          </span>
+                        {%- endunless -%}
+                      {%- endfor -%}
+                      {%- for type_string in type_strings -%}
+                        {%- capture subheadingKey -%}subheading_{{- type_string -}}{%- endcapture -%}
+                        {%- unless block.settings[subheadingKey] == blank -%}
+                          <span class="percentage-item__subheading percentage-item__subheading--{{ type_string }}">
+                            {{ block.settings[subheadingKey] }}
+                          </span>
+                        {%- endunless -%}
+                      {%- endfor -%}
+                    </div>
+                  {%- endunless -%}
+                </div>
+            {%- endcase -%}
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
+      {{ imageBlock }}
+      {% for type_string in type_strings %}
+        {%- capture mainContentKey -%}main_content_{{- type_string -}}{%- endcapture -%}
+        {%- unless section.settings[mainContentKey] == blank -%}
+          <span class="media-with-text__main-text media-with-text__main-text--{{ type_string }}">
+            {{ section.settings[mainContentKey] }}
+          </span>
+        {% endunless %}
+      {% endfor %}
+      {% if section.settings.button_text != blank and section.settings.button_link != blank %}
+        {% assign icon_text_blocks = section.blocks | where: "type", "icon_text" | sort %}
+        <div class="media-with-text__bottom">
+          <a class="media-with-text__button" href="{{ section.settings.button_link }}">
+            {{ section.settings.button_text }}
+          </a>
+          {% if icon_text_blocks.size > 0 %}
+            {% for block in icon_text_blocks %}
+              {% liquid
+                assign text = block.settings.text
+                assign icon = block.settings.icon
+              %}
+              {% if text != blank and icon != blank %}
+                <span class="media-with-text__icon-text">
+                  {{ icon | image_url: width: 100 | image_tag }}
+                  {{ text }}
+                </span>
+              {% endif %}
+              {% endfor %}
+          {% endif %}
+        </div>
+      {% endif %}
+      {% if section.blocks.size > 0 %}
+        <div class="media-with-text__fact_blocks">
+          {%- for block in section.blocks -%}
+            {%- case block.type -%}
+              {%- when 'fact' -%}
+                <div class="fact-blocks__fact-item">
+                  {%- unless block.settings.title == blank -%}
+                      <{%-unless block.settings.title_icon == blank -%}div{%- else -%}span{%- endunless -%} class = "fact-item__title">
+                          {%- unless block.settings.title_icon == blank -%}
+                              {{ block.settings.title_icon }}
+                          {%- endunless -%}
+                          {{ block.settings.title }}
+                      </{%-unless block.settings.title_icon == blank -%}div{%- else -%}span{%- endunless -%}>
+                  {%- endunless -%}
+                  {%- unless block.settings.description == blank -%}
+                    {{ block.settings.description }}
+                  {%- endunless -%}
+                </div>
+            {%- endcase -%}
+          {%- endfor -%}
+        </div>
+      {% endif %}
+    </div>
+    {{ imageBlock }}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Media with text",
+  "tag": "section",
+  "class": "section__media-with-text",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "richtext",
+      "label": "Main content",
+      "id": "main_content_desktop"
+    },
+   {
+      "type": "video",
+      "label": "Video",
+      "id": "video"
+    },
+    {
+      "type": "image_picker",
+      "label": "Image",
+      "id": "image_desktop"
+    },
+    {
+      "type": "select",
+      "label": "Mobile layout gap",
+      "id": "mobile_gap",
+      "default": "40",
+      "options": [
+        {
+          "label": "24px",
+          "value": "24"
+        },
+        {
+          "label": "40px",
+          "value": "40"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Mobile content"
+    },
+    {
+      "type": "richtext",
+      "label": "Main content",
+      "id": "main_content_mobile"
+    },
+    {
+      "type": "image_picker",
+      "label": "Image",
+      "id": "image_mobile"
+    },
+    {
+      "type": "text",
+      "label": "Button text",
+      "id": "button_text",
+      "default": "Get 30% OFF Immune Revival"
+    },
+    {
+      "type": "text",
+      "label": "Button link",
+      "id": "button_link"
+    },
+    {
+      "type": "color_scheme",
+      "id": "section_color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 52
+    },
+    {
+      "type": "header",
+      "content": "Mobile"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "select",
+      "id": "proportion",
+      "default": "image",
+      "label": "proportion",
+      "options": [
+        {
+          "value": "equal",
+          "label": "equal"
+        },
+        {
+          "value": "image",
+          "label": "Image"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "label": "Image position",
+      "id": "image_position",
+      "default": "right",
+      "options": [
+        {
+          "label": "Right",
+          "value": "right"
+        },
+        {
+          "label": "Left",
+          "value": "left"
+        },
+        {
+          "label": "Column",
+          "value": "column"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "Layout(mobile)"
+    },
+    {
+      "type": "select",
+      "label": "Image position",
+      "id": "image_position_mobile",
+      "default": "top",
+      "options": [
+        {
+          "label": "Top",
+          "value": "top"
+        },
+        {
+          "label": "Bottom",
+          "value": "bottom"
+        }
+      ]
+    }
+  ],
+  "blocks": [
+    {
+      "type": "percentage",
+      "name": "Percentage",
+      "settings": [
+        {
+          "type": "text",
+          "label": "Percentage",
+          "id": "percentage_desktop",
+          "default": "1800%"
+        },
+        {
+          "type": "richtext",
+          "label": "Description",
+          "id": "description_desktop"
+        },
+        {
+          "type": "text",
+          "label": "Subheading",
+          "id": "subheading_desktop",
+          "info": "Light text in the bottom of the block"
+        },
+        {
+          "type": "checkbox",
+          "label": "Display description below the text",
+          "id": "is_description_below",
+          "default": false
+        },
+        {
+          "type": "header",
+          "content": "Mobile content"
+        },
+        {
+          "type": "text",
+          "label": "Percentage",
+          "id": "percentage_mobile",
+          "default": "1800%"
+        },
+        {
+          "type": "richtext",
+          "label": "Description",
+          "id": "description_mobile"
+        },
+        {
+          "type": "text",
+          "label": "Subheading",
+          "id": "subheading_mobile",
+          "info": "Light text in the bottom of the block"
+        }
+      ]
+    },
+    {
+      "type": "fact",
+      "name": "Fact",
+      "settings": [
+        {
+          "type": "text",
+          "label": "Title",
+          "id": "title",
+          "default": "Useful Fact"
+        },
+        {
+          "type": "html",
+          "label": "Title icon",
+          "id": "title_icon"
+        },
+        {
+          "type": "richtext",
+          "label": "Description",
+          "id": "description"
+        }
+      ]
+    },
+    {
+      "type": "icon_text",
+      "name": "Icon with text",
+      "settings": [
+        {
+          "type": "image_picker",
+          "label": "Icon",
+          "id": "icon"
+        },
+        {
+          "type": "text",
+          "label": "Text",
+          "id": "text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Media with text"
+    }
+  ]
+}
+{% endschema %}

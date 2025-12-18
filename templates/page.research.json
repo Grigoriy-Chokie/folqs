@@ -1,0 +1,735 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "research_studies_yDBWAH": {
+      "type": "research-studies",
+      "blocks": {
+        "image_block_rFGtVf": {
+          "type": "image_block",
+          "settings": {
+            "title": "<p>Good Manufacturing Practice Certified Product</p>",
+            "description": "<p>Supports neurotransmitter function for improved cognitive processes</p>",
+            "main_image": "shopify://shop_images/Rectangle_24_3.png",
+            "icon": "shopify://shop_images/000000ff.png"
+          }
+        },
+        "image_block_ecgHW8": {
+          "type": "image_block",
+          "settings": {
+            "title": "<p>Food & Drug Administration Approved Product</p>",
+            "description": "<p>Supports neurotransmitter function for improved cognitive processes</p>",
+            "main_image": "shopify://shop_images/Rectangle_24_5.png",
+            "icon": "shopify://shop_images/istockphoto-1250459233-612x612_2.svg"
+          }
+        },
+        "image_block_dtEhCh": {
+          "type": "image_block",
+          "settings": {
+            "title": "<p>Good Manufacturing Practice<br/>Certified Product</p>",
+            "description": "<p>Supports neurotransmitter function for improved cognitive processes</p>",
+            "main_image": "shopify://shop_images/Rectangle_24_6.png",
+            "icon": "shopify://shop_images/000000ff.png"
+          }
+        },
+        "image_block_wKKCqz": {
+          "type": "image_block",
+          "settings": {
+            "title": "<p>Food & Drug Administration Approved Product</p>",
+            "description": "<p>Supports neurotransmitter function for improved cognitive processes</p>",
+            "main_image": "shopify://shop_images/Rectangle_24_7.png",
+            "icon": "shopify://shop_images/istockphoto-1250459233-612x612_2.svg"
+          }
+        }
+      },
+      "block_order": [
+        "image_block_rFGtVf",
+        "image_block_ecgHW8",
+        "image_block_dtEhCh",
+        "image_block_wKKCqz"
+      ],
+      "settings": {
+        "title": "Research Studies",
+        "heading_desktop_align": "left",
+        "subheading": "<p>Lorem ipsum dolor sit amet consectetur. Sed aliquam dapibus lorem aliquam lobortis vitae eros non morbi. Enim mattis cursus ultricies mattis.</p>",
+        "padding_top": 100,
+        "padding_bottom": 80,
+        "padding_top_mobile": 87,
+        "padding_bottom_mobile": 80
+      }
+    },
+    "text_banner_LcgyVf": {
+      "type": "text-banner",
+      "settings": {
+        "subheading": "<p>Name Study Results</p>",
+        "heading": "<p>In a set of in vitro studies simulating the human gastrointestinal tract, folqs was shown to support a healthy gut.*</p>",
+        "ground_image": "shopify://shop_images/Group_52.png",
+        "ground_image_mobile": "shopify://shop_images/Group_42.png",
+        "padding_top": 146,
+        "padding_bottom": 146,
+        "padding_top_mobile": 166,
+        "padding_bottom_mobile": 166
+      }
+    },
+    "media_with_text_XnCTVK": {
+      "type": "media-with-text",
+      "blocks": {
+        "percentage_3g3VCA": {
+          "type": "percentage",
+          "settings": {
+            "percentage_desktop": "1800%",
+            "description_desktop": "<p>Increased Bioavailability<br/>in Healthy Adult Volunteers</p>",
+            "subheading_desktop": "12 weeks",
+            "is_description_below": true,
+            "percentage_mobile": "1,400%",
+            "description_mobile": "",
+            "subheading_mobile": ""
+          }
+        },
+        "fact_pHKrU3": {
+          "type": "fact",
+          "settings": {
+            "title": "Useful Fact",
+            "title_icon": "<svg width=\"24\" height=\"24\" viewbox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d=\"M12 22.75C6.07 22.75 1.25 17.93 1.25 12C1.25 6.07 6.07 1.25 12 1.25C17.93 1.25 22.75 6.07 22.75 12C22.75 17.93 17.93 22.75 12 22.75ZM12 2.75C6.9 2.75 2.75 6.9 2.75 12C2.75 17.1 6.9 21.25 12 21.25C17.1 21.25 21.25 17.1 21.25 12C21.25 6.9 17.1 2.75 12 2.75Z\" fill=\"#005EB8\"></path>\n<path d=\"M10.58 15.58C10.38 15.58 10.19 15.5 10.05 15.36L7.22 12.53C6.93 12.24 6.93 11.76 7.22 11.47C7.51 11.18 7.99 11.18 8.28 11.47L10.58 13.77L15.72 8.63001C16.01 8.34001 16.49 8.34001 16.78 8.63001C17.07 8.92001 17.07 9.40001 16.78 9.69001L11.11 15.36C10.97 15.5 10.78 15.58 10.58 15.58Z\" fill=\"#005EB8\"></path>\n</svg>",
+            "description": "<p>The more accessible a nutrient is to the digestive tract, the easier it is for absorption.*</p>"
+          }
+        }
+      },
+      "block_order": [
+        "percentage_3g3VCA",
+        "fact_pHKrU3"
+      ],
+      "settings": {
+        "main_content_desktop": "<p>Lorem ipsum dolor sit amet consectetur. Vulputate non arcu sed egestas. Sed risus sed vitae fermentum congue non placerat. Viverra in blandit morbi ipsum ornare eleifend diam egestas nisl. Semper eget varius orci massa tortor proin sem eget vestibulum. <br/><br/>Ut tempus sed blandit tortor pretium nam convallis egestas. Euismod dictumst elit urna aliquet morbi. Lacus elit semper turpis congue. Ante.</p>",
+        "image_desktop": "shopify://shop_images/Frame_1982248325_1.png",
+        "main_content_mobile": "<p>Lorem ipsum dolor sit amet consectetur. Vulputate non arcu sed egestas. Sed risus sed vitae fermentum congue non placerat. Viverra in blandit morbi ipsum ornare eleifend diam egestas nisl. Semper eget varius orci massa tortor proin sem eget vestibulum. <br/><br/>Ut tempus sed blandit tortor pretium nam convallis egestas. Euismod dictumst elit urna aliquet morbi. Lacus elit semper turpis congue. Ante.</p>",
+        "image_mobile": "shopify://shop_images/Group_1982248118.png",
+        "padding_top": 80,
+        "padding_bottom": 60,
+        "padding_top_mobile": 80,
+        "padding_bottom_mobile": 60
+      }
+    },
+    "media_with_text_dUR8cF": {
+      "type": "media-with-text",
+      "blocks": {
+        "percentage_iMGywE": {
+          "type": "percentage",
+          "settings": {
+            "percentage_desktop": "360%",
+            "description_desktop": "<p>Increase hours of effectiveness</p>",
+            "subheading_desktop": "72 hours",
+            "is_description_below": false,
+            "percentage_mobile": "",
+            "description_mobile": "",
+            "subheading_mobile": ""
+          }
+        },
+        "fact_dLRAaW": {
+          "type": "fact",
+          "settings": {
+            "title": "Useful Fact",
+            "title_icon": "<svg width=\"24\" height=\"24\" viewbox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d=\"M12 22.75C6.07 22.75 1.25 17.93 1.25 12C1.25 6.07 6.07 1.25 12 1.25C17.93 1.25 22.75 6.07 22.75 12C22.75 17.93 17.93 22.75 12 22.75ZM12 2.75C6.9 2.75 2.75 6.9 2.75 12C2.75 17.1 6.9 21.25 12 21.25C17.1 21.25 21.25 17.1 21.25 12C21.25 6.9 17.1 2.75 12 2.75Z\" fill=\"#005EB8\"></path>\n<path d=\"M10.58 15.58C10.38 15.58 10.19 15.5 10.05 15.36L7.22 12.53C6.93 12.24 6.93 11.76 7.22 11.47C7.51 11.18 7.99 11.18 8.28 11.47L10.58 13.77L15.72 8.63001C16.01 8.34001 16.49 8.34001 16.78 8.63001C17.07 8.92001 17.07 9.40001 16.78 9.69001L11.11 15.36C10.97 15.5 10.78 15.58 10.58 15.58Z\" fill=\"#005EB8\"></path>\n</svg>",
+            "description": "<p>The more accessible a nutrient is to the digestive tract, the easier it is for absorption.*</p>"
+          }
+        }
+      },
+      "block_order": [
+        "percentage_iMGywE",
+        "fact_dLRAaW"
+      ],
+      "settings": {
+        "main_content_desktop": "<p>Lorem ipsum dolor sit amet consectetur. Vulputate non arcu sed egestas. Sed risus sed vitae fermentum congue non placerat. Viverra in blandit morbi ipsum ornare eleifend diam egestas nisl. Semper eget varius orci massa tortor proin sem eget vestibulum. <br/><br/>Ut tempus sed blandit tortor pretium nam convallis egestas. Euismod dictumst elit urna aliquet morbi. Lacus elit semper turpis congue. Ante.</p>",
+        "image_desktop": "shopify://shop_images/image_2024-05-14_13-46-03.png",
+        "main_content_mobile": "<p>Lorem ipsum dolor sit amet consectetur. Vulputate non arcu sed egestas. Sed risus sed vitae fermentum congue non placerat. Viverra in blandit morbi ipsum ornare eleifend diam egestas nisl. Semper eget varius orci massa tortor proin sem eget vestibulum. <br/><br/>Ut tempus sed blandit tortor pretium nam convallis egestas. Euismod dictumst elit urna aliquet morbi. Lacus elit semper turpis congue. Ante.</p>",
+        "image_mobile": "shopify://shop_images/Group_1982248042.png",
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "padding_top_mobile": 60,
+        "padding_bottom_mobile": 60
+      }
+    },
+    "media_with_text_teBPBg": {
+      "type": "media-with-text",
+      "blocks": {
+        "percentage_GjttAC": {
+          "type": "percentage",
+          "settings": {
+            "percentage_desktop": "439%",
+            "description_desktop": "<p>Increase in healthy<br/>gut bacteria</p>",
+            "subheading_desktop": "12 hours",
+            "is_description_below": false,
+            "percentage_mobile": "",
+            "description_mobile": "",
+            "subheading_mobile": ""
+          }
+        },
+        "fact_97BHem": {
+          "type": "fact",
+          "settings": {
+            "title": "Useful Fact",
+            "title_icon": "<svg width=\"24\" height=\"24\" viewbox=\"0 0 24 24\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d=\"M12 22.75C6.07 22.75 1.25 17.93 1.25 12C1.25 6.07 6.07 1.25 12 1.25C17.93 1.25 22.75 6.07 22.75 12C22.75 17.93 17.93 22.75 12 22.75ZM12 2.75C6.9 2.75 2.75 6.9 2.75 12C2.75 17.1 6.9 21.25 12 21.25C17.1 21.25 21.25 17.1 21.25 12C21.25 6.9 17.1 2.75 12 2.75Z\" fill=\"#005EB8\"></path>\n<path d=\"M10.58 15.58C10.38 15.58 10.19 15.5 10.05 15.36L7.22 12.53C6.93 12.24 6.93 11.76 7.22 11.47C7.51 11.18 7.99 11.18 8.28 11.47L10.58 13.77L15.72 8.63001C16.01 8.34001 16.49 8.34001 16.78 8.63001C17.07 8.92001 17.07 9.40001 16.78 9.69001L11.11 15.36C10.97 15.5 10.78 15.58 10.58 15.58Z\" fill=\"#005EB8\"></path>\n</svg>",
+            "description": "<p>The more accessible a nutrient is to the digestive tract, the easier it is for absorption.*</p>"
+          }
+        }
+      },
+      "block_order": [
+        "percentage_GjttAC",
+        "fact_97BHem"
+      ],
+      "settings": {
+        "main_content_desktop": "<p>Lorem ipsum dolor sit amet consectetur. Vulputate non arcu sed egestas. Sed risus sed vitae fermentum congue non placerat. Viverra in blandit morbi ipsum ornare eleifend diam egestas nisl. Semper eget varius orci massa tortor proin sem eget vestibulum. <br/><br/>Ut tempus sed blandit tortor pretium nam convallis egestas. Euismod dictumst elit urna aliquet morbi. Lacus elit semper turpis congue. Ante.</p>",
+        "image_desktop": "shopify://shop_images/Group_1982248091.png",
+        "main_content_mobile": "<p>Lorem ipsum dolor sit amet consectetur. Vulputate non arcu sed egestas. Sed risus sed vitae fermentum congue non placerat. Viverra in blandit morbi ipsum ornare eleifend diam egestas nisl. Semper eget varius orci massa tortor proin sem eget vestibulum. <br/><br/>Ut tempus sed blandit tortor pretium nam convallis egestas. Euismod dictumst elit urna aliquet morbi. Lacus elit semper turpis congue. Ante.</p>",
+        "image_mobile": "shopify://shop_images/Group_1982248091_1.png",
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "padding_top_mobile": 60,
+        "padding_bottom_mobile": 60
+      }
+    },
+    "benefits_marquee_FbFcPB": {
+      "type": "benefits-marquee",
+      "blocks": {
+        "text_label_iEbTDD": {
+          "type": "text_label",
+          "settings": {
+            "text": "GLUTEN FREE"
+          }
+        },
+        "text_label_xYkyFi": {
+          "type": "text_label",
+          "settings": {
+            "text": "NATURAL INGREDIENTS"
+          }
+        },
+        "text_label_jtdyPT": {
+          "type": "text_label",
+          "settings": {
+            "text": "SCIENTIFICALLY PROVED"
+          }
+        },
+        "text_label_YmCtCg": {
+          "type": "text_label",
+          "settings": {
+            "text": "GLUTEN FREE"
+          }
+        },
+        "text_label_7eBRYy": {
+          "type": "text_label",
+          "settings": {
+            "text": "NATURAL INGREDIENTS"
+          }
+        },
+        "text_label_fBxxPM": {
+          "type": "text_label",
+          "settings": {
+            "text": "SCIENTIFICALLY PROVED"
+          }
+        }
+      },
+      "block_order": [
+        "text_label_iEbTDD",
+        "text_label_xYkyFi",
+        "text_label_jtdyPT",
+        "text_label_YmCtCg",
+        "text_label_7eBRYy",
+        "text_label_fBxxPM"
+      ],
+      "settings": {
+        "background": "#005EB8",
+        "padding_top": 60,
+        "padding_bottom": 0,
+        "padding_top_mobile": 60,
+        "padding_bottom_mobile": 0,
+        "decor_label": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"10\" height=\"8\" viewbox=\"0 0 10 8\" fill=\"none\">\n<path d=\"M3.5775 7.58352C3.3775 7.58352 3.1875 7.50352 3.0475 7.36352L0.2175 4.53352C-0.0725 4.24352 -0.0725 3.76352 0.2175 3.47352C0.5075 3.18352 0.9875 3.18352 1.2775 3.47352L3.5775 5.77352L8.7175 0.633516C9.0075 0.343516 9.4875 0.343516 9.7775 0.633516C10.0675 0.923516 10.0675 1.40352 9.7775 1.69352L4.1075 7.36352C3.9675 7.50352 3.7775 7.58352 3.5775 7.58352Z\" fill=\"white\"></path>\n</svg>"
+      }
+    },
+    "author_quote_FTLxng": {
+      "type": "author-quote",
+      "blocks": {
+        "author_slide_g9eVdm": {
+          "type": "author_slide",
+          "settings": {
+            "quote": "<p>“Lorem ipsum dolor sit amet consectetur. Ultricies ornare adipiscing lorem amet sit. Consequat amet eu sed imperdiet nec dui. Tempus eget nec nulla diam donec dolor convallis ultrices diam.”</p>",
+            "author": "Dantley Davis",
+            "description": "<p>Brazilian Olimpics Team Certified Medical Consultant</p>",
+            "icon": "shopify://shop_images/Olympic_rings_without_rims_1.png",
+            "author_image": "shopify://shop_images/Rectangle_32.png"
+          }
+        },
+        "author_slide_editRg": {
+          "type": "author_slide",
+          "settings": {
+            "quote": "<p>“Lorem ipsum dolor sit amet consectetur. Ultricies ornare adipiscing lorem amet sit. Consequat amet eu sed imperdiet nec dui. Tempus eget nec nulla diam donec dolor convallis ultrices diam.”</p>",
+            "author": "Dantley Davis",
+            "description": "<p>Brazilian Olimpics Team Certified Medical Consultant</p>",
+            "icon": "shopify://shop_images/Olympic_rings_without_rims_1.png",
+            "author_image": "shopify://shop_images/Rectangle_32.png"
+          }
+        },
+        "author_slide_G37jt7": {
+          "type": "author_slide",
+          "settings": {
+            "quote": "<p>“Lorem ipsum dolor sit amet consectetur. Ultricies ornare adipiscing lorem amet sit. Consequat amet eu sed imperdiet nec dui. Tempus eget nec nulla diam donec dolor convallis ultrices diam.”</p>",
+            "author": "Dantley Davis",
+            "description": "<p>Brazilian Olimpics Team Certified Medical Consultant</p>",
+            "icon": "shopify://shop_images/Olympic_rings_without_rims_1.png",
+            "author_image": "shopify://shop_images/Rectangle_32.png"
+          }
+        }
+      },
+      "block_order": [
+        "author_slide_g9eVdm",
+        "author_slide_editRg",
+        "author_slide_G37jt7"
+      ],
+      "settings": {
+        "ground": "#005EB8",
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 40
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "text_banner_TTKmaa": {
+      "type": "text-banner",
+      "settings": {
+        "subheading": "<p>Name Study Results 2</p>",
+        "heading": "<p>In a set of in vitro studies simulating the human gastrointestinal tract, folqs was shown to support a healthy gut.*</p>",
+        "ground_image": "shopify://shop_images/Group_52.png",
+        "ground_image_mobile": "shopify://shop_images/Group_42.png",
+        "padding_top": 146,
+        "padding_bottom": 146,
+        "padding_top_mobile": 166,
+        "padding_bottom_mobile": 166
+      }
+    },
+    "timeline_fcttkL": {
+      "type": "timeline",
+      "blocks": {
+        "timespan_bFffMh": {
+          "type": "timespan",
+          "settings": {
+            "heading": "1 Months",
+            "description": "<p>In a set of in vitro studies simulating the human gastrointestinal tract, folqs was shown to support a healthy gut.*</p>",
+            "percentage_and_description": "89%;Lorem ipsum dolor sit amet consectetur.|97%;Lorem ipsum dolor sit amet consectetur."
+          }
+        },
+        "timespan_yh8iMj": {
+          "type": "timespan",
+          "settings": {
+            "heading": "2 Months",
+            "description": "<p>In a set of in vitro studies simulating the human gastrointestinal tract, folqs was shown to support a healthy gut.*</p>",
+            "percentage_and_description": "89%;Lorem ipsum dolor sit amet consectetur.|97%;Lorem ipsum dolor sit amet consectetur."
+          }
+        },
+        "timespan_hdHpbM": {
+          "type": "timespan",
+          "settings": {
+            "heading": "3 Months",
+            "description": "<p>In a set of in vitro studies simulating the human gastrointestinal tract, folqs was shown to support a healthy gut.*</p>",
+            "percentage_and_description": "89%;Lorem ipsum dolor sit amet consectetur.|97%;Lorem ipsum dolor sit amet consectetur."
+          }
+        },
+        "timespan_JL8mW7": {
+          "type": "timespan",
+          "settings": {
+            "heading": "4 Months",
+            "description": "<p>In a set of in vitro studies simulating the human gastrointestinal tract, folqs was shown to support a healthy gut.*</p>",
+            "percentage_and_description": "89%;Lorem ipsum dolor sit amet consectetur.|97%;Lorem ipsum dolor sit amet consectetur."
+          }
+        },
+        "timespan_H7BVaD": {
+          "type": "timespan",
+          "settings": {
+            "heading": "5 Months",
+            "description": "<p>In a set of in vitro studies simulating the human gastrointestinal tract, folqs was shown to support a healthy gut.*</p>",
+            "percentage_and_description": "89%;Lorem ipsum dolor sit amet consectetur.|97%;Lorem ipsum dolor sit amet consectetur."
+          }
+        }
+      },
+      "block_order": [
+        "timespan_bFffMh",
+        "timespan_yh8iMj",
+        "timespan_hdHpbM",
+        "timespan_JL8mW7",
+        "timespan_H7BVaD"
+      ],
+      "settings": {
+        "padding_top": 80,
+        "padding_bottom": 120,
+        "padding_top_mobile": 72,
+        "padding_bottom_mobile": 80
+      }
+    },
+    "slider_members_heNzrC": {
+      "type": "slider-members",
+      "blocks": {
+        "block_RMLq8K": {
+          "type": "block",
+          "settings": {
+            "image_member": "shopify://shop_images/Doctor.jpg",
+            "name": "Dr. Dantley Davis",
+            "role": "Brazilian Olimpics Team Certified Medical Consultant",
+            "review": "“Lorem ipsum dolor sit amet consectetur. Ultricies ornare adipiscing lorem amet sit. Consequat amet eu sed imperdiet nec dui. Tempus eget nec nulla diam donec dolor convallis ultrices diam.”",
+            "icon": "shopify://shop_images/icon-doctor.svg"
+          }
+        },
+        "block_mAQCEQ": {
+          "type": "block",
+          "settings": {
+            "image_member": "shopify://shop_images/doctor2.jpg",
+            "name": "Dr. Dantley Davis",
+            "role": "Brazilian Olimpics Team Certified Medical Consultant",
+            "review": "“Lorem ipsum dolor sit amet consectetur. Ultricies ornare adipiscing lorem amet sit. Consequat amet eu sed imperdiet nec dui. Tempus eget nec nulla diam donec dolor convallis ultrices diam.”",
+            "icon": "shopify://shop_images/icon-doctor.svg"
+          }
+        },
+        "block_dhKkza": {
+          "type": "block",
+          "settings": {
+            "image_member": "shopify://shop_images/doctor3.jpg",
+            "name": "Dr. Dantley Davis",
+            "role": "Brazilian Olimpics Team Certified Medical Consultant",
+            "review": "“Lorem ipsum dolor sit amet consectetur. Ultricies ornare adipiscing lorem amet sit. Consequat amet eu sed imperdiet nec dui. Tempus eget nec nulla diam donec dolor convallis ultrices diam.”",
+            "icon": "shopify://shop_images/icon-doctor.svg"
+          }
+        },
+        "block_t3HFT7": {
+          "type": "block",
+          "settings": {
+            "image_member": "shopify://shop_images/forth.jpg",
+            "name": "Dr. Dantley Davis",
+            "role": "Brazilian Olimpics Team Certified Medical Consultant",
+            "review": "“Lorem ipsum dolor sit amet consectetur. Ultricies ornare adipiscing lorem amet sit. Consequat amet eu sed imperdiet nec dui. Tempus eget nec nulla diam donec dolor convallis ultrices diam.”",
+            "icon": "shopify://shop_images/icon-doctor.svg"
+          }
+        },
+        "block_4bLXyG": {
+          "type": "block",
+          "settings": {
+            "image_member": "shopify://shop_images/doctor5.jpg",
+            "name": "Dr. Dantley Davis",
+            "role": "Brazilian Olimpics Team Certified Medical Consultant",
+            "review": "“Lorem ipsum dolor sit amet consectetur. Ultricies ornare adipiscing lorem amet sit. Consequat amet eu sed imperdiet nec dui. Tempus eget nec nulla diam donec dolor convallis ultrices diam.”",
+            "icon": "shopify://shop_images/icon-doctor.svg"
+          }
+        }
+      },
+      "block_order": [
+        "block_RMLq8K",
+        "block_mAQCEQ",
+        "block_dhKkza",
+        "block_t3HFT7",
+        "block_4bLXyG"
+      ],
+      "settings": {
+        "title": "Trusted by Doctors and Olimpians",
+        "background_color": "#f9f9f9",
+        "background_image": "shopify://shop_images/background-doctor.svg",
+        "background_image_mobile": "shopify://shop_images/mobile-svg.svg",
+        "padding_top": 0,
+        "padding_bottom": 60,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 40
+      }
+    },
+    "peer_reviewed_research_gfzQ6D": {
+      "type": "peer-reviewed-research",
+      "blocks": {
+        "text_island_PgXcfy": {
+          "type": "text_island",
+          "settings": {
+            "subheading": "NUTRIENTS",
+            "heading": "<p>Foundational Nutrition: Implications for Human Health</p>",
+            "description": "<p>Lorem ipsum dolor sit amet consectetur. Ultricies ornare adipiscing lorem amet sit. Consequat amet eu sed imperdiet nec dui. Tempus eget nec nulla diam donec dolor convallis ultrices diam.</p>",
+            "research_url": ""
+          }
+        },
+        "text_island_L76DGQ": {
+          "type": "text_island",
+          "settings": {
+            "subheading": "NUTRIENTS",
+            "heading": "<p>Foundational Nutrition: Implications for Human Health</p>",
+            "description": "<p>Lorem ipsum dolor sit amet consectetur. Ultricies ornare adipiscing lorem amet sit. Consequat amet eu sed imperdiet nec dui. Tempus eget nec nulla diam donec dolor convallis ultrices diam.</p>",
+            "research_url": ""
+          }
+        },
+        "text_island_tGhXG6": {
+          "type": "text_island",
+          "settings": {
+            "subheading": "NUTRIENTS",
+            "heading": "<p>Foundational Nutrition: Implications for Human Health</p>",
+            "description": "<p>Lorem ipsum dolor sit amet consectetur. Ultricies ornare adipiscing lorem amet sit. Consequat amet eu sed imperdiet nec dui. Tempus eget nec nulla diam donec dolor convallis ultrices diam.</p>",
+            "research_url": ""
+          }
+        },
+        "text_island_yMyhPD": {
+          "type": "text_island",
+          "settings": {
+            "subheading": "NUTRIENTS",
+            "heading": "<p>Foundational Nutrition: Implications for Human Health</p>",
+            "description": "<p>Lorem ipsum dolor sit amet consectetur. Ultricies ornare adipiscing lorem amet sit. Consequat amet eu sed imperdiet nec dui. Tempus eget nec nulla diam donec dolor convallis ultrices diam.</p>",
+            "research_url": ""
+          }
+        },
+        "text_island_bAfBt3": {
+          "type": "text_island",
+          "settings": {
+            "subheading": "NUTRIENTS",
+            "heading": "<p>Foundational Nutrition: Implications for Human Health</p>",
+            "description": "<p>Lorem ipsum dolor sit amet consectetur. Ultricies ornare adipiscing lorem amet sit. Consequat amet eu sed imperdiet nec dui. Tempus eget nec nulla diam donec dolor convallis ultrices diam.</p>",
+            "research_url": ""
+          }
+        }
+      },
+      "block_order": [
+        "text_island_PgXcfy",
+        "text_island_L76DGQ",
+        "text_island_tGhXG6",
+        "text_island_yMyhPD",
+        "text_island_bAfBt3"
+      ],
+      "settings": {
+        "heading": "Peer-reviewed research",
+        "subheading": "<p>Lorem ipsum dolor sit amet consectetur. Gravida facilisi eleifend sit quam morbi risus id. Nisl massa donec tincidunt.</p>",
+        "number_of_reviews_shown": 2,
+        "button_show_more_label": "Show all Researches",
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 60
+      }
+    },
+    "natural_ingredients_alternative_cfEXrX": {
+      "type": "natural-ingredients-alternative",
+      "blocks": {
+        "ingredient_34pWCX": {
+          "type": "ingredient",
+          "settings": {
+            "img": "shopify://shop_images/Rectangle_419_af444e0e-252c-4572-9641-f00258d09bc5.png",
+            "title": "Vitamins & Minerals",
+            "button_label": "Learn more",
+            "content_page": "shopify://pages/ingredients-vitamins",
+            "close_button_label": "Got It"
+          }
+        },
+        "ingredient_h3NwVE": {
+          "type": "ingredient",
+          "settings": {
+            "img": "shopify://shop_images/Rectangle_418_850abc14-0345-4a69-b194-f43163e1ae8f.png",
+            "title": "Minerals",
+            "button_label": "Learn more",
+            "content_page": "shopify://pages/ingredients-minerals",
+            "close_button_label": "Got It"
+          }
+        },
+        "ingredient_LrkDHK": {
+          "type": "ingredient",
+          "settings": {
+            "img": "shopify://shop_images/Rectangle_418_c37d731c-ed34-4793-b156-dbb6975ca60a.png",
+            "title": "Neuro-Nutrients",
+            "button_label": "Learn more",
+            "content_page": "shopify://pages/ingredients-neuro-nutrients",
+            "close_button_label": "Got It"
+          }
+        },
+        "ingredient_AUCYba": {
+          "type": "ingredient",
+          "settings": {
+            "img": "shopify://shop_images/Rectangle_418-1.png",
+            "title": "Gut Health Support",
+            "button_label": "Learn more",
+            "content_page": "shopify://pages/gut-health-support",
+            "close_button_label": "Got It"
+          }
+        },
+        "ingredient_carYta": {
+          "type": "ingredient",
+          "settings": {
+            "img": "shopify://shop_images/Rectangle_418_5.png",
+            "title": "Adaptogens and Immune Support",
+            "button_label": "Learn more",
+            "content_page": "shopify://pages/ingredients-adaptogens-and-immune-support",
+            "close_button_label": "Got It"
+          }
+        },
+        "ingredient_bgYGY6": {
+          "type": "ingredient",
+          "settings": {
+            "img": "shopify://shop_images/Rectangle_418-3_439c51ac-2d6c-4858-8063-5ec0f6e259ad.png",
+            "title": "Natural Antioxidants and Anti-inflammatory",
+            "button_label": "Learn more",
+            "content_page": "shopify://pages/natural-antioxidants-and-anti-inflammatory",
+            "close_button_label": "Got It"
+          }
+        },
+        "ingredient_9ea4WM": {
+          "type": "ingredient",
+          "settings": {
+            "img": "shopify://shop_images/Rectangle_418-4_476e8e28-5717-46ea-a306-d61ac82cc1eb.png",
+            "title": "Skin, Nails, and Joint Support",
+            "button_label": "Learn more",
+            "content_page": "shopify://pages/ingredients-skin-nails-and-joint-support",
+            "close_button_label": "Got It"
+          }
+        },
+        "ingredient_TBTnyd": {
+          "type": "ingredient",
+          "settings": {
+            "img": "shopify://shop_images/Rectangle_418_8.png",
+            "title": "Cellular and Cardiovascular Health Support",
+            "button_label": "Learn more",
+            "content_page": "shopify://pages/ingredients-cellular-and-cardiovascular-health-support",
+            "close_button_label": "Got It"
+          }
+        }
+      },
+      "block_order": [
+        "ingredient_34pWCX",
+        "ingredient_h3NwVE",
+        "ingredient_LrkDHK",
+        "ingredient_AUCYba",
+        "ingredient_carYta",
+        "ingredient_bgYGY6",
+        "ingredient_9ea4WM",
+        "ingredient_TBTnyd"
+      ],
+      "settings": {
+        "padding_top": 100,
+        "padding_bottom": 100,
+        "padding_top_mobile": 80,
+        "padding_bottom_mobile": 40,
+        "heading": "Only Natural Ingredients",
+        "sub_heading": "Lorem ipsum dolor sit amet consectetur. Gravida facilisi eleifend sit quam morbi risus id. Nisl massa donec tincidunt.",
+        "text_align": "center",
+        "button_load_more": "See All Ingredients and Benefits",
+        "url_button": "shopify://pages/benefits",
+        "content_type": "popup",
+        "columns_number": "two",
+        "number_of_items_shown": 4,
+        "number_of_items_shown_mobile": 4
+      }
+    },
+    "faq_fxRanb": {
+      "type": "faq",
+      "blocks": {
+        "item_E7B7fC": {
+          "type": "item",
+          "settings": {
+            "question": "What kind of benefits can I expect?",
+            "answer": "<p>Lorem ipsum dolor sit amet consectetur. Ultricies ornare adipiscing lorem amet sit. Consequat amet eu sed imperdiet nec dui. Tempus eget nec nulla diam donec dolor convallis ultrices diam.</p>"
+          }
+        },
+        "item_GFBaWT": {
+          "type": "item",
+          "settings": {
+            "question": "When should I expect to see benefits?",
+            "answer": "<p>Lorem ipsum dolor sit amet consectetur. Ultricies ornare adipiscing lorem amet sit. Consequat amet eu sed imperdiet nec dui. Tempus eget nec nulla diam donec dolor convallis ultrices diam.</p>"
+          }
+        },
+        "item_VVnTgV": {
+          "type": "item",
+          "settings": {
+            "question": "What measures do you take to ensure the quality?",
+            "answer": "<p>Lorem ipsum dolor sit amet consectetur. Ultricies ornare adipiscing lorem amet sit. Consequat amet eu sed imperdiet nec dui. Tempus eget nec nulla diam donec dolor convallis ultrices diam.</p>"
+          }
+        },
+        "item_HN4dcL": {
+          "type": "item",
+          "settings": {
+            "question": "What kind of benefits can I expect?",
+            "answer": "<p>Lorem ipsum dolor sit amet consectetur. Ultricies ornare adipiscing lorem amet sit. Consequat amet eu sed imperdiet nec dui. Tempus eget nec nulla diam donec dolor convallis ultrices diam.</p>"
+          }
+        },
+        "item_j9tYhK": {
+          "type": "item",
+          "settings": {
+            "question": "When should I expect to see benefits?",
+            "answer": "<p>Lorem ipsum dolor sit amet consectetur. Ultricies ornare adipiscing lorem amet sit. Consequat amet eu sed imperdiet nec dui. Tempus eget nec nulla diam donec dolor convallis ultrices diam.</p>"
+          }
+        },
+        "item_8VGhec": {
+          "type": "item",
+          "settings": {
+            "question": "What measures do you take to ensure the quality?",
+            "answer": "<p>Lorem ipsum dolor sit amet consectetur. Ultricies ornare adipiscing lorem amet sit. Consequat amet eu sed imperdiet nec dui. Tempus eget nec nulla diam donec dolor convallis ultrices diam.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "item_E7B7fC",
+        "item_GFBaWT",
+        "item_VVnTgV",
+        "item_HN4dcL",
+        "item_j9tYhK",
+        "item_8VGhec"
+      ],
+      "settings": {
+        "padding_top": 20,
+        "padding_bottom": 100,
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 100,
+        "heading": "Frequently Asked Questions",
+        "heading_mobile": "<p>Frequently<br/>Asked Questions</p>",
+        "information": "Lorem ipsum dolor sit amet consectetur. Gravida facilisi eleifend sit quam morbi risus id. Nisl massa donec tincidunt.",
+        "open_first_row_by_default": true
+      }
+    },
+    "benefits_cta_image_banner_hJEWBG": {
+      "type": "benefits-cta-image-banner",
+      "settings": {
+        "padding_top": 36,
+        "padding_bottom": 100,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 80,
+        "subtitle": "",
+        "title": "Show up for the moments that matter, no matter the season with folqs",
+        "title_mobile": "",
+        "title_size": 36,
+        "title_size_mobile": 24,
+        "image": "shopify://shop_images/image_2024-04-30_11-14-32.png",
+        "image_mobile": "shopify://shop_images/image_2024-04-30_11-16-40.png",
+        "is_full_width": false,
+        "is_restricted": true,
+        "is_flipped": false,
+        "button_text": "Try it Now",
+        "button_link": "shopify://products/multivitamin-super-powder",
+        "is_button_hidden": false
+      }
+    }
+  },
+  "order": [
+    "research_studies_yDBWAH",
+    "text_banner_LcgyVf",
+    "media_with_text_XnCTVK",
+    "media_with_text_dUR8cF",
+    "media_with_text_teBPBg",
+    "benefits_marquee_FbFcPB",
+    "author_quote_FTLxng",
+    "main",
+    "text_banner_TTKmaa",
+    "timeline_fcttkL",
+    "slider_members_heNzrC",
+    "peer_reviewed_research_gfzQ6D",
+    "natural_ingredients_alternative_cfEXrX",
+    "faq_fxRanb",
+    "benefits_cta_image_banner_hJEWBG"
+  ]
+}

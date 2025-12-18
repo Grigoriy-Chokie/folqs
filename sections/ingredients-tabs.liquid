@@ -1,0 +1,294 @@
+{{ 'section-ingredients-tabs.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .ingredients-tabs__content--{{ section.id }} {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+  @media screen and (max-width: 768px) {
+      .ingredients-tabs__content--{{ section.id }} {
+          padding-top: {{ section.settings.padding_top_mobile }}px;
+          padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+      }
+  }
+{%- endstyle -%}
+{% assign typesStrings = 'desktop,mobile' | split: ',' %}
+<div class="ingredients-tabs__content ingredients-tabs__content--{{ section.id }}">
+  {% unless section.settings.heading == blank %}
+    <h2 class="ingredients-tabs__heading">
+      {{ section.settings.heading }}
+    </h2>
+  {% endunless %}
+  {% unless section.blocks.size == 0 %}
+    <div class="ingredients-tabs__tabs-wrapper">
+      <div class="ingredients-tabs__tabs-slider swiper">
+        <div class="ingredients-tabs__tabs swiper-wrapper">
+          {% for block in section.blocks %}
+            {% unless block.settings.tag == blank %}
+              <div
+                id="{{block.id}}"
+                class="ingredients-tabs__tab-item swiper-slide{% if forloop.index == 1 %} ingredients-tabs__tab-item--active{% endif %}"
+              >
+                {{ block.settings.tag }}
+              </div>
+            {% endunless %}
+          {% endfor %}
+        </div>
+      </div>
+      <div class="ingredients-tabs__tabs-content">
+        {% for block in section.blocks %}
+          {% unless block.settings.tag == blank %}
+            <div class="ingredients-tabs__content-item ingredients-tabs__content-item--{{block.id}}{% if forloop.index == 1 %} ingredients-tabs__content-item--active{% endif %}">
+              <div class="content-item__left-wrapper">
+                {% unless block.settings.icons == blank %}
+                  <div class="content-item__icons">
+                    {% assign iconsIslandInputPairs = block.settings.icons | split: '|' %}
+                    {% for iconsPair in iconsIslandInputPairs %}
+                      {% assign iconsPairNew = iconsPair | remove: 'HIDDEN' %}
+                      <div class="content-item__icons-island">
+                        {% assign iconContentDivided = iconsPairNew | split: ';' %}
+                        <img src="{{ iconContentDivided[0] | file_url }}" class="content-item__icon">
+                        {% unless iconContentDivided[1] == blank %}
+                          <span class="content-item__text">
+                            {{ iconContentDivided[1] }}
+                          </span>
+                        {% endunless %}
+                      </div>
+                    {% endfor %}
+                  </div>
+                {% endunless %}
+                {% unless block.settings.content == blank %}
+                  <span class="content-item__content">
+                    {{ block.settings.content }}
+                  </span>
+                {% endunless %}
+              </div>
+              {% unless block.settings.percentage == blank %}
+                <div class="content-item__percentage-item content-item__percentage-item--{{ block.settings.percentage_align }} content-item__percentage-item--{{ block.settings.percentage_align_mobile }}">
+                  <div class="percentage-item__text-wrapper">
+                    <span class="percentage-item__info">
+                      {{
+                        block.settings.percentage
+                        | replace: '%', "<span class = 'percentage-item__info--small'>%</span>"
+                      }}
+                    </span>
+                    {% unless block.settings.percentage_subheading == blank %}
+                      <span class="percentage-item__subheading">
+                        {{ block.settings.percentage_subheading }}
+                      </span>
+                    {% endunless %}
+                  </div>
+                  {% unless block.settings.image_desktop == blank and block.settings.image_width == blank %}
+                    {% style %}
+                      @media screen and (min-width: 1150px) {
+                        .ingredients-tabs__content-item--{{block.id}} .content-item__image-wrapper{
+                          max-width: {{ block.settings.image_width }}%;
+                        }
+                      }
+                      {% if block.settings.percentage_align == 'right'%}
+                        @media screen and (max-width: 1250px) and (min-width: 1150px) {
+                          .ingredients-tabs__content-item--{{block.id}} .content-item__image-wrapper{
+                            max-width: {{ block.settings.image_width | minus: 13}}%;
+                          }
+                        }
+                      {% endif %}
+                    {% endstyle %}
+                    <div class="content-item__image-wrapper {% if block.settings.image_mobile == blank or block.settings.image_as_code_mobile %} content-item__image-wrapper--with-mobile{% endif %}">
+                      {% for typesString in typesStrings %}
+                        {%- capture imageKey -%}image_{{- typesString -}}{%- endcapture -%}
+                        {%- capture codeKey -%}image_as_code_{{- typesString -}}{%- endcapture -%}
+                        {%- unless block.settings[imageKey] == blank -%}
+                          {{
+                            block.settings[imageKey]
+                            | image_url: width: 2000
+                            | image_tag: loading: 'lazy', class: 'content-item__image'
+                          }}
+                          {% elsif block.settings[codeKey] != blank %}
+                          <div class = "content-item__image">
+                            {{  block.settings[codeKey] }}
+                          </div>
+                        {% endunless %}
+                      {% endfor %}
+                    </div>
+                  {% endunless %}
+                </div>
+              {% endunless %}
+            </div>
+          {% endunless %}
+        {% endfor %}
+      </div>
+    </div>
+  {% endunless %}
+</div>
+{{ 'section-ingredients-tabs.js' | asset_url | script_tag }}
+
+{% schema %}
+{
+  "name": "Ingredients tabs",
+  "tag": "section",
+  "class": "section__ingredients-tabs",
+  "settings": [
+    {
+      "type": "richtext",
+      "label": "Heading",
+      "id": "heading"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "paragraph",
+      "content": "Desktop"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    },
+    {
+      "type": "paragraph",
+      "content": "Mobile"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "type": "ingredient",
+      "name": "Ingredient",
+      "settings": [
+        {
+          "type": "text",
+          "label": "Tag",
+          "id": "tag",
+          "default": "MicrobiomeX®"
+        },
+        {
+          "type": "image_picker",
+          "label": "Image",
+          "id": "image_desktop"
+        },
+        {
+          "type": "html",
+          "label": "Image as code desktop",
+          "id": "image_as_code_desktop",
+          "info": "Extra setting for image (dublicates the one above) for it to be set as html code"
+        },
+        {
+          "type": "image_picker",
+          "label": "Image mobile",
+          "id": "image_mobile"
+        },
+        {
+          "type": "html",
+          "label": "Image as code mobile",
+          "id": "image_as_code_mobile",
+          "info": "Extra setting for image (dublicates the one above) for it to be set as html code"
+        },
+        {
+          "type": "richtext",
+          "label": "Content",
+          "id": "content"
+        },
+        {
+          "type": "text",
+          "label": "Percentage",
+          "id": "percentage"
+        },
+        {
+          "type": "richtext",
+          "label": "Percentage subheading",
+          "id": "percentage_subheading"
+        },
+        {
+          "type": "text",
+          "label": "Icons ",
+          "id": "icons",
+          "info": "Please specify the file and text to all the lines you want to use in following format: 'filename.ext;line|filename.ext2;line2'"
+        },
+        {
+          "type": "range",
+          "label": "Image width",
+          "id": "image_width",
+          "default": 63,
+          "min": 10,
+          "max": 100,
+          "step": 1,
+          "unit": "%"
+        },
+        {
+          "type": "select",
+          "label": "Percentage block align desktop",
+          "id": "percentage_align",
+          "default": "left",
+          "options": [
+            {
+              "label": "Left",
+              "value": "left"
+            },
+            {
+              "label": "Right",
+              "value": "right"
+            }
+          ]
+        },
+        {
+          "type": "select",
+          "label": "Percentage block align mobile",
+          "id": "percentage_align_mobile",
+          "default": "bottom",
+          "options": [
+            {
+              "label": "Top",
+              "value": "top"
+            },
+            {
+              "label": "Bottom",
+              "value": "bottom"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Ingredients tabs"
+    }
+  ]
+}
+{% endschema %}

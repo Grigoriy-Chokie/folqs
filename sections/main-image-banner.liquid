@@ -1,0 +1,280 @@
+{{ 'section-main-image-banner.css' | asset_url | stylesheet_tag}}
+
+{%- style -%}
+  .main-image-banner__content--{{ section.id }} {
+      padding-top: calc({{ section.settings.padding_top }}px + var(--header-height));
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+
+  {% if section.settings.type_media == "image" and section.settings.ground_image != blank %}
+    .main-image-banner__content--{{ section.id }}{
+      background-image: url('{{section.settings.ground_image | image_url}}');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  {% endif %}
+  .main-image-banner__content--{{ section.id }} .main-image-banner__content-video video{
+    object-position: {{ section.settings.video_alignment }};
+  }
+
+  .main-image-banner__content--{{ section.id }} .main-image-banner__content-video::after{
+    opacity:{{ section.settings.overlay_opacity }}%;
+  }
+  @media screen and (max-width: 768px) {
+    {% if section.settings.type_media == "image" and section.settings.ground_image_mobile != blank %}
+      .main-image-banner__content--{{ section.id }}{
+        background-image: url('{{section.settings.ground_image_mobile | image_url}}');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+    {% endif %}
+
+      .main-image-banner__content--{{ section.id }} {
+          padding-top: calc({{ section.settings.padding_top_mobile }}px + var(--header-height));
+          padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+      }
+  }
+{%- endstyle -%}
+<div class="main-image-banner__content main-image-banner__content--{{ section.id }}">
+  {% if section.settings.type_media == "video" and section.settings.video_desktop != blank %}
+    <div class="main-image-banner__content-video">
+      {% if section.settings.video_mobile != blank  %}
+        <video playsinline autoplay loop muted preload="metadata">
+          <source src="{{ section.settings.video_mobile.sources[1].url }}" type="video/mp4" media="(max-width: 768px)">
+          <source src="{{ section.settings.video_desktop.sources[1].url }}" type="video/mp4">
+        </video>
+      {%- else -%}
+        {{ section.settings.video_desktop | video_tag: autoplay: true, loop: true, muted: true, controls: false }}
+      {% endif %}
+    </div>
+  {% endif %}
+
+  <div class="main-image-banner__text-wrapper">
+    {% unless section.settings.heading == blank %}
+      <h2 class="main-image-banner__heading">
+        {{ section.settings.heading }}
+      </h2>
+    {% endunless %}
+    {% unless section.settings.subheading == blank %}
+      <span class="main-image-banner__subheading">
+        {{ section.settings.subheading }}
+      </span>
+    {% endunless %}
+    <div class="main-image-banner__bottom-content">
+      <div class="bottom-content__buttons">
+        {% unless section.settings.button_label == blank or section.settings.button_url == blank %}
+          <a href="{{ section.settings.button_url }}" class="bottom-content__button">
+            {{ section.settings.button_label }}
+            {%- render "icon-arrow-right" -%}
+          </a>
+        {% endunless %}
+        {% unless section.settings.button_label_2 == blank or section.settings.button_url_2 == blank %}
+          <a href="{{ section.settings.button_url_2 }}" class="bottom-content__button">
+            {{ section.settings.button_label_2 }}
+            {%- render "icon-arrow-right" -%}
+          </a>
+        {% endunless %}
+      </div>
+      {% unless section.settings.stars_label == blank %}
+        {% unless section.settings.stars_url == blank %}
+          <a href = "{{ section.settings.stars_url }}" class="bottom-content__starts-wrapper">
+        {% endunless %}
+        <div class="bottom-content__starts">
+          {%- render 'icon-stars' -%}
+          <span class="starts__text">
+            {{ section.settings.stars_label }}
+          </span>
+        </div>
+        {% unless section.settings.stars_url == blank %}
+        </a>
+        {% endunless %}
+      {% endunless %}
+    </div>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Main image banner",
+  "tag": "section",
+  "class": "section__main-image-banner",
+  "limit": 1,
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "richtext",
+      "label": "Heading",
+      "id": "heading"
+    },
+    {
+      "type": "richtext",
+      "label": "Subheading",
+      "id": "subheading"
+    },
+    {
+      "type": "text",
+      "label": "Button label",
+      "id": "button_label",
+      "default": "Buy Now"
+    },
+    {
+      "type": "url",
+      "label": "Button url",
+      "id": "button_url"
+    },
+    {
+      "type": "text",
+      "label": "Button label",
+      "id": "button_label_2",
+      "default": "Buy Now"
+    },
+    {
+      "type": "url",
+      "label": "Button url",
+      "id": "button_url_2"
+    },
+    {
+      "type": "text",
+      "label": "5 star label",
+      "id": "stars_label",
+      "default": "3,500+ Five Star Reviews"
+    },
+    {
+      "type": "url",
+      "label": "5 star url",
+      "id": "stars_url"
+    },
+    {
+      "type": "paragraph",
+      "content": "Media content"
+    },
+    {
+      "type": "select",
+      "id": "type_media",
+      "label": "Type of media",
+      "default": "image",
+      "options": [
+        {
+          "value": "image",
+          "label": "Image"
+        },
+        {
+          "value": "video",
+          "label": "Video"
+        }
+      ]
+    },
+    {
+      "type": "image_picker",
+      "label": "Ground image",
+      "id": "ground_image"
+    },
+    {
+      "type": "image_picker",
+      "label": "Ground image",
+      "id": "ground_image_mobile"
+    },
+    {
+      "type": "video",
+      "id": "video_desktop",
+      "label": "Video(Desktop)"
+    },
+    {
+      "type": "video",
+      "id": "video_mobile",
+      "label": "Video(Mobile)"
+    },
+    {
+      "type": "select",
+      "label": "Video alignment",
+      "id": "video_alignment",
+      "default": "center",
+      "options": [
+        {
+          "label": "Top",
+          "value": "top"
+        },
+        {
+          "label": "Bottom",
+          "value": "bottom"
+        },
+        {
+          "label": "Center",
+          "value": "center"
+        }
+      ]
+    },
+    {
+      "type": "range",
+      "label": "Overlay opacity",
+      "id": "overlay_opacity",
+      "min": 1,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "default": 10
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "paragraph",
+      "content": "Desktop"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    },
+    {
+      "type": "paragraph",
+      "content": "Mobile"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+  ],
+  "presets": [
+    {
+      "name": "Main image banner"
+    }
+  ]
+}
+{% endschema %}

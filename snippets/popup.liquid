@@ -1,0 +1,45 @@
+<div class="subscription-form-popup">
+  <span onclick="activatePopup(this.closest('.subscription-form-popup'))" class="plan-name__additional-link">
+      {{ 'products.product.landing.show_popup_button_text' | t }}
+  </span>
+  <div class="cta-banner__popup-overlay" onclick="deactivatePopup(event)" style="visibility: hidden;">
+    <div 
+      class="cta-banner__popup" 
+      style="
+        --popup-background: {{ block.settings.popup_background }};
+        --popup-text: {{ block.settings.popup_text_color }};
+        --icon-fill: {{ block.settings.popup_icon_color }};
+        "
+      >
+      <div class = "popup__heading-wrapper">
+        <div class="popup__heading-info">
+          <h5 class = "popup__title">{{ 'products.product.landing.popup_title' | t }}</h5>
+          <p>{{ 'products.product.landing.popup_subtitle' | t }}</p>
+        </div>
+        <div class="popup__close-button" onclick="deactivatePopup(event)">
+          {% render 'popup-close-icon' %}
+        </div>
+      </div>
+      <div class="popup__info">
+          <ul class="popup__list list-unstyled">
+            {% for information_item in information_list %}
+              <li class="popup__list-item">
+                {% if block.settings.icon_style == 'alternative' %}
+                    {{ 'icon-secondary-checkmark-circle.svg' | inline_asset_content }}
+                {% else %}
+                  {%- if template.name == 'index' -%}
+                    {{ 'icon-checkmark-circle.svg' | inline_asset_content }}
+                  {%- else -%}
+                    {% render 'icon-checkmark' %}
+                  {%- endif -%}
+                {% endif %}
+                <span>{{ information_item }}</span>
+              </li>
+            {% endfor %}
+          </ul>
+          <p class="popup__text">{{ 'products.product.landing.popup_text' | t }}</p>
+          <button onclick="deactivatePopup(event)" class="popup__close-button product-form__submit button button--full-width button--primary">{{ 'products.product.landing.popup_button_text' | t }}</button>
+        </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,138 @@
+.banner-with-gradient__content{
+    text-align: center;
+}
+
+.banner-with-gradient__decor--mobile {
+    display: none;
+}
+
+.banner-with-gradient__decor {
+    position: absolute;
+    top: calc(var(--header-height) + 56px);
+    right: 0;
+}
+
+.banner-with-gradient__content-wrapper {
+    position: relative;
+}
+.banner-with-gradient__title{
+    color: #005EB8;
+    font-family: Raleway;
+    font-size: 60px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 80px;
+    margin: 0;
+    margin-bottom: 14px;
+}
+
+.banner-with-gradient__heading {
+    margin-top: 0;
+    margin-bottom: 33px;
+    color: #005EB8;
+    font-variant-numeric: lining-nums proportional-nums;
+    font-family: Raleway;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 60px;
+    display: flex;
+    flex-direction: column;
+    letter-spacing: 0;
+}
+
+.banner-with-gradient__subheading {
+    display: flex;
+    flex-direction: column;
+    color: rgba(0, 0, 0, 0.70);
+    font-family: "Raleway";
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+}
+
+.banner-with-gradient__heading p,
+.banner-with-gradient__subheading p {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.banner-with-gradient__subheading p {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.banner-with-gradient__heading p:last-child,
+.banner-with-gradient__subheading p:last-child {
+    margin-bottom: 0;
+}
+
+.banner-with-gradient__subheading p strong {
+    font-weight: 700
+}
+
+.banner-with-gradient__subheading {
+    max-width: 1067px;
+    margin: 0 auto;
+}
+
+@media screen and (max-width: 1100px) {
+
+    .banner-with-gradient__heading,
+    .banner-with-gradient__subheading {
+        letter-spacing: 0;
+    }
+}
+
+@media screen and (max-width: 850px) {
+
+    .banner-with-gradient__heading,
+    .banner-with-gradient__subheading {
+        max-width: 100%;
+    }
+
+    .banner-with-gradient__decor--mobile {
+        display: block;
+    }
+
+    .banner-with-gradient__decor--desktop {
+        display: none;
+    }
+
+    .banner-with-gradient__decor {
+        position: absolute;
+        top: calc(100% - 42px);
+        right: 0;
+        z-index: 1;
+    }
+
+    .banner-with-gradient__heading {
+        color: #005EB8;
+        font-size: 28px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 36px;
+        margin-bottom: 14px;
+    }
+
+    .banner-with-gradient__subheading {
+        color: rgba(0, 0, 0, 0.70);
+        font-family: "Raleway";
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 22px;
+    }
+    .banner-with-gradient__title{
+        font-size: 34px;
+        line-height: 60px;
+        margin: 0;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .banner-with-gradient__content{
+        text-align: left;
+    }
+}

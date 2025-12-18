@@ -1,0 +1,71 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "account_tabs_CGCWmE": {
+      "type": "account-tabs",
+      "blocks": {
+        "account_tab_3kmT8e": {
+          "type": "account_tab",
+          "settings": {
+            "title": "Addresses",
+            "link": "/account/addresses"
+          }
+        },
+        "account_tab_HdfBpV": {
+          "type": "account_tab",
+          "settings": {
+            "title": "Order history",
+            "link": "/account"
+          }
+        },
+        "account_tab_87J7zd": {
+          "type": "account_tab",
+          "settings": {
+            "title": "My Subscription",
+            "link": "/tools/recurring/login"
+          }
+        },
+        "account_tab_QfWPxm": {
+          "type": "account_tab",
+          "disabled": true,
+          "settings": {
+            "title": "My Rewards",
+            "link": "https://folqs.referralcandy.com/"
+          }
+        }
+      },
+      "block_order": [
+        "account_tab_3kmT8e",
+        "account_tab_HdfBpV",
+        "account_tab_87J7zd",
+        "account_tab_QfWPxm"
+      ],
+      "settings": {
+        "title": "My account",
+        "padding_top": 130,
+        "padding_bottom": 0,
+        "padding_top_mobile": 100,
+        "padding_bottom_mobile": 1
+      }
+    },
+    "main": {
+      "type": "main-addresses",
+      "settings": {
+        "padding_top": 60,
+        "padding_bottom": 60
+      }
+    }
+  },
+  "order": [
+    "account_tabs_CGCWmE",
+    "main"
+  ]
+}

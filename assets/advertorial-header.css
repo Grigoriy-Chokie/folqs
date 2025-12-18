@@ -1,0 +1,39 @@
+.advertorial-header__wrapper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-top: 4px;
+    padding-bottom: 8px;
+}
+
+.advertorial-header img{
+    width: 70px;
+    height: 100%;
+}
+
+.advertorial-header .advertorial-header__link{
+    color: #C4C4C4;
+    font-family: Raleway;
+    font-size: 10px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 10px; /* 100% */
+    text-decoration: none;
+}
+
+.advertorial-header{
+    top: 0;
+    background: #fff;
+    z-index: 10;
+}
+
+.footer__content-top,
+.section-header{
+    display: none !important;
+}
+
+@media screen and (max-width: 750px) {
+    .advertorial-header img{
+        width: 46px;
+    }
+}

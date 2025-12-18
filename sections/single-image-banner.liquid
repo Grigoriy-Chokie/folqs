@@ -1,0 +1,68 @@
+{% liquid
+  assign image = section.settings.image
+  assign image_mobile = section.settings.image_mobile
+  assign full_width = section.settings.full_width
+  assign link = section.settings.link
+%}
+
+<style>
+
+  .single-image-banner {
+    display: block;
+  }
+
+  .single-image-banner img{
+      width: 100%;
+      height: auto;
+      display: block;
+  }
+</style>
+
+{% if image != blank %}
+  <{% if link != blank %}a href="{{ link }}"{% else %}div{% endif %} class="{% unless full_width == true %}page-width{% endunless %} single-image-banner">
+    {% render 'picture',
+      image: image,
+      image_mobile: image_mobile,
+      mobile_breakpoint: 750,
+      widths_list: '400, 800, 1200, 1500, 1800, 2100, 2500, 3200',
+      loading: 'lazy',
+      fetchpriority: 'low',
+      class: 'image'
+    %}
+  </{% if link != blank %}a{% else %}div{% endif %}>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Single image banner",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "full_width",
+      "label": "Full Width",
+      "default": true
+    },
+    {
+      "type": "url",
+      "id": "link",
+      "label": "Link"
+    },
+    {
+      "type": "image_picker",
+      "label": "Image",
+      "id": "image"
+    },
+    {
+      "type": "image_picker",
+      "label": "Image(mobile)",
+      "id": "image_mobile"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Single image banner"
+    }
+  ]
+}
+{% endschema %}

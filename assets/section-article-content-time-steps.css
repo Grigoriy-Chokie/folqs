@@ -1,0 +1,222 @@
+.time-steps {
+    max-width: 680px;
+    margin-left: 260px;
+}
+
+.time-steps__title {
+    font-family: Raleway;
+    font-weight: 500;
+    font-size: 40px;
+    line-height: 52px;
+    letter-spacing: 0;
+    font-variant-numeric: lining-nums proportional-nums;
+    color: var(--title-color, #000000);
+}
+
+.time-steps__title p {
+    margin: 0;
+}
+
+.time-steps__title strong {
+    color: var(--title-highlight-color, #000000);
+    font-weight: 700;
+}
+
+.time-steps__subtitle {
+    font-family: Raleway;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 180%;
+    letter-spacing: 0;
+    font-variant-numeric: lining-nums proportional-nums;
+    color: #000000;
+}
+
+*+.time-steps__subtitle {
+    margin-top: 40px;
+}
+
+.time-steps__steps {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+*+.time-steps__steps {
+    margin-top: 44px;
+}
+
+.time-steps__time-step {
+    display: flex;
+    gap: 22px;
+    align-items: stretch;
+}
+
+.time-step__icon {
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.time-steps__time-step:not(:last-child) .time-step__icon::before {
+    content: '';
+    position: absolute;
+    border-right: 1px solid #D9D9D9;
+    width: 0;
+    top: 0;
+    height: calc(100% + 16px);
+}
+
+.time-steps__time-step:not(:last-child) .time-step__icon::after {
+    content: '';
+    position: absolute;
+    border-right: 1px solid rgb(var(--section-main-color));
+    width: 0;
+    top: 0;
+    height: 0;
+    transition: 1.5s ease-out;
+}
+
+.time-steps__time-step:not(:last-child) .time-step__icon.icon--animate::after {
+    height: calc(100% + 16px);
+}
+
+.time-step__icon span{
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+    border-radius: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgb(var(--section-main-color));
+    position: relative;
+    z-index: 10;
+}
+
+.time-step__card {
+    background: rgba(var(--section-main-color), .05);
+    border-radius: 10px;
+    padding: 14px;
+    flex-grow: 1;
+}
+
+.time-step__time {
+    font-family: Raleway;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 160%;
+    letter-spacing: 0;
+    text-transform: uppercase;
+    font-variant-numeric: lining-nums proportional-nums;
+    color: #ffffff;
+    padding: 5px 12px;
+    border-radius: 4px;
+    background-color: rgb(var(--section-main-color));
+    text-transform: uppercase;
+}
+
+.time-step__title {
+    font-family: Raleway;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 36px;
+    letter-spacing: 0;
+    font-variant-numeric: lining-nums proportional-nums;
+    text-transform: capitalize;
+    color: #000000;
+    margin: 0;
+}
+
+*+.time-step__title {
+    margin-top: 10px;
+}
+
+.time-step__subtitle {
+    font-family: Raleway;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 180%;
+    letter-spacing: 0;
+    font-variant-numeric: lining-nums proportional-nums;
+    color: #000000;
+    margin: 0;
+}
+
+*+.time-step__subtitle {
+    margin-top: 10px;
+}
+
+.time-step__advantages {
+    font-family: Raleway;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 180%;
+    letter-spacing: 0;
+    font-variant-numeric: lining-nums proportional-nums;
+    color: #000000;
+}
+
+* + .time-step__advantages {
+    margin-top: 14px;
+}
+
+.time-step__advantages ul {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+}
+
+.time-step__advantages ul li {
+    padding-left: 28px;
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.time-step__advantages ul li::before {
+    content: '';
+    display: inline-block;
+    position: absolute;
+    left: 0;
+    width: 20px;
+    height: 20px;
+    background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M8.90737 0.286935C9.93956 0.196467 10.9853 0.275217 11.9936 0.514279C12.2008 0.555998 12.4174 0.627248 12.5505 0.802092C12.7778 1.0674 12.7867 1.49444 12.5542 1.75928C12.3682 1.98756 12.0461 2.0874 11.7635 2.0035C10.2161 1.6074 8.55393 1.67912 7.04549 2.20319C5.50753 2.72772 4.12987 3.71631 3.15112 5.01428C2.17799 6.29912 1.61503 7.87975 1.51331 9.48522C1.40737 11.1052 1.77674 12.7604 2.60643 14.1596C4.06753 16.6426 6.88846 18.2649 9.77315 18.2485C11.8764 18.2462 13.9572 17.3865 15.4642 15.9221C16.5869 14.8444 17.3889 13.4391 17.7461 11.9246C18.0602 10.6163 18.048 9.23209 17.7138 7.92897C17.6139 7.56475 17.8408 7.15178 18.1999 7.0374C18.5083 6.92537 18.8763 7.05381 19.0596 7.32334C19.1669 7.47662 19.1903 7.66694 19.2349 7.84412C19.7172 9.96334 19.4622 12.2415 18.5247 14.2022C17.845 15.6301 16.8063 16.883 15.535 17.8224C14.0997 18.8912 12.3658 19.5554 10.5827 19.711C8.03924 19.9454 5.42549 19.1124 3.47268 17.4699C2.07909 16.3079 1.01549 14.7497 0.462839 13.0201C-0.113724 11.2262 -0.147005 9.26819 0.337213 7.44944C0.771276 5.80459 1.64128 4.27365 2.85581 3.08022C4.46362 1.47897 6.64753 0.478185 8.90737 0.286935Z' fill='%2301BD0E'/%3E%3Cpath d='M18.1961 2.05926C18.4713 1.7677 18.9832 1.76816 19.2588 2.05973C19.5475 2.33582 19.5447 2.84348 19.2564 3.1191C16.3057 6.0741 13.3497 9.02395 10.3989 11.9794C10.233 12.1791 10.0038 12.3582 9.72956 12.3432C9.46847 12.3582 9.23972 12.1993 9.08081 12.0057C8.06128 10.9768 7.03284 9.9577 6.01144 8.93113C5.72644 8.65598 5.72691 8.15207 6.01331 7.87832C6.28612 7.58816 6.79378 7.58535 7.07034 7.87176C7.95675 8.75535 8.84175 9.64035 9.72581 10.5268C12.5524 7.7077 15.3719 4.88113 18.1961 2.05926Z' fill='%2301BD0E'/%3E%3C/svg%3E%0A");
+    background-size: cover;
+}
+
+@media screen and (max-width: 750px) {
+    .time-steps {
+        max-width: 100%;
+        margin-left: 0;
+    }
+    
+    .time-steps__title {
+        font-size: 32px;
+        line-height: 40px;
+    }
+    
+    .time-steps__subtitle {
+        display: none;
+    }
+    
+    .time-steps__steps {
+        gap: 14px;
+    }
+    
+    *+.time-steps__steps {
+        margin-top: 24px;
+    }
+    
+    .time-step__icon {
+        display: none;
+    }
+    
+    .time-step__subtitle {
+        font-size: 16px;
+    }
+    
+    .time-step__advantages {
+        font-size: 16px;
+    }
+}

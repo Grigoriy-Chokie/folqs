@@ -1,0 +1,133 @@
+{{ 'section-article-header.css' | asset_url | stylesheet_tag}}
+
+<div class="page-width article-header" style="--title-hightlight-color: {{ section.settings.title_highlight_color }}">
+    <{{section.settings.title_tag}} class="article-header__title">
+        {{ section.settings.title | default: article.title }}
+    </{{section.settings.title_tag}}>
+    <div class="article-header__info">
+        <div class="article-header__article-info">
+            <span class="article-info__last-updated">{{'sections.article_header.last_updated' | t}} {{ article.updated_at | time_tag: '%m.%d.%Y', datetime: '%Y-%m-%d' }}</span>
+            {%- unless section.settings.time_to_read == blank -%}
+                <span class="article-info__time-to-read">
+                    {%- render 'icon-clock' -%}
+                    {{ section.settings.time_to_read }}
+                </span>
+            {%- endunless -%}
+        </div>
+        <div class="article-header__shareable-links">
+            <span>{{'sections.article_header.share' | t }}</span>
+            <div class="shareable-links__list">
+                {%- unless section.settings.facebook_share_link == blank -%}
+                    <a href="{{ section.settings.facebook_share_link }}">
+                        {%- render 'shareable-link-icon', icon: 'facebook' -%}
+                    </a>
+                {%- endunless -%}
+                {%- unless section.settings.x_share_link == blank -%}
+                    <a href="{{ section.settings.x_share_link }}">
+                        {%- render 'shareable-link-icon', icon: 'x' -%}
+                    </a>
+                {%- endunless -%}
+                {%- unless section.settings.instagram_share_link == blank -%}
+                    <a href="{{ section.settings.instagram_share_link }}">
+                        {%- render 'shareable-link-icon', icon: 'instagram' -%}
+                    </a>
+                {%- endunless -%}
+                {%- unless section.settings.pinterest_share_link == blank -%}
+                    <a href="{{section.settings.pinterest_share_link }}">
+                        {%- render 'shareable-link-icon', icon: 'pinterest' -%}
+                    </a>
+                {%- endunless -%}
+            </div>
+        </div>
+    </div>
+    {%- unless article.content == blank -%}
+        <div class="article-header__content">
+            {{ article.content }}
+        </div>
+    {%- endunless -%}
+</div>
+
+{% schema %}
+{
+  "name": "Article header",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "title",
+      "label": "Title",
+      "default": "<p>How to Use</p><p>Colostrum for Maximum Benefits</p>",
+      "info": "Make a text bold to highlight"
+    },
+    {
+      "type": "select",
+      "id": "title_tag",
+      "label": "Title tag",
+      "options": [
+        {
+          "value": "h1",
+          "label": "H1"
+        },
+        {
+          "value": "h2",
+          "label": "H2"
+        },
+        {
+          "value": "h3",
+          "label": "H3"
+        },
+        {
+          "value": "h4",
+          "label": "H4"
+        },
+        {
+          "value": "h5",
+          "label": "H5"
+        },
+        {
+          "value": "h6",
+          "label": "H6"
+        }
+      ],
+      "default": "h1"
+    },
+    {
+      "type": "color",
+      "id": "title_highlight_color",
+      "label": "Title highlight color",
+      "default": "#005EB8"
+    },
+    {
+      "type": "text",
+      "id": "time_to_read",
+      "label": "Time to read",
+      "default": "7 min read"
+    },
+    {
+      "type": "url",
+      "id": "facebook_share_link",
+      "label": "Link to share (Facebook)"
+    },
+    {
+        "type": "url",
+        "id": "x_share_link",
+        "label": "Link to share (X)"
+      },
+      {
+        "type": "url",
+        "id": "instagram_share_link",
+        "label": "Link to share (Instagram)"
+      },
+      {
+        "type": "url",
+        "id": "pinterest_share_link",
+        "label": "Link to share (Pinterest)"
+      },
+  ],
+  "presets": [
+    {
+      "name": "Article header"
+    }
+  ]
+}
+{% endschema %}

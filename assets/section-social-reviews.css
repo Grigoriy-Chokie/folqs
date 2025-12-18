@@ -1,0 +1,150 @@
+.social-reviews {
+    background: rgb(var(--color-background));
+}
+
+.social-reviews__wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+}
+
+.social-reviews__header+.social-reviews__facebook-reviews {
+    margin-top: 40px;
+}
+
+.social-reviews__header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 12px;
+}
+
+.social-reviews__subtitle {
+    padding: 2px 0;
+    color: #005EB8;
+    text-align: center;
+    font-variant-numeric: lining-nums proportional-nums;
+    font-family: var(--font-body-family);
+    background: #E9F4FF;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 130%;
+    letter-spacing: -0.5px;
+    margin: 0;
+}
+
+.social-reviews__title {
+    color: rgb(var(--color-foreground));
+    text-align: center;
+    font-variant-numeric: lining-nums proportional-nums;
+    font-feature-settings: 'liga' off, 'clig' off;
+    font-family: var(--font-heading-family);
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 120%;
+    letter-spacing: -1px;
+    margin: 0;
+}
+
+.social-reviews__facebook-reviews,
+.social-reviews__instagram-reviews {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 30px;
+}
+
+.social-reviews__facebook-reviews+.social-reviews__instagram-reviews {
+    margin-top: 60px;
+}
+
+.facebook-reviews__logo,
+.instagram-reviews__logo {
+    width: 150px;
+}
+
+.facebook-reviews__logo svg,
+.instagram-reviews__logo svg {
+    width: 100%;
+    display: block;
+}
+
+.facebook-reviews__grid,
+.instagram-reviews__grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.facebook-reviews__grid {
+    gap: 30px;
+}
+
+.instagram-reviews__grid {
+    gap: 16px;
+}
+
+.facebook-reviews__review {
+    width: calc(100% / 3 - 30px / 1.5);
+}
+.instagram-reviews__review {
+    width: calc(100% / 3 - 16px / 1.5); 
+}
+
+.facebook-reviews__review img,
+.instagram-reviews__review img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+@media screen and (max-width: 768px) {
+.social-reviews__header+.social-reviews__facebook-reviews {
+    margin-top: 25px;
+}
+
+.social-reviews__subtitle {
+    font-size: 18px;
+}
+
+.social-reviews__title {
+    font-size: 26px;
+    line-height: 130%;
+    letter-spacing: -0.8px;
+}
+
+.social-reviews__facebook-reviews,
+.social-reviews__instagram-reviews {
+    gap: 20px;
+}
+
+.social-reviews__facebook-reviews+.social-reviews__instagram-reviews {
+    margin-top: 30px;
+}
+
+.facebook-reviews__logo,
+.instagram-reviews__logo {
+    width: 110px;
+}
+
+.facebook-reviews__grid{
+    gap: 20px;
+}
+.instagram-reviews__grid {
+    gap: 12px;
+}
+
+.facebook-reviews__review{
+    width: calc(100% / 2 - 20px / 2);
+}
+.instagram-reviews__review {
+    width: calc(100% / 2 - 16px / 2);
+}
+}
+
+@media screen and (max-width: 650px) {
+   .facebook-reviews__review,
+.instagram-reviews__review {
+    width: 100%;
+} 
+}

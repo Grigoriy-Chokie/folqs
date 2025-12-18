@@ -1,0 +1,16 @@
+<div class="info__slide-block" {{ block.shopify_attributes }}>
+  <div class="info__slide-heading">
+    {% if block.settings.title != blank %}
+      <h3 class="info__slide-title">{{ block.settings.title }}</h3>
+    {% endif %}
+    {% if block.settings.small_image != blank %}
+      <img src="{{ block.settings.small_image | img_url: 'master' }}" alt="{{ block.settings.small_image.alt }}" width="40" height="40" loading="lazy">
+    {% endif %}
+  </div>
+  <div class="info__slide-image">
+    <img src="{{ block.settings.main_image | img_url: 'master' }}" alt="{{ block.settings.main_image.alt }}" width="287" height="140" loading="lazy">
+  </div>
+  <div class="info__slide-footer">
+    {{ block.settings.content }}
+  </div>
+</div>

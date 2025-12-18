@@ -1,0 +1,235 @@
+{{- 'component-usage-guide.css' | asset_url | stylesheet_tag -}}
+
+{%- liquid
+  assign heading = section.settings.heading
+  assign heading_mobile = section.settings.heading_mobile
+  assign sub_heading = section.settings.sub_heading
+  assign sub_heading_mobile = section.settings.sub_heading_mobile
+  assign position = 0
+-%}
+
+{%- style -%}
+  .usage-guides--{{section.id}}::before {
+      background: {{ section.settings.background }};
+  }
+
+  .usage-guides--{{section.id}} {
+    position: relative;
+    padding-top: {{section.settings.padding_top}}px;
+    padding-bottom: {{section.settings.padding_bottom}}px;
+    --accent-color: {{ section.settings.accent_color }};
+  }
+
+  .usage-guides--{{section.id}}::before {
+    background: {{ section.settings.background }};
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 50%;
+    width: 100%;
+    content: "";
+    z-index: -1;
+  }
+
+  .usage-guides__subtitle {
+      max-width: {{ section.settings.subtitle_max_width }}px;
+  }
+
+  .usage-guides--{{section.id}} .grid-guides__item {
+      max-width: calc(100% / {{ section.blocks.size }} - 20px * 3 / {{ section.blocks.size }});
+      min-width: calc(100% / {{ section.blocks.size }} - 20px * 3 / {{ section.blocks.size }});
+  }
+
+  @media(max-width: 768px) {
+    .usage-guides--{{section.id}} {
+      padding-top: {{section.settings.padding_top_mobile}}px;
+      padding-bottom: {{section.settings.padding_bottom_mobile}}px;
+    }
+
+    .usage-guides--{{section.id}}::before {
+      height: 90%;
+    }
+  }
+{%- endstyle -%}
+<div class="usage-guides usage-guides--{{section.id}}">
+  <div class="usage-guides__container page-width">
+    {% if heading != blank %}
+      <div class="usage-guides__title">
+        <div class="usage-guides__title-content {% unless heading_mobile == blank %}usage-guides__title-content--desktop {% endunless %}">
+          {{- heading -}}
+        </div>
+        {% unless heading_mobile == blank %}
+          <div class="usage-guides__title-content usage-guides__title-content--mobile">
+            {{- heading_mobile -}}
+          </div>
+        {% endunless %}
+      </div>
+    {% endif %}
+    {% if sub_heading != blank %}
+      <div class="usage-guides__subtitle">
+        <div class="usage-guides__subtitle-content {% unless sub_heading_mobile == blank %}usage-guides__subtitle-content--desktop {% endunless %}">
+          {{- sub_heading -}}
+        </div>
+        {% unless sub_heading_mobile == blank %}
+          <div class="usage-guides__subtitle-content usage-guides__subtitle-content--mobile">
+            {{- sub_heading_mobile -}}
+          </div>
+        {% endunless %}
+      </div>
+    {% endif %}
+    <div class="usage-guides__grid grid-guides">
+      <div class="grid-guides__wrapper">
+        {% for block in section.blocks %}
+          {%- liquid
+            assign image = block.settings.img
+            assign instruction = block.settings.instruction
+            if image != blank and instruction != blank
+              assign is_show = true
+              assign position = position | plus: 1
+            else
+              assign is_show = false
+            endif
+          -%}
+          {% if is_show == true %}
+            <div class="grid-guides__item swiper-slide">
+              <div class="grid-guides__item-position">{{- position -}}</div>
+              <div class="grid-guides__item-image">
+                {{
+                  image
+                  | image_url: width: master
+                  | image_tag: widths: '300,400,500,600,700,800,900', alt: image.alt
+                  | default: '', loading: 'lazy'
+                }}
+              </div>
+              <div class="grid-guides__item-instruction">{{- instruction -}}</div>
+            </div>
+          {% endif %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Usage guide",
+  "tag": "section",
+  "presets": [
+    {
+      "name": "Usage guide"
+    }
+  ],
+  "max_blocks": 4,
+  "blocks": [
+    {
+      "type": "step",
+      "name": "Step",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "img",
+          "label": "Image"
+        },
+        {
+          "type": "richtext",
+          "id": "instruction",
+          "label": "Instruction"
+        }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "color_background",
+      "id": "background",
+      "label": "Background",
+      "default": "linear-gradient(#ffffff, #ffffff)"
+    },
+    {
+      "type": "paragraph",
+      "content": "Space between sections on the desktop"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Accent color",
+      "default": "#005EB8"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "unit": "px",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "unit": "px",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 0
+    },
+    {
+      "type": "paragraph",
+      "content": "Space between sections on the mobile"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Padding top",
+      "unit": "px",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Padding bottom",
+      "unit": "px",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 0
+    },
+    {
+      "type": "richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "<p>Usage Guide</p>"
+    },
+    {
+      "type": "richtext",
+      "id": "heading_mobile",
+      "label": "Heading mobile"
+    },
+    {
+      "type": "richtext",
+      "id": "sub_heading",
+      "label": "Sub-heading",
+      "default": "<p>Lorem ipsum dolor sit amet consectetur. Gravida facilisi eleifend sit quam morbi risus id. Nisl massa donec tincidunt.</p>"
+    },
+    {
+      "type": "richtext",
+      "id": "sub_heading_mobile",
+      "label": "Sub-heading mobile"
+    },
+    {
+      "type": "range",
+      "id": "subtitle_max_width",
+      "min": 500,
+      "max": 1000,
+      "step": 10,
+      "unit": "px",
+      "label": "Subtitle max. width",
+      "default": 1000
+    }
+  ]
+}
+{% endschema %}

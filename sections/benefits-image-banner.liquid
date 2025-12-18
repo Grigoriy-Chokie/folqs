@@ -1,0 +1,153 @@
+{{- 'section-benefits-image-banner.css' | asset_url | stylesheet_tag -}}
+
+{%- style -%}
+  #shopify-section-{{ section.id }} {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+
+  @media screen and (max-width: 768px) {
+      #shopify-section-{{ section.id }} {
+          padding-top: {{ section.settings.padding_top_mobile }}px;
+          padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+      }
+  }
+{%- endstyle -%}
+
+<div class="benefits-banner__section page-width">
+  <div class="benefits-banner__content">
+    {% if section.settings.title_desktop != blank %}
+      {% assign titleOrderStrings = 'desktop,mobile' | split: ',' %}
+      {% for orderString in titleOrderStrings %}
+        {%- capture titleSettingKey -%} title_{{ orderString }}{%- endcapture -%}
+        {% if section.settings[titleSettingKey] != blank %}
+          <h2 class="benefits-banner__title benefits-banner__title--{{orderString}}">
+            {{- section.settings[titleSettingKey] -}}
+          </h2>
+        {% endif %}
+      {% endfor %}
+    {% endif %}
+    {% if section.settings.subtitle %}
+      <span class="benefits-banner__subtitle"> {{ section.settings.subtitle }}</span>
+    {% endif %}
+  </div>
+  {% if section.settings.image != blank %}
+    <div class="benefits-banner__media {% if section.settings.image_mobile != blank %} benefits-banner__media--with-mobile{% endif %}">
+      {{
+        section.settings.image
+        | image_url: width: 1000
+        | image_tag: loading: 'lazy', class: 'benefits-banner__image--desktop', alt: section.settings.image.alt
+      }}
+      {% if section.settings.image_mobile != blank %}
+        {{
+          section.settings.image_mobile
+          | image_url: width: 1000
+          | image_tag: loading: 'lazy', class: 'benefits-banner__image--mobile'
+        }}
+      {% endif %}
+    </div>
+  {% endif %}
+</div>
+
+{% schema %}
+{
+  "name": "Benefits image banner",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "paragraph",
+      "content": "Desktop"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    },
+    {
+      "type": "paragraph",
+      "content": "Mobile"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    },
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "title_desktop",
+      "label": "Title",
+      "default": "The Only Multivitamin You’ll Ever Need"
+    },
+    {
+      "type": "text",
+      "id": "title_mobile",
+      "label": "Title mobile"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle"
+    },
+    {
+      "type": "paragraph",
+      "content": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Desktop",
+      "info": "Use image in .svg or .png formats!"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "Mobile",
+      "info": "Use image in .svg or .png formats!"
+    }
+  ],
+  "blocks": [],
+  "presets": [
+    {
+      "name": "Benefits image banner"
+    }
+  ]
+}
+{% endschema %}

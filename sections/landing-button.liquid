@@ -1,0 +1,157 @@
+
+
+{{ 'section-landing-cta.css' | asset_url | stylesheet_tag }}
+
+{% style %}
+  .section-padding--{{ section.id }} {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+
+  @media screen and (max-width: 749px) {
+    .section-padding--{{ section.id }} {
+      padding-top: {{ section.settings.padding_top_mobile }}px;
+      padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+    }
+  }
+{% endstyle %}
+<div class="landing-cta__wrapper color-{{ section.settings.section_color_scheme }}">
+  <div class="page-width section-padding--{{ section.id }} landing-cta__container"
+      style="--cta-background-color: {{ section.settings.cta_background }};
+            --cta-text-color: {{ section.settings.cta_text_color }};">
+    {%- if section.settings.title != blank -%}
+      <a href="{{ section.settings.url }}" class="landing-cta__button button button--primary {% if section.settings.secondary_text != blank -%}landing-cta__button--with-secondary-text{%- endif %}">
+        {{- section.settings.title -}}
+        {%- if section.settings.secondary_text != blank -%}
+          <br>
+          <span class="landing-cta__button--secondary-text">{{ section.settings.secondary_text }}</span>
+        {%- endif -%}
+      </a>
+    {%- endif -%}
+    <div class="landing-cta__usp-container">
+      {%- for block in section.blocks -%}
+        <div class="landing-cta__usp">
+          <div class="landing-cta__usp-icon">
+            {{ block.settings.icon |  image_url: width: 36 | image_tag }}
+          </div>
+          <span class="landing-cta__usp-text">{{ block.settings.title }}</span>
+        </div>
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+
+{% schema %}
+{
+    "name": "Landing CTA",
+    "class": "landing-cta",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "CTA main text",
+        "default": "Try it Risk-Free"
+      },
+      {
+        "type": "text",
+        "id": "secondary_text",
+        "label": "CTA secondary text"
+      },
+      {
+        "type": "url",
+        "id": "url",
+        "label": "CTA url"
+      },
+      {
+        "type": "header",
+        "content": "Colors"
+      },
+      {
+        "type": "color_background",
+        "id": "cta_background",
+        "label": "CTA background",
+        "default": "#ff6a13"
+      },
+      {
+        "type": "color",
+        "id": "cta_text_color",
+        "label": "CTA text color",
+        "default": "#fff"
+      },
+      {
+        "type": "color_scheme",
+        "id": "section_color_scheme",
+        "label": "t:sections.all.colors.label",
+        "default": "scheme-1"
+      },
+      {
+        "type": "header",
+        "content": "Section paddings"
+      },
+      {
+        "type": "range",
+        "id": "padding_top",
+        "label": "Padding top",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "default": 30
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom",
+        "label": "Padding bottom",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "default": 45
+      },
+      {
+        "type": "range",
+        "id": "padding_top_mobile",
+        "label": "Padding top mobile",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "default": 12
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom_mobile",
+        "label": "Padding bottom mobile",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "default": 38
+      }
+    ],
+    "blocks": [
+      {
+        "name": "UPS item",
+        "type": "ups",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "icon",
+            "label": "icon"
+          },
+          {
+            "type": "text",
+            "id": "title",
+            "label": "text",
+            "default": "90-Day Money-Back Guarantee"
+          }
+        ]
+      }
+    ],
+    "presets": [
+    {
+        "name": "Landing CTA"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,132 @@
+{{ 'component-ticker-v3.css' | asset_url | stylesheet_tag }}
+
+<div class="ticker-wrapper {% if section.settings.enable_extra_styles %}is--extra-styles{% endif %}" style="background: {{ section.settings.bg_color }};" id="section-id-{{ section.id }}">
+  <div class="ticker-wrapper-container">
+    <div class="ticker-section">
+      <div class="ticker-track">
+        {% for block in section.blocks %}
+          <div class="ticker-item">
+            {% if block.settings.image %}
+              <img src="{{ block.settings.image | image_url: width: 18 }}" alt="{{ block.settings.text }}" width="18" height="18" loading="lazy" />
+            {% endif %}
+            <span style="color: {{ section.settings.text_color }};">{{ block.settings.text }}</span>
+          </div>
+        {% endfor %}
+
+        {% for block in section.blocks %}
+          <div class="ticker-item duplicate">
+            {% if block.settings.image %}
+              <img src="{{ block.settings.image | image_url: width: 18 }}" alt="{{ block.settings.text }}" width="18" height="18" loading="lazy" />
+            {% endif %}
+            <span style="color: {{ section.settings.text_color }};">{{ block.settings.text }}</span>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+    <div class="ticker-section swiper">
+      <div class="ticker-track swiper-wrapper">
+        {% for block in section.blocks %}
+          <div class="ticker-item swiper-slide">
+            {% if block.settings.image %}
+              <img src="{{ block.settings.image | image_url: width: 18 }}" alt="{{ block.settings.text }}" width="18" height="18" loading="lazy" />
+            {% endif %}
+            <span style="color: {{ section.settings.text_color }};">{{ block.settings.text }}</span>
+          </div>
+        {% endfor %}
+
+        {% for block in section.blocks %}
+          <div class="ticker-item duplicate swiper-slide">
+            {% if block.settings.image %}
+              <img src="{{ block.settings.image | image_url: width: 18 }}" alt="{{ block.settings.text }}" width="18" height="18" loading="lazy" />
+            {% endif %}
+            <span style="color: {{ section.settings.text_color }};">{{ block.settings.text }}</span>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const tickerEl = document.querySelector('.ticker-section.swiper');
+
+    if (tickerEl) {
+      const tickerSwiper = new Swiper(tickerEl, {
+        loop: true,
+        allowTouchMove: true,
+        freeMode: true,
+        freeModeMomentum: false,
+        slidesPerView: 'auto',
+        spaceBetween: {%- if section.settings.enable_extra_styles -%}20{%- else -%}10{%- endif -%},
+        autoplay: {
+          delay: 0,
+          disableOnInteraction: true, 
+          pauseOnMouseEnter: false,
+        },
+        speed: {{ section.settings.ticker_speed }}000,
+      });
+    }
+  });
+</script>
+
+{% schema %}
+{
+  "name": "Ticker v3",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "enable_extra_styles",
+      "label": "Enable extra styles",
+      "default": false
+    },
+    {
+      "type": "color",
+      "id": "bg_color",
+      "label": "Background color",
+      "default": "#005EB8"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "range",
+      "id": "ticker_speed",
+      "min": 1,
+      "max": 10,
+      "step": 1,
+      "unit": "s",
+      "label": "Ticker speed",
+      "default": 2
+    }
+  ],
+  "blocks": [
+    {
+      "type": "ticker_item",
+      "name": "Ticker Item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "Promo Text"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Icon"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Ticker v3",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

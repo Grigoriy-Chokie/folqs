@@ -1,0 +1,176 @@
+{{ 'section-choose-reasons.css' | asset_url | stylesheet_tag }}
+
+{% style %}
+  {% if section.settings.padding_top != blank %}
+      .reasons__wrapper-section-{{ section.id }}{
+        padding-top: {{ section.settings.padding_top }}px;
+      }
+  {% endif %}
+  {% if section.settings.padding_bottom != blank %}
+      .reasons__wrapper-section-{{ section.id }}{
+        padding-bottom: {{ section.settings.padding_bottom }}px;
+      }
+  {% endif %}
+  @media screen and (max-width: 749px) {
+      {% if section.settings.padding_top_mobile != blank %}
+          .reasons__wrapper-section-{{ section.id }}{
+            padding-top: {{ section.settings.padding_top_mobile }}px;
+          }
+      {% endif %}
+      {% if section.settings.padding_bottom_mobile != blank %}
+          .reasons__wrapper-section-{{ section.id }}{
+            padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+          }
+      {% endif %}
+    }
+{% endstyle %}
+{% if section.blocks.size >= 4 %}
+  {% assign is_swiper = true %}
+{% endif %}
+<div class="reasons__wrapper {% if is_swiper %} swiper reasons__swiper{% endif %} {% if settings.animations_reveal_on_scroll %} scroll-trigger animate--slide-in{% endif %} reasons__wrapper-section-{{ section.id }}">
+  {% if section.settings.heading != blank or section.settings.subheading != blank %}
+    {% if section.settings.subheading != blank %}
+      <h2 class="reasons__subheading">
+        {{ section.settings.subheading }}
+      </h2>
+    {% endif %}
+    {% if section.settings.heading != blank %}
+      <h2 class="reasons__heading">
+        {{ section.settings.heading }}
+      </h2>
+    {% endif %}
+  {% endif %}
+  {% if section.blocks.size > 0 %}
+    <div class="reasons__islands-wrapper {% if is_swiper %} reasons__swiper-wrapper swiper-wrapper{% endif %}">
+      {% for block in section.blocks %}
+        <div class="reasons__island {% if is_swiper %} swiper-slide {% endif %}">
+          <div class="reasons__bubble-number">
+            {{ forloop.index }}
+          </div>
+          {% if block.settings.image != blank %}
+            {{ block.settings.image | image_url: width: 360 | image_tag: class: 'reasons__island-image', alt: block.settings.image.alt }}
+          {% endif %}
+          {% if block.settings.heading != blank %}
+            <h5 class="island__heading">
+              {{ block.settings.heading }}
+            </h5>
+          {% endif %}
+          {% if block.settings.subheading != blank %}
+            <h5 class="island__subheading">
+              {{ block.settings.subheading }}
+            </h5>
+          {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
+  {% if section.settings.button_label != blank and section.settings.button_link != blank %}
+    <a href="{{section.settings.button_link}}" class="reasons__button">
+      {{ section.settings.button_label }}
+      {% render 'icon-arrow' %}
+    </a>
+  {% endif %}
+</div>
+{{ 'section-choose-reasons.js' | asset_url | script_tag }}
+{% schema %}
+{
+  "name": "Reasons to choose",
+  "tag": "section",
+  "class": "section__reasons",
+  "settings": [
+    {
+      "type": "richtext",
+      "label": "Subheading",
+      "id": "subheading",
+      "default": "<p>Three Reasons</p>"
+    },
+    {
+      "type": "richtext",
+      "label": "Heading",
+      "id": "heading",
+      "default": "<p>Why Choose Folqs</p>"
+    },
+    {
+      "type": "text",
+      "label": "Button label",
+      "id": "button_label",
+      "default": "Try it Now"
+    },
+    {
+      "type": "url",
+      "label": "Button link",
+      "id": "button_link"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding top mobile",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "Padding bottom mobile",
+      "default": 40
+    }
+  ],
+  "blocks": [
+    {
+      "type": "reason_island",
+      "name": "Reason island",
+      "settings": [
+        {
+          "type": "richtext",
+          "label": "Heading",
+          "id": "heading",
+          "default": "<p>41 All natural Ingredients</p>"
+        },
+        {
+          "type": "richtext",
+          "label": "Subheading",
+          "id": "subheading",
+          "default": "<p>Supports neurotransmitter function for improved cognitive processes</p>"
+        },
+        {
+          "type": "image_picker",
+          "label": "Image",
+          "id": "image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Reasons to choose"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,365 @@
+{% if section.blocks.size > 0 %}
+    {{ 'advantages.css' | asset_url | stylesheet_tag }}
+    {%- style -%}
+        {% unless section.settings.button_background == blank %}
+          .section-{{ section.id }}  .advantages__button{
+            background: {{section.settings.button_background}};
+            border: 1px solid {{section.settings.button_background}};
+          }
+
+          .section-{{ section.id }} .advantages__button:hover {
+            background: transparent;
+            color: {{section.settings.button_background}};
+          }
+        {% endunless %}
+        
+        .section-{{ section.id }} {
+          padding-top: {{ section.settings.padding_top }}px;
+          padding-bottom: {{ section.settings.padding_bottom }}px;
+          {%- if section.settings.background_color != blank %}
+            background: {{ section.settings.background_color }};
+          {%- endif -%}
+          overflow: hidden;
+          position: relative;
+        }
+
+        {% if section.settings.image_full_section != blank %}
+            .advantages__image--full {
+                top: -{{ section.settings.padding_top }}px;
+            }
+        {% endif %}
+
+        @media(min-width: 901px) {
+          .section-{{ section.id }} .advantages__image--top{
+            top: auto;
+            bottom: calc({{ section.settings.padding_bottom }}px + 276px)
+          }
+          .section-{{ section.id }} .advantages__image--left{
+            top: auto;
+            bottom: calc({{ section.settings.padding_bottom }}px + 58px)
+          } 
+        }
+        .section-{{ section.id }} 
+          @media(max-width: 768px) {
+            .section-{{ section.id }} {
+              padding-top: {{ section.settings.padding_top_mobile }}px;
+              padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+              {%- if section.settings.background_image_mobile != blank -%}
+                background-image: url('{{ section.settings.background_image_mobile | img_url: "master" }}');
+              {%- endif -%}
+              background-size: 100% 100%;
+            }
+          }
+    {%- endstyle -%}
+
+    <div class="section-{{ section.id }}">
+        <div class="advantages {% if section.settings.image_full_section != blank %} advantages--position{% endif %} page-width">
+            {%- if section.settings.image_full_section != blank -%}
+                <div class="advantages__image--full">
+                    {{- section.settings.image_full_section
+                        | image_url: width: 892
+                        | image_tag: loading: "lazy", alt: section.settings.image_full_section.alt -}}
+                </div>
+            {%- endif -%}
+            {%- if section.settings.title != blank -%}
+                <div class="advantages__title">{{ section.settings.title }}</div>
+                {% if section.settings.title_mobile != blank %}
+                  <div class="advantages__title advantages__title--mobile">{{ section.settings.title_mobile }}</div>
+                {% endif %}
+            {%- endif -%}
+            <div class="advantages_items {% if section.settings.image_full_section != blank %}advantages_items--end{% endif %}">
+                {%- unless section.settings.image_full_section != blank -%}
+                    <div class="advantages__item">
+                    {%- if section.settings.image_top != blank -%}
+                        <div class="advantages__image--top">
+                            <img src="{{ section.settings.image_top | img_url: "master" }}" alt="{{ section.settings.image_top.alt | default: 'top image' }}">
+                        </div>
+                    {%- endif -%}
+                    {%- if section.settings.image_left != blank -%}
+                        <div class="advantages__image--left">
+                            <img src="{{ section.settings.image_left | img_url: "master" }}" alt="{{ section.settings.image_left.alt | default: 'left image' }}">
+                        </div>
+                    {%- endif -%}
+                </div>
+                {%- endunless -%}
+                <div class="advantages__item">
+                    <div class="advantages__table">
+                        <div class="advantages__titles">
+                            {%- for block in section.blocks -%}
+                                {%- if block.type == 'table_top' -%}
+                                    <div class="advantages__titles--top">{{ block.settings.title }}</div>
+                                    <div class="advantages__titles--top advantages__titles--top-mobile">{{ block.settings.title_mobile }}</div>
+                                    <div class="advantages__checkmarks--top">
+                                        {%- if block.settings.image_1 != blank -%}
+                                          <img src="{{ block.settings.image_1 | img_url: "master" }}" alt="{{ block.settings.image_1.alt }}">
+                                        {%- endif -%}
+                                    </div>
+                                    <div class="advantages__prices--top">
+                                        <div class="advantages__prices--top-title">
+                                          {%- if block.settings.image_2 != blank -%}
+                                            <img src="{{ block.settings.image_2 | img_url: "master" }}" alt="{{ block.settings.image_2.alt }}">
+                                          {%- endif -%}
+                                        </div>
+                                    </div>
+                                {%- endif -%}
+                            {%- endfor -%}
+                        </div>
+                        <div class="advantages__checkmarks">
+                            {%- for block in section.blocks -%}
+                                {%- if block.type == 'table_content' -%}
+                                    <div class="advantages__checkmarks--content">
+                                        <div class="advantages__titles--content">{{ block.settings.title }}</div>
+                                        <div class="advantages__checkmarks--inner">
+                                            <div class="advantages__checkmark">
+                                                {%- render 'icon-checked' -%}
+                                            </div>
+                                        </div>
+                                        <div class="advantages__prices--content">{{ block.settings.price }}</div>
+                                    </div>
+                                {%- endif -%}
+                            {%- endfor -%}
+                        </div>
+                        
+                            {%- for block in section.blocks -%}
+                                {%- if block.type == 'table_bottom' -%}
+                                  {% for index in (1..2) %}
+                                    {% liquid 
+                                      assign title_key = 'title_' | append: index
+                                      assign price_key = 'total_price_' | append: index
+                                      assign wrapper_classes = 'advantages__prices'
+                                      
+                                      if index == 2
+                                        assign wrapper_classes = 'advantages__prices' | append: ' advantages__prices--last'
+                                      endif
+                                    %}
+
+                                    <div class="{{ wrapper_classes}}">
+                                      <div class="advantages__titles--bottom"><span>{{ block.settings[title_key] }}</span></div>
+                                      <{% unless block.settings.button_url == blank or index == 1 %}a href="{{ block.settings.button_url }}"{% else %}div{% endunless %} class="advantages__checkmarks--bottom">
+                                        <span>{{ block.settings[price_key] }}</span>
+                                        {{ block.settings.frequency_badge_text }}
+                                      </{% unless block.settings.button_url == blank or index == 1 %}a{% else %}div{% endunless %}>
+                                    </div>
+                                  {% endfor %}
+                                {%- endif -%}
+                            {%- endfor -%}
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% unless section.settings.button_label == blank or section.settings.button_url == blank %}
+          <div class="advantages__button-wrapper ">
+            <a href="{{section.settings.button_url}}" class="advantages__button">
+              {{ section.settings.button_label }} 
+              {% render 'icon-arrow' %}
+            </a>
+          </div>
+        {% endunless %}
+    </div>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Advantages",
+  "limit": 1,
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "default": "Feel the Power of One",
+      "label": "Title"
+    },
+    {
+      "type": "text",
+      "id": "title_mobile",
+      "label": "Title (Mobile)"
+    },
+    {
+      "type": "color_background",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "linear-gradient(#ffffff, #000000)"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_top",
+      "label": "Image top"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_left",
+      "label": "Image left block"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_full_section",
+      "label": "Image full section"
+    },
+    {
+      "type": "text",
+      "label": "Button label",
+      "id": "button_label",
+      "default": "Explore All Benefits"
+    },
+    {
+      "type": "url",
+      "label": "Button url",
+      "id": "button_url"
+    },
+    {
+      "type": "color_background",
+      "label": "Button background",
+      "id": "button_background",
+      "default": "rgba(0, 94, 184, 1)"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding top(desktop)",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding bottom(desktop)",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding top(mobile)",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding bottom(mobile)",
+      "default": 0
+    }
+  ],
+  "blocks": [
+    {
+      "type": "table_top",
+      "name": "Table top",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "title",
+          "label": "Title",
+          "default": "<p>What you get with a Daily Scoop of Folqs</p>"
+        },
+        {
+          "type": "richtext",
+          "id": "title_mobile",
+          "label": "Title",
+          "default": "<p>Our Product Can Repace</p>"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_1",
+          "label": "Image title"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_2",
+          "label": "Image title"
+        }
+      ]
+    },
+    {
+      "type": "table_content",
+      "name": "Table content",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "text",
+          "id": "price",
+          "label": "Price"
+        }
+      ]
+    },
+    {
+      "type": "table_bottom",
+      "name": "Table bottom",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "frequency_badge_text",
+          "label": "Frequency label",
+          "default": "/mo"
+        },
+        {
+          "type": "paragraph",
+          "content": "Item 1"
+        },
+        {
+          "type": "text",
+          "id": "title_1",
+          "label": "Title",
+          "default": "Total Per Month"
+        },
+        {
+          "type": "text",
+          "id": "total_price_1",
+          "label": "Total price",
+          "default": "$325"
+        },
+        {
+          "type": "paragraph",
+          "content": "Item 2"
+        },
+        {
+          "type": "text",
+          "id": "title_2",
+          "label": "Title",
+          "default": "Total Per Month"
+        },
+        {
+          "type": "text",
+          "id": "total_price_2",
+          "label": "Total price",
+          "default": "$325"
+        },
+        {
+          "type": "url",
+          "label": "Button url",
+          "id": "button_url",
+          "info": "Url linked to the bottom button."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Advantages"
+    }
+  ]
+}
+{% endschema %}

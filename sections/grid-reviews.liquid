@@ -1,0 +1,409 @@
+{{ 'section-grid-reviews.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  #shopify-section-{{ section.id }} {
+    padding-top: {{ section.settings.padding_top_mobile }}px;
+    padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+  }
+
+  @media screen and (min-width: 767px) {
+    #shopify-section-{{ section.id }} {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+
+<div class="reviews page-width reviews--{{ section.settings.mobile_content_alignment }}">
+  {%- liquid
+    assign text_stars = section.settings.text_stars
+    assign heading = section.settings.heading
+    assign heading_mobile = section.settings.heading_mobile
+    assign information = section.settings.information
+    if text_stars != blank or heading != blank or information != blank
+      assign has_information = true
+    else
+      assign has_information = false
+    endif
+  -%}
+  {% if has_information == true %}
+    <div class="reviews__info">
+      {% if heading != blank %}
+        <h2 class="info__title {% unless heading_mobile == blank %} info__title--with-mobile{% endunless %}">
+          <span class="title__content--desktop">
+            {{- heading -}}
+          </span>
+          {% unless heading_mobile == blank %}
+            <span class="title__content--mobile">
+              {{- heading_mobile -}}
+            </span>
+          {% endunless %}
+        </h2>
+      {% endif %}
+      {% if text_stars != blank %}
+        <div class="info__review">
+          {%- render 'icon-stars' -%}
+          <span>{{- text_stars -}}</span>
+        </div>
+      {% endif %}
+      {% if information != blank %}
+        <p class="info__content">{{- information -}}</p>
+      {% endif %}
+    </div>
+  {% endif %}
+  <div class="reviews__reviews-grid">
+    {% assign forloop_position = 0 %}
+    {%- for block in section.blocks -%} 
+    {% assign forloop_position_modulo = forloop_position | modulo: 2 %}
+      {% if forloop_position_modulo == 0 and block.settings.is_block_hidden_desktop == false %}
+        <div class="reviews-grid__column">
+      {% endif %}
+      <div class="reviews-grid__review-item {% if forloop.index == section.blocks.size %} reviews-grid__review-item--last {% endif %} {% if block.type == 'image_review' and block.settings.image == blank %}reviews-grid__review-item--no-italic{% endif %} reviews-grid__review-item--{{ block.type }} {% if block.settings.is_block_hidden %}reviews-grid__review-item--hidden-mobile{% endif %} {% if block.settings.is_block_hidden_desktop %}reviews-grid__review-item--hidden-desktop{% endif %} ">
+        {% case block.type %}
+          {% when 'image_review' %}
+            <div class="review-item__image-wrapper {% unless block.settings.author_image == blank %} review-item__image-wrapper--with-author-image {% endunless %}{% if block.settings.is_author_image_hidden %}review-item__image-wrapper--image-hidden{% endif %}">
+              {% unless block.settings.image == blank %}
+                {{
+                  block.settings.image
+                  | image_url: width: 700
+                  | image_tag: loading: 'lazy', widths: '50, 75, 100, 150, 700', class: 'review-item__image'
+                }}
+              {% endunless %}
+              {% unless block.settings.author_image == blank %}
+                {{
+                  block.settings.author_image
+                  | image_url: width: 200
+                  | image_tag:
+                    loading: 'lazy',
+                    widths: '50, 75, 100, 150, 200',
+                    class: 'review-item__author-small-image'
+                }}
+              {% endunless %}
+            </div>
+            <div class="review-item__header">
+              {% unless block.settings.name == blank %}
+                <div class="review-item__name">
+                  {{ block.settings.name }}
+                </div>
+              {% endunless %}
+              {% unless block.settings.icon_for_author == blank %}
+                <div class="review-item__header-icon {% if block.settings.is_author_icon_hidden %}review-item__header-icon--hidden{% endif %}">
+                  {{ block.settings.icon_for_author }}
+                </div>
+              {% endunless %}
+            </div>
+            {% if block.settings.are_stars_shown %}
+              <div class="review-item__stars">
+                {%- render 'icon-stars' -%}
+              </div>
+            {% endif %}
+            {% unless block.settings.content == blank %}
+              <div class="review-item__content">
+                {{ block.settings.content }}
+              </div>
+            {% endunless %}
+          {% when 'author_review' %}
+            {% unless block.settings.content == blank %}
+              <div class="review-item__content">
+                {{ block.settings.content }}
+              </div>
+            {% endunless %}
+            <div class="review-item__footer">
+              {% unless block.settings.author_image == blank %}
+                <div class="review-item__image-wrapper">
+                  {{
+                    block.settings.author_image
+                    | image_url: width: 200
+                    | image_tag: loading: 'lazy', widths: '50, 75, 100, 150, 200', class: 'review-item__author-image'
+                  }}
+                  {% unless block.settings.icon == blank %}
+                    <div class="review-item__icon {% if block.settings.is_icon_hidden %}review-item__icon--hidden{% endif %}">
+                      {{ block.settings.icon }}
+                    </div>
+                  {% endunless %}
+                </div>
+              {% endunless %}
+              <div class="review-item__author-info">
+                {% unless block.settings.name == blank %}
+                  <div class="review-item__name">
+                    {{ block.settings.name }}
+                  </div>
+                {% endunless %}
+                {% unless block.settings.position == blank %}
+                  <div class="review-item__position">
+                    {{ block.settings.position }}
+                  </div>
+                {% endunless %}
+              </div>
+            </div>
+          {% when 'video_review' %}
+            {% unless block.settings.video == blank or block.settings.video_poster == blank %}
+              <video-separated class="review-item__video-wrapper">
+                <div class="review-item__video-poster">
+                  {{
+                    block.settings.video_poster
+                    | image_url: width: 800
+                    | image_tag:
+                      loading: 'lazy',
+                      widths: '50, 75, 100, 150, 800',
+                      class: 'review-item__video-poster-item'
+                  }}
+                </div>
+                <video class="review-item__video" data-src="{{ block.settings.video.sources[1].url }}" controls playsinline></video>
+              </video-separated>
+            {% endunless %}
+        {% endcase %}
+      </div>
+      {% if forloop_position_modulo == 1 or forloop.index0 == section.blocks.size %}
+        </div>
+      {% endif %}
+      {% unless section.blocks[forloop.index].settings.is_block_hidden_desktop %}
+        {% assign forloop_position = forloop_position | plus: 1  %}
+    {% endunless %}
+    {%- endfor -%}
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Grid reviews",
+  "limit": 1,
+  "class": "section__reviews",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Information"
+    },
+    {
+      "type": "text",
+      "id": "text_stars",
+      "label": "Text next to icon stars"
+    },
+    {
+      "type": "richtext",
+      "id": "heading",
+      "label": "Heading",
+      "default": "<p>Over Thousands of <br> Happy Customers</p>"
+    },
+    {
+      "type": "richtext",
+      "id": "heading_mobile",
+      "label": "Heading mobile"
+    },
+    {
+      "type": "textarea",
+      "id": "information",
+      "label": "Information"
+    },
+    {
+      "type": "select",
+      "label": "Mobile content alignment",
+      "id": "mobile_content_alignment",
+      "default": "center",
+      "options": [
+        {
+          "label": "Left",
+          "value": "left"
+        },
+        {
+          "label": "Center",
+          "value": "center"
+        }
+      ]
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding top(desktop)",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding bottom(desktop)",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding top(mobile)",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding bottom(mobile)",
+      "default": 0
+    }
+  ],
+  "blocks": [
+    {
+      "type": "video_review",
+      "name": "Video review",
+      "settings": [
+        {
+          "type": "checkbox",
+          "label": "Hide this block on mobile",
+          "id": "is_block_hidden",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "label": "Hide this block on desktop",
+          "id": "is_block_hidden_desktop",
+          "default": true
+        },
+        {
+          "type": "video",
+          "label": "Video",
+          "id": "video"
+        },
+        {
+          "type": "image_picker",
+          "label": "Video poster",
+          "id": "video_poster"
+        }
+      ]
+    },
+    {
+      "type": "author_review",
+      "name": "Author review",
+      "settings": [
+        {
+          "type": "checkbox",
+          "label": "Hide this block on mobile",
+          "id": "is_block_hidden",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "label": "Hide this block on desktop",
+          "id": "is_block_hidden_desktop",
+          "default": true
+        },
+        {
+          "type": "richtext",
+          "label": "Content",
+          "id": "content",
+          "default": "<p>“I've never seen such a comprehensive multivitamin on the market up until this point.”</p>"
+        },
+        {
+          "type": "text",
+          "label": "Author name",
+          "id": "name",
+          "default": "Dr. Albert Sombers"
+        },
+        {
+          "type": "text",
+          "label": "Position",
+          "id": "position",
+          "default": "Board Certified Doctor"
+        },
+        {
+          "type": "image_picker",
+          "label": "Author image",
+          "id": "author_image"
+        },
+        {
+          "type": "checkbox",
+          "label": "Hide icon on desktop",
+          "id": "is_icon_hidden",
+          "default": true
+        },
+        {
+          "type": "html",
+          "label": "Icon",
+          "id": "icon"
+        }
+      ]
+    },
+    {
+      "type": "image_review",
+      "name": "Image review",
+      "settings": [
+        {
+          "type": "checkbox",
+          "label": "Hide this block on mobile",
+          "id": "is_block_hidden",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "label": "Hide this block on desktop",
+          "id": "is_block_hidden_desktop",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "label": "Show stars",
+          "id": "are_stars_shown"
+        },
+        {
+          "type": "text",
+          "label": "Name",
+          "id": "name"
+        },
+        {
+          "type": "richtext",
+          "label": "Content",
+          "id": "content",
+          "default": "<p>“Lorem ipsum dolor sit amet consectetur. Etiam faucibus massa a turpis pharetra id.”</p>"
+        },
+        {
+          "type": "image_picker",
+          "label": "Image",
+          "id": "image",
+          "info": "Big image above the block"
+        },
+        {
+          "type": "checkbox",
+          "label": "Hide author image on mobile",
+          "id": "is_author_image_hidden",
+          "default": true
+        },
+        {
+          "type": "image_picker",
+          "label": "Author image",
+          "id": "author_image",
+          "info": "Small sircular image near the name"
+        },
+        {
+          "type": "checkbox",
+          "label": "Hide author icon on desktop",
+          "id": "is_author_icon_hidden",
+          "default": true
+        },
+        {
+          "type": "html",
+          "label": "Icon for author",
+          "id": "icon_for_author"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Grid reviews"
+    }
+  ]
+}
+{% endschema %}

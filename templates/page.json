@@ -1,0 +1,85 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "account_tabs_NEJkG6": {
+      "type": "account-tabs",
+      "blocks": {
+        "account_tab_4rKPzw": {
+          "type": "account_tab",
+          "settings": {
+            "title": "Addresses",
+            "link": "/account/addresses"
+          }
+        },
+        "account_tab_QYRDVt": {
+          "type": "account_tab",
+          "settings": {
+            "title": "Order history",
+            "link": "/account"
+          }
+        },
+        "account_tab_L7TEPV": {
+          "type": "account_tab",
+          "settings": {
+            "title": "My Subscription",
+            "link": "/tools/recurring/login"
+          }
+        }
+      },
+      "block_order": [
+        "account_tab_4rKPzw",
+        "account_tab_QYRDVt",
+        "account_tab_L7TEPV"
+      ],
+      "settings": {
+        "title": "My account",
+        "padding_top": 130,
+        "padding_bottom": 0,
+        "padding_top_mobile": 100,
+        "padding_bottom_mobile": 40
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "settings": {
+        "is_heading_hidden": true,
+        "padding_top": 100,
+        "padding_bottom": 40,
+        "padding_top_mobile": 100,
+        "padding_bottom_mobile": 40
+      }
+    },
+    "media_with_text_video_TbJphC": {
+      "type": "media-with-text-video",
+      "disabled": true,
+      "settings": {
+        "main_content_desktop": "<h2>5.Thousands of People Swear by Colostrum — Here’s Why</h2><p>People everywhere are raving about the real, noticeable results they’re experiencing with colostrum.</p><p><strong>From improved digestion and steady energy to radiant skin and mental clarity</strong>, colostrum’s 200+ bioactive nutrients work deep within your body to support better health and well-being at every level. *</p>",
+        "video": "shopify://files/videos/d1f4r.mp4",
+        "mobile_gap": "40",
+        "main_content_mobile": "",
+        "button_text": "Get 30% OFF Immune Revival",
+        "button_link": "",
+        "padding_top": 40,
+        "padding_bottom": 52,
+        "padding_top_mobile": 36,
+        "padding_bottom_mobile": 36,
+        "proportion": "equal",
+        "image_position": "right",
+        "image_position_mobile": "top"
+      }
+    }
+  },
+  "order": [
+    "account_tabs_NEJkG6",
+    "main",
+    "media_with_text_video_TbJphC"
+  ]
+}

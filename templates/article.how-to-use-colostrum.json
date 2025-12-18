@@ -1,0 +1,545 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "page_gradient_QwQ7bj": {
+      "type": "page-gradient",
+      "settings": {
+        "gradient": "linear-gradient(180deg, rgba(0, 130, 255, 0.08), rgba(255, 255, 255, 0.2) 100%)",
+        "height": 680
+      }
+    },
+    "main": {
+      "type": "main-article",
+      "blocks": {
+        "featured_image": {
+          "type": "featured_image",
+          "settings": {
+            "image_height": "adapt"
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {
+            "blog_show_date": true,
+            "blog_show_author": false
+          }
+        },
+        "share": {
+          "type": "share",
+          "settings": {
+            "share_label": "Share"
+          }
+        },
+        "content": {
+          "type": "content",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "featured_image",
+        "title",
+        "share",
+        "content"
+      ],
+      "disabled": true,
+      "settings": {}
+    },
+    "article_header_Cp9HNh": {
+      "type": "article-header",
+      "settings": {
+        "title": "<p><strong>How to Use<\/strong><\/p><p>Colostrum for Maximum Benefits<\/p>",
+        "title_tag": "h1",
+        "title_highlight_color": "#005eb8",
+        "time_to_read": "7 min read",
+        "facebook_share_link": "#",
+        "x_share_link": "#",
+        "instagram_share_link": "#",
+        "pinterest_share_link": "#"
+      }
+    },
+    "article_sidebar_menu_QmYTgy": {
+      "type": "article-sidebar-menu",
+      "blocks": {
+        "anchor_link_W9V3fR": {
+          "type": "anchor_link",
+          "settings": {
+            "title": "<p>Understanding the Value of Colostrum Supplementation",
+            "section_id": "content-1"
+          }
+        },
+        "anchor_link_pTPJfc": {
+          "type": "anchor_link",
+          "settings": {
+            "title": "<p>Key Factors in Colostrum Usage<\/p>",
+            "section_id": "content-2"
+          }
+        },
+        "anchor_link_wf6edN": {
+          "type": "anchor_link",
+          "settings": {
+            "title": "<p>Recommended Dosage Guidelines<\/p>",
+            "section_id": "content-3"
+          }
+        },
+        "anchor_link_Bdzmti": {
+          "type": "anchor_link",
+          "settings": {
+            "title": "<p>Why It Matters: The Big Picture<\/p>",
+            "section_id": "content-4"
+          }
+        },
+        "anchor_link_T7qcUB": {
+          "type": "anchor_link",
+          "settings": {
+            "title": "<p>Observing Results and Adjusting Intake<\/p>",
+            "section_id": "content-5"
+          }
+        },
+        "anchor_link_nczF3C": {
+          "type": "anchor_link",
+          "settings": {
+            "title": "<p>Potential Side Effects and Cautions<\/p>",
+            "section_id": "content-6"
+          }
+        }
+      },
+      "block_order": [
+        "anchor_link_W9V3fR",
+        "anchor_link_pTPJfc",
+        "anchor_link_wf6edN",
+        "anchor_link_Bdzmti",
+        "anchor_link_T7qcUB",
+        "anchor_link_nczF3C"
+      ],
+      "settings": {
+        "title": "Table of Contents",
+        "selector_to_hide": ".references"
+      }
+    },
+    "article_content_rLkk3w": {
+      "type": "article-content",
+      "settings": {
+        "section_id": "content-1",
+        "is_section_first": true,
+        "image": "shopify:\/\/shop_images\/Rectangle_1474.png",
+        "image_aspect_ratio": "standart",
+        "title": "<p>Understanding the Value of Colostrum Supplementation<\/p>",
+        "title_tag": "h2",
+        "title_color": "#000000",
+        "title_highlight_color": "#000000",
+        "content": "<p>Long before modern supplements existed, communities worldwide recognized colostrum’s remarkable effects on immune function, gut health, and overall resilience. Today, scientists are increasingly confirming these benefits, linking colostrum’s high concentration of immunoglobulins, lactoferrin, growth factors, and micronutrients to positive outcomes in both athletic performance and everyday wellness. If you read our first article, you already know that colostrum offers much more than simple nutrition: it can help rejuvenate the gut lining, support the body’s defense system, and potentially enhance muscle recovery.As colostrum becomes more readily available in powder or capsule form, individuals can incorporate it into their routine just as they would a protein shake or daily multivitamin. But exactly how you use colostrum—and in what quantities—can significantly influence your results.<\/p>",
+        "add_background": false,
+        "backround": "rgba(0,0,0,0)",
+        "padding_top": 54,
+        "padding_bottom": 0,
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "article_content_TPMBqw": {
+      "type": "article-content",
+      "blocks": {
+        "content_UpgP3k": {
+          "type": "content",
+          "settings": {
+            "title": "Quality and Composition",
+            "title_tag": "h3",
+            "title_color": "#000000",
+            "title_underlined": true,
+            "title_underline_color": "#005eb8",
+            "subtitle": "",
+            "subtitle_color": "#000000",
+            "content": "<p>Before tackling dosage, it’s important to note that <strong>not all colostrum products are created equal<\/strong>. Some manufacturers use high-heat processes or artificially modify IgG (immunoglobulin) levels by skimming out other valuable fats and enzymes. This can compromise the natural synergy that makes colostrum so unique. Ideally, look for colostrum that is <strong>low-heat<\/strong> processed, ethically sourced (calves receive their share first), and <strong>lab-tested<\/strong> for purity. Such products generally preserve the balanced mix of immunoglobulins, growth factors, and micronutrients that deliver optimal benefits.<\/p>",
+            "add_background": false,
+            "background": "",
+            "block_underlined": false,
+            "block_underline_color": ""
+          }
+        },
+        "content_EkKiPH": {
+          "type": "content",
+          "settings": {
+            "title": "Timing and Method of Intake",
+            "title_tag": "h3",
+            "title_color": "#000000",
+            "title_underlined": true,
+            "title_underline_color": "#005eb8",
+            "subtitle": "",
+            "subtitle_color": "#000000",
+            "content": "<p>Colostrum can be consumed as a <strong>standalone supplement<\/strong> or blended into drinks and smoothies. Many people prefer taking it on an <strong>empty stomach<\/strong>, which may help maintain the integrity of its proteins and growth factors as they pass through the digestive system. Others mix it with a small amount of food—such as yogurt or fruit—to reduce any mild digestive sensitivities they might experience. There’s no universal rule for timing, though some research suggests early morning or pre-bed supplementation can capitalize on natural repair cycles (such as <strong>overnight recovery<\/strong> for muscles and the gut).<\/p>",
+            "add_background": false,
+            "background": "",
+            "block_underlined": false,
+            "block_underline_color": ""
+          }
+        },
+        "content_4mPUcM": {
+          "type": "content",
+          "settings": {
+            "title": "Individual Health Goals",
+            "title_tag": "h3",
+            "title_color": "#000000",
+            "title_underlined": true,
+            "title_underline_color": "#005eb8",
+            "subtitle": "",
+            "subtitle_color": "#000000",
+            "content": "<p>Your personal objectives will play a major role in how you use colostrum. Those seeking <strong>everyday immune support<\/strong> and <strong>general well-being<\/strong> might opt for lower daily doses, while athletes or individuals focused on gut repair often find that slightly higher amounts prove more effective. Some also choose to gradually increase their intake over time, observing how their bodies respond before settling on a <strong>long-term maintenance level<\/strong>.<\/p>",
+            "add_background": false,
+            "background": "",
+            "block_underlined": false,
+            "block_underline_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "content_UpgP3k",
+        "content_EkKiPH",
+        "content_4mPUcM"
+      ],
+      "settings": {
+        "section_id": "content-2",
+        "is_section_first": false,
+        "image_aspect_ratio": "standart",
+        "title": "<p><strong>Key Factors <\/strong><\/p><p>in Colostrum Usage<\/p>",
+        "title_tag": "h2",
+        "title_color": "#000000",
+        "title_highlight_color": "#005eb8",
+        "content": "",
+        "add_background": false,
+        "backround": "",
+        "padding_top": 80,
+        "padding_bottom": 0,
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "article_content_4VFybH": {
+      "type": "article-content",
+      "blocks": {
+        "content_YCQC6A": {
+          "type": "content",
+          "settings": {
+            "title": "1. Low to Moderate Intake",
+            "title_tag": "h3",
+            "title_color": "#000000",
+            "title_underlined": false,
+            "title_underline_color": "rgba(0,0,0,0)",
+            "subtitle": "(3–6g per day)",
+            "subtitle_color": "#01bd0e",
+            "content": "<p>A daily dose of around <strong>3 to 6 grams<\/strong> is commonly suggested for <strong>general wellness or preventative immune support<\/strong>. If you have a balanced diet and exercise regimen, or if you’re new to colostrum and want to test its effects, this range can be a comfortable starting point. By offering enough immunoglobulins to bolster immune defenses and promoting some degree of gut support, 3–6 grams often strikes a balance between effectiveness and convenience.<\/p><p>People who begin at this level frequently report fewer episodes of minor illness, improved digestion, and more stable energy levels. Over time, if you’re satisfied with these results, you might remain at this dose indefinitely.<\/p>",
+            "add_background": false,
+            "background": "",
+            "block_underlined": true,
+            "block_underline_color": "#01bd0e"
+          }
+        },
+        "content_hpbcUH": {
+          "type": "content",
+          "settings": {
+            "title": "2. Moderate to High Intake",
+            "title_tag": "h3",
+            "title_color": "#000000",
+            "title_underlined": false,
+            "title_underline_color": "#005eb8",
+            "subtitle": "(6-10g per day)",
+            "subtitle_color": "#01bd0e",
+            "content": "<p>For those wanting a <strong>more pronounced impact<\/strong>—be it in digestion, immune resilience, or athletic recovery—raising the intake to 6–10 grams can offer additional support. This might mean taking two separate doses (one in the morning, one later in the day) to maintain a steady supply of colostrum’s bioactive compounds.<\/p><p>Individuals with mild gut sensitivities sometimes find this intermediate range helpful for <strong>restoring balance<\/strong> in the digestive tract. The additional immunoglobulins and growth factors can assist in <strong>strengthening the gut lining<\/strong>, while the heightened presence of lactoferrin may help regulate intestinal microflora. Athletes engaged in moderate training also benefit here, noting reduced muscle soreness and a more robust immune system during demanding workout schedules.<\/p>",
+            "add_background": false,
+            "background": "",
+            "block_underlined": true,
+            "block_underline_color": "#01bd0e"
+          }
+        },
+        "content_brBzmd": {
+          "type": "content",
+          "settings": {
+            "title": "3. Higher Intake",
+            "title_tag": "h3",
+            "title_color": "#000000",
+            "title_underlined": false,
+            "title_underline_color": "#005eb8",
+            "subtitle": " (10–15g+ per day)",
+            "subtitle_color": "#01bd0e",
+            "content": "<p>When the goal is <strong>intense support<\/strong>, such as for advanced sports performance or targeted gut repair, some people go higher still, in the range of <strong>10–15 grams daily<\/strong>. High-level athletes may use this approach leading up to competitions or during rigorous training blocks, aiming to <strong>maximize muscle repair<\/strong> and maintain a strong immune system under physical stress. Others dealing with significant digestive challenges might see benefits in temporarily using 10–15 grams or more, though it’s best to work closely with a healthcare professional when taking higher-than-average doses.<\/p><p>While researchers have tested doses well above 20 grams per day in certain studies, more does not always mean better. Many experts recommend listening to your body and adjusting gradually. A loading phase of around 10 grams daily for several weeks, followed by a maintenance dose of 6 grams, can be an effective strategy to both <strong>jump-start and sustain<\/strong> colostrum’s benefits.<\/p>",
+            "add_background": false,
+            "background": "",
+            "block_underlined": false,
+            "block_underline_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "content_YCQC6A",
+        "content_hpbcUH",
+        "content_brBzmd"
+      ],
+      "settings": {
+        "section_id": "content-3",
+        "is_section_first": false,
+        "image": "shopify:\/\/shop_images\/Rectangle_1102.png",
+        "image_aspect_ratio": "standart",
+        "title": "<p><strong>Recommended <\/strong><\/p><p>Dosage Guidelines<\/p>",
+        "title_tag": "h2",
+        "title_color": "#000000",
+        "title_highlight_color": "#01bd0e",
+        "content": "<p>Research on colostrum dosages can vary, but several general tiers have emerged based on user experiences and clinical observations. Below are three common dosage ranges, along with potential scenarios for each.<\/p>",
+        "add_background": false,
+        "backround": "",
+        "padding_top": 80,
+        "padding_bottom": 0,
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "article_content_RGrEQQ": {
+      "type": "article-content",
+      "blocks": {
+        "content_dYAR6M": {
+          "type": "content",
+          "settings": {
+            "title": "",
+            "title_tag": "h3",
+            "title_color": "#000000",
+            "title_underlined": false,
+            "title_underline_color": "#005eb8",
+            "subtitle": "",
+            "subtitle_color": "#000000",
+            "content": "<p>Using colostrum effectively is about more than just meeting your daily protein quota; it’s an opportunity to <strong>infuse your body with vital immune factors, growth molecules, and micronutrients that are often lacking in modern diets<\/strong>. Whether you’re aiming for better workout recovery, enhanced gut resilience, or a stronger immune defense, colostrum can align with these goals—provided you choose a quality product and tailor the dosage to your needs.<\/p><p>By starting at a manageable baseline—say, 3 grams per day—and observing how you feel, you allow colostrum’s rich profile to work in harmony with your existing lifestyle. Over time, minor adjustments may help you optimize its full potential. For many, this journey with colostrum unfolds gradually, but the rewards—from <strong>fewer sick days to improved digestion—often make it a long-term staple<\/strong>.<\/p>",
+            "add_background": false,
+            "background": "",
+            "block_underlined": false,
+            "block_underline_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "content_dYAR6M"
+      ],
+      "settings": {
+        "section_id": "content-4",
+        "is_section_first": false,
+        "image": "shopify:\/\/shop_images\/Rectangle_1476.png",
+        "image_aspect_ratio": "standart",
+        "title": "<p><strong>Why It Matters: <\/strong><\/p><p>The Big Picture<\/p>",
+        "title_tag": "h2",
+        "title_color": "#000000",
+        "title_highlight_color": "#005eb8",
+        "content": "",
+        "add_background": false,
+        "backround": "",
+        "padding_top": 80,
+        "padding_bottom": 0,
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "article_content_RpbTRj": {
+      "type": "article-content",
+      "blocks": {
+        "content_yCfQHx": {
+          "type": "content",
+          "settings": {
+            "title": "",
+            "title_tag": "h3",
+            "title_color": "#000000",
+            "title_underlined": false,
+            "title_underline_color": "#005eb8",
+            "subtitle": "",
+            "subtitle_color": "#000000",
+            "content": "<p>Everyone’s body reacts differently to nutritional supplements, and colostrum is no exception. Some notice <strong>improvements in gut comfort and immune resilience<\/strong> within a few weeks, while others experience more gradual changes. Pay attention to your energy levels, digestive regularity, and frequency of colds or minor infections as possible indicators of colostrum’s impact.<\/p><p>If you find the <strong>initial results insufficient<\/strong>, consider incrementally raising the dose rather than jumping to the high range all at once. Conversely, if you’re entirely satisfied with how you feel at 3–6 grams, there’s no obligation to increase. Colostrum can be used long term without cycling off, given its profile as a functional food rather than a stimulant or hormone disruptor.<\/p>",
+            "add_background": false,
+            "background": "",
+            "block_underlined": false,
+            "block_underline_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "content_yCfQHx"
+      ],
+      "settings": {
+        "section_id": "content-5",
+        "is_section_first": false,
+        "image_aspect_ratio": "standart",
+        "title": "<p><strong>Observing Results <\/strong><\/p><p>and Adjusting Intake<\/p>",
+        "title_tag": "h2",
+        "title_color": "#000000",
+        "title_highlight_color": "#005eb8",
+        "content": "",
+        "add_background": true,
+        "backround": "#0082ff",
+        "padding_top": 40,
+        "padding_bottom": 0,
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "article_content_KR7RAD": {
+      "type": "article-content",
+      "blocks": {
+        "content_gx9zn4": {
+          "type": "content",
+          "settings": {
+            "title": "",
+            "title_tag": "h3",
+            "title_color": "#000000",
+            "title_underlined": false,
+            "title_underline_color": "#005eb8",
+            "subtitle": "",
+            "subtitle_color": "#000000",
+            "content": "<p>Though widely regarded as safe, colostrum is derived from dairy, so individuals with <strong>milk protein allergies or severe lactose intolerance<\/strong> should proceed with caution. Some people may experience mild digestive upset initially—gassiness or bloating—as their body adapts to the new proteins. These effects often subside after the first week, especially if you start with a lower dose.<\/p><p>Pregnant or breastfeeding individuals should discuss colostrum use with a healthcare professional, given limited research in these specific populations. Additionally, those with compromised immune systems or autoimmune conditions should seek medical guidance on whether colostrum is appropriate for them.<\/p>",
+            "add_background": false,
+            "background": "",
+            "block_underlined": false,
+            "block_underline_color": ""
+          }
+        }
+      },
+      "block_order": [
+        "content_gx9zn4"
+      ],
+      "settings": {
+        "section_id": "content-6",
+        "is_section_first": false,
+        "image_aspect_ratio": "standart",
+        "title": "<p><strong>Potential Side <\/strong><\/p><p><strong>Effects and Cautions <\/strong><\/p>",
+        "title_tag": "h2",
+        "title_color": "#ff6a13",
+        "title_highlight_color": "#ff6a13",
+        "content": "",
+        "add_background": true,
+        "backround": "#ff6a13",
+        "padding_top": 40,
+        "padding_bottom": 0,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "references_xJbtNq": {
+      "type": "references",
+      "blocks": {
+        "reference_8LEEWq": {
+          "type": "reference",
+          "settings": {
+            "text": "Bagwe S et al. “Bovine colostrum: An emerging nutraceutical.” Journal of Complementary & Integrative Medicine, 2021.",
+            "url": "#"
+          }
+        },
+        "reference_96mHg6": {
+          "type": "reference",
+          "settings": {
+            "text": "Playford RJ et al. “Bovine colostrum and gut-related benefits.” Clinical Science, 2019.",
+            "url": ""
+          }
+        },
+        "reference_Gmj7Ga": {
+          "type": "reference",
+          "settings": {
+            "text": "Gapper LW et al. “Nutritional and immune components of bovine colostrum.” International Dairy Journal, 2018.",
+            "url": ""
+          }
+        },
+        "reference_3TJXKK": {
+          "type": "reference",
+          "settings": {
+            "text": "Davison G et al. “Colostrum supplementation and upper respiratory tract infections in athletes.” Journal of Sports Sciences, 2016.",
+            "url": ""
+          }
+        },
+        "reference_9gK89f": {
+          "type": "reference",
+          "settings": {
+            "text": "Rathe M et al. “Clinical applications of bovine colostrum therapy: Review.” Frontiers in Nutrition, 2020.",
+            "url": ""
+          }
+        },
+        "reference_bJ3zEQ": {
+          "type": "reference",
+          "settings": {
+            "text": "German JB et al. “Bovine lactoferrin’s antibacterial role.” Journal of Dairy Science, 2017.",
+            "url": ""
+          }
+        },
+        "reference_n7B7JG": {
+          "type": "reference",
+          "settings": {
+            "text": "Krissansen GW. “Emerging health properties of whey proteins and their clinical implications.” Journal of the American College of Nutrition, 2018.",
+            "url": ""
+          }
+        },
+        "reference_tM96bE": {
+          "type": "reference",
+          "settings": {
+            "text": "Coombes JS et al. “Dose-dependent effects of bovine colostrum on exercise performance.” European Journal of Applied Physiology, 2020.",
+            "url": ""
+          }
+        },
+        "reference_rBEA6D": {
+          "type": "reference",
+          "settings": {
+            "text": "Marchbank T et al. “Bovine colostrum helps prevent NSAID-induced gut damage.” Gut, 2015.",
+            "url": ""
+          }
+        },
+        "reference_XqrCP8": {
+          "type": "reference",
+          "settings": {
+            "text": "Shing CM et al. “Bovine colostrum supplementation and immune function in athletes.” Nutrition & Dietetics, 2014.",
+            "url": ""
+          }
+        }
+      },
+      "block_order": [
+        "reference_8LEEWq",
+        "reference_96mHg6",
+        "reference_Gmj7Ga",
+        "reference_3TJXKK",
+        "reference_9gK89f",
+        "reference_bJ3zEQ",
+        "reference_n7B7JG",
+        "reference_tM96bE",
+        "reference_rBEA6D",
+        "reference_XqrCP8"
+      ],
+      "settings": {
+        "title": "References",
+        "padding_top": 80,
+        "padding_bottom": 80,
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 40
+      }
+    },
+    "article_bottom_text_AUKUQi": {
+      "type": "article-bottom-text",
+      "settings": {
+        "text": "Disclaimer: This article is intended for informational purposes only. Consult your healthcare professional before starting any supplement, especially if you have existing medical conditions or concerns.",
+        "padding_top": 0,
+        "padding_bottom": 35,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 47
+      }
+    }
+  },
+  "order": [
+    "page_gradient_QwQ7bj",
+    "main",
+    "article_header_Cp9HNh",
+    "article_sidebar_menu_QmYTgy",
+    "article_content_rLkk3w",
+    "article_content_TPMBqw",
+    "article_content_4VFybH",
+    "article_content_RGrEQQ",
+    "article_content_RpbTRj",
+    "article_content_KR7RAD",
+    "references_xJbtNq",
+    "article_bottom_text_AUKUQi"
+  ]
+}

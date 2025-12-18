@@ -1,0 +1,282 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "account_tabs_NEJkG6": {
+      "type": "account-tabs",
+      "blocks": {
+        "account_tab_4rKPzw": {
+          "type": "account_tab",
+          "settings": {
+            "title": "Addresses",
+            "link": "/account/addresses",
+            "target_blank": false
+          }
+        },
+        "account_tab_QYRDVt": {
+          "type": "account_tab",
+          "settings": {
+            "title": "Order history",
+            "link": "/account",
+            "target_blank": false
+          }
+        },
+        "account_tab_L7TEPV": {
+          "type": "account_tab",
+          "settings": {
+            "title": "My Subscription",
+            "link": "/tools/recurring/login",
+            "target_blank": false
+          }
+        }
+      },
+      "block_order": [
+        "account_tab_4rKPzw",
+        "account_tab_QYRDVt",
+        "account_tab_L7TEPV"
+      ],
+      "disabled": true,
+      "settings": {
+        "title": "My account",
+        "padding_top": 130,
+        "padding_bottom": 0,
+        "padding_top_mobile": 100,
+        "padding_bottom_mobile": 40
+      }
+    },
+    "17603518978ada520a": {
+      "type": "apps",
+      "blocks": {
+        "referral_candy_join1_aTtgLQ": {
+          "type": "shopify://apps/referral-candy/blocks/join1/0258f542-988d-488e-8d98-209cecc83a8a",
+          "settings": {
+            "form_alignment": "center",
+            "show_header": true,
+            "show_offer": true
+          }
+        }
+      },
+      "block_order": [
+        "referral_candy_join1_aTtgLQ"
+      ],
+      "custom_css": [],
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "is_heading_hidden": true,
+        "padding_top": 100,
+        "padding_bottom": 40,
+        "padding_top_mobile": 100,
+        "padding_bottom_mobile": 40
+      }
+    },
+    "faq_with_image_bF3aRK": {
+      "type": "faq-with-image",
+      "blocks": {
+        "question_b6QpY8": {
+          "type": "question",
+          "settings": {
+            "title": "What rewards do I receive when I refer friends?",
+            "answer": "<p>For each friend who places an order through your referral link, you’ll get <strong>$10 off</strong> your next order.</p>"
+          }
+        },
+        "question_xcarna": {
+          "type": "question",
+          "settings": {
+            "title": "What do my friends get when I refer them?",
+            "answer": "<p>Your friends receive <strong>30% off</strong> their <strong>first order</strong> when they use your unique referral link.</p>"
+          }
+        },
+        "question_EW9VDF": {
+          "type": "question",
+          "settings": {
+            "title": "Is there a limit to how many friends I can refer?",
+            "answer": "<p>No limit. Refer as many friends as you’d like—the more you refer, the more rewards you earn.</p>"
+          }
+        },
+        "question_zcJDge": {
+          "type": "question",
+          "settings": {
+            "title": "How do I know if my friend made a purchase using my referral link?",
+            "answer": "<p>You'll receive an email notification once your friend's purchase is confirmed. You can also track your referrals and rewards in your referral dashboard when you log in to your account.</p>"
+          }
+        },
+        "question_KVPRJA": {
+          "type": "question",
+          "settings": {
+            "title": "Can I refer someone who has already purchased from the store before?",
+            "answer": "<p>Our referral program is designed for new customers. You can refer friends who are new to our store and haven't made a purchase before.</p>"
+          }
+        },
+        "question_rbxXqy": {
+          "type": "question",
+          "settings": {
+            "title": "What if my friend didn't use my referral link but made a purchase?",
+            "answer": "<p>To ensure you receive credit for referrals, your friends must use your unique referral link when making their first purchase. They should also use the coupon code tagged to your unique referral link when they make that purchase. Unfortunately, we cannot apply referral rewards retroactively.</p>"
+          }
+        },
+        "question_gFrA3k": {
+          "type": "question",
+          "settings": {
+            "title": "Are there any restrictions on sharing my referral link publicly?",
+            "answer": "<p>We encourage you to share your referral link with your personal network. However, posting your referral link on coupon websites is prohibited and may result in disqualification from the referral program.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "question_b6QpY8",
+        "question_xcarna",
+        "question_EW9VDF",
+        "question_zcJDge",
+        "question_KVPRJA",
+        "question_rbxXqy",
+        "question_gFrA3k"
+      ],
+      "name": "FAQ with image",
+      "settings": {
+        "enable_v3_styles": false,
+        "extra_styles": true,
+        "image_position": "left",
+        "hide_image_mobile": true,
+        "rounded": false,
+        "previous_background": "#FFF",
+        "current_background": "linear-gradient(180deg, rgba(255, 255, 255, 0), rgba(255, 255, 255, 1) 100%)",
+        "title": "<p>Your Questions Answered</p>",
+        "subtitle": "FAQ",
+        "tagline": "",
+        "image": "shopify://shop_images/Meghan_Frosceno_d953ae7f-d3ab-4374-8784-414d1e2c5446.png",
+        "is_first_open": true,
+        "active_title_color": "#000000",
+        "default_title_color": "#000000",
+        "is_only_one_opened": false,
+        "padding_top": 100,
+        "padding_bottom": 100,
+        "padding_top_mobile": 70,
+        "padding_bottom_mobile": 70
+      }
+    },
+    "media_with_text_video_TbJphC": {
+      "type": "media-with-text-video",
+      "disabled": true,
+      "settings": {
+        "main_content_desktop": "<h2>5.Thousands of People Swear by Colostrum — Here’s Why</h2><p>People everywhere are raving about the real, noticeable results they’re experiencing with colostrum.</p><p><strong>From improved digestion and steady energy to radiant skin and mental clarity</strong>, colostrum’s 200+ bioactive nutrients work deep within your body to support better health and well-being at every level. *</p>",
+        "video": "shopify://files/videos/d1f4r.mp4",
+        "mobile_gap": "40",
+        "main_content_mobile": "",
+        "button_text": "Get 30% OFF Immune Revival",
+        "button_link": "",
+        "padding_top": 40,
+        "padding_bottom": 52,
+        "padding_top_mobile": 36,
+        "padding_bottom_mobile": 36,
+        "proportion": "equal",
+        "image_position": "right",
+        "image_position_mobile": "top"
+      }
+    },
+    "custom_liquid_dAqpGc": {
+      "type": "custom-liquid",
+      "name": "t:sections.custom-liquid.presets.name",
+      "settings": {
+        "custom_liquid": "<style>\nsticky-header.header-wrapper{\nbackground:#dcdcd1!Important;\n}\n.shopify-section-header-sticky sticky-header{\nbackground:white !important;\n}\n#shopify-section-template--19128336154678__17603518978ada520a{\nmargin-top:-1px;\n}\na.header__navigation-link.header__navigation-link-main{\ndisplay:none;\n}\n#shopify-section-template--19128336154678__custom_liquid_dAqpGc{\ndisplay:none;\n}\n</style>",
+        "color_scheme": "",
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "benefits_marquee_L44pDg": {
+      "type": "benefits-marquee",
+      "blocks": {
+        "text_label_nBkPxW": {
+          "type": "text_label",
+          "settings": {
+            "text": "CLINICALLY STUDIED INGREDIENTS"
+          }
+        },
+        "text_label_8LWthG": {
+          "type": "text_label",
+          "settings": {
+            "text": "MADE IN USA"
+          }
+        },
+        "text_label_xE6NeK": {
+          "type": "text_label",
+          "settings": {
+            "text": "RICH IN ANTIOXODANTS"
+          }
+        },
+        "text_label_cRGNFb": {
+          "type": "text_label",
+          "settings": {
+            "text": "NO SYNTHETIC FILLERS"
+          }
+        },
+        "text_label_rn48C3": {
+          "type": "text_label",
+          "settings": {
+            "text": "ENHANCED WITH ADAPTOGENS"
+          }
+        },
+        "text_label_LV8r9K": {
+          "type": "text_label",
+          "settings": {
+            "text": "NO ADDED SUGAR"
+          }
+        }
+      },
+      "block_order": [
+        "text_label_nBkPxW",
+        "text_label_8LWthG",
+        "text_label_xE6NeK",
+        "text_label_cRGNFb",
+        "text_label_rn48C3",
+        "text_label_LV8r9K"
+      ],
+      "settings": {
+        "background": "#005EB8",
+        "color_text": "#ffffff",
+        "autoscroll": false,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "decor_label": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"10\" height=\"8\" viewbox=\"0 0 10 8\" fill=\"none\">\n<path d=\"M3.5775 7.58352C3.3775 7.58352 3.1875 7.50352 3.0475 7.36352L0.2175 4.53352C-0.0725 4.24352 -0.0725 3.76352 0.2175 3.47352C0.5075 3.18352 0.9875 3.18352 1.2775 3.47352L3.5775 5.77352L8.7175 0.633516C9.0075 0.343516 9.4875 0.343516 9.7775 0.633516C10.0675 0.923516 10.0675 1.40352 9.7775 1.69352L4.1075 7.36352C3.9675 7.50352 3.7775 7.58352 3.5775 7.58352Z\" fill=\"white\"></path>\n</svg>"
+      }
+    },
+    "landing_footer_yAYryS": {
+      "type": "landing-footer",
+      "name": "Landing Footer",
+      "settings": {
+        "hide_primary_footer": true,
+        "color_scheme": "scheme-ea079204-4b8c-4bc5-9aa1-4a98e412e983",
+        "logo": "shopify://shop_images/logo-transparent-folqs.svg",
+        "contacts": "<p><a href=\"mailto:help@folqs.co\" title=\"mailto:help@folqs.co\">help@folqs.co</a></p><p>800 N KING ST STE 304 1909,</p><p>WILMINGTON, DE 19801800-975-4495<br/><br/></p>",
+        "show_socials": true,
+        "information": "<p>* Individual Results May Vary. These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure or prevent any disease.</p><p>The content on this website is intended solely for informational purposes and should not be considered a replacement for professional medical advice from your doctor or healthcare provider. Do not use this information to diagnose or treat any health condition or to prescribe medication. Be sure to thoroughly review all product information. If you have, or think you may have, a medical issue, please consult your healthcare provider immediately.</p><p>** Offer valid for new subscribers only.</p>",
+        "menu": "policies"
+      }
+    }
+  },
+  "order": [
+    "account_tabs_NEJkG6",
+    "17603518978ada520a",
+    "main",
+    "faq_with_image_bF3aRK",
+    "media_with_text_video_TbJphC",
+    "custom_liquid_dAqpGc",
+    "benefits_marquee_L44pDg",
+    "landing_footer_yAYryS"
+  ]
+}

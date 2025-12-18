@@ -1,0 +1,654 @@
+{{ 'section-image-text-list.css' | asset_url | stylesheet_tag }}
+
+{% render 'section-paddings',
+  padding_top: section.settings.padding_top,
+  padding_bottom: section.settings.padding_bottom,
+  padding_top_mobile: section.settings.padding_top_mobile,
+  padding_bottom_mobile: section.settings.padding_bottom_mobile
+%}
+<div class="image-with-text-list color-{{ section.settings.color_scheme }}">
+  <div class="section-{{ section.id }}--padding">
+    <div class="image-with-text-list__header page-width page-width--extra">
+      {%- unless section.settings.subtitle == blank -%}
+        <p class="image-with-text-list__subtitle">{{ section.settings.subtitle }}</p>
+      {%- endunless -%}
+      {%- unless section.settings.title == blank -%}
+        <h2 class="image-with-text-list__title">{{ section.settings.title | newline_to_br }}</h2>
+      {%- endunless -%}
+    </div>
+    {%- if section.blocks.size > 0 -%}
+      <div class="image-with-text-list__body">
+        {%- for block in section.blocks -%}
+          {%- case block.type -%}
+            {%- when 'image_with_text' -%}
+              <div class="page-width page-width--extra image-with-text-list__image-with-text-block image-with-text-list__image-with-text-block--image-{{ block.settings.image_position }}{% if block.settings.add_background_icon %} image-with-text-list__image-with-text-block--background-icon{% endif %}">
+                {%- if block.settings.title != blank or block.settings.subtitle != blank -%}
+                  <div class="image-with-text-block__header--mobile">
+                    {%- unless block.settings.title == blank -%}
+                      <p class="image-with-text-block__title">
+                        <span>
+                          {{ block.settings.title }}
+                        </span>
+                      </p>
+                    {%- endunless -%}
+                    {%- unless block.settings.subtitle == blank -%}
+                      <h3 class="image-with-text-block__subtitle">{{ block.settings.subtitle | newline_to_br }}</h3>
+                    {%- endunless -%}
+                  </div>
+                {%- endif -%}
+                {%- unless block.settings.image == blank -%}
+                  <div class="image-with-text-block__image">
+                    {{ block.settings.image | image_url: width: 800 | image_tag }}
+                  </div>
+                {%- endunless -%}
+                <div class="image-with-text-block__content">
+                  {%- unless block.settings.title == blank -%}
+                    <p class="image-with-text-block__title">
+                      <span>
+                        {{ block.settings.title }}
+                      </span>
+                    </p>
+                  {%- endunless -%}
+                  {%- unless block.settings.subtitle == blank -%}
+                    <h3 class="image-with-text-block__subtitle">{{ block.settings.subtitle | newline_to_br }}</h3>
+                  {%- endunless -%}
+                  {%- unless block.settings.text == blank -%}
+                    <div class="image-with-text-block__text">
+                      {{ block.settings.text }}
+                    </div>
+                  {%- endunless -%}
+                  {%- if block.settings.display_list -%}
+                    <div class="image-with-text-block__list-with-icons">
+                      {%- for index in (1..3) -%}
+                        {%- liquid
+                          assign list_icon_id = 'list_icon_' | append: index
+                          assign list_title_id = 'list_title_' | append: index
+                          assign list_text_id = 'list_text_' | append: index
+                        -%}
+                        {%- if block.settings[list_icon_id] != blank
+                          or block.settings[list_title_id] != blank
+                          or block.settings[list_text_id] != blank
+                        -%}
+                          <div class="list-with-icons__item">
+                            {%- unless block.settings[list_icon_id] == blank -%}
+                              <div class="list-with-icons__icon">
+                                {{ block.settings[list_icon_id] | image_url: width: 60 | image_tag }}
+                              </div>
+                            {%- endunless -%}
+                            {%- if block.settings[list_title_id] != blank or block.settings[list_text_id] != blank -%}
+                              <div class="list-with-icons__content">
+                                {%- unless block.settings[list_title_id] == blank -%}
+                                  <p class="list-with-icons__title">
+                                    {{ block.settings[list_title_id] }}
+                                  </p>
+                                {%- endunless -%}
+                                {%- unless block.settings[list_text_id] == blank -%}
+                                  <div class="list-with-icons__text">
+                                    {{ block.settings[list_text_id] }}
+                                  </div>
+                                {%- endunless -%}
+                              </div>
+                            {%- endif -%}
+                          </div>
+                        {%- endif -%}
+                      {%- endfor -%}
+                    </div>
+                  {%- endif -%}
+                </div>
+              </div>
+            {%- when 'reviews' -%}
+              <div class="page-width page-width--extra image-with-text-list__reviews-block">
+                <div class="reviews-block__reviews {% if block.settings.review_type and block.settings.review_type == 'alternative' %}reviews-block__reviews--alternative{% endif %}">
+                  <div class="reviews-block__review-block">
+                    {%- unless block.settings.image_1 == blank -%}
+                      <div class="review-block__image">
+                        {{ block.settings.image_1 | image_url: width: 350 | image_tag }}
+                      </div>
+                    {%- endunless -%}
+                    <div class="review-block__content">
+                      {%- if block.settings.show_rating_1 -%}
+                        <span class="review-block__rating">
+                          {%- render 'icon-rating-extra' -%}
+                        </span>
+                      {%- endif -%}
+                      {%- unless block.settings.title_1 == blank -%}
+                        <div class="review-block__title">{{ block.settings.title_1 }}</div>
+                      {%- endunless -%}
+                      {%- unless block.settings.text_1 == blank -%}
+                        <div class="review-block__text">{{ block.settings.text_1 }}</div>
+                      {%- endunless -%}
+                      {%- if block.settings.author_1 != blank or block.settings.verified_1 -%}
+                        <div class="review-block__user-info">
+                          {%- unless block.settings.author_1 == blank -%}
+                            <p class="review-block__author-name">{{ block.settings.author_1 }}</p>
+                          {%- endunless -%}
+                          {%- if block.settings.verified_1 -%}
+                            <span class="review-block__verified-badge">
+                              {{ 'icon-lp-verified-buyer.svg' | inline_asset_content }}
+                              {{ 'sections.testimonials.verified_buyer' | t }}
+                            </span>
+                          {%- endif -%}
+                        </div>
+                      {%- endif -%}
+                    </div>
+                  </div>
+                  {%- if block.settings.show_second_review -%}
+                    <div class="reviews-block__review-block">
+                      {%- unless block.settings.image_2 == blank -%}
+                        <div class="review-block__image">
+                          {{ block.settings.image_2 | image_url: width: 350 | image_tag }}
+                        </div>
+                      {%- endunless -%}
+                      <div class="review-block__content">
+                        {%- if block.settings.show_rating_2 -%}
+                          <span class="review-block__rating">
+                            {%- render 'icon-rating-extra' -%}
+                          </span>
+                        {%- endif -%}
+                        {%- unless block.settings.title_2 == blank -%}
+                          <div class="review-block__title">{{ block.settings.title_2 }}</div>
+                        {%- endunless -%}
+                        {%- unless block.settings.text_2 == blank -%}
+                          <div class="review-block__text">{{ block.settings.text_2 }}</div>
+                        {%- endunless -%}
+                        {%- if block.settings.author_2 != blank or block.settings.verified_2 -%}
+                          <div class="review-block__user-info">
+                            {%- unless block.settings.author_2 == blank -%}
+                              <p class="review-block__author-name">{{ block.settings.author_2 }}</p>
+                            {%- endunless -%}
+                            {%- if block.settings.verified_2 -%}
+                              <span class="review-block__verified-badge">
+                                {{ 'icon-lp-verified-buyer.svg' | inline_asset_content }}
+                                {{ 'sections.testimonials.verified_buyer' | t }}
+                              </span>
+                            {%- endif -%}
+                          </div>
+                        {%- endif -%}
+                      </div>
+                    </div>
+                  {%- endif -%}
+                </div>
+                {%- if block.settings.button_text != blank or block.settings.show_rating -%}
+                  <div class="reviews-block__cta-block">
+                    {%- unless block.settings.button_text == blank -%}
+                      <a href="{{ block.settings.button_url }}" class="cta-block__button button">
+                        <span class="button__text">
+                          {{ block.settings.button_text }}
+                        </span>
+                        {% unless block.settings.button_text_mobile == blank %}
+                          <span class="button__text-mobile">
+                            {{ block.settings.button_text_mobile }}
+                          </span>
+                        {% endunless %}
+                        {%- render 'icon-cta-arrow' -%}
+                      </a>
+                    {%- endunless -%}
+                    {%- if block.settings.show_rating -%}
+                      <div class="image-with-text-list__rating-block">
+                        {%- unless block.settings.rating_image == blank -%}
+                          <div class="rating-block__image">
+                            {{ block.settings.rating_image | image_url: height: 60 | image_tag }}
+                          </div>
+                        {%- endunless -%}
+                        <div class="rating-block__stars">{%- render 'icon-rating-extra' -%}</div>
+                        {%- unless block.settings.rating_text == blank -%}
+                          <p class="rating-block__text">{{ block.settings.rating_text }}</p>
+                          <p class="rating-block__text--mobile">{{ block.settings.rating_text_mobile }}</p>
+                        {%- endunless -%}
+                      </div>
+                    {%- endif -%}
+                  </div>
+                {%- endif -%}
+              </div>
+            {%- when 'button' -%}
+              {%- unless block.settings.button_text == blank -%}
+                <div {% if block.settings.text_shadow != blank %}style="--text-shadow: {{ block.settings.text_shadow }}"{% endif %}
+                 class="page-width page-width--extra image-with-text-list__button-block{% if block.settings.hide_desktop %} image-with-text-list__button-block--hide-desktop{% endif %}{% if block.settings.hide_mobile %} image-with-text-list__button-block--hide-mobile{% endif %}">
+                  <a href="{{ block.settings.button_url }}" class="button-block__button button">
+                    {{ block.settings.button_text }}
+                    {%- render 'icon-cta-arrow' -%}
+                  </a>
+                  {%- if block.settings.is_show_reviews -%}
+                    <div class="button-block__reviews button-block__reviews--{{ block.settings.text_weight }}">
+                      {%- unless block.settings.rating_image == blank -%}
+                        <div class="rating-block__image">
+                          {{ block.settings.rating_image | image_url: height: 60 | image_tag }}
+                        </div>
+                      {%- endunless -%}
+                      <div class="rating-block__stars">{%- render 'icon-rating-extra' -%}</div>
+                      {%- unless block.settings.rating_text == blank -%}
+                        <p class="rating-block__text">{{ block.settings.rating_text }}</p>
+                      
+                        <p class="rating-block__text--mobile">{{ block.settings.rating_text_mobile }}</p>
+                      {%- endunless -%}
+                    </div>
+                  {%- endif -%}
+                </div>
+              {%- endunless -%}
+          {%- endcase -%}
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Image with text list",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Improve your life right now"
+    },
+    {
+      "type": "textarea",
+      "id": "title",
+      "label": "Title",
+      "default": "5 Reasons to Choose Folqs Colostrum"
+    },
+    {
+      "type": "header",
+      "content": "Section paddings"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding top mobile",
+      "default": 22
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding bottom mobile",
+      "default": 70
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Image with text",
+      "type": "image_with_text",
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "add_background_icon",
+          "label": "Add background icon",
+          "default": false
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "select",
+          "id": "image_position",
+          "label": "Image position",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            }
+          ],
+          "default": "left"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Reason"
+        },
+        {
+          "type": "textarea",
+          "id": "subtitle",
+          "label": "Subtitle",
+          "default": "Subtitle"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text",
+          "default": "<p>Text</p>",
+          "info": "Make text bold to highlight"
+        },
+        {
+          "type": "header",
+          "content": "List with icons"
+        },
+        {
+          "type": "checkbox",
+          "id": "display_list",
+          "label": "Display List",
+          "default": false
+        },
+        {
+          "type": "header",
+          "content": "List item 1"
+        },
+        {
+          "type": "image_picker",
+          "id": "list_icon_1",
+          "label": "Icon"
+        },
+        {
+          "type": "text",
+          "id": "list_title_1",
+          "label": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "list_text_1",
+          "label": "Text"
+        },
+        {
+          "type": "header",
+          "content": "List item 2"
+        },
+        {
+          "type": "image_picker",
+          "id": "list_icon_2",
+          "label": "Icon"
+        },
+        {
+          "type": "text",
+          "id": "list_title_2",
+          "label": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "list_text_2",
+          "label": "Text"
+        },
+        {
+          "type": "header",
+          "content": "List item 3"
+        },
+        {
+          "type": "image_picker",
+          "id": "list_icon_3",
+          "label": "Icon"
+        },
+        {
+          "type": "text",
+          "id": "list_title_3",
+          "label": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "list_text_3",
+          "label": "Text"
+        }
+      ]
+    },
+    {
+      "name": "Reviews",
+      "type": "reviews",
+      "settings": [
+        {
+          "type": "select",
+          "id": "review_type",
+          "label": "Review Type",
+          "options": [
+            {
+              "value": "default",
+              "label": "Default"
+            },
+            {
+              "value": "alternative",
+              "label": "Alternative"
+            }
+          ],
+          "default": "default"
+        },
+        {
+          "type": "header",
+          "content": "First review"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_1",
+          "label": "Image"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_rating_1",
+          "label": "Show rating",
+          "default": true
+        },
+        {
+          "type": "richtext",
+          "id": "title_1",
+          "label": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "text_1",
+          "label": "Text"
+        },
+        {
+          "type": "text",
+          "id": "author_1",
+          "label": "Author"
+        },
+        {
+          "type": "checkbox",
+          "id": "verified_1",
+          "label": "Verified",
+          "default": true
+        },
+        {
+          "type": "header",
+          "content": "Second review"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_second_review",
+          "label": "Show second review",
+          "default": true
+        },
+        {
+          "type": "image_picker",
+          "id": "image_2",
+          "label": "Image"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_rating_2",
+          "label": "Show rating",
+          "default": true
+        },
+        {
+          "type": "richtext",
+          "id": "title_2",
+          "label": "Title"
+        },
+        {
+          "type": "richtext",
+          "id": "text_2",
+          "label": "Text"
+        },
+        {
+          "type": "text",
+          "id": "author_2",
+          "label": "Author"
+        },
+        {
+          "type": "checkbox",
+          "id": "verified_2",
+          "label": "Verified",
+          "default": true
+        },
+        {
+          "type": "header",
+          "content": "Button"
+        },
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "Button text",
+          "default": "Try Folqs Today"
+        },
+        {
+          "type": "text",
+          "id": "button_text_mobile",
+          "label": "Button text mobile",
+          "default": "Try Folqs Today"
+        },
+        {
+          "type": "url",
+          "id": "button_url",
+          "label": "Button URL"
+        },
+        {
+          "type": "header",
+          "content": "Rating"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_rating",
+          "label": "Show rating",
+          "default": false
+        },
+        {
+          "type": "image_picker",
+          "id": "rating_image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "rating_text",
+          "label": "Text",
+          "default": "over 1,571 Five Star Reviews"
+        },
+        {
+          "type": "text",
+          "id": "rating_text_mobile",
+          "label": "Text(mobile)",
+          "default": "over 1,571 Reviews"
+        }
+      ]
+    },
+    {
+      "name": "Button",
+      "type": "button",
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "hide_desktop",
+          "label": "Hide on desktop",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "hide_mobile",
+          "label": "Hide on mobile",
+          "default": true
+        },
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "Button text",
+          "default": "Try Folqs Today"
+        },
+        {
+          "type": "url",
+          "id": "button_url",
+          "label": "Button URL"
+        },
+        {
+          "type": "checkbox",
+          "id": "is_show_reviews",
+          "label": "Show reviews",
+          "default": false
+        },
+        {
+          "type": "image_picker",
+          "id": "rating_image",
+          "label": "Rating image",
+          "visible_if": "{{ block.settings.is_show_reviews }}"
+        },
+        {
+          "type": "text",
+          "id": "rating_text",
+          "label": "Rating text",
+          "default": "over 25,254 Five Star Reviews",
+          "visible_if": "{{ block.settings.is_show_reviews }}"
+        },
+        {
+          "type": "text",
+          "id": "rating_text_mobile",
+          "label": "rating_text_mobile",
+          "default": "over 25,254 Reviews",
+          "visible_if": "{{ block.settings.is_show_reviews }}"
+        },
+        {
+          "type": "select",
+          "id": "text_weight",
+          "label": "Text Weight",
+          "default": "regular",
+          "options": [
+            {
+              "label": "Regular",
+              "value": "regular"
+            },
+            {
+              "label": "Bold",
+              "value": "bold"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "text_shadow",
+          "label": "Text shadow"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image with text list"
+    }
+  ]
+}
+{% endschema %}

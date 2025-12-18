@@ -1,0 +1,150 @@
+{% liquid
+  assign tag = block.settings.tag
+  assign title = block.settings.title
+  assign text_color = block.settings.color
+
+  assign padding_top = block.settings.padding_top
+  assign padding_bottom = block.settings.padding_bottom
+  assign padding_top_mobile = block.settings.padding_top_mobile
+  assign padding_bottom_mobile = block.settings.padding_bottom_mobile
+%}
+
+{% render 'block-paddings',
+  padding_top: padding_top,
+  padding_bottom: padding_bottom,
+  padding_top_mobile: padding_top_mobile,
+  padding_bottom_mobile: padding_bottom_mobile
+%}
+
+{% stylesheet %}
+  .title-block {
+    color: var(--text-color);
+    margin: 0;
+  }
+
+  .title-block > * {
+    margin: 0;
+  }
+
+  .title-block--left {
+    text-align: left;
+  }
+
+  .title-block--center {
+    text-align: center;
+  }
+
+  .title-block--right {
+    text-align: right;
+  }
+{% endstylesheet %}
+
+
+<{{ tag }} class="title-block title-block--{{ block.settings.alignment }} block-{{ section.id }}-{{ block.id }}--padding"
+          style="--text-color: {{ text_color }};"
+          {{ block.shopify_attributes }}>
+  {{- title -}}
+</{{ tag }}>
+
+{% schema %}
+{
+  "name": "Title",
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "select",
+      "id": "tag",
+      "label": "Tag",
+      "default": "h2",
+      "options": [
+        {
+          "value": "h1",
+          "label": "h1"
+        },
+        {
+          "value": "h2",
+          "label": "h2"
+        },
+        {
+          "value": "h3",
+          "label": "h3"
+        },
+        {
+          "value": "h4",
+          "label": "h4"
+        },
+        {
+          "value": "h5",
+          "label": "h5"
+        },
+        {
+          "value": "h6",
+          "label": "h6"
+        }
+      ]
+    },
+    {
+      "type": "text_alignment",
+      "id": "alignment",
+      "label": "Alignment"
+    },
+    {
+      "type": "color",
+      "id": "color",
+      "label": "Text color",
+      "default": "#fff"
+    },
+    {
+      "type": "header",
+      "content": "Block paddings"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding top mobile",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding bottom mobile",
+      "default": 16
+    }
+  ],
+  "presets": [
+    { "name": "Title" }
+  ]
+}
+{% endschema %}

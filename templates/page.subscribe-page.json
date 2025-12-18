@@ -1,0 +1,681 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "landing_hero_banner_v4_FQwgaA": {
+      "type": "landing-hero-banner-v4",
+      "blocks": {
+        "title_tXtKBh": {
+          "type": "title",
+          "settings": {
+            "title": "<p><strong>Subscribe</strong> & Save 48%</p>",
+            "secondary_text": "+5% back in store credit on every order",
+            "content_text": "Build a steady wellness habit—save on each order, and get rewarded for staying consistent.",
+            "block_order_mobile": 2,
+            "title_size": "large",
+            "custom_strong_style": true,
+            "title_strong_color": "#ff6a13"
+          }
+        },
+        "icons_with_text_MBfcF9": {
+          "type": "icons_with_text",
+          "settings": {
+            "icon_1": "shopify://shop_images/Group_1982248362_1_e3f2d118-e0c2-4007-815c-439b32db312a.svg",
+            "text_1": "Potent First-Day Milking",
+            "icon_mobile_1": "shopify://shop_images/Group_1982248362_1_1.svg",
+            "text_mobile_1": "Potent First-Day Milking",
+            "show_on_mobile_1": true,
+            "icon_2": "shopify://shop_images/Group_1982248361_1_246fbe6a-9d4d-4a51-afbd-36bce04ea0cc.svg",
+            "text_2": "Grass-Fed Source",
+            "icon_mobile_2": "shopify://shop_images/Group_1982248361_1_246fbe6a-9d4d-4a51-afbd-36bce04ea0cc.svg",
+            "text_mobile_2": "Grass-Fed Source",
+            "show_on_mobile_2": true,
+            "icon_3": "shopify://shop_images/tested_1_f503d819-7339-492b-90f6-0e714dcbbccf.svg",
+            "text_3": "Independent 3rd-Party Tested",
+            "icon_mobile_3": "shopify://shop_images/tested_1_1aa5c945-f878-4308-90c8-8347afad6279.svg",
+            "text_mobile_3": "Independent 3rd-Party Tested",
+            "show_on_mobile_3": true,
+            "icon_4": "shopify://shop_images/gmp_1_c47186cd-3fb7-443d-9976-60b8c904f626.svg",
+            "text_4": "GMP Certified",
+            "icon_mobile_4": "shopify://shop_images/gmp_1_1acd059c-a2e3-4783-9500-ffb63f959bd7.svg",
+            "text_mobile_4": "GMP Certified",
+            "show_on_mobile_4": true,
+            "icon_5": "shopify://shop_images/Group_1982248135_1_9426d077-5617-48f6-8b7b-c33af225c239.svg",
+            "text_5": "FDA Registered Facility",
+            "icon_mobile_5": "shopify://shop_images/Group_1982248135_1_be19ade6-5930-4d93-9b9b-8821f120269e.svg",
+            "text_mobile_5": "FDA Registered Facility",
+            "show_on_mobile_5": false,
+            "block_order_mobile": 3
+          }
+        },
+        "reviews_cta_r8Q3pi": {
+          "type": "reviews_cta",
+          "settings": {
+            "reviews_image": "shopify://shop_images/Frame_1982248617_1_878d938b-f9e4-4094-ae57-c3302cda23fa.png",
+            "reviews_stars": "shopify://shop_images/stars.svg",
+            "reviews_text": "Trusted by thousands in their daily routine",
+            "reviews_text_mobile": "Trusted by thousands in their daily routine",
+            "cta_text": "Subscribe & Save Now",
+            "cta_link": "#landing-product",
+            "cta_background": "#FF6A13",
+            "reviews_background": "",
+            "guarantee_icon": "shopify://shop_images/shield-check-svgrepo-com_1_1_1.svg",
+            "guarantee_text": "Pause, skip, or cancel anytime.",
+            "block_order_mobile": 4
+          }
+        }
+      },
+      "block_order": [
+        "title_tXtKBh",
+        "icons_with_text_MBfcF9",
+        "reviews_cta_r8Q3pi"
+      ],
+      "name": "Landing hero banner v4",
+      "settings": {
+        "bg_image": "shopify://shop_images/Hero_v0_1.svg",
+        "bg_image_mobile": "shopify://shop_images/Hero_v0_2.svg",
+        "banner_style": "default",
+        "image_desktop": "shopify://shop_images/Frame_1982248841_1.png",
+        "image_mobile": "shopify://shop_images/Frame_1982248739_1.png",
+        "image_position_desktop": "end",
+        "image_order_mobile": 1,
+        "background": "#FEEFE8",
+        "is_secondary_styles": false,
+        "additional_style_files": "",
+        "padding_top": 130,
+        "padding_bottom": 100,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 40
+      }
+    },
+    "grid_information_k89VrP": {
+      "type": "grid-information",
+      "blocks": {
+        "item_AjWnkr": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/icons8-_1.svg",
+            "text": "48% OFF Your First Subscription Order"
+          }
+        },
+        "item_PhwQG4": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/icons8-_1.svg",
+            "text": "20% OFF Every Order After"
+          }
+        },
+        "item_7ALAiJ": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/icons8-_1.svg",
+            "text": "5% Back in Store Credit*"
+          }
+        },
+        "item_3TK6QC": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/icons8-_1.svg",
+            "text": "Members-Only Gifts"
+          }
+        }
+      },
+      "block_order": [
+        "item_AjWnkr",
+        "item_PhwQG4",
+        "item_7ALAiJ",
+        "item_3TK6QC"
+      ],
+      "name": "Grid information",
+      "settings": {
+        "heading": "Why Subscribe?",
+        "subtitle": "<p><strong>*Credits:</strong> Get 5% back in store credit on each subscription order—credited to your account, not cash—and use it toward your next purchase.</p>",
+        "block_bg_color": "#edfcee",
+        "padding_top": 70,
+        "padding_bottom": 50,
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 70
+      }
+    },
+    "reward_section_yGR9QN": {
+      "type": "reward-section",
+      "blocks": {
+        "item_eqMMLn": {
+          "type": "item",
+          "settings": {
+            "title": "ORDER #3",
+            "subtitle": "",
+            "image": "shopify://shop_images/gift-alt-fill-svgrepo-com_1.svg",
+            "content": "Wellness \nGift",
+            "mobile_text_bottom": false
+          }
+        },
+        "item_Akiibt": {
+          "type": "item",
+          "settings": {
+            "title": "ORDER #6",
+            "subtitle": "",
+            "image": "shopify://shop_images/discount-svgrepo-com_1_1.svg",
+            "content": "Extra 5%\nDiscount",
+            "mobile_text_bottom": false
+          }
+        },
+        "item_Ptdpak": {
+          "type": "item",
+          "settings": {
+            "title": "Order #9 ",
+            "subtitle": "& every 3rd order after",
+            "image": "shopify://shop_images/discount-svgrepo-com_1_1.svg",
+            "content": "Special \nDiscount",
+            "mobile_text_bottom": true
+          }
+        }
+      },
+      "block_order": [
+        "item_eqMMLn",
+        "item_Akiibt",
+        "item_Ptdpak"
+      ],
+      "name": "Reward",
+      "settings": {
+        "pretitle": "Stay Consistent",
+        "title": "Unlock Members - Only Rewards",
+        "subtitle": "Stick to your plan to unlock gifts and bonus discounts over time.",
+        "bg_image_desktop": "shopify://shop_images/Frame.svg",
+        "bg_image_mobile": "shopify://shop_images/Frame_1.svg",
+        "desktop_svg": "<svg width=\"1202\" height=\"194\" viewbox=\"0 0 1202 194\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d=\"M0 97.5V98.5H3V97.5V96.5H0V97.5ZM9 97.5V98.5H15V97.5V96.5H9V97.5ZM21 97.5V98.5H27V97.5V96.5H21V97.5ZM33 97.5V98.5H39V97.5V96.5H33V97.5ZM45 97.5V98.5H51V97.5V96.5H45V97.5ZM57 97.5V98.5H63V97.5V96.5H57V97.5ZM69 97.5V98.5H75V97.5V96.5H69V97.5ZM81 97.5V98.5H87V97.5V96.5H81V97.5ZM93 97.5V98.5H99V97.5V96.5H93V97.5ZM105 97.5V98.5H111V97.5V96.5H105V97.5ZM117 97.5V98.5H123V97.5V96.5H117V97.5ZM129 97.5V98.5H135V97.5V96.5H129V97.5ZM141 97.5V98.5H147V97.5V96.5H141V97.5ZM153 97.5V98.5H159V97.5V96.5H153V97.5ZM165 97.5V98.5H171V97.5V96.5H165V97.5ZM177 97.5V98.5H183V97.5V96.5H177V97.5ZM189 97.5V98.5H195V97.5V96.5H189V97.5ZM201 97.5V98.5H207V97.5V96.5H201V97.5ZM213 97.5V98.5H219V97.5V96.5H213V97.5ZM225 97.5V98.5H231V97.5V96.5H225V97.5ZM237 97.5V98.5H243V97.5V96.5H237V97.5ZM249 97.5V98.5H255V97.5V96.5H249V97.5ZM261 97.5V98.5H267V97.5V96.5H261V97.5ZM273 97.5V98.5H279V97.5V96.5H273V97.5ZM285 97.5V98.5H291V97.5V96.5H285V97.5ZM297 97.5V98.5H303V97.5V96.5H297V97.5ZM309 97.5V98.5H315V97.5V96.5H309V97.5ZM321 97.5V98.5H327V97.5V96.5H321V97.5ZM333 97.5V98.5H339V97.5V96.5H333V97.5ZM345 97.5V98.5H351V97.5V96.5H345V97.5ZM357 97.5V98.5H363V97.5V96.5H357V97.5ZM369 97.5V98.5H375V97.5V96.5H369V97.5ZM381 97.5V98.5H387V97.5V96.5H381V97.5ZM393 97.5V98.5H399V97.5V96.5H393V97.5ZM405 97.5V98.5H411V97.5V96.5H405V97.5ZM417 97.5V98.5H423V97.5V96.5H417V97.5ZM429 97.5V98.5H435V97.5V96.5H429V97.5ZM441 97.5V98.5H447V97.5V96.5H441V97.5ZM453 97.5V98.5H459V97.5V96.5H453V97.5ZM465 97.5V98.5H471V97.5V96.5H465V97.5ZM477 97.5V98.5H483V97.5V96.5H477V97.5ZM489 97.5V98.5H495V97.5V96.5H489V97.5ZM501 97.5V98.5H507V97.5V96.5H501V97.5ZM513 97.5V98.5H519V97.5V96.5H513V97.5ZM525 97.5V98.5H531V97.5V96.5H525V97.5ZM537 97.5V98.5H543V97.5V96.5H537V97.5ZM549 97.5V98.5H555V97.5V96.5H549V97.5ZM561 97.5V98.5H567V97.5V96.5H561V97.5ZM573 97.5V98.5H579V97.5V96.5H573V97.5ZM585 97.5V98.5H591V97.5V96.5H585V97.5ZM597 97.5V98.5H603V97.5V96.5H597V97.5ZM609 97.5V98.5H615V97.5V96.5H609V97.5ZM621 97.5V98.5H627V97.5V96.5H621V97.5ZM633 97.5V98.5H639V97.5V96.5H633V97.5ZM645 97.5V98.5H651V97.5V96.5H645V97.5ZM657 97.5V98.5H663V97.5V96.5H657V97.5ZM669 97.5V98.5H675V97.5V96.5H669V97.5ZM681 97.5V98.5H687V97.5V96.5H681V97.5ZM693 97.5V98.5H699V97.5V96.5H693V97.5ZM705 97.5V98.5H711V97.5V96.5H705V97.5ZM717 97.5V98.5H723V97.5V96.5H717V97.5ZM729 97.5V98.5H735V97.5V96.5H729V97.5ZM741 97.5V98.5H747V97.5V96.5H741V97.5ZM753 97.5V98.5H759V97.5V96.5H753V97.5ZM765 97.5V98.5H771V97.5V96.5H765V97.5ZM777 97.5V98.5H783V97.5V96.5H777V97.5ZM789 97.5V98.5H795V97.5V96.5H789V97.5ZM801 97.5V98.5H807V97.5V96.5H801V97.5ZM813 97.5V98.5H819V97.5V96.5H813V97.5ZM825 97.5V98.5H831V97.5V96.5H825V97.5ZM837 97.5V98.5H843V97.5V96.5H837V97.5ZM849 97.5V98.5H855V97.5V96.5H849V97.5ZM861 97.5V98.5H867V97.5V96.5H861V97.5ZM873 97.5V98.5H879V97.5V96.5H873V97.5ZM885 97.5V98.5H891V97.5V96.5H885V97.5ZM897 97.5V98.5H903V97.5V96.5H897V97.5ZM909 97.5V98.5H915V97.5V96.5H909V97.5ZM921 97.5V98.5H927V97.5V96.5H921V97.5ZM933 97.5V98.5H939V97.5V96.5H933V97.5ZM945 97.5V98.5H951V97.5V96.5H945V97.5ZM957 97.5V98.5H963V97.5V96.5H957V97.5ZM969 97.5V98.5H975V97.5V96.5H969V97.5ZM981 97.5V98.5H987V97.5V96.5H981V97.5ZM993 97.5V98.5H999V97.5V96.5H993V97.5ZM1005 97.5V98.5H1011V97.5V96.5H1005V97.5ZM1017 97.5V98.5H1023V97.5V96.5H1017V97.5ZM1029 97.5V98.5H1035V97.5V96.5H1029V97.5ZM1041 97.5V98.5H1047V97.5V96.5H1041V97.5ZM1053 97.5V98.5H1059V97.5V96.5H1053V97.5ZM1065 97.5V98.5H1071V97.5V96.5H1065V97.5ZM1077 97.5V98.5H1083V97.5V96.5H1077V97.5ZM1089 97.5V98.5H1095V97.5V96.5H1089V97.5ZM1101 97.5V98.5H1107V97.5V96.5H1101V97.5ZM1113 97.5V98.5H1119V97.5V96.5H1113V97.5ZM1125 97.5V98.5H1131V97.5V96.5H1125V97.5ZM1137 97.5V98.5H1143V97.5V96.5H1137V97.5ZM1149 97.5V98.5H1155V97.5V96.5H1149V97.5ZM1161 97.5V98.5H1167V97.5V96.5H1161V97.5ZM1173 97.5V98.5H1179V97.5V96.5H1173V97.5ZM1185 97.5V98.5H1191V97.5V96.5H1185V97.5ZM1197 97.5V98.5H1200V97.5V96.5H1197V97.5Z\" fill=\"#005EB8\"></path>\n<rect x=\"1190.41\" y=\"87\" width=\"15.245\" height=\"2\" transform=\"rotate(45 1190.41 87)\" fill=\"#005EB8\"></rect>\n<rect width=\"15.0385\" height=\"2\" transform=\"matrix(0.707107 -0.707107 -0.707107 -0.707107 1190.56 108.15)\" fill=\"#005EB8\"></rect>\n</svg>",
+        "mobile_svg": "<svg width=\"338\" height=\"187\" viewbox=\"0 0 338 187\" fill=\"none\" xmlns=\"http://www.w3.org/2000/svg\">\n<path d=\"M292.5 1V0H289.464V1V2H292.5V1ZM283.391 1V0H277.318V1V2H283.391V1ZM271.245 1V0H265.172V1V2H271.245V1ZM259.099 1V0H253.026V1V2H259.099V1ZM246.953 1V0H240.88V1V2H246.953V1ZM234.807 1V0H228.734V1V2H234.807V1ZM222.661 1V0H216.589V1V2H222.661V1ZM210.516 1V0H204.443V1V2H210.516V1ZM198.37 1V0H192.297V1V2H198.37V1ZM186.224 1V0H180.151V1V2H186.224V1ZM174.078 1V0H168.005V1V2H174.078V1ZM161.932 1V0H155.859V1V2H161.932V1ZM149.786 1V0H143.714V1V2H149.786V1ZM137.641 1V0H131.568V1V2H137.641V1ZM125.495 1V0H119.422V1V2H125.495V1ZM113.349 1V0H107.276V1V2H113.349V1ZM101.203 1V0H95.1302V1V2H101.203V1ZM89.0573 1V0H82.9843V1V2H89.0573V1ZM76.9114 1V0H70.8385V1V2H76.9114V1ZM64.7656 1V0H58.6926V1V2H64.7656V1ZM52.6197 1V0H46.5468V1V2H52.6197V1ZM40.4739 1V0H34.401V1V2H40.4739V1ZM28.3281 1V0H22.2552V1V2H28.3281V1ZM16.1823 1V0H10.1093V1V2H16.1823V1ZM4.03643 1V0H1V1V2H4.03643V1Z\" fill=\"#005EB8\"></path>\n<path d=\"M337 41.125V44.5H335V41.125H337ZM335 31C335 30.5103 334.987 30.0236 334.963 29.54C334.958 29.4409 334.95 29.342 334.944 29.2432C334.936 29.0977 334.928 28.9525 334.917 28.8076C334.91 28.7081 334.9 28.609 334.892 28.5098C334.882 28.3915 334.874 28.2731 334.862 28.1553L335.857 28.0586L336.851 27.9619C336.864 28.0967 336.875 28.2319 336.887 28.3672C336.96 29.2354 337 30.1133 337 31V34.375H335V31ZM333.439 16.5654C334.33 18.2555 335.07 20.0377 335.64 21.8945C335.65 21.9293 335.66 21.9642 335.671 21.999L334.716 22.2881L333.759 22.5781C333.746 22.5365 333.732 22.4956 333.719 22.4541C333.689 22.3564 333.657 22.2593 333.626 22.1621C333.585 22.0349 333.545 21.9077 333.503 21.7812C333.474 21.6947 333.444 21.6086 333.414 21.5225C333.36 21.367 333.306 21.2119 333.25 21.0576C333.233 21.0122 333.216 20.9672 333.199 20.9219C333.136 20.7526 333.073 20.5838 333.007 20.416C332.98 20.3477 332.952 20.2799 332.925 20.2119C332.866 20.0656 332.807 19.9196 332.746 19.7744C332.711 19.6901 332.674 19.6064 332.638 19.5225C332.583 19.3968 332.53 19.2712 332.474 19.1465C332.427 19.0421 332.378 18.9387 332.33 18.835C332.279 18.7248 332.229 18.6143 332.177 18.5049C332.127 18.4004 332.075 18.2971 332.023 18.1934C331.971 18.0864 331.918 17.9793 331.864 17.873C331.806 17.7588 331.746 17.6456 331.687 17.5322C331.651 17.4644 331.617 17.3956 331.581 17.3281L332.463 16.8555L333.343 16.3838C333.375 16.4442 333.407 16.5047 333.439 16.5654ZM325.666 7.03613C325.941 7.26209 326.212 7.49437 326.479 7.72949C327.458 8.59216 328.382 9.51565 329.246 10.4941C329.489 10.7698 329.729 11.0487 329.963 11.333L329.191 11.9678L328.419 12.6025C328.263 12.4126 328.104 12.2249 327.943 12.0391C327.864 11.9477 327.783 11.858 327.703 11.7676C326.929 10.8951 326.104 10.0696 325.231 9.2959C325.141 9.21573 325.051 9.13471 324.96 9.05566C324.774 8.89524 324.587 8.73681 324.397 8.58105L325.032 7.80859L325.666 7.03613ZM315.089 1.35449C316.926 1.91699 318.689 2.64661 320.363 3.52344C320.447 3.56751 320.532 3.61143 320.615 3.65625L320.145 4.53711L319.672 5.41895C319.592 5.37634 319.512 5.33583 319.432 5.29395C319.33 5.24068 319.228 5.18686 319.126 5.13477C319.02 5.08074 318.913 5.02833 318.806 4.97559C318.702 4.92443 318.599 4.87221 318.494 4.82227C318.385 4.76995 318.274 4.71992 318.164 4.66895C318.06 4.62095 317.957 4.57219 317.853 4.52539C317.728 4.46947 317.602 4.41553 317.477 4.36133C317.393 4.32513 317.309 4.28836 317.225 4.25293C317.079 4.19195 316.933 4.1329 316.787 4.07422C316.719 4.04694 316.651 4.01897 316.583 3.99219C316.415 3.92638 316.246 3.86256 316.077 3.7998C316.027 3.78134 315.978 3.76234 315.928 3.74414C315.778 3.68959 315.627 3.6371 315.477 3.58496C315.389 3.55461 315.301 3.52367 315.213 3.49414C315.088 3.45237 314.962 3.41316 314.837 3.37305C314.74 3.34197 314.643 3.31035 314.545 3.28027C314.504 3.26761 314.463 3.25369 314.422 3.24121L314.712 2.28418L315 1.32812C315.03 1.33708 315.059 1.34545 315.089 1.35449ZM306 0L306.767 0.00976562C307.393 0.0249807 308.015 0.0613856 308.632 0.113281C308.767 0.12466 308.902 0.136302 309.037 0.149414L308.941 1.14258L308.845 2.1377C308.727 2.12619 308.608 2.1175 308.489 2.10742C308.39 2.09899 308.291 2.08946 308.191 2.08203C308.047 2.07121 307.901 2.06337 307.756 2.05469C307.657 2.04878 307.558 2.04104 307.459 2.03613C307.265 2.0265 307.07 2.01945 306.874 2.01367C306.83 2.01236 306.786 2.0099 306.741 2.00879C306.495 2.00261 306.248 2 306 2H302.625V0H306ZM295.875 0V2H292.5V0H295.875Z\" fill=\"#005EB8\"></path>\n<path d=\"M44.5 88V89H47.4524V88V87H44.5V88ZM53.3571 88V89H59.2619V88V87H53.3571V88ZM65.1667 88V89H71.0714V88V87H65.1667V88ZM76.9762 88V89H82.881V88V87H76.9762V88ZM88.7857 88V89H94.6905V88V87H88.7857V88ZM100.595 88V89H106.5V88V87H100.595V88ZM112.405 88V89H118.31V88V87H112.405V88ZM124.214 88V89H130.119V88V87H124.214V88ZM136.024 88V89H141.929V88V87H136.024V88ZM147.833 88V89H153.738V88V87H147.833V88ZM159.643 88V89H165.548V88V87H159.643V88ZM171.452 88V89H177.357V88V87H171.452V88ZM183.262 88V89H189.167V88V87H183.262V88ZM195.071 88V89H200.976V88V87H195.071V88ZM206.881 88V89H212.786V88V87H206.881V88ZM218.69 88V89H224.595V88V87H218.69V88ZM230.5 88V89H236.405V88V87H230.5V88ZM242.309 88V89H248.214V88V87H242.309V88ZM254.119 88V89H260.024V88V87H254.119V88ZM265.928 88V89H271.833V88V87H265.928V88ZM277.738 88V89H283.643V88V87H277.738V88ZM289.547 88V89H292.5V88V87H289.547V88Z\" fill=\"#005EB8\"></path>\n<path d=\"M295.875 89L292.5 89L292.5 87L295.875 87L295.875 89ZM306 87C306.49 87 306.976 86.9869 307.46 86.9629C307.559 86.958 307.658 86.9502 307.757 86.9443C307.902 86.9356 308.048 86.9278 308.192 86.917C308.292 86.9096 308.391 86.9 308.49 86.8916C308.609 86.8815 308.727 86.8738 308.845 86.8623L308.941 87.8574L309.038 88.8506C308.903 88.8637 308.768 88.8753 308.633 88.8867C307.765 88.9598 306.887 89 306 89L302.625 89L302.625 87L306 87ZM320.435 85.4395C318.745 86.3303 316.962 87.0699 315.105 87.6396C315.071 87.6503 315.036 87.6604 315.001 87.6709L314.712 86.7158L314.422 85.7588C314.463 85.7462 314.504 85.7315 314.546 85.7187C314.644 85.6887 314.741 85.6571 314.838 85.626C314.965 85.5853 315.092 85.5453 315.219 85.5029C315.305 85.4739 315.391 85.4438 315.478 85.4141C315.633 85.3603 315.788 85.3063 315.942 85.25C315.988 85.2334 316.033 85.216 316.078 85.1992C316.247 85.1365 316.416 85.0727 316.584 85.0068C316.652 84.9801 316.72 84.9521 316.788 84.9248C316.934 84.8661 317.08 84.8071 317.226 84.7461C317.31 84.7107 317.394 84.6739 317.478 84.6377C317.603 84.5835 317.729 84.5296 317.854 84.4736C317.958 84.4268 318.061 84.3781 318.165 84.3301C318.275 84.2791 318.386 84.2291 318.495 84.1768C318.6 84.1268 318.703 84.0746 318.807 84.0234C318.914 83.9707 319.021 83.9183 319.127 83.8643C319.241 83.8061 319.354 83.7461 319.468 83.6865C319.536 83.6509 319.604 83.6172 319.672 83.5811L320.145 84.4629L320.616 85.3428C320.556 85.3752 320.495 85.4075 320.435 85.4395ZM329.964 77.666C329.738 77.941 329.506 78.2115 329.271 78.4785C328.408 79.458 327.484 80.3823 326.506 81.2461C326.23 81.4895 325.951 81.7293 325.667 81.9629L325.032 81.1914L324.397 80.4189C324.587 80.2629 324.775 80.1041 324.961 79.9434C325.052 79.8643 325.142 79.7833 325.232 79.7031C326.105 78.9294 326.93 78.104 327.704 77.2314C327.784 77.141 327.865 77.0514 327.944 76.96C328.105 76.7745 328.263 76.587 328.419 76.3975L329.191 77.0322L329.964 77.666ZM335.646 67.0889C335.083 68.9258 334.353 70.6893 333.477 72.3633C333.432 72.4474 333.389 72.5316 333.344 72.6152L332.463 72.1445L331.581 71.6719C331.624 71.5923 331.664 71.5116 331.706 71.4316C331.759 71.3299 331.813 71.2284 331.865 71.126C331.919 71.0197 331.972 70.9127 332.024 70.8057C332.076 70.7019 332.128 70.5986 332.178 70.4941C332.23 70.3847 332.28 70.2742 332.331 70.1641C332.379 70.0603 332.428 69.9569 332.475 69.8525C332.531 69.7278 332.584 69.6022 332.639 69.4766C332.675 69.3926 332.712 69.3089 332.747 69.2246C332.808 69.0795 332.867 68.9334 332.926 68.7871C332.953 68.7191 332.981 68.6513 333.008 68.583C333.074 68.4152 333.137 68.2465 333.2 68.0771C333.219 68.0273 333.238 67.9777 333.256 67.9277C333.31 67.778 333.363 67.6274 333.415 67.4766C333.445 67.3887 333.476 67.3011 333.506 67.2129C333.548 67.0881 333.587 66.9624 333.627 66.8369C333.658 66.7397 333.69 66.6426 333.72 66.5449C333.732 66.5038 333.746 66.4631 333.759 66.4219L334.716 66.7119L335.672 67C335.663 67.0296 335.655 67.0593 335.646 67.0889ZM337 58L336.99 58.7666C336.975 59.3931 336.939 60.0149 336.887 60.6318C336.875 60.7672 336.864 60.9023 336.851 61.0371L335.857 60.9414L334.862 60.8447C334.874 60.7265 334.882 60.6079 334.893 60.4893C334.901 60.3901 334.911 60.2909 334.918 60.1914C334.929 60.0466 334.937 59.9013 334.945 59.7559C334.951 59.657 334.959 59.5581 334.964 59.459C334.973 59.2645 334.981 59.0695 334.986 58.874C334.988 58.8298 334.99 58.7855 334.991 58.7412C334.997 58.4949 335 58.2478 335 58L335 54.625L337 54.625L337 58ZM337 47.875L335 47.875L335 44.5L337 44.5L337 47.875Z\" fill=\"#005EB8\"></path>\n<path d=\"M41.125 87L44.5 87L44.5 89L41.125 89L41.125 87ZM31 89C30.5103 89 30.0236 89.0131 29.54 89.0371C29.4409 89.042 29.342 89.0498 29.2432 89.0557C29.0977 89.0643 28.9525 89.0722 28.8076 89.083C28.7081 89.0904 28.609 89.1 28.5098 89.1084C28.3915 89.1185 28.2731 89.1262 28.1553 89.1377L28.0586 88.1426L27.9619 87.1494C28.0967 87.1363 28.2319 87.1247 28.3672 87.1133C29.2354 87.0402 30.1133 87 31 87L34.375 87L34.375 89L31 89ZM16.5654 90.5605C18.2555 89.6697 20.0377 88.9301 21.8945 88.3604C21.9293 88.3497 21.9642 88.3396 21.999 88.3291L22.2881 89.2842L22.5781 90.2412C22.5365 90.2538 22.4956 90.2685 22.4541 90.2812C22.3564 90.3113 22.2593 90.3429 22.1621 90.374C22.0349 90.4147 21.9077 90.4547 21.7812 90.4971C21.6947 90.5261 21.6086 90.5562 21.5225 90.5859C21.367 90.6397 21.2119 90.6937 21.0576 90.75C21.0122 90.7666 20.9672 90.784 20.9219 90.8008C20.7526 90.8635 20.5838 90.9273 20.416 90.9932C20.3477 91.0199 20.2799 91.0479 20.2119 91.0752C20.0656 91.1339 19.9196 91.1929 19.7744 91.2539C19.6901 91.2893 19.6064 91.3261 19.5225 91.3623C19.3968 91.4165 19.2712 91.4704 19.1465 91.5264C19.0421 91.5732 18.9387 91.6219 18.835 91.6699C18.7248 91.7209 18.6143 91.7709 18.5049 91.8232C18.4004 91.8732 18.2971 91.9254 18.1934 91.9766C18.0864 92.0293 17.9793 92.0817 17.873 92.1357C17.7588 92.1939 17.6456 92.2539 17.5322 92.3135C17.4644 92.3491 17.3956 92.3828 17.3281 92.4189L16.8555 91.5371L16.3838 90.6572C16.4442 90.6248 16.5047 90.5925 16.5654 90.5605ZM7.03613 98.334C7.26209 98.059 7.49437 97.7885 7.72949 97.5215C8.59216 96.542 9.51565 95.6177 10.4941 94.7539C10.7698 94.5105 11.0487 94.2707 11.333 94.0371L11.9678 94.8086L12.6025 95.5811C12.4126 95.7371 12.2249 95.8959 12.0391 96.0566C11.9477 96.1357 11.858 96.2167 11.7676 96.2969C10.8951 97.0706 10.0696 97.896 9.2959 98.7686C9.21573 98.859 9.13471 98.9486 9.05566 99.04C8.89524 99.2255 8.73681 99.413 8.58105 99.6025L7.80859 98.9678L7.03613 98.334ZM1.35449 108.911C1.91699 107.074 2.64661 105.311 3.52344 103.637C3.5675 103.553 3.61143 103.468 3.65625 103.385L4.53711 103.855L5.41894 104.328C5.37633 104.408 5.33583 104.488 5.29394 104.568C5.24068 104.67 5.18686 104.772 5.13476 104.874C5.08074 104.98 5.02833 105.087 4.97558 105.194C4.92443 105.298 4.87221 105.401 4.82226 105.506C4.76995 105.615 4.71992 105.726 4.66894 105.836C4.62095 105.94 4.57219 106.043 4.52539 106.147C4.46947 106.272 4.41553 106.398 4.36133 106.523C4.32512 106.607 4.28836 106.691 4.25293 106.775C4.19194 106.921 4.13289 107.067 4.07422 107.213C4.04694 107.281 4.01897 107.349 3.99219 107.417C3.92638 107.585 3.86256 107.754 3.7998 107.923C3.78134 107.973 3.76234 108.022 3.74414 108.072C3.68959 108.222 3.6371 108.373 3.58496 108.523C3.55461 108.611 3.52367 108.699 3.49414 108.787C3.45237 108.912 3.41316 109.038 3.37305 109.163C3.34197 109.26 3.31034 109.357 3.28027 109.455C3.26761 109.496 3.25369 109.537 3.24121 109.578L2.28418 109.288L1.32812 109C1.33708 108.97 1.34545 108.941 1.35449 108.911ZM-5.90104e-07 118L0.009765 117.233C0.0249801 116.607 0.061385 115.985 0.113281 115.368C0.124659 115.233 0.136302 115.098 0.149413 114.963L1.14258 115.059L2.13769 115.155C2.12619 115.273 2.1175 115.392 2.10742 115.511C2.09899 115.61 2.08946 115.709 2.08203 115.809C2.07121 115.953 2.06337 116.099 2.05469 116.244C2.04878 116.343 2.04104 116.442 2.03613 116.541C2.0265 116.735 2.01945 116.93 2.01367 117.126C2.01236 117.17 2.0099 117.214 2.00879 117.259C2.00261 117.505 2 117.752 2 118L2 121.375L-4.42578e-07 121.375L-5.90104e-07 118ZM-1.47526e-07 128.125L2 128.125L2 131.5L0 131.5L-1.47526e-07 128.125Z\" fill=\"#005EB8\"></path>\n<path d=\"M-3.50784e-06 134.875L-3.80289e-06 131.5L2 131.5L2 134.875L-3.50784e-06 134.875ZM2 145C2 145.49 2.01314 145.976 2.03711 146.46C2.04202 146.559 2.04975 146.658 2.05566 146.757C2.06435 146.902 2.07218 147.048 2.08301 147.192C2.09044 147.292 2.09996 147.391 2.1084 147.49C2.11845 147.609 2.12622 147.727 2.13769 147.845L1.14258 147.941L0.149412 148.038C0.136297 147.903 0.124662 147.768 0.113279 147.633C0.0402235 146.765 -2.54517e-06 145.887 -2.62268e-06 145L-2.91774e-06 141.625L2 141.625L2 145ZM3.56055 159.435C2.66971 157.745 1.93013 155.962 1.36035 154.105C1.34969 154.071 1.33964 154.036 1.3291 154.001L2.28418 153.712L3.24121 153.422C3.25381 153.463 3.26847 153.504 3.28125 153.546C3.31132 153.644 3.34294 153.741 3.37402 153.838C3.41467 153.965 3.45471 154.092 3.49707 154.219C3.52606 154.305 3.55615 154.391 3.58594 154.478C3.63967 154.633 3.69371 154.788 3.75 154.942C3.76657 154.988 3.78399 155.033 3.80078 155.078C3.86354 155.247 3.92734 155.416 3.99316 155.584C4.01995 155.652 4.04791 155.72 4.07519 155.788C4.13388 155.934 4.19292 156.08 4.2539 156.226C4.28934 156.31 4.3261 156.394 4.3623 156.478C4.41651 156.603 4.47044 156.729 4.52637 156.854C4.57317 156.958 4.62192 157.061 4.66992 157.165C4.7209 157.275 4.77092 157.386 4.82324 157.495C4.87319 157.6 4.9254 157.703 4.97656 157.807C5.02931 157.914 5.08171 158.021 5.13574 158.127C5.19385 158.241 5.2539 158.354 5.31348 158.468C5.3491 158.536 5.3828 158.604 5.41894 158.672L4.53711 159.145L3.65723 159.616C3.62484 159.556 3.59254 159.495 3.56055 159.435ZM11.334 168.964C11.059 168.738 10.7885 168.506 10.5215 168.271C9.54196 167.408 8.61771 166.484 7.75391 165.506C7.51053 165.23 7.27069 164.951 7.03711 164.667L7.80859 164.032L8.58105 163.397C8.7371 163.587 8.89591 163.775 9.05664 163.961C9.13569 164.052 9.2167 164.142 9.29687 164.232C10.0706 165.105 10.896 165.93 11.7686 166.704C11.859 166.784 11.9486 166.865 12.04 166.944C12.2255 167.105 12.413 167.263 12.6025 167.419L11.9678 168.191L11.334 168.964ZM21.9111 174.646C20.0742 174.083 18.3107 173.353 16.6367 172.477C16.5526 172.432 16.4684 172.389 16.3848 172.344L16.8555 171.463L17.3281 170.581C17.4077 170.624 17.4884 170.664 17.5684 170.706C17.6701 170.759 17.7716 170.813 17.874 170.865C17.9803 170.919 18.0873 170.972 18.1943 171.024C18.2981 171.076 18.4014 171.128 18.5059 171.178C18.6153 171.23 18.7258 171.28 18.8359 171.331C18.9397 171.379 19.0431 171.428 19.1475 171.475C19.2722 171.531 19.3978 171.584 19.5234 171.639C19.6074 171.675 19.6911 171.712 19.7754 171.747C19.9205 171.808 20.0666 171.867 20.2129 171.926C20.2809 171.953 20.3487 171.981 20.417 172.008C20.5848 172.074 20.7535 172.137 20.9229 172.2C20.9727 172.219 21.0223 172.238 21.0723 172.256C21.222 172.31 21.3726 172.363 21.5234 172.415C21.6113 172.445 21.6989 172.476 21.7871 172.506C21.9119 172.548 22.0376 172.587 22.1631 172.627C22.2603 172.658 22.3574 172.69 22.4551 172.72C22.4962 172.732 22.5369 172.746 22.5781 172.759L22.2881 173.716L22 174.672C21.9704 174.663 21.9407 174.655 21.9111 174.646ZM31 176L30.2334 175.99C29.6069 175.975 28.9851 175.939 28.3682 175.887C28.2328 175.875 28.0977 175.864 27.9629 175.851L28.0586 174.857L28.1553 173.862C28.2735 173.874 28.3921 173.882 28.5107 173.893C28.6099 173.901 28.7091 173.911 28.8086 173.918C28.9534 173.929 29.0987 173.937 29.2441 173.945C29.343 173.951 29.4419 173.959 29.541 173.964C29.7355 173.973 29.9305 173.981 30.126 173.986C30.1702 173.988 30.2145 173.99 30.2588 173.991C30.5051 173.997 30.7522 174 31 174L34.375 174L34.375 176L31 176ZM41.125 176L41.125 174L44.5 174L44.5 176L41.125 176Z\" fill=\"#005EB8\"></path>\n<path d=\"M44.5 175V176H47.5365V175V174H44.5V175ZM53.6094 175V176H59.6823V175V174H53.6094V175ZM65.7552 175V176H71.8281V175V174H65.7552V175ZM77.901 175V176H83.974V175V174H77.901V175ZM90.0469 175V176H96.1198V175V174H90.0469V175ZM102.193 175V176H108.266V175V174H102.193V175ZM114.339 175V176H120.411V175V174H114.339V175ZM126.484 175V176H132.557V175V174H126.484V175ZM138.63 175V176H144.703V175V174H138.63V175ZM150.776 175V176H156.849V175V174H150.776V175ZM162.922 175V176H168.995V175V174H162.922V175ZM175.068 175V176H181.141V175V174H175.068V175ZM187.214 175V176H193.286V175V174H187.214V175ZM199.359 175V176H205.432V175V174H199.359V175ZM211.505 175V176H217.578V175V174H211.505V175ZM223.651 175V176H229.724V175V174H223.651V175ZM235.797 175V176H241.87V175V174H235.797V175ZM247.943 175V176H254.016V175V174H247.943V175ZM260.089 175V176H266.162V175V174H260.089V175ZM272.234 175V176H278.307V175V174H272.234V175ZM284.38 175V176H290.453V175V174H284.38V175ZM296.526 175V176H302.599V175V174H296.526V175ZM308.672 175V176H314.745V175V174H308.672V175ZM320.818 175V176H326.891V175V174H320.818V175ZM332.964 175V176H336V175V174H332.964V175Z\" fill=\"#005EB8\"></path>\n<rect x=\"326.414\" y=\"165.5\" width=\"15.245\" height=\"2\" transform=\"rotate(45 326.414 165.5)\" fill=\"#005EB8\"></rect>\n<rect width=\"15.0385\" height=\"2\" transform=\"matrix(0.707107 -0.707107 -0.707107 -0.707107 326.56 186.65)\" fill=\"#005EB8\"></rect>\n</svg>",
+        "padding_top": 50,
+        "padding_bottom": 100,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 70
+      }
+    },
+    "landing_product_alternative_ntjzLG": {
+      "type": "landing-product-alternative",
+      "blocks": {
+        "image_CcxpUP": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Welcome_Kit_5_b385d3f1-8ade-4f5e-9b10-5c81c74ba226.png"
+          }
+        },
+        "image_bwi8C3": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Beyond_Ordinary.jpg"
+          }
+        },
+        "image_jRW3WQ": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Frame_1982248583.png"
+          }
+        },
+        "image_kYDGem": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/2_de69781a-7174-4619-b945-6410d87fbc47.png"
+          }
+        },
+        "image_hXDHhw": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Frame_1982248599.png"
+          }
+        },
+        "title_7mwHjM": {
+          "type": "title",
+          "settings": {
+            "text": "<p><strong>An Ancient Superfood</strong></p><p>for Modern Lifestyle</p>",
+            "highlighted_color": "#000000",
+            "text_mobile": ""
+          }
+        },
+        "reviews_KFJ8Gm": {
+          "type": "reviews",
+          "settings": {
+            "show_desktop_position": true,
+            "stars_type": "orange_small",
+            "text": "1,571",
+            "url": ""
+          }
+        },
+        "feature_NAR8T7": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/heart_1_15f1886a-35df-467f-a1c3-89fa3377c24c.svg",
+            "title": "Helps \nImmunity",
+            "title_mobile": "",
+            "text": "",
+            "hide_on_mobile": false
+          }
+        },
+        "feature_QdXP6h": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/stomach_1_deb1ab60-f70e-4c3f-b382-87fb8cb0e410.svg",
+            "title": "Supports\nGut Health",
+            "title_mobile": "",
+            "text": "",
+            "hide_on_mobile": false
+          }
+        },
+        "feature_aGft8w": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/protection_1_a8300882-f943-4bed-bce2-d61187d7d78d.svg",
+            "title": "Nurtures \nSkin and Hair",
+            "title_mobile": "For Skin \nand Hair",
+            "text": "",
+            "hide_on_mobile": false
+          }
+        },
+        "price_qEVmqn": {
+          "type": "price",
+          "settings": {
+            "widget_style": "alternative",
+            "extra_styles": true,
+            "most_popular": true,
+            "most_popular_background": "#ffcfb5",
+            "most_popular_text": "#db5100",
+            "text": "$1,20 per serving [dot] 10 month supply",
+            "separator": true,
+            "remove_padding": true,
+            "name_plan_display": "Subscribe & Save",
+            "plan_sale_description": "",
+            "use_custom_percentage": true,
+            "custom_percentage": 48,
+            "name_plan": "Subscribe & Save",
+            "information": "48% Off Your First Order\n20% Off Every Order After ($63.99)\n90-Day Money-Back Guarantee\nPause, Skip, Cancel at Any Time",
+            "custom_widget_price": true,
+            "widget_regular_price": "$51.99",
+            "widget_compare_price": "$99.98",
+            "widget_you_save_price": "$47.99",
+            "icon_style": "default",
+            "show_popup": false,
+            "information_popup": "Save 35% on Your First Order\nGet 20% Off Every Order After\nFree Shipping\nPause, Skip, Cancel at Any Time\n90-Day Money-Back Guarantee",
+            "popup_background": "#feefe8",
+            "popup_text_color": "#101825",
+            "popup_icon_color": "#ff6a13",
+            "gift_info": true,
+            "icon": "shopify://shop_images/gift-svgrepo-com_1_1.svg",
+            "shipping_icon": "shopify://shop_images/Frame_1982248779.png",
+            "info_title": "FREE Frother",
+            "product_price": "2099",
+            "product_image": "shopify://shop_images/Frame_1982248778_2.png",
+            "gift_item_background": "#fdf6f2",
+            "gift_text_color": "#101828",
+            "gift_price_color": "#8c95a2",
+            "enable_one_purchase": true,
+            "enable_one_purchase_css": true,
+            "enable_one_purchase_border": "#ceccdd",
+            "enable_one_purchase_text": "#585d69",
+            "heading": "One-time Purchase",
+            "use_quantity_box": false,
+            "add_quantity_styles": false,
+            "background_color": "#fff",
+            "primary_color": "#ff6a13",
+            "badge_color": "#ffffff",
+            "badge_background": "#eb2913",
+            "shadow": false
+          }
+        },
+        "buy_buttons_nPMx8R": {
+          "type": "buy_buttons",
+          "settings": {
+            "gift_product": "gift-frother",
+            "background_color": "#FF6A13",
+            "color": "#ffffff",
+            "bottom_text": "",
+            "benefits_text1": "Ships in 30 days",
+            "benefits_text2": "Free US Shipping",
+            "benefits_text3": "Cancel Anytime",
+            "quantity_picker": true,
+            "selector_units": "pack"
+          }
+        },
+        "payment_icons_Q4wmDd": {
+          "type": "payment_icons",
+          "settings": {
+            "image_1": "shopify://shop_images/01_2.svg",
+            "image_2": "shopify://shop_images/01_2446f476-2747-40f5-8598-ea10963e79c8.svg",
+            "image_3": "shopify://shop_images/01_8.svg",
+            "image_4": "shopify://shop_images/01.svg",
+            "image_5": "shopify://shop_images/01_6.svg",
+            "image_6": "shopify://shop_images/01_6_3510059f-5f9a-4836-8d88-fc8f05e603cd.svg",
+            "image_7": "shopify://shop_images/01_4.svg",
+            "image_8": "shopify://shop_images/01_7.svg"
+          }
+        },
+        "guarantee_q6TCRy": {
+          "type": "guarantee",
+          "settings": {
+            "icon": "shopify://shop_images/shield-check-svgrepo-com_1_1.svg",
+            "title": "90-Day Money-Back Guarantee",
+            "text": "That’s how confident we are in our product. If you’re not completely satisfied within 90 days, you’re fully covered by our 100% money-back guarantee."
+          }
+        },
+        "review_with_usp_TByhxb": {
+          "type": "review_with_usp",
+          "settings": {
+            "title": "Join 10,000+ Satisfied Customers",
+            "image": "shopify://shop_images/Frame_1982248617_1.png",
+            "stars_url": "",
+            "extra_styles": true,
+            "style": "default"
+          }
+        }
+      },
+      "block_order": [
+        "image_CcxpUP",
+        "image_bwi8C3",
+        "image_jRW3WQ",
+        "image_kYDGem",
+        "image_hXDHhw",
+        "title_7mwHjM",
+        "reviews_KFJ8Gm",
+        "feature_NAR8T7",
+        "feature_QdXP6h",
+        "feature_aGft8w",
+        "price_qEVmqn",
+        "buy_buttons_nPMx8R",
+        "payment_icons_Q4wmDd",
+        "guarantee_q6TCRy",
+        "review_with_usp_TByhxb"
+      ],
+      "custom_css": [
+        ".landing-product__information .product-information__features {gap: 20px;}"
+      ],
+      "name": "Landing product alternative",
+      "settings": {
+        "style_type": "default",
+        "mobile_style": "default",
+        "use_gallery": true,
+        "gallery_view": "slider",
+        "is_show_pagination": true,
+        "center_thumbs": false,
+        "is_show_pagination_fraction": true,
+        "gallery_full_width": false,
+        "background": "",
+        "primary_color": "#ff6a13",
+        "background_icon": "",
+        "faq_style": "default",
+        "padding_top": 100,
+        "padding_bottom": 100,
+        "padding_top_mobile": 70,
+        "padding_bottom_mobile": 70,
+        "heading": "Only Natural Ungredients",
+        "sub_heading": "Lorem ipsum dolor sit amet consectetur. Gravida facilisi eleifend sit quam morbi risus id. Nisl massa donec tincidunt.",
+        "landing_product": "bovine-colostrum",
+        "enable_style": true,
+        "additional_style_files": "section-landing-product-ancient.css",
+        "property_value": ""
+      }
+    },
+    "video_reviews_grid_9RPqtz": {
+      "type": "video-reviews-grid",
+      "blocks": {
+        "review_m8kLAV": {
+          "type": "review",
+          "settings": {
+            "video": "shopify://files/videos/content-1024784_a3de2e32-4ef1-4aa8-a1df-4074e92b1bc3.mp4",
+            "author": "Madison",
+            "rating": 5
+          }
+        },
+        "review_VPfhYQ": {
+          "type": "review",
+          "settings": {
+            "video": "shopify://files/videos/folqsvideo_cae820ff-cdca-4b2d-b6d4-59fb94b170aa.mp4",
+            "poster": "shopify://shop_images/Rectangle_572.png",
+            "author": "Chloe",
+            "rating": 5
+          }
+        },
+        "review_Eg7nCm": {
+          "type": "review",
+          "settings": {
+            "video": "shopify://files/videos/Copy of Zach Pierce PersonalT.MOV",
+            "author": "Ethan",
+            "rating": 5
+          }
+        },
+        "review_fFkJk3": {
+          "type": "review",
+          "settings": {
+            "video": "shopify://files/videos/Colostrum Powder - Folqs (1)_6fa9a225-5b35-4c3c-a36d-53b5a5ecb901.mov",
+            "poster": "shopify://shop_images/IMG_7292.heic",
+            "author": "Lucas",
+            "rating": 5
+          }
+        }
+      },
+      "block_order": [
+        "review_m8kLAV",
+        "review_VPfhYQ",
+        "review_Eg7nCm",
+        "review_fFkJk3"
+      ],
+      "name": "Video Reviews Grid",
+      "settings": {
+        "enable_v3_styles": true,
+        "style_type": "new",
+        "extra_styles": true,
+        "rating": 5,
+        "title": "",
+        "subtitle": "Hear Directly from Our Customers",
+        "style_subtitle": false,
+        "body_text": "Why Colostrum\nIs the Talk of the Town",
+        "load_count": 5,
+        "prev_background": "#fff",
+        "background": "#fff",
+        "padding_top": 0,
+        "padding_bottom": 100,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 70
+      }
+    },
+    "faq_with_image_b8RXyx": {
+      "type": "faq-with-image",
+      "blocks": {
+        "question_HEhpcE": {
+          "type": "question",
+          "settings": {
+            "title": "Do you have a money-back guarantee?",
+            "answer": "<p>Absolutely! We fully stand behind our colostrum. If you’re not completely satisfied, we’ll happily offer you a full <strong>refund within 90 days of your purchase</strong> — no questions asked. Just contact our team at <a href=\"mailto:help@folqs.co\" target=\"_blank\" title=\"mailto:help@folqs.co\">help@folqs.co</a> </p>"
+          }
+        },
+        "question_rNqDXn": {
+          "type": "question",
+          "settings": {
+            "title": "Do you use cold-chain processing like other brands?",
+            "answer": "<p>Actually, “cold-chain processing” isn’t a recognized USDA practice—it’s mostly marketing hype. We use standard gentle pasteurization (161°F for 15 seconds) to guarantee safety, purity, and effectiveness.</p>"
+          }
+        },
+        "question_WDeraA": {
+          "type": "question",
+          "settings": {
+            "title": "Do you use heat processing?",
+            "answer": "<p>Yes, we gently pasteurize our colostrum at 161°F for 15 seconds. This ensures our colostrum meets USDA dairy standards, keeping it safe and pure for you.</p>"
+          }
+        },
+        "question_KAwLYG": {
+          "type": "question",
+          "settings": {
+            "title": "Is the bovine colostrum free of glyphosate residue and heavy metals?",
+            "answer": "<p>Absolutely! Every batch is carefully tested for heavy metals to ensure purity and safety. We’ve also independently tested for glyphosate residue—no detectable levels were found, reinforcing our high standards for quality.</p>"
+          }
+        },
+        "question_ECMyFk": {
+          "type": "question",
+          "settings": {
+            "title": "Are your cows injected with mRNA shots?",
+            "answer": "<p>Nope! Our cows have not received any mRNA injections. Currently, there are no USDA-approved mRNA vaccines in use for cattle commercially, so you can be confident in the purity and quality of our colostrum.</p>"
+          }
+        },
+        "question_PzptNt": {
+          "type": "question",
+          "settings": {
+            "title": "I’m lactose intolerant—can I still take your colostrum?",
+            "answer": "<p>Our colostrum contains about 300 mg of lactose per 3g serving—far less than the approximately 12,000–13,000 mg found in an 8 oz glass of milk. While this amount is very small, individual sensitivity varies. We recommend starting with a small serving to determine your own comfort level or consulting with your healthcare provider before use.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "question_HEhpcE",
+        "question_rNqDXn",
+        "question_WDeraA",
+        "question_KAwLYG",
+        "question_ECMyFk",
+        "question_PzptNt"
+      ],
+      "name": "FAQ with image",
+      "settings": {
+        "enable_v3_styles": true,
+        "extra_styles": true,
+        "image_position": "left",
+        "hide_image_mobile": false,
+        "rounded": false,
+        "previous_background": "#FFF",
+        "current_background": "linear-gradient(180deg, rgba(255, 255, 255, 1), rgba(244, 250, 255, 1) 40%, rgba(244, 250, 255, 1) 60%, rgba(255, 255, 255, 1) 100%)",
+        "decor_image_desktop": "shopify://shop_images/Group_1982248105.svg",
+        "title": "<p>Your Questions Answered</p>",
+        "subtitle": "FAQ",
+        "tagline": "",
+        "image": "shopify://shop_images/Meghan_Frosceno_d953ae7f-d3ab-4374-8784-414d1e2c5446.png",
+        "is_first_open": true,
+        "active_title_color": "#000000",
+        "default_title_color": "#000000",
+        "is_only_one_opened": false,
+        "padding_top": 0,
+        "padding_bottom": 100,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 70
+      }
+    },
+    "subscribe_banner_FtkpDb": {
+      "type": "subscribe-banner",
+      "blocks": {
+        "icon_text_L63E4j": {
+          "type": "icon-text",
+          "settings": {
+            "icon": "shopify://shop_images/stomach_1_e6654da2-ba52-4de1-988e-8f8ae963f36f.svg",
+            "text": "Supports Gut Health",
+            "text_mobile": "Gut Health"
+          }
+        },
+        "icon_text_LW4DLx": {
+          "type": "icon-text",
+          "settings": {
+            "icon": "shopify://shop_images/heart_1_9c4db815-13c1-4a87-9f66-83c7f137194e.svg",
+            "text": "Helps Immunity",
+            "text_mobile": ""
+          }
+        },
+        "icon_text_YWHW3h": {
+          "type": "icon-text",
+          "settings": {
+            "icon": "shopify://shop_images/Frame_1307_f0fb5b45-019d-428b-9034-a462a0925194.svg",
+            "text": "For Energy and Beauty",
+            "text_mobile": ""
+          }
+        }
+      },
+      "block_order": [
+        "icon_text_L63E4j",
+        "icon_text_LW4DLx",
+        "icon_text_YWHW3h"
+      ],
+      "name": "Subscribe banner",
+      "settings": {
+        "image_desktop": "shopify://shop_images/sdc_1_d9e14d59-a3bf-4b7a-9bcc-d16460ac26a8.png",
+        "round_image": "shopify://shop_images/Group_1982248105_eea1370f-e4f1-48f5-b4e2-a25151887434.svg",
+        "image_mobile": "shopify://shop_images/Frame_1982248739_7b1f36f8-6e8e-4cc4-95a8-81ada6ed7d30.png",
+        "bg_image_desktop": "shopify://shop_images/Hero_v0.svg",
+        "bg_image_mobile": "shopify://shop_images/Hero.svg",
+        "heading": "Subscribe & Save 35%",
+        "heading_icon": "shopify://shop_images/misc-39.svg",
+        "review_text": "1,571 + Five Star Reviews",
+        "review_text_mobile": "over 25,254 Reviews",
+        "people_review_image": "shopify://shop_images/Frame_1982248617_9ca6da16-0b57-47fb-8e28-2648cceb7d98.png",
+        "cta_text": "Subscribe & Save Now",
+        "cta_link": "#landing-product",
+        "cta_background": "#ff6a13",
+        "cta_additional_text": "90-Day Money-Back Guarantee",
+        "cta_additional_icon": "shopify://shop_images/shield-check-svgrepo-com_1_1_4842a558-bc98-41a9-857b-c4ca1a658ddb.svg"
+      }
+    },
+    "ticker_v3_zFbL7F": {
+      "type": "ticker-v3",
+      "blocks": {
+        "ticker_item_yCyx3H": {
+          "type": "ticker_item",
+          "settings": {
+            "text": "MADE IN USA",
+            "image": "shopify://shop_images/Vector_1_656a8713-13b0-45f2-a190-01db135423e0.svg"
+          }
+        },
+        "ticker_item_ffJknf": {
+          "type": "ticker_item",
+          "settings": {
+            "text": "NO SYNTHETIC FILLERS",
+            "image": "shopify://shop_images/Vector_1_656a8713-13b0-45f2-a190-01db135423e0.svg"
+          }
+        },
+        "ticker_item_KNVJq4": {
+          "type": "ticker_item",
+          "settings": {
+            "text": "RICH IN ANTIOXIDANTS",
+            "image": "shopify://shop_images/Vector_1_656a8713-13b0-45f2-a190-01db135423e0.svg"
+          }
+        },
+        "ticker_item_VWtMza": {
+          "type": "ticker_item",
+          "settings": {
+            "text": "NO ADDED SUGAR",
+            "image": "shopify://shop_images/Vector_1_656a8713-13b0-45f2-a190-01db135423e0.svg"
+          }
+        },
+        "ticker_item_piYAky": {
+          "type": "ticker_item",
+          "settings": {
+            "text": "ENHANCED WITH ADAPTOGENS",
+            "image": "shopify://shop_images/Vector_1_656a8713-13b0-45f2-a190-01db135423e0.svg"
+          }
+        }
+      },
+      "block_order": [
+        "ticker_item_yCyx3H",
+        "ticker_item_ffJknf",
+        "ticker_item_KNVJq4",
+        "ticker_item_VWtMza",
+        "ticker_item_piYAky"
+      ],
+      "name": "Ticker v3",
+      "settings": {
+        "enable_extra_styles": true,
+        "bg_color": "#005eb8",
+        "text_color": "#ffffff",
+        "ticker_speed": 5
+      }
+    }
+  },
+  "order": [
+    "landing_hero_banner_v4_FQwgaA",
+    "grid_information_k89VrP",
+    "reward_section_yGR9QN",
+    "landing_product_alternative_ntjzLG",
+    "video_reviews_grid_9RPqtz",
+    "faq_with_image_b8RXyx",
+    "subscribe_banner_FtkpDb",
+    "ticker_v3_zFbL7F"
+  ]
+}

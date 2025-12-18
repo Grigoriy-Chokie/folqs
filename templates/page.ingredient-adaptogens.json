@@ -1,0 +1,157 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "rich_text_F4VmRi": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_QATDPG": {
+          "type": "heading",
+          "settings": {
+            "heading": "Talk about your brand",
+            "heading_size": "h1"
+          }
+        },
+        "text_6JAJjM": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>"
+          }
+        },
+        "button_jexaPM": {
+          "type": "button",
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_QATDPG",
+        "text_6JAJjM",
+        "button_jexaPM"
+      ],
+      "disabled": true,
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "ingredient_content_hUfQb8": {
+      "type": "ingredient-content",
+      "settings": {
+        "list_of_badges": "///Stress Resilience, ///Immune Empowerment, ///Cognitive Enhancement",
+        "button_label": "Learn more",
+        "main_text": "<p>This adaptogen and immune support ensemble features potent extracts from some of nature's most revered medicinal mushrooms, alongside Maca Root, known for their powerful adaptogenic properties. These extracts help the body manage stress, enhance immune function, and support overall vitality. They're particularly beneficial for the middle-aged to elderly demographics who are looking to maintain an active lifestyle and fortify their natural defenses.</p>",
+        "main_text_hidden": "<h2>What to Expect</h2><ul><li>With Maca Root extract, anticipate improved stamina and vitality, helping to combat daily stress and fatigue.</li><li>Mushroom extracts like Reishi, Chaga, Maitake, Shiitake, and Lion's Mane are renowned for their immune-boosting properties, readying the body to fend off pathogens.</li><li>Lion's Mane is specifically praised for its support of brain health, potentially aiding in maintaining cognitive function.</li></ul>",
+        "show_page_title": true
+      }
+    },
+    "natural_ingredients_fJGhb3": {
+      "type": "natural-ingredients",
+      "blocks": {
+        "ingredient_jQFn4Y": {
+          "type": "ingredient",
+          "settings": {
+            "img": "shopify://shop_images/Rectangle_15_25.png",
+            "title": "Maca Root Extract 10:1",
+            "subtitle": "Lepidium meyenii",
+            "info": "100 mg"
+          }
+        },
+        "ingredient_wdLMhn": {
+          "type": "ingredient",
+          "settings": {
+            "img": "shopify://shop_images/Rectangle_15_26.png",
+            "title": "Reishi Mushroom Extract",
+            "subtitle": "Ganoderma",
+            "info": "5 mg"
+          }
+        },
+        "ingredient_zVA3MV": {
+          "type": "ingredient",
+          "settings": {
+            "img": "shopify://shop_images/Rectangle_15_27.png",
+            "title": "Chaga Mushroom Extract ",
+            "subtitle": "Inonotus",
+            "info": "5 mg"
+          }
+        },
+        "ingredient_JGzimG": {
+          "type": "ingredient",
+          "settings": {
+            "img": "shopify://shop_images/Rectangle_15_28.png",
+            "title": "Maitake Mushroom Extract 4:1",
+            "subtitle": "Grifola frondosa",
+            "info": "5 mg"
+          }
+        },
+        "ingredient_NqVkxr": {
+          "type": "ingredient",
+          "settings": {
+            "img": "shopify://shop_images/Rectangle_15_29.png",
+            "title": "Shiitake Mushroom",
+            "subtitle": "Lentinus Edodes",
+            "info": "5 mg"
+          }
+        },
+        "ingredient_bzfiMx": {
+          "type": "ingredient",
+          "settings": {
+            "img": "shopify://shop_images/Rectangle_15_30.png",
+            "title": "Lion's Mane Mushroom",
+            "subtitle": "Hericium erinaceus",
+            "info": "100 mg"
+          }
+        }
+      },
+      "block_order": [
+        "ingredient_jQFn4Y",
+        "ingredient_wdLMhn",
+        "ingredient_zVA3MV",
+        "ingredient_JGzimG",
+        "ingredient_NqVkxr",
+        "ingredient_bzfiMx"
+      ],
+      "settings": {
+        "padding_top": 40,
+        "padding_bottom": 100,
+        "padding_top_mobile": 24,
+        "padding_bottom_mobile": 100,
+        "heading": "",
+        "sub_heading": "",
+        "name_button": "",
+        "url_button": "/"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "rich_text_F4VmRi",
+    "ingredient_content_hUfQb8",
+    "natural_ingredients_fJGhb3"
+  ]
+}

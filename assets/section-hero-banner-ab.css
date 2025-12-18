@@ -1,0 +1,325 @@
+.hero-banner-ab {
+  font-family: DM Sans;
+  background-color: var(--hero-banner-ab-background);
+  color: var(--hero-banner-ab-text-color);
+  position: relative;
+
+  &::after {
+    content: "";
+    position: absolute;
+    background: #FFF;
+    background: linear-gradient(180deg,rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0) 100%);    
+    left: 0;
+    right: 0;
+    top: 0;
+    height: 52%;
+    opacity: 0.2;
+  }
+
+  & .hero-banner-ab--mobile {
+    display: none;
+  }
+
+  & .hero-banner-ab__container {
+    margin-left: max(calc((100vw - 1300px) * 0.5), 0px);
+    margin-right: 0;
+    display: flex;
+    padding: 0 0 0 5rem;
+    flex-direction: var(--hero-banner-ab-image-position);
+    position: relative;
+    z-index: 1;
+  }
+
+  & .hero-banner-ab__image-wrapper {
+    flex: 1 1 50%;
+    position: relative;
+  }
+
+  & .hero-banner-ab__image {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 85%;
+    object-fit: cover;
+    height: 100%;
+  }
+
+  & .hero-banner-ab__content {
+    flex: 1 1 63%;
+    max-width: 605px;
+    padding: 0 0 100px;
+    padding-top: var(--hero-banner-ab-padding-top);
+
+    & .content__title-wrapper > h2 {
+      font-size: 48px;
+      font-style: normal;
+      font-weight: 600;
+      line-height: 120%;
+      letter-spacing: -1.5px;
+      color: var(--hero-banner-ab-text-color);
+      margin: 0;
+    }
+
+    & .content__title-wrapper > h2 > strong {
+      font-weight: 600;
+      position: relative;
+
+      &::after {
+        content: "";
+        position: absolute;
+        background-size: contain;
+        background-repeat: no-repeat;
+        background-image: url(data:image/svg+xml,%3Csvg%20width%3D%22231%22%20height%3D%2249%22%20viewBox%3D%220%200%20231%2049%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%3Cpath%20d%3D%22M101.833%2027.784C102.681%2026.3587%20109.165%2025.0342%20114.166%2023.962C126.453%2021.3277%20144.148%2019.5406%20164.152%2019.8607C185.491%2020.2021%20192.827%2023.8695%20195.239%2027.0983C197.739%2030.446%20195.413%2033.9325%20180.061%2036.2406C166.251%2038.3167%20150.433%2038.7616%20132.701%2038.2342C112.615%2037.6367%2086.8239%2035.8468%2071.4762%2033.4471C55.8769%2031.0082%2059.2288%2027.4496%2067.6816%2024.508C83.8237%2018.8904%20109.858%2015.7031%20142.26%2013.2325C156.043%2012.1816%20185.715%209.64177%20200.785%2011.5818C210.459%2012.8272%20214.657%2015.7778%20217.277%2017.6513C221.851%2020.9222%20222.29%2024.3335%20219.466%2027.657C216.33%2031.3482%20207.862%2034.5853%20188.526%2036.4438C160.235%2039.163%20127.157%2039.8641%2095.8494%2038.6786C67.6454%2037.6106%2038.3979%2035.9837%2022.876%2031.4155C8.13666%2027.0777%204.05722%2021.6907%2017.0381%2017.0926C28.3208%2013.096%2052.3932%2010.1101%2077.606%209.42318C88.934%209.11457%20100.067%209.06587%20109.714%2010.185M122.573%2028.1824C124.101%2030.5743%20148.186%2032.5035%20159.823%2032.5035%22%20stroke%3D%22%23005EB8%22%20stroke-width%3D%2218.4659%22%20stroke-linecap%3D%22round%22%2F%3E%3C%2Fsvg%3E);
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+      }
+    }
+
+    & .content__richtext {
+      margin-top: 20px;
+
+      & > p {
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 160%;
+        margin: 0;
+      }
+    }
+
+    & .content__icons-with-text-container {
+      display: flex;
+      gap: 30px;
+      align-items: center;
+      margin-top: 35px;
+    }
+
+    & .content__icon-with-text {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+
+      & .icon-with-text__icon {
+        width: 52px;
+        height: 52px;
+      }
+
+      & .icon-with-text__text-wrapper > p {
+        font-size: 15px;
+        line-height: 130%;
+        font-weight: 600;
+        margin: 0;
+      }
+    }
+
+    & .content__reviews {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-top: 40px;
+
+      & .reviews__image-wrapper {
+        max-width: 65px;
+        width: 100%;
+      }
+
+      & .reviews__image {
+        display: block;
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+      }
+
+      & .reviews__stars {
+        max-width: 92px;
+        width: 100%;
+      }
+
+      & .reviews__stars-image {
+        display: block;
+        width: 100%;
+        height: auto;
+        object-fit: contain;
+      }
+
+      & .reviews__text {
+        margin: 0;
+        font-size: 15px;
+      }
+    }
+
+    & .content__cta-container {
+      display: flex;
+      gap: 20px;
+      margin-top: 25px;
+
+      & .cta-container__button {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 12px;
+        max-width: 350px;
+        width: 100%;
+        padding: 16px 0;
+        font-size: 18px;
+        font-weight: 600;
+        letter-spacing: -1%;
+        text-decoration: none;
+        border-radius: 60px;
+        background-color: var(--hero-banner-ab-reviews-cta-background);
+        color: var(--hero-banner-ab-reviews-cta-color);
+      }
+
+      & .cta-container__guarantee-badge {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-weight: 400;
+        font-size: 15px;
+      }
+    }
+  }
+  
+  @media screen and (max-width: 950px) {
+    & .hero-banner-ab-image--desktop {
+      display: none;
+    }
+
+    & .hero-banner-ab-image--mobile {
+      width: 100%;
+      display: flex;
+      justify-content: flex-end;
+      order: var(--hero-banner-ab-image-order);
+
+      & .hero-banner-ab__image {
+        position: static;
+      }
+    }
+
+    & .hero-banner-ab__content {
+      max-width: 100%;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+
+      & .content__title-wrapper {
+        order: var(--hero-banner-ab-title-order);
+      }
+
+      & .content__richtext {
+        order: var(--hero-banner-ab-richtext-order);
+      }
+
+      & .content__icons-with-text-container {
+        order: var(--hero-banner-ab-icons-with-text-order);
+      }
+
+      & .content__reviews-cta {
+        order: var(--hero-banner-ab-reviews-cta-order);
+      }
+    }
+  }
+
+  @media screen and (max-width: 750px) {
+    & .hero-banner-ab--mobile {
+      display: block;
+    }
+
+    & .hero-banner-ab-image--mobile {
+      justify-content: center;
+    }
+
+    & .hero-banner-ab--desktop {
+      display: none;
+    }
+
+    & .hero-banner-ab__container {
+      padding: 0 2rem;
+    }
+
+    & .hero-banner-ab__content {
+      padding: 25px 0 40px;
+
+      & .content__title-wrapper > h2 {
+        font-size: 28px;
+        line-height: 130%;
+      }
+
+      & .content__richtext {
+        margin-top: 15px;
+      }
+
+      & .content__reviews-cta {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        max-width: 500px;
+        width: 100%;
+        padding: 20px;
+        border-radius: 16px;
+        background-color: #fff;
+        color: #000;
+        gap: 20px;
+
+        & .content__reviews {
+          margin: 0;
+
+          & .reviews__text {
+            text-wrap: nowrap;
+          }
+        }
+
+        & .content__cta-container {
+          width: 100%;
+          align-items: center;
+          margin: 0;
+          flex-direction: column;
+
+          & .cta-container__button {
+            max-width: 100%;
+          }
+
+          & .cta-container__guarantee-badge {
+            font-size: 14px;
+            gap: 6px;
+
+            & .guarantee-badge__icon {
+              width: 23px;
+              height: 23px;
+            }
+          }
+        }
+      }
+
+      & .content__icons-with-text-container {
+        gap: 7px;
+        margin-top: 30px;
+        flex-wrap: wrap;
+        justify-content: center;
+
+        & .content__icon-with-text {
+          gap: 10px;
+          padding: 8px 14px;
+          background-color: #fff;
+          color: #000;
+          border-radius: 50px;
+
+          & .icon-with-text__icon {
+            width: 26px;
+            height: 26px;
+            display: block;
+          }
+
+          & .icon-with-text__text-wrapper > p {
+            font-weight: 500;
+            text-wrap: nowrap;
+          }
+        }
+      }
+    }
+  }
+}

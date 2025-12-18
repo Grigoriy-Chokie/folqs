@@ -1,0 +1,247 @@
+{{ 'section-quiz-banner.css' | asset_url | stylesheet_tag }}
+{% style %}
+  .quiz-banner__content-wrapper--{{ section.id }} {
+    padding-top: {{ section.settings.padding_top_mobile }}px;
+    padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+  }
+
+  {% if section.settings.button_url == blank %}
+    #shopify-section-{{ section.id }}{
+        z-index: 1;
+        background: #fff;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        overflow-x: hidden;
+        overflow-y: scroll;
+        height: var(--app-height);
+        min-height: fit-content;
+        z-index: 3;
+        transition: height 0.3s ease-in-out;
+    }
+  {% endif %}
+
+  {% unless section.settings.ground == blank %}
+    .quiz-banner__content-wrapper--{{ section.id }}{
+        background: {{ section.settings.ground }};
+    }
+  {% endunless %}
+
+  @media screen and (min-width: 769px) {
+    .quiz-banner__content-wrapper--{{ section.id }} {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{% endstyle %}
+<div class="quiz-banner__content-wrapper quiz-banner__content-wrapper--{{ section.id }}">
+  <div class="quiz-banner__content page-width">
+    <div class="quiz-banner__media-wrapper">
+      {% unless section.settings.ground_decor == blank %}
+        <div class="quiz-banner__ground-decor">
+          {{ section.settings.ground_decor }}
+        </div>
+      {% endunless %}
+      {% unless section.settings.image == blank %}
+        {{
+          section.settings.image
+          | image_url: width: 2750
+          | image_tag:
+            loading: 'lazy',
+            widths: '50, 75, 100, 150, 200, 300, 400, 500, 750, 1000, 1250, 1500, 1750, 2000, 2250, 2500, 2750',
+            class: 'quiz-banner__media'
+        }}
+      {% endunless %}
+    </div>
+    <div class="quiz-banner__text-wrapper">
+      {% unless section.settings.stars_label == blank %}
+        <div class="quiz-banner__stars-wrapper">
+          {%- render 'icon-stars' -%}
+          <span class="start-wrapper__text">{{ section.settings.stars_label }}</span>
+        </div>
+      {% endunless %}
+      {% unless section.settings.heading == blank %}
+        <h2 class="quiz-banner__heading">
+          {{ section.settings.heading }}
+        </h2>
+      {% endunless %}
+      {% unless section.settings.subheading == blank %}
+        <span class="quiz-banner__subheading">
+          {{ section.settings.subheading }}
+        </span>
+      {% endunless %}
+      {% unless section.settings.button_label == blank %}
+        <{% unless section.settings.button_url == blank %}a href = "{{ section.settings.button_url }}"{% else %}span{% endunless %} class = "quiz-banner__button">
+            {{ section.settings.button_label }}
+            {% unless section.settings.button_icon == blank %}
+                <div class = "quiz-banner__button-decor">
+                    {{ section.settings.button_icon }}
+                </div>
+            {% endunless %}
+        </{% unless section.settings.button_url == blank %}a{% else %}span{% endunless %}>
+      {% endunless %}
+      {% unless section.settings.description == blank %}
+        <{% unless section.settings.description_icon == blank %}div{% else %}span{% endunless %} class = "quiz-banner__description">
+            {% unless section.settings.description_icon == blank %}
+                <div class = "quiz-banner__description-decor">
+                    {{ section.settings.description_icon }}
+                </div>
+            {% endunless %}
+            {{ section.settings.description }}
+        </{% unless section.settings.description_icon == blank %}div{% else %}span{% endunless %}>
+      {% endunless %}
+    </div>
+  </div>
+</div>
+<script>
+  let sectionName = '#shopify-section-{{ section.id }}';
+</script>
+{{ 'section-quiz-banner.js' | asset_url | script_tag }}
+{% schema %}
+{
+  "name": "Quiz Banner",
+  "tag": "section",
+  "class": "section__quiz-banner",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "This section overlays all other sections!"
+    },
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "paragraph",
+      "content": "Text content"
+    },
+    {
+      "type": "text",
+      "label": "Label near the stars",
+      "id": "stars_label",
+      "default": "3,500+ Five Star Reviews"
+    },
+    {
+      "type": "richtext",
+      "label": "Heading",
+      "id": "heading",
+      "default": "<p>Find Out If You Need <strong> Multivitamin Super Powder </strong></p>",
+      "info": "Use bold text to highlight it blue."
+    },
+    {
+      "type": "richtext",
+      "label": "Subheading",
+      "id": "subheading",
+      "default": "<p>And unlock a special discount!</p>"
+    },
+    {
+      "type": "richtext",
+      "label": "Description",
+      "id": "description",
+      "info": "Use bold text to highlight it orange.",
+      "default": "<p>Quiz Results in <strong>1 minute</strong></p>"
+    },
+    {
+      "type": "html",
+      "label": "Description icon",
+      "id": "description_icon"
+    },
+    {
+      "type": "paragraph",
+      "content": "Button"
+    },
+    {
+      "type": "text",
+      "label": "Button label",
+      "id": "button_label",
+      "default": "Get Started",
+      "info": "Will hide section by default."
+    },
+    {
+      "type": "url",
+      "label": "Button url",
+      "id": "button_url",
+      "info": "If this setting is filled section won't be sticky and button will redirect to chosen url."
+    },
+    {
+      "type": "html",
+      "label": "Button icon",
+      "id": "button_icon"
+    },
+
+    {
+      "type": "paragraph",
+      "content": "Media content"
+    },
+    {
+      "type": "color_background",
+      "label": "Ground",
+      "id": "ground",
+      "default": "linear-gradient(0deg, rgba(228, 240, 255, 0.00) 0%, #E4F0FF 48.5%)"
+    },
+    {
+      "type": "image_picker",
+      "label": "Image",
+      "id": "image"
+    },
+    {
+      "type": "html",
+      "label": "Ground decor",
+      "id": "ground_decor"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 92
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 92
+    },
+    {
+      "type": "header",
+      "content": "Mobile spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 62
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 62
+    }
+  ],
+  "presets": [
+    {
+      "name": "Quiz Banner"
+    }
+  ]
+}
+{% endschema %}

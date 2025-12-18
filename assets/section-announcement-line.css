@@ -1,0 +1,27 @@
+.announcement-line{
+    color: var(--text-color);
+    font-variant-numeric: lining-nums proportional-nums;
+    font-family: Raleway;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 1.6px;
+    padding: 12px;
+    text-align: center;
+    background: var(--background-color);
+}
+
+.announcement-line__bovine-landing-fabula {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    text-transform: uppercase;
+    padding: 2px 12px;
+}
+
+.announcement-line__bovine-landing-fabula img {
+    width: 18px;
+    height: 18px;
+}

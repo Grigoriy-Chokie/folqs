@@ -1,0 +1,237 @@
+.sticky-add-cart {
+  display: block;
+  width: 100%;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  padding: 20px 0 0;
+  z-index: 999;
+  transition: .2s ease;
+  opacity: 1;
+  visibility: visible;
+}
+
+.sticky-add-cart--hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.sticky-add-cart__wrapper {
+  background-color: #fff;
+  box-shadow: 0px -1px 0px 0px rgba(0, 0, 0, 0.10);
+}
+
+.sticky-add-cart__container {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 30px;
+  background-color: #fff;
+}
+
+.sticky-add-cart__form-container {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+}
+
+.sticky-add-cart__options-container {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.sticky-add-cart__option {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+
+  color: #000;
+  font-family: Raleway;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+}
+
+.sticky-add-cart__option input {
+  width: 24px;
+  height: 24px;
+  accent-color: #005EB8;
+  margin: 0;
+}
+
+.sticky-add-cart__option-text {
+  margin: 0;
+}
+
+.sticky-add-cart__option-text--discount {
+  color: #EC1D25;
+  font-family: Raleway;
+  font-size: 11px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  text-transform: uppercase;
+}
+
+.sticky-add-cart .product-form__buttons {
+  overflow: hidden;
+}
+
+.sticky-add-cart__info {
+  position: relative;
+  padding: 0 0 0 90px;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
+}
+
+.sticky-add-cart__product-image {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 90px;
+  transform: translateY(-40px);
+}
+
+.sticky-add-cart__product-image img {
+  width: 100%;
+  height: auto;
+}
+
+.sticky-add-cart__product-title {
+  margin: 0;
+  color: #000;
+  font-family: "Crimson Pro";
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 140%;
+}
+
+.sticky-add-cart__product-reviews {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.sticky-add-cart__product-reviews .reviews-image {
+  width: 80px;
+  line-height: 0;
+}
+
+.sticky-add-cart__product-reviews .reviews-image svg {
+  width: 100%;
+}
+
+.sticky-add-cart__product-reviews .reviews-text {
+  color: #000;
+  font-family: Inter;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 120%;
+  margin: 0;
+}
+
+.sticky-add-cart .product-form__submit:hover,
+.sticky-add-cart .product-form__submit {
+  min-height: 40px;
+  min-width: 280px;
+  width: 100%;
+
+  color: #FFF;
+  text-align: center;
+  font-family: Raleway;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 700;
+  line-height: 18px;
+  text-transform: uppercase;
+  padding: 5px;
+}
+
+.sticky-add-cart .product-form__submit>span {
+  gap: 5px;
+}
+
+.sticky-add-cart__compare-price {
+  color: rgba(255, 255, 255, 0.40);
+  text-align: center;
+  font-family: Raleway;
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 18px;
+  text-decoration-line: line-through;
+  text-transform: uppercase;
+}
+
+.sticky-add-cart .submit__icon--arrow {
+  display: none !important;
+}
+
+.sticky-add-cart__anchor {
+  display: none;
+}
+
+@media screen and (max-width: 989px) {
+  .sticky-add-cart__product-image {
+    top: 30%;
+    transform: translateY(-50%);
+  }
+
+  .sticky-add-cart__form-container {
+    display: none;
+  }
+
+  .sticky-add-cart .sticky-add-cart__anchor.button {
+    display: block;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    min-height: 36px;
+    padding: 4px 6px;
+    min-width: 90px;
+
+    color: #FFF;
+    background-color: #EF0009;
+    text-align: center;
+    font-family: Raleway;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 18px;
+    text-transform: uppercase;
+  }
+
+  .sticky-add-cart__info {
+    gap: 4px;
+  }
+}
+
+@media screen and (max-width:749px) {
+  .sticky-add-cart__container.page-width {
+    padding-left: 2px;
+    padding-right: 10px;
+  }
+
+  .sticky-add-cart__container {
+    gap: 12px
+  }
+
+  .sticky-add-cart__product-title {
+    font-size: 15px;
+    line-height: 140%;
+    letter-spacing: 0;
+  }
+
+  .sticky-add-cart__info {
+    padding-left: 90px; 
+  }
+}

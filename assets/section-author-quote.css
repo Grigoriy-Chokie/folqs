@@ -1,0 +1,118 @@
+.author-quote__author-image {
+    max-width: 400px;
+    height: auto;
+    max-height: 236px;
+    object-fit: cover;
+    border-radius: 200px;
+}
+
+.author-quote__author-slide {
+    display: flex;
+    justify-content: center;
+}
+
+.author-slide__content {
+    max-width: 1100px;
+    display: flex;
+    width: 100%;
+    padding: 0 50px;
+    gap: 60px;
+}
+
+.author-slide__quote {
+    width: 100%;
+}
+
+.author-slide__text-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 540px;
+}
+
+.author-slide__author-text {
+    max-width: 183px;
+}
+
+.author-slide__icon {
+    max-width: 78px;
+    height: auto;
+    object-fit: contain;
+    margin-top: 40px;
+}
+
+.author-slide__quote {
+    color: #FFF;
+    font-variant-numeric: lining-nums proportional-nums;
+    font-family: Raleway;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 32px;
+    letter-spacing: 0;
+}
+
+.author-slide__quote p,
+.author-slide__description p {
+    margin-top: 0;
+    margin-bottom: 10px;
+}
+
+.author-slide__quote p:last-child,
+.author-slide__description p:last-child {
+    margin-bottom: 0;
+}
+
+.author-slide__author-text {
+    margin-top: 40px;
+}
+
+.author-slide__author {
+    color: #FFF;
+    font-variant-numeric: lining-nums proportional-nums;
+    font-family: Raleway;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+}
+
+.author-slide__description {
+    margin-top: 4px;
+    color: rgba(255, 255, 255, 0.50);
+    font-variant-numeric: lining-nums proportional-nums;
+    font-family: Raleway;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    letter-spacing: 0;
+    line-height: 20px;
+}
+
+@media screen and (max-width: 768px) {
+    .author-slide__content {
+        flex-direction: column;
+    }
+
+    .author-quote__author-image {
+        max-width: 100%;
+    }
+
+    .author-slide__text-wrapper {
+        max-width: 100%;
+    }
+
+    .author-slide__content {
+        padding-left: 20px;
+        padding-right: 20px;
+        gap: 60px;
+    }
+    .author-slide__image{
+        display: flex;
+    }
+}
+@media screen and (max-width: 550px) {
+    .author-quote__author-image {
+        max-height: 160px;
+    }
+}

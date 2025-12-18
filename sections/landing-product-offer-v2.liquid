@@ -1,0 +1,651 @@
+{{ 'section-landing-product-offer-v2.css' | asset_url | stylesheet_tag }}
+{{ 'component-lightbox.css' | asset_url | stylesheet_tag }}
+<script src="{{ 'product-offer-v2-media.js' | asset_url }}" defer></script>
+<script src="{{ 'landing-offer-v2-form.js' | asset_url }}" defer></script>
+<script src="{{ 'component-magnify-zoom.js' | asset_url }}" defer="defer"></script>
+<script src="{{ 'component-lightbox.js' | asset_url }}" defer="defer"></script>
+
+{% style %}
+  .product-offer-v2-media__navigation--prev {
+    cursor: url({{ 'cursor-prev.png' | asset_url }}), auto;
+  }
+
+  .product-offer-v2-media__navigation--next {
+    cursor: url({{ 'cursor-next.png' | asset_url }}), auto;
+  }
+
+  .section-paddings--{{ section.id }} {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+
+  @media screen and (max-width: 750px) {
+      .section-paddings--{{ section.id }} {
+          padding-top: {{ section.settings.padding_top | times: 0.75 }}px;
+          padding-bottom: {{ section.settings.padding_bottom | times: 0.75 }}px;
+      }
+  }
+{% endstyle %}
+
+{% liquid
+  assign product = section.settings.product
+  assign variant = product.selected_or_first_available_variant
+  assign selling_plan_id = product.selling_plan_groups.last.selling_plans.first.id
+
+  assign one_time_options = section.blocks | where: 'type', 'option_one_time'
+  assign subscribe_options = section.blocks | where: 'type', 'option_subscribe'
+
+  assign product_images = section.blocks | where: 'type', 'image'
+  assign product_title = section.settings.title | default: product.title
+  assign product_upper_text = section.settings.upper_text
+  assign product_reviews_text = section.settings.reviews
+  assign product_button_text = section.settings.button_text
+  assign product_advantages = section.blocks | where: 'type', 'advantages_list'
+  assign selling_plan_label = section.settings.selling_plan_label
+  assign one_time_button_text = section.settings.one_time_btn_text
+  assign subscribe_button_text = section.settings.subscribe_btn_text
+%}
+
+{% comment %} Color styles {% endcomment %}
+{% style %}
+  .landing-product-offer-v2:has(#landing-product-offer-v2--{{ section.id }}) {
+    background: {{ section.settings.background_color }};
+  }
+
+  .landing-product-offer-v2__container--{{ section.id }} {
+    --active-color: {{ section.settings.active_color.red }},{{ section.settings.active_color.green }},{{ section.settings.active_color.blue }};
+    --accent-color: {{ section.settings.accent_color.red }},{{ section.settings.accent_color.green }},{{ section.settings.accent_color.blue }};
+  }
+
+  .product-offer-v2-selling-plan__button {
+    color: rgb(var(--active-color));
+    border: 1px solid rgba(var(--active-color), 0.20);
+  }
+
+  .product-offer-v2-selling-plan__button:hover,
+  .product-offer-v2-selling-plan__button--active {
+    background: rgb(var(--active-color));
+    box-shadow: 0px 4px 20px 0px rgba(var(--active-color), 0.20);
+    color: #fff;
+  }
+
+  .product-offer-v2-options__option--active {
+    background: rgba(var(--active-color), 0.10);
+    border: 1px solid rgb(var(--active-color));
+  }
+
+  .product-offer-v2-option__circle::after {
+    background-color: rgb(var(--active-color));
+  }
+
+  .product-offer-v2-options__option--active .product-offer-v2-option__circle::before {
+    border-color: rgb(var(--active-color));
+  }
+
+  .product-offer-v2-option__badge {
+    color: rgb(var(--accent-color));
+    background-color: rgba(var(--accent-color), 0.2);
+  }
+
+  .product-offer-v2-options__option--active .product-offer-v2-option__price {
+    color: rgb(var(--accent-color));
+  }
+
+  .product-offer-v2-form__button {
+    background: rgb(var(--accent-color));
+    border: 1px solid rgb(var(--accent-color));
+  }
+{% endstyle %}
+
+{%- capture sizes -%}
+  (min-width: {{ settings.page_width }}px) 645px, (min-width: 990px) calc(100.0vw - 10rem), (min-width: 750px) 100vw
+{%- endcapture -%}
+
+<div id="landing-product-offer-v2--{{ section.id }}"
+    class="landing-product-offer-v2__container landing-product-offer-v2__container--{{ section.id }} page-width section-paddings--{{ section.id }}"
+    data-selling-plan="one-time"
+>
+  <product-offer-v2-media data-id="{{ section.id }}" class="landing-product-offer-v2__media product-offer-v2-media">
+    <div class="product-offer-v2-media__main offer-v2-media-main">
+      <div class="offer-v2-media-main__swiper-wrapper swiper-wrapper">
+        {%- for image_block in product_images -%}
+          <div class="offer-v2-media-main__slide product__modal-magnify swiper-slide"
+            data-image="{{ image_block.settings.image | image_url: width: 2000  }}">
+            {%- if image_block.settings.image != blank -%}
+              {% assign image_classes = 'image-magnify-' | append: section.settings.zoom_type %}
+            {{
+              image_block.settings.image
+              | image_url: width: 1946
+              | image_tag:
+                loading: 'lazy',
+                sizes: sizes,
+                widths: '246, 493, 600, 713, 823, 990, 1100, 1206, 1346, 1426, 1646, 1946',
+                class: image_classes
+            }}
+            {%- else -%}
+              {{ 'image' | placeholder_svg_tag }}
+            {%- endif -%}
+          </div>
+        {%- endfor -%}
+      </div>
+
+      {% if section.settings.show_mobile_zoom_icon != false %}
+        <div class="product-offer-v2-media__zoom-icon">
+          {{ 'zoom-icon.svg' | inline_asset_content }}
+        </div>
+      {% endif %}
+
+      <div class="product-offer-v2-media__navigation product-offer-v2-media__navigation--prev">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+          <path d="M8.80224 1.94249C8.91307 1.94249 9.02391 1.98332 9.11141 2.07082C9.28057 2.23999 9.28057 2.51999 9.11141 2.68916L5.30807 6.49249C5.02807 6.77249 5.02807 7.22749 5.30807 7.50749L9.11141 11.3108C9.28057 11.48 9.28057 11.76 9.11141 11.9292C8.94224 12.0983 8.66224 12.0983 8.49307 11.9292L4.68974 8.12582C4.39224 7.82832 4.22307 7.42582 4.22307 6.99999C4.22307 6.57415 4.38641 6.17165 4.68974 5.87415L8.49307 2.07082C8.58057 1.98916 8.69141 1.94249 8.80224 1.94249Z" fill="#292D32"/>
+        </svg>
+      </div>
+      <div class="product-offer-v2-media__navigation product-offer-v2-media__navigation--next">
+        <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+          <path d="M5.19776 12.0575C5.08693 12.0575 4.97609 12.0167 4.88859 11.9292C4.71943 11.76 4.71943 11.48 4.88859 11.3108L8.69193 7.50751C8.97193 7.22751 8.97193 6.77251 8.69193 6.49251L4.88859 2.68918C4.71943 2.52001 4.71943 2.24001 4.88859 2.07084C5.05776 1.90168 5.33776 1.90168 5.50693 2.07084L9.31026 5.87418C9.60776 6.17168 9.77693 6.57418 9.77693 7.00001C9.77693 7.42584 9.61359 7.82834 9.31026 8.12584L5.50693 11.9292C5.41943 12.0108 5.30859 12.0575 5.19776 12.0575Z" fill="#292D32"/>
+        </svg>
+      </div>
+
+      <div class="product-offer-v2-media__badges-container">
+        {%- for option in one_time_options -%}
+          {% assign style_display = 'none' %}
+          {% if forloop.index0 == 1 %}
+            {% assign style_display = 'block' %}
+          {% endif %}
+          {%- assign media_badges = option.settings.image_badges |  newline_to_br | split: '<br />' -%}
+          {%- for badge in media_badges -%}
+            <div class="product-offer-v2-media__badge"
+                data-badge-id="badge-one-time-{{ option.settings.quantity }}"
+                style="display: {{ style_display }}; background-color: rgba(var(--active-color), .1); color: rgb(var(--active-color));"
+            >
+              {{- badge -}}
+            </div>
+          {%- endfor -%}
+        {%- endfor -%}
+        {%- for option in subscribe_options -%}
+          {% assign style_display = 'none' %}
+          {%- assign media_badges = option.settings.image_badges |  newline_to_br | split: '<br />' -%}
+          {%- for badge in media_badges -%}
+            <div class="product-offer-v2-media__badge"
+                data-badge-id="badge-subscribe-{{ option.settings.quantity }}"
+                style="display: {{ style_display }}; background-color: rgba(var(--active-color), .4); color: rgb(var(--active-color));"
+            >
+              {{- badge -}}
+            </div>
+          {%- endfor -%}
+        {%- endfor -%}
+      </div>
+    </div>
+    <div class="product-offer-v2-media__thumbs offer-v2-media-thumbs">
+      <div class="offer-v2-media-thumbs__swiper-wrapper swiper-wrapper">
+        {%- for image_block in product_images -%}
+          <div class="offer-v2-media-thumbs__slide swiper-slide">
+            {%- if image_block.settings.image != blank -%}
+              {{ image_block.settings.image |  image_url: width: 300 | image_tag }}
+            {%- else -%}
+              {{ 'image' | placeholder_svg_tag }}
+            {%- endif -%}
+          </div>
+        {%- endfor -%}
+      </div>
+    </div>
+
+    {% render 'lightbox', section: section, product_images: product_images %}
+  </product-offer-v2-media>
+  <div class="landing-product-offer-v2__info product-offer-v2-info">
+    {% if product_upper_text != blank %}
+      <p class="product-offer-v2-info__upper-text">{{ product_upper_text }}</p>
+    {% endif %}
+    <h2 class="product-offer-v2-info__title">{{ product_title }}</h2>
+    {% if product_reviews_text != blank %}
+      <div class="product-offer-v2-info__reviews">
+        <span class="product-offer-v2-info__reviews-icon">
+          {%- render 'icon-stars' -%}
+        </span>
+        <span class="product-offer-v2-info__reviews-text">{{- product_reviews_text -}}</span>
+      </div>
+    {% endif %}
+    <landing-offer-v2-form>
+      {% form 'product', product, class: "product-offer-v2-info__form product-offer-v2-form" %}
+        <input type="hidden" name="id" value="{{ variant.id }}">
+        <input type="hidden" name="quantity" value="3">
+        <input type="hidden" name="selling_plan" value="{{ selling_plan_id }}" disabled>
+
+        <div class="product-offer-v2-form__selling-plan product-offer-v2-selling-plan">
+          {%- if selling_plan_label != blank -%}
+            <p class="product-offer-v2-selling-plan__label">{{ selling_plan_label }}</p>
+          {%- endif -%}
+          <div class="product-offer-v2-selling-plan__buttons">
+            {%- if one_time_button_text != blank -%}
+              <button type="button"
+                    id="product-offer-v2-one-time"
+                    class="product-offer-v2-selling-plan__button product-offer-v2-selling-plan__button--active"
+              >
+                {{ one_time_button_text }}
+              </button>
+            {%- endif -%}
+            {%- if subscribe_button_text != blank -%}
+              <button type="button"
+                    id="product-offer-v2-subscribe"
+                    class="product-offer-v2-selling-plan__button"
+              >
+                {{ subscribe_button_text }}
+              </button>
+            {%- endif -%}
+          </div>
+        </div>
+
+        <div class="product-offer-v2-options product-offer-v2-options--one-time">
+          {%- for option in one_time_options -%}
+            <div class="product-offer-v2-options__option {% if forloop.index0 == 1 %}product-offer-v2-options__option--active{% endif %}"
+                data-quantity="{{ option.settings.quantity }}"
+                data-discount-code="{{ option.settings.discount_code |  default: '' }}"
+                data-index="{{ forloop.index0 }}"
+            >
+              <div class="product-offer-v2-option__circle"></div>
+              <div class="product-offer-v2-option__info">
+                <p class="product-offer-v2-option__title">{{ option.settings.title }}</p>
+                {% if option.settings.badge_text != blank %}
+                  <p class="product-offer-v2-option__badge">{{ option.settings.badge_text }}</p>
+                {% endif %}
+              </div>
+              <div class="product-offer-v2-option__price-container">
+                <p class="product-offer-v2-option__price">{{ option.settings.price }}</p>
+                <p class="product-offer-v2-option__compared-price">{{ option.settings.compared_price }}</p>
+              </div>
+            </div>
+          {%- endfor -%}
+        </div>
+        <div class="product-offer-v2-options product-offer-v2-options--subscribe">
+          {%- for option in subscribe_options -%}
+            <div class="product-offer-v2-options__option {% if forloop.index0 == 1 %}product-offer-v2-options__option--active{% endif %}"
+                data-quantity="{{ option.settings.quantity }}"
+                data-discount-code="{{ option.settings.discount_code |  default: '' }}"
+                data-index="{{ forloop.index0 }}"
+            >
+              <div class="product-offer-v2-option__circle"></div>
+              <div class="product-offer-v2-option__info">
+                <p class="product-offer-v2-option__title">{{ option.settings.title }}</p>
+                <p class="product-offer-v2-option__badge">{{ option.settings.badge_text }}</p>
+              </div>
+              <div class="product-offer-v2-option__price-container">
+                <p class="product-offer-v2-option__price">{{ option.settings.price }}</p>
+                <p class="product-offer-v2-option__compared-price">{{ option.settings.compared_price }}</p>
+              </div>
+            </div>
+          {%- endfor -%}
+        </div>
+
+        <button class="product-offer-v2-form__button">
+          <span class="buy-now__text">
+            {{ product_button_text }}
+          </span>
+
+          <!-- Preloader -->
+          <div class="preloader">
+            <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+          </div>
+        </button>
+      {% endform %}
+
+      {% comment %} </form> {% endcomment %}
+    </landing-offer-v2-form>
+
+    {% if product_advantages[0].settings.advantages_list != blank %}
+      <div class="product-offer-v2-info__advantages-wrapper product-offer-v2-info__advantages-wrapper--subscribe">
+        {% assign icons_island_input_pairs = product_advantages[0].settings.advantages_list  | split: ', ' %}
+        {% for icons_pair in icons_island_input_pairs %}
+          <div class="product-offer-v2-info__advantages-item">
+            {% assign icon_content_divided = icons_pair | split: ';' %}
+            <img src="{{ icon_content_divided[0] | file_url }}"
+              width="18px"
+              height="18px"
+              class="icons-islands__icon"
+            >
+            {% unless icon_content_divided[1] == blank %}
+              <span class="advantages-item__label">
+                {{ icon_content_divided[1] }}
+              </span>
+            {% endunless %}
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+    {% if product_advantages[0].settings.advantages_list_one_time != blank %}
+      <div class="product-offer-v2-info__advantages-wrapper product-offer-v2-info__advantages-wrapper--one-time-purchase">
+        {% assign icons_island_input_pairs = product_advantages[0].settings.advantages_list_one_time | split: ', ' %}
+        {% for icons_pair in icons_island_input_pairs %}
+          <div class="product-offer-v2-info__advantages-item">
+            {% assign icon_content_divided = icons_pair | split: ';' %}
+            <img src="{{ icon_content_divided[0] | file_url }}"
+                width="18px"
+                height="18px"
+                class="icons-islands__icon"
+            >
+            {% unless icon_content_divided[1] == blank %}
+              <span class="advantages-item__label">
+                {{ icon_content_divided[1] }}
+              </span>
+            {% endunless %}
+          </div>
+        {% endfor %}
+      </div>
+    {% endif %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Landing product offer v2",
+  "tag": "section",
+  "class": "landing-product-offer-v2",
+  "blocks": [
+    {
+      "name": "Image",
+      "type": "image",
+      "limit": 10,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        }
+      ]
+    },
+    {
+      "type": "advantages_list",
+      "name": "Advantages list",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "label": "Advantages list",
+          "id": "advantages_list",
+          "placeholder": "shipping.svg;Ships in 30 days, shipping.svg;Update or Cancel Anytime, shipping.svg;90-Day Money Back Guarantee",
+          "info": "Please specify icon name, format and line that you want to add. Format: fileName.format;Line, fileName2.format2;Line2, ..."
+        },
+        {
+          "type": "text",
+          "label": "Advantages list for one time purchase",
+          "id": "advantages_list_one_time",
+          "placeholder": "shipping.svg;Scientifically proven benefits, shipping.svg;Made in USA, shipping.svg;90-Day Money Back Guarantee",
+          "info": "Please specify icon name, format and line that you want to add. Format: fileName.format;Line, fileName2.format2;Line2, ..."
+        }
+      ]
+    },
+    {
+      "name": "Option One Time Purchase",
+      "type": "option_one_time",
+      "limit": 3,
+      "settings": [
+        {
+          "type": "header",
+          "content": "Quantity"
+        },
+        {
+          "type": "number",
+          "id": "quantity",
+          "label": "Quantity",
+          "default": 1
+        },
+        {
+          "type": "header",
+          "content": "Discount"
+        },
+        {
+          "type": "text",
+          "id": "discount_code",
+          "label": "Code",
+          "info": "Discount title from admin panel."
+        },
+        {
+          "type": "header",
+          "content": "Badges above image"
+        },
+        {
+          "type": "textarea",
+          "id": "image_badges",
+          "label": "image_badges",
+          "default": "OVER 2.7 Million units sold <br /> Best seller",
+          "info": "Each badge text should be from new line"
+        },
+        {
+          "type": "header",
+          "content": "Option content"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "1 Bottle"
+        },
+        {
+          "type": "text",
+          "id": "badge_text",
+          "label": "badge_text",
+          "default": "SAVE $10"
+        },
+        {
+          "type": "text",
+          "id": "price",
+          "label": "Price",
+          "default": "$89.00"
+        },
+        {
+          "type": "text",
+          "id": "compared_price",
+          "label": "Compared price",
+          "default": "$89.99"
+        }
+      ]
+    },
+    {
+      "name": "Option Subscribe",
+      "type": "option_subscribe",
+      "limit": 3,
+      "settings": [
+        {
+          "type": "header",
+          "content": "Quantity"
+        },
+        {
+          "type": "number",
+          "id": "quantity",
+          "label": "Quantity",
+          "default": 1
+        },
+        {
+          "type": "header",
+          "content": "Discount"
+        },
+        {
+          "type": "text",
+          "id": "discount_code",
+          "label": "Code",
+          "info": "Discount title from admin panel."
+        },
+        {
+          "type": "header",
+          "content": "Badges above image"
+        },
+        {
+          "type": "textarea",
+          "id": "image_badges",
+          "label": "image_badges",
+          "default": "OVER 2.7 Million units sold <br /> Best seller",
+          "info": "Each badge text should be from new line"
+        },
+        {
+          "type": "header",
+          "content": "Option info"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "1 Bottle"
+        },
+        {
+          "type": "text",
+          "id": "badge_text",
+          "label": "badge_text",
+          "default": "SAVE $10"
+        },
+        {
+          "type": "text",
+          "id": "price",
+          "label": "Price",
+          "default": "$89.00"
+        },
+        {
+          "type": "text",
+          "id": "compared_price",
+          "label": "Compared price",
+          "default": "$89.99"
+        }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "product",
+      "id": "product",
+      "label": "Product"
+    },
+    {
+      "type": "text",
+      "id": "upper_text",
+      "label": "Text above title",
+      "default": "SPECIAL INTERNET-ONLY OFFER UP TO 35% OFF"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "label": "title",
+      "default": "Experience the Power of Comprehensive Nutrition"
+    },
+    {
+      "type": "text",
+      "id": "reviews",
+      "label": "Reviews",
+      "default": "3,500+ Five Star Reviews"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "Claim Your Discount"
+    },
+    {
+      "type": "text",
+      "id": "selling_plan_label",
+      "label": "Selling plan label",
+      "default": "Choose your package:"
+    },
+    {
+      "type": "text",
+      "id": "one_time_btn_text",
+      "label": "One time button text",
+      "default": "One-time Purchase"
+    },
+    {
+      "type": "text",
+      "id": "subscribe_btn_text",
+      "label": "Subscribe time button text",
+      "default": "Subscribe and Save 10%"
+    },
+    {
+      "type": "select",
+      "id": "lightbox_type",
+      "label": "Lightbox type",
+      "default": "column",
+      "options": [
+        {
+          "value": "column",
+          "label": "Column"
+        },
+        {
+          "value": "slider",
+          "label": "Slider"
+        }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "show_mobile_zoom_icon",
+      "label": "Show mobile zoom icon",
+      "default": true
+    },
+    {
+      "type": "select",
+      "id": "zoom_type",
+      "label": "Zoom Type",
+      "options": [
+        {
+          "value": "none",
+          "label": "None"
+        },
+        {
+          "value": "default",
+          "label": "Default"
+        },
+        {
+          "value": "magnify",
+          "label": "Magnify effect"
+        }
+      ],
+      "default": "magnify"
+    },
+    {
+      "type": "header",
+      "content": "Section paddings"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "Style"
+    },
+    {
+      "type": "color_background",
+      "id": "background_color",
+      "label": "Background color"
+    },
+    {
+      "type": "color",
+      "id": "active_color",
+      "label": "Active color",
+      "default": "#FF6A13"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Accent color",
+      "default": "#ff6a13"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Landing product offer v2"
+    }
+  ]
+}
+{% endschema %}

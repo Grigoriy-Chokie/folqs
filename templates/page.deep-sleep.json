@@ -1,0 +1,953 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "announcement_line_NjwgE8": {
+      "type": "announcement-line",
+      "settings": {
+        "text": "FREE SHIPPING ON ALL ORDERS",
+        "background_color": "#FFFEED",
+        "text_color": "#000000"
+      }
+    },
+    "landing_product_alternative_xejNda": {
+      "type": "landing-product-alternative",
+      "blocks": {
+        "title_6H8HGR": {
+          "type": "title",
+          "settings": {
+            "text": "<p>Unlock Better Sleep — <strong>Without Melatonin</strong></p>",
+            "highlighted_color": "#005eb8",
+            "text_mobile": ""
+          }
+        },
+        "reviews_PMt77M": {
+          "type": "reviews",
+          "settings": {
+            "text": "3,500+ Five Star Reviews"
+          }
+        },
+        "feature_z6BHRN": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/x23_151a6aff_00000024686288411363611140000016350964256059194263.svg",
+            "title": "Supports Deeper Sleep",
+            "text": ""
+          }
+        },
+        "feature_BUNiay": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/Group_10.svg",
+            "title": "Supports a Calm Mind",
+            "text": ""
+          }
+        },
+        "feature_3EwyDH": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/Group_11.svg",
+            "title": "No Added Melatonin",
+            "text": ""
+          }
+        },
+        "price_cahnQm": {
+          "type": "price",
+          "settings": {
+            "text": "$1,20 per serving [dot] 10 month supply",
+            "name_plan_display": "Subscribe & Save",
+            "name_plan": "Subscribe & Save",
+            "information": "Free Shipping\nPause, Skip, Cancel at Any Time for Any Reason\n90-Day Money-Back Guarantee",
+            "enable_one_purchase": true,
+            "heading": "One-time Purchase",
+            "use_quantity_box": false,
+            "primary_color": "#005eb8",
+            "badge_color": "#ffffff",
+            "badge_background": "#005eb8",
+            "shadow": false
+          }
+        },
+        "buy_buttons_UEGH88": {
+          "type": "buy_buttons",
+          "settings": {
+            "benefits_text1": "Ships in 30 days",
+            "benefits_text2": "Free US Shipping",
+            "benefits_text3": "Cancel Anytime"
+          }
+        },
+        "advantages_list_Ch88hy": {
+          "type": "advantages_list",
+          "settings": {
+            "advantages_list": "shield-tick_1489816c-d5ec-4487-8536-ca7a6a30724c.svg;90-Day Guarantee: Better Sleep or Your Money Back",
+            "advantages_list_one_time": "shield-tick_1489816c-d5ec-4487-8536-ca7a6a30724c.svg;90-Day Guarantee: Better Sleep or Your Money Back"
+          }
+        },
+        "image_6xEbkd": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Group_1982248289_92c57ed5-0813-451b-abd4-d08a13664479.png"
+          }
+        },
+        "image_rCmRK4": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/v2.png"
+          }
+        },
+        "image_iBrt7f": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Rectangle_581.png"
+          }
+        },
+        "image_VyQdck": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Group_1982248362_77e2c35e-4aee-4abd-947e-144a9cb5353e.png"
+          }
+        },
+        "collapsible_row_YmFyPp": {
+          "type": "collapsible_row",
+          "settings": {
+            "question": "Sleep Benefits",
+            "answer": "<ul><li>May Reduce Morning Grogginess *</li><li>Non-Habit Forming Formula *</li><li>Supports Faster Sleep Onset *</li><li>Encourages Deeper, More Restorative Sleep *</li><li>Promotes Improved REM Sleep *</li><li>Helps Maintain Uninterrupted Rest *</li><li>Supports Daily Energy & Alertness *</li><li>Calms the Mind *</li><li>Promotes Muscle Relaxation *</li></ul><p><em>*Individual Results May Vary</em></p>"
+          }
+        },
+        "collapsible_row_3BJB7H": {
+          "type": "collapsible_row",
+          "settings": {
+            "question": "Product Features",
+            "answer": "<ul><li>Natural Hot Cocoa Flavor</li><li>Third-Party Tested for Purity & Quality</li><li>No Added Sugar </li><li>Clinically Studied Ingredient Doses</li><li>Non-Habit Forming, Melatonin-Free</li><li>Formulated for Long-Term Use</li><li>Minimizes Morning Grogginess</li><li>Premium, Natural Ingredients</li><li>Manufactured in an FDA-Registered Facility</li><li>100% Transparent Labeling</li></ul><p><em>*Individual results may vary. These statements are not intended to diagnose, treat, cure, or prevent any disease.</em></p>"
+          }
+        },
+        "collapsible_row_GDjUrU": {
+          "type": "collapsible_row",
+          "settings": {
+            "question": "Ingredients",
+            "answer": "<ul><li><strong>Glycine – 3,000 mg:</strong> Helps encourage restful sleep and relaxation. *</li><li><strong>Magnesium Glycinate - 200 mg:</strong> Can promote calmness and healthy sleep patterns. *</li><li><strong>L-Theanine – 200 mg:</strong> Supports relaxation and a balanced mood. *</li><li><strong>PharmaGABA® – 100 mg:</strong> Known to help maintain calmness and relaxation. *</li><li><strong>Apigenin – 25 mg:</strong> Traditionally recognized to support restful sleep. *</li><li><strong>Tart Cherry Extract – 400 mg:</strong> Often used to provide natural sleep-cycle support. *</li><li><strong>Jujube Seed Extract – 300 mg:</strong> Historically valued for relaxation and calmness. *</li><li><strong>Lemon Balm Extract – 150 mg:</strong> Helps foster a calm, relaxed state. *</li><li><strong>Chamomile Extract – 150 mg:</strong> Widely recognized for aiding relaxation. *</li><li><strong>Vitamin B6 (Pyridoxine HCl) – 2 mg:</strong> Contributes to healthy serotonin production. *</li></ul><p><em>*Individual results may vary. These statements are not intended to diagnose, treat, cure, or prevent any disease.</em></p>"
+          }
+        },
+        "collapsible_row_kT6mwn": {
+          "type": "collapsible_row",
+          "settings": {
+            "question": "No Artificial Anything",
+            "answer": "<ul><li>No Melatonin or Habit-Forming Ingredients</li><li>No Artificial Sweeteners or Flavors</li><li>No Added Sugar or Fillers</li><li>No Hidden Ingredients or Proprietary Blends</li><li>Helps Avoid Morning Grogginess*</li></ul>"
+          }
+        }
+      },
+      "block_order": [
+        "title_6H8HGR",
+        "reviews_PMt77M",
+        "feature_z6BHRN",
+        "feature_BUNiay",
+        "feature_3EwyDH",
+        "price_cahnQm",
+        "buy_buttons_UEGH88",
+        "advantages_list_Ch88hy",
+        "image_6xEbkd",
+        "image_rCmRK4",
+        "image_iBrt7f",
+        "image_VyQdck",
+        "collapsible_row_YmFyPp",
+        "collapsible_row_3BJB7H",
+        "collapsible_row_GDjUrU",
+        "collapsible_row_kT6mwn"
+      ],
+      "custom_css": [
+        ".product-offer-v2-media__thumbs {margin-top: 8px;}"
+      ],
+      "settings": {
+        "style_type": "compact",
+        "use_gallery": true,
+        "gallery_view": "grid",
+        "gallery_full_width": true,
+        "background": "",
+        "primary_color": "#d9024d",
+        "background_icon": "",
+        "padding_top": 56,
+        "padding_bottom": 65,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 60,
+        "heading": "Only Natural Ungredients",
+        "sub_heading": "Lorem ipsum dolor sit amet consectetur. Gravida facilisi eleifend sit quam morbi risus id. Nisl massa donec tincidunt.",
+        "landing_product": "beet-root-chews-copy",
+        "enable_style": true,
+        "property_value": ""
+      }
+    },
+    "deep_sleep_trusted_icons_EEPKMb": {
+      "type": "deep-sleep-trusted-icons",
+      "blocks": {
+        "icon_with_text_xUdRUQ": {
+          "type": "icon_with_text",
+          "settings": {
+            "icon": "shopify://shop_images/no-gmo_1.svg",
+            "text": "Non-GMO"
+          }
+        },
+        "icon_with_text_THQMNF": {
+          "type": "icon_with_text",
+          "settings": {
+            "icon": "shopify://shop_images/303c42ff.svg",
+            "text": "SUGAR-FREE"
+          }
+        },
+        "icon_with_text_9fxrpx": {
+          "type": "icon_with_text",
+          "settings": {
+            "icon": "shopify://shop_images/vegan_1.svg",
+            "text": "Vegan"
+          }
+        },
+        "icon_with_text_UTVGni": {
+          "type": "icon_with_text",
+          "settings": {
+            "icon": "shopify://shop_images/gluten-free_1_1.svg",
+            "text": "Gluten-Free"
+          }
+        },
+        "icon_with_text_MaRWhJ": {
+          "type": "icon_with_text",
+          "settings": {
+            "icon": "shopify://shop_images/000000ff_1_aa38c03f-f56d-4332-9cc1-eb49b4823be9.svg",
+            "text": "Keto-Friendly"
+          }
+        }
+      },
+      "block_order": [
+        "icon_with_text_xUdRUQ",
+        "icon_with_text_THQMNF",
+        "icon_with_text_9fxrpx",
+        "icon_with_text_UTVGni",
+        "icon_with_text_MaRWhJ"
+      ],
+      "settings": {
+        "title": "Clean Formula for Your Best Sleep Yet",
+        "title_tag": "h2",
+        "background_color": "#e6eff8"
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "is_heading_hidden": false,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "image_reviews_BHeNDV": {
+      "type": "image-reviews",
+      "blocks": {
+        "review_VdL7Lc": {
+          "type": "review",
+          "settings": {
+            "image": "shopify://shop_images/woman_happy__falls_asleep.png",
+            "photo": "shopify://shop_images/Ellipse_62.png",
+            "author_name": "Alex S.",
+            "service_logo": "shopify://shop_images/Group_1982248386.svg"
+          }
+        },
+        "review_a9RaRG": {
+          "type": "review",
+          "settings": {
+            "image": "shopify://shop_images/woman_happy__falls_asleep_1.png",
+            "photo": "shopify://shop_images/Ellipse_62_1.png",
+            "author_name": "Clara H.",
+            "service_logo": "shopify://shop_images/Group_1982248385.svg"
+          }
+        },
+        "review_rCPcUy": {
+          "type": "review",
+          "settings": {
+            "image": "shopify://shop_images/image_-_2025-04-09T115601.104.png",
+            "photo": "shopify://shop_images/Ellipse_62_2.png",
+            "author_name": "Chris K.",
+            "service_logo": "shopify://shop_images/Group_1982248386.svg"
+          }
+        },
+        "review_jcaUKd": {
+          "type": "review",
+          "settings": {
+            "image": "shopify://shop_images/woman_happy__falls_asleep_2.png",
+            "photo": "shopify://shop_images/Ellipse_62_3.png",
+            "author_name": "Andrea T.",
+            "service_logo": "shopify://shop_images/Group_1982248384.svg"
+          }
+        }
+      },
+      "block_order": [
+        "review_VdL7Lc",
+        "review_a9RaRG",
+        "review_rCPcUy",
+        "review_jcaUKd"
+      ],
+      "settings": {
+        "subheading": "Think You Need Melatonin?",
+        "subheading_color": "#005eb8",
+        "heading": "These Sleep Scores Say Otherwise.",
+        "title_tag": "h2",
+        "text_under_heading": "<p>See How Folqs Customers Are Sleeping Better —</p><p>Without Added Melatonin or Next-Day Grogginess*</p>",
+        "cta_text": "Try it Risk-Free",
+        "cta_url": "#shopify-section-template--17811306250294__landing_product_alternative_UzYHPT",
+        "guarantee_text": "90-Day Sleep Guarantee: Better Sleep or Your Money Back.",
+        "guarantee_text_mobile": "90-Day Sleep Guarantee",
+        "padding_top": 80,
+        "padding_bottom": 80,
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 60
+      }
+    },
+    "beetroot_image_benefits_list_gkkKVH": {
+      "type": "beetroot-image-benefits-list",
+      "blocks": {
+        "benefit_ftUtR6": {
+          "type": "benefit",
+          "settings": {
+            "text": "May Support Quick, Easy Sleep Onset*"
+          }
+        },
+        "benefit_n4KG6h": {
+          "type": "benefit",
+          "settings": {
+            "text": "Encourages Deeper, Uninterrupted Sleep*"
+          }
+        },
+        "benefit_dba6q9": {
+          "type": "benefit",
+          "settings": {
+            "text": "Helps Reduce Morning Grogginess*"
+          }
+        },
+        "benefit_dyGXtD": {
+          "type": "benefit",
+          "settings": {
+            "text": "Promotes Natural Relaxation & Calmness*"
+          }
+        },
+        "benefit_HAXXzj": {
+          "type": "benefit",
+          "settings": {
+            "text": "Non-Habit Forming, Safe for Nightly Use*"
+          }
+        },
+        "benefit_f4dCyj": {
+          "type": "benefit",
+          "settings": {
+            "text": "Wake Up Feeling Refreshed & Energized*"
+          }
+        }
+      },
+      "block_order": [
+        "benefit_ftUtR6",
+        "benefit_n4KG6h",
+        "benefit_dba6q9",
+        "benefit_dyGXtD",
+        "benefit_HAXXzj",
+        "benefit_f4dCyj"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/28c715c4e511f5027837b63e6a1de4f6.gif",
+        "image_benefit": "shopify://shop_images/check_1_1_2d76f396-eb5b-492e-b09a-b071fd304f69.svg",
+        "title": "Folqs Deep Sleep Formula Benefits",
+        "text": "<p>At Folqs, we go beyond ordinary sleep aids. Our Deep Sleep Formula combines Glycine, Magnesium Glycinate, and L-Theanine with calming botanicals such as Chamomile, Lemon Balm, and Jujube Seed—traditionally recognized for their relaxing properties and to help support deeper, more restorative sleep. Enhanced with PharmaGABA® and Tart Cherry Extract, our melatonin-free blend helps promote a consistently restful night without habit-forming ingredients or next-day grogginess.*</p>",
+        "background_color": "#f7fdf2"
+      }
+    },
+    "beetroot_ingredients_ptDj43": {
+      "type": "beetroot-ingredients",
+      "blocks": {
+        "ingredient_Tf4HwE": {
+          "type": "ingredient",
+          "settings": {
+            "image": "shopify://shop_images/image_-_2025-04-07T111805.927.png",
+            "title": "Glycine",
+            "mg_count": " 3,000 mg",
+            "text": "Helps calm the mind, potentially supporting improved sleep quality and duration."
+          }
+        },
+        "ingredient_CgAm9W": {
+          "type": "ingredient",
+          "settings": {
+            "image": "shopify://shop_images/magnesium_looking_like_an_ingredient.png",
+            "title": "Magnesium Glycinate",
+            "mg_count": "200 mg",
+            "text": "May promote relaxation, ease restlessness, and support deeper rest."
+          }
+        },
+        "ingredient_LBy3zf": {
+          "type": "ingredient",
+          "settings": {
+            "image": "shopify://shop_images/84b26c8eed9034df909d49d7ecae1ec7.png",
+            "title": "L-Theanine",
+            "mg_count": "200 mg",
+            "text": "Associated with relaxation and a healthy mood, potentially aiding faster sleep onset."
+          }
+        },
+        "ingredient_qjUpFF": {
+          "type": "ingredient",
+          "settings": {
+            "image": "shopify://shop_images/Frame_1982248335_6d7fb650-7252-4461-a232-27434162279a.png",
+            "title": "PharmaGABA®",
+            "mg_count": "100 mg",
+            "text": "Believed to naturally encourage calmness and more restful sleep."
+          }
+        },
+        "ingredient_7YJHtV": {
+          "type": "ingredient",
+          "settings": {
+            "image": "shopify://shop_images/image_-_2025-04-07T111846.485.png",
+            "title": "Apigenin",
+            "mg_count": "25 mg",
+            "text": "Gently supports deeper rest, which may promote more restorative sleep."
+          }
+        },
+        "ingredient_e9Q7Kp": {
+          "type": "ingredient",
+          "settings": {
+            "image": "shopify://shop_images/image_-_2025-04-07T111853.707.png",
+            "title": "Tart Cherry Extract",
+            "mg_count": "400 mg",
+            "text": "Encourages your body’s natural melatonin production without dependency."
+          }
+        },
+        "ingredient_79fcRb": {
+          "type": "ingredient",
+          "settings": {
+            "image": "shopify://shop_images/image_-_2025-04-07T111909.663.png",
+            "title": "Lemon Balm Extract",
+            "mg_count": "150 mg",
+            "text": "Traditionally used to help quiet the mind and promote restful sleep."
+          }
+        },
+        "ingredient_mURxk8": {
+          "type": "ingredient",
+          "settings": {
+            "image": "shopify://shop_images/image_-_2025-04-07T111916.813.png",
+            "title": "Jujube Seed Extract",
+            "mg_count": "300 mg",
+            "text": "May foster calmness and relaxation, contributing to improved sleep quality."
+          }
+        },
+        "ingredient_YPfcWb": {
+          "type": "ingredient",
+          "settings": {
+            "image": "shopify://shop_images/image_12.png",
+            "title": "Chamomile Extract",
+            "mg_count": "150 mg",
+            "text": "A gentle botanical often recognized for promoting relaxation and easing tension."
+          }
+        },
+        "ingredient_RyBJPg": {
+          "type": "ingredient",
+          "settings": {
+            "image": "shopify://shop_images/image_13.png",
+            "title": "Vitamin B6 (Pyridoxine HCl)",
+            "mg_count": "2 mg",
+            "text": "Known to support serotonin production, potentially contributing to balanced mood and healthy sleep patterns."
+          }
+        }
+      },
+      "block_order": [
+        "ingredient_Tf4HwE",
+        "ingredient_CgAm9W",
+        "ingredient_LBy3zf",
+        "ingredient_qjUpFF",
+        "ingredient_7YJHtV",
+        "ingredient_e9Q7Kp",
+        "ingredient_79fcRb",
+        "ingredient_mURxk8",
+        "ingredient_YPfcWb",
+        "ingredient_RyBJPg"
+      ],
+      "settings": {
+        "title": "Powerful, Transparent Ingredients for Dependable Sleep Without Melatonin",
+        "text": "At Folqs, we believe you deserve complete clarity on what you’re putting in your body. Each ingredient in our formula is dosed in clinically studied amounts and carefully selected to help support restful sleep—without adding melatonin, causing morning grogginess, or fostering dependency.*"
+      }
+    },
+    "benefits_marquee_GCgm6a": {
+      "type": "benefits-marquee",
+      "blocks": {
+        "text_label_FWy4Na": {
+          "type": "text_label",
+          "settings": {
+            "text": "No Artificial Flavors"
+          }
+        },
+        "text_label_WCTLkr": {
+          "type": "text_label",
+          "settings": {
+            "text": "No Added Sugar"
+          }
+        },
+        "text_label_i8z9WW": {
+          "type": "text_label",
+          "settings": {
+            "text": "No Artificial Sweeteners"
+          }
+        },
+        "text_label_6fi3AT": {
+          "type": "text_label",
+          "settings": {
+            "text": "No Synthetic Preservatives"
+          }
+        },
+        "text_label_JzdFym": {
+          "type": "text_label",
+          "settings": {
+            "text": "Non-GMO Ingredients"
+          }
+        }
+      },
+      "block_order": [
+        "text_label_FWy4Na",
+        "text_label_WCTLkr",
+        "text_label_i8z9WW",
+        "text_label_6fi3AT",
+        "text_label_JzdFym"
+      ],
+      "settings": {
+        "background": "#FFFEED",
+        "color_text": "#000000",
+        "autoscroll": true,
+        "padding_top": 0,
+        "padding_bottom": 0,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "decor_label": ""
+      }
+    },
+    "compare_tabel_PaQTiU": {
+      "type": "compare-tabel",
+      "blocks": {
+        "heading_rXhGkU": {
+          "type": "heading",
+          "settings": {
+            "title_store": "Folqs Deep Sleep Formula",
+            "image_store": "shopify://shop_images/blue_concept_2_ec786665-fd65-473a-83eb-eaf2a224b68b.png",
+            "title_another": "Other Brands",
+            "image_another": "shopify://shop_images/Pouch-Mockup_1_1.png"
+          }
+        },
+        "row_aGTCHQ": {
+          "type": "row",
+          "settings": {
+            "row_title": "Comprehensive Sleep Support",
+            "row_description": ""
+          }
+        },
+        "row_D7JNQd": {
+          "type": "row",
+          "settings": {
+            "row_title": "Clinically Validated Ingredients",
+            "row_description": ""
+          }
+        },
+        "row_VMKBm4": {
+          "type": "row",
+          "settings": {
+            "row_title": "Melatonin-Free (Non-Habit Forming)",
+            "row_description": ""
+          }
+        },
+        "row_Ldb8Ar": {
+          "type": "row",
+          "settings": {
+            "row_title": "Addresses Sleep Nutrient Gaps",
+            "row_description": ""
+          }
+        },
+        "row_KrN3nh": {
+          "type": "row",
+          "settings": {
+            "row_title": "Natural, Delicious Cocoa Flavor",
+            "row_description": ""
+          }
+        },
+        "row_f3Yqmh": {
+          "type": "row",
+          "settings": {
+            "row_title": "Third-Party Tested & Transparent Label",
+            "row_description": ""
+          }
+        },
+        "row_G73fBh": {
+          "type": "row",
+          "settings": {
+            "row_title": "Non-GMO, Vegan, Gluten-Free, Keto-Friendly",
+            "row_description": ""
+          }
+        },
+        "row_FhjPq7": {
+          "type": "row",
+          "settings": {
+            "row_title": "Zero Morning Grogginess",
+            "row_description": ""
+          }
+        },
+        "row_PjMQB8": {
+          "type": "row",
+          "settings": {
+            "row_title": "90-Day Money-Back Guarantee",
+            "row_description": ""
+          }
+        }
+      },
+      "block_order": [
+        "heading_rXhGkU",
+        "row_aGTCHQ",
+        "row_D7JNQd",
+        "row_VMKBm4",
+        "row_Ldb8Ar",
+        "row_KrN3nh",
+        "row_f3Yqmh",
+        "row_G73fBh",
+        "row_FhjPq7",
+        "row_PjMQB8"
+      ],
+      "settings": {
+        "padding_top": 60,
+        "padding_bottom": 80,
+        "padding_top_mobile": 48,
+        "padding_bottom_mobile": 40,
+        "title": "Best On The Market of Deep Sleep Powders",
+        "title_max_width": 440,
+        "icon": "shopify://shop_images/solar-power_1_61c48e20-36d0-4e09-9805-5c7bd5f94ca4.svg",
+        "information": "Choose Folqs Deep Sleep Formula for truly restful sleep, a clean and\ntransparent formula, and guaranteed morning energy-no compromises."
+      }
+    },
+    "beetroot_testimonials_tpeDzL": {
+      "type": "beetroot-testimonials",
+      "blocks": {
+        "testimonial_DmyyjH": {
+          "type": "testimonial",
+          "settings": {
+            "title": "Exactly what I needed!",
+            "text": "<p>I’ve been looking for something gentle and effective for bedtime. I feel calm, relaxed, and comfortable after taking it. Great addition to my nightly routine!</p>",
+            "author": "Jessica W.",
+            "is_verified": true
+          }
+        },
+        "testimonial_FkeMJY": {
+          "type": "testimonial",
+          "settings": {
+            "title": "Soothing and calming",
+            "text": "<p>This formula helps me wind down at night and relax before bed. Love how refreshed I feel in the mornings. Glad I tried it!</p>",
+            "author": "Mark L.",
+            "is_verified": true
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_DmyyjH",
+        "testimonial_FkeMJY"
+      ],
+      "settings": {
+        "padding_top": 0,
+        "padding_bottom": 80,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 40
+      }
+    },
+    "beetroot_image_text_v2_wHB9EJ": {
+      "type": "beetroot-image-text-v2",
+      "blocks": {
+        "title_L4HMhJ": {
+          "type": "title",
+          "settings": {
+            "text": "How To Use"
+          }
+        },
+        "steps_9NP7d9": {
+          "type": "steps",
+          "settings": {
+            "accent_color": "#005eb8",
+            "first_step": "<p>Add one scoop of Folqs </p><p>sleep powder to your cup.</p>",
+            "second_step": "<p>Stir gently into hot water</p><p>until completely dissolved.</p>",
+            "third_step": "<p>Enjoy your delicious drink, relax,</p><p>and drift into restful sleep.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "title_L4HMhJ",
+        "steps_9NP7d9"
+      ],
+      "settings": {
+        "image": "shopify://shop_images/Rectangle_35_1.png",
+        "image_position": "right",
+        "background": "#E6EFF8",
+        "add_icon": false,
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 40
+      }
+    },
+    "landing_product_alternative_UzYHPT": {
+      "type": "landing-product-alternative",
+      "blocks": {
+        "title_6XXUYc": {
+          "type": "title",
+          "settings": {
+            "text": "<p><strong>Sleep Better</strong></p><p>Or Get Your Money Back</p>",
+            "highlighted_color": "#005eb8",
+            "text_mobile": ""
+          }
+        },
+        "reviews_Xfdx8c": {
+          "type": "reviews",
+          "settings": {
+            "text": "3,500+ Five Star Reviews"
+          }
+        },
+        "feature_yb4Yd4": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/x23_151a6aff_00000024686288411363611140000016350964256059194263.svg",
+            "title": "Wake Up Refreshed, Never Groggy*",
+            "text": ""
+          }
+        },
+        "feature_cgD8x7": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/Group_10.svg",
+            "title": "No Added Melatonin",
+            "text": ""
+          }
+        },
+        "feature_XbJnNj": {
+          "type": "feature",
+          "settings": {
+            "icon": "shopify://shop_images/Group_11.svg",
+            "title": "Safe for Nightly Use*",
+            "text": ""
+          }
+        },
+        "price_iKBL8a": {
+          "type": "price",
+          "settings": {
+            "text": "$1,20 per serving [dot] 10 month supply",
+            "name_plan_display": "Subscribe & Save",
+            "name_plan": "Subscribe & Save",
+            "information": "Free Shipping\nPause, Skip, Cancel at Any Time for Any Reason\n90-Day Money-Back Guarantee",
+            "enable_one_purchase": true,
+            "heading": "One-time Purchase",
+            "use_quantity_box": false,
+            "primary_color": "#005eb8",
+            "badge_color": "#ffffff",
+            "badge_background": "#005eb8",
+            "shadow": false
+          }
+        },
+        "buy_buttons_4aD93q": {
+          "type": "buy_buttons",
+          "settings": {
+            "benefits_text1": "Ships in 30 days",
+            "benefits_text2": "Free US Shipping",
+            "benefits_text3": "Cancel Anytime"
+          }
+        },
+        "advantages_list_GMPrCN": {
+          "type": "advantages_list",
+          "settings": {
+            "advantages_list": "shield-tick_1489816c-d5ec-4487-8536-ca7a6a30724c.svg;90-Day Guarantee: Better Sleep or Your Money Back",
+            "advantages_list_one_time": "shield-tick_1489816c-d5ec-4487-8536-ca7a6a30724c.svg;90-Day Guarantee: Better Sleep or Your Money Back"
+          }
+        },
+        "image_dwhKXK": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Group_1982248289_92c57ed5-0813-451b-abd4-d08a13664479.png"
+          }
+        },
+        "image_AH9BVX": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/v2.png"
+          }
+        },
+        "image_cGbX7M": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Rectangle_581.png"
+          }
+        },
+        "image_N3pfQn": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Group_1982248362_77e2c35e-4aee-4abd-947e-144a9cb5353e.png"
+          }
+        }
+      },
+      "block_order": [
+        "title_6XXUYc",
+        "reviews_Xfdx8c",
+        "feature_yb4Yd4",
+        "feature_cgD8x7",
+        "feature_XbJnNj",
+        "price_iKBL8a",
+        "buy_buttons_4aD93q",
+        "advantages_list_GMPrCN",
+        "image_dwhKXK",
+        "image_AH9BVX",
+        "image_cGbX7M",
+        "image_N3pfQn"
+      ],
+      "settings": {
+        "style_type": "compact",
+        "use_gallery": true,
+        "gallery_view": "grid",
+        "gallery_full_width": true,
+        "background": "",
+        "primary_color": "#d9024d",
+        "background_icon": "",
+        "padding_top": 56,
+        "padding_bottom": 65,
+        "padding_top_mobile": 15,
+        "padding_bottom_mobile": 60,
+        "heading": "Only Natural Ungredients",
+        "sub_heading": "Lorem ipsum dolor sit amet consectetur. Gravida facilisi eleifend sit quam morbi risus id. Nisl massa donec tincidunt.",
+        "landing_product": "beet-root-chews-copy",
+        "enable_style": true,
+        "property_value": ""
+      }
+    },
+    "beetroot_trusted_icons_tUwGaX": {
+      "type": "beetroot-trusted-icons",
+      "blocks": {
+        "icon_text_XeMf9R": {
+          "type": "icon_text",
+          "settings": {
+            "image": "shopify://shop_images/ecology_1.svg",
+            "text": "<p>NON-GMO</p>"
+          }
+        },
+        "icon_text_Myr44C": {
+          "type": "icon_text",
+          "settings": {
+            "image": "shopify://shop_images/microscope_2.svg",
+            "text": "<p>THIRD-PARTY LAB TESTED</p>"
+          }
+        },
+        "icon_text_FjfAPP": {
+          "type": "icon_text",
+          "settings": {
+            "image": "shopify://shop_images/sweet_1_f8dfdd88-13db-4410-b835-fb33f136f1bc.svg",
+            "text": "<p>NO ARTIFICIAL SWEETENERS</p>"
+          }
+        }
+      },
+      "block_order": [
+        "icon_text_XeMf9R",
+        "icon_text_Myr44C",
+        "icon_text_FjfAPP"
+      ],
+      "settings": {
+        "title": "We Are Committed To Purity and Potency",
+        "title_size": "h3",
+        "text": "<p>Our Deep Sleep Formula is non-GMO, third-party tested, and sugar-free. Enjoy a delicious, convenient drink formulated to help support restful nights—so you can feel more confident in your bedtime routine.*</p>",
+        "background_color": "#fffeed"
+      }
+    },
+    "faq_XRwKYz": {
+      "type": "faq",
+      "blocks": {
+        "item_pHhDba": {
+          "type": "item",
+          "settings": {
+            "question": "Can I drink Folqs every night?",
+            "answer": "<p>Absolutely! Folqs is gentle enough for nightly use, so you can enjoy it as part of your evening wind-down routine.*</p>"
+          }
+        },
+        "item_4VxkB9": {
+          "type": "item",
+          "settings": {
+            "question": "Will Folqs help me fall asleep, stay asleep, or both?",
+            "answer": "<p>We’ve crafted Folqs to make drifting off easier and to help you stay comfortably asleep all night long.*</p>"
+          }
+        },
+        "item_YiWtJH": {
+          "type": "item",
+          "settings": {
+            "question": "Can I take Folqs long-term?",
+            "answer": "<p>Yes! We designed Folqs for regular, ongoing use without concerns about tolerance or dependency.*</p>"
+          }
+        },
+        "item_mtLmKx": {
+          "type": "item",
+          "settings": {
+            "question": "Will drinking Folqs make me groggy?",
+            "answer": "<p>Not typically. Folqs is created to help you wake up feeling refreshed and energized, rather than sluggish.*</p>"
+          }
+        },
+        "item_dGTcfH": {
+          "type": "item",
+          "settings": {
+            "question": "Is there melatonin or caffeine in Folqs?",
+            "answer": "<p>Nope! It contains no added melatonin, caffeine, and stimulants—perfect for a calming bedtime routine.</p>"
+          }
+        },
+        "item_BqKx3W": {
+          "type": "item",
+          "settings": {
+            "question": "How quickly will Folqs start working for me?",
+            "answer": "<p>Many folks notice an improvement the first night, and consistent use often brings even better results over time.*</p>"
+          }
+        },
+        "item_AjtaQR": {
+          "type": "item",
+          "settings": {
+            "question": "Does Folqs taste good?",
+            "answer": "<p>Yes! It has a naturally rich cocoa flavor—like a cozy cup of hot cocoa before bed, but without added sugar.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "item_pHhDba",
+        "item_4VxkB9",
+        "item_YiWtJH",
+        "item_mtLmKx",
+        "item_dGTcfH",
+        "item_BqKx3W",
+        "item_AjtaQR"
+      ],
+      "settings": {
+        "padding_top": 40,
+        "padding_bottom": 40,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 20,
+        "heading": "Frequently Asked Questions",
+        "heading_mobile": "",
+        "information": "",
+        "open_first_row_by_default": false,
+        "layout": "row"
+      }
+    }
+  },
+  "order": [
+    "announcement_line_NjwgE8",
+    "landing_product_alternative_xejNda",
+    "deep_sleep_trusted_icons_EEPKMb",
+    "main",
+    "image_reviews_BHeNDV",
+    "beetroot_image_benefits_list_gkkKVH",
+    "beetroot_ingredients_ptDj43",
+    "benefits_marquee_GCgm6a",
+    "compare_tabel_PaQTiU",
+    "beetroot_testimonials_tpeDzL",
+    "beetroot_image_text_v2_wHB9EJ",
+    "landing_product_alternative_UzYHPT",
+    "beetroot_trusted_icons_tUwGaX",
+    "faq_XRwKYz"
+  ]
+}

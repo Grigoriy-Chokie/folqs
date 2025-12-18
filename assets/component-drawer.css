@@ -1,0 +1,321 @@
+/* animate drawer */
+header-drawer.is-loading {
+    pointer-events: none;
+}
+
+.menu-opening,
+.drawer-menu--open {
+    display: block;
+}
+
+.menu-opening .drawer-menu__bg-filter,
+.drawer-menu--open .drawer-menu__bg-filter {
+    opacity: 1;
+}
+
+.menu-opening .drawer-menu__drawer,
+.menu-open .drawer-menu__drawer {
+    transform: translateX(0);
+    animation: openMenu 0.5s linear forwards;
+}
+
+
+/* end animate drawer */
+
+.drawer-menu__drawer {
+    background-color: #005EB8;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    max-height: var(--app-height);
+    top: 0;
+    left: 0;
+    z-index: 99;
+    display: flex;
+    flex-direction: column;
+    padding: 12px 20px 100px;
+    color: #ffffff;
+    font-family: "Raleway", sans-serif;
+    overflow: hidden;
+    transform: translateX(-200%);
+    transition: transform 1.5s linear;
+
+    --drawer-ripple-size: 456px;
+
+    animation: closeMenu 0.5s linear forwards;
+}
+
+@keyframes openMenu {
+    from {
+        transform: translateX(-200%);
+    }
+    
+      to {
+        transform: translateX(0);
+    }
+    
+}
+@keyframes closeMenu {
+    from {
+        transform: translateX(0%);
+    }
+    
+      to {
+        transform: translateX(-200%);
+    }
+    
+}
+
+.drawer-menu__header,
+.drawer-menu__main,
+.drawer-menu__footer {
+    position: relative;
+    z-index: 2;
+}
+
+.drawer-menu__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 0;
+}
+
+.drawer-menu__close {
+    cursor: pointer;
+}
+
+.drawer-menu__close svg {
+    width: 18px;
+}
+
+.drawer-menu__main {
+    height: 100%;
+    text-align: center;
+    color: white;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  gap: 10px;
+}
+
+.drawer-menu__main-menu-link,
+.drawer-menu__second-menu-link {
+    text-decoration: none;
+    color: inherit;
+    font-family: inherit;
+    font-weight: 500;
+}
+
+.drawer-menu__main-menu,
+.drawer-menu__second-menu {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.drawer-menu__main-menu {
+    margin-bottom: 50px;
+}
+
+.drawer-menu__main-menu-link {
+    font-size: 28px;
+}
+
+.drawer-menu__second-menu-item {
+    margin-bottom: 1em;
+}
+.drawer-menu__second-menu-link {
+    font-size: 18px;
+}
+
+.drawer-menu__footer .btn:not(:last-child) {
+    margin-bottom: 15px;
+}
+
+.drawer-menu__ripple {
+    position: absolute;
+    height: 10px;
+    width: 10px;
+    bottom: -3%;
+    left: 30%;
+}
+
+.drawer-menu__ripple-item {
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    position: absolute;
+    border: 2px solid rgba(255, 255, 255, 0.05);
+    border-radius: 50%;
+    filter: drop-shadow(2px 4px 2px black);
+}
+
+.drawer-menu__ripple-item:empty {
+    display: block;
+}
+
+
+.drawer-menu__ripple-item {
+    width: calc(var(--drawer-ripple-size) * var(--item-index));
+    height: calc(var(--drawer-ripple-size)* var(--item-index));
+}
+
+.drawer-menu__footer-button {
+    width: 100%;
+}
+
+.drawer-menu__bg-filter {
+    opacity: 0;
+    backdrop-filter: blur(6px);
+    position: fixed;
+    z-index: 98;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    top: 0;
+    transition: opacity .5s;
+}
+
+.drawer-menu__bg-filter:empty {
+    display: block;
+}
+
+.drawer-menu__footer {
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+    column-gap: 24px;
+  margin-top: auto;
+}
+@media screen and (min-width: 680px) {
+    .drawer-menu__footer {
+        justify-content: center;
+        margin: 0;
+        flex-direction: row;
+    }
+
+    .drawer-menu__footer-button {
+        min-width: 160px;
+        margin: 0 12px;
+    }
+
+    .drawer-menu .drawer-menu__footer .drawer-menu__footer-button {
+        margin-bottom: 0;
+    }
+}
+
+.drawer-menu__link{
+    padding: 1.2rem 2.6rem;
+    border: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    border-radius: 100px;
+    color: #fff;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+    background-color: #FF6A13;
+    gap: 10px;
+    text-decoration: none;
+    min-width: 160px;
+    min-height: 48px;
+    border: 0.5px solid #FF6A13;
+}
+
+.drawer-menu__link:hover {
+    background: #cf4c00;
+}
+
+.drawer-menu__link--account {
+    background: #337EC6;
+    border: 0.5px solid #337EC6;
+}
+
+.drawer-menu__link--account:hover {
+  background:#004A91;
+  border-color: #004A91;
+}
+
+.drawer-menu__link svg{
+    display: block;
+}
+
+@media screen and (min-width: 768px) {
+    .drawer-menu__drawer {
+        max-width: 40%;
+        padding-left: 10%;
+        min-width: 550px;
+        max-height: 100vh;
+    }
+
+    .drawer-menu__footer {
+        justify-content: flex-start;
+        margin: 0;
+    }
+
+    .drawer-menu__footer-button:not(:last-child) {
+        margin: 0;
+        margin-right: 24px;
+    }
+
+    .drawer-menu__main {
+        text-align: left;
+    }
+
+    .drawer-menu__main-menu-link {
+        font-size: 32px;
+    }
+
+    .drawer-menu__main-menu-link,
+    .drawer-menu__second-menu-link {
+        position: relative;
+        display: inline-block;
+        transition: transform .3s ease-in-out;
+    }
+
+    .drawer-menu__main-menu-link::after,
+    .drawer-menu__second-menu-link::after {
+        content: '';
+        display: block;
+        height: 2px;
+        position: absolute;
+        bottom: 0;
+        right: 0;
+        left: 0;
+        opacity: 0;
+        background: white;
+        transform: translateY(-2px);
+        transition: opacity .15s ease-in-out, transform .3s ease-in-out;
+    }
+
+    .drawer-menu__main-menu-link:hover,
+    .drawer-menu__second-menu-link:hover {
+        transform: translateY(-1px);
+    }
+
+    .drawer-menu__main-menu-link:hover::after,
+    .drawer-menu__second-menu-link:hover::after {
+        transform: translateY(1px);
+        opacity: 1;
+    }
+
+    .drawer-menu__second-menu-link {
+        font-size: 20px;
+    }
+
+    .drawer-menu__main-menu-item:not(:last-child) {
+        margin-bottom: 15px;
+    }
+
+    .drawer-menu__main-menu {
+        margin-bottom: 0px;
+    }
+
+
+    .drawer-menu__ripple {
+        bottom: 6%;
+        left: 20%;
+    }
+}

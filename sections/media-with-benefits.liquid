@@ -1,0 +1,256 @@
+{% liquid
+  assign image = section.settings.image
+  assign image_mobile = section.settings.image_mobile
+  assign title = section.settings.title
+  assign subtitle = section.settings.subtitle
+  assign heading = section.settings.heading
+  assign text = section.settings.text
+  assign button_text = section.settings.button_text
+  assign button_url = section.settings.button_url
+  assign decoration_image = section.settings.decoration_image
+  assign decoration_image_mobile = section.settings.decoration_image_mobile
+  assign decoration_style = section.settings.decoration_style
+%}
+
+{% if image != blank %}
+  {{ 'section-media-with-benefits.css' | asset_url | stylesheet_tag }}
+  {%- style -%}
+    .section-{{ section.id }}--padding {
+      padding-top: {{ section.settings.padding_top_mobile }}px;
+      padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+    }
+
+    @media screen and (min-width: 767px) {
+      .section-{{ section.id }}--padding {
+        padding-top: {{ section.settings.padding_top }}px;
+        padding-bottom: {{ section.settings.padding_bottom }}px;
+      }
+    }
+  {%- endstyle -%}
+  {% capture styles_variables %}
+    --title-color: {{ section.settings.title_color.rgb }};
+    --background: {{ section.settings.background }};
+    --accent-color: {{ section.settings.accent_color.rgb | replace: ' ', ', ' }};
+    --image-width: {{ section.settings.image_width }}%;
+  {% endcapture %}
+
+  <div style="{{ styles_variables }}" class="media-with-benefits section-{{ section.id }}--padding">
+    <div class="page-width">
+      <div class="media-with-benefits__heading">
+        {% if title != blank %}
+          <h2>{{ title }}</h2>
+          {% if subtitle != blank %}
+            <p>{{ subtitle }}</p>
+          {% endif %}
+        {% endif %}
+      </div>
+      <div class="media-with-benefits__wrapper">
+        <div class="media-with-benefits__media">
+          <div class="media-with-benefits__media-wrapper">
+              {% render 'picture',
+                image: image,
+                image_mobile: image_mobile,
+                mobile_breakpoint: 750,
+                widths_list: '350,800, 1200, 1500',
+                loading: 'lazy',
+                fetchpriority: 'low'
+              %}
+
+            {% if decoration_image != blank %}
+              {% capture classes %}
+                benefits-decoration
+                benefits-decoration--{{ decoration_style }}
+              {% endcapture %}
+              <picture>
+                {% if decoration_image_mobile != blank %}
+                  <source srcset="{{ decoration_image_mobile | img_url: "master" }}" media="(max-width: 750px)">
+                {% endif %}
+                {{ decoration_image | image_url: width: 700 | image_tag: alt: image.alt, class: classes }}
+              </picture>
+            {% endif %}
+          </div>
+        </div>
+        <div class="media-with-benefits__content">
+          {% if heading != blank %}
+            <h3>
+              {{ heading }}
+            </h3>
+          {% endif %}
+          <div class="rte">
+            {% if text != blank %}
+              {% capture checkmark_icon %}
+                <li>
+                {% render 'icon-circle-checkmark', color: section.settings.accent_color %}
+              {% endcapture %}
+              {{ text | replace: '<li>', checkmark_icon }}
+            {% endif %}
+          </div>
+          {% if button_text != blank and button_url != blank %}
+            <a class="media-with-benefits__link button" href="{{ button_url }}">
+              {{ button_text }}
+              {% render 'icon-simple-arrow' %}
+            </a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+{% endif %}
+
+
+{% schema %}
+{
+  "name": "Media with benefits",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "label": "Image",
+      "id": "image",
+      "info": "Required"
+    },
+    {
+      "type": "image_picker",
+      "label": "Image(mobile)",
+      "id": "image_mobile"
+    },
+    {
+      "type": "range",
+      "id": "image_width",
+      "min": 30,
+      "max": 100,
+      "step": 1,
+      "unit": "%",
+      "label": "Image width",
+      "default": 100
+    },
+    {
+      "type": "inline_richtext",
+      "label": "Title",
+      "id": "title",
+      "info": "Required"
+    },
+    {
+      "type": "inline_richtext",
+      "label": "SubTitle",
+      "id": "subtitle"
+    },
+    {
+      "type": "inline_richtext",
+      "label": "Heading",
+      "id": "heading"
+    },
+    {
+      "type": "richtext",
+      "label": "Text",
+      "id": "text"
+    },
+    {
+      "type": "text",
+      "label": "Button text",
+      "id": "button_text"
+    },
+    {
+      "type": "url",
+      "label": "Button url",
+      "id": "button_url"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 95
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 95
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding top mobile",
+      "default": 65
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding bottom mobile",
+      "default": 65
+    },
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title color",
+      "default": "#005EB8"
+    },
+    {
+      "type": "color",
+      "id": "accent_color",
+      "label": "Accent color",
+      "default": "#FF6A13"
+    },
+    {
+      "type": "color_background",
+      "id": "background",
+      "label": "Background"
+    },
+    {
+      "type": "header",
+      "content": "Decorations"
+    },
+    {
+      "type": "image_picker",
+      "id": "decoration_image",
+      "label": "Decoration image"
+    },
+        {
+      "type": "image_picker",
+      "id": "decoration_image_mobile",
+      "label": "Decoration image(mobile)"
+    },
+    {
+      "type": "select",
+      "id": "decoration_style",
+      "label": "Decoration style",
+      "default": "primary",
+      "options": [
+        {
+          "label": "Primary",
+          "value": "primary"
+        },
+        {
+          "label": "Secondary",
+          "value": "secondary"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Media with benefits"
+    }
+  ]
+}
+{% endschema %}

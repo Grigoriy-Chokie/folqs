@@ -1,0 +1,184 @@
+{{ 'section-author-quote.css' | asset_url | stylesheet_tag }}
+{% style %}
+  .author-quote__content--{{ section.id }} {
+    padding-top: {{ section.settings.padding_top_mobile }}px;
+    padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+  }
+
+  {% unless section.settings.ground == blank %}
+    .author-quote__content--{{ section.id }}{
+        background: {{ section.settings.ground }};
+    }
+  {% endunless %}
+  @media screen and (min-width: 769px) {
+    .author-quote__content--{{ section.id }} {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{% endstyle %}
+<div class="author-quote__content author-quote__content--{{ section.id }}">
+  <div class="swiper author-quote__slider">
+    <div class="swiper-wrapper author-quote__swiper-wrapper">
+      {%- for block in section.blocks -%}
+        {% unless block.settings.quote == blank %}
+          <div class="swiper-slide author-quote__author-slide">
+            <div class="author-slide__content">
+              <div class="author-slide__image">
+                {% unless block.settings.author_image == blank %}
+                  {{
+                    block.settings.author_image
+                    | image_url: width: 3200
+                    | image_tag:
+                      loading: 'lazy',
+                      widths: '50, 75, 100, 150, 200, 300, 400, 500, 750, 1000, 1250, 1500, 1750, 2000, 2250, 2500, 2750, 3000, 3200',
+                      class: 'author-quote__author-image',
+                      alt: block.settings.author_image.alt
+                  }}
+                {% endunless %}
+              </div>
+              <div class="author-slide__text-wrapper">
+                <div class="author-slide__quote">
+                  {{ block.settings.quote }}
+                </div>
+                {% unless block.settings.author == blank or block.settings.description == blank %}
+                  <div class="author-slide__author-text">
+                    {% unless block.settings.author == blank %}
+                      <span class="author-slide__author">
+                        {{ block.settings.author }}
+                      </span>
+                    {% endunless %}
+                    {% unless block.settings.description == blank %}
+                      <span class="author-slide__description">
+                        {{ block.settings.description }}
+                      </span>
+                    {% endunless %}
+                  </div>
+                  {% unless block.settings.icon == blank %}
+                    {{
+                      block.settings.icon
+                      | image_url: width: 500
+                      | image_tag:
+                        loading: 'lazy',
+                        widths: '50, 75, 100, 150, 200, 300, 400, 500',
+                        class: 'author-slide__icon',
+                        alt: block.settings.icon.alt
+                    }}
+                  {% endunless %}
+                {% endunless %}
+              </div>
+            </div>
+          </div>
+        {% endunless %}
+      {%- endfor -%}
+    </div>
+  </div>
+</div>
+{{ 'section-author-quote.js' | asset_url | script_tag }}
+{% schema %}
+{
+  "name": "Author quote slider",
+  "tag": "section",
+  "class": "section__author-quote",
+  "settings": [
+    {
+      "type": "color_background",
+      "label": "Ground of the slider",
+      "id": "ground"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 52
+    },
+    {
+      "type": "header",
+      "content": "Mobile"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "type": "author_slide",
+      "name": "Author slide",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Content"
+        },
+        {
+          "type": "richtext",
+          "label": "Quote",
+          "id": "quote"
+        },
+        {
+          "type": "text",
+          "label": "Author",
+          "id": "author",
+          "default": "Dantley Davis"
+        },
+        {
+          "type": "richtext",
+          "label": "Description",
+          "id": "description",
+          "info": "Small text below author's name"
+        },
+        {
+          "type": "image_picker",
+          "label": "Icon",
+          "id": "icon",
+          "info": "Icon near the author's name below the quote"
+        },
+        {
+          "type": "image_picker",
+          "label": "Author image",
+          "id": "author_image"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Author quote slider"
+    }
+  ]
+}
+{% endschema %}

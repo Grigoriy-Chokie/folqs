@@ -1,0 +1,218 @@
+{% liquid
+    assign image = section.settings.image
+    assign image_mobile = section.settings.image_mobile
+    assign title = section.settings.title
+    assign button_text = section.settings.button_text
+    assign button_link = section.settings.button_link
+    assign rating_text = section.settings.rating_text
+    assign background =  section.settings.background
+    assign sticky_button_text = section.settings.sticky_button_text
+    assign sticky_button_link = section.settings.sticky_button_link
+%}
+{% capture styles %}
+    --background: {{ background }};
+{% endcapture %}
+
+
+{%- style -%}
+    .section-{{section.id}} {
+        padding-top: {{ section.settings.padding_top_mobile }}px;
+        padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+    }
+
+    @media screen and (min-width: 767px) {
+        .section-{{section.id}} {
+            padding-top: {{ section.settings.padding_top }}px;
+            padding-bottom: {{ section.settings.padding_bottom }}px;
+        }
+    }
+{%- endstyle -%}
+
+{% if image != blank and title != blank %}
+    {{ 'section-benefits-banner.css' | asset_url | stylesheet_tag }}
+    <div style="{{ styles }}" class="benefits-banner benefits-banner--{{ section.settings.layout_position }}">
+        <div class="benefits-banner__wrapper section-{{ section.id }} page-width">
+            <div class="benefits-banner__media">
+                <picture>
+                    {% if image_mobile != blank %}
+                        <source srcset="{{ image_mobile | img_url: "master" }}" media="(max-width: 750px)">
+                    {% endif %}
+                    {{ image | image_url: width: 700 | image_tag: alt: image_popup.alt }}
+                </picture>
+            </div>
+            <div class="benefits-banner__content">
+                <h2 class="{{ section.settings.text_position }}">{{ title }}</h2>
+                {% if button_link != blank and button_text != blank %}
+                    <a href="{{ button_link }}">
+                        {{ button_text }}
+                    </a>
+                {% endif %}
+                <div class="benefits-banner__rating">
+                    {%- render 'icon-stars' -%}
+                    {%- if rating_text != blank -%}
+                        <p>{{ rating_text }}</p>
+                    {%- endif -%}
+                </div>
+            </div>
+        </div>
+    </div>
+    {% if sticky_button_text != blank and sticky_button_link != blank %}
+        <div class="benefits-banner__sticky-button hidden" data-sticky-button="{{ sticky_button_link }}">
+                <span>
+                    {{ sticky_button_text }}
+                    {% render 'icon-close-button' %}
+                </span>
+        </div>
+    {% endif %}
+    {% if sticky_button_text != blank and sticky_button_link != blank %}
+        <script src="{{ 'section-benefits-banner.js' | asset_url }}" defer></script>
+    {% endif %}
+{% endif %}
+
+
+{% schema %}
+{
+  "name": "Benefits banner",
+  "tag": "section",
+  "class": "section-benefits-banner",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "Image mobilr"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "title",
+      "label": "Title",
+      "default": "Default title"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "Try it Risk-Free"
+    },
+    {
+      "type": "text",
+      "id": "button_link",
+      "label": "Button url",
+      "default": "/"
+    },
+    {
+      "type": "text",
+      "id": "rating_text",
+      "label": "Rating text",
+      "default": "3,500+ Five Star Reviews"
+    },
+    {
+      "type": "color_background",
+      "id": "background",
+      "label": "Background"
+    },
+    {
+      "type": "text",
+      "id": "sticky_button_text",
+      "label": "Sticky button text",
+      "default": "Claim 30% OFF"
+    },
+    {
+      "type": "text",
+      "id": "sticky_button_link",
+      "label": "Sticky button link",
+      "default": "/",
+      "info": "Enter section id"
+    },
+    {
+      "type": "header",
+      "content": "Layout settings"
+    },
+    {
+      "type": "select",
+      "id": "layout_position",
+      "options": [
+        {
+          "value": "row",
+          "label": "Image first"
+        },
+        {
+          "value": "reverse",
+          "label": "Text first"
+        }
+      ],
+      "default": "row",
+      "label": "Layout position"
+    },
+    {
+      "type": "select",
+      "id": "text_position",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center",
+      "label": "Text position"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "unit": "px",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "unit": "px",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Padding top mobile",
+      "unit": "px",
+      "min": 1,
+      "max": 100,
+      "step": 1,
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Padding bottom mobile",
+      "unit": "px",
+      "min": 1,
+      "max": 100,
+      "step": 1,
+      "default": 20
+    }
+  ],
+  "presets": [
+    {
+      "name": "Benefits banner"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,207 @@
+{{ 'testimonial.css' | asset_url | stylesheet_tag }}
+{%- style -%}
+    .section-{{ section.id }} {
+    padding-top: {{ section.settings.padding_top }}px;
+    padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+
+    {% unless section.settings.button_background == blank %}
+      .section-{{ section.id }}  .testimonial__button{
+        background: {{section.settings.button_background}};
+        border: 1px solid {{section.settings.button_background}};
+      }
+
+      .section-{{ section.id }} .testimonial__button:hover {
+        background: transparent;
+        color: {{section.settings.button_background}};
+      }
+    {% endunless %}
+    .testimonial {
+    position: relative;
+    {%- if section.settings.background_color != blank %}
+        background: {{ section.settings.background_color }};
+    {%- endif -%}
+    }
+    {%- if section.settings.background_image != blank -%}
+        .testimonial::before {
+        background-image: url('{{ section.settings.background_image | img_url: "master" }}');
+        }
+    {%- endif -%}
+    @media(max-width: 768px) {
+    .section-{{ section.id }} {
+    padding-top: {{ section.settings.padding_top_mobile }}px;
+    padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+
+    {%- if section.settings.background_image_mobile != blank -%}
+        .testimonial::before {
+        background-size: 104% 100%;
+        background-image: url('{{ section.settings.background_image_mobile | img_url: "master" }}');
+        }
+    {%- endif -%}
+    }
+    }
+{%- endstyle -%}
+
+<div class="section-{{ section.id }} page-width">
+    <div class="testimonial">
+        <div class="testimonial__inner">
+            {%- if section.settings.testimonial != blank -%}
+                <div class="testimonial__description">{{ section.settings.testimonial }}</div>{%- endif -%}
+            {%- if section.settings.name != blank or section.settings.role != blank or section.settings.image_member != blank -%}
+                <div class="testimonial__content">
+                    <div class="testimonial__info">
+                        {%- if section.settings.name != blank -%}
+                            <div class="testimonial__name">{{ section.settings.name }}</div>{%- endif -%}
+                        {%- if section.settings.role != blank -%}
+                            <div class="testimonial__role">{{ section.settings.role }}</div>{%- endif -%}
+                    </div>
+                    <div class="testimonial__icon">
+                        {%- if section.settings.icon != blank %}
+                            <img src="{{ section.settings.icon | img_url: 'master' }}"
+                                 alt="{{ section.settings.icon.alt }}">{%- endif -%}
+                    </div>
+                </div>{%- endif -%}
+        </div>
+        <div class="testimonial__image--member">
+            {%- if section.settings.image_member != blank %}
+                <img class="testimonial__desktop-member" src="{{ section.settings.image_member | img_url: 'master' }}"
+                     alt="{{ section.settings.image_member.alt }}">{%- endif -%}
+            {%- if section.settings.image_member_mobile != blank %}
+                <img class="testimonial__mobile-member" src="{{ section.settings.image_member_mobile | img_url: 'master' }}"
+                     alt="{{ section.settings.image_member_mobile.alt }}">{%- endif -%}
+        </div>
+
+    </div>
+    {% unless section.settings.button_label == blank or section.settings.button_url == blank %}
+      <div class="testimonial__button-wrapper ">
+        <a href="{{section.settings.button_url}}" class="testimonial__button">
+          {{ section.settings.button_label }} 
+          {% render 'icon-arrow' %}
+        </a>
+      </div>
+    {% endunless %}
+</div>
+
+{% schema %}
+{
+  "name": "Testimonial",
+  "limit": 1,
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "testimonial",
+      "default": "<p>“Lorem ipsum dolor sit amet consectetur. Ultricies ornare adipiscing lorem amet sit. Consequat amet eu sed imperdiet nec dui. Tempus eget nec nulla diam donec dolor convallis ultrices diam.”</p>",
+      "label": "Testimonial"
+    },
+    {
+      "type": "text",
+      "id": "name",
+      "default": "Dantley Davis",
+      "label": "Name"
+    },
+    {
+      "type": "richtext",
+      "id": "role",
+      "label": "Role",
+      "default": "<p>Brazilian Olimpics Team Certified Medical Consultant</p>"
+    },
+    {
+      "type": "color_background",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "linear-gradient(#ffffff, #000000)"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image",
+      "label": "Background image(desktop)"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image_mobile",
+      "label": "Background image(mobile)"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_member",
+      "label": "Image member(desktop)"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_member_mobile",
+      "label": "Image member(mobile)"
+    },
+    {
+      "type": "image_picker",
+      "id": "icon",
+      "label": "Icon"
+    },
+    {
+      "type": "text",
+      "label": "Button label",
+      "id": "button_label",
+      "default": "Explore All Benefits"
+    },
+    {
+      "type": "url",
+      "label": "Button url",
+      "id": "button_url"
+    },
+    {
+      "type": "color_background",
+      "label": "Button background",
+      "id": "button_background",
+      "default": "rgba(0, 94, 184, 1)"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding top(desktop)",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding bottom(desktop)",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding top(mobile)",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding bottom(mobile)",
+      "default": 0
+    }
+  ],
+  "presets": [
+    {
+      "name": "Testimonial"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,158 @@
+.our-belief {
+  background: var(--background-color);
+  background: linear-gradient(to top, var(--background-color) 0%, transparent 100%);
+  padding-top: var(--padding-desktop-top);
+  padding-bottom: var(--padding-desktop-bottom);
+}
+
+@media (max-width: 768px) {
+  .our-belief {
+    padding-top: var(--padding-mobile-top);
+    padding-bottom: var(--padding-mobile-bottom);
+  }
+}
+
+.our-belief__container {
+  display: flex;
+  align-items: center;
+  flex-direction: var(--image-position);
+  gap: 50px;
+  align-items: start;
+}
+
+.our-belief__image-wrapper {
+  flex: 1;
+  max-width: 550px;
+  padding-top: 30px;
+}
+
+.our-belief__image-wrapper--mobile {
+  display: none;
+}
+
+.our-belief__image {
+  width: 100%;
+  height: auto;
+  display: block;
+  object-fit: cover;
+}
+
+.our-belief__content {
+  flex: 1;
+  text-align: var(--text-align);
+}
+
+.our-belief__content em{
+  display: inline-block;
+  margin-bottom: 12px;
+  text-align: center;
+  font-variant-numeric: lining-nums proportional-nums;
+  font-feature-settings: "liga" off, "clig" off;
+  font-family: DM Sans;
+  font-style: normal;
+  line-height: 130%;
+  letter-spacing: -.5px;
+  font-weight: 600;
+  color: var(--label-color);
+  background-color: color-mix(in srgb, var(--label-color) 10%, transparent);
+  padding: 2px 0;
+}
+
+.our-belief__title {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.our-belief__title * {
+  margin: 0;
+}
+
+.our-belief__title h2 {
+  font-weight: 800;
+  color: var(--title-color);
+  font-size: clamp(26px, 5vw, 48px);
+}
+
+.our-belief__title h3,
+.our-belief__title h4,
+.our-belief__title h5 {
+  font-weight: 700;
+  font-size: clamp(21px, 4vw, 32px);
+}
+
+.our-belief__text {
+  margin-bottom: 24px;
+  font-size: 18px;
+}
+
+.our-belief__buttons-container {
+  display: flex;
+  flex-direction: column;
+  max-width: 430px;
+  align-items: start;
+  gap: 21px;
+}
+
+.our-belief__buttons-container .our-belief__benefits {
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 16px;
+}
+
+.our-belief__buttons-container .our-belief__benefits .our-belief__benefit {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: clamp(12px, 3vw, 15px);
+}
+
+.our-belief__buttons-container .our-belief__benefits .our-belief__benefit-icon {
+  max-width: 22px;
+  max-height: 22px;
+}
+
+.our-belief__buttons-container .our-belief__button {
+  padding: 16px 26px;
+  border-radius: 60px;
+  background: var(--cta-background);
+  height: 55px;
+  max-width: 430px;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  transition: .3s ease-in;
+  color: var(--white, #FFF);
+  text-align: center;
+  font-family: var(--font-body-family);
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: -.18px;
+  text-decoration: none;
+}
+
+.our-belief__buttons-container .our-belief__button:hover {
+  background-color: #cf4c00 !important;
+}
+
+@media (max-width: 768px) {
+  .our-belief__image-wrapper {
+    width: 100%;
+    max-width: unset;
+    padding: 0;
+  }
+  .our-belief__image-wrapper--mobile {
+    display: block;
+  }
+  .our-belief__image-wrapper--desktop {
+    display: none;
+  }
+  .our-belief__title {
+    margin-bottom: 10px;
+  }
+}

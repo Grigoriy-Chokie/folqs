@@ -1,0 +1,153 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "rich_text_F4VmRi": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_QATDPG": {
+          "type": "heading",
+          "settings": {
+            "heading": "Talk about your brand",
+            "heading_size": "h1"
+          }
+        },
+        "text_6JAJjM": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>"
+          }
+        },
+        "button_jexaPM": {
+          "type": "button",
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_QATDPG",
+        "text_6JAJjM",
+        "button_jexaPM"
+      ],
+      "disabled": true,
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "ingredient_content_hUfQb8": {
+      "type": "ingredient-content",
+      "blocks": {
+        "percentage_island_AQzCb9": {
+          "type": "percentage_island",
+          "settings": {
+            "percentage": "46%",
+            "description": "Change from baseline Clostridium cluster XIVa"
+          }
+        },
+        "percentage_island_8Y8h8N": {
+          "type": "percentage_island",
+          "settings": {
+            "percentage": "59%",
+            "description": "Descreases over the levels of chronic inflammation"
+          }
+        }
+      },
+      "block_order": [
+        "percentage_island_AQzCb9",
+        "percentage_island_8Y8h8N"
+      ],
+      "settings": {
+        "list_of_badges": "ellipse_1.svg///Gut Healh, api_1.svg///Immune System, api_1.svg///Overall Health, api_1.svg///Overall Health, api_1.svg///Overall Health",
+        "button_label": "Learn more",
+        "main_text": "<p>Lorem ipsum dolor sit amet consectetur. Sed aliquam dapibus lorem aliquam lobortis vitae eros non morbi. Enim mattis cursus ultricies mattis. Lorem ipsum dolor sit amet consectetur. Sed aliquam dapibus lorem aliquam lobortis vitae eros non morbi. Enim mattis cursus ultricies mattis.</p>",
+        "main_text_hidden": "<h2>What to Expect</h2><ul><li>Rhodiola and folate to help keep you feeling mentally sharp and focused* </li><li>CoQ10 and spirulina to support healthy circulation and metabolism* </li><li>Vitamin C and zinc to support the function of the immune system*</li></ul>",
+        "show_page_title": true
+      }
+    },
+    "natural_ingredients_fJGhb3": {
+      "type": "natural-ingredients",
+      "blocks": {
+        "ingredient_jQFn4Y": {
+          "type": "ingredient",
+          "settings": {
+            "img": "shopify://shop_images/Rectangle_15_2874860b-04b4-4efc-a64d-8bb5a00f40a2.png",
+            "title": "Veg D3",
+            "info": "20mcg"
+          }
+        },
+        "ingredient_wdLMhn": {
+          "type": "ingredient",
+          "settings": {
+            "img": "shopify://shop_images/Rectangle_15_46268477-bb81-482a-a04b-b9dfcec96aba.png",
+            "title": "Methyl-cobalamin",
+            "info": ""
+          }
+        },
+        "ingredient_zVA3MV": {
+          "type": "ingredient",
+          "settings": {
+            "img": "shopify://shop_images/Rectangle_15_1512a3d4-99ee-4e8e-b5a2-b5a1d4b2db8b.png",
+            "title": "Beta Carotene",
+            "info": "1.5mg"
+          }
+        },
+        "ingredient_JGzimG": {
+          "type": "ingredient",
+          "settings": {
+            "img": "shopify://shop_images/Rectangle_15_01b5da44-d55f-4ca7-b76b-140b2ea0ec4a.png",
+            "title": "B1",
+            "info": "as 50% thiamine pyrophosphate"
+          }
+        }
+      },
+      "block_order": [
+        "ingredient_jQFn4Y",
+        "ingredient_wdLMhn",
+        "ingredient_zVA3MV",
+        "ingredient_JGzimG"
+      ],
+      "settings": {
+        "padding_top": 40,
+        "padding_bottom": 100,
+        "padding_top_mobile": 24,
+        "padding_bottom_mobile": 100,
+        "heading": "",
+        "sub_heading": "",
+        "name_button": "",
+        "url_button": "/"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "rich_text_F4VmRi",
+    "ingredient_content_hUfQb8",
+    "natural_ingredients_fJGhb3"
+  ]
+}

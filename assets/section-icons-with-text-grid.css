@@ -1,0 +1,98 @@
+.icons-with-text-grid {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.icons-with-text-grid__text {
+    width: 260px;
+    flex-shrink: 0;
+    color: rgb(var(--color-foreground));
+    font-variant-numeric: lining-nums proportional-nums;
+    font-feature-settings: 'liga' off, 'clig' off;
+    font-family: var(--font-body-family);
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 130%;
+    letter-spacing: -0.5px;
+}
+
+.icons-with-text-grid__text.auto {
+    width: auto;
+    margin: 0;
+}
+
+@media screen and (max-width: 750px) {
+
+    .icons-with-text-grid:has(.icons-with-text-grid__cta-icon) {
+        padding-left: 45px !important;
+        padding-right: 45px !important;
+        gap: 22px 30px;
+    }
+
+
+    .icons-with-text-grid:has(.icons-with-text-grid__cta-icon) .icons-with-text-grid__text {
+        width: 100%;
+    }
+
+    .icons-with-text-grid__cta-icon {
+        display: flex;
+        justify-content: center;
+        height: 27px;
+        flex: 1 0 calc(100% / 3 - 30px * 2 / 3);
+    }
+
+    .icons-with-text-grid__cta-icon svg {
+        width: 100%;
+        height: 100%;
+    }
+
+    /* .icons-with-text-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+        grid-column-gap: 0px;
+        grid-row-gap: 0px;
+    }
+
+    .icons-with-text-grid:has(.icons-with-text-grid__cta-icon) .icons-with-text-grid__text {
+        grid-area: 1 / 1 / 2 / 4;
+    }
+
+
+    .icons-with-text-grid__cta-icon {
+
+    } */
+}
+
+.icons-with-text-grid__icon {
+    width: 84px;
+    height: 80px;
+}
+
+.icons-with-text-grid__icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+@media screen and (max-width: 768px) {
+    .icons-with-text-grid {
+        flex-wrap: wrap;
+        justify-content: space-between;
+    }
+
+    .icons-with-text-grid__text {
+        width: 100%;
+        font-size: 16px;
+        line-height: 140%;
+        text-align: center;
+    }
+
+    .icons-with-text-grid__icon {
+        width: 50px;
+        height: 48px;
+    }
+}

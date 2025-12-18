@@ -1,0 +1,142 @@
+.landing-hero-banner__container--landing-hair-lose {
+  overflow: hidden;
+}
+
+.landing-hero-banner__container--landing-hair-lose .landing-hero-banner__image-desktop {
+  overflow: visible;
+}
+
+.landing-hero-banner__container--landing-hair-lose .landing-hero-banner__image-desktop :is(img,svg) {
+  left: auto;
+  right: 0;
+  width: auto;
+  object-position: right;
+}
+
+.landing-hero-banner__container--landing-hair-lose .landing-hero-banner__content {
+  max-width: 630px;
+  position: relative;
+  z-index: 2;
+}
+
+.landing-hero-banner__container--landing-hair-lose .landing-hero-banner__title {
+  font-size: 40px;
+}
+
+.landing-hero-banner__title--custom strong {
+  position: relative;
+  color: var(--strong-color);
+  z-index: 1;
+}
+
+.landing-hero-banner__title--custom strong::before {
+  content: "";
+  position: absolute;
+  top: 10px;
+  left: -10px;
+  display: block;
+  z-index: -1;
+  width: 100%;
+  height: 40px;
+  background-image: url(./landing-hero-strong-background.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.landing-hero-banner__title--custom strong::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -25px;
+  width: 14px;
+  height: 28px;
+  background-image: url(./landing-hero-strong-lightning.svg);
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.landing-hero-banner__container--landing-hair-lose .landing-hero-banner__title em{
+  display: inline-block;
+}
+
+.landing-hero-banner__container--landing-hair-lose .landing-hero-banner__title em:before {
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="286" height="11" viewBox="0 0 286 11" fill="none"><path d="M1.98413 9.19862C33.8495 4.79277 134.871 -2.22853 284.036 4.93305" stroke="%23FF6A13" stroke-width="3" stroke-linecap="round"/></svg>') center/cover no-repeat;
+}
+
+.landing-hero-banner__reviews-cta {
+  margin-bottom: 25px;
+}
+
+
+@media screen and (max-width: 1300px) {
+  .landing-hero-banner__container--landing-hair-lose .landing-hero-banner__image-desktop {
+    overflow: hidden;
+  }
+
+  .landing-hero-banner__container--landing-hair-lose .landing-hero-banner__image-desktop :is(img, svg) {
+    width: 100%;
+    object-position: center;
+  }
+}
+
+@media screen and (max-width: 990px) {
+  .landing-hero-banner__container--landing-hair-lose .landing-hero-banner__content {
+    max-width: 100%;
+  }
+
+  .landing-hero-banner__container--landing-hair-lose .landing-hero-banner__image-mobile {
+    width: calc(100% + 40px);
+    margin-right: -20px;
+    margin-left: -20px;
+  }
+
+  .landing-hero-banner__container--landing-hair-lose .landing-hero-banner__reviews-cta {
+    padding: 0;
+    border-radius: 0;
+    background-color: transparent;
+  }
+
+  .landing-hero-banner__container--landing-hair-lose .landing-hero-banner__content > * {
+    margin-top: 0;
+  }
+
+  .landing-hero-banner__container--landing-hair-lose .landing-hero-banner__reviews-cta.landing-hero-banner__reviews-cta--background {
+    padding: 20px;
+    background: var(--cta-review-background);
+    border-radius: 16px;
+    margin-bottom: 30px;
+  }
+}
+
+@media screen and (max-width: 750px) {
+
+  .landing-hero-banner__title--custom strong:after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -20px;
+    width: 9px;
+    height: 18px;
+    background-image: url(./landing-hero-strong-lightning.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .landing-hero-banner__title--custom strong:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -10px;
+    display: block;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background-image: url(./landing-hero-strong-background.svg);
+    background-repeat: no-repeat;
+    background-size: cover;
+  }
+
+  .landing-hero-banner__container--landing-hair-lose .landing-hero-banner__title {
+  font-size: 25px;
+}
+}

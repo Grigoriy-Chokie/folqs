@@ -1,0 +1,80 @@
+.benefits-banner__media--with-mobile .benefits-banner__image--mobile {
+    display: none;
+}
+
+.benefits-banner__title {
+    margin-top: 0;
+    margin-bottom: 24px;
+    color: #000;
+    font-family: Raleway;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 60px;
+}
+
+.benefits-banner__title--mobile {
+    display: none;
+}
+
+.benefits-banner__content {
+    display: flex;
+    flex-direction: column;
+}
+
+.benefits-banner__subtitle {
+    max-width: 62%;
+    color: rgba(0, 0, 0, 0.70);
+    font-family: "DM Sans";
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 300;
+    line-height: 28px;
+}
+
+.benefits-banner__media img {
+    height: auto;
+    width: 100%;
+    object-fit: contain;
+    margin-top: 40px;
+    max-width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+    .benefits-banner__title--mobile {
+        display: block;
+    }
+
+    .benefits-banner__title--desktop {
+        display: none;
+    }
+
+    .benefits-banner__media--with-mobile .benefits-banner__image--desktop {
+        display: none;
+    }
+
+    .benefits-banner__media--with-mobile .benefits-banner__image--mobile {
+        display: block;
+    }
+
+    .benefits-banner__media {
+        margin: 0 -21px;
+    }
+
+    .benefits-banner__title {
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 42px;
+        max-width: 70%;
+        margin-bottom: 14px;
+    }
+
+    .benefits-banner__subtitle {
+        max-width: 100%;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 300;
+        line-height: 24px;
+    }
+}

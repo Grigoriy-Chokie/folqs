@@ -1,0 +1,167 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "padding_top": 28,
+        "padding_bottom": 28
+      }
+    },
+    "rich_text_F4VmRi": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_QATDPG": {
+          "type": "heading",
+          "settings": {
+            "heading": "Talk about your brand",
+            "heading_size": "h1"
+          }
+        },
+        "text_6JAJjM": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>"
+          }
+        },
+        "button_jexaPM": {
+          "type": "button",
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_QATDPG",
+        "text_6JAJjM",
+        "button_jexaPM"
+      ],
+      "disabled": true,
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "padding_top": 40,
+        "padding_bottom": 52
+      }
+    },
+    "ingredient_content_hUfQb8": {
+      "type": "ingredient-content",
+      "blocks": {
+        "percentage_island_AQzCb9": {
+          "type": "percentage_island",
+          "settings": {
+            "percentage": "1800%",
+            "description": "higher bioavailability than regular CoQ10"
+          }
+        },
+        "percentage_island_8Y8h8N": {
+          "type": "percentage_island",
+          "settings": {
+            "percentage": "30%",
+            "description": "improvement in mitochondrial efficiency"
+          }
+        }
+      },
+      "block_order": [
+        "percentage_island_AQzCb9",
+        "percentage_island_8Y8h8N"
+      ],
+      "settings": {
+        "list_of_badges": "///Mitochondrial Support, ///Antioxidant Protection, ///Cardiovascular Wellness, ///Cellular Detoxification",
+        "button_label": "Learn more",
+        "main_text": "<p>This blend is specifically curated to support cellular vitality and cardiovascular well-being. CoQ10, particularly in the CAVAQ10® formulation, is crucial for energy production in cells and has notable benefits for heart health. PQQ contributes to mitochondrial biogenesis, enhancing cellular energy. Gynostemma extract is recognized for its cardiovascular benefits, including supporting healthy blood pressure. R-Alpha Lipoic Acid is involved in energy metabolism and has antioxidant properties, while Fulvic Acid is known for its electrolyte balancing and nutrient transportation roles, supporting overall cellular function.</p>",
+        "main_text_hidden": "<h2>What to Expect</h2><ul><li>PQQ's role in generating new mitochondria translates to enhanced cellular energy levels and vitality.</li><li>Expect R-Alpha Lipoic Acid and CoQ10 to provide a shield against oxidative stress, supporting cellular longevity.</li><li>Gynostemma extract aids in maintaining cardiovascular health, potentially supporting blood pressure and circulatory health.</li><li>Fulvic Acid's contribution to nutrient absorption and detoxification promotes overall cellular cleanliness and efficiency.</li></ul>",
+        "show_page_title": true
+      }
+    },
+    "natural_ingredients_fJGhb3": {
+      "type": "natural-ingredients",
+      "blocks": {
+        "ingredient_jQFn4Y": {
+          "type": "ingredient",
+          "settings": {
+            "img": "shopify://shop_images/Rectangle_15_41.png",
+            "title": "CoQ10",
+            "subtitle": "as CAVAQ10® Complex",
+            "info": "30 mg"
+          }
+        },
+        "ingredient_wdLMhn": {
+          "type": "ingredient",
+          "settings": {
+            "img": "shopify://shop_images/Rectangle_15_42.png",
+            "title": "Pyrroloquinoline Quinone Disodium Salt",
+            "subtitle": "PQQ",
+            "info": "4 mg"
+          }
+        },
+        "ingredient_zVA3MV": {
+          "type": "ingredient",
+          "settings": {
+            "img": "shopify://shop_images/Rectangle_15_43.png",
+            "title": "Gynostemma Extract (Leaf)",
+            "subtitle": "Gynostemma pentaphyllum",
+            "info": "350 mg"
+          }
+        },
+        "ingredient_JGzimG": {
+          "type": "ingredient",
+          "settings": {
+            "img": "shopify://shop_images/Rectangle_15_44.png",
+            "title": "R-Alpha Lipoic Acid",
+            "subtitle": "",
+            "info": "150 mg"
+          }
+        },
+        "ingredient_bzfiMx": {
+          "type": "ingredient",
+          "settings": {
+            "img": "shopify://shop_images/Rectangle_15_45.png",
+            "title": "Fulvic Acid",
+            "subtitle": "",
+            "info": "500 mg"
+          }
+        }
+      },
+      "block_order": [
+        "ingredient_jQFn4Y",
+        "ingredient_wdLMhn",
+        "ingredient_zVA3MV",
+        "ingredient_JGzimG",
+        "ingredient_bzfiMx"
+      ],
+      "settings": {
+        "padding_top": 40,
+        "padding_bottom": 100,
+        "padding_top_mobile": 24,
+        "padding_bottom_mobile": 100,
+        "heading": "",
+        "sub_heading": "",
+        "name_button": "",
+        "url_button": "/"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "rich_text_F4VmRi",
+    "ingredient_content_hUfQb8",
+    "natural_ingredients_fJGhb3"
+  ]
+}

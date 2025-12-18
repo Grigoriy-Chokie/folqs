@@ -1,0 +1,294 @@
+{{ 'section-landing-product-offer.css' | asset_url | stylesheet_tag }}
+
+{% style %}
+    .section-paddings--{{ section.id }} {
+        padding-top: {{ section.settings.padding_top }}px;
+        padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+
+    @media screen and (max-width: 750px) {
+        .section-paddings--{{ section.id }} {
+            padding-top: {{ section.settings.padding_top | times: 0.75 }}px;
+            padding-bottom: {{ section.settings.padding_bottom | times: 0.75 }}px;
+        }
+    }
+{% endstyle %}
+
+<div class="landing-product-offer section-paddings--{{ section.id }}">
+    <div class="landing-product-offer__wrapper" id="landing-product-offer">
+        {% for block in section.blocks %}
+            {% liquid
+                assign product = block.settings.product
+                assign variant = product.selected_or_first_available_variant
+                assign variant_title = block.settings.variant_title
+                assign quantity = block.settings.quantity | default: 1
+
+                assign discount_code = block.settings.discount_code
+
+                assign card_badge_text = block.settings.badge_text
+                assign card_title = block.settings.title
+                assign card_image = block.settings.image
+                assign card_price_original = block.settings.price_original
+                assign card_price_per_bag = block.settings.price_per_bag
+                assign card_price_per_serving = block.settings.price_per_serving
+                assign card_addtional_info = block.settings.additional_info
+                assign card_usp_icon = block.settings.usp_icon
+                assign card_usp_text = block.settings.usp_text
+                assign card_recently_sold_text = block.settings.recently_sold_text
+                assign card_order_mobile = block.settings.order_mobile
+                assign is_card_highlighted = block.settings.is_card_highlighted
+
+                if variant_title != blank
+                    for product_variant in product.variants
+                        if product_variant.title contains variant_title
+                            assign variant = product_variant
+                            break
+                        endif
+                    endfor
+                endif
+            %}
+
+            {% if product != blank %}
+                <landing-offer-product
+                class="landing-product-offer__product-card {% if is_card_highlighted %}product-card--highlighted{% endif %}"
+                style="--mobile-order: {{ card_order_mobile }}"
+                data-variant-id="{{ variant.id }}"
+                data-discount-code="{{ discount_code }}"
+                data-quantity="{{ quantity }}">
+                    
+                    <div class="product-card__heading">
+                        {% if card_badge_text != blank %}
+                            <div class="product-card__badge">
+                                <span class="badge__text">{{ card_badge_text }}</span>
+                            </div>
+                        {% endif %}
+
+                        {% if card_title != blank %}
+                            <div class="product-card__title">{{ card_title }}</div>
+                        {% endif %}
+                    </div>
+
+                    {% if card_image != blank %}
+                        <div class="product-card__image">
+                            {{ card_image | image_url: width: 600 | image_tag: loading: 'lazy' }}
+                        </div>
+                    {% endif %}
+
+                    <div class="product-card__information">
+                        <div class="product-card__price">
+                            {% if card_price_original != blank %}
+                                <div class="price--original">{{ card_price_original }}</div>
+                            {% endif %}
+
+                            {% if card_price_per_bag != blank %}
+                                <div class="price--per-bag">{{ 'products.product.landing.price_per_bag_html' | t: card_price_per_bag: card_price_per_bag }}</div>
+                            {% endif %}
+                            
+                            {% if card_price_per_serving != blank %}
+                                <div class="price--per-serving">
+                                    {{ 'products.product.landing.price_per_serving' | t: card_price_per_serving: card_price_per_serving }}
+                                </div>
+                            {% endif %}
+                        </div>
+
+                        {% if card_addtional_info != blank %}
+                            <div class="product-card__additional-info">{{ card_addtional_info }}</div>
+                        {% endif %}
+
+                        <div class="product-card__buy-button">
+                            <div class="product-card__buy-now" role="button">
+                                <span class="buy-now__text">
+                                    {{ 'products.product.add_to_cart' | t }}
+                                    {%- render "icon-arrow-right" -%}
+                                </span>
+
+                                <!-- Preloader -->
+                                <div class="preloader">
+                                    <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+                                </div>
+                            </div>
+                            {% if card_usp_text != blank %}
+                                <div class="product-card__buy-usp">
+                                    {% if card_usp_icon != blank %}
+                                        {{ card_usp_icon | image_url: width: 50 | image_tag: loading: 'lazy' }}
+                                    {% endif %}
+                                    <span>{{ card_usp_text }}</span>
+                                </div>
+                            {% endif %}
+                        </div>
+
+                        {% if card_recently_sold_text != blank %}
+                            <div class="product-card__recently-sold">
+                                {{ card_recently_sold_text }}
+                            </div>
+                        {% endif %}
+                    </div>
+                </landing-offer-product>
+            {% endif %}
+        {% endfor %}
+    </div>
+</div>
+
+{{ 'component-landing-offer-product.js' | asset_url | script_tag }}
+
+{% schema %}
+{
+    "name": "Product Offer (Landing)",
+    "class": "shopify-section--landing-product-offer",
+    "tag": "section",
+    "settings": [
+        {
+            "type": "header",
+            "content": "Section paddings"
+        },
+        {
+            "type": "range",
+            "id": "padding_top",
+            "label": "Padding top",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "px",
+            "default": 40
+        },
+        {
+            "type": "range",
+            "id": "padding_bottom",
+            "label": "Padding bottom",
+            "min": 0,
+            "max": 100,
+            "step": 1,
+            "unit": "px",
+            "default": 0
+        }
+    ],
+    "blocks": [
+        {
+            "type": "offer",
+            "name": "Offer (Product)",
+            "settings": [
+                {
+                    "type": "header",
+                    "content": "Product / Variant / Quantity"
+                },
+                {
+                    "type": "product",
+                    "id": "product",
+                    "label": "Product",
+                    "info": "Required"
+                },
+                {
+                    "type": "text",
+                    "id": "variant_title",
+                    "label": "Variant title",
+                    "info": "Variant title of product in admin panel. First variant would be selected if this field is blank.",
+                    "placeholder": "Option1 / Option2"
+                },
+                {
+                    "type": "number",
+                    "id": "quantity",
+                    "label": "Quantity",
+                    "default": 1
+                },
+                {
+                    "type": "header",
+                    "content": "Discount"
+                },
+                {
+                    "type": "text",
+                    "id": "discount_code",
+                    "label": "Code",
+                    "info": "Discount title from admin panel."
+                },
+                {
+                    "type": "header",
+                    "content": "Product card"
+                },
+                {
+                    "type": "checkbox",
+                    "id": "is_card_highlighted",
+                    "label": "Highlighted(Recommended) card",
+                    "default": false
+                },
+                {
+                    "type": "range",
+                    "id": "order_mobile",
+                    "label": "Order number (mobile)",
+                    "min": 1,
+                    "max": 10,
+                    "step": 1,
+                    "default": 1
+                },
+                {
+                    "type": "text",
+                    "id": "badge_text",
+                    "label": "Badge text",
+                },
+                {
+                    "type": "text",
+                    "id": "title",
+                    "label": "Title"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "image",
+                    "label": "Image"
+                },
+                {
+                    "type": "paragraph",
+                    "content": "Price"
+                },
+                {
+                    "type": "text",
+                    "id": "price_original",
+                    "label": "Original price",
+                    "info": "Format: $75.55"
+                },
+                {
+                    "type": "text",
+                    "id": "price_per_bag",
+                    "label": "Price per bag",
+                    "info": "Format: $75.55"
+                },
+                {
+                    "type": "text",
+                    "id": "price_per_serving",
+                    "label": "Price per serving",
+                    "info": "Format: $75.55"
+                },
+                {
+                    "type": "richtext",
+                    "id": "additional_info",
+                    "label": "Additional info"
+                },
+                {
+                    "type": "paragraph",
+                    "content": "USP"
+                },
+                {
+                    "type": "image_picker",
+                    "id": "usp_icon",
+                    "label": "Icon",
+                    "info": ".svg format is recommended!"
+                },
+                {
+                    "type": "text",
+                    "id": "usp_text",
+                    "label": "USP text",
+                    "info": "Text under buy button."
+                },
+                {
+                    "type": "text",
+                    "id": "recently_sold_text",
+                    "label": "Recently sold text"
+                }
+            ]
+        }
+    ],
+    "presets": [
+        {
+            "name": "Product Offer (Landing)"
+        }
+    ]
+}
+{% endschema %}

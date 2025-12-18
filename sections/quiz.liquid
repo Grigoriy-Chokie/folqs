@@ -1,0 +1,158 @@
+  {{ 'section-quiz.css' | asset_url | stylesheet_tag }}
+
+{% style %}
+    .quiz__content-wrapper--{{ section.id }} {
+      padding-top: calc({{ section.settings.padding_top_mobile }}px + var(--header-height));
+      padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+    }
+    .swiper-pagination-bullet{
+      width: calc(100% / {{ page.metafields.quiz.objects.value.count | json}} - 3.5px);
+  }
+    @media screen and (min-width: 769px) {
+      .quiz__content-wrapper--{{ section.id }} {
+        padding-top: calc({{ section.settings.padding_top }}px + var(--header-height));
+        padding-bottom: {{ section.settings.padding_bottom }}px;
+      }
+    }
+{% endstyle %}
+{% unless section.settings.results_page == blank or page.metafields.quiz.objects.value == blank %}
+  <div class="quiz__content-wrapper swiper quiz__content-wrapper--{{ section.id }}">
+    <div class="swiper-wrapper quiz__content">
+      {%- for question in page.metafields.quiz.objects.value -%}
+        <div class="swiper-slide quiz__quiz-item">
+          <div class="quiz-item__content">
+            <h5 class="quiz-item__question">
+              {{ question.question | metafield_tag }}
+            </h5>
+            {% unless question.description == blank %}
+              <span class="quiz-item__description">
+                {{ question.description | metafield_tag }}
+              </span>
+            {% endunless %}
+            <div class="quiz-item__options">
+              {% for option in question.options.value %}
+                <div class="quiz-item__option-item">
+                  <input
+                    type="radio"
+                    id="{{ option }}-{{ forloop.index }}"
+                    value="{{ option }}"
+                    name="quiz-item"
+                    class="option-item__input"
+                  >
+                  <label for="{{ option }}-{{ forloop.index }}" class="quiz-item__label">
+                    {{ option }}
+                  </label>
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+      {%- endfor -%}
+    </div>
+    <div class="content__quiz-navigation">
+      <div class="quiz-navigation__button--previous">{% render 'icon-arrow' %}</div>
+      <div class="quiz-navigation__button--next">
+        {% unless section.settings.button_label_next == blank %}
+          <span class="quiz-navigation__button--next-text">
+            {{ section.settings.button_label_next }}
+          </span>
+        {% endunless %}
+        {% unless section.settings.button_label_submit == blank %}
+          <span class="quiz-navigation__button--submit-text">
+            {{ section.settings.button_label_submit }}
+          </span>
+        {% endunless %}
+        {% render 'icon-arrow' %}
+      </div>
+    </div>
+    <div class="content__quiz-pagination"></div>
+  </div>
+  <script>
+    let resultsPageUrl = '{{ section.settings.results_page }}';
+  </script>
+  {{ 'section-quiz.js' | asset_url | script_tag }}
+{% endunless %}
+
+
+{% schema %}
+{
+  "name": "Quiz",
+  "tag": "section",
+  "class": "section__quiz",
+  "limit": 1,
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "This section can only be used inside 'Page' templates."
+    },
+    {
+      "type": "text",
+      "label": "Button label next",
+      "id": "button_label_next"
+    },
+    {
+      "type": "text",
+      "label": "Button label submit",
+      "id": "button_label_submit"
+    },
+    {
+      "type": "url",
+      "label": "Results page",
+      "id": "results_page"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 176
+    },
+    {
+      "type": "header",
+      "content": "Mobile spacing"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 46
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 24
+    }
+  ],
+  "presets": [
+    {
+      "name": "Quiz"
+    }
+  ]
+}
+{% endschema %}

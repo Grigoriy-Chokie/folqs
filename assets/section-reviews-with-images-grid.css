@@ -1,0 +1,210 @@
+.reviews-images-grid {
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 40px;
+}
+
+.reviews-images-grid__header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+
+.reviews-images-grid__subtitle {
+    padding: 2px 0;
+    color: #005eb8;
+    text-align: center;
+    font-variant-numeric: lining-nums proportional-nums;
+    font-family: var(--font-body-family);
+    background: #e9f4ff;
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 130%;
+    letter-spacing: -0.5px;
+    margin: 0;
+}
+
+.reviews-images-grid__title {
+    color: rgb(var(--color-foreground));
+    text-align: center;
+    font-variant-numeric: lining-nums proportional-nums;
+    font-feature-settings: "liga" off, "clig" off;
+    font-family: var(--font-heading-family);
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 120%;
+    letter-spacing: -1px;
+    margin: 0;
+}
+
+.reviews-images-grid__images {
+    display: flex;
+    gap: 10px;
+    align-items: stretch;
+    width: 100%;
+}
+
+.reviews-images-grid__image {
+    width: calc(100% / 6 - (10px / (6 / 5)));
+    aspect-ratio: 191 / 260;
+}
+
+.reviews-images-grid__image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    border-radius: 10px;
+}
+
+.reviews-images-grid__reviews {
+    display: flex;
+    gap: 20px;
+    align-items: stretch;
+    width: 100%;
+}
+
+.reviews-images-grid__reviews::-webkit-scrollbar {
+    display: none;
+}
+
+.reviews-images-grid__review-extra {
+    padding: 25px 30px;
+    border-radius: 20px;
+    background: var(--reviews-background);
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+}
+
+.review-extra__user-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.review-extra__author-name {
+    color: rgb(var(--color-foreground));
+    font-variant-numeric: lining-nums proportional-nums;
+    font-family: var(--font-body-family);
+    font-size: 15px;
+    font-weight: 600;
+    line-height: 130%;
+    margin: 0;
+}
+
+.review-extra__verified-badge {
+    display: flex;
+    gap: 4px;
+    align-items: center;
+    color: #00a30b;
+    font-variant-numeric: lining-nums proportional-nums;
+    font-family: var(--font-body-family);
+    font-size: 13px;
+    font-weight: 600;
+    line-height: 130%;
+    margin: 0;
+}
+
+.review-extra__rating {
+    width: 92px;
+}
+
+.review-extra__rating svg {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.review-extra__title {
+    margin: 0;
+    color: rgb(var(--color-foreground));
+    font-variant-numeric: lining-nums proportional-nums;
+    font-feature-settings: 'liga' off, 'clig' off;
+    font-family: var(--font-accent-family);
+    font-size: 30px;
+    font-weight: 700;
+    line-height: 130%;
+    letter-spacing: -0.5px;
+}
+
+.review-extra__text {
+    color: rgb(var(--color-foreground));
+    font-variant-numeric: lining-nums proportional-nums;
+    font-family: var(--font-body-family);
+    font-size: 15px;
+    font-weight: 400;
+    line-height: 150%;
+}
+
+.review-extra__text p {
+    margin: 0;
+}
+
+@media screen and (max-width: 768px) {
+    .reviews-images-grid {
+        gap: 25px;
+    }
+
+    .reviews-images-grid__subtitle {
+        font-size: 18px;
+    }
+
+    .reviews-images-grid__title {
+        font-size: 26px;
+        line-height: 130%;
+        letter-spacing: -0.8px;
+    }
+
+    .reviews-images-grid__images {
+        gap: 6px;
+        overflow: auto;
+        scroll-snap-type: x mandatory;
+        scroll-padding-left: 20px;
+        max-width: 100%;
+    }
+
+    .reviews-images-grid__image {
+        scroll-snap-align: start;
+        width: 50vw;
+        min-width: 50vw;
+    }
+
+    .reviews-images-grid__image img {
+        border-radius: 6px;
+    }
+
+    .reviews-images-grid__reviews {
+        gap: 10px;
+        overflow-x: auto;
+    }
+
+    .reviews-images-grid__review-extra {
+        padding: 20px 16px;
+        border-radius: 16px;
+        width: 260px;
+        flex-shrink: 0;
+    }
+
+    .review-extra__author-name {
+        font-size: 14px;
+    }
+
+
+    .review-extra__rating {
+        width: 75px;
+    }
+
+    .review-extra__title {
+        font-size: 28px;
+    }
+
+    .review-extra__text {
+        font-size: 14px;
+    }
+}

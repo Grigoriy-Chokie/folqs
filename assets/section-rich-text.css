@@ -1,0 +1,264 @@
+.rich-text {
+  z-index: 1;
+}
+
+.rich-text__wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.rich-text:not(.rich-text--full-width) .rich-text__wrapper {
+  margin: auto;
+  width: 100%;
+}
+
+.rich-text__blocks {
+  width: 100%;
+}
+
+
+.rich-text__heading {
+  font-family: Raleway;
+  font-weight: 500;
+}
+
+.rich-text__heading.h0 {
+  font-size: 48px;
+}
+
+.rich-text__content-wrapper .isolate:not(.page-width).page-width--narrow {
+  margin: 0 auto;
+}
+
+.rich-text__caption.subtitle--small {
+  font-family: "Raleway";
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 32px;
+  color: rgba(var(--color-foreground));
+}
+
+.rich-text__caption.subtitle--medium{
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 32px;
+  color: rgba(var(--color-foreground));
+}
+
+.rich-text__heading.h1 {
+  font-size: 32px;
+  font-weight: 700;
+  line-height: 48px;
+}
+
+.rich-text__text{
+  color: rgba(0, 0, 0, 0.70);
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.rich-text__text ul {
+  list-style-type: none;
+  text-align: left;
+
+  max-width: 720px;
+  margin: 40px auto 20px auto !important;
+  padding-left: 0;
+
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.rich-text__text ul li {
+  font-family: Raleway;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 28px;
+
+  display: flex;
+  align-items: flex-start;
+  justify-content: flex-start;
+}
+
+.rich-text__text ul li svg {
+  vertical-align: middle;
+  width: 24px;
+  min-width: 24px;
+  height: 24px;
+  margin-right: 12px;
+  margin-top: 5px;
+}
+
+@media screen and (min-width: 750px) {
+  .rich-text__caption.subtitle--medium{
+    font-size: 36px;
+    line-height: 40px;
+    margin-bottom: 12px;
+  }
+
+  .rich-text__heading.h1 {
+    font-size: 48px;
+    line-height: 68px; /* 141.667% */
+  }
+
+  .rich-text__wrapper {
+    width: 100%;
+  }
+
+  .rich-text__wrapper--left {
+    justify-content: flex-start;
+  }
+
+  .rich-text__wrapper--right {
+    justify-content: flex-end;
+  }
+}
+
+.rich-text__blocks * {
+  overflow-wrap: break-word;
+}
+
+.rich-text__blocks > * {
+  margin-top: 0;
+  margin-bottom: 0;
+}
+
+.rich-text__blocks > * + * {
+  margin-top: 12px;
+}
+
+.rich-text__text em {
+  font-style: normal;
+  font-weight: 300;
+  color: #999999;
+  font-size: 20px;
+  font-family: DM Sans;
+  line-height: 28px;
+}
+
+.rich-text__buttons {
+  display: inline-flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  width: 100%;
+  max-width: 82rem;
+  word-break: break-word;
+}
+
+.rich-text__buttons--multiple > * {
+  flex-grow: 1;
+  min-width: 22rem;
+}
+
+.rich-text__buttons + .rich-text__buttons {
+  margin-top: 1rem;
+}
+
+.rich-text__blocks.left .rich-text__buttons {
+  justify-content: flex-start;
+}
+
+.rich-text__blocks.right .rich-text__buttons {
+  justify-content: flex-end;
+}
+
+.rich-text__buttons .button.button--primary::before,
+.rich-text__buttons .button.button--primary::after {
+  display: none;
+}
+
+.rich-text__buttons {
+  margin-top: 40px;
+}
+
+.rich-text__buttons .button.button--primary {
+  display: flex;
+  height: 80px;
+  padding: 10px 20px;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+
+  background: #ff6a13;
+  border-radius: 100px;
+
+  font-family: Raleway, sans-serif;
+  color: #fff;
+  text-decoration: none;
+  max-height: 80px;
+  line-height: 32px;
+  font-size: 24px;
+  font-weight: 500;
+  transition: all .3s;
+}
+
+.rich-text__buttons .button.button--primary:hover {
+  background: #cf4c00;
+}
+
+.rich-text__buttons:not(:has(.button--secondary)) .button.button--primary {
+  width: 100%;
+}
+
+.rich-text__buttons .button.button--primary svg {
+  width: 24px;
+  height: 24px;
+}
+
+.rich-text__decor {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.rich-text__decor img{
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+}
+
+.rich-text__decor--mobile {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .rich-text__heading.h0 {
+    font-size: 32px;
+    line-height: 48px;
+  }
+
+  .rich-text__decor--mobile {
+    display: block;
+  }
+
+  .rich-text__heading.h0 {
+    font-size: 20px;
+    line-height: 28px;
+  }
+
+  .rich-text__decor--desktop {
+    display: none;
+  }
+
+  .rich-text__caption.subtitle--small {
+    font-size: 18px;
+    font-weight: 500;
+    line-height: 24px;
+  }
+
+  .rich-text__text ul li svg {
+    width: 20px;
+    height: 20px;
+    min-width: 20px;
+    margin-right: 8px;
+  }
+
+  .rich-text__buttons .button.button--primary svg {
+    display: none;
+  }
+}

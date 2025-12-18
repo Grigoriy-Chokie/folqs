@@ -1,0 +1,262 @@
+{{ 'section-our-belief.css' | asset_url | stylesheet_tag }}
+
+<section
+  id="section-{{ section.id }}"
+  class="our-belief"
+  style="
+    --padding-desktop-top: {{ section.settings.padding_desktop_top }}px;
+    --padding-desktop-bottom: {{ section.settings.padding_desktop_bottom }}px;
+    --padding-mobile-top: {{ section.settings.padding_mobile_top }}px;
+    --padding-mobile-bottom: {{ section.settings.padding_mobile_bottom }}px;
+    --background-color: {{ section.settings.background_color }};
+    --title-color: {{ section.settings.title_color }};
+    --label-color: {{ section.settings.label_color }};
+    --image-position: {{ section.settings.image_position }};
+    --text-align: {{ section.settings.text_align }};
+  "
+>
+  <div class="our-belief__container page-width">
+
+    <div class="our-belief__image-wrapper our-belief__image-wrapper--desktop">
+      {% if section.settings.image %}
+        {{ section.settings.image | image_url: width: 1200 | image_tag: class: "our-belief__image" }}
+      {% endif %}
+    </div>
+
+    <div class="our-belief__content">
+
+      {% if section.settings.title %}
+        <div class="our-belief__title h1">{{ section.settings.title }}</div>
+      {% endif %}
+
+      <div class="our-belief__image-wrapper our-belief__image-wrapper--mobile">
+        {% if section.settings.image %}
+          {{ section.settings.image | image_url: width: 1200 | image_tag: class: "our-belief__image" }}
+        {% endif %}
+      </div>
+
+      {% if section.settings.text %}
+        <div class="our-belief__text">{{ section.settings.text }}</div>
+      {% endif %}
+
+      {% if section.blocks.size > 0 %}
+        <div class="our-belief__buttons-container">
+          {% for block in section.blocks %}
+            {% if block.type == 'button' %}
+              <a
+                href="{{ block.settings.button_link }}"
+                class="our-belief__button"
+                style="background-color: {{ block.settings.button_color }};"
+              >
+                {{ block.settings.button_label }}
+                <img src="{{ 'icon-lightning.svg' | asset_url }}" alt="Lightning icon" class="icon-lightning">
+              </a>
+
+              <div class="our-belief__benefits">
+                {% if block.settings.first_benefit_text or block.settings.first_benefit_image %}
+                  <div class="our-belief__benefit">
+                    {% if block.settings.first_benefit_image %}
+                      {{ block.settings.first_benefit_image | image_url: width: 40 | image_tag: class: "our-belief__benefit-icon" }}
+                    {% endif %}
+                    {% if block.settings.first_benefit_text %}
+                      <span class="our-belief__benefit-text">{{ block.settings.first_benefit_text }}</span>
+                    {% endif %}
+                  </div>
+                {% endif %}
+
+                {% if block.settings.second_benefit_text or block.settings.second_benefit_image %}
+                  <div class="our-belief__benefit">
+                    {% if block.settings.second_benefit_image %}
+                      {{ block.settings.second_benefit_image | image_url: width: 40 | image_tag: class: "our-belief__benefit-icon" }}
+                    {% endif %}
+                    {% if block.settings.second_benefit_text %}
+                      <span class="our-belief__benefit-text">{{ block.settings.second_benefit_text }}</span>
+                    {% endif %}
+                  </div>
+                {% endif %}
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Our belief",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    { "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    { "type": "richtext",
+      "id": "title",
+      "label": "Title"
+    },
+    { "type": "richtext",
+      "id": "text",
+      "label": "Text",
+      "default": "<p>But let's be honest, sourcing real colostrum is nearly impossible.</p><p>And if you've ever tried other gut supplements, you know how much it sucks to keep taking something that doesn't work. We got rid of all that bogus.</p><p>Two scoops a day unleashes your inner goddess - and don't forget to use your free frother whenever you need to make your golden latte on the go.</p><p>After all, we're not staying at home all day, are we queens?</p>"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "select",
+      "id": "image_position",
+      "label": "Image position",
+      "options": [
+        {
+          "value": "row",
+          "label": "Left"
+        },
+        {
+          "value": "row-reverse",
+          "label": "Right"
+        }
+      ],
+      "default": "row"
+    },
+    {
+      "type": "select",
+      "id": "text_align",
+      "label": "Text align",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left" },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "left"
+    },
+    {
+      "type": "header",
+      "content": "Paddings"
+    },
+    {
+      "type": "range",
+      "id": "padding_desktop_top",
+      "label": "Top padding desktop",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_desktop_bottom",
+      "label": "Bottom padding desktop",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_mobile_top",
+      "label": "Top padding mobile",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_mobile_bottom",
+      "label": "Bottom padding mobile",
+      "min": 0,
+      "max": 200,
+      "step": 5,
+      "default": 40
+    },
+
+    {
+      "type": "header",
+      "content": "Colors"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title color",
+      "default": "#FF6A13"
+    },
+    {
+      "type": "color",
+      "id": "background_color",
+      "label": "Background color",
+      "default": "#FCEFEA"
+    },
+    {
+      "type": "color",
+      "id": "label_color",
+      "label": "Label color",
+      "default": "#FF6A13"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "button",
+      "name": "Button",
+      "settings": [
+        {
+          "type": "text",
+          "id": "button_label",
+          "label": "Button label",
+          "default": "UNLOCK YOUR TRUE POWER"
+        },
+        {
+          "type": "url",
+          "id": "button_link",
+          "label": "Button link"
+        },
+        {
+          "type": "color",
+          "id": "button_color",
+          "label": "Button color",
+          "default": "#FF6A13"
+        },
+        {
+          "type": "image_picker",
+          "id": "first_benefit_image",
+          "label": "First benefit image"
+        },
+        {
+          "type": "text",
+          "id": "first_benefit_text",
+          "label": "First benefit text"
+        },
+        {
+          "type": "image_picker",
+          "id": "second_benefit_image",
+          "label": "Second benefit image"
+        },
+        {
+          "type": "text",
+          "id": "second_benefit_text",
+          "label": "Second benefit text"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Our belief",
+      "category": "Custom"
+    }
+  ]
+}
+{% endschema %}

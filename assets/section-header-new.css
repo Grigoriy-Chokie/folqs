@@ -1,0 +1,167 @@
+.announcement-bar__message,
+.announcement-bar__message *,
+.announcement-bar__message.h5 {
+  padding: 12px 0;
+  font-family: var(--font-body-family);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: -0.32px;
+}
+
+.header {
+  padding-top: 16px;
+}
+
+.shopify-section-header-sticky sticky-header {
+  background-color: #005EB8;
+}
+
+.menu-drawer-container {
+  background-color: #005EB8;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  justify-content: center;
+  align-items: center;
+}
+
+.menu-drawer-container,
+a.header__icon {
+  transition: .3s ease-in-out;
+}
+
+a.header__icon:hover {
+  filter: brightness(0.8);
+}
+
+.menu-drawer-container:hover {
+  background: #004a91;
+}
+
+.header--index .header__heading {
+  position: relative;
+  min-height: auto;
+  transform: translate(0, 0);
+  left: auto;
+  top: auto;
+  background: transparent;
+  max-height: none;
+  padding: 10px;
+  max-width: none;
+}
+
+.header__heading .icon-logo {
+  width: 110px;
+  height: auto;
+}
+
+.header__heading-link {
+  padding: 0;
+}
+
+.header__icons {
+  gap: 16px;
+}
+
+.header__icons .header__navigation-link {
+  display: flex;
+  gap: 14px;
+  padding: 16px 20px;
+  max-height: 56px;
+  color: #FFF;
+  text-align: center;
+  font-family: var(--font-body-family);
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+  letter-spacing: -0.32px;
+  max-width: 142px;
+  min-width: 142px;
+  width: 100%;
+}
+
+.header--index .header__icon--account {
+  width: 56px;
+  min-width: 56px;
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #005EB8;
+}
+
+.header--index header-drawer {
+  margin: 0;
+}
+
+.header--index .header__icon--menu {
+  width: 56px;
+  height: 56px;
+}
+
+.header--index .header__icons {
+  padding: 0;
+}
+
+.header--index.header.page-width {
+  max-width: 1340px;
+  padding-top: 16px !important;
+}
+
+.shopify-section-header-sticky sticky-header .header--index.header.page-width {
+  padding-top: 0 !important;
+  padding-bottom: 0px;
+}
+
+@media screen and (max-width:749px) {
+  .announcement-bar__message {
+    padding: 8px 0;
+    font-size: 14px;
+  }
+
+  .header--index.header {
+    padding: 7px 14px;
+  }
+
+  .menu-drawer-container {
+    width: 44px;
+    height: 44px;
+  }
+
+  .header__heading .icon-logo {
+    max-width: 88px;
+    max-height: 45px;
+  }
+
+  .header--index .header__icon--account {
+    display: none;
+  }
+
+  .header__icons .header__navigation-link {
+    max-height: 46px;
+    max-width: 92px;
+    min-width: 92px;
+    padding: 14px 15px;
+    gap: 12px;
+  }
+
+  .header__icons .header__navigation-link span {
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  .header-wrapper, .header {
+    max-height: none;
+  }
+
+  .header--index .header__icon--menu {
+    width: 44px;
+    height: 44px;
+    max-width: 44px;
+    max-height: 44px;
+  }
+}

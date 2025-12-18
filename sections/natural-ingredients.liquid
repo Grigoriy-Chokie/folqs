@@ -1,0 +1,186 @@
+{%- liquid
+  assign heading = section.settings.heading
+  assign sub_heading = section.settings.sub_heading
+  assign name_button = section.settings.name_button
+  assign url_button = section.settings.url_button
+-%}
+
+{%- style -%}
+  .natural-ingredients--{{section.id}} {
+    padding-top: {{section.settings.padding_top}}px;
+    padding-bottom: {{section.settings.padding_bottom}}px;
+  }
+  @media(max-width: 768px) {
+    .natural-ingredients--{{section.id}} {
+      padding-top: {{section.settings.padding_top_mobile}}px;
+      padding-bottom: {{section.settings.padding_bottom_mobile}}px;
+    }
+  }
+{%- endstyle -%}
+{{ 'component-natural-ingredients.css' | asset_url | stylesheet_tag }}
+<div class="natural-ingredients natural-ingredients--{{section.id}}">
+  <div class="natural-ingredients__container page-width">
+    {% if heading != blank %}
+      <h2 class="natural-ingredients__title">{{- heading -}}</h2>
+    {% endif %}
+    {% if sub_heading != blanks %}
+      <p class="natural-ingredients__subtitle" class="">{{- sub_heading -}}</p>
+    {% endif %}
+    <div class="natural-ingredients__grid grid-ingredients swiper">
+      <div class="grid-ingredients__wrapper swiper-wrapper">
+        {% for block in section.blocks %}
+          {%- liquid
+            assign image = block.settings.img
+            assign title = block.settings.title
+            assign info = block.settings.info
+            assign subtitle = block.settings.subtitle
+          -%}
+          <div class="grid-ingredients__item swiper-slide">
+            {% if image != blank %}
+              <div class="grid-ingredients__item-image ">
+                {{
+                  image
+                  | image_url: width: master
+                  | image_tag: widths: '300,400,500,600,700', alt: image.alt
+                  | default: '', loading: 'lazy'
+                }}
+              </div>
+            {% endif %}
+            {% if title != blank or info != blank %}
+              <div class="grid-ingredients__item-text-wrapper">
+                {% if title != blank %}
+                  <h3 class="grid-ingredients__item-title">{{- title -}}</h3>
+                {% endif %}
+                {% if subtitle!= blank %}
+                  <span class="grid-ingredients__item-subtitle">{{- subtitle -}}</span>
+                {% endif %}
+                {% if info != blank %}
+                  <p class="grid-ingredients__item-information">{{- info -}}</p>
+                {% endif %}
+              </div>
+            {% endif %}
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+    {% if url_button != blank %}
+      <a class="natural-ingredients__link" href="{{url_button}}" title="{{- name_button -}}">{{- name_button -}}</a>
+    {% endif %}
+  </div>
+</div>
+{{ 'component-natural-ingredients.js' | asset_url | script_tag }}
+{% schema %}
+{
+  "name": "Natural ingredients",
+  "tag": "section",
+  "presets": [
+    {
+      "name": "Natural ingredients"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "ingredient",
+      "name": "Ingredient",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "img",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Lorem ipsum dolor sit amet"
+        },
+        {
+          "type": "text",
+          "id": "subtitle",
+          "label": "Subitle"
+        },
+        {
+          "type": "textarea",
+          "id": "info",
+          "label": "Information",
+          "default": "Lorem ipsum dolor sit amet consectetur. Gravida facilisi eleifend sit quam morbi risus id. Nisl massa donec tincidunt."
+        }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "Space between sections on the desktop"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "unit": "px",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "unit": "px",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 0
+    },
+    {
+      "type": "paragraph",
+      "content": "Space between sections on the mobile"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Padding top",
+      "unit": "px",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Padding bottom",
+      "unit": "px",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 0
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Only Natural Ungredients"
+    },
+    {
+      "type": "text",
+      "id": "sub_heading",
+      "label": "Sub-heading",
+      "default": "Lorem ipsum dolor sit amet consectetur. Gravida facilisi eleifend sit quam morbi risus id. Nisl massa donec tincidunt."
+    },
+    {
+      "type": "text",
+      "id": "name_button",
+      "label": "Name for the button",
+      "default": "See Full List"
+    },
+    {
+      "type": "url",
+      "id": "url_button",
+      "label": "Url for the button",
+      "default": "/"
+    }
+  ]
+}
+{% endschema %}

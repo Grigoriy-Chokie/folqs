@@ -1,0 +1,251 @@
+{% if section.blocks.size > 0 %}
+  {{ 'benefits-list.css' | asset_url | stylesheet_tag }}
+  {%- style -%}
+    {% unless section.settings.button_background == blank %}
+      .section-{{ section.id }} .benefits__button{
+        background: {{section.settings.button_background}};
+        border: 1px solid {{section.settings.button_background}};
+      }
+
+      .section-{{ section.id }} .benefits__button:hover {
+        background: transparent;
+        color: {{section.settings.button_background}};
+      }
+    {% endunless %}
+    .section-{{ section.id }} {
+        padding-top: {{ section.settings.padding_top }}px;
+        padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+    @media(max-width: 768px) {
+        .section-{{ section.id }} {
+            padding-top: {{ section.settings.padding_top_mobile }}px;
+            padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+        }
+    }
+  {%- endstyle -%}
+
+  <div class="section-{{ section.id }} benefits-list benefits-list--{{ template.suffix | default: template.name }} page-width">
+    {%- if section.settings.title != blank and section.settings.title_position == 'top' -%}
+      <div class="benefits__title">
+        <div class="benefits__title-content {% unless section.settings.title_mobile == blank %}benefits__title-content--desktop{% endunless %}">
+          {{ section.settings.title }}
+        </div>
+        {% unless section.settings.title_mobile == blank %}
+          <div class="benefits__title benefits__title-content--mobile">{{ section.settings.title_mobile }}</div>
+        {% endunless %}
+      </div>
+    {%- endif -%}
+    <div class="benefits__items">
+      <div class="benefits__inner benefits__inner--with-image">
+        {%- if section.settings.title != blank and section.settings.title_position == 'above_title' -%}
+          <div class="benefits__title">
+            <div class="benefits__title-content {% unless section.settings.title_mobile == blank %}benefits__title-content--desktop{% endunless %}">
+              {{ section.settings.title }}
+            </div>
+            {% unless section.settings.title_mobile == blank %}
+              <div class="benefits__title benefits__title-content--mobile">{{ section.settings.title_mobile }}</div>
+            {% endunless %}
+          </div>
+        {%- endif -%}
+        {% if section.settings.video != blank %}
+          <div class="benefits__video">
+            {{ section.settings.video | video_tag: autoplay: true, loop: true, muted: true, controls: false }}
+          </div>
+        {%- elsif section.settings.image != blank -%}
+          <div class="benefits__image">
+            <img
+              src="{{ section.settings.image | img_url: "600x" }}"
+              alt="{{ section.settings.image.alt }}"
+            >
+          </div>
+        {% endif %}
+        {%- if section.settings.icon_section != blank -%}
+          <div class="benefits__icon">
+            <img
+              src="{{ section.settings.icon_section | img_url: "218x" }}"
+              alt="{{ section.settings.icon_section.alt }}"
+            >
+          </div>
+        {%- endif -%}
+      </div>
+      <div class="benefits__inner">
+        <div class="benefits__list">
+          {%- for block in section.blocks -%}
+            {%- if block.settings.heading != blank or block.settings.subheading != blank -%}
+              <div
+                class="benefits__list-item scroll-trigger animate--slide-in"
+                style="--animation-order: {{ forloop.index0 }};"
+              >
+                {%- if section.settings.icon_blocks != blank -%}
+                  <div class="list-item__image">
+                    <img
+                      src="{{ section.settings.icon_blocks | img_url: "50x" }}"
+                      alt="{{ section.settings.icon_blocks.alt }}"
+                    >
+                  </div>
+                {%- endif -%}
+                <div class="list-item__content">
+                  {% if block.settings.heading != blank %}
+                    <div class="list-item__title">{{ block.settings.heading }}</div>
+                  {%- endif -%}
+                  {% if block.settings.subheading != blank %}
+                    <div class="list-item__description">{{ block.settings.subheading }}</div>
+                  {%- endif -%}
+                </div>
+              </div>
+            {%- endif -%}
+          {%- endfor -%}
+        </div>
+      </div>
+    </div>
+    {% unless section.settings.button_label == blank or section.settings.button_url == blank %}
+      <div class="benefits__button-wrapper ">
+        <a href="{{section.settings.button_url}}" class="benefits__button">
+          {{ section.settings.button_label }}
+          {% render 'icon-arrow' %}
+        </a>
+      </div>
+    {% endunless %}
+  </div>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Benefits list",
+  "limit": 1,
+  "max_blocks": 8,
+  "settings": [
+    {
+      "type": "richtext",
+      "id": "title",
+      "label": "Title"
+    },
+    {
+      "type": "richtext",
+      "id": "title_mobile",
+      "label": "Title mobile"
+    },
+    {
+      "type": "select",
+      "id": "title_position",
+      "label": "Title position",
+      "options": [
+        {
+          "value": "top",
+          "label": "At the top"
+        },
+        {
+          "value": "above_title",
+          "label": "Above the title"
+        }
+      ],
+      "default": "top"
+    },
+    {
+      "type": "image_picker",
+      "id": "image",
+      "label": "Image"
+    },
+    {
+      "type": "video",
+      "id": "video",
+      "label": "Video",
+      "info": "Video has the highest priority"
+    },
+    {
+      "type": "image_picker",
+      "id": "icon_section",
+      "label": "Section icon"
+    },
+    {
+      "type": "image_picker",
+      "id": "icon_blocks",
+      "label": "Blocks icon"
+    },
+    {
+      "type": "text",
+      "label": "Button label",
+      "id": "button_label",
+      "default": "Try Folqs"
+    },
+    {
+      "type": "url",
+      "label": "Button url",
+      "id": "button_url"
+    },
+    {
+      "type": "color_background",
+      "label": "Button background",
+      "id": "button_background",
+      "default": "#FF6A13"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding top(desktop)",
+      "default": 128
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding bottom(desktop)",
+      "default": 92
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding top(mobile)",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding bottom(mobile)",
+      "default": 40
+    }
+  ],
+  "blocks": [
+    {
+      "type": "block",
+      "name": "Block",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "heading",
+          "label": "Heading"
+        },
+        {
+          "type": "richtext",
+          "id": "subheading",
+          "label": "Subheading"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Benefits list"
+    }
+  ]
+}
+{% endschema %}

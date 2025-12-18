@@ -1,0 +1,165 @@
+{% liquid
+  assign text = block.settings.text
+  assign text_color = block.settings.color
+  assign image = block.settings.image
+  assign image_width = block.settings.image_width | append: 'px'
+  assign image_width_mobile = block.settings.image_width_mobile | append: 'px'
+
+  assign padding_top = block.settings.padding_top
+  assign padding_bottom = block.settings.padding_bottom
+  assign padding_top_mobile = block.settings.padding_top_mobile
+  assign padding_bottom_mobile = block.settings.padding_bottom_mobile
+%}
+
+{% render 'block-paddings',
+  padding_top: padding_top,
+  padding_bottom: padding_bottom,
+  padding_top_mobile: padding_top_mobile,
+  padding_bottom_mobile: padding_bottom_mobile
+%}
+
+{% stylesheet %}
+  .reviews-text-block {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 16px;
+  }
+
+  .reviews-text-block > * {
+    margin: 0;
+  }
+
+  .reviews-text-block picture {
+    line-height: 0;
+  }
+
+  .reviews-text-block__image {
+    width: var(--image-width);
+    height: auto;
+  }
+
+  .reviews-text-block__text {
+    color: var(--text-color);
+  }
+
+  @media screen and (max-width: 749px) {
+    .reviews-text-block {
+      gap: 8px;
+    }
+
+    .reviews-text-block__image {
+      width: var(--image-width-mobile);
+    }
+  }
+{% endstylesheet %}
+
+<div class="reviews-text-block block-{{ section.id }}-{{ block.id }}--padding" {{ block.shopify_attributes }}
+      style="--image-width: {{ image_width }};
+        --image-width-mobile: {{ image_width_mobile }};
+        --text-color: {{ text_color }}"
+>
+  {% render  'picture',
+    image:  image,
+    widths_list:  '50, 100, 200, 350,800, 1200, 1500, 1900, 2100, 2400, 2800, 3200',
+    loading:  'lazy',
+    fetchpriority:  'low',
+    class:  'reviews-text-block__image'
+  %}
+  <span class="reviews-text-block__text">{{ text }}</span>
+</div>
+
+{% schema %}
+{
+    "name": "Review text",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "image"
+      },
+      {
+        "type": "range",
+        "id": "image_width",
+        "label": "Image width",
+        "min": 10,
+        "max": 500,
+        "step": 10,
+        "unit": "px",
+        "default": 140
+      },
+      {
+        "type": "range",
+        "id": "image_width_mobile",
+        "label": "Image width mobile",
+        "min": 10,
+        "max": 500,
+        "step": 10,
+        "unit": "px",
+        "default": 140
+      },
+      {
+        "type": "text",
+        "id": "text",
+        "label": "Text",
+        "default": "1,571 + Five Star Reviews"
+      },
+      {
+        "type": "color",
+        "id": "text_color",
+        "label": "Text color",
+        "default": "#fff"
+      },
+      {
+        "type": "header",
+        "content": "Block paddings"
+      },
+      {
+        "type": "range",
+        "id": "padding_top",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "Padding top",
+        "default": 16
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "Padding bottom",
+        "default": 32
+      },
+      {
+        "type": "range",
+        "id": "padding_top_mobile",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "Padding top mobile",
+        "default": 16
+      },
+      {
+        "type": "range",
+        "id": "padding_bottom_mobile",
+        "min": 0,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "Padding bottom mobile",
+        "default": 32
+      }
+    ],
+    "presets": [
+    {
+        "name": "Review text"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,174 @@
+{{ 'section-banner-with-gradient.css' | asset_url | stylesheet_tag }}
+{% style %}
+  .banner-with-gradient__content-wrapper-{{ section.id }}{
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+  {% unless section.settings.background == blank %}
+    .banner-with-gradient__content-wrapper-{{ section.id }} {
+        background: {{ section.settings.background }}
+    }
+  {% endunless %}
+  @media screen and (max-width: 850px) {
+      .banner-with-gradient__content-wrapper-{{ section.id }}{
+          padding-top: {{ section.settings.padding_top_mobile }}px;
+          padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+          }
+      }
+{% endstyle %}
+
+{% assign typesStrings = 'desktop,mobile' | split: ',' %}
+<div class="banner-with-gradient__content-wrapper {% unless section.settings.decor_mobile == blank %} banner-with-gradient__content-wrapper--with-mobile-decor {% endunless %} banner-with-gradient__content-wrapper-{{ section.id }}">
+  {% for typesString in typesStrings %}
+    {%- capture decorKey -%}decor_{{- typesString -}}{%- endcapture -%}
+    {%- unless section.settings[decorKey] == blank -%}
+      <div class="banner-with-gradient__decor banner-with-gradient__decor--{{ typesString }}">
+        {{ section.settings[decorKey] }}
+      </div>
+    {% endunless %}
+  {% endfor %}
+  <div class="banner-with-gradient__content page-width">
+    {% unless section.settings.title == blank %}
+      <h2 class="banner-with-gradient__title" style="color: {{ section.settings.title_color }}">
+        {{ section.settings.title }}
+      </h2>
+    {% endunless %}
+    {% unless section.settings.heading == blank %}
+      <h3 class="banner-with-gradient__heading" style="color: {{ section.settings.heading_color }}">
+        {{ section.settings.heading }}
+      </h3>
+    {% endunless %}
+    {% unless section.settings.subheading == blank %}
+      <span class="banner-with-gradient__subheading" style="text-align: {{ section.settings.subheading_align }};">
+        {{ section.settings.subheading }}
+      </span>
+    {% endunless %}
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Banner with gradient",
+  "tag": "section",
+  "class": "section__banner-with-gradient",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "label": "Title",
+      "id": "title"
+    },
+    {
+      "type": "color",
+      "label": "Title Color",
+      "id": "title_color",
+      "default": "#005eb8"
+    },
+    {
+      "type": "richtext",
+      "label": "Heading",
+      "id": "heading",
+      "default": "<p>9 Reasons People Love ThisFoundational Supplement</p>"
+    },
+    {
+      "type": "color",
+      "label": "Heading Color",
+      "id": "heading_color",
+      "default": "#005eb8"
+    },
+    {
+      "type": "richtext",
+      "label": "Subheading",
+      "id": "subheading",
+      "default": "<p>Lorem ipsum dolor sit amet consectetur. Pharetra in mauris sit ultrices purus sapien congue aliquam. Fames vel ut consectetur dictumst amet mi. Rhoncus nullam cum sem nec id malesuada. Id faucibus aliquet blandit eu. In imperdiet consectetur diam cum sed dolor in. Faucibus odio.</p>"
+    },
+    {
+      "type": "select",
+      "id": "subheading_align",
+      "label": "Subheading Alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "right",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "html",
+      "label": "Decor",
+      "id": "decor_desktop"
+    },
+    {
+      "type": "html",
+      "label": "Decor mobile",
+      "id": "decor_mobile"
+    },
+    {
+      "type": "color_background",
+      "label": "Background",
+      "id": "background",
+      "default": "linear-gradient(180deg, rgba(228, 240, 255, 0.00) 0%, #E4F0FF 48.5%)"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding top mobile",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding bottom mobile",
+      "default": 40
+    }
+  ],
+  "presets": [
+    {
+      "name": "Banner with gradient"
+    }
+  ]
+}
+{% endschema %}

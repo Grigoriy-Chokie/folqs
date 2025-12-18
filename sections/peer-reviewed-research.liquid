@@ -1,0 +1,184 @@
+{{ 'section-peer-reviewed-research.css' | asset_url | stylesheet_tag }}
+{% style %}
+  .reviewed-research__content--{{ section.id }} {
+    padding-top: {{ section.settings.padding_top_mobile }}px;
+    padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+  }
+
+  @media screen and (min-width: 851px) {
+    .reviewed-research__content--{{ section.id }} {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{% endstyle %}
+<div class="reviewed-research__content reviewed-research__content--{{ section.id }}">
+  {% unless section.settings.heading == blank %}
+    <h2 class="reviewed-research__heading">
+      {{ section.settings.heading }}
+    </h2>
+  {% endunless %}
+  {% unless section.settings.subheading == blank %}
+    <span class="reviewed-research__subheading">
+      {{ section.settings.subheading }}
+    </span>
+  {% endunless %}
+  {% unless section.blocks.size == 0 %}
+    <div class="reviewed-research__text-blocks {% if forloop.index > section.settings.number_of_reviews_shown and section.settings.button_show_more_label != blank %} reviewed-research__text-blocks--restricted {% endif %}">
+      {% for block in section.blocks %}
+        <{%unless block.settings.research_url == blank%}a href = "{{block.settings.research_url}}" {%else%}div {% endunless %}
+          style="--animation-order: {{ forloop.index }};"
+          class="text-blocks__text-block{% if forloop.index > section.settings.number_of_reviews_shown and section.settings.button_show_more_label != blank %} text-blocks__text-block--hidden {% endif %} scroll-trigger animate--slide-in"
+        >
+          {% unless block.settings.subheading == blank %}
+            <span class="text-block__subheading">
+              {{ block.settings.subheading }}
+            </span>
+          {% endunless %}
+          {% unless block.settings.heading == blank %}
+            <span class="text-block__heading">
+              {{ block.settings.heading }}
+            </span>
+          {% endunless %}
+          {% unless block.settings.description == blank %}
+            <span class="text-block__description">
+              {{ block.settings.description }}
+            </span>
+          {% endunless %}
+        </{%unless block.settings.research_url == blank%}a{%else%}div{% endunless %}>
+      {% endfor %}
+    </div>
+    {% unless section.settings.button_show_more_label == blank %}
+      <span
+        class="text-blocks__load-more-button"
+        onclick="this.closest('.reviewed-research__content')?.classList.add('reviewed-research__content--all-shown')"
+      >
+        {{ section.settings.button_show_more_label }}
+      </span>
+    {% endunless %}
+  {% endunless %}
+</div>
+{{ 'section-peer-reviewed-research.js' | asset_url | script_tag }}
+
+{% schema %}
+{
+  "name": "Peer reviewed research",
+  "tag": "section",
+  "class": "section__reviewed-research",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "label": "Heading",
+      "id": "heading",
+      "default": "Peer-reviewed research"
+    },
+    {
+      "type": "richtext",
+      "label": "Subheading",
+      "id": "subheading"
+    },
+    {
+      "type": "range",
+      "label": "How many reviews are shown",
+      "id": "number_of_reviews_shown",
+      "default": 2,
+      "min": 1,
+      "max": 10,
+      "step": 1
+    },
+    {
+      "type": "text",
+      "label": "Button show more label",
+      "id": "button_show_more_label",
+      "default": "Show all Researches"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 52
+    },
+    {
+      "type": "header",
+      "content": "Mobile"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "type": "text_island",
+      "name": "Text island",
+      "settings": [
+        {
+          "type": "text",
+          "label": "Subheading",
+          "id": "subheading",
+          "default": "NUTRIENTS",
+          "info": "Small blue text above heading"
+        },
+        {
+          "type": "richtext",
+          "label": "Heading",
+          "id": "heading"
+        },
+        {
+          "type": "richtext",
+          "label": "Description",
+          "id": "description"
+        },
+        {
+          "type": "url",
+          "label": "Research url",
+          "id": "research_url"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Peer reviewed research"
+    }
+  ]
+}
+{% endschema %}

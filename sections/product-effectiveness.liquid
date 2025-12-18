@@ -1,0 +1,257 @@
+{%- liquid
+    assign padding_top = section.settings.padding_top | append: 'px'
+    assign padding_bottom = section.settings.padding_bottom | append: 'px'
+    assign padding_top_mobile = section.settings.padding_top_mobile | append: 'px'
+    assign padding_bottom_mobile = section.settings.padding_bottom_mobile | append: 'px'
+
+    assign has_blocks = false
+    if section.blocks.size != 0
+        assign has_blocks = true
+    endif
+-%}
+
+{%- style -%}
+    .effectiveness-title,
+    .effectiveness-subtitle {
+        margin: 0 auto;
+    }
+    .effectiveness-title {
+        max-width: {{ section.settings.title_max_width }}px;
+
+    }
+    .effectiveness-subtitle {
+        max-width: {{ section.settings.subtitle_max_width }}px;
+    }
+    .effectiveness--{{ section.id }} {
+        padding-top: {{ padding_top }};
+        padding-bottom: {{ padding_bottom }};
+    }
+    @media(max-width: 768px) {
+        .effectiveness--{{ section.id }} {
+            padding-top: {{ padding_top_mobile }};
+            padding-bottom: {{ padding_bottom_mobile }};
+        }
+    }
+{%- endstyle -%}
+{{ 'product-effectiveness.css' | asset_url | stylesheet_tag }}
+<div class="effectiveness effectiveness--{{ section.id }}">
+    <div class="effectiveness-container page-width">
+        {%- if section.settings.heading != blank -%}
+            <div class="effectiveness-title">{{- section.settings.heading -}}</div>
+        {%- endif -%}
+        {%- if section.settings.subtitle != blank -%}
+            <div class="effectiveness-subtitle">{{- section.settings.subtitle -}}</div>
+        {%- endif -%}
+        {%- if section.settings.title_days_on != blank and section.settings.title_days_off != blank -%}
+            <div class="effectiveness__days">
+                <div class="days--on">{{ section.settings.days_on }} {{ section.settings.title_days_on }}</div>
+                <div class="days-range__items">
+                    {%- for i in (1..7) %}
+                        {%- assign cssDelay = i | times: section.settings.koff_delay | append: 'ms' -%}
+                        {%- if i <= section.settings.days_on -%}
+                            <div class="days-range__item days-range--on" style="--delay: {{cssDelay}};"></div>
+                        {%- else -%}
+                            <div class="days-range__item days-range--off" style="--delay: {{cssDelay}}"></div>
+                        {% endif %}
+                    {%- endfor -%}
+                </div>
+                <div class="days--off">{{ 7 | minus: section.settings.days_on }} {{ section.settings.title_days_off }}</div>
+            </div>
+        {%- endif -%}
+        {% if has_blocks == true %}
+            <div class="effectiveness__advantages">
+                {%- for block in section.blocks -%}
+                    <div class="effectiveness__advantage">
+                        {%- if block.settings.image != blank -%}
+                            <div class="effectiveness__advantage-image">
+                                {{- block.settings.image | image_url: width: 200, height: 200 | image_tag: loading: "lazy" -}}
+                            </div>
+                        {%- endif -%}
+                        {%- if block.settings.title != blank -%}
+                            <div class="effectiveness__advantage-title">
+                                {{- block.settings.title -}}
+                            </div>
+                        {%- endif -%}
+                        {%- if block.settings.description != blank -%}
+                            <div class="effectiveness__advantage-description">
+                                {{- block.settings.description -}}
+                            </div>
+                        {%- endif -%}
+                    </div>
+                {%- endfor -%}
+            </div>
+        {% endif %}
+    </div>
+</div>
+
+{{ "component-product-effectiveness.js" | asset_url  | script_tag }}
+
+{% schema %}
+{
+  "name": "Product effectiveness",
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Item",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Lorem ipsum dolor sit amet consectetur."
+        },
+        {
+          "type": "textarea",
+          "id": "description",
+          "label": "Description",
+          "default": "Lorem ipsum dolor sit amet consectetur. Ultricies ornare adipiscing lorem amet sit. Consequat amet eu sed imperdiet nec dui. Tempus eget nec nulla diam donec dolor convallis ultrices diam."
+        }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "header",
+      "content": "Padding (desktop)"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 100
+    },
+    {
+      "type": "header",
+      "content": "Padding (desktop)"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 60
+    },
+    {
+      "type": "header",
+      "content": "Animation"
+    },
+    {
+      "type": "range",
+      "id": "koff_delay",
+      "label": "Koff for animation delay in ",
+      "unit": "ms",
+      "min": 350,
+      "max": 3500,
+      "step": 50,
+      "default": 350
+    },
+    {
+      "type": "header",
+      "content": "Max width content"
+    },
+    {
+      "type": "range",
+      "id": "title_max_width",
+      "min": 500,
+      "max": 1000,
+      "step": 10,
+      "unit": "px",
+      "label": "Title max. width",
+      "default": 1000
+    },
+    {
+      "type": "range",
+      "id": "subtitle_max_width",
+      "min": 500,
+      "max": 1000,
+      "step": 10,
+      "unit": "px",
+      "label": "Subtitle max. width",
+      "default": 1000
+    },
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "The Way to Increase Effectiveness"
+    },
+    {
+      "type": "textarea",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Take your supplement with food for five consecutive days, then pause for two days."
+    },
+    {
+      "type": "header",
+      "content": "Days"
+    },
+    {
+      "type": "text",
+      "id": "title_days_on",
+      "label": "Days on",
+      "default": "Days On"
+    },
+    {
+      "type": "text",
+      "id": "title_days_off",
+      "label": "Days off",
+      "default": "Days Off"
+    },
+    {
+      "type": "header",
+      "content": "range"
+    },
+    {
+      "type": "range",
+      "id": "days_on",
+      "min": 1,
+      "max": 7,
+      "step": 1,
+      "unit": "day",
+      "label": "Select the number of days",
+      "default": 5
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product effectiveness"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,347 @@
+.ingredients-content__heading {
+    margin: 0;
+    color: #000;
+    font-variant-numeric: lining-nums proportional-nums;
+    font-family: Raleway;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 42px;
+    width: 100%;
+}
+
+.ingredients-content__text> :first-child:not(h2) {
+    margin-top: 0;
+}
+
+.ingredients-content__text> :last-child {
+    margin-bottom: 0;
+}
+
+.ingredients-content__wrapper {
+    display: flex;
+    row-gap: 40px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.ingredients-content__text ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.ingredients-content__text li {
+    display: flex;
+    align-items: center;
+    gap: 14px
+}
+
+
+.ingredients-content__text-wrapper--half {
+    max-width: calc(67% - 40px);
+}
+
+.ingredients-content__bloks-wrapper {
+    max-width: calc(33% - 40px);
+}
+
+.ingredients-content__percentage-island {
+    display: flex;
+    flex-direction: column;
+}
+
+.percentage-island__number {
+    color: #005EB8;
+    font-variant-numeric: lining-nums proportional-nums;
+    font-family: Raleway;
+    font-size: 60px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 60px;
+    display: flex;
+    align-items: start;
+    gap: 4px;
+    margin-bottom: 8px;
+}
+
+.percentage-island__number em {
+    color: #005EB8;
+    font-variant-numeric: lining-nums proportional-nums;
+    font-family: Raleway;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 42px;
+}
+
+.ingredients__collapsible-content .percentage-island__number em {
+    color: #FFF;
+}
+
+.percentage-island__description {
+    color: #000;
+    font-family: Raleway;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0;
+}
+
+.ingredients-content__text {
+    color: rgba(0, 0, 0, 0.70);
+    font-variant-numeric: lining-nums proportional-nums;
+    font-family: Raleway;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0;
+}
+
+.ingredients-content__text svg {
+    min-width: 24px;
+}
+
+.ingredients-content__text h3,
+.ingredients-content__text h2 {
+    color: #000;
+    font-family: Raleway;
+    font-size: 20px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 28px;
+    margin-top: 40px;
+    margin-bottom: 14px;
+}
+
+.ingredients__collapsible-content .ingredients-content__text {
+    color: rgba(255, 255, 255, 0.70);
+}
+
+.ingredients__collapsible-content .ingredients-content__text h2,
+.ingredients__collapsible-content .percentage-island__number,
+.ingredients__collapsible-content .percentage-island__description {
+    color: #fff;
+}
+
+.ingredients__collapsible-content .ingredients-content__text li svg path {
+    fill: #fff
+}
+
+.ingredients__collapsible-content .ingredients-content__text li {
+    height: fit-content;
+}
+
+.ingredients-popup__wrapper .ingredients-content__text li:not(:first-child) {
+    margin-top: 18px;
+}
+
+
+.ingredients__collapsible-content .ingredients-content__text-wrapper--half {
+    max-width: calc(78% - 40px);
+}
+
+.ingredients-content__bloks-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+
+.ingredients-content__badges-wrapper {
+    width: 100%;
+    gap: 14px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.ingredients-content__badge_item {
+    display: flex;
+    max-width: fit-content;
+    padding: 8px 14px;
+    align-items: center;
+    gap: 9px;
+    border-radius: 10px;
+    background: #FFF;
+    box-shadow: 0px 4px 40px 0px rgba(0, 94, 184, 0.10);
+}
+
+.ingredients-content__badge_item img {
+    max-width: 18px;
+}
+
+.ingredients-content__badge_item {
+    letter-spacing: 0;
+    color: #005EB8;
+    font-variant-numeric: lining-nums proportional-nums;
+    font-family: Raleway;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 28px;
+}
+
+.ingredients-content__bloks-wrapper--mobile {
+    display: none;
+}
+
+.ingredients-content__show-more-button {
+    display: none;
+}
+
+.ingredients__item-image--mobile {
+    display: none;
+}
+
+.ingredients__collapsible-content .ingredients-content__text ul li:not(:last-child) {
+    margin-bottom: 18px;
+}
+
+
+@media screen and (min-width: 769px) {
+
+    .ingredients__collapsible-content .ingredients-content__bloks-wrapper {
+        max-width: calc(22% - 40px);
+    }
+
+}
+
+@media screen and (max-width: 768px) {
+    .ingredients__collapsible-content .ingredients-content__text li:not(:last-child) {
+        margin-bottom: 18px;
+    }
+
+    .ingredients-content__badge_item {
+        font-size: 16px;
+        line-height: 20px;
+    }
+
+    .ingredients-content__badge_item img {
+        max-height: 16px;
+    }
+
+    .ingredients__item-image--mobile {
+        display: block !important;
+    }
+
+    .ingredients__item-image--desktop {
+        display: none;
+    }
+
+    .ingredients__collapsible-content .ingredients-content__text:not(.ingredients-content__text--hidden) {
+        color: rgba(221, 221, 221, 0.70);
+        font-size: 14px;
+    }
+
+    .collabsible.ingredients__item-text-wrapper .ingredients__collapsible-content .ingredients-content__bloks-wrapper {
+        max-width: 100%;
+    }
+
+    .ingredients-content__text-wrapper--half,
+    .ingredients__collapsible-content .ingredients-content__text-wrapper--half {
+        max-width: 100%;
+        transition: all .3s;
+    }
+
+    .ingredients__collapsible-content .ingredients-content__badges-wrapper {
+        gap: 8px;
+    }
+
+    .ingredients-content__badges-wrapper {
+        column-gap: 12px;
+    }
+
+    .ingredients-content__show-more-button {
+        display: flex;
+        margin: 0 auto;
+        border: none;
+        background: transparent;
+        color: #005EB8;
+        font-family: Raleway;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 28px;
+        text-align: center;
+        align-items: center;
+        gap: 8px;
+    }
+
+    .ingredients-content__wrapper .ingredients-content__badge_item:not(:nth-child(-n+3)) {
+        display: none;
+    }
+
+    .ingredients-content__show-more-button:hover {
+        display: flex;
+        border: none;
+        cursor: pointer;
+    }
+
+    .ingredients-popup__wrapper .ingredients-content__wrapper:not(.ingredients-content__wrapper--text-shown) .ingredients-content__text--hidden {
+        height: 0;
+        opacity: 0;
+        transition: all .3s;
+        padding-top: 0;
+    }
+
+    .ingredients-content__wrapper--text-shown .ingredients-content__text--hidden,
+    .ingredients__collapsible-content .ingredients-content__text--hidden {
+        margin-top: 24px;
+    }
+
+    .ingredients__collapsible-content .ingredients-content__text--hidden {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .ingredients__collapsible-content .ingredients-content__bloks-wrapper.ingredients-content__bloks-wrapper--mobile {
+        order: 1;
+        margin-top: 40px;
+    }
+
+    .ingredients__collapsible-content .ingredients-content__text h2 {
+        margin-top: 0px;
+        margin-bottom: 0;
+    }
+
+    .ingredients-content__wrapper--text-shown .ingredients-content__show-more-button,
+    .ingredients__collapsible-content .ingredients-content__show-more-button {
+        display: none;
+    }
+
+    .ingredients-content {
+        height: 100%;
+        opacity: 1;
+        padding-top: 12px;
+    }
+
+    .ingredients-content__show-more-button path {
+        fill: rgba(0, 94, 184, 1);
+    }
+
+    .ingredients-content__show-more-button svg {
+        max-width: 12px;
+        transform: rotate(90deg);
+    }
+
+    .ingredients-content__text:not(.ingredients-content__text--hidden) {
+        text-align: center;
+    }
+
+    .ingredients-content__wrapper {
+        gap: 24px
+    }
+
+    .ingredients-content__bloks-wrapper {
+        max-width: 100%;
+        flex-direction: row;
+    }
+
+    .ingredients-content__bloks-wrapper--desktop {
+        display: none;
+    }
+
+    .ingredients-content__bloks-wrapper--mobile {
+        display: flex;
+    }
+}

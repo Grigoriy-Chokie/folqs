@@ -1,0 +1,212 @@
+{% liquid
+  assign title = section.settings.title
+  assign text_review = section.settings.text_review
+  assign subtitle = section.settings.subtitle
+  assign button_text = section.settings.button_text
+  assign button_link = section.settings.button_link
+  assign icon = section.settings.icon
+  assign icon_text = section.settings.icon_text
+  assign text_bottom = section.settings.text_bottom
+%}
+
+{%- style -%}
+  .section-{{ section.id }}-padding {
+    padding-top: {{ section.settings.padding_top_mobile }}px;
+    padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}-padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+{{ 'section-reviews-list.css' | asset_url | stylesheet_tag }}
+<div class="reviews-list section-{{ section.id }}-padding">
+  <div class="reviews-list__wrapper page-width">
+    <div class="reviews-list__heading">
+      {% if text_review != blank %}
+        <div class="reviews-list__total">
+          {%- render "icon-stars" -%}
+          <span>{{- text_review -}}</span>
+        </div>
+      {% endif %}
+      <h2>{{ title | replace: "||", "</br>" }}</h2>
+      <p>
+        {{ subtitle | replace: "||", "</br>" }}
+      </p>
+    </div>
+    <ul class="reviews-list__items">
+          {% for block in section.blocks %}
+              {% liquid
+                  assign title = block.settings.title
+                  assign body = block.settings.body
+                  assign author = block.settings.author
+                  assign verified = block.settings.verified
+              %}
+              <li class="reviews-list__item">
+                  {%- render "icon-stars" -%}
+                  <h3>{{ title }}</h3>
+                  <div class="items__content">
+                      {{ body }}
+                  </div>
+                  <p>
+                      {{ author }}
+                  </p>
+                  <span>
+                      {{ verified }}{% render 'icon-reviews-checkmark' %}
+                  </span>
+              </li>
+          {% endfor %}
+      </ul>
+    {% if button_link != blank and button_text != blank %}
+      <a href="{{ button_link }}" class="reviews-list__button">{{ button_text }}</a>
+    {% endif %}
+    {% if icon != blank and icon_text != blank %}
+      <div class="reviews-list__icon-text">
+        {{ icon | image_url: width: 100 | image_tag }}
+        {{ icon_text }}
+      </div>
+    {% endif %}
+    {% if text_bottom %}
+      <p class="reviews-list__bottom">
+        {{ text_bottom }}
+      </p>
+    {% endif %}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "List reviews",
+  "settings": [
+    {
+      "type": "text",
+      "id": "text_review",
+      "default": "3,500+ Five Star Reviews",
+      "label": "Text review"
+    },
+    {
+      "type": "text",
+      "id": "title",
+      "default": "Highly Rated By Our Customers",
+      "label": "Title"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subheading",
+      "default": "Lorem ipsum dolor sit amet consectetur. Gravida facilisi eleifend sit quam morbi risus id. Nisl massa donec tincidunt."
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text",
+      "default": "Try it Risk-Free"
+    },
+    {
+      "type": "url",
+      "id": "button_link",
+      "label": "Button link"
+    },
+    {
+      "type": "image_picker",
+      "id": "icon",
+      "label": "Icon"
+    },
+    {
+      "type": "text",
+      "id": "icon_text",
+      "label": "Icon text",
+      "default": "90-Day Money-Back Guarantee"
+    },
+    {
+      "type": "textarea",
+      "id": "text_bottom",
+      "label": "Text bottom",
+      "default": "Default text"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding top(desktop)",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding bottom(desktop)",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding top(mobile)",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding bottom(mobile)",
+      "default": 0
+    }
+  ],
+  "blocks": [
+    {
+      "type": "review",
+      "name": "Review",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Suprised and impressed!"
+        },
+        {
+          "type": "richtext",
+          "id": "body",
+          "label": "Body",
+          "default": "<p>Lorem ipsum dolor sit amet consectetur. At mauris</p>"
+        },
+        {
+          "type": "text",
+          "id": "author",
+          "label": "Author"
+        },
+        {
+          "type": "text",
+          "id": "verified",
+          "label": "Verified",
+          "default": "Verified Buyer"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "List reviews"
+    }
+  ]
+}
+{% endschema %}

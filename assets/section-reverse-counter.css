@@ -1,0 +1,285 @@
+.reverse-counter {
+    position: relative;
+    display: block;
+    height: 70px;
+}
+
+.reverse-counter__content {
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-content: center;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.reverse-counter--secondary .reverse-counter__content {
+    grid-template-columns: auto auto auto;
+    justify-content: center;
+    gap: 30px;
+}
+
+.reverse-counter__background {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+}
+
+.reverse-counter__logo {
+  height: 41px;   
+  align-self: center;
+}
+
+.reverse-counter__logo--mobile {
+    display: none;
+}
+
+.reverse-counter__logo img {
+    display: block;
+    height: 100%;
+    width: auto;
+}
+
+.reverse-counter__time-block {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.reverse-counter__time-block:not(:first-child)::before {
+    content: ':';
+    font-family: Raleway;
+    font-weight: 600;
+    font-size: 19px;
+    line-height: 100%;
+    letter-spacing: 0;
+    vertical-align: middle;
+    color: #FFFFFF;
+}
+
+.reverse-counter--secondary .reverse-counter__time-block:not(:first-child):before {
+    content: '：';
+    width: 6px;
+    font-size: 14px;
+}
+
+.time-block__container {
+    background: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 5px;
+}
+
+.reverse-counter--secondary .time-block__container {
+    width: 34px;
+    height: 43px;
+}
+
+.time-block__value {
+    font-family: Raleway;
+    font-weight: 600;
+    font-size: 19px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    font-variant-numeric: lining-nums proportional-nums;
+    color: #000000;
+}
+
+.reverse-counter--secondary .time-block__value {
+    font-family: var(--font-dm-sans);
+    font-weight: 700;
+}
+
+.time-block__unit {
+    font-family: Raleway;
+    font-weight: 500;
+    font-size: 8px;
+    line-height: 100%;
+    letter-spacing: 0%;
+    vertical-align: middle;
+    color: #666666;
+}
+
+.reverse-counter--secondary  .time-block__unit {
+    font-family: var(--font-dm-sans);
+    color: #005EB8;
+}
+
+.reverese-counter__timer {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+}
+
+.reverese-counter__timer-container {
+    display: flex;
+    gap: 15px;
+    align-items: center;
+}
+
+.reverse-counter__time-text {
+    font-family: Raleway;
+    font-weight: 600;
+    font-size: 15px;
+    line-height: 130%;
+    letter-spacing: 0;
+    vertical-align: middle;
+    font-variant-numeric: lining-nums proportional-nums;
+    color: #FFFFFF;
+}
+
+.reverse-counter__time-text p {
+    margin: 0;
+}
+
+.reverse-counter__button {
+    min-width: 150px;
+    width: fit-content;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: Raleway;
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 24px;
+    letter-spacing: 0;
+    font-variant-numeric: lining-nums proportional-nums;
+    color: #FFFFFF;
+    border-radius: 100px;
+    background: var(--background);
+    text-decoration: none;
+    transition: .3s ease;
+}
+
+.reverse-counter--secondary .reverse-counter__button {
+    font-family: var(--font-dm-sans);
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 800;
+    line-height: normal;
+    letter-spacing: -0.18px;
+    min-width: 175px;
+}
+
+.reverse-counter__button:hover {
+    transform: scale(.95);
+}
+
+.reverse-counter__button-wrapper {
+    justify-self: end;
+    align-self: center;
+}
+
+
+@media screen and (max-width: 767px) {
+
+    .reverse-counter.reverse-counter--secondary {
+        height: auto;
+    }
+
+    .reverse-counter--secondary .reverse-counter__content {
+      grid-template-columns: auto auto;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .reverese-counter__timer-container {
+        display: none;
+    }
+
+    .reverse-counter__logo--desktop {
+        display: none;
+    }
+
+    .reverse-counter__logo--mobile {
+        display: block;
+    }
+
+    .reverse-counter--secondary .reverse-counter__button {
+      min-width: 144px;
+      height: 39px;
+      font-size: 16px;
+      letter-spacing: -0.16px;
+    }
+
+    
+}
+/* labor day */
+body{
+    margin-top:  70px!important;
+}
+
+.reverse-counter__wrapper{
+    top:0;
+    position: fixed;
+width: 100%;
+z-index: 200;
+}
+.drawer-menu__drawer{
+    height: calc(100vh - 70px)!important;
+    top: 70px !important;
+}
+@media screen and (max-width: 750px) {
+    .reverse-counter {
+        height: 56px;
+    }
+
+    .reverse-counter__content {
+        padding-top: 12px;
+        padding-bottom: 12px;
+        gap: 8px;
+    }
+
+    .reverse-counter__logo  {
+      height: 50px;
+    }
+
+    .reverse-counter__logo img {
+        height: 100%;
+    }
+
+    .reverse-counter__time-block {
+        gap: 2px;
+    }
+
+    .reverse-counter__time-block:not(:first-child)::before {
+        font-size: 12px;
+    }
+
+    .time-block__container {
+        width: 32px;
+        height: 32px;
+    }
+
+    .time-block__value {
+        font-size: 14px;
+    }
+
+    .time-block__unit {
+        font-size: 6px;
+    }
+
+    .reverese-counter__timer {
+        gap: 2px;
+    }
+
+    .reverse-counter__time-text {
+        display: none;
+    }
+
+    .reverse-counter__button {
+        min-width: 110px;
+        height: 32px;
+        font-size: 14px;
+        line-height: 100%;
+    }
+}

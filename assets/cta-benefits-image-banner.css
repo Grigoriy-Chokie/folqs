@@ -1,0 +1,120 @@
+.cta-benefits-banner__title--mobile {
+    display: none;
+}
+
+.cta-benefits-banner__media--with-mobile .image--mobile {
+    display: none;
+}
+
+.cta-benefits-banner__media img {
+    max-width: 100%;
+    object-fit: contain;
+    height: auto;
+}
+
+.cta-benefits-banner__content {
+    position: absolute;
+    transform: translateY(-50%);
+    top: 50%;
+    right: 120px;
+    max-width: 40%;
+}
+
+.cta-benefits-banner__section {
+    display: flex;
+    position: relative;
+}
+
+.cta-benefits-banner__title {
+    margin-top: 0;
+    margin-bottom: 34px;
+    font-family: Raleway;
+}
+
+.cta-benefits-banner__section.page-width--left-only {
+    padding-left: 50px;
+    padding-right: 50px;
+}
+
+.cta-benefits-banner__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 224px;
+    width: 100%;
+    height: 60px;
+    padding: 0;
+    gap: 10px;
+    margin-top: 0px;
+    border-radius: 100px;
+    border: 1px solid transparent;
+    background: #005eb8;
+    color: #fff;
+    font-family: Raleway;
+    font-size: 18px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 28px;
+    text-decoration: none;
+    letter-spacing: normal;
+    transition: all .3s;
+}
+
+.cta-benefits-banner__button:hover{
+    background: #004A91;
+    border: 1px solid #004A91
+}
+
+.cta-benefits-banner__subtitle{
+    color: #005EB8;
+    font-variant-numeric: lining-nums proportional-nums;
+    font-family: Raleway;
+    font-size: 36px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 48px;
+    margin-top: 0;
+    margin-bottom: 18px;
+}
+
+@media screen and (max-width: 768px) {
+    .cta-benefits-banner__subtitle{
+        display: none;
+    }
+
+    .cta-benefits-banner__content {
+        position: absolute;
+        transform: translate(0);
+        top: auto;
+        bottom: 10%;
+        right: auto;
+        max-width: calc(100% - 40px);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        text-align: center;
+    }
+    .cta-benefits-banner__section.page-width--left-only {
+        padding-left: 20px;
+        padding-right: 20px;;
+    }
+    .cta-benefits-banner__title {
+        margin-bottom: 24px;
+    }
+    .cta-benefits-banner__title--desktop {
+        display: none;
+    }
+
+    .cta-benefits-banner__title--mobile {
+        display: block;
+    }
+
+    .cta-benefits-banner__media--with-mobile .image--mobile {
+        display: block;
+    }
+
+    .cta-benefits-banner__media--with-mobile .image--desktop {
+        display: none;
+    }
+}

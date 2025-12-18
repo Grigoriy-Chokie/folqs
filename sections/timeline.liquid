@@ -1,0 +1,149 @@
+{{ 'section-timeline.css' | asset_url | stylesheet_tag }}
+{% style %}
+  .timeline__timespan-blocks--{{ section.id }} {
+    margin-top: {{ section.settings.padding_top_mobile }}px;
+    margin-bottom: {{ section.settings.padding_bottom_mobile }}px;
+  }
+
+  @media screen and (min-width: 769px) {
+    .timeline__timespan-blocks--{{ section.id }} {
+      margin-top: {{ section.settings.padding_top }}px;
+      margin-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{% endstyle %}
+{% unless section.blocks.size == 0 %}
+  <div class="timeline__timespan-blocks timeline__timespan-blocks--{{ section.id }}">
+    {% render 'plane-scrollbar' %}
+    {% for block in section.blocks %}
+      <div class="timespan-blocks__timespan-wrapper">
+        {% unless block.settings.heading == blank %}
+          <div class="timespan-wrapper__text">
+            <h5 class="timespan-wrapper__heading">
+              {{ block.settings.heading }}
+            </h5>
+            {% unless block.settings.description == blank %}
+              <span class="timespan-wrapper__description">
+                {{ block.settings.description }}
+              </span>
+            {% endunless %}
+          </div>
+        {% endunless %}
+        {% unless block.settings.percentage_and_description == blank %}
+          <div class="timespan-wrapper__percentages">
+            {% assign percentagesIslandInputPairs = block.settings.percentage_and_description | split: '|' %}
+            {% for percentagesPair in percentagesIslandInputPairs %}
+              <div class="timespan-wrapper__percentage-item">
+                {% assign percentageContentDivided = percentagesPair | split: ';' %}
+                {% unless percentageContentDivided[0] == blank %}
+                  <span class="percentage-item__percentage">
+                    {{ percentageContentDivided[0] | replace: '%', "<span class = 'percentage--small'>%</span>" }}
+                  </span>
+                {% endunless %}
+                {% render 'progress-circle' index: forloop.index %}
+                {% unless percentageContentDivided[1] == blank %}
+                  <span class="percentage-item__timeline-description">
+                    {{ percentageContentDivided[1] }}
+                  </span>
+                {% endunless %}
+              </div>
+            {% endfor %}
+          </div>
+        {% endunless %}
+      </div>
+    {% endfor %}
+  </div>
+{% endunless %}
+
+{{ 'section-timeline-animations.js' | asset_url | script_tag}}
+{% schema %}
+{
+  "name": "Timeline",
+  "tag": "section",
+  "class": "section__timeline",
+  "settings": [
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "paragraph",
+      "content": "Desktop"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    },
+    {
+      "type": "paragraph",
+      "content": "Mobile"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "type": "timespan",
+      "name": "Timespan",
+      "settings": [
+        {
+          "type": "text",
+          "label": "Heading",
+          "id": "heading",
+          "default": "3 Months"
+        },
+        {
+          "type": "richtext",
+          "label": "Description",
+          "id": "description"
+        },
+        {
+          "type": "html",
+          "label": "Percentage and description",
+          "id": "percentage_and_description",
+          "info": "Please specify the percentage and description for all the lines you want to use in following format: 'percentage;description|percentage2;description2'"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Timeline"
+    }
+  ]
+}
+{% endschema %}

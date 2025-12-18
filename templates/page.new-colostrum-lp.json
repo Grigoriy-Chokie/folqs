@@ -1,0 +1,126 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "account_tabs_NEJkG6": {
+      "type": "account-tabs",
+      "blocks": {
+        "account_tab_4rKPzw": {
+          "type": "account_tab",
+          "settings": {
+            "title": "Addresses",
+            "link": "/account/addresses",
+            "target_blank": false
+          }
+        },
+        "account_tab_QYRDVt": {
+          "type": "account_tab",
+          "settings": {
+            "title": "Order history",
+            "link": "/account",
+            "target_blank": false
+          }
+        },
+        "account_tab_L7TEPV": {
+          "type": "account_tab",
+          "settings": {
+            "title": "My Subscription",
+            "link": "/tools/recurring/login",
+            "target_blank": false
+          }
+        }
+      },
+      "block_order": [
+        "account_tab_4rKPzw",
+        "account_tab_QYRDVt",
+        "account_tab_L7TEPV"
+      ],
+      "disabled": true,
+      "settings": {
+        "title": "My account",
+        "padding_top": 130,
+        "padding_bottom": 0,
+        "padding_top_mobile": 100,
+        "padding_bottom_mobile": 40
+      }
+    },
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "is_heading_hidden": true,
+        "padding_top": 100,
+        "padding_bottom": 40,
+        "padding_top_mobile": 100,
+        "padding_bottom_mobile": 40
+      }
+    },
+    "media_with_text_video_TbJphC": {
+      "type": "media-with-text-video",
+      "disabled": true,
+      "settings": {
+        "main_content_desktop": "<h2>5.Thousands of People Swear by Colostrum — Here’s Why</h2><p>People everywhere are raving about the real, noticeable results they’re experiencing with colostrum.</p><p><strong>From improved digestion and steady energy to radiant skin and mental clarity</strong>, colostrum’s 200+ bioactive nutrients work deep within your body to support better health and well-being at every level. *</p>",
+        "video": "shopify://files/videos/d1f4r.mp4",
+        "mobile_gap": "40",
+        "main_content_mobile": "",
+        "button_text": "Get 30% OFF Immune Revival",
+        "button_link": "",
+        "padding_top": 40,
+        "padding_bottom": 52,
+        "padding_top_mobile": 36,
+        "padding_bottom_mobile": 36,
+        "proportion": "equal",
+        "image_position": "right",
+        "image_position_mobile": "top"
+      }
+    },
+    "our_belief_9bknyw": {
+      "type": "our-belief",
+      "blocks": {
+        "button_zT7naF": {
+          "type": "button",
+          "settings": {
+            "button_label": "UNLOCK YOUR TRUE POWER",
+            "button_link": "",
+            "button_color": "#FF6A13",
+            "first_benefit_image": "shopify://shop_images/shield-svgrepo-com_1.svg",
+            "first_benefit_text": "365-Day Money Back Guarantee",
+            "second_benefit_image": "shopify://shop_images/fast-delivery1-svgrepo-com_1.svg",
+            "second_benefit_text": "Free Shipping*"
+          }
+        }
+      },
+      "block_order": [
+        "button_zT7naF"
+      ],
+      "name": "Our belief",
+      "settings": {
+        "image": "shopify://shop_images/Frame_1982249130.png",
+        "title": "<h2>Our Belief:</h2><h3>Colostrum Superfoods Are a VITAL Part of Any Woman's Diet And Need To Be Consumed With EVERY Meal.</h3>",
+        "text": "<p>But let's be honest, sourcing real colostrum is nearly impossible.</p><p>And if you've ever tried other gut supplements, you know how much it sucks to keep taking something that doesn't work. We got rid of all that bogus.</p><p><em>Two scoops a day unleashes your inner goddess</em> - and don't forget to use your free frother whenever you need to make your golden latte on the go.</p><p>After all, we're not staying at home all day, are we queens?</p>",
+        "image_position": "row-reverse",
+        "text_align": "left",
+        "padding_desktop_top": 80,
+        "padding_desktop_bottom": 80,
+        "padding_mobile_top": 40,
+        "padding_mobile_bottom": 40,
+        "title_color": "#FF6A13",
+        "background_color": "#FCEFEA",
+        "label_color": "#FF6A13"
+      }
+    }
+  },
+  "order": [
+    "account_tabs_NEJkG6",
+    "main",
+    "media_with_text_video_TbJphC",
+    "our_belief_9bknyw"
+  ]
+}

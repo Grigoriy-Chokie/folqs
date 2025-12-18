@@ -1,0 +1,206 @@
+{{ 'section-reviews-with-images-grid.css' | asset_url | stylesheet_tag }}
+
+{% render 'section-paddings',
+  padding_top: section.settings.padding_top,
+  padding_bottom: section.settings.padding_bottom,
+  padding_top_mobile: section.settings.padding_top_mobile,
+  padding_bottom_mobile: section.settings.padding_bottom_mobile
+%}
+
+<div
+  class="reviews-images-grid-wrapper color-{{ section.settings.color_scheme }}"
+  style="--reviews-background: {{ section.settings.reviews_background }};"
+>
+  <div class="reviews-images-grid section-{{ section.id }}--padding">
+    {%- if section.settings.subtitle != blank or section.settings.title != blank -%}
+      <div class="reviews-images-grid__header page-width page-width--extra">
+        {%- unless section.settings.subtitle == blank -%}
+          <p class="reviews-images-grid__subtitle">{{ section.settings.subtitle }}</p>
+        {%- endunless -%}
+        {%- unless section.settings.title == blank -%}
+          <h2 class="reviews-images-grid__title">{{ section.settings.title | newline_to_br }}</h2>
+        {%- endunless -%}
+      </div>
+    {%- endif -%}
+    {%- liquid
+      assign image_blocks = section.blocks | where: 'type', 'image'
+      assign review_blocks = section.blocks | where: 'type', 'review'
+    -%}
+    {%- if image_blocks.size > 0 -%}
+      <div class="reviews-images-grid__images page-width page-width--extra">
+        {%- for block in image_blocks -%}
+          {%- unless block.settings.image == blank -%}
+            <div class="reviews-images-grid__image">{{ block.settings.image | image_url: width: 300 | image_tag }}</div>
+          {%- endunless -%}
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+    {%- if review_blocks.size > 0 -%}
+      <div class="reviews-images-grid__reviews page-width page-width--extra">
+        {%- for block in review_blocks -%}
+          <div class="reviews-images-grid__review-extra">
+            {%- if block.settings.author != blank or block.settings.is_verified -%}
+              <div class="review-extra__user-info">
+                {%- unless block.settings.author == blank -%}
+                  <p class="review-extra__author-name">
+                    {{ block.settings.author }}
+                  </p>
+                {%- endunless -%}
+                {%- if block.settings.is_verified -%}
+                  <span class="review-extra__verified-badge">
+                    {{ 'icon-lp-verified-buyer.svg' | inline_asset_content }}
+                    {{ 'sections.testimonials.verified_buyer' | t }}
+                  </span>
+                {%- endif -%}
+              </div>
+            {%- endif -%}
+            {%- if block.settings.show_rating -%}
+              <div class="review-extra__rating">
+                {%- render 'icon-rating-extra' -%}
+              </div>
+            {%- endif -%}
+            {%- unless block.settings.title == blank -%}
+              <p class="review-extra__title">{{ block.settings.title }}</p>
+            {%- endunless -%}
+            {%- unless block.settings.text == blank -%}
+              <div class="review-extra__text">{{ block.settings.text }}</div>
+            {%- endunless -%}
+          </div>
+        {%- endfor -%}
+      </div>
+    {%- endif -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Reviews with image grid",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Over 1,571 Five Star Reviews"
+    },
+    {
+      "type": "textarea",
+      "id": "title",
+      "label": "Title",
+      "default": "See Why Our Customers Love Us"
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    },
+    {
+      "type": "color",
+      "id": "reviews_background",
+      "label": "Reviews background",
+      "default": "#F4FAFF"
+    },
+    {
+      "type": "header",
+      "content": "Section paddings"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding top mobile",
+      "default": 22
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding bottom mobile",
+      "default": 70
+    }
+  ],
+  "blocks": [
+    {
+      "name": "Image",
+      "type": "image",
+      "limit": 6,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        }
+      ]
+    },
+    {
+      "name": "Review",
+      "type": "review",
+      "limit": 3,
+      "settings": [
+        {
+          "type": "text",
+          "id": "author",
+          "label": "Author",
+          "default": "Rebecca K."
+        },
+        {
+          "type": "checkbox",
+          "id": "is_verified",
+          "label": "Is verified",
+          "default": true
+        },
+        {
+          "type": "checkbox",
+          "id": "show_rating",
+          "label": "Show rating",
+          "default": true
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "“Deliciously Healthy and Organic”"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "<p>Colostrum low-acid product is a must-try! It's the perfect delicious and healthy. I no longer have to worry about stomach issues, and I enjoy every sip knowing it's organic. Truly a delightful experience!</p>"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Reviews with image grid"
+    }
+  ]
+}
+{% endschema %}

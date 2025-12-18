@@ -1,0 +1,125 @@
+{{ 'section-beetroot-image-text.css' |  asset_url | stylesheet_tag }}
+
+<div class="beetroot-image-text__wrapper" style="--accent-color: {{ section.settings.accent_color }}; --background-color: {{ section.settings.background_color }};">
+  <div class="beetroot-image-text__container page-width">
+    <div class="beetroot-image-text__image">
+      {% if section.settings.image != blank %}
+        {{ section.settings.image | image_url: width: 1200 | image_tag }}
+      {% else %}
+        {{ 'image' |  placeholder_svg_tag }}
+      {% endif %}
+    </div>
+    {% for block in section.blocks %}
+      {%- case block.type -%}
+        {%- when 'title' -%}
+          <h2 class="beetroot-image-text__title" style="order: {{ forloop.index }};">
+            {{- block.settings.title |  newline_to_br -}}
+          </h2>
+        {%- when 'text' -%}
+          <div class="beetroot-image-text__text rte" style="order: {{ forloop.index }};">
+            {{- block.settings.text -}}
+          </div>
+        {%- when 'accent_text' -%}
+          <div class="beetroot-image-text__accent-text rte" style="order: {{ forloop.index }};">
+            {{- block.settings.accent_text -}}
+          </div>
+      {%- endcase -%}
+    {% endfor %}
+  </div>
+</div>
+
+{% schema %}
+{
+    "name": "Beetroot image text",
+    "tag": "section",
+    "class": "beetroot-image-text",
+    "settings": [
+      {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Image"
+      },
+      {
+        "type": "color_background",
+        "id": "background_color",
+        "label": "background color",
+        "default": "#F9F9F9"
+      },
+      {
+        "type": "color",
+        "id": "accent_color",
+        "label": "Accent color",
+        "default": "#D9024D"
+      }
+    ],
+    "blocks": [
+      {
+        "name": "Title",
+        "type": "title",
+        "settings": [
+          {
+            "type": "textarea",
+            "id": "title",
+            "label": "Title",
+            "default": "How Folqs Beet Root Chews Work"
+          }
+        ]
+      },
+      {
+        "name": "Text",
+        "type": "text",
+        "settings": [
+          {
+            "type": "richtext",
+            "id": "text",
+            "label": "text",
+            "default": "<p>Imagine your cardiovascular system as a network of highways delivering nutrients and oxygen throughout your body. Over time, factors like stress, aging, and poor diet can narrow these “highways,” making it harder for blood to flow easily and leading to higher blood pressure.</p>"
+          }
+        ]
+      },
+      {
+        "name": "Accent text",
+        "type": "accent_text",
+        "settings": [
+          {
+            "type": "richtext",
+            "id": "accent_text",
+            "label": "Accent text",
+            "default": "<p>Folqs Beet Root Chews help keep these pathways open and flexible.</p>"
+          }
+        ]
+      }
+    ],
+    "presets": [
+    {
+        "name": "Beetroot image text",
+        "blocks": [
+          {
+            "type": "title",
+            "settings": {
+              "title": "How Folqs Beet Root Chews Work"
+            }
+          },
+          {
+            "type": "text",
+            "settings": {
+              "text": "<p>Imagine your cardiovascular system as a network of highways delivering nutrients and oxygen throughout your body. Over time, factors like stress, aging, and poor diet can narrow these “highways,” making it harder for blood to flow easily and leading to higher blood pressure.</p>"
+            }
+          },
+          {
+            "type": "accent_text",
+            "settings": {
+              "accent_text": "<p>Folqs Beet Root Chews help keep these pathways open and flexible.</p>"
+            }
+          },
+          {
+            "type": "text",
+            "settings": {
+              "text": "<p><strong>Beets provide natural nitrates that convert to nitric oxide, widening blood vessels for better circulation.</strong> Meanwhile, antioxidants from Grape Seed, Hibiscus, Olive Leaf, and Pomegranate help safeguard arteries from oxidative stress. Magnesium Glycinate and CoQ10 further support the heart by fueling energy production and assisting blood pressure regulation.</p>"
+            }
+          }
+        ]
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,133 @@
+{{ 'component-ingredients-content.css' | asset_url | stylesheet_tag }}
+<div class="ingredients-content__wrapper ingredients-content__wrapper--section-{{section.id}}">
+    {% if section.settings.show_page_title %}
+        <h2 class = "ingredients-content__heading">
+            {{ page.title}}
+        </h2>
+    {% endif %}
+  {% if section.settings.list_of_badges != blank %}
+    <div class = "ingredients-content__badges-wrapper">
+    {% assign badges_list_separated =  section.settings.list_of_badges | split: ", " %}
+    {% for badge in badges_list_separated %}
+        {% assign badge_with_icon = badge | split: "///" %}
+        <div class = "ingredients-content__badge_item">
+            {% unless badge_with_icon[0] == blank %}<img src = "{{badge_with_icon[0] | file_url}}" class = "ingredients-content__badge_icon">{% endunless %} 
+            {{ badge_with_icon[1] }}
+        </div>
+    {% endfor %}
+    </div>
+  {% endif %}
+  {% if section.settings.main_text != blank %}
+    <div class = "ingredients-content__text-wrapper {% if section.blocks.size > 0 %}ingredients-content__text-wrapper--half{% endif %}">
+    {%- capture list_icon -%} <li> {%render 'icon-ingredient-tick' %} {%- endcapture -%}
+    <div class="ingredients-content__text ">
+      {{section.settings.main_text | replace: '<li>', list_icon }}
+    </div>
+    {% if section.settings.main_text_hidden != blank %}
+        <button class = "ingredients-content__show-more-button" onclick="this.closest('.ingredients-content__wrapper')?.classList.add('ingredients-content__wrapper--text-shown');"> {{ section.settings.button_label }}   {% render 'icon-learn-more' %}</button>
+    <div class="ingredients-content__text {% if section.blocks.size > 0 %}ingredients-content__text--half{% endif %} ingredients-content__text--hidden">
+    {% if section.blocks.size > 0 %}
+        <div class="ingredients-content__bloks-wrapper ingredients-content__bloks-wrapper--mobile">
+          {% for block in section.blocks %}
+            <div class = "ingredients-content__percentage-island">
+                {% if block.settings.percentage != blank %}
+                    <span class = "percentage-island__number">
+                        {{ block.settings.percentage | replace: "%", "<em>%</em>"}}
+                    </span>
+                {% endif %}
+                {% if block.settings.description != blank %}
+                    <span class = "percentage-island__description">
+                        {{ block.settings.description }}
+                    </span>
+                {% endif %}
+            </div>
+          {% endfor %}
+        </div>
+      {% endif %}
+    {{section.settings.main_text_hidden | replace: '<li>', list_icon }}
+  </div>
+</div>
+{% endif %}
+  {% endif %}
+  {% if section.blocks.size > 0 %}
+    <div class="ingredients-content__bloks-wrapper ingredients-content__bloks-wrapper--desktop">
+      {% for block in section.blocks %}
+        <div class = "ingredients-content__percentage-island">
+            {% if block.settings.percentage != blank %}
+                <span class = "percentage-island__number">
+                    {{ block.settings.percentage | replace: "%", "<em>%</em>"}}
+                </span>
+            {% endif %}
+            {% if block.settings.description != blank %}
+                <span class = "percentage-island__description">
+                    {{ block.settings.description }}
+                </span>
+            {% endif %}
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
+</div>
+{% schema %}
+{
+  "name": "Ingredients content",
+  "tag": "section",
+  "class": "section-ingredients-content",
+  "settings": [
+    {
+      "type": "text",
+      "label": "List of badges",
+      "id": "list_of_badges",
+      "info": "Comma separated values e.g. image_name.png///text, ima.."
+    },
+    {
+        "type": "text",
+        "label": "Button label",
+        "id": "button_label",
+        "default":"Learn more"
+      },
+    {
+      "type": "richtext",
+      "label": "Main text",
+      "id": "main_text",
+      "info": "The one displayed before 'Learn more'"
+    },
+    {
+        "type": "richtext",
+        "label": "Main hidden text",
+        "id": "main_text_hidden",
+        "info": "The one displayed under 'Learn more'"
+      },
+    {
+        "type": "checkbox",
+        "label": "Show page title",
+        "id": "show_page_title",
+        "default": true
+      }
+  ],
+  "blocks": [
+    {
+      "type": "percentage_island",
+      "name": "Percentage island",
+      "settings": [
+        {
+          "type": "text",
+          "label": "Percentage",
+          "id": "percentage",
+          "default": "46%"
+        },
+        {
+          "type": "text",
+          "label": "Description",
+          "id": "description"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Ingredients content"
+    }
+  ]
+}
+{% endschema %}

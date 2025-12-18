@@ -1,0 +1,63 @@
+{{ 'section-pre-loader.css' | asset_url | stylesheet_tag }}
+<div class="pre-loader__content-wrapper">
+  <div class="pre-loader__content page-width">
+    {% unless section.settings.icon == blank %}
+      <div class="pre-loader__icon">{{ section.settings.icon }}</div>
+    {% endunless %}
+    {% unless section.settings.heading == blank %}
+      <h2 class="pre-loader__heading">{{ section.settings.heading }}</h2>
+    {% endunless %}
+    {% unless section.settings.subheading == blank %}
+      <span class="pre-loader__subheading">{{ section.settings.subheading }}</span>
+    {% endunless %}
+  </div>
+</div>
+<script>
+  let extraLoadingTime = {{ section.settings.loading_time }} * 1000;
+</script>
+{{ 'section-pre-loader.js' | asset_url | script_tag }}
+{% schema %}
+{
+  "name": "Pre-loader",
+  "tag": "section",
+  "class": "section__pre-loader",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "This section overlays all other sections!"
+    },
+    {
+      "type": "html",
+      "label": "Icon",
+      "id": "icon"
+    },
+    {
+      "type": "richtext",
+      "label": "Heading",
+      "id": "heading",
+      "default": "<p>Analyzing Your Answers</p>"
+    },
+    {
+      "type": "richtext",
+      "label": "Subheading",
+      "id": "subheading",
+      "default": "<p>Wait for the end, dont close the page</p>"
+    },
+    {
+      "type": "range",
+      "label": "Loading time",
+      "id": "loading_time",
+      "default": 1,
+      "min": 1,
+      "max": 10,
+      "step": 1,
+      "unit": "s"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Pre-loader"
+    }
+  ]
+}
+{% endschema %}

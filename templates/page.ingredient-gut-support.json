@@ -1,0 +1,135 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "sections": {
+    "main": {
+      "type": "main-page",
+      "disabled": true,
+      "settings": {
+        "is_heading_hidden": false,
+        "padding_top": 28,
+        "padding_bottom": 28,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0
+      }
+    },
+    "rich_text_F4VmRi": {
+      "type": "rich-text",
+      "blocks": {
+        "heading_QATDPG": {
+          "type": "heading",
+          "settings": {
+            "heading": "Talk about your brand",
+            "heading_size": "h1"
+          }
+        },
+        "text_6JAJjM": {
+          "type": "text",
+          "settings": {
+            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>"
+          }
+        },
+        "button_jexaPM": {
+          "type": "button",
+          "settings": {
+            "button_label": "Button label",
+            "button_link": "",
+            "button_style_secondary": false,
+            "button_label_2": "",
+            "button_link_2": "",
+            "button_style_secondary_2": false
+          }
+        }
+      },
+      "block_order": [
+        "heading_QATDPG",
+        "text_6JAJjM",
+        "button_jexaPM"
+      ],
+      "disabled": true,
+      "settings": {
+        "desktop_content_position": "center",
+        "content_alignment": "center",
+        "color_scheme": "",
+        "full_width": true,
+        "is_section_narrow": false,
+        "padding_top": 40,
+        "padding_bottom": 52,
+        "margin_bottom": 0,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 0,
+        "margin_bottom_mobile": 0
+      }
+    },
+    "ingredient_content_hUfQb8": {
+      "type": "ingredient-content",
+      "blocks": {
+        "percentage_island_AQzCb9": {
+          "type": "percentage_island",
+          "settings": {
+            "percentage": "43.9%",
+            "description": "increase beneficial gut bacteria"
+          }
+        },
+        "percentage_island_8Y8h8N": {
+          "type": "percentage_island",
+          "settings": {
+            "percentage": "95%",
+            "description": "of its flavonoids reaching the colon"
+          }
+        }
+      },
+      "block_order": [
+        "percentage_island_AQzCb9",
+        "percentage_island_8Y8h8N"
+      ],
+      "settings": {
+        "list_of_badges": "ellipse_1.svg///Gut Healh, api_1.svg///Immune System, api_1.svg///Overall Health, api_1.svg///Overall Health, api_1.svg///Overall Health",
+        "button_label": "Learn more",
+        "main_text": "<p>MicrobiomeX® Flavobiotic Citrus Complex, rich in citrus-derived flavonoids hesperidin and naringin, is formulated to boost gut health significantly. These compounds reach the colon with high bioavailability, where they are actively metabolized by the gut microbiota, fostering a well-balanced microbial environment conducive to digestive and overall health.</p>",
+        "main_text_hidden": "<h2>What to Expect</h2><ul><li>Anticipate a notable increase in beneficial gut bacteria, contributing to improved digestion and gut health.</li><li>Expect reductions in markers of colon inflammation, which may alleviate discomfort and promote gut comfort.</li><li>Look forward to an increase in mucosal protection due to a significant boost in secretory IgA levels, fortifying the gut’s defense system.</li></ul>",
+        "show_page_title": true
+      }
+    },
+    "natural_ingredients_fJGhb3": {
+      "type": "natural-ingredients",
+      "blocks": {
+        "ingredient_jQFn4Y": {
+          "type": "ingredient",
+          "settings": {
+            "img": "shopify://shop_images/Rectangle_15_24.png",
+            "title": "MicrobiomeX® Flavobiotic Citrus Complex",
+            "subtitle": "",
+            "info": "250 mg"
+          }
+        }
+      },
+      "block_order": [
+        "ingredient_jQFn4Y"
+      ],
+      "settings": {
+        "padding_top": 40,
+        "padding_bottom": 100,
+        "padding_top_mobile": 24,
+        "padding_bottom_mobile": 100,
+        "heading": "",
+        "sub_heading": "",
+        "name_button": "",
+        "url_button": "/"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "rich_text_F4VmRi",
+    "ingredient_content_hUfQb8",
+    "natural_ingredients_fJGhb3"
+  ]
+}

@@ -1,0 +1,126 @@
+{{- 'logos-marquee.css' | asset_url | stylesheet_tag -}}
+
+{%- style -%}
+    {% if section.settings.background_color != blank %}
+      #shopify-section-{{ section.id }}{
+        background: {{section.settings.background_color}};
+      }
+    {% endif %}
+    #shopify-section-{{ section.id }} {
+        margin-top: {{ section.settings.padding_top }}px;
+        margin-bottom: {{ section.settings.padding_bottom }}px;
+    }
+
+    @media screen and (max-width: 768px) {
+        #shopify-section-{{ section.id }} {
+            margin-top: {{ section.settings.padding_top_mobile }}px;
+            margin-bottom: {{ section.settings.padding_bottom_mobile  }}px;
+        }
+    }
+{%- endstyle -%}
+
+<div class="logos-marquee__section swiper">
+    <div class="logos-marquee__wrapper swiper-wrapper">
+        {%- for block in section.blocks -%}
+            {%- if block.settings.logo != blank -%}
+                <div class="logos-marquee__logo swiper-slide {% if section.settings.height_auto %} logos-marquee--auto{% endif %}">
+                    {{- block.settings.logo | image_url: height: '26.5' | image_tag: lazy: "lazy" -}}
+                </div>
+            {%- endif -%}
+        {%- endfor -%}
+    </div>
+</div>
+
+{{- 'logos-marquee.js' | asset_url | script_tag -}}
+
+{% schema %}
+{
+  "name": "Logos Marquee",
+  "tag": "section",
+  "limit": 1,
+  "settings": [
+    {
+      "type": "color",
+      "label": "Background color",
+      "id": "background_color",
+      "default": "#ffffff"
+    },
+    {
+      "type": "checkbox",
+      "id": "height_auto",
+      "label": "Height auto for icons"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+        "type": "paragraph",
+        "content": "Desktop"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    },
+    {
+        "type": "paragraph",
+        "content": "Mobile"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+  ],
+  "blocks": [
+    {
+        "name": "Logo",
+        "type": "logo",
+        "settings": [
+            {
+                "type": "image_picker",
+                "id": "logo",
+                "label": "Logo",
+                "info": "It is recommended to use .svg or .png formats."
+            }
+        ]
+    }
+  ],
+  "presets": [
+    {
+        "name": "Logos Marquee"
+    }
+  ]
+}
+{% endschema %}

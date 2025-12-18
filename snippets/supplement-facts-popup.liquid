@@ -1,0 +1,129 @@
+{%- comment -%}
+    metaobject -- metaobject with content for popup
+{%- endcomment -%} 
+
+{% liquid
+    assign usp_icons = metaobject.usp_icons
+    assign trademark_ingredients_heading = metaobject.trademark_ingredients_heading
+    assign trademark_ingredients_icons = metaobject.trademark_ingredients_icons
+    assign ingredients_heading = metaobject.ingrediens_heading
+    assign ingredients_items = metaobject.ingredients_items
+    assign footer_content = metaobject.footer_content
+%}
+
+{% if usp_icons %}
+    <div class="content__usp-icons">
+        {% for icon in usp_icons.value %}
+            {{ icon | image_url: width: 120 | image_tag: loading: 'lazy', class: "usp-icons__image" }}
+        {% endfor %}
+    </div>
+{% endif %}
+
+{% if trademark_ingredients_icons %}
+    <div class="content__trademark-ingredients">
+        {% if trademark_ingredients_heading %}
+            <h5 class="trademark-ingredients__heading">{{ trademark_ingredients_heading }}</h5>
+        {% endif %}
+
+        <div class="trademark-ingredients__icons">
+            {% for icon in trademark_ingredients_icons.value %}
+                {{ icon | image_url: width: auto | image_tag: loading: 'lazy', class: "trademark-ingredients__image" }}
+            {% endfor %}
+        </div>
+    </div>
+{% endif %}
+
+{% if ingredients_items %}
+    <div class="content__ingredients">
+        {% if ingredients_heading %}
+            <h5 class="ingredients__heading">{{ ingredients_heading }}</h5>
+        {% endif %}
+
+        <div class="ingredients__table {% if ingredients_heading == blank %}ingredients__table--no-border{% endif %}">
+            {% if ingredients_heading != blank %}
+                <div class="table__heading">
+                    <span class="heading--placeholder"></span>
+                    <span class="heading--amount-per-serving">{{ 'sections.supplement_facts.amount_per_serving' | t }}</span>
+                    <span class="heading--percent-of-dv">{{ 'sections.supplement_facts.percent_of_dv' | t }}</span>
+                </div>
+            {% endif %}
+            {% for ingredient in ingredients_items.value %}
+                {% liquid
+                    assign values_array = ingredient | split: '/'
+                    assign title = values_array[0]
+                    assign subtitle = values_array[1]
+                    assign amount_per_serving = values_array[2]
+                    assign percent_of_dv = values_array[3]
+                    
+                    assign is_title = true
+                    assign is_title_with_text = false
+                    assign is_subtitle_below = false
+                    assign has_thick_border = false
+                    assign subtitle_size = subtitle | split: '' | size
+                    
+                    if subtitle_size > 120
+                        assign is_subtitle_below = true
+                    endif
+
+                    if values_array.size > 1
+                        assign is_title = false
+                    endif
+
+                    if title contains '##'
+                        assign is_title_with_text = true
+                        assign has_thick_border = true
+                        assign title = title | replace: '##', ''
+                    endif
+
+                    if title contains '#'
+                        assign has_thick_border = true
+                        assign title = title | replace: '#', ''
+                    endif
+                %}
+                {% if is_title %}
+                    <div class="table__item table__item--title">
+                        <span>{{ title }}</span>
+                    </div>
+                {% elsif is_title_with_text %}
+                    <div class="table__item table__item--title">
+                        <span>{{ title }}</span>
+                        <span class="table__item--title-value">
+                            {{ subtitle }}
+                        </span>
+                    </div>
+                {% else %}
+                    <div class="table__item {% if is_subtitle_below %} table__item--subtitle-below {% endif %} {% if has_thick_border %}table__item--thick-border{% endif %}">
+                        <div class="item__heading-wrapper">
+                            <span class="item__title">{{ title }}</span>
+                            {% if subtitle and is_subtitle_below == false %}
+                                <span class="item__subtitle">{{ subtitle | strip }}</span>
+                            {% endif %}
+                        </div>
+
+                        <div class="item__amount-per-serving">
+                            <span>{{ amount_per_serving }}</span>
+                        </div>
+
+                        <div class="item__percent-of-dv">
+                            <span>{{ percent_of_dv }}</span>
+                        </div>
+
+                        {% if subtitle and is_subtitle_below %}
+                            <span class="item__subtitle">{{ subtitle }}</span>
+                        {% endif %}
+                    </div>
+                {% endif %}
+            {% endfor %}
+
+            {% if footer_content %}
+                <div class="table__footer">
+                    {% for footer_line in footer_content.value %}
+                        <div class="footer__item">
+                            {{ footer_line }}
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        </div>
+    </div>
+{% endif %}

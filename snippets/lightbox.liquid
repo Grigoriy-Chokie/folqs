@@ -1,0 +1,122 @@
+{%- liquid
+  assign images = '' | split: ''
+  if product_images.size > 0
+    assign images = product_images | map: 'settings' | map: 'image'
+
+    assign amount_images = images.size
+  else
+    assign images = product.metafields.alternate_gallery.images.value | default: product.media
+    assign amount_images = images.count | default: product.media.size
+  endif
+
+  assign featured_image = images.first | default: product.featured_image
+
+  assign has_few_images = false
+  if product_images.size > 1
+    assign has_few_images = true
+  endif
+
+  assign has_slider = false
+  if section.settings.lightbox_type == 'slider' and has_few_images == true
+    assign has_slider = true
+  endif
+-%}
+
+{%- capture main_options -%}
+  {
+    "zoom": {
+      "maxRatio": 2,
+      "minRatio": 1,
+      "toggle":false,
+      "panOnMouseMove": true
+    },
+    "slidesPerView": "auto",
+    "touchRatio": 1,
+    "threshold": 10,
+    "pagination": {
+      "el": ".lightbox-main__pagination",
+      "clickable": true,
+      "type": "bullets",
+      "bulletElement": "button"
+    },
+    "thumbs": {
+      "swiper": ".lightbox-thumb__swiper"
+    }
+  }
+{%- endcapture -%}
+
+{%- capture thumb_options -%}
+  {
+    "slidesPerView": "auto",
+    "touchRatio": 1,
+    "threshold": 10
+  }
+{%- endcapture -%}
+
+<!-- prettier-ignore -->
+<light-box
+  class="lightbox"
+  data-has-slider="{{has_slider}}"
+  data-main-slider='{{ main_options }}'
+  data-thumb-slider='{{ thumb_options }}'
+  data-id="{{ section.id }}"
+>
+  <button class="lightbox-close" name="close" type="button">
+    {% render 'icon-close' %}
+  </button>
+  <div class="lightbox-overlay"></div>
+  <div class="lightbox-inner">
+    <div class="lightbox-main">
+      <div class="lightbox-main__swiper {% if has_slider == true %}swiper{% endif %}">
+        <div class="lightbox-main__wrapper {% if has_slider == true %}swiper-wrapper{% endif %}">
+          {%- unless has_few_images -%}
+            <div class="lightbox-main__slide swiper-slide">
+              {%- render 'component-image',
+                image: featured_image,
+                image_url_width: 1000,
+                loading: 'lazy',
+                fetchpriority: 'low'
+              -%}
+            </div>
+          {%- endunless -%}
+        </div>
+      </div>
+      {%- if has_slider == true -%}
+        <div class="lightbox-main__counter">
+          <span id="current-slide">1</span>
+          <span>/</span>
+          <span>{{ amount_images }}</span>
+        </div>
+        <div class="lightbox-main__pagination"></div>
+      {%- endif -%}
+    </div>
+    {%- if has_slider == true -%}
+      <div class="lightbox-thumb">
+        <div class="lightbox-thumb__swiper swiper">
+          <div class="lightbox-thumb__wrapper swiper-wrapper"></div>
+        </div>
+      </div>
+    {%- endif -%}
+  </div>
+
+  {%- if has_few_images -%}
+    <template id="main-images">
+      {%- for image in images -%}
+        <div class="lightbox-main__slide {% if has_slider %}swiper-slide{% endif %}">
+          <div class="swiper-zoom-container">
+            {%- render 'component-image', image: image, image_url_width: 1000, loading: 'lazy', fetchpriority: 'low' -%}
+          </div>
+        </div>
+      {%- endfor -%}
+    </template>
+    {% if has_slider %}
+      <template id="thumb-images">
+        {%- for image in images -%}
+          <div class="lightbox-thumb__slide swiper-slide">
+            {%- render 'component-image', image: image, image_url_width: 128, loading: 'lazy', fetchpriority: 'low' -%}
+          </div>
+        {%- endfor -%}
+      </template>
+    {% endif %}
+  {%- endif -%}
+</light-box>

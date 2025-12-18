@@ -1,0 +1,412 @@
+.section-landing-product-colostrum-fabula {
+
+}
+
+.offer-v2-media-main__pagination--bullets {
+  position: absolute;
+  bottom: 10px !important;
+  top: auto !important;
+  left: 0;
+  width: 100%;
+  pointer-events: none;
+}
+
+.offer-v2-media-main__pagination--bullets .swiper-pagination-bullet {
+  pointer-events: all;
+}
+
+.offer-v2-media-main__pagination--fraction {
+  position: absolute;
+  bottom: 15px;
+  left: 15px;
+  width: fit-content;
+  z-index: 3;
+  border-radius: 100px;
+  background: rgba(255, 255, 255, 0.80);
+  padding: 4px 14px;
+
+  color: #000;
+  text-align: center;
+  font-variant-numeric: lining-nums proportional-nums;
+  font-family: Raleway;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+}
+
+.offer-v2-media-main__pagination--bullets .swiper-pagination-bullet-active {
+  background-color: #000;
+}
+
+.section-landing-product-colostrum-fabula .offer-v2-media-thumbs__swiper-wrapper {
+  justify-content: center;
+}
+
+.offer-v2-media-thumbs__swiper-wrapper--center {
+  justify-content: center;
+}
+
+.section-landing-product-colostrum-fabula .offer-v2-media-thumbs__slide {
+  max-width: 80px;
+}
+
+.section-landing-product-colostrum-fabula .landing-product__container.page-width {
+  flex-wrap: nowrap;
+  gap: 80px;
+}
+
+.section-landing-product-colostrum-fabula .landing-product__container .landing-product-offer-v2__media {
+  flex: 1 1 640px;
+}
+
+.section-landing-product-colostrum-fabula .landing-product__item {
+  flex: 1 1 480px;
+}
+
+.section-landing-product-colostrum-fabula .product-block__title * {
+  color: #000;
+  font-family: Raleway;
+  font-size: 36px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 42px; /* 116.667% */
+}
+
+.section-landing-product-colostrum-fabula .product-block__title strong {
+  color: var(--accent-color);
+  font-family: "Crimson Pro";
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 54px;
+}
+
+.section-landing-product-colostrum-fabula .product-information__reviews-icon svg path {
+  fill: #FF7A00;
+  color: #000;
+  text-decoration: none;
+}
+
+.section-landing-product-colostrum-fabula .landing-product__information .product-information__features {
+  justify-content: space-between;
+  gap: 15px;
+}
+
+.section-landing-product-colostrum-fabula .product-information__selling-plan-wrapper {
+  background-color: rgba(0, 94, 184, 0.05);
+}
+
+.section-landing-product-colostrum-fabula .product-information__selling-plan-wrapper--one-time-purchase {
+  background-color: transparent;
+  border: 1px solid #C4C4C4;
+}
+
+
+.product-information__selling-plan-wrapper--one-time-purchase.one-purchase-extra-styles {
+  border-color: color-mix(in srgb, var(--border) 35%, transparent);
+}
+
+.product-information__selling-plan-wrapper--one-time-purchase.one-purchase-extra-styles .plan-name__heading,
+.product-information__selling-plan-wrapper--one-time-purchase.one-purchase-extra-styles .product-information__price-regular {
+  color: var(--text);
+}
+
+.landing-product-alternative .section-landing-product-colostrum-fabula .product-information__price-regular {
+  font-weight: 600;
+}
+
+.section-landing-product-colostrum-fabula .product-form__submit:hover,
+.section-landing-product-colostrum-fabula .product-form__submit {
+  color: var(--text-color, #fff);
+  font-family: Raleway;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 28px;
+  text-transform: uppercase;
+
+  flex-direction: column;
+  padding: 5px 20px;
+}
+
+.section-landing-product-colostrum-fabula .submit__icon--arrow {
+  display: none !important;
+}
+
+.section-landing-product-colostrum-fabula .product-form-submit__additional-bottom-text {
+  color: rgba(255, 255, 255, 0.90);
+  font-family: Raleway;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 12px;
+  text-transform: none;
+}
+
+.section-landing-product-colostrum-fabula  .product-information__payment-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.section-landing-product-colostrum-fabula  .product-information__payment-icons img {
+  flex: 0 0 32px;
+  width: 32px;
+  height: auto;
+}
+
+.section-landing-product-colostrum-fabula .faq-item {
+  padding: 0 16px 0 20px;
+  background: transparent;
+}
+
+.section-landing-product-colostrum-fabula .faq-item__question {
+  padding: 0 0 14px;
+  border-bottom: 1px solid #D9D9D9;
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 28px;
+  font-family: Raleway;
+}
+
+.section-landing-product-colostrum-fabula .faq-item__answer {
+  font-family: Raleway;
+}
+
+.section-landing-product-colostrum-fabula .faq-item__answer > *:first-child {
+  margin-top: 0;
+}
+
+.section-landing-product-colostrum-fabula .faq-item:last-of-type:not([data-open="true"]) .faq-item__question {
+  border-bottom: none;
+}
+
+.section-landing-product-colostrum-fabula .collapse-row[data-open=true] .collapse-row__content {
+  margin-top: 14px;
+}
+
+.faq--bovine-colostrum-v3 .collapse-row__content.faq-item__answer--default-list ul li,
+.landing-product__item .collapse-row__content.faq-item__answer--default-list ul li {
+  list-style-image: none;
+}
+
+
+.product-content__reviews-with-usp {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+.reviews-with-usp__image {
+  position: relative;
+  max-width: 112px;
+}
+
+.reviews-with-usp__image.reviews-with-usp__image--mobile-only {
+  display: none;
+}
+
+.reviews-with-usp__image img {
+  width: 100%;
+  height: auto;
+}
+
+.reviews-with-usp__stars {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  line-height: 0;
+}
+
+.reviews-with-usp__stars .rating__stars {
+  justify-content: flex-start;
+}
+
+.reviews-with-usp__title {
+  color: #000;
+  font-family: "Crimson Pro";
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: 130%;
+  margin: 10px 0;
+  letter-spacing: 0.4px;
+}
+
+.product-content__usp-icons.reviews-with-usp__icons {
+  color: #000;
+  font-family: Raleway;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 120%;
+}
+
+.product-content__usp-icons.reviews-with-usp__icons svg {
+  width: 24px;
+  height: 24px;
+  flex: 0 0 24px;
+}
+
+.reviews-with-usp__icons {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+}
+
+.usp-icons__info-item {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+@media screen and (max-width:989px) {
+  .section-landing-product-colostrum-fabula .landing-product__container.page-width {
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .section-landing-product-colostrum-fabula .landing-product__item {
+    max-width: 100%;
+  }
+}
+
+@media screen and (max-width: 749px) {
+  .reviews-with-usp__title {
+    font-size: 17px;
+    line-height: normal;
+  }
+
+  .reviews-with-usp__image.reviews-with-usp__image--mobile-only {
+    display: block;
+    max-width: 80px;
+    line-height: 0;
+  }
+
+
+  .reviews-with-usp__image--desktop-only {
+    display: none;
+  }
+
+  .section-landing-product-colostrum-fabula .product-block__title * {
+    color: #000;
+    font-family: Raleway;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 32px;
+  }
+
+  .section-landing-product-colostrum-fabula .product-block__title strong {
+    color: var(--accent-color);
+    font-family: "Crimson Pro";
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 40px; /* 125% */
+  }
+
+  .section-landing-product-colostrum-fabula .landing-product__container .product-offer-v2-media__main {
+    margin: 0 0 10px;
+  }
+
+  .section-landing-product-colostrum-fabula.landing-product--gallery.landing-product--height-compact .landing-product__title {
+    margin: 0 0 8px;
+  }
+
+  .section-landing-product-colostrum-fabula .landing-product__information .product-information__reviews {
+    margin-top: 11px;
+    color: #000;
+    text-decoration: none;
+  }
+
+  .section-landing-product-colostrum-fabula .product-information__reviews svg {
+    width: 90px;
+    height: auto;
+  }
+
+  .section-landing-product-colostrum-fabula .product-information__reviews span {
+    font-size: 14px;
+  }
+
+  .section-landing-product-colostrum-fabula .product-information__feature-icon {
+    position: relative;
+    min-width: 24px;
+    max-width: 24px;
+    width: 24px;
+    height: 24px;
+  }
+
+  .section-landing-product-colostrum-fabula .product-information__feature-icon img {
+    width: 100%;
+  }
+
+  .section-landing-product-colostrum-fabula .product-information__feature-content h4 {
+    font-size: 12px;
+  }
+
+  .section-landing-product-colostrum-fabula .landing-product__information .product-information__features {
+    gap: initial;
+  }
+
+  .section-landing-product-colostrum-fabula .product-information__selling-plans-wrapper {
+    margin-top: 18px;
+    border: none;
+    padding-top: 12px;
+  }
+
+  .section-landing-product-colostrum-fabula .landing-product__information .product-information__buy-buttons {
+    margin-top: 14px;
+  }
+
+  .reviews-with-usp__stars .rating__stars svg {
+    width: 90px;
+  }
+
+  .product-content__reviews-with-usp--alternative .reviews-with-usp__content {
+    align-items: center;
+    justify-content: center;
+  }
+
+  .product-content__reviews-with-usp--alternative .reviews-with-usp__title {
+    max-width: 65%;
+  }
+}
+
+/* Magnify product image styles */
+.product__modal-magnify {
+    position: relative;
+    cursor: pointer;
+}
+
+.product__modal-magnify.offer-v2-media-main__image {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.1s linear,visibility 0.1s linear;
+}
+
+.product__modal-magnify:has(.image-magnify--show) .offer-v2-media-main__image {
+    opacity: 0;
+    visibility: hidden;
+}
+
+img.image-magnify {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: none !important;
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: opacity 0.1s linear,visibility 0.1s linear;
+}
+
+img.image-magnify.image-magnify--show {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: all;
+}

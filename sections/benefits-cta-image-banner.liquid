@@ -1,0 +1,249 @@
+{{- 'cta-benefits-image-banner.css' | asset_url | stylesheet_tag -}}
+
+{%- style -%}
+    #shopify-section-{{ section.id }} {
+        padding-top: {{ section.settings.padding_top }}px;
+        padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+    #shopify-section-{{ section.id }} .cta-benefits-banner__title{
+        font-size: {{section.settings.title_size}}px;
+        line-height: 125%;
+    }
+    @media screen and (max-width: 1270px) {
+        #shopify-section-{{ section.id }} .cta-benefits-banner__title{
+        font-size: {{section.settings.title_size_mobile}}px;
+        }
+    }
+
+    @media screen and (max-width: 900px) {
+        #shopify-section-{{ section.id }} {
+            padding-top: {{ section.settings.padding_top_mobile }}px;
+            padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+        }
+    }
+{%- endstyle -%}
+
+<div class="cta-benefits-banner__section page-width--left-only {% if section.settings.is_flipped %} cta-benefits-banner__section--flipped {% endif %} {% if section.settings.is_full_width %} cta-benefits-banner--full-width {% endif %} {% if section.settings.is_restricted %} page-width {% endif %}">
+    <div class="cta-benefits-banner__content {% if section.settings.image == blank %} cta-benefits-banner__content--full-width {% endif %}">
+        {% unless section.settings.subtitle == blank %}
+            <h5 class = "cta-benefits-banner__subtitle">
+                {{ section.settings.subtitle }}
+            </h5>
+        {% endunless %}
+        {% if section.settings.title != blank %}
+            <h2 class="cta-benefits-banner__title {% if section.settings.title_mobile != blank %}cta-benefits-banner__title--desktop {% endif %}">{{ section.settings.title }}</h2>
+            {% if section.settings.title_mobile != blank %} 
+              <h2 class="cta-benefits-banner__title cta-benefits-banner__title--mobile ">{{ section.settings.title_mobile }}</h2>
+            {% endif %}
+        {% endif %}
+        {% if section.settings.button_text != blank and section.settings.button_link != blank %}
+            <a href="{{ section.settings.button_link }}" class="cta-benefits-banner__button {% if section.settings.is_button_hidden %} cta-benefits-banner__button--no-mobile {% endif %}">
+                {{ section.settings.button_text }}
+                {% render 'icon-arrow-right' %}
+            </a>
+        {% endif %}
+        
+    </div>
+    {% if section.settings.image != blank %}
+        <div class="cta-benefits-banner__media {% if section.settings.image_mobile != blank %}cta-benefits-banner__media--with-mobile {% endif %} ">
+            {{ section.settings.image | image_url: width: 2000 | image_tag: loading: 'lazy', class: 'image--desktop', alt: section.settings.image.alt }}
+            {% if section.settings.image_mobile != blank %}
+                {{ section.settings.image_mobile | image_url: width: 2000 | image_tag: loading: 'lazy', class: 'image--mobile', alt: section.settings.image_mobile.alt  }}
+            {% endif %}
+        </div>
+    {% endif %}
+    
+</div>
+
+{% schema %}
+{
+  "name": "CTA Benefits Banner",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+        "type": "paragraph",
+        "content": "Desktop"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    },
+    {
+        "type": "paragraph",
+        "content": "Mobile"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 4,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    },
+    {
+        "type": "header",
+        "content": "Content"
+    },
+    {
+        "type": "text",
+        "id": "subtitle",
+        "label": "Subtitle",
+        "default": "Experience the health transformation you deserve!",
+        "info": "Blue text above main title"
+    },
+    {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "The Only Multivitamin You’ll Ever Need"
+    },
+    {
+        "type": "text",
+        "id": "title_mobile",
+        "label": "Title mobile"
+    },
+    {
+        "type": "range",
+        "id": "title_size",
+        "min": 5,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "Title font size",
+        "default": 48
+      },
+      {
+        "type": "range",
+        "id": "title_size_mobile",
+        "min": 5,
+        "max": 100,
+        "step": 1,
+        "unit": "px",
+        "label": "Mobile title font size",
+        "default": 32
+      },
+    {
+        "type": "paragraph",
+        "content": "Image"
+    },
+    {
+        "type": "image_picker",
+        "id": "image",
+        "label": "Desktop",
+        "info": "Use image in .svg or .png formats!"
+    },
+    {
+        "type": "image_picker",
+        "id": "image_mobile",
+        "label": "Mobile",
+        "info": "Use image in .svg or .png formats!"
+    },
+    {
+        "type": "checkbox",
+        "label": "Display image full width",
+        "id": "is_full_width",
+        "default": false
+    },
+    {
+        "type": "checkbox",
+        "label": "Restrict section width",
+        "id": "is_restricted",
+        "default": false
+    },
+    {
+        "type": "checkbox",
+        "label": "Display flipped",
+        "id": "is_flipped",
+        "default": false
+      },
+    {
+        "type": "paragraph",
+        "content": "CTA Button"
+    },
+    {
+        "type": "text",
+        "id": "button_text",
+        "label": "Text",
+        "default": "Try it Now"
+    },
+    {
+        "type": "url",
+        "id": "button_link",
+        "label": "URL"
+    },
+    {
+        "type": "checkbox",
+        "label": "Hide button on mobile",
+        "id": "is_button_hidden",
+        "default": true
+      }
+  ],
+  "blocks": [
+    {
+        "name": "USP",
+        "type": "usp",
+        "settings": [
+            {
+                "type": "image_picker",
+                "id": "icon",
+                "label": "Icon",
+                "info": "It is recommended to use .svg or .png formats."
+            },
+            {
+                "type": "header",
+                "content": "Text"
+            },
+            {
+                "type": "text",
+                "id": "title",
+                "label": "Title",
+                "default": "Title"
+            },
+            {
+                "type": "richtext",
+                "id": "text",
+                "label": "Content",
+                "default": "<p>Some text</p>"
+            }
+        ]
+    }
+  ],
+  "presets": [
+    {
+        "name": "CTA Benefits Banner"
+    }
+  ]
+}
+{% endschema %}

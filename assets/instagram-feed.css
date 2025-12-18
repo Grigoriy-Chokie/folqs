@@ -1,0 +1,101 @@
+.instagram-feed {
+    overflow: hidden;
+}
+
+.instagram-feed__header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 32px;
+}
+
+.instagram-feed__title p {
+    color: #000;
+    font-variant-numeric: lining-nums proportional-nums;
+    font-family: 'Raleway', sans-serif;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 60px;
+    margin: 0;
+}
+
+.instagram-feed__subtitle a {
+    color: #005EB8;
+    font-variant-numeric: lining-nums proportional-nums stacked-fractions;
+    font-feature-settings: 'liga' off;
+    font-family: 'Raleway', sans-serif;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px;
+    text-decoration: none;
+}
+
+.instagram-feed__subtitle img {
+    height: 24px;
+    width: 24px;
+}
+
+.instagram-feed__title--mobile {
+    display: none;
+}
+
+.instagram-feed__title--mobile p {
+    color: #000;
+    text-align: center;
+    font-variant-numeric: lining-nums proportional-nums;
+    font-family: 'Raleway', sans-serif;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 42px;
+    margin: 0;
+}
+
+.instagram-feed__subtitle a {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.instagram-feed__subtitle svg {
+    width: 24px;
+    height: 24px;
+}
+
+.instagram-feed__image {
+    overflow: hidden;
+    border-radius: 60px 60px 20px 60px;
+}
+
+@media screen and (min-width: 990px) {
+    .instagram-feed__image {
+        border: 1px solid #ffffff;
+        transition: all .3s ease-in-out;
+        border-radius: 0;
+    }
+}
+
+.instagram-feed__image a,
+.instagram-feed__image img {
+    width: 100%;
+    height: 100%;
+    display: flex;
+}
+
+@media screen and (max-width: 768px) {
+    .instagram-feed__title {
+        display: none;
+    }
+
+    .instagram-feed__title--mobile {
+        display: flex;
+    }
+
+    .instagram-feed__header {
+        justify-content: center;
+        flex-direction: column;
+    }
+}

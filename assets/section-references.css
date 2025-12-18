@@ -1,0 +1,44 @@
+.references {
+    max-width: 680px;
+    margin-left: 260px;
+}
+
+.references__title {
+    font-family: Raleway;
+    font-weight: 500;
+    font-size: 24px;
+    line-height: 36px;
+    letter-spacing: 0;
+    font-variant-numeric: lining-nums proportional-nums;
+    color: #000000;
+    margin: 0;
+}
+
+.references__title+.references__list {
+    margin-top: 14px;
+}
+
+.references__list {
+    margin-block-start: 0;
+    margin-block-end: 0;
+    padding-inline-start: 1em;
+}
+
+.references__reference,
+.references__reference a {
+    font-family: Raleway;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 180%;
+    letter-spacing: 0;
+    color: #000000;
+    font-variant-numeric: lining-nums proportional-nums;
+    text-decoration: none;
+}
+
+@media screen and (max-width: 750px) {
+    .references {
+        max-width: 100%;
+        margin-left: 0;
+    }
+}

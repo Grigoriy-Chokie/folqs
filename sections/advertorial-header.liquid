@@ -1,0 +1,60 @@
+{% liquid
+    assign logo = section.settings.logo
+    assign is_sticky = section.settings.is_sticky
+    assign text = section.settings.text
+    assign text_link = section.settings.text_link | default: "#"
+%}
+{% if logo != blank %}
+    {{- 'advertorial-header.css' | asset_url | stylesheet_tag -}}
+    {% if is_sticky == true %}
+        {% style %}
+            .advertorial-header{
+                position: sticky;
+            }
+        {% endstyle %}
+    {% endif %}
+    <div class="advertorial-header__wrapper page-width page-width--narrow">        
+            {{ logo | image_url: width: 400 | image_tag }}
+        {% if text != blank %}
+            <a class="advertorial-header__link" href="{{ text_link }}">
+                {{ text }}
+            </a>
+        {% endif %}
+    </div>
+{% endif %}
+{% schema %}
+{
+  "name": "Advertorial header",
+  "tag": "section",
+  "class": "advertorial-header",
+  "limit": 1,
+  "presets": [
+    {
+      "name": "Advertorial header"
+    }
+  ],
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo"
+    },
+    {
+      "type": "text",
+      "id": "text",
+      "label": "Text",
+      "default": "Advertorial"
+    },
+    {
+      "type": "url",
+      "id": "text_link",
+      "label": "Text link"
+    },
+    {
+      "type": "checkbox",
+      "id": "is_sticky",
+      "label": "Sticky"
+    }
+  ]
+}
+{% endschema %}

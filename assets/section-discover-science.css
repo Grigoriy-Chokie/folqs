@@ -1,0 +1,209 @@
+.science__content {
+    display: flex;
+    color: #fff;
+    justify-content: space-between;
+    gap: 20px;
+    align-items: center;
+}
+
+.science__text-wrapper {
+    max-width: 320px;
+}
+
+.science__percentage-wrapper {
+    width: fit-content;
+    display: flex;
+    gap: 60px;
+    flex-wrap: wrap;   
+    justify-content: end;
+}
+
+.science__percentage-item {
+    gap: 18px;
+    display: flex;
+    align-items: center;
+    width: 355px;
+    max-width: calc(50% - 20px);
+}
+
+.science__heading {
+    color: #FFF;
+    font-variant-numeric: lining-nums proportional-nums;
+    font-family: Raleway;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 150%;
+    margin-top: 0;
+    margin-bottom: 12px;
+    letter-spacing: 0;
+}
+
+.science__subheading {
+    color: rgba(255, 255, 255, 0.70);
+    font-variant-numeric: lining-nums proportional-nums;
+    font-family: Raleway;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 150%;
+}
+
+.percentage-item__percentage {
+    color: #FFF;
+    font-variant-numeric: lining-nums proportional-nums;
+    font-family: Raleway;
+    font-size: 80px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 80px;
+    display: flex;
+    align-items: start;
+    gap: 4px;
+    margin-bottom: 12px;
+    margin-top: 0;
+    min-width: 140px;
+}
+
+.percentage--small {
+    color: #FFF;
+    font-variant-numeric: lining-nums proportional-nums;
+    font-family: Raleway;
+    font-size: 48px;
+    font-style: normal;
+    font-weight: 600;
+    line-height: 56px;
+}
+
+.percentage-item__description p,
+.science__heading p,
+.science__subheading p {
+    margin-top: 0;
+}
+
+.percentage-item__description p:last-child,
+.science__heading p:last-child,
+.science__subheading p:last-child {
+    margin-bottom: 0;
+}
+
+.science__ground {
+    padding: 100px 0;
+}
+
+.percentage-item__description {
+    color: #FFF;
+    font-family: Raleway;
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px;
+    letter-spacing: 0;
+}
+
+.percentage-item__description--with-mobile .percentage-item__description--mobile {
+    display: none;
+}
+
+@media screen and (max-width: 1240px) {
+    .science__percentage-wrapper {
+        gap: 24px
+    }
+}
+
+.science__heading--mobile{
+    display: none;
+}
+
+@media screen and (max-width: 990px) {
+    .percentage-item__description--with-mobile .percentage-item__description--desktop {
+        display: none;
+    }
+
+    .percentage-item__description--with-mobile .percentage-item__description--mobile {
+        display: block;
+    }
+
+    .percentage-item__percentage {
+        font-family: Raleway;
+        font-size: 60px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 60px;
+        margin-bottom: 0;
+        min-width: 100px;
+    }
+
+    .percentage--small {
+        font-family: Raleway;
+        font-size: 36px;
+        font-style: normal;
+        font-weight: 600;
+        line-height: 42px;
+    }
+
+    .science__text-wrapper,
+    .science__percentage-item {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .science__percentage-wrapper {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .science__content {
+        flex-wrap: wrap;
+        gap: 40px
+    }
+
+    .science__ground {
+        padding: 50px 0;
+    }
+
+    .science__heading {
+        font-size: 32px;
+        font-style: normal;
+        font-weight: 500;
+        line-height: 48px;
+    }
+
+    .science__subheading {
+        font-family: Raleway;
+        font-size: 16px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: 24px;
+    }
+
+    .science__percentage-wrapper {
+        gap: 40px;
+    }
+
+    .science__subheading--hidden {
+        display: none;
+    }
+
+    .science__heading {
+        margin-bottom: 0;
+    }
+
+    .science__subheading {
+        margin-top: 12px;
+    }
+
+    .percentage-item__description {
+        font-size: 18px;
+        line-height: 24px;
+    }
+
+    .science__heading--desktop{
+        display: none;
+    }
+
+    .science__heading--mobile{
+        display: block;
+    }
+}

@@ -1,0 +1,10 @@
+{%- case type -%}
+  {%- when "shape_1" -%}
+    {% render "icon-shape-one"%}
+  {%- when "shape_2" -%}
+    {% render "icon-shape-two"%}
+  {%- when "shape_3" -%}
+    {% render "icon-shape-three"%}
+  {%- when "custom" -%}
+    {{- content -}}   
+{%- endcase -%}

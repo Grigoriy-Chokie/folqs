@@ -1,0 +1,301 @@
+{{ 'section-collage-with-benefits.css' | asset_url | stylesheet_tag }}
+{%- style -%}
+    .section-{{section.id}} {
+        padding-top: {{ section.settings.padding_top_mobile }}px;
+        padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+    }
+
+    @media screen and (min-width: 767px) {
+        .section-{{section.id}} {
+            padding-top: {{ section.settings.padding_top }}px;
+            padding-bottom: {{ section.settings.padding_bottom }}px;
+        }
+    }
+{%- endstyle -%}
+<div class="benefits collage-with-benefits page-width section-{{ section.id }}">
+  <div class="benefits__container">
+    <div class="benefits__header" style="align-items: {{ section.settings.text_position }};">
+      <div class="benefits__header-box">
+        {% if section.settings.heading_1_text != blank %}
+          <div class="benefits__header-heading1 heading"
+               style="color: {{ section.settings.heading_1_color }}; background-color: {{ section.settings.heading_1_color }}16;">
+            {{ section.settings.heading_1_text }}
+          </div>
+        {% endif %}
+        {% if section.settings.heading_2_text != blank %}
+          <div class="benefits__header-heading2 heading"
+               style="color: {{ section.settings.heading_2_color }};">
+            {{ section.settings.heading_2_text }}
+          </div>
+        {% endif %}
+        {% if section.settings.header_text != blank %}
+          <div class="benefits__header-text"
+               style="color: {{ section.settings.header_text_color }};">
+            {{ section.settings.header_text }}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+    <div class="benefits__footer">
+      <div class="benefits__footer-box">
+        <div class="benefits__footer-gallery">
+          {% for block in section.blocks %}
+            {% case block.type %}
+              {% when 'benefit_gallery_group' %}
+                <div class="benefits__gallery-group">
+                  {% if block.settings.image_1_desktop != blank or block.settings.image_1_mobile != blank %}
+                    <div class="benefits__gallery-item">
+                      <picture>
+                        {% if block.settings.image_1_mobile != blank %}
+                          <source srcset="{{ block.settings.image_1_mobile | image_url: width: 400, format: 'webp' }}" media="(max-width: 767px)" type="image/webp">
+                          <source srcset="{{ block.settings.image_1_mobile | image_url: width: 400 }}" media="(max-width: 767px)">
+                        {% endif %}
+                        {% if block.settings.image_1_desktop != blank %}
+                          <source srcset="{{ block.settings.image_1_desktop | image_url: width: 800, format: 'webp' }}" media="(min-width: 768px)" type="image/webp">
+                          <source srcset="{{ block.settings.image_1_desktop | image_url: width: 800 }}" media="(min-width: 768px)">
+                        {% endif %}
+                        <img src="{{ block.settings.image_1_desktop | default: block.settings.image_1_mobile | image_url: width: 800 }}" alt="Gallery image 1" loading="lazy">
+                      </picture>
+                    </div>
+                  {% endif %}
+                  {% if block.settings.image_2_desktop != blank or block.settings.image_2_mobile != blank %}
+                    <div class="benefits__gallery-item">
+                      <picture>
+                        {% if block.settings.image_2_mobile != blank %}
+                          <source srcset="{{ block.settings.image_2_mobile | image_url: width: 400, format: 'webp' }}" media="(max-width: 767px)" type="image/webp">
+                          <source srcset="{{ block.settings.image_2_mobile | image_url: width: 400 }}" media="(max-width: 767px)">
+                        {% endif %}
+                        {% if block.settings.image_2_desktop != blank %}
+                          <source srcset="{{ block.settings.image_2_desktop | image_url: width: 800, format: 'webp' }}" media="(min-width: 768px)" type="image/webp">
+                          <source srcset="{{ block.settings.image_2_desktop | image_url: width: 800 }}" media="(min-width: 768px)">
+                        {% endif %}
+                        <img src="{{ block.settings.image_2_desktop | default: block.settings.image_2_mobile | image_url: width: 800 }}" alt="Gallery image 2" loading="lazy">
+                      </picture>
+                    </div>
+                  {% endif %}
+                </div>
+            {% endcase %}
+          {% endfor %}
+        </div>
+        <div class="benefits__footer-items">
+          {% for block in section.blocks %}
+            {% case block.type %}
+              {% when 'benefit_item' %}
+                <div class="benefits__footer-item">
+                  {% if block.settings.icon_desktop != blank %}
+                    <div class="benefits__item-icon">
+                      <picture>
+                        <source srcset="{{ block.settings.icon_desktop | image_url: width: 48, format: 'webp' }}" type="image/webp">
+                        <img src="{{ block.settings.icon_desktop | image_url: width: 48 }}" alt="icon desktop" width="48" height="48" loading="lazy">
+                      </picture>
+                    </div>
+                  {% endif %}
+                  <div class="benefits__item-content">
+                    {% if block.settings.title != blank %}
+                      <h4 class="benefits__item-title" style="color: {{ block.settings.title_color }};">
+                        {% if block.settings.icon_mobile != blank %}
+                          <span class="benefits__item-icon-mobile">
+                            <picture>
+                              <source srcset="{{ block.settings.icon_mobile | image_url: width: 24, format: 'webp' }}" type="image/webp">
+                              <img src="{{ block.settings.icon_mobile | image_url: width: 24 }}" alt="icon mobile" width="24" height="24" loading="lazy">
+                            </picture>
+                          </span>
+                        {% endif %}
+                        {{ block.settings.title }}
+                      </h4>
+                    {% endif %}
+                    {% if block.settings.text != blank %}
+                      <div class="benefits__item-text" style="color: {{ block.settings.text_color }};">{{ block.settings.text }}</div>
+                    {% endif %}
+                  </div>
+                </div>
+            {% endcase %}
+          {% endfor %}
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Collage with Benefits",
+  "tag": "section",
+  "class": "section benefits-section",
+  "settings": [
+    {
+      "type": "select",
+      "id": "text_position",
+      "label": "Text position",
+      "options": [
+        {
+          "value": "start",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        },
+        {
+          "value": "end",
+          "label": "Right"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "richtext",
+      "id": "heading_1_text",
+      "label": "Heading text 1"
+    },
+    {
+      "type": "color",
+      "id": "heading_1_color",
+      "label": "Heading color 1",
+      "default": "#000000"
+    },
+    {
+      "type": "richtext",
+      "id": "heading_2_text",
+      "label": "Heading text 2"
+    },
+    {
+      "type": "color",
+      "id": "heading_2_color",
+      "label": "Heading color 2",
+      "default": "#FF0000"
+    },
+    {
+      "type": "richtext",
+      "id": "header_text",
+      "label": "Text"
+    },
+    {
+      "type": "color",
+      "id": "header_text_color",
+      "label": "Text color",
+      "default": "#333333"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "unit": "px",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "unit": "px",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "default": 50
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Padding top mobile",
+      "unit": "px",
+      "min": 1,
+      "max": 100,
+      "step": 1,
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Padding bottom mobile",
+      "unit": "px",
+      "min": 1,
+      "max": 100,
+      "step": 1,
+      "default": 20
+    }
+  ],
+  "blocks": [
+    {
+      "type": "benefit_gallery_group",
+      "name": "Benefit Gallery Group",
+      "limit": 2,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image_1_desktop",
+          "label": "Desktop image 1"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_1_mobile",
+          "label": "Mobile image 1"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_2_desktop",
+          "label": "Desktop image 2"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_2_mobile",
+          "label": "Mobile image 2"
+        }
+      ]
+    },
+    {
+      "type": "benefit_item",
+      "name": "Benefit Item",
+      "limit": 3,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon_desktop",
+          "label": "Desktop icon"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon_mobile",
+          "label": "Mobile icon"
+        },
+        {
+          "type": "richtext",
+          "id": "title",
+          "label": "Title"
+        },
+        {
+          "type": "color",
+          "id": "title_color",
+          "label": "Title color",
+          "default": "#000000"
+        },
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Description"
+        },
+        {
+          "type": "color",
+          "id": "text_color",
+          "label": "Text color",
+          "default": "#000000"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Collage with Benefits",
+      "blocks": [
+        {
+          "type": "benefit_gallery_group"
+        },
+        {
+          "type": "benefit_item"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

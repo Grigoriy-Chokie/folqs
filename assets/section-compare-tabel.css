@@ -1,0 +1,295 @@
+.compare-tabel__title {
+    text-align: left;
+    font: 500 40px/60px Raleway;
+    margin: 0 0 60px;
+    max-width: var(--title-max-width);
+    letter-spacing: 0
+}
+
+.compare-grid {
+    border-radius: 20px;
+    border: 1px solid #00a302
+}
+
+.compare-grid__heading {
+    border-radius: 20px 20px 0 0;
+    background: #00a302;
+    padding: 29px 0 36px;
+    display: flex;
+    align-items: flex-end;
+    justify-content: flex-end
+}
+
+.compare-heading__cell--left {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 0 14px
+}
+
+.compare-heading__cell--left h3 {
+    display: none
+}
+
+.compare-heading__cell--center,
+.compare-heading__cell--right {
+    position: relative;
+    width: 100%;
+    max-width: 31%;
+    min-width: 31%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 76px
+}
+
+.compare-heading__cell--center span,
+.compare-heading__cell--right span {
+    position: absolute;
+    color: #fff;
+    font: 700 32px/120% Raleway;
+    letter-spacing: 0
+}
+
+.compare-heading__cell--center span {
+    left: -55%;
+    max-width: 243px
+}
+
+.compare-heading__cell--right span {
+    left: -5%;
+    max-width: 109px
+}
+
+.compare-heading__cell--center img,
+.compare-heading__cell--right img {
+    position: absolute;
+    bottom: -26px
+}
+
+.compare-cell__image,
+.compare-grid__image {
+    position: relative
+}
+
+.compare-cell__image-text {
+    position: absolute
+}
+
+.compare-grid__row:last-child {
+    border-radius: 0 0 20px 20px
+}
+
+.compare-grid__image img {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%
+}
+
+.compare-grid__row {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start
+}
+
+.compare-grid__row:nth-child(odd) {
+    background: #f9f9f9
+}
+
+.compare-grid__row>* {
+    padding: 14px;
+    width: 100%;
+    box-sizing: border-box
+}
+
+.compare-grid__row-text {
+    max-width: 38%;
+    min-width: 38%
+}
+
+.compare-grid__row-text h4 {
+    margin: 0;
+    color: #000;
+    font: 500 20px/140% Raleway;
+    font-variant-numeric: lining-nums proportional-nums;
+}
+
+.compare-grid__row-text p {
+    margin: 8px 0 0;
+    padding: 0;
+    color: #d9024d;
+    font: 400 16px/140% Raleway;
+    font-variant-numeric: lining-nums proportional-nums;
+}
+
+.compare-grid__row-value {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 31%;
+    min-width: 31%
+}
+
+.compare-tabel__footer {
+    border-radius: 20px;
+    background: linear-gradient(0deg, #fffeed 0, #fffeed 100%), rgba(0, 163, 2, .1);
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 24px 40px;
+    max-width: 990px;
+    margin: 40px auto 0
+}
+
+.compare-tabel__footer-icon {
+    min-width: 80px;
+    width: 80px;
+    height: 80px;
+    margin-right: 40px
+}
+
+.compare-tabel__footer-icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain
+}
+
+.compare-tabel__footer-text {
+    color: #000;
+    font: 500 20px/160% Raleway;
+    margin: 0;
+    padding: 0;
+    letter-spacing: 0
+}
+
+@media (max-width:1240px) {
+    .compare-grid__row-text {
+        max-width: 30%;
+        min-width: 30%
+    }
+
+    .compare-grid__row-value,
+    .compare-heading__cell--center,
+    .compare-heading__cell--right {
+        max-width: 35%;
+        min-width: 35%
+    }
+}
+
+@media (max-width:1140px) {
+
+    .compare-heading__cell--center span,
+    .compare-heading__cell--right span {
+        display: none
+    }
+
+    .compare-heading__cell--left h3 {
+        display: inline-block;
+        color: #fff;
+        font: 700 32px/120% Raleway;
+        letter-spacing: 0;
+        margin: 0;
+        padding: 0
+    }
+
+    .compare-grid__row-text,
+    .compare-heading__cell--left {
+        max-width: 44%;
+        min-width: 44%
+    }
+
+    .compare-grid__row-value,
+    .compare-heading__cell--center,
+    .compare-heading__cell--right {
+        max-width: 28%;
+        min-width: 28%
+    }
+}
+
+@media (max-width:998px) {
+    .compare-grid__heading {
+        padding: 14px 0
+    }
+
+    .compare-heading__cell {
+        min-height: 72px
+    }
+
+    .compare-heading__cell--center,
+    .compare-heading__cell--right {
+        min-height: unset
+    }
+
+    .compare-heading__cell--left {
+        max-width: 36.5%;
+        min-width: 36.5%;
+        padding: 0 12px 0 23px
+    }
+
+    .compare-heading__cell--center {
+        max-width: 39%;
+        min-width: 39%
+    }
+
+    .compare-heading__cell--right {
+        max-width: 24.5%;
+        min-width: 24.5%
+    }
+
+    .compare-tabel__title {
+        text-align: center;
+        font: 500 32px/42px Raleway;
+        margin: 0 0 85px;
+        max-width: 100%;
+        letter-spacing: 1px
+    }
+
+    .compare-heading__cell--left h3 {
+        font: 700 20px/120% Raleway
+    }
+
+    .compare-grid__row-text h4 {
+        font: 500 14px/140% Raleway
+    }
+
+    .compare-grid__row-text p {
+        font: 400 12px/140% Raleway
+    }
+
+    .compare-heading__cell--center img {
+        width: 100%;
+        height: 154px;
+        max-width: 150px;
+        bottom: -5px
+    }
+
+    .compare-heading__cell--right img {
+        width: 100%;
+        height: 116px;
+        max-width: 80px;
+        bottom: 5px
+    }
+
+    .compare-tabel__footer {
+        margin-top: 24px;
+        display: flex;
+        flex-direction: column;
+        padding: 20px
+    }
+
+    .compare-tabel__footer-icon {
+        margin-right: 0;
+        margin-bottom: 20px
+    }
+
+    .compare-tabel__footer-text {
+        text-align: center
+    }
+}
+
+@media (max-width:768px) {
+    .compare-tabel__container.page-width {
+        padding: 0 10px
+    }
+}

@@ -1,0 +1,280 @@
+{{ 'section-banner-with-buttons.css' | asset_url | stylesheet_tag }}
+
+{%- style -%}
+  .banner-two-buttons__content-wrapper-{{ section.id }} {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+  }
+
+  {% unless section.settings.ground_image == blank %}
+    .banner-two-buttons__content-wrapper-{{ section.id }} {
+      background-image: url('{{section.settings.ground_image | image_url}}');
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+    }
+  {% endunless %}
+  @media screen and (max-width: 768px) {
+    {% unless section.settings.ground_image_mobile == blank %}
+      .banner-two-buttons__content-wrapper-{{ section.id }}{
+        background-image: url('{{section.settings.ground_image_mobile | image_url}}');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+      }
+    {% endunless %}
+
+      .banner-two-buttons__content-wrapper-{{ section.id }} {
+          padding-top: {{ section.settings.padding_top_mobile }}px;
+          padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+      }
+  }
+{%- endstyle -%}
+{% assign typesStrings = 'desktop,mobile' | split: ',' %}
+<div class="banner-two-buttons__content-wrapper page-width banner-two-buttons__content-wrapper-{{ section.id }}">
+  <div class="banner-two-buttons__content">
+    {% unless section.settings.product_image == blank %}
+      <div class="banner-two-buttons__media-wrapper">
+        {{
+          section.settings.product_image
+          | image_url: width: 2000
+          | image_tag: loading: 'lazy', class: 'banner-two-buttons__media', alt: section.settings.product_image.alt
+        }}
+      </div>
+    {% endunless %}
+    <div class="banner-two-buttons__text {% unless section.settings.heading_mobile == blank %} banner-two-buttons__text--with-mobile{% endunless %}">
+      {% unless section.settings.heading_desktop == blank %}
+        {% for typesString in typesStrings %}
+          {%- capture headingKey -%}heading_{{- typesString -}}{%- endcapture -%}
+          {%- unless section.settings[headingKey] == blank -%}
+            <h4 class="banner-two-buttons__heading banner-two-buttons__heading--{{ typesString }}">
+              {{ section.settings[headingKey] }}
+            </h4>
+          {% endunless %}
+        {% endfor %}
+      {% endunless %}
+      {% unless section.settings.subheading == blank %}
+        <span class="banner-two-buttons__subheading">
+          {{ section.settings.subheading }}
+        </span>
+      {% endunless %}
+      {% unless section.blocks.size == 0 %}
+        <div class="banner-two-buttons__buttons">
+          {% for block in section.blocks %}
+            {% unless block.settings.url == blank and block.settings.button_label == blank %}
+              {% style %}
+                .banner-two-buttons__button-item--{{ forloop.index }} {
+                    padding-left: {{ block.settings.padding }}px;
+                    padding-right: {{ block.settings.padding }}px;
+                    background: {{ block.settings.ground_color }};
+                    color: {{ block.settings.text_color }};
+                    border: 1px solid;
+                    {% unless block.settings.ground_color == "#ffffff" %}
+                        border-color: {{ block.settings.ground_color }};
+                    {% else %}
+                        border-color: {{ block.settings.text_color }};
+                    {% endunless %}
+                }
+                .banner-two-buttons__button-item--{{ forloop.index }}:hover {
+                    background: {{ block.settings.ground_color_hover }};
+                    color: {{ block.settings.text_color_hover }};
+                    {% unless block.settings.ground_color_hover == "#ffffff" %}
+                        border-color: {{ block.settings.ground_color_hover }};
+                    {% else %}
+                        border-color: {{ block.settings.text_color_hover }};
+                    {% endunless %}
+                }
+                @media screen and (max-width: 1120px){
+                    .banner-two-buttons__button-item--{{ forloop.index }} {
+                        padding-left: calc({{ block.settings.padding }}px - 20px);
+                        padding-right: calc({{ block.settings.padding }}px - 20px);
+                    }
+                }
+              {% endstyle %}
+              <a
+                href="{{ block.settings.url }}"
+                class="banner-two-buttons__button-item banner-two-buttons__button-item--{{ forloop.index }}"
+              >
+                {{ block.settings.button_label }}
+                {% unless block.settings.icon_after_text == blank %}
+                  <span class="button-item__icon">
+                    {{ block.settings.icon_after_text }}
+                  </span>
+                {% endunless %}
+              </a>
+            {% endunless %}
+          {% endfor %}
+        </div>
+      {% endunless %}
+    </div>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Banner with buttons",
+  "tag": "section",
+  "class": "section__banner-two-buttons",
+  "settings": [
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "richtext",
+      "label": "Heading",
+      "id": "heading_desktop",
+      "default": "<p>Experience the health transformation you deserve!</p>"
+    },
+    {
+      "type": "richtext",
+      "label": "Heading",
+      "id": "heading_mobile",
+      "default": "<p>Health transformation you deserve!</p>"
+    },
+    {
+      "type": "richtext",
+      "label": "Subheading",
+      "id": "subheading",
+      "default": "<p>Try our scientifically formulated supplement today and feel the difference!</p>"
+    },
+    {
+      "type": "image_picker",
+      "label": "Product image",
+      "id": "product_image"
+    },
+    {
+      "type": "image_picker",
+      "label": "Ground image",
+      "id": "ground_image"
+    },
+    {
+      "type": "image_picker",
+      "label": "Ground image mobile",
+      "id": "ground_image_mobile"
+    },
+    {
+      "type": "header",
+      "content": "t:sections.all.padding.section_padding_heading"
+    },
+    {
+      "type": "paragraph",
+      "content": "Desktop"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    },
+    {
+      "type": "paragraph",
+      "content": "Mobile"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_top",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "unit": "px",
+      "label": "t:sections.all.padding.padding_bottom",
+      "default": 36
+    }
+  ],
+  "blocks": [
+    {
+      "type": "button",
+      "name": "Button",
+      "limit": 2,
+      "settings": [
+        {
+          "type": "paragraph",
+          "content": "Content"
+        },
+        {
+          "type": "text",
+          "label": "Button label",
+          "id": "button_label",
+          "default": "Get Your"
+        },
+        {
+          "type": "html",
+          "label": "Icon after text",
+          "id": "icon_after_text"
+        },
+        {
+          "type": "url",
+          "label": "Url",
+          "id": "url"
+        },
+        {
+          "type": "range",
+          "label": "Padding",
+          "id": "padding",
+          "default": 60,
+          "min": 40,
+          "max": 60,
+          "step": 1,
+          "unit": "px"
+        },
+        {
+          "type": "paragraph",
+          "content": "Colors"
+        },
+        {
+          "type": "color",
+          "label": "Ground color",
+          "id": "ground_color",
+          "default": "#ff6a13"
+        },
+        {
+          "type": "color",
+          "label": "Text color",
+          "id": "text_color",
+          "info": "If ground is white - will be used also as border color."
+        },
+        {
+            "type": "color",
+            "label": "Ground color hover",
+            "id": "ground_color_hover",
+            "default": "#ff6a13"
+          },
+          {
+            "type": "color",
+            "label": "Text color hover",
+            "id": "text_color_hover"
+          }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Banner with buttons"
+    }
+  ]
+}
+{% endschema %}

@@ -1,0 +1,47 @@
+{%- style -%}
+  #shopify-section-{{ section.id }} {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: {{ section.settings.height }}px;
+    max-height: 100%;
+    background: {{ section.settings.gradient }};
+    z-index: -10;
+  }
+  #shopify-section-{{ section.id }}::empty {
+    display: block;
+  }
+{%- endstyle -%}
+
+{% schema %}
+  {
+    "name": "Page gradient",
+    "tag": "section",
+    "settings": [
+      {
+        "type": "color_background",
+        "id": "gradient",
+        "label": "Gradient",
+        "default": "linear-gradient(180deg, rgba(0, 130, 255, 0.08) 0%, rgba(255, 255, 255, 0.2) 100%)"
+      },
+      {
+        "type": "range",
+        "id": "height",
+        "min": 300,
+        "max": 1000,
+        "step": 10,
+        "unit": "px",
+        "label": "Height",
+        "default": 680
+      },
+    ],
+    "presets": [
+      {
+        "name": "Page gradient",
+        "settings": {
+        }
+      }
+    ]
+  }
+{% endschema %}

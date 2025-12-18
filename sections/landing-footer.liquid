@@ -1,0 +1,103 @@
+{{ 'section-landing-footer.css' | asset_url | stylesheet_tag }}
+
+{% if section.settings.hide_primary_footer != false %}
+  {% style %}
+    .footer {
+      display: none;
+    }
+  {% endstyle %}
+{% endif %}
+
+<div class="footer-alt color-{{ section.settings.color_scheme }}">
+  <div class="page-width footer-alt__wrapper">
+    {%- if section.settings.logo != blank
+      or section.settings.contacts != blank
+      or section.settings.show_socials == false
+    -%}
+      <div class="footer-alt__header">
+        {%- unless section.settings.logo == blank -%}
+          <div class="footer-alt__logo">
+            {{ section.settings.logo | image_url: width: 120 | image_tag }}
+          </div>
+        {%- endunless -%}
+        {%- unless section.settings.contacts == blank -%}
+          <div class="footer-alt__contacts">
+            {{ section.settings.contacts }}
+          </div>
+        {%- endunless -%}
+        {%- if section.settings.show_socials -%}
+          <div class="footer-alt__social-icons">
+            {%- render 'social-icons', class: 'footer-alt__list-social' -%}
+          </div>
+        {%- endif -%}
+      </div>
+    {%- endif -%}
+    {%- unless section.settings.information == blank -%}
+      <div class="footer-alt__information">
+        {{ section.settings.information }}
+      </div>
+    {%- endunless -%}
+    {%- unless section.settings.menu == blank -%}
+      <div class="footer-alt__footer-menu">
+        {%- for link in section.settings.menu.links -%}
+          <a href="{{ link.url }}" class="footer-menu__link">{{ link.title }}</a>
+        {%- endfor -%}
+      </div>
+    {%- endunless -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Landing Footer",
+  "tag": "footer",
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "hide_primary_footer",
+      "label": "Hide Primary Footer",
+      "default": false
+    },
+    {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    },
+    {
+      "type": "image_picker",
+      "id": "logo",
+      "label": "Logo"
+    },
+    {
+      "type": "richtext",
+      "id": "contacts",
+      "label": "Contacts",
+      "default": "<p>Contacts</p>"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_socials",
+      "label": "Show socials",
+      "default": true
+    },
+    {
+      "type": "richtext",
+      "id": "information",
+      "label": "Information",
+      "default": "<p>Information</p>"
+    },
+    {
+      "type": "link_list",
+      "id": "menu",
+      "label": "Menu"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Landing Footer",
+      "settings": {}
+    }
+  ]
+}
+{% endschema %}

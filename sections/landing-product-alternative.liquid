@@ -1,0 +1,2785 @@
+{{ 'section-landing-page.css' | asset_url | stylesheet_tag }}
+{{ 'section-landing-page-alternative.css' | asset_url | stylesheet_tag }}
+{{ 'component-faq.css' | asset_url | stylesheet_tag }}
+{{ 'section-landing-product-colostrum-fabula.css' | asset_url | stylesheet_tag }}
+{{ 'component-lightbox.css' | asset_url | stylesheet_tag }}
+
+{% if section.settings.enable_style == true %}
+  {{ 'section-landing-page-alternative-extra.css' | asset_url | stylesheet_tag }}
+{% endif %}
+
+{% if template.suffix == 'bovine-landing-folqs-gift' %}
+  {{ 'stamped-main-widget.css' | asset_url | stylesheet_tag }}
+{% endif %}
+
+{% if section.settings.use_gallery == true -%}
+  {{ 'section-landing-product-offer-v2.css' | asset_url | stylesheet_tag }}
+{% endif %}
+
+{% if section.settings.enable_extra_styles == true %}
+  {{ 'landing-page-extra-styles.css' | asset_url | stylesheet_tag }}
+{% endif %}
+
+{% if section.settings.zoom_type == 'default' %}
+  <script src="{{ 'component-magnify-zoom.js' | asset_url }}" defer="defer"></script>
+{% endif %}
+{% if section.settings.zoom_type == 'magnify' %}
+  <script src="{{ 'component-magnify.js' | asset_url }}" defer="defer"></script>
+{% endif %}
+<script src="{{ 'component-lightbox.js' | asset_url }}" defer="defer"></script>
+
+{%- liquid
+  assign additional_style_files = section.settings.additional_style_files | newline_to_br | split: '<br />'
+  assign additional_style_classes = ''
+  assign icon_text_block_count = 0
+  assign icon_text_slider_block_count = 0
+
+  if additional_style_files != blank
+    for file in additional_style_files
+      echo file | asset_url | stylesheet_tag
+      assign file_class = file | replace: '.css', ''
+      assign additional_style_classes = additional_style_classes | append: file_class | append: ' '
+    endfor
+  endif
+-%}
+
+{% for block in section.blocks %}
+  {% if block.type == 'icon-text' and block.settings.text != blank %}
+    {% assign icon_text_block_count = icon_text_block_count | plus: 1 %}
+  {% endif %}
+
+  {% if block.type == 'icon-text-slider' and block.settings.text != blank %}
+    {% assign icon_text_slider_block_count = icon_text_slider_block_count | plus: 1 %}
+  {% endif %}
+{% endfor %}
+
+{% style %}
+.landing-product__mobile-blocks {
+  display: none;
+}
+  
+  .section-{{ section.id }}--padding {
+    position: relative;
+    background: {{ section.settings.background }};
+    padding-top: {{ section.settings.padding_top_mobile }}px;
+    padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+  }
+
+  @media screen and (min-width: 750px) {
+    .section-{{ section.id }}--padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{% endstyle %}
+
+{%- liquid
+  assign product_images = section.blocks | where: 'type', 'image'
+  assign style_type = section.settings.style_type
+  assign gallery_full_width = section.settings.gallery_full_width
+  assign center_thumbs = section.settings.center_thumbs
+  assign product = section.settings.landing_product | default: product
+  assign product_form_id = 'form_id-' | append: product.id
+  assign variant = product.selected_or_first_available_variant
+  assign price = variant.price
+  assign price_compare = variant.compare_at_price
+  assign has_features = false
+  if variant.selling_plan_allocations != blank
+    assign price = variant.selling_plan_allocations[0].price
+    assign selling_plan = variant.selling_plan_allocations[0].selling_plan.id
+    if price_compare == blank
+      assign price_compare = variant.price
+    endif
+  endif
+  assign is_one_time_packs = section.blocks | where: 'type', 'one-time-packs'
+
+  assign primary_color = section.settings.primary_color | default: '#ff6a13'
+  assign collapsible_row_blocks = section.blocks | where: 'type', 'collapsible_row'
+  assign scrolling_id = 'landing-product-' | append: product.id
+-%}
+
+{%- capture sizes -%}
+  (min-width: {{ settings.page_width }}px) 645px, (min-width: 990px) calc(100.0vw - 10rem), (min-width: 750px) 100vw
+{%- endcapture -%}
+
+{% if section.settings.enable_extra_styles_pdp %}
+  <style>
+    @media screen  and (max-width: 749px) {
+      .icon-text-slider-blocks {
+        width: calc(100% - 10px);
+        margin-left: 5px;
+      }
+
+    }
+
+    @media screen and (max-width: 750px) {
+      .landing-product__mobile-blocks {
+        display: none !important;
+      }
+
+      .product-information__reviews.product-block.product-block--dektop {
+        display: flex !important;
+      }
+    }
+  </style>
+{% endif %}
+
+
+{% if product != blank %}
+  <div
+    class="
+      landing-product section-{{ section.id }}--padding
+      {% if section.settings.use_gallery == true %}
+      landing-product--gallery
+      {% endif %}
+      landing-product--height-{{ style_type }}
+      {{ additional_style_classes }}
+      {% if section.settings.enable_extra_styles == true %}is--extra-styles{% endif %}
+    "
+    style="--primary-color: {{ primary_color }}; --primary-color-rgb: {{ primary_color.rgb }};"
+    id="landing-product"
+    {% if request.page_type == 'product' and product.metafields.custom.redirect_link != blank %}
+    data-redirect-to="{{ product.metafields.custom.redirect_link }}"
+    {% endif %}
+  >
+
+    <div class="landing-product__container page-width landing-product__container--{{ section.settings.mobile_style }}">
+      {% if section.settings.background_icon != blank %}
+        <div class="landing-product__decor">
+          {{ section.settings.background_icon }}
+        </div>
+      {% endif %}
+
+      {% if style_type == 'compact' %}
+        <div id="landing-product-{{ product.id }}--mobile" class="landing-product__information--mobile">
+          {% for block in section.blocks %}
+            {% case block.type %}
+              {%- when 'subtitle' -%}
+                <p class="landing-product__subtitle">{{- block.settings.subtitle -}}</p>
+              {%- when 'title' -%}
+                <div class="landing-product__title product-block">
+                  {% if block.settings.text_mobile != blank %}
+                    <div class="product-block__title--mobile">
+                      {{ block.settings.text_mobile }}
+                    </div>
+                  {% endif %}
+                  <h2
+                    id="landing-product-alternative"
+                    class="product-block__title"
+                    style="--accent-color: {{ block.settings.highlighted_color }}"
+                  >
+                    {%- if block.settings.text != blank -%}
+                      {{- block.settings.text -}}
+                    {%- else -%}
+                      {{- product.title -}}
+                    {%- endif -%}
+                  </h2>
+                </div>
+
+              {%- when 'reviews' -%}
+                {% liquid
+                  assign tag = 'div'
+                  if block.settings.url != blank
+                    assign tag = 'a'
+                  endif
+                %}
+
+                <{{ tag }}
+                  href="{{ block.settings.url }}"
+                  class="product-information__reviews product-block"
+                  id="product-information__reviews--{{ forloop.index }}--mobile"
+                >
+                  <span class="product-information__reviews-icon">
+                    {%- case block.settings.stars_type -%}
+                      {%- when 'yellow' -%}
+                        {%- render 'icon-stars' -%}
+                      {%- when 'orange' -%}
+                        {{ 'icon-stars-new.svg' | inline_asset_content }}
+                      {%- when 'orange_small' -%}
+                        {%- render 'icon-rating-extra' -%}
+                    {%- endcase -%}
+                  </span>
+                  {% if block.settings.text != blank %}
+                    <span class="product-information__reviews-text">
+                    {{- block.settings.text -}}</span>
+                  {% endif %}
+                </{{ tag }}>
+            {% endcase %}
+          {% endfor %}
+          {%- if collapsible_row_blocks.size > 0 -%}
+            <div class="faq__content faq__content--{{ section.settings.faq_style }}">
+              {% for block in collapsible_row_blocks %}
+                {%- liquid
+                  assign question = block.settings.question
+                  assign answer = block.settings.answer
+                  assign has_content = false
+                  if question != blank and answer != blank
+                    assign has_content = true
+                  endif
+
+                  if has_content == true
+                    render 'collapse-row', icon_style: 'new', title: question, content: answer, class_name_row: 'faq__content-item faq-item', class_name_title: 'faq-item__question', class_name_content: 'faq-item__answer', is_first_opened: is_first_opened, index: forloop.index0
+                  endif
+                -%}
+              {% endfor %}
+            </div>
+          {%- endif -%}
+        </div>
+      {% endif %}
+      <div class="landing-product__mobile-blocks">
+        {%- for block in section.blocks -%}
+          {%- case block.type -%}
+            {%- when 'reviews' -%}
+              {% liquid
+                assign tag = 'div'
+                if block.settings.url != blank
+                  assign tag = 'a'
+                endif
+              %}
+              <{{ tag }}
+                href="{{ block.settings.url }}"
+                class="product-information__reviews product-block"
+              >
+                <span class="product-information__reviews-icon">
+                  {%- case block.settings.stars_type -%}
+                    {%- when 'yellow' -%}
+                      {%- render 'icon-stars' -%}
+                    {%- when 'orange' -%}
+                      {{ 'icon-stars-new.svg' | inline_asset_content }}
+                    {%- when 'orange_small' -%}
+                      {%- render 'icon-rating-extra' -%}
+                  {%- endcase -%}
+                </span>
+                {% if block.settings.text != blank %}
+                  <span class="product-information__reviews-text">{{- block.settings.text -}}</span>
+                {% endif %}
+              </{{ tag }}>
+            {%- when 'title' -%}
+              <div class="landing-product__title product-block">
+                {% if block.settings.text_mobile != blank %}
+                  <div class="product-block__title--mobile">
+                    {{ block.settings.text_mobile }}
+                  </div>
+                {% endif %}
+                <h2
+                  id="landing-product-alternative"
+                  class="product-block__title"
+                  style="--accent-color: {{ block.settings.highlighted_color }}"
+                >
+                  {%- if block.settings.text != blank -%}
+                    {{- block.settings.text -}}
+                  {%- else -%}
+                    {{- product.title -}}
+                  {%- endif -%}
+                </h2>
+              </div>
+          {%- endcase -%}
+        {%- endfor -%}
+      </div>
+      {% if product.featured_image != blank -%}
+        {%- capture sizes -%}
+          (min-width: {{ settings.page_width }}px) 645px, (min-width: 990px) calc(100.0vw - 10rem), (min-width: 750px) 100vw
+        {%- endcapture -%}
+        {% if section.settings.use_gallery == true %}
+          {% if section.settings.gallery_view == 'slider' %}
+            <product-offer-v2-media data-id="{{ section.id }}" class="landing-product-offer-v2__media product-offer-v2-media">
+              <div class="product-offer-v2-media__main offer-v2-media-main">
+                <div class="offer-v2-media-main__swiper-wrapper swiper-wrapper">
+                  {%- for image_block in product_images -%}
+                    <div
+                      class="offer-v2-media-main__slide product__modal-magnify swiper-slide"
+                      data-image="{{ image_block.settings.image | image_url: width: 2000  }}"
+                    >
+                      {%- if image_block.settings.image != blank -%}
+                          {% assign image_classes = 'offer-v2-media-main__image ' | append: 'image-magnify-' | append: section.settings.zoom_type %}
+                        {{
+                          image_block.settings.image
+                          | image_url: width: 1946
+                          | image_tag:
+                            loading: 'lazy',
+                            sizes: sizes,
+                            widths: '246, 493, 600, 713, 823, 990, 1100, 1206, 1346, 1426, 1646, 1946',
+                            class: image_classes
+                        }}
+                      {%- else -%}
+                        {{ 'image' | placeholder_svg_tag }}
+                      {%- endif -%}
+                    </div>
+                  {%- endfor -%}
+                </div>
+
+                {%- if section.settings.is_show_pagination -%}
+                  <div class="offer-v2-media-main__pagination--bullets swiper-pagination"></div>
+                {%- endif -%}
+                {%- if section.settings.is_show_pagination_fraction -%}
+                  <div class="offer-v2-media-main__pagination--fraction">1/5</div>
+                {%- endif -%}
+                {% if section.settings.show_mobile_zoom_icon != false %}
+                  <div class="product-offer-v2-media__zoom-icon">
+                    {{ 'zoom-icon.svg' | inline_asset_content }}
+                  </div>
+                {% endif %}
+
+                <div class="product-offer-v2-media__navigation product-offer-v2-media__navigation--prev">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                    <path d="M8.80224 1.94249C8.91307 1.94249 9.02391 1.98332 9.11141 2.07082C9.28057 2.23999 9.28057 2.51999 9.11141 2.68916L5.30807 6.49249C5.02807 6.77249 5.02807 7.22749 5.30807 7.50749L9.11141 11.3108C9.28057 11.48 9.28057 11.76 9.11141 11.9292C8.94224 12.0983 8.66224 12.0983 8.49307 11.9292L4.68974 8.12582C4.39224 7.82832 4.22307 7.42582 4.22307 6.99999C4.22307 6.57415 4.38641 6.17165 4.68974 5.87415L8.49307 2.07082C8.58057 1.98916 8.69141 1.94249 8.80224 1.94249Z" fill="#292D32"/>
+                  </svg>
+                </div>
+                <div class="product-offer-v2-media__navigation product-offer-v2-media__navigation--next">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 14 14" fill="none">
+                    <path d="M5.19776 12.0575C5.08693 12.0575 4.97609 12.0167 4.88859 11.9292C4.71943 11.76 4.71943 11.48 4.88859 11.3108L8.69193 7.50751C8.97193 7.22751 8.97193 6.77251 8.69193 6.49251L4.88859 2.68918C4.71943 2.52001 4.71943 2.24001 4.88859 2.07084C5.05776 1.90168 5.33776 1.90168 5.50693 2.07084L9.31026 5.87418C9.60776 6.17168 9.77693 6.57418 9.77693 7.00001C9.77693 7.42584 9.61359 7.82834 9.31026 8.12584L5.50693 11.9292C5.41943 12.0108 5.30859 12.0575 5.19776 12.0575Z" fill="#292D32"/>
+                  </svg>
+                </div>
+
+                <div class="product-offer-v2-media__badges-container">
+                  {%- for option in one_time_options -%}
+                    {% assign style_display = 'none' %}
+                    {% if forloop.index0 == 1 %}
+                      {% assign style_display = 'block' %}
+                    {% endif %}
+                    {%- assign media_badges = option.settings.image_badges | newline_to_br | split: '<br />' -%}
+                    {%- for badge in media_badges -%}
+                      <div
+                        class="product-offer-v2-media__badge"
+                        data-badge-id="badge-one-time-{{ option.settings.quantity }}"
+                        style="display: {{ style_display }}; background-color: rgba(var(--active-color), .1); color: rgb(var(--active-color));"
+                      >
+                        {{- badge -}}
+                      </div>
+                    {%- endfor -%}
+                  {%- endfor -%}
+                  {%- for option in subscribe_options -%}
+                    {% assign style_display = 'none' %}
+                    {%- assign media_badges = option.settings.image_badges | newline_to_br | split: '<br />' -%}
+                    {%- for badge in media_badges -%}
+                      <div
+                        class="product-offer-v2-media__badge"
+                        data-badge-id="badge-subscribe-{{ option.settings.quantity }}"
+                        style="display: {{ style_display }}; background-color: rgba(var(--active-color), .4); color: rgb(var(--active-color));"
+                      >
+                        {{- badge -}}
+                      </div>
+                    {%- endfor -%}
+                  {%- endfor -%}
+                </div>
+              </div>
+              <div class="product-offer-v2-media__thumbs offer-v2-media-thumbs">
+                <div class="offer-v2-media-thumbs__swiper-wrapper swiper-wrapper {% if center_thumbs != false %}offer-v2-media-thumbs__swiper-wrapper--center{% endif %}">
+                  {%- for image_block in product_images -%}
+                    <div class="offer-v2-media-thumbs__slide swiper-slide">
+                      {%- if image_block.settings.image != blank -%}
+                        {{ image_block.settings.image | image_url: width: 300 | image_tag }}
+                      {%- else -%}
+                        {{ 'image' | placeholder_svg_tag }}
+                      {%- endif -%}
+                    </div>
+                  {%- endfor -%}
+                </div>
+              </div>
+              {% render 'lightbox', section: section, product_images: product_images %}
+              {% if icon_text_slider_block_count > 0 %}
+                <div class="icon-text-slider-blocks">
+                  {% for block in section.blocks %}
+                    {% if block.type == 'icon-text-slider' and block.settings.text != blank %}
+                      <div class="icon-text-slider-block">
+                        {% if block.settings.icon != blank %}
+                          <img src="{{ block.settings.icon | image_url: width: 18, height: 18 }}" alt="{{ block.settings.icon.alt }}" width="18" height="18" loading="lazy">
+                        {% endif %}
+                        <span>{{ block.settings.text | newline_to_br }}</span>
+                      </div>
+                    {% endif %}
+                  {% endfor %}
+                </div>
+              {% endif %}
+            </product-offer-v2-media>
+          {%- elsif section.settings.gallery_view == 'grid' -%}
+            <div class="landing-product-offer-v2__media product-offer-v2-media">
+              <div class="product-offer-v2-media__main offer-v2-media-main">
+                <div class="offer-v2-media-main__grid-wrapper">
+                  {%- for image_block in product_images -%}
+                    <div class="offer-v2-media-main__grid-item offer-v2-media-main__slide">
+                      {%- if image_block.settings.image != blank -%}
+                        {{
+                          image_block.settings.image
+                          | image_url: width: 1946
+                          | image_tag:
+                            loading: 'lazy',
+                            sizes: sizes,
+                            widths: '246, 493, 600, 713, 823, 990, 1100, 1206, 1346, 1426, 1646, 1946'
+                        }}
+                      {%- else -%}
+                        {{ 'image' | placeholder_svg_tag }}
+                      {%- endif -%}
+                    </div>
+                  {%- endfor -%}
+                </div>
+              </div>
+            </div>
+          {% endif %}
+        {% else %}
+          <div class="landing-product__item landing-product__image">
+            <div
+              class="
+                landing-product__image-wrapper {% if gallery_full_width == true %}
+                  landing-product__image-wrapper--full-width
+                {% endif %}
+              "
+            >
+              {{
+                product.featured_image
+                | image_url: width: master
+                | image_tag: widths: '900', alt: product.featured_image.alt, loading: 'lazy'
+              }}
+            </div>
+          </div>
+        {% endif %}
+      {% endif %}
+    <div id="landing-product-{{ product.id }}" class="landing-product__item landing-product__information {% if template.suffix == 'bovine-landing-fabula' %}scroll-margin-block{% endif %}" {% if request.page_type == 'index' %}style="scroll-margin-top: 10px"{% endif %}>
+        {% for block in section.blocks %}
+          {%- case block.type -%}
+            {%- when 'subtitle' -%}
+              <p class="landing-product__subtitle">{{- block.settings.subtitle -}}</p>
+            {%- when 'title' -%}
+              <div id="landing-product__info-block" class="landing-product__title product-block product-block--dektop">
+                {% if block.settings.text_mobile != blank %}
+                  <div class="product-block__title--mobile">
+                    {{ block.settings.text_mobile }}
+                  </div>
+                {% endif %}
+                <h2
+                  id="landing-product-alternative"
+                  class="product-block__title"
+                  style="--accent-color: {{ block.settings.highlighted_color }}"
+                >
+                  {%- if block.settings.text != blank -%}
+                    {{- block.settings.text -}}
+                  {%- else -%}
+                    {{- product.title -}}
+                  {%- endif -%}
+                </h2>
+              </div>
+            {%- when 'rating' -%}
+              <div class="product__rating-block">
+                {%- unless block.settings.rating_image == blank -%}
+                  <div class="product__rating-image">
+                    {{ block.settings.rating_image | image_url: width: 1000 | image_tag }}
+                  </div>
+                {%- endunless -%}
+                <div class="rating-block__stars">{%- render 'icon-rating-extra' -%}</div>
+                {%- unless block.settings.rating_text == blank -%}
+                  <p class="product__rating-text product__rating-text--desktop">{{ block.settings.rating_text }}</p>
+                  <p class="product__rating-text product__rating-text--mobile">{{ block.settings.rating_text_mobile }}</p>
+                {%- endunless -%}
+              </div>
+            {%- when 'reviews' -%}
+              {% liquid
+                assign tag = 'div'
+                if block.settings.url != blank
+                  assign tag = 'a'
+                endif
+              %}
+              <{{ tag }}
+                href="{{ block.settings.url }}"
+            class="product-information__reviews product-block product-block--dektop {% if block.settings.show_desktop_position != false%}show-desktop-position{% endif %}"
+                id="product-information__reviews--2"
+              >
+                <span class="product-information__reviews-icon">
+                  {%- case block.settings.stars_type -%}
+                    {%- when 'yellow' -%}
+                      {%- render 'icon-stars' -%}
+                    {%- when 'orange' -%}
+                      {{ 'icon-stars-new.svg' | inline_asset_content }}
+                    {%- when 'orange_small' -%}
+                      {%- render 'icon-rating-extra' -%}
+                  {%- endcase -%}
+                </span>
+                {% if block.settings.text != blank %}
+                  <span class="product-information__reviews-text">{{- block.settings.text -}}</span>
+                {% endif %}
+                {% if block.settings.additional_text %}
+                  <div class="product-information__reviews-additional_text">
+                    {{ block.settings.additional_text }}
+                  </div>
+                {% endif %}
+              </{{ tag }}>
+            {%- when 'feature' -%}
+              {%- unless has_features -%}
+                {%- assign features = section.blocks | where: 'type', 'feature' -%}
+                {%- if features.size > 0 -%}
+                  {%- assign has_features = true -%}
+                  <div class="product-information__features product-block">
+                    {%- for block in features -%}
+                      {% if block.settings.icon and block.settings.title != blank %}
+                        <div class="product-information__feature{% if block.settings.hide_on_mobile %} product-information__feature--hide-mobile{% endif %}">
+                          <div class="product-information__feature-icon">
+                            {{
+                              block.settings.icon
+                              | image_url: width: master
+                              | image_tag: widths: '100', alt: block.settings.icon.alt, loading: 'lazy'
+                            }}
+                          </div>
+                          <div class="product-information__feature-content">
+                            <h4>
+                              {{ block.settings.title | newline_to_br }}
+                            </h4>
+                            <h4 class="title--mobile">
+                              {{ block.settings.title_mobile | newline_to_br | default: block.settings.title | newline_to_br  }}
+                            </h4>
+                            {% if block.settings.text != blank %}
+                              <p>
+                                {{ block.settings.text }}
+                              </p>
+                            {% endif %}
+                          </div>
+                        </div>
+                      {% endif %}
+                    {%- endfor -%}
+                  </div>
+                {%- endif -%}
+              {%- endunless -%}
+
+            {% when 'text_with_icon' %}
+              <div class="text-with-icon__container">
+                <ul class="text-with-icon__list list-unstyled">
+                  {% for i in (1..2) %}
+                    <li class="text-with-icon__item">
+                      {% liquid 
+                        assign icon_id = 'icon_' | append: i
+                        assign icon = block.settings[icon_id]
+                        assign text_id = 'text_' | append: i
+                        assign text = block.settings[text_id]
+                        assign mobile_text_id = 'mobile_text_' | append: i
+                        assign mobile_text = block.settings[mobile_text_id]
+                      %}
+                      {% if text != blank %}
+                        {% if icon != blank %}
+                          <div>
+                            {{ icon | image_url: width: icon.width | image_tag: alt: icon.alt }}
+                          </div>
+                        {% endif %}
+                        <div class="text-with-icon__text">
+                          <div class="text-with-icon__text--desktop">{{ text }}</div>
+                          <div class="text-with-icon__text--mobile">{{ mobile_text }}</div>
+                        </div>
+                      {% endif %}
+                    </li>
+                  {% endfor %}
+                </ul>
+              </div>
+            {% when 'price' %}
+              {% assign saving_line_pairs = product.metafields.custom.subscription_savings_line | split: '|||' %}
+
+              {%- assign enable_one_purchase = block.settings.enable_one_purchase -%}
+              {%- assign heading = block.settings.heading -%}
+              {%- assign name_plan = block.settings.name_plan | downcase | strip -%}
+              {%- assign information_list = block.settings.information | newline_to_br | split: '<br />' -%}
+              {% assign buy_buttons_block = section.blocks | where: "type", "buy_buttons" | first %}
+              {% assign subscription_form_list = section.blocks | where: "type", "subscription_form_list" | first %}
+              {% capture style_variables %}
+                  --primary-color: {{ block.settings.primary_color }};
+                  --badge-background: {{ block.settings.badge_background }};
+                  --badge-color: {{ block.settings.badge_color }};
+                  --shadow-radius: {% if block.settings.shadow == true %}4px{% else %}0px{% endif %};
+                  --background-color: {{ block.settings.background_color }};
+              {% endcapture %}
+              <div
+                style="{{ style_variables }}"
+                id="selling-plans-wrapper--{{ section.id }}"
+                class="product-information__selling-plans-wrapper product-information__selling-plans-wrapper--{{ block.settings.widget_style }}"
+              >
+                {% for plan in product.selling_plan_groups %}
+                  <label 
+                    class="product-information__selling-plan-wrapper {% if block.settings.most_popular != false %}most-popular{% endif %} {% if forloop.index == 1 %}active {% endif %}"
+                    {% if buy_buttons_block.settings.gift_product and buy_buttons_block.settings.gift_product != blank or buy_buttons_block.settings.child_product != blank %} has-gift {% endif %}
+                  >
+                    {% assign plan.selling_plans.first.selected = true %}
+                    {% assign product_form_id = 'product-form-' | append: section.id %}
+                    {% assign plan_name = block.settings.name_plan_display | default: plan.name %}
+
+                    {%- capture input_id -%}
+                      {{ section.id }}-{{ forloop.index0 -}}
+                    {%- endcapture -%}
+
+                    {% assign compare_at_price_difference = price_compare
+                      | divided_by: 100.0
+                      | times: plan.selling_plans.first.price_adjustments.first.value
+                    %}
+
+                    <input
+                      type="radio"
+                      id="{{ input_id }}"
+                      name="{{ plan.name }}"
+                      value="{{ plan.selling_plans.first.id | escape }}"
+                      form="{{ product_form_id }}"
+                      class="product-information__radio"
+                      {% if buy_buttons_block.settings.gift_product and buy_buttons_block.settings.gift_product != blank or buy_buttons_block.settings.child_product != blank %} has-gift {% endif %}
+                      data-price="{{ price_compare | minus: compare_at_price_difference | money_without_currency }}"
+                      {% if forloop.index == 1 %}
+                        checked
+                      {% endif %}
+                      // data-discount-code="GYM76P8PHG4H"
+                    >
+                    {% if block.settings.most_popular != false %}
+                      <div class="product-information__info" style="--background: {{ block.settings.most_popular_background }}; --text: {{ block.settings.most_popular_text }};">
+                        <p class="product-information__info-text">{{ 'products.product.landing.most_popular' | t }}</p>
+                        <div class="product-information__save">
+                          {% assign saved_compare_price = price_compare | minus: compare_at_price_difference %}
+                          {% assign saved_money = price_compare | minus: saved_compare_price %}
+                          {% liquid
+                            if block.settings.use_custom_percentage
+                              assign sale_percentage = block.settings.custom_percentage
+                            else
+                              assign sale_percentage = plan.selling_plans.first.price_adjustments.first.value
+                            endif
+                          %}
+                          {% assign compare_at_price_difference = price_compare
+                            | divided_by: 100.0
+                            | times: sale_percentage
+                          %}
+                          {% liquid 
+                            assign saved_compare_price = price_compare | minus: compare_at_price_difference
+                            assign saved_money = price_compare | minus: saved_compare_price
+                          %}
+                        
+                          <p class="product-information__info-text">{{ 'products.product.landing.save_text' | t }} {% if block.settings.widget_you_save_price != blank %} {{ block.settings.widget_you_save_price }} {% else %} {{ saved_money | money }} {% endif %}</p>
+                        </div>
+                      </div>
+                    {% endif %}
+                    <label for="{{ input_id }}" class="product-information__plan-label">
+                      {% render 'icon-radio' %}
+                      {%- unless block.settings.extra_styles -%}
+                        <div class="product-information__price-badge">
+                          {%- if block.settings.use_custom_percentage -%}
+                            {%- assign percentage_formatted = block.settings.custom_percentage | append: '%' -%}
+                          {%- else -%}
+                            {% assign percentage_formatted = plan.selling_plans.first.price_adjustments.first.value
+                              | ceil
+                              | append: '%'
+                            %}
+                          {%- endif -%}
+                          {{ 'products.product.price.save_money_percent' | t: money: percentage_formatted }}
+                        </div>
+                      {%- endunless -%}
+                      <div class="product-information__plan-name">
+                        <span class="plan-name__heading">{{ plan_name -}}</span>
+                        {%- if block.settings.extra_styles -%}
+                          <div class="product-information__price-badge">
+                            {%- if block.settings.use_custom_percentage -%}
+                              {%- assign percentage_formatted = block.settings.custom_percentage | append: '%' -%}
+                            {%- else -%}
+                              {% assign percentage_formatted = plan.selling_plans.first.price_adjustments.first.value
+                                | ceil
+                                | append: '%'
+                              %}
+                            {%- endif -%}
+                            {{ 'products.product.price.save_money_percent' | t: money: percentage_formatted }}
+                          </div>
+                        {%- endif -%}
+                        {%- unless block.settings.plan_sale_description == blank -%}
+                          <span class="plan-name__sale-descriprion">
+                            {{ block.settings.plan_sale_description }}
+                          </span>
+                        {%- endunless -%}
+                        <span class="plan-name__subheading">
+                          {% assign subscription_line_pairs = product.metafields.custom.subscription_plan_description
+                            | split: '|||'
+                          %}
+                          {% for line in subscription_line_pairs %}
+                            {% assign subscription_line_divided = line | split: '///' %}
+                            {% if subscription_line_divided[0] contains plan_name %}
+                              {{- subscription_line_divided[1] }}
+                            {% endif %}
+                          {% endfor %}
+                        </span>
+                        <div class="product-information__price-text product-information__price-text--mobile">
+                          {%- for line in saving_line_pairs -%}
+                            {%- assign saving_line_divided = line | split: '///' -%}
+                            {%- if saving_line_divided[0] contains plan_name -%}
+                              {{- saving_line_divided[1] -}}
+                            {%- endif -%}
+                          {%- endfor -%}
+                        </div>
+                        {% if block.settings.additional_plan_subtext != blank %}
+                          <p class="product-information__plan-name__additional-subtext">{{ block.settings.additional_plan_subtext }}</p>
+                        {% endif %}
+                      </div>
+                      <div class="product-information__price">
+                        
+                      {% if block.settings.custom_widget_price != false and block.settings.custom_widget_text != blank %}
+                        <p class="product-information__widget-text">{{ block.settings.custom_widget_text }}</p>
+                      {% else %}
+                        <div class="product-information__price-regular">
+                          {% liquid
+                            if block.settings.use_custom_percentage
+                              assign sale_percentage = block.settings.custom_percentage
+                            else
+                              assign sale_percentage = plan.selling_plans.first.price_adjustments.first.value
+                            endif
+                          %}
+                          {% assign compare_at_price_difference = price_compare
+                            | divided_by: 100.0
+                            | times: sale_percentage
+                          %}
+                          {% if block.settings.widget_regular_price != blank %} {{ block.settings.widget_regular_price }} {% else %} {{ price_compare | minus: compare_at_price_difference | money }} {% endif %}
+                        </div>
+                        {% if price_compare != blank %}
+                          <div class="product-information__price-compare">
+                            {% if block.settings.widget_compare_price != blank %} {{ block.settings.widget_compare_price }} {% else %} {{ price_compare | money }} {% endif %}
+                          </div>
+                        {% endif %}
+                        {% if section.settings.show_saving_price == true %}
+                          <div class="product-information__price-text">
+                            {%- for line in saving_line_pairs -%}
+                              {%- assign saving_line_divided = line | split: '///' -%}
+                              {%- if saving_line_divided[0] contains plan_name -%}
+                                {{- saving_line_divided[1] -}}
+                              {%- endif -%}
+                            {%- endfor -%}
+                          </div>
+                        {% endif %}
+                      {% endif %}
+
+                        {% if block.settings.use_quantity_box == true %}
+                          {% if block.settings.quantity_visible == 'all' or block.settings.quantity_visible == 'subscription' %}
+                            <div class="quantity__wrapper{% if block.settings.add_quantity_styles %} quantity__wrapper--styled{% endif %}">
+                              <quantity-input
+                                class="quantity"
+                                data-url="{{ product.url }}"
+                                data-section="{{ section.id }}"
+                              >
+                                <button class="quantity__button no-js-hidden" name="minus" type="button">
+                                  {%- if block.settings.add_quantity_styles -%}
+                                    {%- render 'icon-quantity-picker', type: 'minus' -%}
+                                  {%- else -%}
+                                    {% render 'icon-minus' %}
+                                  {%- endif -%}
+                                </button>
+                                <input
+                                  class="quantity__input"
+                                  type="number"
+                                  name="quantity"
+                                  min="1"
+                                  id="Quantity-{{ section.id }}"
+                                  value="{{ product.selected_or_first_available_variant.quantity_rule.min }}"
+                                  form="{{ product_form_id }}"
+                                >
+                                <button class="quantity__button no-js-hidden" name="plus" type="button">
+                                  {%- if block.settings.add_quantity_styles -%}
+                                    {%- render 'icon-quantity-picker', type: 'plus' -%}
+                                  {%- else -%}
+                                    {% render 'icon-plus' %}
+                                  {%- endif -%}
+                                </button>
+                              </quantity-input>
+                            </div>
+                          {% endif %}
+                        {% endif %}
+                      </div>
+                    </label>
+                    {% if block.settings.separator != false %}
+                      <span class="product-information__separator"> </span>
+                    {% endif %}
+                    {%- assign plan_name_downcase = plan_name | downcase -%}
+                    {% if information_list.size != 0 and name_plan == plan_name_downcase %}
+                      <label for="{{ input_id }}">
+                        <ul class="plan-name__list {% if block.settings.remove_padding != false %}padding{% endif %}" role="list">
+                          {% for information_item in information_list %}
+                            <li class="plan-name__list-item">
+                              {% if block.settings.icon_style == 'alternative' %}
+                                 {{ 'icon-secondary-checkmark-circle.svg' | inline_asset_content }}
+                              {% else %}
+                                {%- if template.name == 'index' -%}
+                                  {{ 'icon-checkmark-circle.svg' | inline_asset_content }}
+                                {%- else -%}
+                                  {% render 'icon-checkmark' %}
+                                {%- endif -%}
+                              {% endif %}
+                              <span>{{ information_item }}</span>
+                            </li>
+                          {% endfor %}
+                          {% if block.settings.show_popup != blank %}
+                            <li class="plan-name__list-item">
+                               {% if block.settings.icon_style == 'alternative' %}
+                                 {{ 'icon-secondary-checkmark-circle.svg' | inline_asset_content }}
+                              {% else %}
+                                {%- if template.name == 'index' -%}
+                                  {{ 'icon-checkmark-circle.svg' | inline_asset_content }}
+                                {%- else -%}
+                                  {% render 'icon-checkmark' %}
+                                {%- endif -%}
+                              {% endif %}
+                              {% assign information_list_popup = block.settings.information_popup | newline_to_br | split: '<br />' | default: information_list %}
+                              {% render 'popup', block:block, information_list: information_list_popup %}
+                              {{- 'cta-banner-popup.js' | asset_url | script_tag -}}                                
+                            </li>
+                           {% endif %}
+                        </ul>
+                      </label>
+                    {% endif %}
+                    {% if subscription_form_list %}
+                      <label for="{{ input_id }}">
+                        <ul 
+                          class="subscription-list list-unstyled"
+                          style="--accent-color: {{ subscription_form_list.settings.accent_color }}"
+                        >
+                          {% for i in (1..6) %}
+                            {% liquid 
+                              assign text_id = 'text_' | append : i
+                              assign text = subscription_form_list.settings[text_id]
+                              assign price_text_id = 'text_price_' | append: i
+                              assign price_text = subscription_form_list.settings[price_text_id]
+                            %}
+                            {% if text != blank %}
+                              <li class="subscription-list__item">
+                                <span class="subscription-list__item-span">
+                                  {{ 'icon-secondary-checkmark-circle.svg' | inline_asset_content }}
+                                  <p class="subscription-list__text">{{ text }}</p>
+                                </span>
+                                <p class="subscription-list__price">{{ price_text }}</p>
+                              </li>
+                            {% endif %}
+                          {% endfor %}
+                        </ul>
+
+                        {% if subscription_form_list.settings.subscription_total_text != blank %}
+                          <div class="subscription-total-text__container">
+                            <p class="subscription-total-text">{{ subscription_form_list.settings.subscription_total_text }}</p>
+                            <p class=subscription-list__total-price>{{ subscription_form_list.settings.subscription_total_price }}</p>
+                          </div>
+                        {% endif %}
+                      </label>
+                    {% endif %}
+                    {% if block.settings.gift_info != false and buy_buttons_block.settings.gift_product and buy_buttons_block.settings.gift_product != blank %}
+                      <div 
+                        class="product-gift__info-block"
+                        style="--background: {{ block.settings.gift_item_background }};--text: {{ block.settings.gift_text_color }};--price: {{ block.settings.gift_price_color }}"
+                        >
+                        <ul class="product-gift__info-list list-unstyled">
+                          <li class="product-gift__info-item">
+                            {% if block.settings.icon != blank %}
+                              <div class="product-gift__item-icon">
+                                {{ block.settings.icon | image_url: width: 1000 | image_tag: alt: block.settings.shipping_icon.alt  }}
+                              </div>
+                            {% endif %}
+                            <div class="product-gift__container">
+                              <div class="product-gift__text-info">
+                                <h2 class="product-gift__title">{{ 'products.product.landing.gift_shipping_text' | t }}</h2>
+                                <p class="product-gift__price">{{ 'products.product.landing.gift_shipping_price' | t | money }}</p>
+                              </div>
+                              {% if block.settings.shipping_icon != blank %}
+                                <div class="product-gift__shipping-icon">
+                                  {{ block.settings.shipping_icon | image_url: width: 1000 | image_tag: alt: block.settings.shipping_icon.alt }}
+                                </div>
+                              {% endif %}
+                            </div>
+                          </li>
+                           <li class="product-gift__info-item">
+                            {% if block.settings.icon != blank %}
+                              <div class="product-gift__item-icon">
+                                {{ block.settings.icon | image_url: width: 1000 | image_tag: alt: block.settings.icon.alt }}
+                              </div>
+                            {% endif %}
+                            <div class="product-gift__container">
+                              <div class="product-gift__text-info">
+                                <h2 class="product-gift__title">{{ block.settings.info_title | default: buy_buttons_block.settings.gift_product.title }}</h2>
+                          <p class="product-gift__price">{% if block.settings.product_price != blank %}{{ block.settings.product_price | money }}{% else %}{{ buy_buttons_block.settings.gift_product.price | money }}{% endif %}</p>
+                              </div>
+                                <div class="product-gift__icon">
+                                  {{ block.settings.product_image | default: buy_buttons_block.settings.gift_product.featured_image |  image_url: width: 1000 | image_tag }}
+                                </div>
+                            </div>                      
+                          </li>
+                        </ul>
+                      </div>
+                    {% endif %}
+                  </label>
+                {% endfor %}
+                {% if enable_one_purchase == true %}
+                  <label 
+                    class="product-information__selling-plan-wrapper {% if block.settings.enable_one_purchase_css != false %}one-purchase-extra-styles{% endif %} product-information__selling-plan-wrapper--one-time-purchase"
+                    {% if block.settings.enable_one_purchase_css != false %}
+                    style="--border: {{ block.settings.enable_one_purchase_border }}; --text: {{ block.settings.enable_one_purchase_text }}"
+                    {% endif %} 
+                    >
+                    {% assign product_form_id = 'product-form-' | append: section.id %}
+
+                    {%- capture input_id -%}
+                      {{ section.id }}-{{ product.selling_plan_groups.size -}}
+                    {%- endcapture -%}
+
+                    <input
+                      type="radio"
+                      id="{{ input_id }}"
+                      {% if heading != blank %}
+                        name="{{- heading -}}"
+                      {% endif %}
+                      value=""
+                      form="{{ product_form_id }}"
+                      class="product-information__radio"
+                      data-price="{{ product.price | money_without_currency }}"
+                    >
+                    <label for="{{ input_id }}" class="product-information__plan-label">
+                      {% render 'icon-radio' %}
+                      <div class="product-information__plan-name">
+                        {% if heading != blank %}
+                          <span class="plan-name__heading">{{- heading -}}</span>
+                        {% endif %}
+                      </div>
+                      <div class="product-information__price">
+                        <div class="product-information__price-regular">
+                          {{ product.price | money }}
+                        </div>
+                        {% if block.settings.use_quantity_box == true %}
+                          {% if block.settings.quantity_visible == 'all' or block.settings.quantity_visible == 'one-time' %}
+                            <div class="quantity__wrapper{% if block.settings.add_quantity_styles %} quantity__wrapper--styled{% endif %}">
+                              <quantity-input
+                                class="quantity"
+                                data-url="{{ product.url }}"
+                                data-section="{{ section.id }}"
+                              >
+                                <button class="quantity__button no-js-hidden" name="minus" type="button">
+                                  {%- if block.settings.add_quantity_styles -%}
+                                    {%- render 'icon-quantity-picker', type: 'minus' -%}
+                                  {%- else -%}
+                                    {% render 'icon-minus' %}
+                                  {%- endif -%}
+                                </button>
+                                <input
+                                  class="quantity__input"
+                                  type="number"
+                                  name="quantity"
+                                  min="1"
+                                  id="Quantity-{{ section.id }}"
+                                  value="{{ product.selected_or_first_available_variant.quantity_rule.min }}"
+                                  form="{{ product_form_id }}"
+                                  {% if product.selling_plan_groups.size > 0 %}
+                                    disabled
+                                  {% endif %}
+                                >
+                                <button class="quantity__button no-js-hidden" name="plus" type="button">
+                                  {%- if block.settings.add_quantity_styles -%}
+                                    {%- render 'icon-quantity-picker', type: 'plus' -%}
+                                  {%- else -%}
+                                    {% render 'icon-plus' %}
+                                  {%- endif -%}
+                                </button>
+                              </quantity-input>
+                            </div>
+                          {% endif %}
+                        {% endif %}
+                      </div>
+                    </label>
+                  </label>
+                {% endif %}
+              </div>
+            {%- when 'one-time-packs' -%}
+              {%- liquid
+                assign packs = block.settings.packs | split: ','
+                assign preselected_item = block.settings.preselected_item
+              -%}
+
+              {% for pack in packs %}
+                {% liquid
+                  assign pack = pack | times: 1
+                  assign pack_index = forloop.index
+                  assign pack_label = pack | times: 1 | pluralize: 'Pack', 'Packs'
+                  assign input_id = product.handle | append: '_quantity_' | append: pack
+
+                  assign discount_code_key = 'pack_' | append: pack_index | append: '_discount_code'
+                  assign discount_percent_key = 'pack_' | append: pack_index | append: '_discount_percent'
+                  assign discounted_price_key = 'pack_' | append: pack_index | append: '_discounted_price'
+                  assign pack_title_key = 'pack_' | append: pack_index | append: '_pack_title'
+                  assign pack_text_key = 'pack_' | append: pack_index | append: '_pack_text'
+                  assign pack_servings_key = 'pack_' | append: pack_index | append: '_pack_servings'
+
+                  assign discount_code = block.settings[discount_code_key]
+                  assign discount_percent = block.settings[discount_percent_key] | ceil | append: '%'
+                  assign discounted_price = block.settings[discounted_price_key] | times: 100
+                  assign pack_title = block.settings[pack_title_key]
+                  assign pack_text = block.settings[pack_text_key]
+                  assign pack_servings = block.settings[pack_servings_key]
+
+                  assign subtotal_discounted_price = discounted_price | times: pack | money
+                  assign subtotal_compare_at_price = product.price | times: pack | money
+                  assign product_form_id = 'product-form-' | append: section.id
+                %}
+
+                <label class="product-information__selling-plan-wrapper product-information__one-time-pack-wrapper {% if forloop.index == preselected_item %}active {% endif %}">
+                  <input
+                    type="radio"
+                    id="{{ input_id }}"
+                    name="quantity"
+                    value="{{ pack }}"
+                    form="{{ product_form_id }}"
+                    class="product-information__radio product-information__radio--one-time-quantity"
+                    data-discount-code="{{- discount_code | default: '' -}}"
+                    {% if forloop.index == preselected_item %}
+                      checked
+                    {% endif %}
+                  >
+                  <label for="{{ input_id }}" class="product-information__plan-label">
+                    {% render 'icon-radio' %}
+                    <div class="product-information__price-badge">
+                      {{ 'products.product.price.save_money_percent' | t: money: discount_percent }}
+                    </div>
+                    <div class="product-information__plan-name">
+                      <span class="plan-name__heading">{{- pack_title -}}</span>
+                      <span class="plan-name__subheading">{{- pack_text -}}</span>
+                      <div class="product-information__price-text product-information__price-text--mobile">
+                        {{- pack_servings -}}
+                      </div>
+                    </div>
+                    <div class="product-information__price">
+                      <div class="product-information__price-regular">
+                        {{- subtotal_discounted_price -}}
+                      </div>
+                      {% if subtotal_compare_at_price != blank %}
+                        <div class="product-information__price-compare">
+                          {{- subtotal_compare_at_price -}}
+                        </div>
+                      {% endif %}
+                      <div class="product-information__price-text">
+                        {{- pack_servings -}}
+                      </div>
+                    </div>
+                  </label>
+                </label>
+              {% endfor %}
+
+            {%- when 'advantages_list' -%}
+              {% if block.settings.advantages_list != blank %}
+                <div class="product-information__advantages-wrapper">
+                  {% assign icons_island_input_pairs = block.settings.advantages_list | split: ', ' %}
+                  {% for icons_pair in icons_island_input_pairs %}
+                    <div class="product-information__advantages-item">
+                      {% assign icon_content_divided = icons_pair | split: ';' %}
+                      <img src="{{ icon_content_divided[0] | file_url }}" class="icons-islands__icon">
+                      {% unless icon_content_divided[1] == blank %}
+                        <span class="advantages-item__label">
+                          {{ icon_content_divided[1] }}
+                        </span>
+                      {% endunless %}
+                    </div>
+                  {% endfor %}
+                </div>
+              {% endif %}
+              {% if block.settings.advantages_list_one_time != blank %}
+                <div class="product-information__advantages-wrapper product-information__advantages-wrapper--one-time-purchase">
+                  {% assign icons_island_input_pairs = block.settings.advantages_list_one_time | split: ', ' %}
+                  {% for icons_pair in icons_island_input_pairs %}
+                    <div class="product-information__advantages-item">
+                      {% assign icon_content_divided = icons_pair | split: ';' %}
+                      <img src="{{ icon_content_divided[0] | file_url }}" class="icons-islands__icon">
+                      {% unless icon_content_divided[1] == blank %}
+                        <span class="advantages-item__label">
+                          {{ icon_content_divided[1] }}
+                        </span>
+                      {% endunless %}
+                    </div>
+                  {% endfor %}
+                </div>
+              {% endif %}
+            {% when 'buy_buttons' %}
+              {% if section.settings.property_value != blank %}
+                <input
+                  form="{{ product_form_id }}"
+                  type="hidden"
+                  name="properties[_target_page]"
+                  value="{{- section.settings.property_value -}}"
+                >
+              {% endif %}
+              <div
+                class="product-information__buy-buttons"
+                style="--primary-color: {{ block.settings.background_color }}; --text-color: {{ block.settings.text_color | default: '#fff' }};"
+              >
+                {%- unless is_one_time_packs.size > 0 -%}
+                  <input
+                    type="hidden"
+                    name="selling_plan"
+                    value="{{ product.selling_plan_groups.last.selling_plans.first.id }}"
+                    form="{{ product_form_id }}"
+                  >
+                {%- endunless -%}
+                {%- if block.settings.quantity_picker -%}
+                  <quantity-input
+                    style="--unit-content: '{{ block.settings.selector_units }}'"
+                    class="buy-buttons__buy-quantity"
+                    data-url="{{ product.url }}"
+                    data-section="{{ section.id }}"
+                  >
+                    <button
+                      class="buy-quantity__button quantity__button buy-quantity__button-minus no-js-hidden"
+                      name="minus"
+                      type="button"
+                    >
+                      {%- render 'buy-buttons-icon-minus' -%}
+                    </button>
+                    <label class="buy-quantity__input-wrapper">
+                      <input
+                        class="buy-quantity__input quantity__input "
+                        type="number"
+                        name="quantity"
+                        min="1"
+                        id="Quantity-{{ section.id }}"
+                        value="{{ product.selected_or_first_available_variant.quantity_rule.min }}"
+                        form="{{ product_form_id }}"
+                      >
+                      {% assign buy_buttons_block = section.blocks | where: "type", "buy_buttons" | first %}
+                      {% if buy_buttons_block.settings.gift_product != blank %}
+                        <input
+                          class="buy-quantity__input quantity__input gift-quantity__input visually-hidden"
+                          type="number"
+                          name="items[1][quantity]"
+                          min="1"
+                          id="Quantity-{{ section.id }}"
+                          value="{{ product.selected_or_first_available_variant.quantity_rule.min }}"
+                          form="{{ product_form_id }}"
+                        >
+                      {% endif %}
+                      {% if buy_buttons_block.settings.child_product and buy_buttons_block.settings.child_product != blank %}
+                        <input
+                          class="buy-quantity__input quantity__input gift-quantity__input visually-hidden"
+                          type="number"
+                          name="items[2][quantity]"
+                          min="1"
+                          id="Quantity-{{ section.id }}"
+                          value="{{ buy_buttons_block.settings.child_product.selected_or_first_available_variant.quantity_rule.min }}"
+                          form="{{ product_form_id }}"
+                        >
+                      {% endif %}
+                      
+                    </label>
+                    <button
+                      class="buy-quantity__button quantity__button buy-quantity__button-plus no-js-hidden"
+                      name="plus"
+                      type="button"
+                    >
+                      {%- render 'buy-buttons-icon-plus' -%}
+                    </button>
+                  </quantity-input>
+                {%- endif -%}
+                {%- render 'buy-buttons',
+                  gift_product: block.settings.gift_product
+                  block: block,
+                  product: product,
+                  product_form_id: product_form_id,
+                  section_id: section.id,
+                  show_bynamic_button: false,
+                  additional_bottom_text: block.settings.bottom_text
+                -%}
+                {% liquid
+                  assign is_show_benefits = false
+                  for benefit_index in (1..3)
+                    assign benefit_id = 'benefits_text' | append: benefit_index
+                    if block.settings[benefit_id] != blank
+                      assign is_show_benefits = true
+                      break
+                    endif
+                  endfor
+                %}
+                {% if is_show_benefits == true and block.settings.icon != blank %}
+                  <div class="buy-buttons__benefits">
+                    {% for benefit_index in (1..3) %}
+                      {% assign benefit_id = 'benefits_text' | append: benefit_index %}
+                      {% if block.settings[benefit_id] != blank %}
+                        <div class="buy-buttons__benefit">
+                          {{
+                            block.settings.icon
+                            | image_url: width: master
+                            | image_tag: widths: '100', alt: block.settings.icon.alt, loading: 'lazy'
+                          }}
+                          <span>
+                            {{ block.settings[benefit_id] }}
+                          </span>
+                        </div>
+                      {% endif %}
+                    {% endfor %}
+                  </div>
+                {% endif %}
+              </div>
+            {%- when 'payment_icons' -%}
+              <div class="product-information__payment-icons">
+                {% for i in (1..10) %}
+                  {%- assign icon_key = 'image_' | append: i -%}
+                  {% if block.settings[icon_key] != blank %}
+                    {{ block.settings[icon_key] | image_url: width: 62 | image_tag }}
+                  {% endif %}
+                {% endfor %}
+              </div>
+            {%- when 'guarantee' -%}
+              <div class="product-content__guarantee">
+                <div class="guarantee__header">
+                  {%- unless block.settings.icon == blank -%}
+                    <div class="guarantee__icon">
+                      {{ block.settings.icon | image_url: width: 40 | image_tag }}
+                    </div>
+                  {%- endunless -%}
+                  {%- unless block.settings.title == blank -%}
+                    <p class="guarantee__title">{{ block.settings.title }}</p>
+                  {%- endunless -%}
+                </div>
+                {%- unless block.settings.text == blank -%}
+                  <p class="guarantee__text">
+                    {{ block.settings.text }}
+                  </p>
+                {%- endunless -%}
+              </div>
+            {%- when 'review_with_usp' -%}
+              <div class="product-content__reviews-with-usp product-content__reviews-with-usp--{{ block.settings.style }}">
+                <div class="reviews-with-usp__content">
+                  <div class="reviews-with-usp__stars">
+                    {% liquid
+                      assign tag = 'div'
+                      if block.settings.stars_url != blank
+                        assign tag = 'a'
+                      endif
+                    %}
+
+                    {%- if block.settings.image != blank -%}
+                      <div class="reviews-with-usp__image reviews-with-usp__image--mobile-only">
+                        {{- block.settings.image | image_url: width: 224 | image_tag -}}
+                      </div>
+                    {%- endif -%}
+                    <{{ tag }} href="{{ block.settings.stars_url }}" class="rating__stars">
+                      {{ 'icon-reviews-stars-5.svg' | inline_asset_content }}
+                    </{{ tag }}>
+                  </div>
+                  {%- if block.settings.image != blank and block.settings.extra_styles -%}
+                    <div class="reviews-with-usp__image">
+                      {{- block.settings.image | image_url: width: 224 | image_tag -}}
+                    </div>
+                  {%- endif -%}
+                  <p class="reviews-with-usp__title">{{ block.settings.title }}</p>
+                  {% if section.settings.hide_usp_icons != true %}
+                    <div class="product-content__usp-icons reviews-with-usp__icons">
+                      <div class="usp-icons__info-item info-item--shipping">
+                        {{ 'icon-usp-deal-shipping.svg' | inline_asset_content }}
+                        <span>{{ 'products.product.landing.usp_icons.shipping_html' | t | strip_html }}</span>
+                      </div>
+                      <div class="usp-icons__info-item info-item--secure">
+                        {{ 'icon-usp-secure-black.svg' | inline_asset_content }}
+                        <span>{{ 'products.product.landing.usp_icons.secure_html' | t | strip_html }}</span>
+                      </div>
+                      <div class="usp-icons__info-item info-item--deals">
+                        {{ 'icon-usp-usa-black.svg' | inline_asset_content }}
+                        <span>{{ 'products.product.landing.usp_icons.usa_html' | t | strip_html }}</span>
+                      </div>
+                    </div>
+                  {% endif %}
+                </div>
+                {%- if block.settings.image != blank and block.settings.extra_styles == false -%}
+                  <div class="reviews-with-usp__image reviews-with-usp__image--desktop-only">
+                    {{- block.settings.image | image_url: width: 224 | image_tag -}}
+                  </div>
+                {%- endif -%}
+              </div>
+          {%- endcase -%}
+        {% endfor %}
+        {% if icon_text_block_count > 0 %}
+          <div class="icon-text-blocks">
+            {% for block in section.blocks %}
+              {% if block.type == 'icon-text' and block.settings.text != blank %}
+                <div class="icon-text-block">
+                  {% if block.settings.icon != blank %}
+                    <img src="{{ block.settings.icon | image_url: width: 32, height: 32 }}" alt="{{ block.settings.icon.alt }}" width="32" height="32" loading="lazy">
+                  {% endif %}
+                  <span>{{ block.settings.text | newline_to_br }}</span>
+                </div>
+              {% endif %}
+            {% endfor %}
+          </div>
+        {% endif %}
+        
+        {% if collapsible_row_blocks.size > 0 %}
+          <div class="faq__content faq__content--{{ section.settings.faq_style }}">
+            {% for block in collapsible_row_blocks %}
+              {%- liquid
+                assign question = block.settings.question
+                assign answer = block.settings.answer
+                assign class_name_content = 'faq-item__answer'
+
+                if block.settings.default_list
+                  assign class_name_content = class_name_content | append: ' faq-item__answer--default-list'
+                endif
+
+                if question != blank and answer != blank
+                  assign has_content = true
+                else
+                  assign has_content = false
+                endif
+
+                if has_content == true
+                  render 'collapse-row', icon_style: 'new', title: question, content: answer, class_name_row: 'faq__content-item faq-item', class_name_title: 'faq-item__question', class_name_content: class_name_content, is_first_opened: is_first_opened, index: forloop.index0
+                endif
+              -%}
+            {% endfor %}
+          </div>
+        {% endif %}
+      </div>
+    </div>
+
+    <script type="application/json" class="landing-product-klaviyo-data">
+      {
+        "productItem": {
+          "ProductName": "{{ product.title }}",
+          "ProductID": "{{ product.id }}",
+          "SKU": "{{ product.product.selected_or_first_available_variant.sku }}",
+          "ImageURL": "{{ product.featured_image }}",
+          "URL": "{{ product.url }}",
+          "Brand": "{{ product.vendor }}",
+          "Price": {{ product.price }}
+        },
+        "companyId": "{{ settings.klaviyo_id }}"
+      }
+    </script>
+  </div>
+
+  {%- assign sticky_add_block = section.blocks | find: 'type', 'sticky-add' -%}
+  {% if sticky_add_block != null %}
+    {% render 'sticky-add-cart', product: product, section: section, block: sticky_add_block %}
+  {% endif %}
+{% endif %}
+{{ 'section-landing-page-alternative.js' | asset_url | script_tag }}
+<script src="{{ 'product-form.js' | asset_url }}" defer="defer"></script>
+{% if section.settings.use_gallery == true -%}
+  <script src="{{ 'product-offer-v2-media.js' | asset_url }}" defer></script>
+{% endif %}
+{% schema %}
+{
+  "name": "Landing product alt",
+  "tag": "section",
+  "class": "landing-product-alternative",
+  "blocks": [
+    {
+      "name": "Icon/text",
+      "type": "icon-text",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Text"
+        }
+      ]
+    },
+    {
+      "name": "Icon/text slider",
+      "type": "icon-text-slider",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Text"
+        }
+      ]
+    },
+    {
+      "name": "Guarantee",
+      "type": "guarantee",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "90-Day Money-Back Guarantee"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "That's how much we believe in our product. We'll happily accept your return within 90 days of the sale date and issue you a complete refund."
+        }
+      ]
+    },
+    {
+      "name": "Image",
+      "type": "image",
+      "limit": 10,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        }
+      ]
+    },
+    {
+      "name": "Subtitle",
+      "type": "subtitle",
+      "settings": [
+        {
+          "type": "text",
+          "id": "subtitle",
+          "label": "Subtitle"
+        }
+      ]
+    },
+    {
+      "type": "rating",
+      "name": "Rating",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "rating_image",
+          "label": "Image"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "rating_text",
+          "label": "Text",
+          "default": "over 1,571 Five Star Reviews"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "rating_text_mobile",
+          "label": "Text(mobile)",
+          "default": "over 1,571 Reviews"
+        }
+      ]
+    },
+    {
+      "type": "title",
+      "name": "Title product",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "text",
+          "label": "Text",
+          "default": "<p>Experience the Power of Comprehensive Nutrition</p>",
+          "info": "Make text bold to highlight it"
+        },
+        {
+          "type": "color",
+          "id": "highlighted_color",
+          "label": "Highlighted color",
+          "default": "#005EB8"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "text_mobile",
+          "label": "Text(mobile)"
+        }
+      ]
+    },
+    {
+      "type": "reviews",
+      "name": "Review product",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "checkbox",
+          "id": "show_desktop_position",
+          "label": "Show Desktop Position",
+          "default": false,
+          "visible_if": "{{ section.settings.mobile_style == 'default' }}"
+        },
+        {
+          "type": "select",
+          "id": "stars_type",
+          "label": "Stars type",
+          "default": "yellow",
+          "options": [
+            {
+              "value": "yellow",
+              "label": "Yellow"
+            },
+            {
+              "value": "orange",
+              "label": "Orange"
+            },
+            {
+              "value": "orange_small",
+              "label": "Orange small"
+            }
+          ]
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "3,500+ Five Star Reviews"
+        },
+        {
+          "type": "richtext",
+          "id": "additional_text",
+          "label": "Additional text",
+          "default": "<p></p>"
+        },
+        {
+          "type": "url",
+          "id": "url",
+          "label": "Anchor url"
+        }
+      ]
+    },
+    {
+      "type": "feature",
+      "name": "Feature",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Icon"
+        },
+        {
+          "type": "textarea",
+          "id": "title",
+          "label": "Title",
+          "default": "Default title"
+        },
+        {
+          "type": "textarea",
+          "id": "title_mobile",
+          "label": "Title(Mobile)"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "Lorem ipsum dolor sit amet, consectetur adipisicing elit. A, natus, neque! Eaque ipsum iusto laborum?"
+        },
+                {
+          "type": "checkbox",
+          "id": "hide_on_mobile",
+          "label": "Hide on mobile",
+          "default": false
+        },
+      ]
+    },
+    {
+      "type": "subscription_form_list",
+      "name": "Subscription Form List",
+      "settings": [
+        {
+          "type": "inline_richtext",
+          "id": "text_1",
+          "label": "First Text"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "text_price_1",
+          "label": "First Price text"
+        },
+        
+        {
+          "type": "inline_richtext",
+          "id": "text_2",
+          "label": "Second Text"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "text_price_2",
+          "label": "Second Price text"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "text_3",
+          "label": "Third Text"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "text_price_3",
+          "label": "Third Price text"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "text_4",
+          "label": "Fourth Text"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "text_price_4",
+          "label": "Fourth Price text"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "text_5",
+          "label": "Fifth Text"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "text_price_5",
+          "label": "Fifth Price text"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "text_6",
+          "label": "Sixth Text"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "text_price_6",
+          "label": "Sixth Price text"
+        },
+        {
+          "type": "color",
+          "id": "accent_color",
+          "label": "Accent Color",
+          "default": "#00A30B"
+        },
+        {
+          "type": "text",
+          "id": "subscription_total_text",
+          "label": "Subscription Total Text"
+        },
+        {
+          "type": "text",
+          "id": "subscription_total_price",
+          "label": "Subscription Total Price"
+        }
+      ]
+    },
+    {
+      "type": "text_with_icon",
+      "name": "Text with Icon",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "text_1",
+          "label": "First Text"
+        },
+        {
+          "type": "richtext",
+          "id": "mobile_text_1",
+          "label": "Mobile First Text"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon_1",
+          "label": "First Icon"
+        },
+         {
+          "type": "richtext",
+          "id": "text_2",
+          "label": "Second Text"
+        },
+        {
+          "type": "richtext",
+          "id": "mobile_text_2",
+          "label": "Mobile Second Text"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon_2",
+          "label": "Second Icon"
+        }
+      ]
+    },
+    {
+      "type": "price",
+      "name": "Price",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "select",
+          "id": "widget_style",
+          "label": "Widget Styles",
+          "options": [
+            {
+              "value": "default",
+              "label": "Default"
+            },
+            {
+              "value": "alternative",
+              "label": "Alternative"
+            }
+          ],
+          "default": "default"
+        },
+        {
+          "type": "checkbox",
+          "id": "extra_styles",
+          "label": "Extra styles",
+          "default": false
+        },
+        {
+          "type": "checkbox",
+          "id": "most_popular",
+          "label": "Most Popular",
+          "default": false
+        },
+        {
+          "type": "color",
+          "id": "most_popular_background",
+          "label": "Background",
+          "default": "#000000",
+          "visible_if": "{{ block.settings.most_popular != false }}"
+        },
+        {
+          "type": "color",
+          "id": "most_popular_text",
+          "label": "Text",
+          "default": "#fff",
+          "visible_if": "{{ block.settings.most_popular != false }}"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Addition text",
+          "default": "$1,20 per serving [dot] 10 month supply",
+          "info": "[dot] - separator"
+        },
+        {
+          "type": "paragraph",
+          "content": "Settings for Subscribe & Save"
+        },
+        {
+          "type": "checkbox",
+          "id": "separator",
+          "label": "Separator",
+          "default": false
+        },
+        {
+          "type": "checkbox",
+          "id": "remove_padding",
+          "label": "Remove padding",
+          "default": false
+        },
+        {
+          "type": "text",
+          "id": "name_plan_display",
+          "label": "Display plan name instead of default"
+        },
+        {
+          "type": "text",
+          "id": "additional_plan_subtext",
+          "label": "Additional plan subtext"
+        },
+        {
+          "type": "text",
+          "id": "plan_sale_description",
+          "label": "Plan sale description"
+        },
+        {
+          "type": "checkbox",
+          "id": "use_custom_percentage",
+          "label": "Use custom percentage",
+          "default": false
+        },
+        {
+          "type": "number",
+          "id": "custom_percentage",
+          "label": "Custom percentage"
+        },
+        {
+          "type": "text",
+          "id": "name_plan",
+          "label": "Name of the plan where additional information will be shown",
+          "default": "Subscribe & Save"
+        },
+        {
+          "type": "html",
+          "id": "information",
+          "label": "Additional information for the plan",
+          "info": "To create a new line, start the new text on a new line.(Shortcut key: Shift + Enter)"
+        },
+        {
+          "type": "checkbox",
+          "id": "custom_widget_price",
+          "label": "Custom Widget Price",
+          "default": false
+        },
+        {
+            "type": "text",
+            "id": "custom_widget_text",
+            "label": "Custom Widget Text",
+            "visible_if": "{{ block.settings.custom_widget_price != false }}"
+        },
+        {
+          "type": "text",
+          "id": "widget_regular_price",
+          "label": "Regular Price",
+          "visible_if": "{{ block.settings.custom_widget_price != false }}"
+        },
+        {
+          "type": "text",
+          "id": "widget_compare_price",
+          "label": "Compare Price",
+          "visible_if": "{{ block.settings.custom_widget_price != false }}"
+        },
+        {
+          "type": "text",
+          "id": "widget_you_save_price",
+          "label": "Save Your Price",
+          "visible_if": "{{ block.settings.custom_widget_price != false }}"
+        },
+        {
+          "type": "select",
+          "id": "icon_style",
+          "label": "Icon Style",
+          "options": [
+            {
+              "value": "default",
+              "label": "Default"
+            },
+            {
+              "value": "alternative",
+              "label": "Alternative"
+            }
+          ],
+          "default": "default"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_popup",
+          "label": "Show Popup",
+          "default": false
+        },
+        {
+          "type": "header",
+          "content": "Popup Settings",
+          "visible_if": "{{ block.settings.show_popup != false }}"
+        },
+        {
+          "type": "html",
+          "id": "information_popup",
+          "label": "Additional information for the plan(Popup)",
+          "info": "To create a new line, start the new text on a new line.(Shortcut key: Shift + Enter)",
+          "visible_if": "{{ block.settings.show_popup != false }}"
+        },
+        {
+          "type": "color",
+          "id": "popup_background",
+          "label": "Background Color",
+          "default": "#fff",
+          "visible_if": "{{ block.settings.show_popup != false }}"
+        },
+        {
+          "type": "color",
+          "id": "popup_text_color",
+          "label": "Text Color",
+          "default": "#000",
+          "visible_if": "{{ block.settings.show_popup != false }}"
+        },
+         {
+          "type": "color",
+          "id": "popup_icon_color",
+          "label": "List Icon Color",
+          "default": "#000",
+          "visible_if": "{{ block.settings.show_popup != false }}"
+        },
+        {
+          "type": "checkbox",
+          "id": "gift_info",
+          "label": "Show Gift Info list",
+          "info": "Visible if a gift product is selected",
+          "default": false
+        },
+        {
+          "type": "paragraph",
+          "content": "Gift Info List",
+          "visible_if": "{{ block.settings.gift_info != false }}"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Gift List Item Icon",
+          "visible_if": "{{ block.settings.gift_info != false }}"
+        },
+        {
+          "type": "image_picker",
+          "id": "shipping_icon",
+          "label": "Gift Shipping Icon",
+          "visible_if": "{{ block.settings.gift_info != false }}"
+        },
+        {
+          "type": "text",
+          "id": "info_title",
+          "label": "Info Title",
+          "info": "Default: Gift Product Title",
+          "visible_if": "{{ block.settings.gift_info != false }}"
+        },
+        {
+          "type": "text",
+          "id": "product_price",
+          "label": "Product Price",
+          "info": "Default: Gift Product Price",
+          "visible_if": "{{ block.settings.gift_info != false }}"
+        },
+        {
+          "type": "image_picker",
+          "id": "product_image",
+          "label": "Product image",
+          "info": "Default: Product Featured image",
+          "visible_if": "{{ block.settings.gift_info != false }}"
+        },
+        {
+          "type": "color",
+          "id": "gift_item_background",
+          "label": "Background",
+          "default": "#000000",
+          "visible_if": "{{ block.settings.gift_info != false }}"
+        },
+        {
+          "type": "color",
+          "id": "gift_text_color",
+          "label": "Text",
+          "default": "#fff",
+          "visible_if": "{{ block.settings.gift_info != false }}"
+        },
+        {
+          "type": "color",
+          "id": "gift_price_color",
+          "label": "Text",
+          "default": "#fff",
+          "visible_if": "{{ block.settings.gift_info != false }}"
+        },
+        {
+          "type": "paragraph",
+          "content": "Settings for one-time purchase"
+        },
+        {
+          "type": "checkbox",
+          "id": "enable_one_purchase",
+          "label": "Enable one-time purchase",
+          "info": "Attention: For this setting to work correctly, in the admin panel(Product), turn off a checkbox 'Show this product only with these purchase options'",
+          "default": false
+        },
+         {
+          "type": "checkbox",
+          "id": "enable_one_purchase_css",
+          "label": "One Time Purchase Custom CSS",
+          "default": false
+        },
+        {
+          "type": "color",
+          "id": "enable_one_purchase_border",
+          "label": "Background",
+          "default": "#000000",
+          "visible_if": "{{ block.settings.enable_one_purchase_css != false }}"
+        },
+        {
+          "type": "color",
+          "id": "enable_one_purchase_text",
+          "label": "Text",
+          "default": "#fff",
+          "visible_if": "{{ block.settings.enable_one_purchase_css != false }}"
+        },
+        {
+          "type": "text",
+          "id": "heading",
+          "label": "Heading",
+          "default": "One-time Purchase"
+        },
+        {
+          "type": "checkbox",
+          "id": "use_quantity_box",
+          "label": "Use quantity box",
+          "default": false
+        },
+        {
+          "type": "select",
+          "id": "quantity_visible",
+          "label": "Quantity Visible",
+          "options": [
+            {
+              "value": "all",
+              "label": "All"
+            },
+            {
+              "value": "subscription",
+              "label": "Subscription Block"
+            },
+            {
+              "value": "one-time",
+              "label": "One Time"
+            }
+          ],
+          "default": "all"
+        },
+        {
+          "type": "checkbox",
+          "id": "add_quantity_styles",
+          "label": "Add quantity box styles",
+          "default": false
+        },
+        {
+          "type": "paragraph",
+          "content": "Styles"
+        },
+        {
+          "type": "color_background",
+          "id": "background_color",
+          "label": "Background color",
+          "default": "#fff"
+        },
+        {
+          "type": "color",
+          "id": "primary_color",
+          "label": "Primary color",
+          "default": "#ff6a13"
+        },
+        {
+          "type": "color",
+          "id": "badge_color",
+          "label": "Badge color",
+          "default": "#ff6a13"
+        },
+        {
+          "type": "color",
+          "id": "badge_background",
+          "label": "Badge background",
+          "default": "#ffe1d0"
+        },
+        {
+          "type": "checkbox",
+          "id": "shadow",
+          "label": "Shadow",
+          "default": true
+        }
+      ]
+    },
+    {
+      "type": "buy_buttons",
+      "name": "Buy buttons",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "header",
+          "content": "Buttons settings"
+        },
+        {
+          "type": "product",
+          "id": "gift_product",
+          "label": "Gift Product",
+          "info": "Add Gift Product to selling plan"
+        },
+        {
+          "type": "product",
+          "id": "child_product",
+          "label": "Child Product",
+          "info": "Add Child Product to selling plan"
+        },
+        {
+          "type": "color_background",
+          "id": "background_color",
+          "label": "Background color",
+          "default": "#ff6a13"
+        },
+        {
+          "type": "color",
+          "id": "color",
+          "label": "Text color",
+          "default": "#fff"
+        },
+        {
+          "type": "text",
+          "id": "bottom_text",
+          "label": "Button bottom text"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon",
+          "label": "Benefits Icon"
+        },
+        {
+          "type": "text",
+          "id": "benefits_text1",
+          "label": "Benefit 1",
+          "default": "Ships in 30 days"
+        },
+        {
+          "type": "text",
+          "id": "benefits_text2",
+          "label": "Benefit 2",
+          "default": "Free US Shipping"
+        },
+        {
+          "type": "text",
+          "id": "benefits_text3",
+          "label": "Benefit 3",
+          "default": "Cancel Anytime"
+        },
+        {
+          "type": "checkbox",
+          "id": "quantity_picker",
+          "label": "Enable quantity picker",
+          "default": false,
+          "info": "To use this quantity picker disable quantity picker in the purchase options"
+        },
+        {
+          "type": "text",
+          "id": "selector_units",
+          "label": "Selector units"
+        },
+        {
+          "type": "text",
+          "id": "specific_discount_code",
+          "label": "Specific Discount Code"
+        }
+      ]
+    },
+    {
+      "type": "advantages_list",
+      "name": "Advantages list",
+      "settings": [
+        {
+          "type": "text",
+          "label": "Advantages list",
+          "id": "advantages_list",
+          "placeholder": "shipping.svg;Ships in 30 days, shipping.svg;Update or Cancel Anytime, shipping.svg;90-Day Money Back Guarantee",
+          "info": "Please specify icon name, format and line that you want to add. Format: fileName.format;Line, fileName2.format2;Line2, ..."
+        },
+        {
+          "type": "text",
+          "label": "Advantages list for one time purchase",
+          "id": "advantages_list_one_time",
+          "placeholder": "shipping.svg;Scientifically proven benefits, shipping.svg;Made in USA, shipping.svg;90-Day Money Back Guarantee",
+          "info": "Please specify icon name, format and line that you want to add. Format: fileName.format;Line, fileName2.format2;Line2, ..."
+        }
+      ]
+    },
+    {
+      "type": "collapsible_row",
+      "name": "Collapsible row",
+      "settings": [
+        {
+          "type": "text",
+          "id": "question",
+          "label": "Question",
+          "default": "Lorem ipsum dolor sit amet consectetur."
+        },
+        {
+          "type": "richtext",
+          "id": "answer",
+          "label": "Answer",
+          "default": "<p>Lorem ipsum dolor sit amet consectetur. Ultricies ornare adipiscing lorem amet sit. Consequat amet eu sed imperdiet nec dui. Tempus eget nec nulla diam donec dolor convallis ultrices diam.</p>"
+        },
+        {
+          "type": "checkbox",
+          "id": "default_list",
+          "label": "Default list style",
+          "default": false
+        }
+      ]
+    },
+    {
+      "name": "Payment icons",
+      "type": "payment_icons",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image_1",
+          "label": "Icon 1"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_2",
+          "label": "Icon 2"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_3",
+          "label": "Icon 3"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_4",
+          "label": "Icon 4"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_5",
+          "label": "Icon 5"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_6",
+          "label": "Icon 6"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_7",
+          "label": "Icon 7"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_8",
+          "label": "Icon 8"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_9",
+          "label": "Icon 9"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_10",
+          "label": "Icon 10"
+        }
+      ]
+    },
+    {
+      "type": "review_with_usp",
+      "name": "Review with USP",
+      "settings": [
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "100+ Million Tasty Coffee Made"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "url",
+          "id": "stars_url",
+          "label": "Stars url"
+        },
+        {
+          "type": "checkbox",
+          "id": "extra_styles",
+          "label": "Extra styles",
+          "default": false
+        },
+        {
+          "type": "select",
+          "id": "style",
+          "label": "Style",
+          "options": [
+            {
+              "value": "default",
+              "label": "Default"
+            },
+            {
+              "value": "alternative",
+              "label": "Alternative"
+            }
+          ],
+          "default": "default"
+        }
+      ]
+    },
+    {
+      "name": "Sticky add to cart",
+      "type": "sticky-add",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Product info"
+        },
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "First-Day Bovine Colostum"
+        },
+        {
+          "type": "header",
+          "content": "Reviews info"
+        },
+        {
+          "type": "text",
+          "id": "reviews_text",
+          "label": "Reviews text",
+          "default": "3,547"
+        },
+        {
+          "type": "header",
+          "content": "Button settings"
+        },
+        {
+          "type": "color",
+          "id": "button_background_color",
+          "label": "Background color",
+          "default": "#EF0009"
+        },
+        {
+          "type": "color",
+          "id": "button_text_color",
+          "label": "Text color",
+          "default": "#fff"
+        },
+          {
+          "type": "checkbox",
+          "id": "custom_widget_price",
+          "label": "Custom Widget Price",
+          "default": false
+        },
+        {
+          "type": "text",
+          "id": "widget_regular_price",
+          "label": "Regular Price",
+          "visible_if": "{{ block.settings.custom_widget_price != false }}"
+        },
+        {
+          "type": "text",
+          "id": "widget_compare_price",
+          "label": "Compare Price",
+          "visible_if": "{{ block.settings.custom_widget_price != false }}"
+        }
+      ]
+    },
+    {
+      "name": "One time packs",
+      "type": "one-time-packs",
+      "settings": [
+        {
+          "type": "text",
+          "id": "packs",
+          "label": "Packs",
+          "default": "1,3,6",
+          "placeholder": "1,3,6",
+          "info": "List of numbers splitted by comma. Max 3 items."
+        },
+        {
+          "type": "range",
+          "id": "preselected_item",
+          "label": "Index of preselected item",
+          "min": 1,
+          "max": 3,
+          "default": 2
+        },
+        {
+          "type": "header",
+          "content": "Pack 1"
+        },
+        {
+          "type": "paragraph",
+          "content": "Would be shown if packs count >= 1."
+        },
+        {
+          "type": "text",
+          "id": "pack_1_discount_code",
+          "label": "Discount code",
+          "info": "Should be previously created in Discounts admin panel."
+        },
+        {
+          "type": "number",
+          "id": "pack_1_discount_percent",
+          "label": "Discount percent",
+          "info": "If equals 0 then badge wouldn't be shown.",
+          "default": 0
+        },
+        {
+          "type": "text",
+          "id": "pack_1_discounted_price",
+          "label": "Discounted price of 1 product",
+          "info": "Format: 10.50 (for float), 10 (for int)",
+          "default": "20"
+        },
+        {
+          "type": "text",
+          "id": "pack_1_pack_title",
+          "label": "Pack title",
+          "default": "Single"
+        },
+        {
+          "type": "textarea",
+          "id": "pack_1_pack_text",
+          "label": "Pack text",
+          "default": "Daily serving for 1 person"
+        },
+        {
+          "type": "textarea",
+          "id": "pack_1_pack_servings",
+          "label": "Pack servings",
+          "default": "20"
+        },
+        {
+          "type": "header",
+          "content": "Pack 2"
+        },
+        {
+          "type": "text",
+          "id": "pack_2_discount_code",
+          "label": "Discount code",
+          "info": "Should be previously created in Discounts admin panel."
+        },
+        {
+          "type": "number",
+          "id": "pack_2_discount_percent",
+          "label": "Discount percent",
+          "info": "If equals 0 then badge wouldn't be shown.",
+          "default": 0
+        },
+        {
+          "type": "text",
+          "id": "pack_2_discounted_price",
+          "label": "Discounted price of 1 product",
+          "info": "Format: 10.50 (for float), 10 (for int)",
+          "default": "20"
+        },
+        {
+          "type": "text",
+          "id": "pack_2_pack_title",
+          "label": "Pack title",
+          "default": "Double"
+        },
+        {
+          "type": "textarea",
+          "id": "pack_2_pack_text",
+          "label": "Pack text",
+          "default": "Daily serving for 2 person or unlock even more benefits for 1 person"
+        },
+        {
+          "type": "textarea",
+          "id": "pack_2_pack_servings",
+          "label": "Pack servings",
+          "default": "40"
+        },
+        {
+          "type": "header",
+          "content": "Pack 3"
+        },
+        {
+          "type": "text",
+          "id": "pack_3_discount_code",
+          "label": "Discount code",
+          "info": "Should be previously created in Discounts admin panel."
+        },
+        {
+          "type": "number",
+          "id": "pack_3_discount_percent",
+          "label": "Discount percent",
+          "info": "If equals 0 then badge wouldn't be shown.",
+          "default": 0
+        },
+        {
+          "type": "text",
+          "id": "pack_3_discounted_price",
+          "label": "Discounted price of 1 product",
+          "info": "Format: 10.50 (for float), 10 (for int)",
+          "default": "20"
+        },
+        {
+          "type": "text",
+          "id": "pack_3_pack_title",
+          "label": "Pack title"
+        },
+        {
+          "type": "textarea",
+          "id": "pack_3_pack_text",
+          "label": "Pack text"
+        },
+        {
+          "type": "textarea",
+          "id": "pack_3_pack_servings",
+          "label": "Pack servings"
+        }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "checkbox",
+      "id": "enable_extra_styles_pdp",
+      "label": "Enable extra styles",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "hide_features_icons",
+      "label": "Hide features icons",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_extra_styles",
+      "label": "Enable extra styles",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_saving_price",
+      "label": "Show saving price",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "hide_usp_icons",
+      "label": "Hide USP Icons",
+      "default": false
+    },
+    {
+      "type": "select",
+      "id": "style_type",
+      "label": "Style type",
+      "options": [
+        {
+          "label": "Default",
+          "value": "default"
+        },
+        {
+          "label": "Compact",
+          "value": "compact"
+        }
+      ],
+      "default": "default"
+    },
+    {
+      "type": "select",
+      "id": "lightbox_type",
+      "label": "Lightbox type",
+      "default": "column",
+      "options": [
+        {
+          "value": "column",
+          "label": "Column"
+        },
+        {
+          "value": "slider",
+          "label": "Slider"
+        }
+      ]
+    },
+    {
+      "type": "select",
+      "id": "zoom_type",
+      "label": "Zoom Type",
+      "options": [
+        {
+          "value": "none",
+          "label": "None"
+        },
+        {
+          "value": "default",
+          "label": "Default"
+        },
+        {
+          "value": "magnify",
+          "label": "Magnify effect"
+        }
+      ],
+      "default": "magnify"
+    },
+    {
+      "type": "select",
+      "id": "mobile_style",
+      "label": "Mobile Style",
+      "options": [
+        {
+          "value": "default",
+          "label": "Default"
+        },
+        {
+          "value": "alternative",
+          "label": "Alternative"
+        }
+      ],
+      "default": "default"
+    },
+    {
+      "type": "checkbox",
+      "id": "use_gallery",
+      "label": "use gallery"
+    },
+    {
+      "type": "select",
+      "id": "gallery_view",
+      "label": "Gallery view",
+      "default": "slider",
+      "options": [
+        {
+          "label": "Slider",
+          "value": "slider"
+        },
+        {
+          "label": "Grid",
+          "value": "grid"
+        }
+      ]
+    },
+    {
+      "type": "checkbox",
+      "id": "is_show_pagination",
+      "label": "Show pagination",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "center_thumbs",
+      "label": "Center Thumbs",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "is_show_pagination_fraction",
+      "label": "Show pagination fraction",
+      "default": false
+    },
+    {
+      "type": "checkbox",
+      "id": "show_mobile_zoom_icon",
+      "label": "Show mobile zoom icon",
+      "default": true
+    },
+    {
+      "type": "checkbox",
+      "id": "gallery_full_width",
+      "label": "Gallery full width"
+    },
+    {
+      "type": "color_background",
+      "id": "background",
+      "label": "Background",
+      "default": "linear-gradient(#E4F0FF 29.75%, rgba(228, 240, 255, 0.00) 100%)"
+    },
+    {
+      "type": "color",
+      "id": "primary_color",
+      "label": "Accent color"
+    },
+    {
+      "type": "html",
+      "id": "background_icon",
+      "label": "Background icon"
+    },
+    {
+      "type": "select",
+      "id": "faq_style",
+      "label": "Collapsible Rows Style",
+      "options": [
+        {
+          "value": "default",
+          "label": "Default"
+        },
+        {
+          "value": "alternative",
+          "label": "Alternative"
+        }
+      ],
+      "default": "default"
+    },
+    {
+      "type": "paragraph",
+      "content": "Space between sections on the desktop"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "unit": "px",
+      "min": 0,
+      "max": 200,
+      "step": 2,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "unit": "px",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 0
+    },
+    {
+      "type": "paragraph",
+      "content": "Space between sections on the mobile"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Padding top",
+      "unit": "px",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Padding bottom",
+      "unit": "px",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 0
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Only Natural Ungredients"
+    },
+    {
+      "type": "text",
+      "id": "sub_heading",
+      "label": "Sub-heading",
+      "default": "Lorem ipsum dolor sit amet consectetur. Gravida facilisi eleifend sit quam morbi risus id. Nisl massa donec tincidunt."
+    },
+    {
+      "type": "product",
+      "id": "landing_product",
+      "label": "Landing product"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_style",
+      "label": "Enable extra style for this section",
+      "default": false
+    },
+    {
+      "type": "header",
+      "content": "Additional style files"
+    },
+    {
+      "type": "textarea",
+      "id": "additional_style_files",
+      "label": "Additional style file names",
+      "info": "Use new line for separate files, add .css at the end of the each file"
+    },
+    {
+      "type": "text",
+      "id": "property_value",
+      "label": "Property value"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Landing product alternative",
+      "blocks": [
+        {
+          "type": "title"
+        },
+        {
+          "type": "reviews"
+        },
+        {
+          "type": "feature"
+        },
+        {
+          "type": "feature"
+        },
+        {
+          "type": "feature"
+        },
+        {
+          "type": "price"
+        },
+        {
+          "type": "buy_buttons"
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

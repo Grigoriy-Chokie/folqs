@@ -1,0 +1,336 @@
+{% if section.blocks.size > 0 %}
+{{ 'section-preferences.css' | asset_url | stylesheet_tag }}
+{% style %}
+    .section-{{ section.id }}--padding {
+        padding-top: {{ section.settings.padding_top_mobile }}px;
+        padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+    }
+
+    @media screen and (min-width: 750px) {
+        .section-{{ section.id }}--padding {
+            padding-top: {{ section.settings.padding_top }}px;
+            padding-bottom: {{ section.settings.padding_bottom }}px;
+        }
+    }
+{% endstyle %}
+
+
+<div class="preferences section-{{ section.id }}--padding">
+        {% if section.settings.title != blank %}
+            <h2 class="page-width">
+                {{ section.settings.title }}
+            </h2>
+        {% endif %}
+        <div class="preferences__wrapper">
+            {% for block in section.blocks %}
+                {% case block.type %}
+                    {% when 'image_with_text' %}
+                        {% liquid
+                            assign title = block.settings.title
+                            assign image = block.settings.image
+                            assign image_mobile = block.settings.image_mobile
+                            assign text = block.settings.text
+                            assign quote = block.settings.quote
+                            assign image_position = block.settings.image_position
+                            assign button_text = block.settings.button_text
+                            assign button_url = block.settings.button_url
+                            assign number = block.settings.number
+                        %}
+                        {% if image != blank and title != blank %}
+                            <div {{ block.shopify_attributes }} class="preferences__item page-width preferences__item--image-with-text preferences__item--image-{{ image_position }}">
+                                <div class="preferences__item-media">
+                                    <div class="preferences__item-media__wrapper">
+                                        <picture>
+                                            {% if image_mobile != blank %}
+                                                <source srcset="{{ image_mobile | img_url: "master" }}" media="(max-width: 890px)">
+                                            {% endif %}
+                                            {{ image | image_url: width: 1000 | image_tag: loading: 'lazy' }}
+                                        </picture>
+                                    </div>
+                                </div>
+                                <div class="preferences__item-content">
+                                    <div class="preferences__item-title">
+                                        {% if number != blank %}
+                                            <span>
+                                                {{ number }}
+                                            </span>
+                                        {% endif %}
+                                        <h3>
+                                            {{ title }}
+                                        </h3>
+                                    </div>
+                                    {% if text != blank %}
+                                        <p>
+                                            {{ text }}
+                                        </p>
+                                    {% endif %}
+                                    {% if quote != blank %}
+                                        <div class="preferences__item-quote">
+                                            {{ quote }}
+                                        </div>
+                                    {% endif %}
+                                    {% if button_text != blank and button_url != blank %}
+                                        <a class="preferences__item-button" href="{{ button_url }}">
+                                            {{ button_text }}
+                                            {% render 'icon-arrow-right' %}
+                                        </a>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        {% endif %}
+                    {% when 'review' %}
+                        {% liquid
+                            assign content = block.settings.content
+                            assign image = block.settings.image
+                            assign full_name = block.settings.full_name
+                            assign is_verified = block.settings.is_verified
+                            assign verified_text = block.settings.verified_text
+                        %}
+                        {% if content != blank and image != blank %}
+                            <div {{ block.shopify_attributes }} class="preferences__item page-width preferences__item--review">
+                                <div class="preferences__item-content">
+                                    {%- render 'icon-stars' -%}
+                                    <p>{{ content }}</p>
+                                </div>
+                                <div class="preferences__item-media">
+                                    {{ image | image_url: width: 700 | image_tag }}
+                                    {% if full_name != blank %}
+                                        <div class="review__meta">
+                                            <span>{{ full_name }}</span>
+                                            {% if is_verified == true and verified_text != blank %}
+                                                {{ verified_text }}
+                                            {% endif %}
+                                        </div>
+                                    {% endif %}
+                                </div>
+                            </div>
+                        {% endif %}
+                    {% when 'number' %}
+                        {% liquid
+                            assign number = block.settings.number
+                            assign number_background = block.settings.background
+                            assign number_background_mobile = block.settings.background_mobile | default: number_background
+                        %}
+                        {% capture styles %}
+                            {% if number_background != blank %}
+                                --number-background: url('{{ number_background | img_url: "master" }}');
+                                --number-background-mobile: url('{{ number_background_mobile | img_url: "master" }}')
+                            {% endif %}
+                        {% endcapture %}
+                        {% if number != blank %}
+                            <div  {{ block.shopify_attributes }} style="{{ styles }}" class="preferences__item preferences__item--number">
+                                <span>{{ number }}</span>
+                            </div>
+                        {% endif %}
+                {% endcase %}
+            {% endfor %}
+        </div>
+        {% if section.settings.button_text != blank and section.settings.button_url != blank %}
+            <a href="{{ section.settings.button_url }}" class="preferences__item-button page-width">
+                {{ section.settings.button_text }}
+                {% render 'icon-arrow-right' %}
+            </a>
+        {% endif %}
+</div>
+{% endif %}
+
+{% schema %}
+{
+  "name": "Preferences",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Default title"
+    },
+    {
+      "type": "text",
+      "id": "button_text",
+      "label": "Button text"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Button url"
+    },
+    {
+      "type": "paragraph",
+      "content": "Space between sections on the desktop"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "unit": "px",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "unit": "px",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 0
+    },
+    {
+      "type": "paragraph",
+      "content": "Space between sections on the mobile"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Padding top",
+      "unit": "px",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Padding bottom",
+      "unit": "px",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 0
+    }
+  ],
+  "blocks": [
+    {
+      "type": "image_with_text",
+      "name": "Image with text",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "image_picker",
+          "id": "image_mobile",
+          "label": "Image for mobile"
+        },
+        {
+          "type": "text",
+          "id": "number",
+          "label": "Number"
+        },
+        {
+          "type": "text",
+          "id": "title",
+          "label": "Title",
+          "default": "Default title"
+        },
+        {
+          "type": "textarea",
+          "id": "text",
+          "label": "Text",
+          "default": "Default text"
+        },
+        {
+          "type": "richtext",
+          "id": "quote",
+          "label": "Quote"
+        },
+        {
+          "type": "select",
+          "id": "image_position",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            }
+          ],
+          "default": "left",
+          "label": "Image position"
+        },
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "Button text"
+        },
+        {
+          "type": "url",
+          "id": "button_url",
+          "label": "Button url"
+        }
+      ]
+    },
+    {
+      "type": "review",
+      "name": "Review",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "textarea",
+          "id": "content",
+          "label": "Content",
+          "default": "Default content"
+        },
+        {
+          "type": "text",
+          "id": "full_name",
+          "label": "Full name",
+          "default": "Tristan Blaze"
+        },
+        {
+          "type": "checkbox",
+          "id": "is_verified",
+          "label": "Verified",
+          "default": true
+        },
+        {
+          "type": "text",
+          "id": "verified_text",
+          "label": "Verified text",
+          "default": "Verified Buyer"
+        }
+      ]
+    },
+    {
+      "type": "number",
+      "name": "Number",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "background",
+          "label": "Background"
+        },
+        {
+          "type": "image_picker",
+          "id": "background_mobile",
+          "label": "Background for mobile"
+        },
+        {
+          "type": "text",
+          "id": "number",
+          "label": "Number",
+          "default": "1"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Preferences"
+    }
+  ]
+}
+{% endschema %}

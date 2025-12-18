@@ -1,0 +1,491 @@
+{%- liquid
+  assign heading = section.settings.heading
+  assign text_review = section.settings.text_review
+  assign information_benefit = section.settings.information_benefit
+  assign img = section.settings.img
+  assign sub_heading_review = section.settings.sub_heading_review
+  assign heading_review = section.settings.heading_review
+  assign name_main_button = section.settings.name_main_button
+  assign url_main_button = section.settings.url_main_button
+  assign name_secondary_button = section.settings.name_secondary_button
+  assign url_secondary_button = section.settings.url_secondary_button
+  assign list_metaobject = section.settings.list_metaobject | split: ','
+  assign block_size = section.blocks.size
+
+  assign count_metaobject = 0
+  for item in list_metaobject
+    assign unig_metaobj = shop.metaobjects.review[item]
+    if unig_metaobj != null
+      assign count_metaobject = count_metaobject | plus: 1
+    endif
+  endfor
+-%}
+
+{%- style -%}
+  .formula-{{section.id}} {
+    padding-top: {{section.settings.padding_top}}px;
+    padding-bottom: {{section.settings.padding_bottom}}px;
+  }
+  @media(max-width: 768px) {
+    .formula-{{section.id}} {
+      padding-top: {{section.settings.padding_top_mobile}}px;
+      padding-bottom: {{section.settings.padding_bottom_mobile}}px;
+    }
+  }
+{%- endstyle -%}
+
+{{- 'component-section-formula.css' | asset_url | stylesheet_tag -}}
+
+<div class="formula formula-{{section.id}}">
+  {% liquid 
+    assign popup_heading = section.settings.popup_heading
+    assign popup_metaobject_handle = section.settings.popup_metaobject_handle
+    assign popup_metaobject = shop.metaobjects.supplement_facts[popup_metaobject_handle]
+    assign image_popup = section.settings.image_popup
+    assign image_popup_mobile = section.settings.image_popup_mobile
+%}
+  {% unless popup_metaobject_handle == blank and image_popup == blank %}
+    <div class="formula__popup-overlay" onclick="deactivatePopup(event)">
+      <div class="formula__popup">
+        {% unless popup_heading == blank %}
+          <div class="popup__heading-wrapper">
+            <h5 class="popup__title">
+              {{ popup_heading }}
+            </h5>
+            <div class="popup__close-button" onclick="deactivatePopup(event)">
+              {% render 'popup-close-icon' %}
+            </div>
+          </div>
+        {% endunless %}
+        {% if popup_metaobject %}
+          <div class="popup__content-wrapper">
+            {% render 'supplement-facts-popup' | metaobject: popup_metaobject %}
+          </div>
+        {% else %}
+          <div class="popup__image-wrapper">
+            <picture>
+              {% if image_popup_mobile != blank %}
+                <source srcset="{{ image_popup_mobile | img_url: "master" }}" media="(max-width: 750px)">
+              {% endif %}
+              {{ image_popup | image_url: width: 700 | image_tag: loading: 'lazy', class: 'popup__image', alt: image_popup_mobile.alt }}
+            </picture>
+          </div>
+        {% endif %}
+      </div>
+    </div>
+  {% endunless %}
+  <div class="formula__logo">{%- render 'icon-logo' -%}</div>
+  <div class="formula__container page-width">
+    <div class="formula__decor-icon">
+      {% render 'icon-formula-decor' %}
+    </div>
+    {% if heading != blank %}
+      <h1 class="formula__title">{{- heading -}}</h1>
+    {% endif %}
+    <p class="formula__subtitle">
+      <span class="formula__subtitle-icon">
+        {%- render 'icon-stars' -%}
+      </span>
+      {% if text_review != blank %}
+        <span class="formula__subtitle-text">{{- text_review -}}</span>
+      {% endif %}
+    </p>
+    <div class="formula__grid">
+      {% if block_size != 0 %}
+        <div class="formula__grid-item formula__benefits">
+          <ul class="formula__benefits-list">
+            {% for block in section.blocks %}
+              {% case block.type %}
+                {% when 'block' %}
+                  {%- liquid
+                    assign type_icon = block.settings.type_icon
+                    assign custom_code = block.settings.custom_code
+                    assign text = block.settings.text
+                  -%}
+                  {% if text != blank %}
+                    <li class="formula__benefits-item">
+                      <span class="formula__benefits-item-icon">
+                        {%- render 'icons-formula', content: custom_code, type: type_icon -%}
+                      </span>
+                      <span class="formula__benefits-item-text">{{- text -}}</span>
+                    </li>
+                  {% endif %}
+              {% endcase %}
+            {% endfor %}
+          </ul>
+          {% if information_benefit != blank %}
+            <p class="formula__benefits-information">{{- information_benefit -}}</p>
+          {% endif %}
+        </div>
+      {% endif %}
+      {% if img != blank %}
+        <div class="formula__grid-item formula__image">
+          {{
+            img
+            | image_url: width: 1200
+            | image_tag: widths: '500,600,700,800,900,1000,1100,1200', loading: 'eager', fetchpriority: 'high', alt: img.alt
+            | default: 'Formula image'
+          }}
+        </div>
+      {% endif %}
+      {% if count_metaobject != 0 %}
+        <div class="formula__grid-item formula__reviews">
+          {% if sub_heading_review != blank %}
+            <p class="formula__reviews-subtitle">{{- sub_heading_review -}}</p>
+          {% endif %}
+          {% if heading_review != blank %}
+            <h2 class="formula__reviews-title">{{- heading_review -}}</h2>
+          {% endif %}
+          <ul class="formula__reviews-list">
+            {% for item in list_metaobject %}
+              {% assign unig_metaobj = shop.metaobjects.review[item] %}
+              {% if unig_metaobj != null %}
+                <li
+                  class="formula__reviews-item {% if forloop.index == 1 %}formula__reviews-item-active{% endif %} {% if section.settings.is_auto_scroll_disabled %}formula__reviews-item--no-animation{% endif %}"
+                  style="--persent: 100"
+                >
+                  {% render 'icon-circle' %}
+                  <img src="{{unig_metaobj.photo | img_url: 'master'}}" alt="{{unig_metaobj.photo.alt}}" loading="lazy">
+                </li>
+              {% endif %}
+            {% endfor %}
+          </ul>
+          {% for item in list_metaobject %}
+            {% assign unig_metaobj = shop.metaobjects.review[item] %}
+            {% if unig_metaobj != null %}
+              <div class="formula__reviews-element review__element {% unless forloop.index == 1 %}review__element-hide{% endunless %}">
+                <span class="review__element-name">{{- unig_metaobj.full_name -}}</span>
+                <span class="review__element-position">{{- unig_metaobj.position -}}</span>
+                <span class="review__element-icon">{%- render 'icon-stars' -%}</span>
+                <i class="review__element-title">{{- unig_metaobj.title_for_review -}}</i>
+                <div class="review__element-content">{{- unig_metaobj.body_for_review | metafield_tag -}}</div>
+              </div>
+            {% endif %}
+          {% endfor %}
+        </div>
+      {% endif %}
+    </div>
+    {% if information_benefit != blank and block_size != 0 and section.settings.is_description_hidden == false %}
+      <p class="formula__information-mobile">{{- information_benefit -}}</p>
+    {% endif %}
+    <div class="formula__navigation">
+      {% if name_secondary_button != blank %}
+        <{% unless section.settings.image_popup == blank %}div onclick="activatePopup(this.closest('.formula'))"{% elsif section.settings.url_secondary_button != blank %}a href="{{ section.settings.url_secondary_button }}"{% endunless %} class="formula__navigation-link formula__navigation-link-secondary" title="{{name_secondary_button}}">
+          {{- name_secondary_button -}}
+        </{% unless section.settings.image_popup == blank %}div{% else %}a{% endunless %}>
+      {% endif %}
+      {% if name_main_button != blank %}
+        <a
+          href="{{url_main_button}}"
+          class="formula__navigation-link formula__navigation-link-main"
+          title="{{name_main_button}}"
+        >
+          <span>{{- name_main_button -}}</span>
+          {%- render 'icon-arrow-right' -%}
+        </a>
+      {% endif %}
+    </div>
+    {% for block in section.blocks %}
+      {% case block.type %}
+        {% when 'mobile_review' %}
+          <div class="formula__mobile-review">
+            {% unless block.settings.image == blank%}
+              <div class="mobile-review__image-wrapper">
+                {{
+                  block.settings.image
+                  | image_url: width: 200
+                  | image_tag: loading: 'lazy', widths: '50, 75, 100, 150, 200', class: 'mobile-review__image'
+                }}
+              </div>
+            {% endunless %}
+            <div class="mobile-review__content">
+              {% unless block.settings.review == blank %}
+                <div class="mobile-review__text">
+                  {{ block.settings.review }}
+                </div>
+              {% endunless %}
+              <div class="mobile-review__footer">
+                {% unless block.settings.name == blank %}
+                  <div class="mobile-review__name">
+                    {{ block.settings.name  }}
+                  </div>
+                {% endunless %}
+                {% unless block.settings.status == blank %}
+                  <div class="mobile-review__status">
+                    {{ block.settings.status }}
+                  </div>
+                {% endunless %}
+                {% unless block.settings.icon == blank %}
+                  <div class="mobile-review__decor">
+                    {{ block.settings.icon }}
+                  </div>
+                {% endunless %}
+              </div>
+            </div>
+          </div>
+      {% endcase %}
+    {% endfor %}
+  </div>
+</div>
+
+<script>
+  let is_auto_scroll_disabled = {{ section.settings.is_auto_scroll_disabled }};
+</script>
+{{- 'component-section-formula.js' | asset_url | script_tag -}}
+{{- 'cta-banner-popup.js' | asset_url | script_tag -}}
+
+{% schema %}
+{
+  "name": "Formula",
+  "tag": "section",
+  "class": "shopify-section-formula",
+  "settings": [
+    {
+      "type": "paragraph",
+      "content": "Space between sections on the desktop"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "label": "Padding top",
+      "unit": "px",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "label": "Padding bottom",
+      "unit": "px",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 0
+    },
+    {
+      "type": "paragraph",
+      "content": "Space between sections on the mobile"
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "label": "Padding top",
+      "unit": "px",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "label": "Padding bottom",
+      "unit": "px",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 0
+    },
+    {
+      "type": "text",
+      "id": "heading",
+      "label": "Heading",
+      "default": "Advanced Formula for Mature Wellness"
+    },
+    {
+      "type": "text",
+      "id": "text_review",
+      "label": "Text for reviews",
+      "default": "3,500+ Five Star Reviews"
+    },
+    {
+      "type": "paragraph",
+      "content": "Main button"
+    },
+    {
+      "type": "text",
+      "id": "name_main_button",
+      "label": "Name for the button",
+      "default": "Buy Now"
+    },
+    {
+      "type": "url",
+      "id": "url_main_button",
+      "label": "Link for the button",
+      "default": "/"
+    },
+    {
+      "type": "paragraph",
+      "content": "Secondary button"
+    },
+    {
+      "type": "text",
+      "id": "name_secondary_button",
+      "label": "Name for the button",
+      "default": "Explore Benefits"
+    },
+    {
+      "type": "url",
+      "id": "url_secondary_button",
+      "label": "Link for the button",
+      "default": "/"
+    },
+    {
+      "type": "textarea",
+      "id": "information_benefit",
+      "label": "Information for benefit block",
+      "default": "Provides neuroprotective properties for nerve repair and cognitive enhancement. Improves skin elasticity and provides additional protection and nourishment. "
+    },
+    {
+      "type": "checkbox",
+      "label": "Is description hidden",
+      "id": "is_description_hidden",
+      "default": true,
+      "info": "Hides description hidden on mobile version."
+    },
+    {
+      "type": "textarea",
+      "id": "list_metaobject",
+      "label": "List of metaobject handles",
+      "info": "Fill the meta object handle with ,"
+    },
+    {
+      "type": "text",
+      "id": "sub_heading_review",
+      "label": "Sub-heading for review",
+      "default": "Recommended By"
+    },
+    {
+      "type": "text",
+      "id": "heading_review",
+      "label": "Heading for review",
+      "default": "Experts and Olimpicians"
+    },
+    {
+      "type": "image_picker",
+      "id": "img",
+      "label": "Image"
+    },
+    {
+      "type": "paragraph",
+      "content": "Popup"
+    },
+    {
+      "type": "text",
+      "id": "popup_heading",
+      "label": "popup heading",
+      "default": "Supplement Facts"
+    },
+    {
+      "type": "text",
+      "id": "popup_metaobject_handle",
+      "label": "Content Metaobject handle",
+      "info": "Add handle of created metaobject."
+    },
+    {
+      "type": "image_picker",
+      "id": "image_popup",
+      "label": "Popup image",
+      "info": "Will be displayed as pop up image linked to button click"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_popup_mobile",
+      "label": "Popup image for mobile"
+    },
+    {
+      "type": "checkbox",
+      "label": "Disable auto-scroll for reviews",
+      "id": "is_auto_scroll_disabled",
+      "default": true
+    }
+  ],
+  "blocks": [
+    {
+      "type": "mobile_review",
+      "name": "Mobile review",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "image_picker",
+          "label": "Image",
+          "id": "image"
+        },
+        {
+          "type": "html",
+          "label": "Icon",
+          "id": "icon",
+          "info": "Small icon near the name"
+        },
+        {
+          "type": "richtext",
+          "label": "Review",
+          "id": "review",
+          "default": "<p>“Most comprehensive multivitamin I have ever tried!”</p>"
+        },
+        {
+          "type": "text",
+          "label": "Name",
+          "id": "name",
+          "default": "Albert"
+        },
+        {
+          "type": "text",
+          "label": "Status",
+          "id": "status",
+          "default": "Board Certified Doctor"
+        }
+      ]
+    },
+    {
+      "type": "block",
+      "name": "Block",
+      "settings": [
+        {
+          "type": "select",
+          "id": "type_icon",
+          "label": "Type of icon",
+          "default": "shape_1",
+          "options": [
+            {
+              "value": "shape_1",
+              "label": "Shape 1"
+            },
+            {
+              "value": "shape_2",
+              "label": "Shape 2"
+            },
+            {
+              "value": "shape_3",
+              "label": "Shape 3"
+            },
+            {
+              "value": "custom",
+              "label": "Custom"
+            }
+          ]
+        },
+        {
+          "type": "html",
+          "id": "custom_code",
+          "label": "Custom code for icon(svg)",
+          "info": "Recommended size 32*32"
+        },
+        {
+          "type": "text",
+          "id": "text",
+          "label": "Text",
+          "default": "Absorption-Enhanced Ingredients"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Formula"
+    }
+  ]
+}
+{% endschema %}

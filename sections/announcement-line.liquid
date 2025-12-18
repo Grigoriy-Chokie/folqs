@@ -1,0 +1,65 @@
+{% liquid
+  assign text = section.settings.text
+  assign icon = section.settings.icon
+  assign text_color = section.settings.text_color
+  assign background_color = section.settings.background_color
+%}
+
+{% capture styles %}
+  --text-color: {{ text_color }};
+  --background-color: {{ background_color }};
+{% endcapture %}
+
+{% if text != blank %}
+  {{ 'section-announcement-line.css' | asset_url | stylesheet_tag }}
+  <div style="{{ styles }}"
+    class="announcement-line {% if template.suffix == "bovine-landing-fabula" %}announcement-line__bovine-landing-fabula{% endif %}"
+  >
+      {%- if icon != blank -%}
+        {{ icon |  image_url: width: 36 | image_tag }}
+      {%- endif -%}
+      {{ text }}
+  </div>
+{% endif %}
+
+
+{% schema %}
+{
+  "name": "Announcement line",
+  "tag": "section",
+  "class": "section__banner-with-tabs",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "icon",
+      "label": "Icon"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "text",
+      "label": "Text",
+      "default": "default text"
+    },
+    {
+      "type": "color_background",
+      "id": "background_color",
+      "label": "Background",
+      "default": "#000"
+    },
+    {
+      "type": "color",
+      "id": "text_color",
+      "label": "Text color",
+      "default": "#fff"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Announcement line"
+    }
+  ]
+}
+{% endschema %}
+
+
+

@@ -1,0 +1,61 @@
+.landing-hero-banner--secondary .landing-hero-banner__content {
+  max-width: 630px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.landing-hero-banner--secondary .landing-hero-banner__icons-with-text-container {
+  gap: 7px;
+}
+
+.landing-hero-banner--secondary .landing-hero-banner__icon-with-text {
+  padding: 8px 14px;
+  border-radius: 50px;
+  background: rgba(255, 255, 255, 0.90);
+  gap: 10px;
+}
+
+.landing-hero-banner--secondary .landing-hero-banner__icon-with-text .icon {
+  flex: 0 0 26px;
+}
+
+.landing-hero-banner--secondary .landing-hero-banner__icon-with-text .icon .icon-mobile {
+  display: block;
+}
+
+.landing-hero-banner--secondary .landing-hero-banner__icon-with-text .icon .icon-desktop {
+  display: none;
+}
+
+.landing-hero-banner--secondary .landing-hero-banner__icon-with-text .text {
+  color: var(--text-1, #101828);
+  font-family: var(--font-body-family);
+  font-size: 15px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 130%;
+}
+
+.landing-hero-banner--secondary .landing-hero-banner__icon-with-text .text .text-mobile {
+  display: inline;
+}
+
+.landing-hero-banner--secondary .landing-hero-banner__icon-with-text .text .text-desktop {
+  display: none;
+}
+
+@media screen and (max-width:750px) {
+  .landing-hero-banner--secondary .landing-hero-banner__reviews-cta {
+    background-color: transparent;
+    padding: 0;
+    border-radius: 0;
+    flex-direction: column-reverse;
+    align-items: center;
+    width: 100%;
+  }
+
+  .landing-hero-banner--secondary .landing-hero-banner__cta {
+    max-width: 100%;
+    width: 100%;
+  }
+}

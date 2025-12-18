@@ -1,0 +1,140 @@
+{{ 'section-advertorial-testimonials.css' | asset_url | stylesheet_tag }}
+
+{% liquid
+  assign main_reviews = section.blocks | where: "type", "main_review"
+  assign secondary_reviews = section.blocks | where: "type", "secondary_review"
+%}
+
+<div class="advertorial-testimonials__container page-width page-width--narrow">
+  {% if section.settings.title != blank %}
+    <h2 class="advertorial-testimonials__title">{{ section.settings.title }}</h2>
+  {% endif %}
+  <div class="advertorial-testimonials__text">{{ section.settings.text }}</div>
+  <div class="advertorial-testimonials__main-reviews">
+    {%- for review in main_reviews -%}
+      {% render 'advertorial-testimonials-card', review: review %}
+    {%- endfor -%}
+  </div>
+  <div class="advertorial-testimonials__secondary-reviews">
+    {%- for review in secondary_reviews -%}
+      <div class="advertorial-secondary-review">
+        {%- if review.settings.image != blank -%}
+          {{ review.settings.image |  image_url: width: 2400 | image_tag: class: 'image--desktop' }}
+        {%- endif -%}
+        {%- if review.settings.image_mobile != blank -%}
+          {{ review.settings.image_mobile |  image_url: width: 900 | image_tag: class: 'image--mobile' }}
+        {%- endif -%}
+      </div>
+    {%- endfor -%}
+  </div>
+  {%- if section.settings.additional_title != blank -%}
+    <p class="advertorial-testimonials__additional-title">{{ section.settings.additional_title }}</p>
+  {%- endif -%}
+  {%- if section.settings.additional_text != blank -%}
+    <div class="advertorial-testimonials__additional-text">
+      {{ section.settings.additional_text }}
+    </div>
+  {%- endif -%}
+</div>
+
+{% schema %}
+{
+    "name": "Advertorial Testimonials",
+    "tag": "section",
+    "class": "advertorial-testimonials",
+    "settings": [
+      {
+        "type": "text",
+        "id": "title",
+        "label": "Title",
+        "default": "What Real Users Are Saying About Folqs"
+      },
+      {
+        "type": "richtext",
+        "id": "text",
+        "label": "Text"
+      },
+      {
+        "type": "header",
+        "content": "Additional text"
+      },
+      {
+        "type": "text",
+        "id": "additional_title",
+        "label": "Title",
+        "default": "In fact, in a recent customer survey:"
+      },
+      {
+        "type": "richtext",
+        "id": "additional_text",
+        "label": "text"
+      }
+    ],
+    "blocks": [
+      {
+        "name": "Main review",
+        "type": "main_review",
+        "settings": [
+          {
+            "type": "header",
+            "content": "Review main settings"
+          },
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          },
+          {
+            "type": "text",
+            "id": "title",
+            "label": "Title",
+            "default": "Incredible results just in weeks!"
+          },
+          {
+            "type": "text",
+            "id": "text",
+            "label": "text",
+            "default": "Since I started using Folqs, I have so much more energy throughout the day. I feel sharper, healthier, and I’m sleeping better than ever."
+          },
+          {
+            "type": "header",
+            "content": "Review footer settings"
+          },
+          {
+            "type": "text",
+            "id": "name_location",
+            "label": "Name and location",
+            "default": "Sarah, 45 | Indianapolis, LC"
+          },
+          {
+            "type": "text",
+            "id": "accent_text",
+            "label": "Accent text",
+            "default": "✅ Verified Buyer"
+          }
+        ]
+      },
+      {
+        "name": "Secondary review",
+        "type": "secondary_review",
+        "settings": [
+          {
+            "type": "image_picker",
+            "id": "image",
+            "label": "Image"
+          },
+          {
+            "type": "image_picker",
+            "id": "image_mobile",
+            "label": "Image mobile"
+          }
+        ]
+      }
+    ],
+    "presets": [
+    {
+        "name": "Advertorial Testimonials"
+    }
+  ]
+}
+{% endschema %}

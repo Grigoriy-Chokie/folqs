@@ -1,0 +1,123 @@
+.video-review {
+  position: relative;
+  max-width: 227px;
+  min-width: 200px;
+  height: 360px;
+  border-radius: 7px;
+  overflow: hidden;
+  flex: 1;
+}
+
+.video-reviews--new .video-review {
+  max-width: none;
+  min-width: auto;
+  aspect-ratio: 285 / 420;
+  height: auto;
+  flex: 1 0 calc(100% / 4 - 20px * 3 / 4);
+}
+
+.video-review__controls {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 4;
+  transition: opacity .1s ease;
+  cursor: pointer;
+}
+
+.video-review.video--played .video-review__controls {
+  opacity: 0;
+}
+
+.video-review__video {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  position: relative;
+  z-index: 1;
+  cursor: pointer;
+}
+
+.video-review__video video {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.video-review__info {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 3;
+  padding-left: 12px;
+  padding-bottom: 12px;
+  transition: opacity .1s ease;
+}
+
+.video-review.video--played .video-review__info {
+  opacity: 0;
+}
+
+.video-review__rating {
+  width: 52px;
+  height: 9px;
+  background-repeat: no-repeat;
+  margin-bottom: 2px;
+}
+
+.video-review__rating--filled:empty {
+  display: block;
+}
+
+.video-review__rating--filled {
+  height: 100%;
+  background-repeat: no-repeat;
+}
+
+.video-review__author {
+  font-family: Europa;
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 17px;
+  text-align: left;
+  color: #fff;
+  margin: 0;
+}
+
+@media screen and (max-width: 768px) {
+  .video-review {
+      width: 160px;
+      min-width: 160px;
+      height: 297px;
+      border-radius: 10px;
+  }
+
+  .video-review__controls svg {
+      width: 57px;
+      height: 57px;
+  }
+
+  .video-review__info {
+      padding-left: 9px;
+      padding-bottom: 9px;
+  }
+
+
+  .video-review__author {
+      font-size: 8px;
+      line-height: 13px;
+  }
+
+  .video-reviews--new .video-review {
+    border-radius: 12px;
+    aspect-ratio: 162.5 / 250;
+    height: auto;
+    flex: 1 0 calc(100% / 2 - 10px * 1 / 2);
+  }
+}

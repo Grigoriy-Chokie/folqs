@@ -1,0 +1,85 @@
+.deep-sleep-trusted-icons__wrapper {
+    padding: 40px 0;
+    background-color: var(--background-color);
+}
+
+.deep-sleep-trusted-icons {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+}
+
+.deep-sleep-trusted-icons__title {
+    color: #000;
+    font-family: 'Raleway', sans-serif;
+    font-size: 32px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 140%;
+    margin: 0;
+    max-width: 270px;
+    flex-shrink: 0;
+}
+
+.deep-sleep-trusted-icons__icons-list {
+    display: flex;
+    gap: 24px;
+    flex-wrap: wrap;
+}
+
+.deep-sleep-trusted-icons__icon-with-text {
+    display: flex;
+    gap: 12px;
+    align-items: center;
+}
+
+.deep-sleep-trusted-icons__icon {
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+}
+
+.deep-sleep-trusted-icons__icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.deep-sleep-trusted-icons__text {
+    color: #000000;
+    font-family: Raleway;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 28px;
+    letter-spacing: 0;
+    text-transform: uppercase;
+}
+
+@media screen and (max-width: 768px) {
+    .deep-sleep-trusted-icons__wrapper {
+        padding: 20px 0;
+    }
+    
+    .deep-sleep-trusted-icons {
+        flex-direction: column;
+        align-items: start;
+    }
+    
+    .deep-sleep-trusted-icons__title {
+        font-size: 24px;
+        max-width: 100%;
+    }
+    
+    .deep-sleep-trusted-icons__text {
+        font-size: 16px;
+    }
+
+    .deep-sleep-trusted-icons__icons-list {
+        gap: 0px;
+        row-gap: 24px;
+    }
+    
+    .deep-sleep-trusted-icons__icon-with-text {
+        width: 50%;
+    }
+}

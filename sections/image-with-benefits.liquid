@@ -1,0 +1,205 @@
+{% liquid
+    assign image = section.settings.image
+    assign image_mobile = section.settings.image_mobile
+    assign reviews_text = section.settings.reviews_text
+    assign title = section.settings.title
+    assign subtitle = section.settings.subtitle
+    assign button_text = section.settings.button_text
+    assign button_url = section.settings.button_url
+    assign benefits_layout = section.settings.benefits_layout
+%}
+
+{% if image != blank and title != blank %}
+{{ 'section-image-with-benefits.css' | asset_url | stylesheet_tag }}
+{%- style -%}
+  .section-{{ section.id }}--padding {
+    padding-top: {{ section.settings.padding_top_mobile }}px;
+    padding-bottom: {{ section.settings.padding_bottom_mobile }}px;
+  }
+
+  @media screen and (min-width: 767px) {
+    .section-{{ section.id }}--padding {
+      padding-top: {{ section.settings.padding_top }}px;
+      padding-bottom: {{ section.settings.padding_bottom }}px;
+    }
+  }
+{%- endstyle -%}
+<div class="image-with-benefits section-{{ section.id }}--padding">
+    <div class="image-with-benefits__wrapper">
+        <div class="image-with-benefits__media">
+          <div class="image-with-benefits__media-wrapper">
+            <picture>
+              {% if image_mobile != blank %}
+                <source srcset="{{ image_mobile | img_url: "master" }}" media="(max-width: 750px)">
+              {% endif %}
+              {{ image | image_url: width: 700 | image_tag: alt: image.alt }}
+            </picture>
+          </div>
+        </div>
+        <div class="image-with-benefits__content">
+            {% if reviews_text != blank %}
+                <p class="image-with-benefits__reviews">
+                    {%- render 'icon-stars' -%}
+                    {{ reviews_text }}
+                </p>
+            {% endif %}
+            <h2>{{ title }}</h2>
+            {% if button_text != blank and button_url != blank %}
+                <a class="image-with-benefits__link" href="{{ button_url }}">
+                    {{ button_text }}
+                  {% render 'icon-arrow' %}
+                </a>
+            {% endif %}
+            {% if subtitle != blank %}
+              <h3>
+                {{ subtitle }}
+              </h3>
+            {% endif %}
+            {% if section.blocks.size > 0 %}
+                <ul class="image-with-benefits__items image-with-benefits__items--{{ benefits_layout }}">
+                    {% for benefit in section.blocks %}
+                        {% liquid
+                            assign text = benefit.settings.text
+                            assign icon = benefit.settings.icon
+                        %}
+                        {% if text != blank and icon != blank %}
+                            <li>
+                                {{ icon | image_url: width: 100 | image_tag: loading: "lazy" }}
+                                {{ text }}
+                            </li>
+                        {% endif %}
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </div>
+    </div>
+</div>
+{% endif %}
+
+
+{% schema %}
+{
+  "name": "Image with benefits",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "image_picker",
+      "label": "Image",
+      "id": "image",
+      "info": "Required"
+    },
+    {
+      "type": "image_picker",
+      "label": "Image(mobile)",
+      "id": "image_mobile"
+    },
+    {
+      "type": "inline_richtext",
+      "label": "Title",
+      "id": "title",
+      "info": "Required"
+    },
+    {
+      "type": "inline_richtext",
+      "label": "SubTitle",
+      "id": "subtitle"
+    },
+    {
+      "type": "text",
+      "label": "Reviews text",
+      "id": "reviews_text"
+    },
+    {
+      "type": "text",
+      "label": "Button text",
+      "id": "button_text"
+    },
+    {
+      "type": "url",
+      "label": "Button url",
+      "id": "button_url"
+    },
+    {
+      "type": "select",
+      "id": "benefits_layout",
+      "options": [
+        {
+          "value": "list",
+          "label": "List"
+        },
+        {
+          "value": "grid",
+          "label": "Grid"
+        }
+      ],
+      "default": "list",
+      "label": "Benefits layout"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 95
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 95
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding top mobile",
+      "default": 65
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Padding bottom mobile",
+      "default": 65
+    }
+  ],
+  "blocks": [
+    {
+      "type": "benefit",
+      "name": "Benefit",
+      "settings": [
+        {
+          "type": "image_picker",
+          "label": "Icon",
+          "id": "icon",
+          "info": "Required"
+        },
+        {
+          "type": "text",
+          "label": "Text",
+          "id": "text",
+          "info": "Required"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image with benefits"
+    }
+  ]
+}
+{% endschema %}

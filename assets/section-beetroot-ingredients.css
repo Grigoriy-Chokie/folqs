@@ -1,0 +1,187 @@
+.beetroot-ingredients {
+  padding: 80px 0;
+}
+
+.beetroot-ingredients__container {
+  padding: 0 1rem;
+  display: block;
+}
+
+.beetroot-ingredients__title {
+  color: #000;
+  font-family: 'Raleway', sans-serif;
+  font-size: 48px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 60px;
+  margin: 0 0 12px;
+  text-align: center;
+}
+
+.beetroot-ingredients__text {
+  color: rgba(0, 0, 0, 0.70);
+  font-family: 'Raleway', sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 24px;
+  margin: 0 auto 40px;
+  text-align: center;
+  max-width: 570px;
+}
+
+.beetroot-ingredients__items-grid {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+.beetroot-ingredients-item {
+ flex: 0 1 calc(25% - 30px);
+}
+
+.beetroot-ingredients-item__image {
+  position: relative;
+  border-radius: 40px;
+  overflow: hidden;
+  margin: 0 0 12px;
+}
+
+.beetroot-ingredients-item__image::before {
+  content: '';
+  display: block;
+  padding-top: 100%;
+}
+
+.beetroot-ingredients-item__image svg,
+.beetroot-ingredients-item__image img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.beetroot-ingredients-item > *:last-child {
+  margin: 0;
+}
+
+.beetroot-ingredients-item__title {
+  color: #000;
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 32px;
+  letter-spacing: 0;
+  margin: 0 0 12px;
+}
+
+.beetroot-ingredients-item__mg-count {
+  color: #000;
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 20px;
+  margin: 0 0 12px;
+}
+
+.beetroot-ingredients-item__text {
+  color: rgba(0, 0, 0, 0.70);
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 24px;
+  margin: 0;
+}
+
+.beetroot-ingredients__toggle-show-button {
+  display: none;
+  width: 100%;
+  text-align: center;
+  font-family: 'Raleway', sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 180%;
+  text-decoration: underline;
+  color: #D9024D;
+  background-color: #FFFFFF;
+  padding: 0;
+  margin: 0;
+  outline: transparent;
+  border: none;
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  box-shadow: 0px -20px 35px 20px #fff;
+  cursor: pointer;
+}
+
+.beetroot-ingredients__toggle-show-button .beetroot-ingredients__show-less-text {
+  display: none;
+}
+
+.beetroot-ingredients__toggle-show-button--opened .beetroot-ingredients__show-less-text {
+  display:inline;
+}
+
+.beetroot-ingredients__toggle-show-button--opened .beetroot-ingredients__show-more-text {
+  display:none;
+}
+
+.beetroot-ingredients__toggle-show-button--opened {
+  box-shadow:none;
+}
+
+@media screen and (max-width:989px) {
+  .beetroot-ingredients {
+    padding: 40px 0;
+  }
+
+  .beetroot-ingredients__container {
+    padding: 0 2rem;
+  }
+
+  .beetroot-ingredients__title {
+    font-size: 32px;
+    line-height: 42px;
+  }
+
+  .beetroot-ingredients-item {
+    flex: 0 1 calc(50% - 20px);
+  }
+
+  .beetroot-ingredients-item__image::before {
+    padding-top: 68.97%;
+  }
+
+}
+
+@media screen and (max-width: 749px) {
+  .beetroot-ingredients__container {
+    max-height: 1350px;
+    overflow: hidden;
+    transition: .3s ease-in-out;
+    position: relative;
+  }
+
+  .beetroot-ingredients__items-grid {
+    padding: 0 22px 46px;
+  }
+
+  .beetroot-ingredients-item {
+    flex: 0 1 100%;
+  }
+
+  .beetroot-ingredients__toggle-show-button {
+    display: block;
+  }
+}
