@@ -285,10 +285,16 @@
 
 @media screen and (max-width: 768px) {
   
-    .image-with-text-extra,
-    .image-with-text-extra--image-left,
-    .image-with-text-extra--image-right {
+    .image-with-text-extra {
         gap: 30px;
+        flex-direction: column;
+    }
+
+    .image-with-text-extra--mobile-text-first {
+        flex-direction: column-reverse;
+    }
+
+    .image-with-text-extra--mobile-image-first {
         flex-direction: column;
     }
 

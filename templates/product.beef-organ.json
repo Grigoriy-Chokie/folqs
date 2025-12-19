@@ -340,7 +340,7 @@
         "card_MRDraM": {
           "type": "card",
           "settings": {
-            "card_background": "#FFFFFF",
+            "card_background": "#ffffff",
             "show_icon": true,
             "card_title": "The 3PM Crash",
             "card_title_color": "#eb2913",
@@ -359,7 +359,7 @@
         "card_yXkbdn": {
           "type": "card",
           "settings": {
-            "card_background": "#FFFFFF",
+            "card_background": "#ffffff",
             "show_icon": true,
             "card_title": "Thinning Hair & Brittle Nails",
             "card_title_color": "#eb2913",
@@ -378,7 +378,7 @@
         "card_fd34b9": {
           "type": "card",
           "settings": {
-            "card_background": "#FFFFFF",
+            "card_background": "#ffffff",
             "show_icon": true,
             "card_title": "Stiff, Creaky Joints",
             "card_title_color": "#eb2913",
@@ -397,7 +397,7 @@
         "card_jJzAmY": {
           "type": "card",
           "settings": {
-            "card_background": "#FFFFFF",
+            "card_background": "#ffffff",
             "show_icon": true,
             "card_title": "Catching Every Bug",
             "card_title_color": "#eb2913",
@@ -422,26 +422,53 @@
       ],
       "name": "Highlighted cards grid",
       "settings": {
-        "background_color": "#EAF4FF",
+        "background_color": "#eaf4ff",
         "background_image_desktop": "shopify://shop_images/Why_First-day_67a3a441-a678-4634-a536-417ad036d83a.png",
         "text_align": "center",
         "subheading": "If you're experiencing any of these, you're not broken — you're nutrient-starved.",
         "subheading_color": "#005eb8",
         "subheading_size": 20,
         "subheading_size_mobile": 14,
-        "subheading_background": "#BFD7F0",
+        "subheading_background": "#bfd7f0",
         "heading": "These \"Normal\" Signs of Aging <strong>Aren't Normal At All</strong>",
-        "heading_color": "#0F172A",
+        "heading_color": "#0f172a",
         "heading_size": 40,
         "heading_size_mobile": 26,
         "heading_background": "#bfd7f0",
         "footer_text": "",
-        "footer_color": "#0F172A",
+        "footer_color": "#0f172a",
         "footer_size": 16,
         "footer_size_mobile": 14,
         "footer_background": "",
         "padding_top": 60,
         "padding_bottom": 60,
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 40
+      }
+    },
+    "image_with_text_extra_LyfWnU": {
+      "type": "image-with-text-extra",
+      "custom_css": [
+        "@media (max-width: 768px) {.image-with-text-extra__text {text-align: center; } .image-with-text-extra__title {max-width: 90%; margin-inline: auto; }}"
+      ],
+      "name": "Image with text Extra",
+      "settings": {
+        "color_scheme": "",
+        "gradient_background": "linear-gradient(180deg, rgba(255, 255, 255, 1), rgba(239, 247, 255, 1) 100%)",
+        "custom_background_position": false,
+        "position_x": "56%",
+        "position_y": "-117px",
+        "position_x_mobile": "13%",
+        "position_y_mobile": "-60px",
+        "custom_max_height": "455",
+        "image": "shopify://shop_images/Frame_1982249503_1.png",
+        "image_position": "right",
+        "image_position_mobile": "text-first",
+        "title": "Sourced From The End Of \nThe Earth",
+        "text": "<p>The liver is a filter. If the cow eats toxins, the liver traps them. <strong>That's why the source matters more than anything.</strong></p><p><strong>Folqs Primal Eight Beef Organ Complex comes exclusively from New Zealand — the purest place on the planet.</strong></p>",
+        "highlight_color": "#005eb8",
+        "padding_top": 50,
+        "padding_bottom": 50,
         "padding_top_mobile": 40,
         "padding_bottom_mobile": 40
       }
@@ -461,6 +488,7 @@
         "custom_max_height": "440",
         "image": "shopify://shop_images/d1f4r-ezgif.com-optimize_1.gif",
         "image_position": "right",
+        "image_position_mobile": "image-first",
         "title": "What is \nColostrum?",
         "text": "<p>Colostrum is nature’s very first gift—an exceptionally nutrient-rich milk mammals produce immediately after birth, providing newborns essential immunoglobulins, growth factors, and bioactive nutrients.<br/><br/>Folqs uniquely harnesses<strong> first-day colostrum</strong>, ensuring <strong>peak levels of nutrients</strong> that may <strong>strengthen immunity, enhance digestion, and support natural recovery</strong>. For adults, it offers targeted, natural support for stronger defenses, optimal gut health, and total-body wellness.</p>",
         "highlight_color": "#005eb8",
@@ -502,6 +530,7 @@
         "custom_max_height": "440",
         "image": "shopify://shop_images/gif-text-image.gif",
         "image_position": "left",
+        "image_position_mobile": "image-first",
         "title": "How\nColostrum Works",
         "text": "<p>Think of your body as a well-protected fortress, with a natural barrier lining your sinuses, lungs, and gut—your first line of defense against everyday pollutants and processed foods. Over time, this barrier can weaken, allowing unwanted particles to slip through.<br/><br/><strong>Folqs Colostrum helps</strong> reinforce that natural protection. It’s formulated with <strong>prebiotics</strong> to nurture gut balance, <strong>immunoglobulins</strong> to support your immune defenses, and <strong>antioxidants</strong> to maintain healthy cells. Together, these nutrients support your body’s natural barriers, so you can feel stronger, healthier, and more resilient.</p>",
         "highlight_color": "#ff6a13",
@@ -526,6 +555,7 @@
         "custom_max_height": "440",
         "image": "shopify://shop_images/Meghan_Frosceno_1.webp",
         "image_position": "right",
+        "image_position_mobile": "image-first",
         "title": "Why\nFolqs Colostrum",
         "text": "<p>At Folqs, we believe in delivering colostrum just as nature intended. Our colostrum is collected from grass-fed cows in the U.S. during the precious <strong>first-day milking</strong>, when it’s<strong> most rich in nutrients and bioactive goodness</strong>. Unlike other brands, we keep it full-fat and unstripped, so you receive every bit of its natural power.<br/><br/>Our Colostrum is responsibly sourced with a commitment to putting calves first, ensuring they get what they need. It’s our way of sharing the purest, most potent colostrum with you — <strong>for immunity, gut health, and complete wellness</strong>, straight from nature.</p>",
         "highlight_color": "#005eb8",
@@ -1107,6 +1137,7 @@
     "announcement_line_ejR6aE",
     "landing_product_alternative_qf7wHE",
     "highlighted_cards_grid_wnjVET",
+    "image_with_text_extra_LyfWnU",
     "image_with_text_extra_FdqhpN",
     "image_with_text_extra_FdqhEr",
     "image_with_text_extra_FdqhpS",

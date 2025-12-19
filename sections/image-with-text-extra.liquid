@@ -13,7 +13,7 @@
     style="--gradient-background:{{ section.settings.gradient_background }}"
   >
     <div
-      class="page-width page-width--extra image-with-text-extra image-with-text-extra--image-{{ section.settings.image_position }}"
+      class="page-width page-width--extra image-with-text-extra image-with-text-extra--image-{{ section.settings.image_position }} image-with-text-extra--mobile-{{ section.settings.image_position_mobile }}"
     >
       {%- unless section.settings.image_background == blank -%}
         <div 
@@ -174,6 +174,22 @@
         }
       ],
       "default": "left"
+    },
+    {
+      "type": "select",
+      "id": "image_position_mobile",
+      "label": "Image position (mobile)",
+      "options": [
+        {
+          "value": "image-first",
+          "label": "Image first"
+        },
+        {
+          "value": "text-first",
+          "label": "Text first"
+        }
+      ],
+      "default": "image-first"
     },
     {
       "type": "textarea",
