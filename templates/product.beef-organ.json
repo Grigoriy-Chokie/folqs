@@ -446,6 +446,237 @@
         "padding_bottom_mobile": 40
       }
     },
+    "rich_text_v2_6Gqfdg": {
+      "type": "rich-text-v2",
+      "blocks": {
+        "heading_GAN7ad": {
+          "type": "heading",
+          "settings": {
+            "heading": "How Our Ancestors THRIVED Before Big Pharma & Processed Foods"
+          }
+        },
+        "contnet_qyf84r": {
+          "type": "contnet",
+          "settings": {
+            "content": "<p>Beef organs have always been a cherished and sought after food source.</p><p>They were the most prized parts - given to warriors, pregnant women, and leaders.</p>"
+          }
+        },
+        "image_XtPDpE": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Gemini_Generated_Image_od8cpcod8cpcod8c_1_1.png"
+          }
+        },
+        "contnet_eb7JXX": {
+          "type": "contnet",
+          "settings": {
+            "content": "<p>Beef organs have always been a cherished and sought after food source.</p><p>But in the last 100 years, we've moved away from eating organs.</p>"
+          }
+        },
+        "colored_content_gYEnJV": {
+          "type": "colored-content",
+          "settings": {
+            "content": "<p><strong>Why? Because big pharma & big processed food companies have changed the way we treat our health and get nutrition.</strong></p><p><strong>They don't want you to treat the root cause of almost every health issue…</strong></p>",
+            "text_color": "#005eb8"
+          }
+        },
+        "contnet_LEy7nH": {
+          "type": "contnet",
+          "settings": {
+            "content": "<p>They want you to treat the symptoms with more lab-made pharmaceuticals and more processed comfort foods that ultimately result in billions of dollars in profits.</p><p>OR... they want to sell you individual synthetic vitamins, multivitamins, greens powders... that your body will likely never absorb.</p>"
+          }
+        }
+      },
+      "block_order": [
+        "heading_GAN7ad",
+        "contnet_qyf84r",
+        "image_XtPDpE",
+        "contnet_eb7JXX",
+        "colored_content_gYEnJV",
+        "contnet_LEy7nH"
+      ],
+      "name": "Rich text v2",
+      "settings": {
+        "bg_desk": "shopify://shop_images/Why_First-day_1_73ec7d08-1205-4ec2-8889-005536a56fd8.png",
+        "bg_mob": "shopify://shop_images/1_dfdf7360-8307-4465-bc4f-d6c0597d1050.svg",
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 40
+      }
+    },
+    "for_everyone_cards_B6XL8W": {
+      "type": "for-everyone-cards",
+      "blocks": {
+        "item_mWetWC": {
+          "type": "item",
+          "settings": {
+            "card": "left",
+            "text": "You want overnight results (real nutrition takes time)"
+          }
+        },
+        "item_RWmNQU": {
+          "type": "item",
+          "settings": {
+            "card": "left",
+            "text": "You won't take 6 capsules daily (consistency matters)"
+          }
+        },
+        "item_p36aH4": {
+          "type": "item",
+          "settings": {
+            "card": "left",
+            "text": "You think cheap synthetic vitamins work (they don't)"
+          }
+        },
+        "item_9Bc9tF": {
+          "type": "item",
+          "settings": {
+            "card": "left",
+            "text": "You're just looking for the cheapest option"
+          }
+        },
+        "item_Dw8gjR": {
+          "type": "item",
+          "settings": {
+            "card": "right",
+            "text": "You're tired of supplements that don't work"
+          }
+        },
+        "item_R46EKc": {
+          "type": "item",
+          "settings": {
+            "card": "right",
+            "text": "You want <strong>ONE</strong> product that replaces your whole stack"
+          }
+        },
+        "item_iM7HNw": {
+          "type": "item",
+          "settings": {
+            "card": "right",
+            "text": "You believe in ancestral wisdom backed by science"
+          }
+        },
+        "item_GgaqqV": {
+          "type": "item",
+          "settings": {
+            "card": "right",
+            "text": "You're done settling for \"fine\" and ready for \"thriving\""
+          }
+        }
+      },
+      "block_order": [
+        "item_mWetWC",
+        "item_RWmNQU",
+        "item_p36aH4",
+        "item_9Bc9tF",
+        "item_Dw8gjR",
+        "item_R46EKc",
+        "item_iM7HNw",
+        "item_GgaqqV"
+      ],
+      "name": "For everyone cards",
+      "settings": {
+        "background": "linear-gradient(0deg, rgba(238, 247, 255, 1), rgba(239, 245, 255, 0) 100%, rgba(238, 247, 255, 0) 100%)",
+        "background_image_opacity": 100,
+        "text_align": "center",
+        "title": "Primal8 Isn't For Everyone",
+        "title_color": "#101828",
+        "title_size": 40,
+        "title_size_mobile": 26,
+        "subtitle": "<p>More than ingredients-bioactives that work across your whole body.</p>",
+        "subtitle_color": "#475569",
+        "subtitle_size": 16,
+        "subtitle_size_mobile": 16,
+        "subtitle_gap": 20,
+        "header_width": 780,
+        "header_gap": 50,
+        "header_gap_mobile": 20,
+        "cards_width": 960,
+        "cards_gap": 20,
+        "cards_gap_mobile": 20,
+        "mobile_order": "left-first",
+        "decor_left_image": "shopify://shop_images/Group_1982248261.png",
+        "decor_left_hide_mobile": true,
+        "decor_left_width": 500,
+        "decor_left_width_mobile": 160,
+        "decor_left_left": -180,
+        "decor_left_top": -50,
+        "decor_left_left_mobile": -40,
+        "decor_left_top_mobile": 10,
+        "decor_left_opacity": 100,
+        "decor_right_image": "shopify://shop_images/Group_1982248262.png",
+        "decor_right_image_mobile": "shopify://shop_images/Group_1982248295_58dfc57e-ef5a-4369-b917-408067b4bfe5.png",
+        "decor_right_hide_mobile": false,
+        "decor_right_width": 750,
+        "decor_right_width_mobile": 130,
+        "decor_right_right": -80,
+        "decor_right_top": 0,
+        "decor_right_right_mobile": 0,
+        "decor_right_top_mobile": 460,
+        "decor_right_opacity": 100,
+        "left_show_icon": false,
+        "left_icon_size": 20,
+        "left_icon_size_mobile": 18,
+        "left_icon_color": "#eb2913",
+        "left_label": "❌ Skip this if:",
+        "left_title_color": "#eb2913",
+        "left_title_size": 16,
+        "left_title_size_mobile": 16,
+        "left_title_background": "",
+        "left_card_background": "#fceaf4",
+        "left_card_border_color": "#eb2913",
+        "left_card_border_width": 1,
+        "left_card_radius": 8,
+        "left_card_padding": 20,
+        "left_card_padding_mobile": 20,
+        "left_card_offset": 0,
+        "left_card_offset_mobile": 0,
+        "left_text_color": "#101828",
+        "left_text_size": 16,
+        "left_text_size_mobile": 16,
+        "left_strong_color": "#101828",
+        "left_bullet_color": "#101828",
+        "left_bullet_size": 12,
+        "left_bullet_size_mobile": 12,
+        "left_list_gap": 12,
+        "left_list_gap_mobile": 12,
+        "left_list_indent": 22,
+        "left_list_indent_mobile": 20,
+        "right_show_icon": false,
+        "right_icon_size": 20,
+        "right_icon_size_mobile": 18,
+        "right_icon_color": "#005eb8",
+        "right_label": "✓ Perfect for you if:",
+        "right_title_color": "#005eb8",
+        "right_title_size": 16,
+        "right_title_size_mobile": 16,
+        "right_title_background": "",
+        "right_card_background": "#e4ffe6",
+        "right_card_border_color": "#91d2b3",
+        "right_card_border_width": 1,
+        "right_card_radius": 8,
+        "right_card_padding": 20,
+        "right_card_padding_mobile": 20,
+        "right_card_offset": 120,
+        "right_card_offset_mobile": 0,
+        "right_text_color": "#101828",
+        "right_text_size": 16,
+        "right_text_size_mobile": 16,
+        "right_strong_color": "#101828",
+        "right_bullet_color": "#101828",
+        "right_bullet_size": 12,
+        "right_bullet_size_mobile": 12,
+        "right_list_gap": 12,
+        "right_list_gap_mobile": 12,
+        "right_list_indent": 22,
+        "right_list_indent_mobile": 20,
+        "padding_top": 70,
+        "padding_bottom": 50,
+        "padding_top_mobile": 60,
+        "padding_bottom_mobile": 60
+      }
+    },
     "image_with_text_extra_LyfWnU": {
       "type": "image-with-text-extra",
       "custom_css": [
@@ -471,427 +702,6 @@
         "padding_bottom": 50,
         "padding_top_mobile": 40,
         "padding_bottom_mobile": 40
-      }
-    },
-    "image_with_text_extra_FdqhpN": {
-      "type": "image-with-text-extra",
-      "name": "Image with text Extra",
-      "settings": {
-        "color_scheme": "",
-        "gradient_background": "linear-gradient(180deg, #FFF 0%, rgb(87 219 255 / 10%) 30%, rgb(111 192 241 / 10%) 70%, #fff 100%)",
-        "image_background": "shopify://shop_images/Group_1982248106.svg",
-        "custom_background_position": true,
-        "position_x": "54%",
-        "position_y": "-120px",
-        "position_x_mobile": "13%",
-        "position_y_mobile": "-60px",
-        "custom_max_height": "440",
-        "image": "shopify://shop_images/d1f4r-ezgif.com-optimize_1.gif",
-        "image_position": "right",
-        "image_position_mobile": "image-first",
-        "title": "What is \nColostrum?",
-        "text": "<p>Colostrum is nature’s very first gift—an exceptionally nutrient-rich milk mammals produce immediately after birth, providing newborns essential immunoglobulins, growth factors, and bioactive nutrients.<br/><br/>Folqs uniquely harnesses<strong> first-day colostrum</strong>, ensuring <strong>peak levels of nutrients</strong> that may <strong>strengthen immunity, enhance digestion, and support natural recovery</strong>. For adults, it offers targeted, natural support for stronger defenses, optimal gut health, and total-body wellness.</p>",
-        "highlight_color": "#005eb8",
-        "padding_top": 100,
-        "padding_bottom": 100,
-        "padding_top_mobile": 70,
-        "padding_bottom_mobile": 20
-      }
-    },
-    "image_with_text_extra_FdqhEr": {
-      "type": "image-with-text-extra",
-      "blocks": {
-        "reviews_xWDwtf": {
-          "type": "reviews",
-          "settings": {
-            "button_text": "Try Folqs Today",
-            "button_text_mobile": "Try Folqs Today",
-            "button_url": "#shopify-section-template--18945118273590__landing_product_alternative_qf7wHE",
-            "show_rating": true,
-            "rating_image": "shopify://shop_images/Frame_1982248617_6ec22493-8a52-4a66-b741-b766e092d8e6.png",
-            "rating_text": "over 1,571 Five Star Reviews",
-            "rating_text_mobile": "over  1,571 Reviews"
-          }
-        }
-      },
-      "block_order": [
-        "reviews_xWDwtf"
-      ],
-      "name": "Image with text Extra",
-      "settings": {
-        "color_scheme": "scheme-80f39c49-7f30-40e9-a9dc-77cba862682a",
-        "gradient_background": "linear-gradient(180deg, #FFF 0%, rgb(250 138 73 / 10%) 30%, rgb(250 140 75 / 10%) 70%, #fff 100%)",
-        "image_background": "shopify://shop_images/Group_1982248106_ddc4c1c6-20c5-4725-aa67-3118ec77362c.png",
-        "custom_background_position": true,
-        "position_x": "-100px",
-        "position_y": "0",
-        "position_x_mobile": "15%",
-        "position_y_mobile": "-65px",
-        "custom_max_height": "440",
-        "image": "shopify://shop_images/gif-text-image.gif",
-        "image_position": "left",
-        "image_position_mobile": "image-first",
-        "title": "How\nColostrum Works",
-        "text": "<p>Think of your body as a well-protected fortress, with a natural barrier lining your sinuses, lungs, and gut—your first line of defense against everyday pollutants and processed foods. Over time, this barrier can weaken, allowing unwanted particles to slip through.<br/><br/><strong>Folqs Colostrum helps</strong> reinforce that natural protection. It’s formulated with <strong>prebiotics</strong> to nurture gut balance, <strong>immunoglobulins</strong> to support your immune defenses, and <strong>antioxidants</strong> to maintain healthy cells. Together, these nutrients support your body’s natural barriers, so you can feel stronger, healthier, and more resilient.</p>",
-        "highlight_color": "#ff6a13",
-        "padding_top": 100,
-        "padding_bottom": 100,
-        "padding_top_mobile": 70,
-        "padding_bottom_mobile": 70
-      }
-    },
-    "image_with_text_extra_FdqhpS": {
-      "type": "image-with-text-extra",
-      "name": "Image with text Extra",
-      "settings": {
-        "color_scheme": "",
-        "gradient_background": "linear-gradient(180deg, #FFF 0%, rgb(87 219 255 / 10%) 30%, rgb(111 192 241 / 10%) 70%, #fff 100%)",
-        "image_background": "shopify://shop_images/Group_1982248106.svg",
-        "custom_background_position": true,
-        "position_x": "56%",
-        "position_y": "-117px",
-        "position_x_mobile": "13%",
-        "position_y_mobile": "-60px",
-        "custom_max_height": "440",
-        "image": "shopify://shop_images/Meghan_Frosceno_1.webp",
-        "image_position": "right",
-        "image_position_mobile": "image-first",
-        "title": "Why\nFolqs Colostrum",
-        "text": "<p>At Folqs, we believe in delivering colostrum just as nature intended. Our colostrum is collected from grass-fed cows in the U.S. during the precious <strong>first-day milking</strong>, when it’s<strong> most rich in nutrients and bioactive goodness</strong>. Unlike other brands, we keep it full-fat and unstripped, so you receive every bit of its natural power.<br/><br/>Our Colostrum is responsibly sourced with a commitment to putting calves first, ensuring they get what they need. It’s our way of sharing the purest, most potent colostrum with you — <strong>for immunity, gut health, and complete wellness</strong>, straight from nature.</p>",
-        "highlight_color": "#005eb8",
-        "padding_top": 50,
-        "padding_bottom": 100,
-        "padding_top_mobile": 20,
-        "padding_bottom_mobile": 70
-      }
-    },
-    "landing_benefits_list_eVzgam": {
-      "type": "landing-benefits-list",
-      "blocks": {
-        "reviews_D6iXgT": {
-          "type": "reviews",
-          "settings": {
-            "button_text": "Try Folqs Today",
-            "button_text_mobile": "Try Folqs Today",
-            "button_url": "#shopify-section-template--18945118273590__landing_product_alternative_qf7wHE",
-            "show_rating": true,
-            "rating_image": "shopify://shop_images/Frame_1982248617_6ec22493-8a52-4a66-b741-b766e092d8e6.png",
-            "rating_text": "over 1,571 Five Star Reviews",
-            "rating_text_mobile": "over 1,571 Reviews"
-          }
-        },
-        "block_hQkUQM": {
-          "type": "block",
-          "settings": {
-            "heading": "<p>Helps SupportImmune Function*</p>",
-            "subheading": ""
-          }
-        },
-        "block_Vn7dpf": {
-          "type": "block",
-          "settings": {
-            "heading": "<p>Eases Occasional<br/>Bloating*</p>",
-            "subheading": ""
-          }
-        },
-        "block_nEwdDP": {
-          "type": "block",
-          "settings": {
-            "heading": "<p>Enhances Skin,<br/>Hair & Nail Health*</p>",
-            "subheading": ""
-          }
-        },
-        "block_c6eiHp": {
-          "type": "block",
-          "settings": {
-            "heading": "<p>Promotes Gut<br/>Health & Comfort*</p>",
-            "subheading": ""
-          }
-        },
-        "block_V6Tjdj": {
-          "type": "block",
-          "settings": {
-            "heading": "<p>Supports Muscle<br/>Recovery & Strength*</p>",
-            "subheading": ""
-          }
-        },
-        "block_exBYap": {
-          "type": "block",
-          "settings": {
-            "heading": "<p>Boosts Natural<br/>Energy Levels*</p>",
-            "subheading": ""
-          }
-        },
-        "block_pHjaCX": {
-          "type": "block",
-          "settings": {
-            "heading": "<p>Encourages Healthy<br/>Metabolism*</p>",
-            "subheading": ""
-          }
-        },
-        "block_t9tLMP": {
-          "type": "block",
-          "settings": {
-            "heading": "<p>Boosts NaturalEnergy Levels*</p>",
-            "subheading": ""
-          }
-        }
-      },
-      "block_order": [
-        "reviews_D6iXgT",
-        "block_hQkUQM",
-        "block_Vn7dpf",
-        "block_nEwdDP",
-        "block_c6eiHp",
-        "block_V6Tjdj",
-        "block_exBYap",
-        "block_pHjaCX",
-        "block_t9tLMP"
-      ],
-      "settings": {
-        "section_style_type": "alternative",
-        "style_type": "middle",
-        "label": "Folqs’ Colostrum Benefits",
-        "title": "<p>Experience The Benefits <br/>of First-Day Milking</p>",
-        "title_mobile": "",
-        "subtitle": "Enjoy natural immune, gut, and energy support—easy on your digestion, ethically sourced, and delivering real, noticeable value in every scoop.",
-        "title_position": "above_title",
-        "image": "shopify://shop_images/571525846864ec4deddeb7aff1d9204e4aea58d1.gif",
-        "icon_blocks": "shopify://shop_images/check_1_441eb1f4-eabe-4100-ad2f-3f8920eb6865.svg",
-        "button_label": "Try Folqs",
-        "button_url": "",
-        "button_background": "#FF6A13",
-        "padding_top": 50,
-        "padding_bottom": 100,
-        "padding_top_mobile": 0,
-        "padding_bottom_mobile": 70,
-        "background": "linear-gradient(180deg, rgba(238, 247, 255, 0), rgba(238, 247, 255, 1) 37.02%)"
-      }
-    },
-    "landing_icon_with_text_qtjTEc": {
-      "type": "landing-icon-with-text",
-      "blocks": {
-        "icon_whVaBJ": {
-          "type": "icon",
-          "settings": {
-            "icon": "shopify://shop_images/Group_1982248363_1.svg",
-            "text": "Calf-First Ethical Policy"
-          }
-        },
-        "icon_Yqgm8x": {
-          "type": "icon",
-          "settings": {
-            "icon": "shopify://shop_images/Group_1982248361_1.svg",
-            "text": "Grass-Fed Source"
-          }
-        },
-        "icon_XW676i": {
-          "type": "icon",
-          "settings": {
-            "icon": "shopify://shop_images/Group_1982248362_1.svg",
-            "text": "Potent First-Day Milking"
-          }
-        },
-        "icon_R9XUcb": {
-          "type": "icon",
-          "settings": {
-            "icon": "shopify://shop_images/tested_4243c12e-0dc9-4a60-afa7-67a60cf57e7c_1.svg",
-            "text": "Independent 3rd-Party Tested"
-          }
-        },
-        "icon_8b4fEp": {
-          "type": "icon",
-          "settings": {
-            "icon": "shopify://shop_images/gmp_4827a971-5676-4d53-9e8c-d79e48d2acdb_1.svg",
-            "text": "GMP Certified"
-          }
-        },
-        "icon_mrBfaD": {
-          "type": "icon",
-          "settings": {
-            "icon": "shopify://shop_images/Group_1982248135_3f0d35b1-7653-41f5-b557-de63ed084ac9_1.svg",
-            "text": "FDA Registered Facility"
-          }
-        }
-      },
-      "block_order": [
-        "icon_whVaBJ",
-        "icon_Yqgm8x",
-        "icon_XW676i",
-        "icon_R9XUcb",
-        "icon_8b4fEp",
-        "icon_mrBfaD"
-      ],
-      "settings": {
-        "padding_top": 100,
-        "padding_bottom": 0,
-        "padding_top_mobile": 70,
-        "padding_bottom_mobile": 70,
-        "title": "<p>Upgrade Your Wellness Routine<br/>with Folqs</p>",
-        "subtitle": "No fillers, no nonsense. Folqs is crafted with the highest quality ingredients from around the world.",
-        "background": "#fff",
-        "title_color": "#101828"
-      }
-    },
-    "product_compare_table_FYRDnk": {
-      "type": "product-compare-table",
-      "blocks": {
-        "table_head_FWbXnB": {
-          "type": "table_head",
-          "settings": {
-            "best_choise_badge": "shopify://shop_images/Group_1404.svg",
-            "main_image": "shopify://shop_images/table-main.png",
-            "main_text": "Folqs",
-            "second_image": "shopify://shop_images/9c63a3743b917f77fefceb081b113070bf4cc264.webp",
-            "second_text": "Other Brand",
-            "third_text": ""
-          }
-        },
-        "reviews_6DPQR8": {
-          "type": "reviews",
-          "settings": {
-            "button_text": "Try Folqs Today",
-            "button_text_mobile": "Try Folqs Today",
-            "button_url": "#shopify-section-template--18945118273590__landing_product_alternative_qf7wHE",
-            "show_rating": true,
-            "rating_image": "shopify://shop_images/Frame_1982248617_6ec22493-8a52-4a66-b741-b766e092d8e6.png",
-            "rating_text": "over 1,571 Five Star Reviews",
-            "rating_text_mobile": "over  1,571 Reviews"
-          }
-        },
-        "deco_images_PLU8nQ": {
-          "type": "deco_images",
-          "settings": {
-            "image_1": "shopify://shop_images/Group_1982248112.png",
-            "max_width_1": "320px",
-            "position_x_1": "0",
-            "position_y_1": "0",
-            "image_2": "shopify://shop_images/Group_1982248106_1.svg",
-            "max_width_2": "400px",
-            "position_x_2": "82%",
-            "position_y_2": "70%"
-          }
-        },
-        "table_cost_CGMw3e": {
-          "type": "table_cost",
-          "settings": {
-            "cost_text": "Price per 120g",
-            "main_cost": "$63.99",
-            "second_cost": "about $109.99",
-            "second_cost_mobile": "",
-            "third_cost": ""
-          }
-        },
-        "table_row_cmJRJA": {
-          "type": "table_row",
-          "settings": {
-            "row_text": "First-Day Milking",
-            "main_checkmark": true,
-            "main_checkmark_text": "",
-            "second_checkmark": false,
-            "second_checkmark_text": "",
-            "third_checkmark": true,
-            "third_checkmark_text": ""
-          }
-        },
-        "table_row_NnVLhj": {
-          "type": "table_row",
-          "settings": {
-            "row_text": "60 Servings",
-            "main_checkmark": true,
-            "main_checkmark_text": "",
-            "second_checkmark": false,
-            "second_checkmark_text": "",
-            "third_checkmark": true,
-            "third_checkmark_text": ""
-          }
-        },
-        "table_row_9Qc9nr": {
-          "type": "table_row",
-          "settings": {
-            "row_text": "2g. per Serving",
-            "main_checkmark": true,
-            "main_checkmark_text": "",
-            "second_checkmark": false,
-            "second_checkmark_text": "",
-            "third_checkmark": true,
-            "third_checkmark_text": ""
-          }
-        },
-        "table_row_CaQJxB": {
-          "type": "table_row",
-          "settings": {
-            "row_text": "Easy Dissolve, No Clumps",
-            "main_checkmark": true,
-            "main_checkmark_text": "",
-            "second_checkmark": false,
-            "second_checkmark_text": "",
-            "third_checkmark": true,
-            "third_checkmark_text": ""
-          }
-        },
-        "table_row_DnXzy8": {
-          "type": "table_row",
-          "settings": {
-            "row_text": "No Artificial Anything",
-            "main_checkmark": true,
-            "main_checkmark_text": "",
-            "second_checkmark": false,
-            "second_checkmark_text": "",
-            "third_checkmark": true,
-            "third_checkmark_text": ""
-          }
-        },
-        "table_row_WEFYgh": {
-          "type": "table_row",
-          "settings": {
-            "row_text": "GMP Certified",
-            "main_checkmark": true,
-            "main_checkmark_text": "",
-            "second_checkmark": false,
-            "second_checkmark_text": "",
-            "third_checkmark": true,
-            "third_checkmark_text": ""
-          }
-        }
-      },
-      "block_order": [
-        "table_head_FWbXnB",
-        "reviews_6DPQR8",
-        "deco_images_PLU8nQ",
-        "table_cost_CGMw3e",
-        "table_row_cmJRJA",
-        "table_row_NnVLhj",
-        "table_row_9Qc9nr",
-        "table_row_CaQJxB",
-        "table_row_DnXzy8",
-        "table_row_WEFYgh"
-      ],
-      "settings": {
-        "enable_v3_styles": false,
-        "color_scheme": "scheme-80f39c49-7f30-40e9-a9dc-77cba862682a",
-        "section_label": "Folqs is a Better Choice",
-        "section_label_color": "#ff6a13",
-        "section_title": "Folqs Colostrum vs. Other Brands",
-        "section_subtitle": "",
-        "section_text": "First-day, full-fat, unskimmed. Most brands can’t say that.",
-        "section_text_mobile": "",
-        "cta_text": "",
-        "cta_link": "shopify://pages/colostrum-benefits-2",
-        "section_background": "linear-gradient(180deg, rgba(255, 255, 255, 1), rgb(215 237 255) 40%, rgb(230 243 253) 60%, rgba(255, 255, 255, 1) 100%)",
-        "section_background_mobile": "",
-        "mushroom_styles": "",
-        "section_padding_top": 100,
-        "section_padding_bottom": 100,
-        "section_padding_top_mobile": 0,
-        "section_padding_bottom_mobile": 70,
-        "custom_colors": true,
-        "table_borders": "#c0c5d0",
-        "table_td": "rgba(0,0,0,0)",
-        "table_td_odd": "rgba(0,0,0,0)",
-        "table_main_product_background": "#005eb8",
-        "table_main_product_svg": "#a0ea7d",
-        "table_other_brand_svg": "#df5454"
       }
     },
     "video_reviews_grid_9RPqtz": {
@@ -1137,13 +947,9 @@
     "announcement_line_ejR6aE",
     "landing_product_alternative_qf7wHE",
     "highlighted_cards_grid_wnjVET",
+    "rich_text_v2_6Gqfdg",
+    "for_everyone_cards_B6XL8W",
     "image_with_text_extra_LyfWnU",
-    "image_with_text_extra_FdqhpN",
-    "image_with_text_extra_FdqhEr",
-    "image_with_text_extra_FdqhpS",
-    "landing_benefits_list_eVzgam",
-    "landing_icon_with_text_qtjTEc",
-    "product_compare_table_FYRDnk",
     "video_reviews_grid_9RPqtz",
     "faq_with_image_b8RXyx",
     "1745495841fb304005",
