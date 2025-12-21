@@ -1,0 +1,435 @@
+{{ 'section-image-text-blocks.css' | asset_url | stylesheet_tag }}
+
+{% render 'section-paddings',
+  padding_top: section.settings.padding_top,
+  padding_bottom: section.settings.padding_bottom,
+  padding_top_mobile: section.settings.padding_top_mobile,
+  padding_bottom_mobile: section.settings.padding_bottom_mobile
+%}
+
+{%- style -%}
+  .image-text-blocks--{{ section.id }} {
+    --itb-background: {{ section.settings.background | default: 'transparent' }};
+    --itb-grid-gap: {{ section.settings.grid_gap | default: 48 }}px;
+    --itb-grid-gap-mobile: {{ section.settings.grid_gap_mobile | default: 32 }}px;
+    --itb-block-gap: {{ section.settings.block_gap | default: 24 }}px;
+    --itb-block-gap-mobile: {{ section.settings.block_gap_mobile | default: 20 }}px;
+  }
+{%- endstyle -%}
+
+{%- if section.blocks.size > 0 -%}
+  <section class="image-text-blocks image-text-blocks--{{ section.id }} section-{{ section.id }}--padding">
+    <div class="page-width page-width--extra">
+      <div class="image-text-blocks__grid">
+        {%- for block in section.blocks -%}
+          {%- if block.type == 'item' -%}
+            {% liquid
+              assign desktop_order = block.settings.desktop_order | default: 'text-first'
+              assign mobile_order = block.settings.mobile_order | default: desktop_order
+
+              if desktop_order == 'image-first'
+                assign image_order = 1
+                assign text_order = 2
+              else
+                assign image_order = 2
+                assign text_order = 1
+              endif
+
+              if mobile_order == 'image-first'
+                assign image_order_mobile = 1
+                assign text_order_mobile = 2
+              else
+                assign image_order_mobile = 2
+                assign text_order_mobile = 1
+              endif
+            %}
+
+            {% capture block_styles %}
+              --itb-subheading-color: {{ block.settings.subheading_color | default: '#ff6a13' }};
+              --itb-subheading-bg: {{ block.settings.subheading_background | default: '#ffe5d3' }};
+              --itb-subheading-size: {{ block.settings.subheading_size | default: 16 }}px;
+              --itb-subheading-size-mobile: {{ block.settings.subheading_size_mobile | default: 14 }}px;
+
+              --itb-heading-color: {{ block.settings.heading_color | default: '#0f172a' }};
+              --itb-heading-size: {{ block.settings.heading_size | default: 32 }}px;
+              --itb-heading-size-mobile: {{ block.settings.heading_size_mobile | default: 26 }}px;
+
+              --itb-body-color: {{ block.settings.body_color | default: '#0f172a' }};
+              --itb-body-size: {{ block.settings.body_size | default: 16 }}px;
+              --itb-body-size-mobile: {{ block.settings.body_size_mobile | default: 15 }}px;
+
+              --itb-body-strong-color: {{ block.settings.body_strong_color | default: '#0f172a' }};
+              --itb-body-strong-size: {{ block.settings.body_strong_size | default: 16 }}px;
+              --itb-body-strong-size-mobile: {{ block.settings.body_strong_size_mobile | default: 15 }}px;
+
+              --itb-image-radius: {{ block.settings.image_radius | default: 0 }}px;
+              --itb-image-order: {{ image_order }};
+              --itb-text-order: {{ text_order }};
+              --itb-image-order-mobile: {{ image_order_mobile }};
+              --itb-text-order-mobile: {{ text_order_mobile }};
+            {% endcapture %}
+
+            <article class="image-text-blocks__item" style="{{ block_styles | strip | strip_newlines }}" {{ block.shopify_attributes }}>
+              {%- if block.settings.subheading != blank
+                or block.settings.heading != blank
+                or block.settings.body != blank
+              -%}
+                <div class="image-text-blocks__text">
+                  {%- if block.settings.subheading != blank -%}
+                    <p class="image-text-blocks__subheading">
+                      <span>{{ block.settings.subheading }}</span>
+                    </p>
+                  {%- endif -%}
+                  {%- if block.settings.heading != blank -%}
+                    <h3 class="image-text-blocks__heading">{{ block.settings.heading | newline_to_br }}</h3>
+                  {%- endif -%}
+                  {%- if block.settings.body != blank -%}
+                    <div class="image-text-blocks__body">
+                      {{ block.settings.body }}
+                    </div>
+                  {%- endif -%}
+                </div>
+              {%- endif -%}
+
+              {%- if block.settings.image != blank -%}
+                <div class="image-text-blocks__media">
+                  {{
+                    block.settings.image
+                    | image_url: width: 1400
+                    | image_tag:
+                      loading: 'lazy',
+                      alt: block.settings.image.alt
+                  }}
+                </div>
+              {%- endif -%}
+            </article>
+          {%- endif -%}
+        {%- endfor -%}
+      </div>
+    </div>
+  </section>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Image text blocks",
+  "tag": "section",
+  "class": "section-image-text-blocks",
+  "settings": [
+    {
+      "type": "color_background",
+      "id": "background",
+      "label": "Background"
+    },
+    {
+      "type": "header",
+      "content": "Layout"
+    },
+    {
+      "type": "range",
+      "id": "grid_gap",
+      "min": 10,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Grid gap",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "grid_gap_mobile",
+      "min": 10,
+      "max": 60,
+      "step": 2,
+      "unit": "px",
+      "label": "Grid gap (mobile)",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "block_gap",
+      "min": 10,
+      "max": 100,
+      "step": 1,
+      "unit": "px",
+      "label": "Content gap inside block",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "block_gap_mobile",
+      "min": 10,
+      "max": 60,
+      "step": 1,
+      "unit": "px",
+      "label": "Content gap inside block (mobile)",
+      "default": 20
+    },
+    {
+      "type": "header",
+      "content": "Section paddings"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 160,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 160,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding top (mobile)",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding bottom (mobile)",
+      "default": 60
+    }
+  ],
+  "blocks": [
+    {
+      "type": "item",
+      "name": "Block",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "range",
+          "id": "image_radius",
+          "min": 0,
+          "max": 40,
+          "step": 1,
+          "unit": "px",
+          "label": "Image radius",
+          "default": 0
+        },
+        {
+          "type": "header",
+          "content": "Order"
+        },
+        {
+          "type": "select",
+          "id": "desktop_order",
+          "label": "Order (desktop)",
+          "options": [
+            {
+              "value": "text-first",
+              "label": "Text first"
+            },
+            {
+              "value": "image-first",
+              "label": "Image first"
+            }
+          ],
+          "default": "text-first"
+        },
+        {
+          "type": "select",
+          "id": "mobile_order",
+          "label": "Order (mobile)",
+          "options": [
+            {
+              "value": "text-first",
+              "label": "Text first"
+            },
+            {
+              "value": "image-first",
+              "label": "Image first"
+            }
+          ],
+          "default": "text-first"
+        },
+        {
+          "type": "header",
+          "content": "Top subheading"
+        },
+        {
+          "type": "text",
+          "id": "subheading",
+          "label": "Text",
+          "default": "Stop renting your nutrients. Own them."
+        },
+        {
+          "type": "color",
+          "id": "subheading_color",
+          "label": "Text color",
+          "default": "#FF6A13"
+        },
+        {
+          "type": "color",
+          "id": "subheading_background",
+          "label": "Background color",
+          "default": "#FFE5D3"
+        },
+        {
+          "type": "range",
+          "id": "subheading_size",
+          "min": 10,
+          "max": 30,
+          "step": 1,
+          "unit": "px",
+          "label": "Font size",
+          "default": 16
+        },
+        {
+          "type": "range",
+          "id": "subheading_size_mobile",
+          "min": 10,
+          "max": 24,
+          "step": 1,
+          "unit": "px",
+          "label": "Font size (mobile)",
+          "default": 14
+        },
+        {
+          "type": "header",
+          "content": "Heading"
+        },
+        {
+          "type": "textarea",
+          "id": "heading",
+          "label": "Text",
+          "default": "Your Body Doesn't Speak \"Laboratory.\" It Speaks \"Biology.\""
+        },
+        {
+          "type": "color",
+          "id": "heading_color",
+          "label": "Text color",
+          "default": "#0F172A"
+        },
+        {
+          "type": "range",
+          "id": "heading_size",
+          "min": 18,
+          "max": 60,
+          "step": 1,
+          "unit": "px",
+          "label": "Font size",
+          "default": 32
+        },
+        {
+          "type": "range",
+          "id": "heading_size_mobile",
+          "min": 18,
+          "max": 40,
+          "step": 1,
+          "unit": "px",
+          "label": "Font size (mobile)",
+          "default": 26
+        },
+        {
+          "type": "header",
+          "content": "Body text"
+        },
+        {
+          "type": "richtext",
+          "id": "body",
+          "label": "Text",
+          "default": "<p>Turn your multivitamin bottle around. See words like \"Ascorbic Acid\" or \"Cyanocobalamin\"?</p><p>Those are synthetic isolates made in a lab. Your body doesn't recognize them.</p>"
+        },
+        {
+          "type": "color",
+          "id": "body_color",
+          "label": "Text color",
+          "default": "#0F172A"
+        },
+        {
+          "type": "range",
+          "id": "body_size",
+          "min": 12,
+          "max": 24,
+          "step": 1,
+          "unit": "px",
+          "label": "Font size",
+          "default": 16
+        },
+        {
+          "type": "range",
+          "id": "body_size_mobile",
+          "min": 12,
+          "max": 22,
+          "step": 1,
+          "unit": "px",
+          "label": "Font size (mobile)",
+          "default": 15
+        },
+        {
+          "type": "header",
+          "content": "Highlighted text (strong)"
+        },
+        {
+          "type": "color",
+          "id": "body_strong_color",
+          "label": "Color",
+          "default": "#0F172A"
+        },
+        {
+          "type": "range",
+          "id": "body_strong_size",
+          "min": 12,
+          "max": 28,
+          "step": 1,
+          "unit": "px",
+          "label": "Font size",
+          "default": 16
+        },
+        {
+          "type": "range",
+          "id": "body_strong_size_mobile",
+          "min": 12,
+          "max": 24,
+          "step": 1,
+          "unit": "px",
+          "label": "Font size (mobile)",
+          "default": 15
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Image text blocks",
+      "blocks": [
+        {
+          "type": "item"
+        },
+        {
+          "type": "item",
+          "settings": {
+            "desktop_order": "image-first",
+            "mobile_order": "text-first"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
+

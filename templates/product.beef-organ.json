@@ -677,6 +677,77 @@
         "padding_bottom_mobile": 60
       }
     },
+    "image_text_blocks_9ECwVP": {
+      "type": "image-text-blocks",
+      "blocks": {
+        "item_qxdHct": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/Frame_1982249481.png",
+            "image_radius": 0,
+            "desktop_order": "image-first",
+            "mobile_order": "text-first",
+            "subheading": "Stop renting your nutrients. Own them.",
+            "subheading_color": "#ff6a13",
+            "subheading_background": "#ffe5d3",
+            "subheading_size": 20,
+            "subheading_size_mobile": 18,
+            "heading": "Your Body Doesn't Speak \"Laboratory.\" It Speaks \"Biology.\"",
+            "heading_color": "#101828",
+            "heading_size": 40,
+            "heading_size_mobile": 26,
+            "body": "<p>Turn your multivitamin bottle around. See words like \"Ascorbic Acid\" or \"Cyanocobalamin\"?</p><p>Those are synthetic isolates made in a lab. Your body doesn't recognize them.</p>",
+            "body_color": "#101828",
+            "body_size": 16,
+            "body_size_mobile": 16,
+            "body_strong_color": "#00a30b",
+            "body_strong_size": 16,
+            "body_strong_size_mobile": 16
+          }
+        },
+        "item_AwGy7y": {
+          "type": "item",
+          "settings": {
+            "image": "shopify://shop_images/Frame_1982249471.png",
+            "image_radius": 0,
+            "desktop_order": "text-first",
+            "mobile_order": "image-first",
+            "subheading": "",
+            "subheading_color": "#ff6a13",
+            "subheading_background": "#ffe5d3",
+            "subheading_size": 20,
+            "subheading_size_mobile": 18,
+            "heading": "",
+            "heading_color": "#0f172a",
+            "heading_size": 32,
+            "heading_size_mobile": 26,
+            "body": "<p><strong>Beef organs: Up to 90% absorption</strong></p><p>Your body knows exactly what to do with real food.</p><p>Plus, isolated nutrients don't work alone. Vitamin D without K2? Useless. Iron without copper? Dangerous. Nature packages nutrients together for a reason.</p>",
+            "body_color": "#0f172a",
+            "body_size": 16,
+            "body_size_mobile": 16,
+            "body_strong_color": "#00a30b",
+            "body_strong_size": 16,
+            "body_strong_size_mobile": 16
+          }
+        }
+      },
+      "block_order": [
+        "item_qxdHct",
+        "item_AwGy7y"
+      ],
+      "name": "Image text blocks",
+      "settings": {
+        "background": "",
+        "grid_gap": 50,
+        "grid_gap_mobile": 20,
+        "block_gap": 80,
+        "block_gap_mobile": 20,
+        "padding_top": 60,
+        "padding_bottom": 60,
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 40
+      }
+    },
     "image_with_text_extra_LyfWnU": {
       "type": "image-with-text-extra",
       "custom_css": [
@@ -949,6 +1020,7 @@
     "highlighted_cards_grid_wnjVET",
     "rich_text_v2_6Gqfdg",
     "for_everyone_cards_B6XL8W",
+    "image_text_blocks_9ECwVP",
     "image_with_text_extra_LyfWnU",
     "video_reviews_grid_9RPqtz",
     "faq_with_image_b8RXyx",
