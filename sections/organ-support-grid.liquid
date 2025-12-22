@@ -1,0 +1,1080 @@
+{{ 'section-organ-support-grid.css' | asset_url | stylesheet_tag }}
+
+{% render 'section-paddings',
+  padding_top: section.settings.padding_top,
+  padding_bottom: section.settings.padding_bottom,
+  padding_top_mobile: section.settings.padding_top_mobile,
+  padding_bottom_mobile: section.settings.padding_bottom_mobile
+%}
+
+{%- style -%}
+  .organ-support-grid--{{ section.id }} {
+    --os-background: {{ section.settings.background | default: '#eaf4ff' }};
+    --os-header-align: {{ section.settings.header_align | default: 'center' }};
+    --os-header-width: {{ section.settings.header_width | default: 720 }}px;
+    --os-header-gap: {{ section.settings.header_gap | default: 32 }}px;
+    --os-header-gap-mobile: {{ section.settings.header_gap_mobile | default: 24 }}px;
+
+    --os-subheading-color: {{ section.settings.subheading_color | default: '#0b63b9' }};
+    --os-subheading-bg: {{ section.settings.subheading_background | default: '#cfe4fb' }};
+    --os-subheading-size: {{ section.settings.subheading_size | default: 16 }}px;
+    --os-subheading-size-mobile: {{ section.settings.subheading_size_mobile | default: 14 }}px;
+    --os-subheading-radius: {{ section.settings.subheading_radius | default: 4 }}px;
+
+    --os-title-color: {{ section.settings.title_color | default: '#0f172a' }};
+    --os-title-size: {{ section.settings.title_size | default: 36 }}px;
+    --os-title-size-mobile: {{ section.settings.title_size_mobile | default: 28 }}px;
+
+    --os-description-color: {{ section.settings.description_color | default: '#475569' }};
+    --os-description-size: {{ section.settings.description_size | default: 18 }}px;
+    --os-description-size-mobile: {{ section.settings.description_size_mobile | default: 16 }}px;
+
+    --os-grid-gap: {{ section.settings.grid_gap | default: 24 }}px;
+    --os-grid-gap-mobile: {{ section.settings.grid_gap_mobile | default: 18 }}px;
+    --os-grid-width: {{ section.settings.grid_width | default: 980 }}px;
+    --os-columns: {{ section.settings.columns_desktop | default: 2 }};
+
+    --os-card-bg: {{ section.settings.card_background | default: '#ffffff' }};
+    --os-card-border-color: {{ section.settings.card_border_color | default: '#dce7f4' }};
+    --os-card-border-width: {{ section.settings.card_border_width | default: 1 }}px;
+    --os-card-radius: {{ section.settings.card_radius | default: 14 }}px;
+    --os-card-padding: {{ section.settings.card_padding | default: 20 }}px;
+    --os-card-padding-mobile: {{ section.settings.card_padding_mobile | default: 18 }}px;
+    --os-card-shadow: {{ section.settings.card_shadow | default: 'none' }};
+    --os-card-column-gap: {{ section.settings.card_column_gap | default: 24 }}px;
+    --os-card-column-gap-mobile: {{ section.settings.card_column_gap_mobile | default: 16 }}px;
+    --os-card-align: {{ section.settings.card_align | default: 'center' }};
+    --os-card-align-mobile: {{ section.settings.card_align_mobile | default: 'center' }};
+
+  }
+
+  {%- if section.settings.background_image_desktop != blank -%}
+    .organ-support-grid--{{ section.id }} .organ-support-grid__bg {
+      background-image: url('{{ section.settings.background_image_desktop | image_url: width: 2400 }}');
+    }
+  {%- elsif section.settings.background_image_mobile != blank -%}
+    .organ-support-grid--{{ section.id }} .organ-support-grid__bg {
+      background-image: url('{{ section.settings.background_image_mobile | image_url: width: 2400 }}');
+    }
+  {%- endif -%}
+
+  @media screen and (max-width: 749px) {
+    {%- if section.settings.background_image_mobile != blank -%}
+      .organ-support-grid--{{ section.id }} .organ-support-grid__bg {
+        background-image: url('{{ section.settings.background_image_mobile | image_url: width: 1400 }}');
+      }
+    {%- elsif section.settings.background_image_desktop != blank -%}
+      .organ-support-grid--{{ section.id }} .organ-support-grid__bg {
+        background-image: url('{{ section.settings.background_image_desktop | image_url: width: 1400 }}');
+      }
+    {%- endif -%}
+  }
+{%- endstyle -%}
+
+{%- if section.blocks.size > 0 or section.settings.title != blank or section.settings.subheading != blank -%}
+  <section class="organ-support-grid organ-support-grid--{{ section.id }} section-{{ section.id }}--padding">
+    {%- if section.settings.background_image_desktop != blank or section.settings.background_image_mobile != blank -%}
+      <div class="organ-support-grid__bg" aria-hidden="true"></div>
+    {%- endif -%}
+
+    <div class="organ-support-grid__inner page-width page-width--extra">
+      {%- if section.settings.subheading != blank or section.settings.title != blank or section.settings.description != blank -%}
+        <div class="organ-support-grid__header">
+          {%- if section.settings.subheading != blank -%}
+            <p class="organ-support-grid__subheading">
+              <span>{{ section.settings.subheading }}</span>
+            </p>
+          {%- endif -%}
+          {%- if section.settings.title != blank -%}
+            <h2 class="organ-support-grid__title">{{ section.settings.title | newline_to_br }}</h2>
+          {%- endif -%}
+          {%- if section.settings.description != blank -%}
+            <div class="organ-support-grid__description">
+              {{ section.settings.description }}
+            </div>
+          {%- endif -%}
+        </div>
+      {%- endif -%}
+
+      {%- if section.blocks.size > 0 -%}
+        <div class="organ-support-grid__cards">
+          {%- for block in section.blocks -%}
+            {%- if block.type == 'card' -%}
+              {% liquid
+                assign left_align = 'flex-start'
+                assign left_text_align = 'left'
+                case block.settings.left_align
+                  when 'center'
+                    assign left_align = 'center'
+                    assign left_text_align = 'center'
+                  when 'right'
+                    assign left_align = 'flex-end'
+                    assign left_text_align = 'right'
+                endcase
+
+                assign right_align = 'flex-start'
+                assign right_text_align = 'left'
+                case block.settings.right_align
+                  when 'center'
+                    assign right_align = 'center'
+                    assign right_text_align = 'center'
+                  when 'right'
+                    assign right_align = 'flex-end'
+                    assign right_text_align = 'right'
+                endcase
+
+                assign left_order = 1
+                assign right_order = 2
+                if block.settings.desktop_order == 'right-first'
+                  assign left_order = 2
+                  assign right_order = 1
+                endif
+
+                assign left_order_mobile = left_order
+                assign right_order_mobile = right_order
+                if block.settings.mobile_order == 'right-first'
+                  assign left_order_mobile = 2
+                  assign right_order_mobile = 1
+                elsif block.settings.mobile_order == 'left-first'
+                  assign left_order_mobile = 1
+                  assign right_order_mobile = 2
+                endif
+
+                assign card_bg = block.settings.card_background | default: section.settings.card_background
+                assign card_border = block.settings.card_border_color | default: section.settings.card_border_color
+              %}
+
+              {% capture card_styles %}
+                --os-card-bg: {{ card_bg | default: '#ffffff' }};
+                --os-card-border-color: {{ card_border | default: '#dce7f4' }};
+                --os-card-border-width: {{ block.settings.card_border_width | default: section.settings.card_border_width | default: 1 }}px;
+                --os-card-radius: {{ block.settings.card_radius | default: section.settings.card_radius | default: 14 }}px;
+                --os-card-padding: {{ block.settings.card_padding | default: section.settings.card_padding | default: 20 }}px;
+                --os-card-padding-mobile: {{ block.settings.card_padding_mobile | default: section.settings.card_padding_mobile | default: 18 }}px;
+                --os-card-shadow: {{ block.settings.card_shadow | default: section.settings.card_shadow | default: 'none' }};
+                --os-card-column-gap: {{ block.settings.card_column_gap | default: section.settings.card_column_gap | default: 24 }}px;
+                --os-card-column-gap-mobile: {{ block.settings.card_column_gap_mobile | default: section.settings.card_column_gap_mobile | default: 16 }}px;
+
+                --os-left-label-color: {{ block.settings.left_label_color | default: '#0f172a' }};
+                --os-left-highlight-color: {{ block.settings.left_highlight_color | default: '#0b63b9' }};
+                --os-left-label-size: {{ block.settings.left_label_size | default: 18 }}px;
+                --os-left-label-size-mobile: {{ block.settings.left_label_size_mobile | default: 16 }}px;
+                --os-left-highlight-size: {{ block.settings.left_highlight_size | default: 18 }}px;
+                --os-left-highlight-size-mobile: {{ block.settings.left_highlight_size_mobile | default: 16 }}px;
+                --os-left-gap: {{ block.settings.left_gap | default: 12 }}px;
+                --os-left-gap-mobile: {{ block.settings.left_gap_mobile | default: 10 }}px;
+                --os-left-align: {{ left_align }};
+                --os-left-text-align: {{ left_text_align }};
+                --os-left-align-mobile: {{ left_align }};
+                --os-left-text-align-mobile: {{ left_text_align }};
+
+                --os-right-label-color: {{ block.settings.right_label_color | default: '#12a100' }};
+                --os-right-label-size: {{ block.settings.right_label_size | default: 18 }}px;
+                --os-right-label-size-mobile: {{ block.settings.right_label_size_mobile | default: 16 }}px;
+                --os-right-text-color: {{ block.settings.right_text_color | default: '#0f172a' }};
+                --os-right-text-size: {{ block.settings.right_text_size | default: 16 }}px;
+                --os-right-text-size-mobile: {{ block.settings.right_text_size_mobile | default: 15 }}px;
+                --os-right-strong-color: {{ block.settings.right_strong_color | default: '#0f172a' }};
+                --os-right-strong-size: {{ block.settings.right_strong_size | default: 16 }}px;
+                --os-right-strong-size-mobile: {{ block.settings.right_strong_size_mobile | default: 15 }}px;
+                --os-right-gap: {{ block.settings.right_gap | default: 10 }}px;
+                --os-right-gap-mobile: {{ block.settings.right_gap_mobile | default: 8 }}px;
+                --os-right-align: {{ right_align }};
+                --os-right-text-align: {{ right_text_align }};
+                --os-right-align-mobile: {{ right_align }};
+                --os-right-text-align-mobile: {{ right_text_align }};
+
+                --os-image-size: {{ block.settings.image_size | default: 70 }}px;
+                --os-image-size-mobile: {{ block.settings.image_size_mobile | default: 60 }}px;
+
+                --os-left-order: {{ left_order }};
+                --os-right-order: {{ right_order }};
+                --os-left-order-mobile: {{ left_order_mobile }};
+                --os-right-order-mobile: {{ right_order_mobile }};
+                --os-card-direction-mobile: {{ block.settings.mobile_layout | default: 'row' }};
+              {% endcapture %}
+
+              <div class="organ-support-grid__card" style="{{ card_styles | strip | strip_newlines }}" {{ block.shopify_attributes }}>
+                <div class="organ-support-grid__card-inner">
+                  <div class="organ-support-grid__card-left">
+                    {%- if block.settings.left_label != blank or block.settings.left_highlight != blank -%}
+                      <p class="organ-support-grid__card-eat">
+                        {%- if block.settings.left_label != blank -%}
+                          {{ block.settings.left_label }}{% if block.settings.left_highlight != blank %} {% endif %}
+                        {%- endif -%}
+                        {%- if block.settings.left_highlight != blank -%}
+                          <span>{{ block.settings.left_highlight }}</span>
+                        {%- endif -%}
+                      </p>
+                    {%- endif -%}
+                    {%- if block.settings.image != blank -%}
+                      <div class="organ-support-grid__card-image">
+                        {{
+                          block.settings.image
+                          | image_url: width: 400
+                          | image_tag:
+                            loading: 'lazy',
+                            alt: block.settings.image.alt
+                        }}
+                      </div>
+                    {%- endif -%}
+                  </div>
+
+                  <div class="organ-support-grid__card-right">
+                    {%- if block.settings.right_label != blank -%}
+                      <p class="organ-support-grid__card-support">{{ block.settings.right_label }}</p>
+                    {%- endif -%}
+                    {%- if block.settings.right_text != blank -%}
+                      <div class="organ-support-grid__card-text">
+                        {{ block.settings.right_text }}
+                      </div>
+                    {%- endif -%}
+                  </div>
+                </div>
+              </div>
+            {%- endif -%}
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
+    </div>
+  </section>
+{%- endif -%}
+
+{% schema %}
+{
+  "name": "Organ support grid",
+  "tag": "section",
+  "class": "section-organ-support-grid",
+  "settings": [
+    {
+      "type": "color_background",
+      "id": "background",
+      "label": "Background",
+      "default": "#EAF4FF"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image_desktop",
+      "label": "Background image (desktop)"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image_mobile",
+      "label": "Background image (mobile)"
+    },
+    {
+      "type": "header",
+      "content": "Header"
+    },
+    {
+      "type": "select",
+      "id": "header_align",
+      "label": "Text alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "subheading",
+      "label": "Subheading",
+      "default": "Not supplementation. Restoration."
+    },
+    {
+      "type": "color",
+      "id": "subheading_color",
+      "label": "Subheading color",
+      "default": "#0B63B9"
+    },
+    {
+      "type": "color",
+      "id": "subheading_background",
+      "label": "Subheading background",
+      "default": "#CFE4FB"
+    },
+    {
+      "type": "range",
+      "id": "subheading_size",
+      "min": 10,
+      "max": 28,
+      "step": 1,
+      "unit": "px",
+      "label": "Subheading size",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "subheading_size_mobile",
+      "min": 10,
+      "max": 22,
+      "step": 1,
+      "unit": "px",
+      "label": "Subheading size (mobile)",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "subheading_radius",
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Subheading radius",
+      "default": 4
+    },
+    {
+      "type": "textarea",
+      "id": "title",
+      "label": "Title",
+      "default": "Eat Heart. Support Your Heart."
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title color",
+      "default": "#0F172A"
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "min": 20,
+      "max": 60,
+      "step": 1,
+      "unit": "px",
+      "label": "Title size",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "title_size_mobile",
+      "min": 18,
+      "max": 42,
+      "step": 1,
+      "unit": "px",
+      "label": "Title size (mobile)",
+      "default": 28
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description",
+      "default": "<p>For 200,000 years, humans knew: to heal a specific organ, eat that organ. Modern science confirms it.</p>"
+    },
+    {
+      "type": "color",
+      "id": "description_color",
+      "label": "Description color",
+      "default": "#475569"
+    },
+    {
+      "type": "range",
+      "id": "description_size",
+      "min": 12,
+      "max": 26,
+      "step": 1,
+      "unit": "px",
+      "label": "Description size",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "description_size_mobile",
+      "min": 12,
+      "max": 22,
+      "step": 1,
+      "unit": "px",
+      "label": "Description size (mobile)",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "header_width",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "label": "Header max width",
+      "default": 720
+    },
+    {
+      "type": "range",
+      "id": "header_gap",
+      "min": 10,
+      "max": 60,
+      "step": 1,
+      "unit": "px",
+      "label": "Header bottom gap",
+      "default": 32
+    },
+    {
+      "type": "range",
+      "id": "header_gap_mobile",
+      "min": 10,
+      "max": 60,
+      "step": 1,
+      "unit": "px",
+      "label": "Header bottom gap (mobile)",
+      "default": 24
+    },
+    {
+      "type": "header",
+      "content": "Grid"
+    },
+    {
+      "type": "range",
+      "id": "grid_width",
+      "min": 320,
+      "max": 1400,
+      "step": 20,
+      "unit": "px",
+      "label": "Grid max width",
+      "default": 980
+    },
+    {
+      "type": "select",
+      "id": "columns_desktop",
+      "label": "Columns (desktop)",
+      "options": [
+        {
+          "value": "1",
+          "label": "1"
+        },
+        {
+          "value": "2",
+          "label": "2"
+        },
+        {
+          "value": "3",
+          "label": "3"
+        }
+      ],
+      "default": "2"
+    },
+    {
+      "type": "range",
+      "id": "grid_gap",
+      "min": 8,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Grid gap",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "grid_gap_mobile",
+      "min": 8,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "label": "Grid gap (mobile)",
+      "default": 18
+    },
+    {
+      "type": "header",
+      "content": "Card style"
+    },
+    {
+      "type": "color",
+      "id": "card_background",
+      "label": "Card background",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color",
+      "id": "card_border_color",
+      "label": "Card border color",
+      "default": "#DCE7F4"
+    },
+    {
+      "type": "range",
+      "id": "card_border_width",
+      "min": 0,
+      "max": 6,
+      "step": 1,
+      "unit": "px",
+      "label": "Card border width",
+      "default": 1
+    },
+    {
+      "type": "range",
+      "id": "card_radius",
+      "min": 0,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "label": "Card radius",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "card_padding",
+      "min": 10,
+      "max": 50,
+      "step": 1,
+      "unit": "px",
+      "label": "Card padding",
+      "default": 20
+    },
+    {
+      "type": "range",
+      "id": "card_padding_mobile",
+      "min": 10,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Card padding (mobile)",
+      "default": 18
+    },
+    {
+      "type": "text",
+      "id": "card_shadow",
+      "label": "Card shadow",
+      "default": "0 8px 20px rgba(15, 23, 42, 0.06)"
+    },
+    {
+      "type": "range",
+      "id": "card_column_gap",
+      "min": 8,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Card column gap",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "card_column_gap_mobile",
+      "min": 6,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "label": "Card column gap (mobile)",
+      "default": 16
+    },
+    {
+      "type": "select",
+      "id": "card_align",
+      "label": "Card vertical align",
+      "options": [
+        {
+          "value": "flex-start",
+          "label": "Top"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "select",
+      "id": "card_align_mobile",
+      "label": "Card vertical align (mobile)",
+      "options": [
+        {
+          "value": "flex-start",
+          "label": "Top"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "header",
+      "content": "Section paddings"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 160,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 160,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding top (mobile)",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding bottom (mobile)",
+      "default": 60
+    }
+  ],
+  "blocks": [
+    {
+      "type": "card",
+      "name": "Card",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Image"
+        },
+        {
+          "type": "range",
+          "id": "image_size",
+          "min": 30,
+          "max": 140,
+          "step": 2,
+          "unit": "px",
+          "label": "Image size",
+          "default": 70
+        },
+        {
+          "type": "range",
+          "id": "image_size_mobile",
+          "min": 30,
+          "max": 120,
+          "step": 2,
+          "unit": "px",
+          "label": "Image size (mobile)",
+          "default": 60
+        },
+        {
+          "type": "header",
+          "content": "Order"
+        },
+        {
+          "type": "select",
+          "id": "desktop_order",
+          "label": "Order (desktop)",
+          "options": [
+            {
+              "value": "left-first",
+              "label": "Left first"
+            },
+            {
+              "value": "right-first",
+              "label": "Right first"
+            }
+          ],
+          "default": "left-first"
+        },
+        {
+          "type": "select",
+          "id": "mobile_order",
+          "label": "Order (mobile)",
+          "options": [
+            {
+              "value": "left-first",
+              "label": "Left first"
+            },
+            {
+              "value": "right-first",
+              "label": "Right first"
+            }
+          ],
+          "default": "left-first"
+        },
+        {
+          "type": "select",
+          "id": "mobile_layout",
+          "label": "Layout (mobile)",
+          "options": [
+            {
+              "value": "row",
+              "label": "Row"
+            },
+            {
+              "value": "column",
+              "label": "Column"
+            }
+          ],
+          "default": "row"
+        },
+        {
+          "type": "header",
+          "content": "Left column"
+        },
+        {
+          "type": "text",
+          "id": "left_label",
+          "label": "Label",
+          "default": "You Eat"
+        },
+        {
+          "type": "text",
+          "id": "left_highlight",
+          "label": "Highlight",
+          "default": "Heart"
+        },
+        {
+          "type": "color",
+          "id": "left_label_color",
+          "label": "Label color",
+          "default": "#0F172A"
+        },
+        {
+          "type": "color",
+          "id": "left_highlight_color",
+          "label": "Highlight color",
+          "default": "#0B63B9"
+        },
+        {
+          "type": "range",
+          "id": "left_label_size",
+          "min": 12,
+          "max": 28,
+          "step": 1,
+          "unit": "px",
+          "label": "Label size",
+          "default": 18
+        },
+        {
+          "type": "range",
+          "id": "left_label_size_mobile",
+          "min": 12,
+          "max": 24,
+          "step": 1,
+          "unit": "px",
+          "label": "Label size (mobile)",
+          "default": 16
+        },
+        {
+          "type": "range",
+          "id": "left_highlight_size",
+          "min": 12,
+          "max": 28,
+          "step": 1,
+          "unit": "px",
+          "label": "Highlight size",
+          "default": 18
+        },
+        {
+          "type": "range",
+          "id": "left_highlight_size_mobile",
+          "min": 12,
+          "max": 24,
+          "step": 1,
+          "unit": "px",
+          "label": "Highlight size (mobile)",
+          "default": 16
+        },
+        {
+          "type": "range",
+          "id": "left_gap",
+          "min": 4,
+          "max": 30,
+          "step": 1,
+          "unit": "px",
+          "label": "Label-image gap",
+          "default": 12
+        },
+        {
+          "type": "range",
+          "id": "left_gap_mobile",
+          "min": 4,
+          "max": 24,
+          "step": 1,
+          "unit": "px",
+          "label": "Label-image gap (mobile)",
+          "default": 10
+        },
+        {
+          "type": "select",
+          "id": "left_align",
+          "label": "Alignment",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "center",
+              "label": "Center"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            }
+          ],
+          "default": "left"
+        },
+        {
+          "type": "header",
+          "content": "Right column"
+        },
+        {
+          "type": "text",
+          "id": "right_label",
+          "label": "Label",
+          "default": "You Support"
+        },
+        {
+          "type": "color",
+          "id": "right_label_color",
+          "label": "Label color",
+          "default": "#12A100"
+        },
+        {
+          "type": "range",
+          "id": "right_label_size",
+          "min": 12,
+          "max": 28,
+          "step": 1,
+          "unit": "px",
+          "label": "Label size",
+          "default": 18
+        },
+        {
+          "type": "range",
+          "id": "right_label_size_mobile",
+          "min": 12,
+          "max": 24,
+          "step": 1,
+          "unit": "px",
+          "label": "Label size (mobile)",
+          "default": 16
+        },
+        {
+          "type": "richtext",
+          "id": "right_text",
+          "label": "Text",
+          "default": "<p>Your heart + energy (CoQ10)</p>"
+        },
+        {
+          "type": "color",
+          "id": "right_text_color",
+          "label": "Text color",
+          "default": "#0F172A"
+        },
+        {
+          "type": "range",
+          "id": "right_text_size",
+          "min": 12,
+          "max": 26,
+          "step": 1,
+          "unit": "px",
+          "label": "Text size",
+          "default": 16
+        },
+        {
+          "type": "range",
+          "id": "right_text_size_mobile",
+          "min": 12,
+          "max": 22,
+          "step": 1,
+          "unit": "px",
+          "label": "Text size (mobile)",
+          "default": 15
+        },
+        {
+          "type": "header",
+          "content": "Highlighted text (strong)"
+        },
+        {
+          "type": "color",
+          "id": "right_strong_color",
+          "label": "Highlight color",
+          "default": "#0F172A"
+        },
+        {
+          "type": "range",
+          "id": "right_strong_size",
+          "min": 12,
+          "max": 26,
+          "step": 1,
+          "unit": "px",
+          "label": "Highlight size",
+          "default": 16
+        },
+        {
+          "type": "range",
+          "id": "right_strong_size_mobile",
+          "min": 12,
+          "max": 22,
+          "step": 1,
+          "unit": "px",
+          "label": "Highlight size (mobile)",
+          "default": 15
+        },
+        {
+          "type": "range",
+          "id": "right_gap",
+          "min": 4,
+          "max": 24,
+          "step": 1,
+          "unit": "px",
+          "label": "Label-text gap",
+          "default": 10
+        },
+        {
+          "type": "range",
+          "id": "right_gap_mobile",
+          "min": 4,
+          "max": 20,
+          "step": 1,
+          "unit": "px",
+          "label": "Label-text gap (mobile)",
+          "default": 8
+        },
+        {
+          "type": "select",
+          "id": "right_align",
+          "label": "Alignment",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "center",
+              "label": "Center"
+            },
+            {
+              "value": "right",
+              "label": "Right"
+            }
+          ],
+          "default": "left"
+        },
+        {
+          "type": "header",
+          "content": "Card style (optional override)"
+        },
+        {
+          "type": "color",
+          "id": "card_background",
+          "label": "Card background"
+        },
+        {
+          "type": "color",
+          "id": "card_border_color",
+          "label": "Card border color"
+        },
+        {
+          "type": "range",
+          "id": "card_border_width",
+          "min": 0,
+          "max": 6,
+          "step": 1,
+          "unit": "px",
+          "label": "Card border width"
+        },
+        {
+          "type": "range",
+          "id": "card_radius",
+          "min": 0,
+          "max": 30,
+          "step": 1,
+          "unit": "px",
+          "label": "Card radius"
+        },
+        {
+          "type": "range",
+          "id": "card_padding",
+          "min": 10,
+          "max": 50,
+          "step": 1,
+          "unit": "px",
+          "label": "Card padding"
+        },
+        {
+          "type": "range",
+          "id": "card_padding_mobile",
+          "min": 10,
+          "max": 40,
+          "step": 1,
+          "unit": "px",
+          "label": "Card padding (mobile)"
+        },
+        {
+          "type": "text",
+          "id": "card_shadow",
+          "label": "Card shadow"
+        },
+        {
+          "type": "range",
+          "id": "card_column_gap",
+          "min": 8,
+          "max": 40,
+          "step": 1,
+          "unit": "px",
+          "label": "Card column gap"
+        },
+        {
+          "type": "range",
+          "id": "card_column_gap_mobile",
+          "min": 6,
+          "max": 30,
+          "step": 1,
+          "unit": "px",
+          "label": "Card column gap (mobile)"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Organ support grid",
+      "blocks": [
+        {
+          "type": "card",
+          "settings": {
+            "left_highlight": "Heart",
+            "right_text": "<p>Your heart + energy (CoQ10)</p>"
+          }
+        },
+        {
+          "type": "card",
+          "settings": {
+            "left_highlight": "Liver",
+            "right_text": "<p>Your liver + energy (B12, Vit A)</p>"
+          }
+        },
+        {
+          "type": "card",
+          "settings": {
+            "left_highlight": "Kidney",
+            "right_text": "<p>Your kidneys + hair (Selenium)</p>"
+          }
+        },
+        {
+          "type": "card",
+          "settings": {
+            "left_highlight": "Thymus",
+            "right_text": "<p>Your immune system (T-cells)</p>"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}

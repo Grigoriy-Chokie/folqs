@@ -1,0 +1,232 @@
+.organ-support-grid {
+  background: var(--os-background, transparent);
+  position: relative;
+  overflow: hidden;
+}
+
+.organ-support-grid__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.organ-support-grid__inner {
+  position: relative;
+  z-index: 2;
+}
+
+.organ-support-grid__header {
+  text-align: var(--os-header-align, center);
+  max-width: var(--os-header-width, 720px);
+  margin: 0 auto var(--os-header-gap, 32px);
+}
+
+.organ-support-grid__subheading {
+  margin: 0 0 12px;
+}
+
+.organ-support-grid__subheading span {
+  background: var(--os-subheading-bg, transparent);
+  color: var(--os-subheading-color, #0b63b9);
+  font-family: var(--font-body-family);
+  font-size: var(--os-subheading-size, 16px);
+  font-weight: 700;
+  line-height: 1.4;
+  padding: 4px 10px;
+  border-radius: var(--os-subheading-radius, 4px);
+  display: inline;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+
+.organ-support-grid__title {
+  color: var(--os-title-color, #0f172a);
+  font-family: var(--font-heading-family);
+  font-size: var(--os-title-size, 36px);
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  margin: 0 0 16px;
+}
+
+.organ-support-grid__description {
+  color: var(--os-description-color, #475569);
+  font-family: var(--font-body-family);
+  font-size: var(--os-description-size, 18px);
+  line-height: 1.6;
+  margin: 0;
+}
+
+.organ-support-grid__description p {
+  margin: 0;
+}
+
+.organ-support-grid__cards {
+  display: grid;
+  grid-template-columns: repeat(var(--os-columns, 2), minmax(0, 1fr));
+  gap: var(--os-grid-gap, 24px);
+  max-width: var(--os-grid-width, 980px);
+  margin: 0 auto;
+}
+
+.organ-support-grid__card {
+  background: var(--os-card-bg, #ffffff);
+  border: var(--os-card-border-width, 1px) solid var(--os-card-border-color, #dce7f4);
+  border-radius: var(--os-card-radius, 14px);
+  padding: var(--os-card-padding, 20px);
+  box-shadow: var(--os-card-shadow, none);
+}
+
+.organ-support-grid__card-inner {
+  display: flex;
+  align-items: var(--os-card-align, center);
+  gap: var(--os-card-column-gap, 24px);
+}
+
+.organ-support-grid__card-left {
+  display: flex;
+  flex-direction: column;
+  gap: var(--os-left-gap, 12px);
+  align-items: var(--os-left-align, flex-start);
+  text-align: var(--os-left-text-align, left);
+  flex: 1 1 0;
+  min-width: 0;
+  order: var(--os-left-order, 1);
+}
+
+.organ-support-grid__card-right {
+  display: flex;
+  flex-direction: column;
+  gap: var(--os-right-gap, 10px);
+  align-items: var(--os-right-align, flex-start);
+  text-align: var(--os-right-text-align, left);
+  flex: 1 1 0;
+  min-width: 0;
+  order: var(--os-right-order, 2);
+}
+
+.organ-support-grid__card-eat {
+  color: var(--os-left-label-color, #0f172a);
+  font-family: var(--font-body-family);
+  font-size: var(--os-left-label-size, 18px);
+  font-weight: 700;
+  line-height: 1.3;
+  margin: 0;
+}
+
+.organ-support-grid__card-eat span {
+  color: var(--os-left-highlight-color, #0b63b9);
+  font-size: var(--os-left-highlight-size, 18px);
+  font-weight: 700;
+}
+
+.organ-support-grid__card-image img {
+  width: var(--os-image-size, 70px);
+  height: auto;
+  display: block;
+}
+
+.organ-support-grid__card-support {
+  color: var(--os-right-label-color, #12a100);
+  font-family: var(--font-body-family);
+  font-size: var(--os-right-label-size, 18px);
+  font-weight: 700;
+  line-height: 1.3;
+  margin: 0;
+}
+
+.organ-support-grid__card-text {
+  color: var(--os-right-text-color, #0f172a);
+  font-family: var(--font-body-family);
+  font-size: var(--os-right-text-size, 16px);
+  line-height: 1.5;
+}
+
+.organ-support-grid__card-text p {
+  margin: 0;
+}
+
+.organ-support-grid__card-text strong {
+  color: var(--os-right-strong-color, currentColor);
+  font-size: var(--os-right-strong-size, 16px);
+  font-weight: 700;
+}
+
+@media screen and (max-width: 989px) {
+  .organ-support-grid__cards {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media screen and (max-width: 749px) {
+  .organ-support-grid__header {
+    margin-bottom: var(--os-header-gap-mobile, 24px);
+  }
+
+  .organ-support-grid__subheading span {
+    font-size: var(--os-subheading-size-mobile, 14px);
+  }
+
+  .organ-support-grid__title {
+    font-size: var(--os-title-size-mobile, 28px);
+  }
+
+  .organ-support-grid__description {
+    font-size: var(--os-description-size-mobile, 16px);
+  }
+
+  .organ-support-grid__cards {
+    gap: var(--os-grid-gap-mobile, 18px);
+  }
+
+  .organ-support-grid__card {
+    padding: var(--os-card-padding-mobile, 18px);
+  }
+
+  .organ-support-grid__card-inner {
+    flex-direction: var(--os-card-direction-mobile, row);
+    align-items: var(--os-card-align-mobile, center);
+    gap: var(--os-card-column-gap-mobile, 16px);
+  }
+
+  .organ-support-grid__card-left {
+    gap: var(--os-left-gap-mobile, var(--os-left-gap, 12px));
+    align-items: var(--os-left-align-mobile, var(--os-left-align, flex-start));
+    text-align: var(--os-left-text-align-mobile, var(--os-left-text-align, left));
+    order: var(--os-left-order-mobile, var(--os-left-order, 1));
+  }
+
+  .organ-support-grid__card-right {
+    gap: var(--os-right-gap-mobile, var(--os-right-gap, 10px));
+    align-items: var(--os-right-align-mobile, var(--os-right-align, flex-start));
+    text-align: var(--os-right-text-align-mobile, var(--os-right-text-align, left));
+    order: var(--os-right-order-mobile, var(--os-right-order, 2));
+  }
+
+  .organ-support-grid__card-eat {
+    font-size: var(--os-left-label-size-mobile, 16px);
+  }
+
+  .organ-support-grid__card-eat span {
+    font-size: var(--os-left-highlight-size-mobile, 16px);
+  }
+
+  .organ-support-grid__card-image img {
+    width: var(--os-image-size-mobile, var(--os-image-size, 70px));
+  }
+
+  .organ-support-grid__card-support {
+    font-size: var(--os-right-label-size-mobile, 16px);
+  }
+
+  .organ-support-grid__card-text {
+    font-size: var(--os-right-text-size-mobile, 15px);
+  }
+
+  .organ-support-grid__card-text strong {
+    font-size: var(--os-right-strong-size-mobile, 15px);
+  }
+}
