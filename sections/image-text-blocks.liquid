@@ -63,6 +63,12 @@
               --itb-body-strong-size-mobile: {{ block.settings.body_strong_size_mobile | default: 15 }}px;
 
               --itb-image-radius: {{ block.settings.image_radius | default: 0 }}px;
+              --itb-image-width: {{ block.settings.image_width | default: 50 }}%;
+              --itb-image-width-mobile: {{ block.settings.image_width_mobile | default: 100 }}%;
+              {%- if block.settings.custom_gap -%}
+                --itb-block-gap: {{ block.settings.block_gap | default: section.settings.block_gap | default: 24 }}px;
+                --itb-block-gap-mobile: {{ block.settings.block_gap_mobile | default: section.settings.block_gap_mobile | default: 20 }}px;
+              {%- endif -%}
               --itb-image-order: {{ image_order }};
               --itb-text-order: {{ text_order }};
               --itb-image-order-mobile: {{ image_order_mobile }};
@@ -93,13 +99,18 @@
 
               {%- if block.settings.image != blank -%}
                 <div class="image-text-blocks__media">
-                  {{
-                    block.settings.image
-                    | image_url: width: 1400
-                    | image_tag:
-                      loading: 'lazy',
-                      alt: block.settings.image.alt
-                  }}
+                  <picture>
+                    {%- if block.settings.image_mobile != blank -%}
+                      <source media="(max-width: 749px)" srcset="{{ block.settings.image_mobile | image_url: width: 900 }}">
+                    {%- endif -%}
+                    {{
+                      block.settings.image
+                      | image_url: width: 1400
+                      | image_tag:
+                        loading: 'lazy',
+                        alt: block.settings.image.alt
+                    }}
+                  </picture>
                 </div>
               {%- endif -%}
             </article>
@@ -221,6 +232,11 @@
           "label": "Image"
         },
         {
+          "type": "image_picker",
+          "id": "image_mobile",
+          "label": "Image (mobile)"
+        },
+        {
           "type": "range",
           "id": "image_radius",
           "min": 0,
@@ -229,6 +245,56 @@
           "unit": "px",
           "label": "Image radius",
           "default": 0
+        },
+        {
+          "type": "range",
+          "id": "image_width",
+          "min": 10,
+          "max": 100,
+          "step": 1,
+          "unit": "%",
+          "label": "Image width",
+          "default": 50
+        },
+        {
+          "type": "range",
+          "id": "image_width_mobile",
+          "min": 10,
+          "max": 100,
+          "step": 1,
+          "unit": "%",
+          "label": "Image width (mobile)",
+          "default": 100
+        },
+        {
+          "type": "header",
+          "content": "Block spacing"
+        },
+        {
+          "type": "checkbox",
+          "id": "custom_gap",
+          "label": "Use custom gap",
+          "default": false
+        },
+        {
+          "type": "range",
+          "id": "block_gap",
+          "min": 10,
+          "max": 200,
+          "step": 5,
+          "unit": "px",
+          "label": "Content gap",
+          "default": 25
+        },
+        {
+          "type": "range",
+          "id": "block_gap_mobile",
+          "min": 10,
+          "max": 60,
+          "step": 1,
+          "unit": "px",
+          "label": "Content gap (mobile)",
+          "default": 20
         },
         {
           "type": "header",
@@ -432,4 +498,3 @@
   ]
 }
 {% endschema %}
-

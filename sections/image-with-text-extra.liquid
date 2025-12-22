@@ -33,7 +33,12 @@
           class="image-with-text-extra__image {% if section.settings.custom_max_height != blank %}image-with-text-extra__image--max-height{% endif %}"
           {% if section.settings.custom_max_height != blank %}style="--max-height: {{ section.settings.custom_max_height }}px;"{% endif %}
           >
-          {{ section.settings.image | image_url: width: 800 | image_tag }}
+          <picture>
+            {%- if section.settings.image_mobile != blank -%}
+              <source media="(max-width: 768px)" srcset="{{ section.settings.image_mobile | image_url: width: 900 }}">
+            {%- endif -%}
+            {{ section.settings.image | image_url: width: 800 | image_tag }}
+          </picture>
         </div>
       {%- endunless -%}
       <div class="image-with-text-extra__content">
@@ -158,6 +163,11 @@
       "type": "image_picker",
       "id": "image",
       "label": "Image"
+    },
+    {
+      "type": "image_picker",
+      "id": "image_mobile",
+      "label": "Image (mobile)"
     },
     {
       "type": "select",
