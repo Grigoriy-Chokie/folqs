@@ -104,9 +104,13 @@
     order: var(--itb-image-order-mobile, var(--itb-image-order, 2));
   }
 
+  .image-text-blocks__subheading {
+    text-align: center;
+  }
+
+
   .image-text-blocks__subheading span {
     font-size: var(--itb-subheading-size-mobile, 14px);
-    text-align: center;
   }
 
   .image-text-blocks__heading {

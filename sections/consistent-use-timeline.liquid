@@ -1,0 +1,1169 @@
+{{ 'section-consistent-use-timeline.css' | asset_url | stylesheet_tag }}
+
+{% render 'section-paddings',
+  padding_top: section.settings.padding_top,
+  padding_bottom: section.settings.padding_bottom,
+  padding_top_mobile: section.settings.padding_top_mobile,
+  padding_bottom_mobile: section.settings.padding_bottom_mobile
+%}
+
+  {%- style -%}
+  .consistent-use-timeline--{{ section.id }} {
+    --cut-background: {{ section.settings.background | default: '#fdf1ec' }};
+    --cut-title-align: {{ section.settings.title_align | default: 'center' }};
+    --cut-title-width: {{ section.settings.title_width | default: 720 }}px;
+    --cut-title-gap: {{ section.settings.title_gap | default: 40 }}px;
+    --cut-title-gap-mobile: {{ section.settings.title_gap_mobile | default: 28 }}px;
+
+    --cut-title-color: {{ section.settings.title_color | default: '#0f172a' }};
+    --cut-title-size: {{ section.settings.title_size | default: 36 }}px;
+    --cut-title-size-mobile: {{ section.settings.title_size_mobile | default: 28 }}px;
+
+    --cut-subtitle-color: {{ section.settings.subtitle_color | default: '#475569' }};
+    --cut-subtitle-size: {{ section.settings.subtitle_size | default: 18 }}px;
+    --cut-subtitle-size-mobile: {{ section.settings.subtitle_size_mobile | default: 16 }}px;
+    --cut-subtitle-gap: {{ section.settings.subtitle_gap | default: 14 }}px;
+
+    --cut-item-gap: {{ section.settings.item_gap | default: 48 }}px;
+    --cut-item-gap-mobile: {{ section.settings.item_gap_mobile | default: 36 }}px;
+    --cut-column-gap: {{ section.settings.column_gap | default: 24 }}px;
+    --cut-column-gap-mobile: {{ section.settings.column_gap_mobile | default: 16 }}px;
+    --cut-line-column-width: {{ section.settings.line_column_width | default: 64 }}px;
+    --cut-line-column-width-mobile: {{ section.settings.line_column_width_mobile | default: 48 }}px;
+
+    --cut-line-color: {{ section.settings.line_color | default: '#ff6a13' }};
+    --cut-line-width: {{ section.settings.line_width | default: 2 }}px;
+    --cut-line-offset-top: {{ section.settings.line_offset_top | default: 0 }}px;
+    --cut-line-offset-bottom: {{ section.settings.line_offset_bottom | default: 0 }}px;
+    --cut-line-left-mobile: {{ section.settings.line_left_mobile | default: 24 }}px;
+
+    --cut-dot-size: {{ section.settings.dot_size | default: 34 }}px;
+    --cut-dot-size-mobile: {{ section.settings.dot_size_mobile | default: 28 }}px;
+    --cut-dot-bg: {{ section.settings.dot_background | default: '#ff6a13' }};
+    --cut-dot-border-color: {{ section.settings.dot_border_color | default: 'transparent' }};
+    --cut-dot-border-width: {{ section.settings.dot_border_width | default: 0 }}px;
+    --cut-dot-icon-color: {{ section.settings.dot_icon_color | default: '#ffffff' }};
+    --cut-dot-icon-size: {{ section.settings.dot_icon_size | default: 16 }}px;
+    --cut-dot-icon-size-mobile: {{ section.settings.dot_icon_size_mobile | default: 14 }}px;
+    --cut-dot-offset: {{ section.settings.dot_offset | default: 2 }}px;
+    --cut-dot-offset-mobile: {{ section.settings.dot_offset_mobile | default: 2 }}px;
+
+    --cut-label-pad-x: {{ section.settings.label_padding_x | default: 0 }}px;
+    --cut-label-pad-y: {{ section.settings.label_padding_y | default: 0 }}px;
+    --cut-label-radius: {{ section.settings.label_radius | default: 0 }}px;
+
+    --cut-card-shadow: {{ section.settings.card_shadow | default: 'none' }};
+    --cut-card-pointer-size: {{ section.settings.card_pointer_size | default: 10 }}px;
+    --cut-card-pointer-offset: {{ section.settings.card_pointer_offset | default: 22 }}px;
+    --cut-card-title-gap: {{ section.settings.card_title_gap | default: 12 }}px;
+    --cut-card-title-gap-bottom: {{ section.settings.card_title_gap_bottom | default: 10 }}px;
+    --cut-card-quote-gap: {{ section.settings.card_quote_gap | default: 12 }}px;
+  }
+
+  {%- if section.settings.background_image_desktop != blank -%}
+    .consistent-use-timeline--{{ section.id }} .consistent-use-timeline__bg {
+      background-image: url('{{ section.settings.background_image_desktop | image_url: width: 2400 }}');
+    }
+  {%- endif -%}
+
+  @media screen and (max-width: 749px) {
+    {%- if section.settings.background_image_mobile != blank -%}
+      .consistent-use-timeline--{{ section.id }} .consistent-use-timeline__bg {
+        background-image: url('{{ section.settings.background_image_mobile | image_url: width: 1400 }}');
+      }
+    {%- elsif section.settings.background_image_desktop != blank -%}
+      .consistent-use-timeline--{{ section.id }} .consistent-use-timeline__bg {
+        background-image: url('{{ section.settings.background_image_desktop | image_url: width: 1400 }}');
+      }
+    {%- endif -%}
+  }
+{%- endstyle -%}
+
+{%- if section.blocks.size > 0 -%}
+  <section class="consistent-use-timeline consistent-use-timeline--{{ section.id }} {% unless section.settings.show_card_pointer %}consistent-use-timeline--pointer-off{% endunless %} section-{{ section.id }}--padding">
+    {%- if section.settings.background_image_desktop != blank or section.settings.background_image_mobile != blank -%}
+      <div class="consistent-use-timeline__bg" aria-hidden="true"></div>
+    {%- endif -%}
+    <div class="page-width page-width--extra">
+      <div class="consistent-use-timeline__inner">
+        {%- if section.settings.title != blank or section.settings.subtitle != blank -%}
+          <div class="consistent-use-timeline__header">
+            {%- if section.settings.title != blank -%}
+              <h2 class="consistent-use-timeline__title">{{ section.settings.title }}</h2>
+            {%- endif -%}
+            {%- if section.settings.subtitle != blank -%}
+              <div class="consistent-use-timeline__subtitle">
+                {{ section.settings.subtitle }}
+              </div>
+            {%- endif -%}
+          </div>
+        {%- endif -%}
+
+        <div class="consistent-use-timeline__list">
+          {%- for block in section.blocks -%}
+            {%- if block.type == 'step' -%}
+              {% capture block_styles %}
+                --cut-label-color: {{ block.settings.label_color | default: '#0f172a' }};
+                --cut-label-size: {{ block.settings.label_size | default: 22 }}px;
+                --cut-label-size-mobile: {{ block.settings.label_size_mobile | default: 18 }}px;
+                --cut-label-bg: {{ block.settings.label_background | default: 'transparent' }};
+                --cut-label-weight: {{ block.settings.label_weight | default: 700 }};
+                --cut-label-offset: {{ block.settings.label_offset | default: 0 }}px;
+                --cut-label-offset-mobile: {{ block.settings.label_offset_mobile | default: 0 }}px;
+
+                --cut-card-bg: {{ block.settings.card_background | default: '#ffffff' }};
+                --cut-card-border-color: {{ block.settings.card_border_color | default: '#d6d6d6' }};
+                --cut-card-border-width: {{ block.settings.card_border_width | default: 1 }}px;
+                --cut-card-radius: {{ block.settings.card_radius | default: 14 }}px;
+                --cut-card-padding: {{ block.settings.card_padding | default: 20 }}px;
+                --cut-card-padding-mobile: {{ block.settings.card_padding_mobile | default: 18 }}px;
+                --cut-card-offset: {{ block.settings.card_offset | default: 0 }}px;
+                --cut-card-offset-mobile: {{ block.settings.card_offset_mobile | default: 0 }}px;
+                --cut-card-text-align: {{ block.settings.card_text_align | default: 'left' }};
+                --cut-card-max-width: {{ block.settings.card_max_width | default: 520 }}px;
+                --cut-card-max-width-mobile: {{ block.settings.card_max_width_mobile | default: 100 }}%;
+
+                --cut-card-title-color: {{ block.settings.card_title_color | default: '#ff6a13' }};
+                --cut-card-title-size: {{ block.settings.card_title_size | default: 18 }}px;
+                --cut-card-title-size-mobile: {{ block.settings.card_title_size_mobile | default: 16 }}px;
+
+                --cut-card-icon-size: {{ block.settings.card_icon_size | default: 28 }}px;
+                --cut-card-icon-size-mobile: {{ block.settings.card_icon_size_mobile | default: 24 }}px;
+
+                --cut-card-body-color: {{ block.settings.card_body_color | default: '#0f172a' }};
+                --cut-card-body-size: {{ block.settings.card_body_size | default: 16 }}px;
+                --cut-card-body-size-mobile: {{ block.settings.card_body_size_mobile | default: 15 }}px;
+
+                --cut-card-strong-color: {{ block.settings.card_strong_color | default: '#0f172a' }};
+                --cut-card-strong-size: {{ block.settings.card_strong_size | default: 16 }}px;
+                --cut-card-strong-size-mobile: {{ block.settings.card_strong_size_mobile | default: 15 }}px;
+
+                --cut-card-quote-color: {{ block.settings.card_quote_color | default: '#475569' }};
+                --cut-card-quote-size: {{ block.settings.card_quote_size | default: 15 }}px;
+                --cut-card-quote-size-mobile: {{ block.settings.card_quote_size_mobile | default: 14 }}px;
+                --cut-card-quote-style: {% if block.settings.card_quote_italic %}italic{% else %}normal{% endif %};
+              {% endcapture %}
+
+              <article class="consistent-use-timeline__item consistent-use-timeline__item--card-{{ block.settings.card_side }}" style="{{ block_styles | strip | strip_newlines }}" {{ block.shopify_attributes }}>
+                <div class="consistent-use-timeline__label">
+                  {%- if block.settings.label != blank -%}
+                    <span>{{ block.settings.label }}</span>
+                  {%- endif -%}
+                </div>
+
+                <div class="consistent-use-timeline__dot" aria-hidden="true">
+                  {%- if section.settings.show_dot_icon -%}
+                    <span class="consistent-use-timeline__dot-icon">
+                      {%- if section.settings.dot_icon != blank -%}
+                        {{ section.settings.dot_icon | image_url: width: 120 | image_tag: loading: 'lazy', alt: section.settings.dot_icon.alt }}
+                      {%- else -%}
+                        {%- render 'icon-checkmark' -%}
+                      {%- endif -%}
+                    </span>
+                  {%- endif -%}
+                </div>
+
+                <div class="consistent-use-timeline__card">
+                  {%- if block.settings.card_title != blank or block.settings.card_icon != blank -%}
+                    <div class="consistent-use-timeline__card-title">
+                      {%- if block.settings.card_icon != blank -%}
+                        <span class="consistent-use-timeline__card-icon">
+                          {{ block.settings.card_icon | image_url: width: 120 | image_tag: loading: 'lazy', alt: block.settings.card_icon.alt }}
+                        </span>
+                      {%- endif -%}
+                      {%- if block.settings.card_title != blank -%}
+                        <span>{{ block.settings.card_title }}</span>
+                      {%- endif -%}
+                    </div>
+                  {%- endif -%}
+
+                  {%- if block.settings.card_body != blank -%}
+                    <div class="consistent-use-timeline__card-body">
+                      {{ block.settings.card_body }}
+                    </div>
+                  {%- endif -%}
+
+                  {%- if block.settings.card_quote != blank -%}
+                    <div class="consistent-use-timeline__card-quote">
+                      {{ block.settings.card_quote }}
+                    </div>
+                  {%- endif -%}
+                </div>
+              </article>
+            {%- endif -%}
+          {%- endfor -%}
+        </div>
+      </div>
+    </div>
+  </section>
+{%- endif -%}
+
+<script>
+  (() => {
+    const sectionSelector = `.consistent-use-timeline--{{ section.id }}`;
+    const updateLine = () => {
+      const section = document.querySelector(sectionSelector);
+      if (!section) return;
+      const list = section.querySelector('.consistent-use-timeline__list');
+      if (!list) return;
+      const dots = list.querySelectorAll('.consistent-use-timeline__dot');
+      if (!dots.length) return;
+
+      const listRect = list.getBoundingClientRect();
+      const firstRect = dots[0].getBoundingClientRect();
+      const lastRect = dots[dots.length - 1].getBoundingClientRect();
+      const start = Math.max(firstRect.top + firstRect.height / 2 - listRect.top, 0);
+      const end = Math.max(listRect.bottom - (lastRect.top + lastRect.height / 2), 0);
+
+      list.style.setProperty('--cut-line-start', `${start}px`);
+      list.style.setProperty('--cut-line-end', `${end}px`);
+    };
+
+    const schedule = () => window.requestAnimationFrame(updateLine);
+
+    const init = () => {
+      const section = document.querySelector(sectionSelector);
+      if (!section) return;
+      schedule();
+
+      if (section.dataset.cutLineBound === 'true') return;
+      section.dataset.cutLineBound = 'true';
+
+      if ('ResizeObserver' in window) {
+        const observer = new ResizeObserver(schedule);
+        const list = section.querySelector('.consistent-use-timeline__list');
+        if (list) observer.observe(list);
+      } else {
+        window.addEventListener('resize', schedule);
+      }
+
+      document.addEventListener('shopify:section:load', (event) => {
+        if (event.target && event.target.matches(sectionSelector)) {
+          schedule();
+        }
+      });
+      document.addEventListener('shopify:section:reorder', schedule);
+    };
+
+    if (document.readyState === 'loading') {
+      document.addEventListener('DOMContentLoaded', init);
+    } else {
+      init();
+    }
+    window.addEventListener('load', schedule);
+  })();
+</script>
+
+{% schema %}
+{
+  "name": "Consistent use timeline",
+  "tag": "section",
+  "class": "section-consistent-use-timeline",
+  "settings": [
+    {
+      "type": "color_background",
+      "id": "background",
+      "label": "Background",
+      "default": "#FDF1EC"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image_desktop",
+      "label": "Background image (desktop)"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image_mobile",
+      "label": "Background image (mobile)"
+    },
+    {
+      "type": "header",
+      "content": "Header"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "title",
+      "label": "Title",
+      "default": "What Should I Expect From Consistent Use of Folqs Primal Eight Beef Complex?"
+    },
+    {
+      "type": "color",
+      "id": "title_color",
+      "label": "Title color",
+      "default": "#0F172A"
+    },
+    {
+      "type": "range",
+      "id": "title_size",
+      "min": 20,
+      "max": 64,
+      "step": 1,
+      "unit": "px",
+      "label": "Title size",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "title_size_mobile",
+      "min": 18,
+      "max": 44,
+      "step": 1,
+      "unit": "px",
+      "label": "Title size (mobile)",
+      "default": 28
+    },
+    {
+      "type": "select",
+      "id": "title_align",
+      "label": "Title alignment",
+      "options": [
+        {
+          "value": "left",
+          "label": "Left"
+        },
+        {
+          "value": "center",
+          "label": "Center"
+        }
+      ],
+      "default": "center"
+    },
+    {
+      "type": "range",
+      "id": "title_width",
+      "min": 320,
+      "max": 1200,
+      "step": 10,
+      "unit": "px",
+      "label": "Title max width",
+      "default": 720
+    },
+    {
+      "type": "richtext",
+      "id": "subtitle",
+      "label": "Subtitle"
+    },
+    {
+      "type": "color",
+      "id": "subtitle_color",
+      "label": "Subtitle color",
+      "default": "#475569"
+    },
+    {
+      "type": "range",
+      "id": "subtitle_size",
+      "min": 12,
+      "max": 28,
+      "step": 1,
+      "unit": "px",
+      "label": "Subtitle size",
+      "default": 18
+    },
+    {
+      "type": "range",
+      "id": "subtitle_size_mobile",
+      "min": 12,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Subtitle size (mobile)",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "subtitle_gap",
+      "min": 0,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Subtitle top gap",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "title_gap",
+      "min": 10,
+      "max": 80,
+      "step": 1,
+      "unit": "px",
+      "label": "Header bottom gap",
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "title_gap_mobile",
+      "min": 10,
+      "max": 60,
+      "step": 1,
+      "unit": "px",
+      "label": "Header bottom gap (mobile)",
+      "default": 28
+    },
+    {
+      "type": "header",
+      "content": "Timeline"
+    },
+    {
+      "type": "range",
+      "id": "item_gap",
+      "min": 20,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "label": "Item vertical gap",
+      "default": 48
+    },
+    {
+      "type": "range",
+      "id": "item_gap_mobile",
+      "min": 16,
+      "max": 80,
+      "step": 1,
+      "unit": "px",
+      "label": "Item vertical gap (mobile)",
+      "default": 36
+    },
+    {
+      "type": "range",
+      "id": "column_gap",
+      "min": 10,
+      "max": 60,
+      "step": 1,
+      "unit": "px",
+      "label": "Column gap",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "column_gap_mobile",
+      "min": 8,
+      "max": 40,
+      "step": 1,
+      "unit": "px",
+      "label": "Column gap (mobile)",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "line_column_width",
+      "min": 40,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "label": "Line column width",
+      "default": 64
+    },
+    {
+      "type": "range",
+      "id": "line_column_width_mobile",
+      "min": 32,
+      "max": 100,
+      "step": 2,
+      "unit": "px",
+      "label": "Line column width (mobile)",
+      "default": 48
+    },
+    {
+      "type": "color",
+      "id": "line_color",
+      "label": "Line color",
+      "default": "#FF6A13"
+    },
+    {
+      "type": "range",
+      "id": "line_width",
+      "min": 1,
+      "max": 8,
+      "step": 1,
+      "unit": "px",
+      "label": "Line width",
+      "default": 2
+    },
+    {
+      "type": "range",
+      "id": "line_offset_top",
+      "min": 0,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "label": "Line offset top",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "line_offset_bottom",
+      "min": 0,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "label": "Line offset bottom",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "line_left_mobile",
+      "min": 10,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "label": "Line left position (mobile)",
+      "default": 24
+    },
+    {
+      "type": "range",
+      "id": "dot_size",
+      "min": 16,
+      "max": 60,
+      "step": 1,
+      "unit": "px",
+      "label": "Dot size",
+      "default": 34
+    },
+    {
+      "type": "range",
+      "id": "dot_size_mobile",
+      "min": 14,
+      "max": 50,
+      "step": 1,
+      "unit": "px",
+      "label": "Dot size (mobile)",
+      "default": 28
+    },
+    {
+      "type": "color",
+      "id": "dot_background",
+      "label": "Dot background",
+      "default": "#FF6A13"
+    },
+    {
+      "type": "color",
+      "id": "dot_border_color",
+      "label": "Dot border color",
+      "default": "#FF6A13"
+    },
+    {
+      "type": "range",
+      "id": "dot_border_width",
+      "min": 0,
+      "max": 6,
+      "step": 1,
+      "unit": "px",
+      "label": "Dot border width",
+      "default": 0
+    },
+    {
+      "type": "checkbox",
+      "id": "show_dot_icon",
+      "label": "Show dot icon",
+      "default": true
+    },
+    {
+      "type": "image_picker",
+      "id": "dot_icon",
+      "label": "Dot icon image"
+    },
+    {
+      "type": "color",
+      "id": "dot_icon_color",
+      "label": "Dot icon color",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "range",
+      "id": "dot_icon_size",
+      "min": 8,
+      "max": 32,
+      "step": 1,
+      "unit": "px",
+      "label": "Dot icon size",
+      "default": 16
+    },
+    {
+      "type": "range",
+      "id": "dot_icon_size_mobile",
+      "min": 6,
+      "max": 28,
+      "step": 1,
+      "unit": "px",
+      "label": "Dot icon size (mobile)",
+      "default": 14
+    },
+    {
+      "type": "range",
+      "id": "dot_offset",
+      "min": -50,
+      "max": 50,
+      "step": 1,
+      "unit": "px",
+      "label": "Dot vertical offset",
+      "default": 2
+    },
+    {
+      "type": "range",
+      "id": "dot_offset_mobile",
+      "min": -50,
+      "max": 50,
+      "step": 1,
+      "unit": "px",
+      "label": "Dot vertical offset (mobile)",
+      "default": 2
+    },
+    {
+      "type": "header",
+      "content": "Label styles"
+    },
+    {
+      "type": "range",
+      "id": "label_padding_x",
+      "min": 0,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "label": "Label padding X",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "label_padding_y",
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Label padding Y",
+      "default": 0
+    },
+    {
+      "type": "range",
+      "id": "label_radius",
+      "min": 0,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Label radius",
+      "default": 0
+    },
+    {
+      "type": "header",
+      "content": "Card styles"
+    },
+    {
+      "type": "text",
+      "id": "card_shadow",
+      "label": "Card shadow",
+      "default": "0 8px 24px rgba(15, 23, 42, 0.08)"
+    },
+    {
+      "type": "checkbox",
+      "id": "show_card_pointer",
+      "label": "Show card pointer",
+      "default": true
+    },
+    {
+      "type": "range",
+      "id": "card_pointer_size",
+      "min": 6,
+      "max": 20,
+      "step": 1,
+      "unit": "px",
+      "label": "Pointer size",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "card_pointer_offset",
+      "min": 0,
+      "max": 60,
+      "step": 1,
+      "unit": "px",
+      "label": "Pointer offset",
+      "default": 22
+    },
+    {
+      "type": "range",
+      "id": "card_title_gap",
+      "min": 6,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Card title icon gap",
+      "default": 12
+    },
+    {
+      "type": "range",
+      "id": "card_title_gap_bottom",
+      "min": 4,
+      "max": 24,
+      "step": 1,
+      "unit": "px",
+      "label": "Card title bottom gap",
+      "default": 10
+    },
+    {
+      "type": "range",
+      "id": "card_quote_gap",
+      "min": 4,
+      "max": 30,
+      "step": 1,
+      "unit": "px",
+      "label": "Quote top gap",
+      "default": 12
+    },
+    {
+      "type": "header",
+      "content": "Section paddings"
+    },
+    {
+      "type": "range",
+      "id": "padding_top",
+      "min": 0,
+      "max": 160,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding top",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom",
+      "min": 0,
+      "max": 160,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding bottom",
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "padding_top_mobile",
+      "min": 0,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding top (mobile)",
+      "default": 60
+    },
+    {
+      "type": "range",
+      "id": "padding_bottom_mobile",
+      "min": 0,
+      "max": 120,
+      "step": 2,
+      "unit": "px",
+      "label": "Padding bottom (mobile)",
+      "default": 60
+    }
+  ],
+  "blocks": [
+    {
+      "type": "step",
+      "name": "Timeline step",
+      "settings": [
+        {
+          "type": "text",
+          "id": "label",
+          "label": "Label",
+          "default": "1 Week"
+        },
+        {
+          "type": "color",
+          "id": "label_color",
+          "label": "Label color",
+          "default": "#0F172A"
+        },
+        {
+          "type": "color",
+          "id": "label_background",
+          "label": "Label background"
+        },
+        {
+          "type": "range",
+          "id": "label_size",
+          "min": 12,
+          "max": 50,
+          "step": 1,
+          "unit": "px",
+          "label": "Label size",
+          "default": 22
+        },
+        {
+          "type": "range",
+          "id": "label_size_mobile",
+          "min": 12,
+          "max": 26,
+          "step": 1,
+          "unit": "px",
+          "label": "Label size (mobile)",
+          "default": 18
+        },
+        {
+          "type": "range",
+          "id": "label_weight",
+          "min": 300,
+          "max": 800,
+          "step": 100,
+          "label": "Label weight",
+          "default": 700
+        },
+        {
+          "type": "range",
+          "id": "label_offset",
+          "min": -20,
+          "max": 40,
+          "step": 1,
+          "unit": "px",
+          "label": "Label offset",
+          "default": 0
+        },
+        {
+          "type": "range",
+          "id": "label_offset_mobile",
+          "min": -20,
+          "max": 40,
+          "step": 1,
+          "unit": "px",
+          "label": "Label offset (mobile)",
+          "default": 0
+        },
+        {
+          "type": "select",
+          "id": "card_side",
+          "label": "Card side",
+          "options": [
+            {
+              "value": "right",
+              "label": "Right"
+            },
+            {
+              "value": "left",
+              "label": "Left"
+            }
+          ],
+          "default": "right"
+        },
+        {
+          "type": "header",
+          "content": "Card content"
+        },
+        {
+          "type": "image_picker",
+          "id": "card_icon",
+          "label": "Icon"
+        },
+        {
+          "type": "range",
+          "id": "card_icon_size",
+          "min": 16,
+          "max": 60,
+          "step": 1,
+          "unit": "px",
+          "label": "Icon size",
+          "default": 28
+        },
+        {
+          "type": "range",
+          "id": "card_icon_size_mobile",
+          "min": 14,
+          "max": 48,
+          "step": 1,
+          "unit": "px",
+          "label": "Icon size (mobile)",
+          "default": 24
+        },
+        {
+          "type": "inline_richtext",
+          "id": "card_title",
+          "label": "Title",
+          "default": "More energy in the morning. Less brain fog. Clearer thinking."
+        },
+        {
+          "type": "color",
+          "id": "card_title_color",
+          "label": "Title color",
+          "default": "#FF6A13"
+        },
+        {
+          "type": "range",
+          "id": "card_title_size",
+          "min": 12,
+          "max": 30,
+          "step": 1,
+          "unit": "px",
+          "label": "Title size",
+          "default": 18
+        },
+        {
+          "type": "range",
+          "id": "card_title_size_mobile",
+          "min": 12,
+          "max": 26,
+          "step": 1,
+          "unit": "px",
+          "label": "Title size (mobile)",
+          "default": 16
+        },
+        {
+          "type": "richtext",
+          "id": "card_body",
+          "label": "Body text",
+          "default": "<p>By day 5, I woke up before my alarm. That hasn't happened in years.</p>"
+        },
+        {
+          "type": "color",
+          "id": "card_body_color",
+          "label": "Body text color",
+          "default": "#0F172A"
+        },
+        {
+          "type": "range",
+          "id": "card_body_size",
+          "min": 12,
+          "max": 24,
+          "step": 1,
+          "unit": "px",
+          "label": "Body text size",
+          "default": 16
+        },
+        {
+          "type": "range",
+          "id": "card_body_size_mobile",
+          "min": 12,
+          "max": 22,
+          "step": 1,
+          "unit": "px",
+          "label": "Body text size (mobile)",
+          "default": 15
+        },
+        {
+          "type": "header",
+          "content": "Highlighted text (strong)"
+        },
+        {
+          "type": "color",
+          "id": "card_strong_color",
+          "label": "Highlight color",
+          "default": "#0F172A"
+        },
+        {
+          "type": "range",
+          "id": "card_strong_size",
+          "min": 12,
+          "max": 28,
+          "step": 1,
+          "unit": "px",
+          "label": "Highlight size",
+          "default": 16
+        },
+        {
+          "type": "range",
+          "id": "card_strong_size_mobile",
+          "min": 12,
+          "max": 24,
+          "step": 1,
+          "unit": "px",
+          "label": "Highlight size (mobile)",
+          "default": 15
+        },
+        {
+          "type": "header",
+          "content": "Quote"
+        },
+        {
+          "type": "richtext",
+          "id": "card_quote",
+          "label": "Quote",
+          "default": "<p>\"By day 5, I woke up before my alarm. That hasn't happened in years.\" — Jennifer R., 52</p>"
+        },
+        {
+          "type": "color",
+          "id": "card_quote_color",
+          "label": "Quote color",
+          "default": "#475569"
+        },
+        {
+          "type": "range",
+          "id": "card_quote_size",
+          "min": 10,
+          "max": 22,
+          "step": 1,
+          "unit": "px",
+          "label": "Quote size",
+          "default": 15
+        },
+        {
+          "type": "range",
+          "id": "card_quote_size_mobile",
+          "min": 10,
+          "max": 20,
+          "step": 1,
+          "unit": "px",
+          "label": "Quote size (mobile)",
+          "default": 14
+        },
+        {
+          "type": "checkbox",
+          "id": "card_quote_italic",
+          "label": "Italic quote",
+          "default": true
+        },
+        {
+          "type": "header",
+          "content": "Card style"
+        },
+        {
+          "type": "color",
+          "id": "card_background",
+          "label": "Card background",
+          "default": "#FFFFFF"
+        },
+        {
+          "type": "color",
+          "id": "card_border_color",
+          "label": "Card border color",
+          "default": "#D6D6D6"
+        },
+        {
+          "type": "range",
+          "id": "card_border_width",
+          "min": 0,
+          "max": 6,
+          "step": 1,
+          "unit": "px",
+          "label": "Card border width",
+          "default": 1
+        },
+        {
+          "type": "range",
+          "id": "card_radius",
+          "min": 0,
+          "max": 40,
+          "step": 1,
+          "unit": "px",
+          "label": "Card radius",
+          "default": 14
+        },
+        {
+          "type": "range",
+          "id": "card_padding",
+          "min": 10,
+          "max": 60,
+          "step": 1,
+          "unit": "px",
+          "label": "Card padding",
+          "default": 20
+        },
+        {
+          "type": "range",
+          "id": "card_padding_mobile",
+          "min": 10,
+          "max": 50,
+          "step": 1,
+          "unit": "px",
+          "label": "Card padding (mobile)",
+          "default": 18
+        },
+        {
+          "type": "select",
+          "id": "card_text_align",
+          "label": "Card text alignment",
+          "options": [
+            {
+              "value": "left",
+              "label": "Left"
+            },
+            {
+              "value": "center",
+              "label": "Center"
+            }
+          ],
+          "default": "left"
+        },
+        {
+          "type": "range",
+          "id": "card_max_width",
+          "min": 260,
+          "max": 700,
+          "step": 10,
+          "unit": "px",
+          "label": "Card max width",
+          "default": 520
+        },
+        {
+          "type": "range",
+          "id": "card_max_width_mobile",
+          "min": 60,
+          "max": 100,
+          "step": 1,
+          "unit": "%",
+          "label": "Card max width (mobile)",
+          "default": 100
+        },
+        {
+          "type": "range",
+          "id": "card_offset",
+          "min": -40,
+          "max": 80,
+          "step": 2,
+          "unit": "px",
+          "label": "Card offset",
+          "default": 0
+        },
+        {
+          "type": "range",
+          "id": "card_offset_mobile",
+          "min": -40,
+          "max": 80,
+          "step": 2,
+          "unit": "px",
+          "label": "Card offset (mobile)",
+          "default": 0
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Consistent use timeline",
+      "blocks": [
+        {
+          "type": "step",
+          "settings": {
+            "label": "1 Week",
+            "card_title": "More energy in the morning. Less brain fog. Clearer thinking.",
+            "card_body": "<p>\"By day 5, I woke up before my alarm. That hasn't happened in years.\"</p>",
+            "card_quote": "<p>— Jennifer R., 52</p>"
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "label": "Month 1",
+            "card_side": "left",
+            "card_title": "Steady energy all day. Better mood. Better sleep.",
+            "card_body": "<p>\"My husband asked what I was doing differently. I'm just... happier.\"</p>",
+            "card_quote": "<p>— Maria L., 61</p>"
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "label": "Month 2",
+            "card_title": "Hair and skin start improving. Joints feel better. People notice.",
+            "card_body": "<p>\"My daughter thought I got Botox. I didn't. It's just Folqs Primal Eight.\"</p>",
+            "card_quote": "<p>— Susan K., 58</p>"
+          }
+        },
+        {
+          "type": "step",
+          "settings": {
+            "label": "Month 3",
+            "card_side": "left",
+            "card_title": "Hair and skin start improving. Joints feel better. People notice.",
+            "card_body": "<p>\"I feel like myself again.\"</p>",
+            "card_quote": "<p>— Amber M., 47</p>"
+          }
+        }
+      ]
+    }
+  ]
+}
+{% endschema %}
