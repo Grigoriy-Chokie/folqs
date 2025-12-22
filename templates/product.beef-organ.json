@@ -9,109 +9,88 @@
  */
 {
   "sections": {
-    "main": {
-      "type": "main-page",
-      "disabled": true,
-      "settings": {
-        "is_heading_hidden": true,
-        "padding_top": 100,
-        "padding_bottom": 40,
-        "padding_top_mobile": 100,
-        "padding_bottom_mobile": 40
-      }
-    },
-    "announcement_line_ejR6aE": {
-      "type": "announcement-line",
-      "disabled": true,
-      "settings": {
-        "icon": "shopify://shop_images/truck-fast.svg",
-        "text": "FREE SHIPPING ON ALL ORDERS",
-        "background_color": "#005EB8",
-        "text_color": "#ffffff"
-      }
-    },
-    "landing_product_alternative_qf7wHE": {
+    "landing_product_alternative_ntjzLG": {
       "type": "landing-product-alternative",
       "blocks": {
-        "image_3XJK4i": {
+        "image_CcxpUP": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Welcome_Kit_Black_Friday-min_1_affb3a95-9528-4fec-a740-b8e6dd5a7f94.png"
+            "image": "shopify://shop_images/Frame_1982249092.webp"
           }
         },
-        "image_QyJprf": {
+        "image_bwi8C3": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Colostrum_Benefits.jpg"
+            "image": "shopify://shop_images/Frame_1982249099.webp"
           }
         },
-        "image_3AK48i": {
+        "image_jRW3WQ": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Beyond_Ordinary.jpg"
+            "image": "shopify://shop_images/Frame_1982249100_47c49531-a22d-4b61-bf90-cbabafc2cdb9.png"
           }
         },
-        "image_rxpG3t": {
+        "image_kYDGem": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/No_Artificial_Anything.jpg"
+            "image": "shopify://shop_images/Frame_1982249087.webp"
           }
         },
-        "image_WD4MXM": {
+        "image_hXDHhw": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/2_de69781a-7174-4619-b945-6410d87fbc47.png"
+            "image": "shopify://shop_images/97c2ad62c9918582b88166d817f690f8a6787971.webp"
           }
         },
-        "title_CWEqDz": {
+        "image_mywaJ3": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Frame_1982249088.webp"
+          }
+        },
+        "image_mXCqcf": {
+          "type": "image",
+          "settings": {
+            "image": "shopify://shop_images/Frame_1982249089.webp"
+          }
+        },
+        "title_7mwHjM": {
           "type": "title",
           "settings": {
-            "text": "<p><strong>An Ancient Superfood</strong><br/>for Modern Lifestyle</p>",
-            "highlighted_color": "#101828",
+            "text": "<p><strong>8 Organs. 3,000 mg</strong><br/>Nature's Complete Multivitamin</p>",
+            "highlighted_color": "#000000",
             "text_mobile": ""
           }
         },
-        "reviews_4AeTjg": {
+        "reviews_KFJ8Gm": {
           "type": "reviews",
           "settings": {
-            "show_desktop_position": false,
+            "show_desktop_position": true,
             "stars_type": "orange_small",
-            "text": "1,571",
-            "additional_text": "<p></p>",
-            "url": "#shopify-section-template--17916523577398__1745495841fb304005"
-          }
-        },
-        "feature_gFiHij": {
-          "type": "feature",
-          "settings": {
-            "icon": "shopify://shop_images/heart_1_1.svg",
-            "title": "Helps\nImmunity",
-            "title_mobile": "",
             "text": "",
-            "hide_on_mobile": false
+            "inline_richtext": "<strong>4.9/5</strong> stars",
+            "additional_text": "<p><em>“Excellent”</em> • 1511 Reviews</p>",
+            "url": ""
           }
         },
-        "feature_FjQLW4": {
-          "type": "feature",
+        "icon_container_9Q8eUC": {
+          "type": "icon_container",
           "settings": {
-            "icon": "shopify://shop_images/stomach_1_dd9ce58a-4601-406a-b2e9-8ca0a7825b77.svg",
-            "title": "Supports\nGut Health",
-            "title_mobile": "",
-            "text": "",
-            "hide_on_mobile": false
+            "icon_1": "shopify://shop_images/Layer_1.svg",
+            "title_1": "All-Day Energy",
+            "subtitle_1": "No crashes, no jitters",
+            "icon_2": "shopify://shop_images/Vector_c7864887-c4f0-426b-b517-62e8fa69a60f.svg",
+            "title_2": "Stronger Immunity",
+            "subtitle_2": "Thymus + Lung support",
+            "icon_3": "shopify://shop_images/Hair_ac88f833-491c-4790-8add-6aab630e7716.svg",
+            "title_3": "Hair, Skin & Joints",
+            "subtitle_3": "Collagen + Chondroitin",
+            "background": "#eef7ff",
+            "border_color": "#8fbae3",
+            "text_color": "#000000"
           }
         },
-        "feature_TPdXkN": {
-          "type": "feature",
-          "settings": {
-            "icon": "shopify://shop_images/protection_1_ba1d0188-949e-4769-b804-9d9ef0b9f840.svg",
-            "title": "Nurtures\nSkin and Hair",
-            "title_mobile": "For Skin\nand Hair",
-            "text": "",
-            "hide_on_mobile": false
-          }
-        },
-        "price_yMBqeq": {
+        "price_qEVmqn": {
           "type": "price",
           "settings": {
             "widget_style": "alternative",
@@ -126,14 +105,14 @@
             "additional_plan_subtext": "",
             "plan_sale_description": "",
             "use_custom_percentage": true,
-            "custom_percentage": 48,
+            "custom_percentage": 20,
             "name_plan": "Subscribe & Save",
-            "information": "48% Off Your First Order\n20% Off Every Order After ($63.99)\nEarn 3% Back In Store Credit\n90-Day Money-Back Guarantee\nPause, Skip, Cancel at Any Time",
+            "information": "90-Day Money Back Guarantee\n100% Grass-Fed New Zealand\nThird-Party Tested for Purity\nFree Shipping Over $75\nNo Fillers, No GMOs, No Hormones",
             "custom_widget_price": true,
             "custom_widget_text": "",
-            "widget_regular_price": "$51.99",
-            "widget_compare_price": "$99.98",
-            "widget_you_save_price": "$47.99",
+            "widget_regular_price": "$63.99",
+            "widget_compare_price": "$79.99",
+            "widget_you_save_price": "$19.99",
             "icon_style": "default",
             "show_popup": false,
             "information_popup": "Save 35% on Your First Order\nGet 20% Off Every Order After\nFree Shipping\nPause, Skip, Cancel at Any Time\n90-Day Money-Back Guarantee",
@@ -164,10 +143,10 @@
             "shadow": false
           }
         },
-        "buy_buttons_JGYTji": {
+        "buy_buttons_nPMx8R": {
           "type": "buy_buttons",
           "settings": {
-            "gift_product": "gift-frother",
+            "gift_product": "",
             "child_product": "",
             "background_color": "#FF6A13",
             "color": "#ffffff",
@@ -180,137 +159,111 @@
             "specific_discount_code": ""
           }
         },
-        "rating_cH9CcK": {
-          "type": "rating",
+        "payment_icons_Q4wmDd": {
+          "type": "payment_icons",
           "disabled": true,
           "settings": {
-            "rating_image": "shopify://shop_images/Frame_1982248617_6ec22493-8a52-4a66-b741-b766e092d8e6.png",
-            "rating_text": "1,571 + Five Star Reviews",
-            "rating_text_mobile": "over 1,571 Reviews"
+            "image_1": "shopify://shop_images/01_2.svg",
+            "image_2": "shopify://shop_images/01_2446f476-2747-40f5-8598-ea10963e79c8.svg",
+            "image_3": "shopify://shop_images/01_8.svg",
+            "image_4": "shopify://shop_images/01.svg",
+            "image_5": "shopify://shop_images/01_6.svg",
+            "image_6": "shopify://shop_images/01_6_3510059f-5f9a-4836-8d88-fc8f05e603cd.svg",
+            "image_7": "shopify://shop_images/01_4.svg",
+            "image_8": "shopify://shop_images/01_7.svg"
           }
         },
-        "payment_icons_7EyFAK": {
-          "type": "payment_icons",
-          "settings": {
-            "image_1": "shopify://shop_images/01.png",
-            "image_2": "shopify://shop_images/01_95e05833-8204-4267-b344-4f31058acfd5.png",
-            "image_3": "shopify://shop_images/01_2.png",
-            "image_4": "shopify://shop_images/01_6_134eee02-14e4-4d93-9618-32d37514334d.png",
-            "image_5": "shopify://shop_images/01_4.png",
-            "image_6": "shopify://shop_images/01_6.png",
-            "image_7": "shopify://shop_images/01_8.png",
-            "image_8": "shopify://shop_images/01_7.png"
-          }
-        },
-        "guarantee_hbAcHN": {
+        "guarantee_q6TCRy": {
           "type": "guarantee",
           "settings": {
-            "icon": "shopify://shop_images/shield-check-svgrepo-com_1_1_7df1d36c-c401-493f-b177-cde2b4811dee.svg",
+            "icon": "shopify://shop_images/shield-check-svgrepo-com_1_1.svg",
             "title": "90-Day Money-Back Guarantee",
-            "text": "That's how much we believe in our product. We'll happily accept your return within 90 days of the sale date and issue you a complete refund."
+            "text": ""
           }
         },
-        "review_with_usp_jBe7ae": {
+        "review_with_usp_TByhxb": {
           "type": "review_with_usp",
+          "disabled": true,
           "settings": {
             "title": "Join 10,000+ Satisfied Customers",
-            "image": "shopify://shop_images/Frame_1982248617.png",
-            "stars_url": "#shopify-section-template--17916523577398__1745495841fb304005",
+            "image": "shopify://shop_images/Frame_1982248617_1.png",
+            "stars_url": "",
             "extra_styles": true,
-            "style": "alternative"
+            "style": "default"
           }
         },
-        "collapsible_row_UJEjAj": {
-          "type": "collapsible_row",
+        "icon_text_9aNm4j": {
+          "type": "icon-text",
           "settings": {
-            "question": "What is Colostrum",
-            "answer": "<p>Colostrum is nature’s very first gift — an incredibly nutrient-rich milk produced by mammals to help newborns get a strong, healthy start. Humans can benefit from its powerful properties too, as <strong>colostrum naturally contains antibodies, growth factors, and essential nutrients</strong> that may support:</p><ul><li>Healthy immune system function*</li><li>Digestive comfort and gut health*</li><li>Muscle and tissue recovery*</li><li>Joint flexibility and mobility*</li><li>Skin, hair, and nail health*</li><li>Overall vitality and wellness*</li></ul>",
-            "default_list": false
+            "icon": "shopify://shop_images/Group_1982248287.svg",
+            "text": "Pasture Raised"
           }
         },
-        "collapsible_row_Qa9X3t": {
-          "type": "collapsible_row",
+        "icon_text_if3LNn": {
+          "type": "icon-text",
           "settings": {
-            "question": "Health Benefits",
-            "answer": "<ul><li>Supports Immune Health*</li><li>Promotes Gut Health and Digestive Balance*</li><li>Aids in Post-Workout Recovery and Tissue Support*</li><li>Helps Maintain a Healthy Microbiome*</li><li>Encourages Joint and Muscle Wellness*</li><li>Promotes Skin, Hair, and Nail Vitality*</li><li>Supports Healthy Aging and Longevity*</li><li>Enhances Overall Resilience and Wellness*</li></ul><p><em>*Individual results may vary. These statements are not intended to diagnose, treat, cure, or prevent any disease.</em></p>",
-            "default_list": true
+            "icon": "shopify://shop_images/Group_1982248288.svg",
+            "text": "Grass-Fed Source"
           }
         },
-        "collapsible_row_9feMYH": {
-          "type": "collapsible_row",
+        "icon_text_KmjNpb": {
+          "type": "icon-text",
           "settings": {
-            "question": "Product Features",
-            "answer": "<ul><li><strong>First-Day Milking Full-Fat, Non-Stripped </strong></li><li><strong>Grass-Fed Cows – USA Farms </strong></li><li><strong>Calf-First Ethical Sourcing </strong></li><li><strong>Rich in Immunoglobulins (IgG, IgA) </strong></li><li><strong>High in Growth Factors </strong></li><li><strong>Loaded with Prebiotics and Proline-Rich Polypeptides (PRPs) </strong></li><li><strong>No Artificial Additives or Fillers</strong></li><li><strong>Third-Party Tested for Purity and Quality </strong></li></ul><p><em>Individual results may vary. These statements are not intended to diagnose, treat, cure, or prevent any disease.</em></p>",
-            "default_list": true
+            "icon": "shopify://shop_images/Group_1982248285.svg",
+            "text": "Antibiotics Free"
           }
         },
-        "collapsible_row_mehCwK": {
-          "type": "collapsible_row",
+        "icon_text_N7eCqQ": {
+          "type": "icon-text",
           "settings": {
-            "question": "Ingredients",
-            "answer": "<ul><li><strong>Immunoglobulins (IgG, IgA, IgM): </strong>Antibodies that are naturally present in colostrum.</li><li><strong>Proline-Rich Polypeptides (PRPs): </strong>Specialized proteins unique to colostrum.</li><li><strong>Lactoferrin:</strong> A beneficial protein sourced from milk.</li><li><strong>Growth Factors (IGF-1, IGF-2):</strong> Bioactive substances inherent in colostrum.</li><li><strong>Cytokines</strong>: Cell-signaling molecules found in nature.</li><li><strong>Prebiotics:</strong> Dietary fibers supporting everyday nutrition.<br/><strong>Vitamins & Minerals:</strong> Fundamental nutrients for daily wellbeing.<br/><strong>Essential Amino Acids:</strong> Core building blocks vital for nutrition.</li><li><strong>Fatty Acids:</strong> Nutrients naturally contributing to balanced nutrition.</li></ul><p><em>Individual results may vary. These statements are not intended to diagnose, treat, cure, or prevent any disease.</em></p>",
-            "default_list": true
+            "icon": "shopify://shop_images/Group_1982248286.svg",
+            "text": "Third-party Tested"
           }
         },
-        "collapsible_row_KMagwp": {
-          "type": "collapsible_row",
+        "icon_text_rNPbLa": {
+          "type": "icon-text",
           "settings": {
-            "question": "No Artificial Anything",
-            "answer": "<ul><li><strong>No Hormones</strong></li><li><strong>No Antibiotics </strong></li><li><strong>No Additives or Fillers </strong></li><li><strong>No Artificial Flavors or Sweeteners </strong></li><li><strong>No GMO IngredientsNo Preservatives </strong></li><li><strong>No High-Heat Processing </strong></li><li><strong>No Pesticides or Harmful Chemicals </strong></li><li><strong>No Synthetic Ingredients</strong></li></ul>",
-            "default_list": true
-          }
-        },
-        "sticky_add_WLPcWC": {
-          "type": "sticky-add",
-          "settings": {
-            "image": "shopify://shop_images/Fabula_Coffee_Bag_Medium_USDA_1.png",
-            "title": "First-Day Bovine Colostum",
-            "reviews_text": "3,547",
-            "button_background_color": "#ef0009",
-            "button_text_color": "#ffffff",
-            "custom_widget_price": true,
-            "widget_regular_price": "$51.99",
-            "widget_compare_price": "$99.98"
+            "icon": "shopify://shop_images/Group_1982248284.svg",
+            "text": "Fillers Free"
           }
         }
       },
       "block_order": [
-        "image_3XJK4i",
-        "image_QyJprf",
-        "image_3AK48i",
-        "image_rxpG3t",
-        "image_WD4MXM",
-        "title_CWEqDz",
-        "reviews_4AeTjg",
-        "feature_gFiHij",
-        "feature_FjQLW4",
-        "feature_TPdXkN",
-        "price_yMBqeq",
-        "buy_buttons_JGYTji",
-        "rating_cH9CcK",
-        "payment_icons_7EyFAK",
-        "guarantee_hbAcHN",
-        "review_with_usp_jBe7ae",
-        "collapsible_row_UJEjAj",
-        "collapsible_row_Qa9X3t",
-        "collapsible_row_9feMYH",
-        "collapsible_row_mehCwK",
-        "collapsible_row_KMagwp",
-        "sticky_add_WLPcWC"
+        "image_CcxpUP",
+        "image_bwi8C3",
+        "image_jRW3WQ",
+        "image_kYDGem",
+        "image_hXDHhw",
+        "image_mywaJ3",
+        "image_mXCqcf",
+        "title_7mwHjM",
+        "reviews_KFJ8Gm",
+        "icon_container_9Q8eUC",
+        "price_qEVmqn",
+        "buy_buttons_nPMx8R",
+        "payment_icons_Q4wmDd",
+        "guarantee_q6TCRy",
+        "review_with_usp_TByhxb",
+        "icon_text_9aNm4j",
+        "icon_text_if3LNn",
+        "icon_text_KmjNpb",
+        "icon_text_N7eCqQ",
+        "icon_text_rNPbLa"
       ],
       "custom_css": [
-        ".plan-name__heading,.product-information__price-regular {color: black !important;}"
+        ".landing-product__information .product-information__features {gap: 20px;}"
       ],
+      "name": "Landing product alternative",
       "settings": {
         "enable_extra_styles_pdp": false,
         "hide_features_icons": false,
-        "enable_extra_styles": false,
-        "show_saving_price": false,
-        "hide_usp_icons": false,
+        "enable_extra_styles": true,
+        "show_saving_price": true,
+        "hide_usp_icons": true,
         "style_type": "default",
         "lightbox_type": "column",
         "zoom_type": "magnify",
-        "mobile_style": "alternative",
+        "mobile_style": "default",
         "use_gallery": true,
         "gallery_view": "slider",
         "is_show_pagination": true,
@@ -318,26 +271,26 @@
         "is_show_pagination_fraction": true,
         "show_mobile_zoom_icon": true,
         "gallery_full_width": false,
-        "background": "#fff",
+        "background": "",
         "primary_color": "#ff6a13",
         "background_icon": "",
-        "faq_style": "alternative",
-        "padding_top": 40,
-        "padding_bottom": 60,
-        "padding_top_mobile": 25,
-        "padding_bottom_mobile": 0,
+        "faq_style": "default",
+        "padding_top": 10,
+        "padding_bottom": 50,
+        "padding_top_mobile": 0,
+        "padding_bottom_mobile": 20,
         "heading": "Only Natural Ungredients",
         "sub_heading": "Lorem ipsum dolor sit amet consectetur. Gravida facilisi eleifend sit quam morbi risus id. Nisl massa donec tincidunt.",
-        "landing_product": "",
+        "landing_product": "bovine-colostrum",
         "enable_style": true,
         "additional_style_files": "section-landing-product-ancient.css",
         "property_value": ""
       }
     },
-    "highlighted_cards_grid_wnjVET": {
+    "highlighted_cards_grid_8ipMit": {
       "type": "highlighted-cards-grid",
       "blocks": {
-        "card_MRDraM": {
+        "card_6hTVbb": {
           "type": "card",
           "settings": {
             "card_background": "#ffffff",
@@ -356,7 +309,7 @@
             "card_footer_size_mobile": 16
           }
         },
-        "card_yXkbdn": {
+        "card_WReeee": {
           "type": "card",
           "settings": {
             "card_background": "#ffffff",
@@ -375,7 +328,7 @@
             "card_footer_size_mobile": 16
           }
         },
-        "card_fd34b9": {
+        "card_XxBpWy": {
           "type": "card",
           "settings": {
             "card_background": "#ffffff",
@@ -394,7 +347,7 @@
             "card_footer_size_mobile": 16
           }
         },
-        "card_jJzAmY": {
+        "card_dNaNhX": {
           "type": "card",
           "settings": {
             "card_background": "#ffffff",
@@ -415,10 +368,10 @@
         }
       },
       "block_order": [
-        "card_MRDraM",
-        "card_yXkbdn",
-        "card_fd34b9",
-        "card_jJzAmY"
+        "card_6hTVbb",
+        "card_WReeee",
+        "card_XxBpWy",
+        "card_dNaNhX"
       ],
       "name": "Highlighted cards grid",
       "settings": {
@@ -446,41 +399,139 @@
         "padding_bottom_mobile": 40
       }
     },
-    "rich_text_v2_6Gqfdg": {
+    "accordion_slider_Wkzm3E": {
+      "type": "accordion-slider",
+      "blocks": {
+        "content_BVQbLn": {
+          "type": "content",
+          "settings": {
+            "image_desktop": "shopify://shop_images/Energy_Vitality.png",
+            "icon": "shopify://shop_images/2.svg",
+            "disable_icon_list_type": false,
+            "title": "Energy & Vitality*",
+            "content": "<ul><li>2,900% Daily Value B12 from Liver</li><li>113mg CoQ10 from Heart</li><li>Heme Iron for Oxygen Transport</li><li>Supports Cellular Energy Production</li></ul>"
+          }
+        },
+        "content_WCDJNp": {
+          "type": "content",
+          "settings": {
+            "image_desktop": "shopify://shop_images/Immunity_Respiratory_Health.png",
+            "icon": "shopify://shop_images/2.svg",
+            "disable_icon_list_type": false,
+            "title": "Immunity & Respiratory Health*",
+            "content": "<ul><li>Rebuilds Intestinal Barrier for Stronger Digestion</li><li>Reduces Bloating & Discomfort</li><li>Supports Healthy Microbiome Balance</li></ul>"
+          }
+        },
+        "content_hkUCqR": {
+          "type": "content",
+          "settings": {
+            "image_desktop": "shopify://shop_images/Joint_Mobility.png",
+            "icon": "shopify://shop_images/2.svg",
+            "disable_icon_list_type": false,
+            "title": "Joint & Mobility*",
+            "content": "<ul><li>Stimulates Natural Collagen Production</li><li>Improves Skin Firmness & Radiance</li><li>Strengthens Hair & Nails from Within</li></ul>"
+          }
+        },
+        "content_hVQiAa": {
+          "type": "content",
+          "settings": {
+            "image_desktop": "shopify://shop_images/Hair_Nails_Skin.png",
+            "icon": "shopify://shop_images/2.svg",
+            "disable_icon_list_type": false,
+            "title": "Hair, Nails & Skin*",
+            "content": "<ul><li>Stimulates Natural Collagen Production</li><li>Improves Skin Firmness & Radiance</li><li>Strengthens Hair & Nails from Within</li></ul>"
+          }
+        },
+        "content_mKim9d": {
+          "type": "content",
+          "settings": {
+            "image_desktop": "shopify://shop_images/Athletic_Performance_1c85c22f-d216-44c5-81b2-b681359d2cd6.png",
+            "icon": "shopify://shop_images/2.svg",
+            "disable_icon_list_type": false,
+            "title": "Athletic Performance*",
+            "content": "<ul><li>Speeds Recovery & Reduces Fatigue</li><li>Supports Lean Muscle & Joint Health</li><li>Boosts Everyday Energy & Endurance</li></ul>"
+          }
+        },
+        "content_HDiqRT": {
+          "type": "content",
+          "settings": {
+            "icon": "shopify://shop_images/2.svg",
+            "disable_icon_list_type": false,
+            "title": "Ingredients",
+            "content": "<ul><li>Speeds Recovery & Reduces Fatigue</li><li>Supports Lean Muscle & Joint Health</li><li>Boosts Everyday Energy & Endurance</li></ul>"
+          }
+        }
+      },
+      "block_order": [
+        "content_BVQbLn",
+        "content_WCDJNp",
+        "content_hkUCqR",
+        "content_hVQiAa",
+        "content_mKim9d",
+        "content_HDiqRT"
+      ],
+      "custom_css": [
+        ".accordion__slider-subtitle {color: #FF6A13; background: #FF6A1326;}"
+      ],
+      "name": "Accordion slider",
+      "settings": {
+        "enable_margin_top_minus": false,
+        "disable_top_margin_mobile": false,
+        "enable_extra_styles": false,
+        "background_color_mobile": "",
+        "image": "shopify://shop_images/accordion_menu_2.png",
+        "image_mobile": "shopify://shop_images/Frame_1982248983.png",
+        "subtitle": "Folqs Core Eight Beef Organ Complex Benefits",
+        "hide_subtitle_desk": false,
+        "hide_subtitle_mob": false,
+        "title": "<p><strong>What’s in it for you?</strong></p>",
+        "hide_title_desk": false,
+        "hide_title_mob": false,
+        "content_desktop": "More than ingredients-bioactives that work across your whole body.",
+        "content_mobile": "More than ingredients-bioactives that work across your whole body.",
+        "hide_content_desk": false,
+        "hide_content_mob": false,
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "padding_top_mobile": 22,
+        "padding_bottom_mobile": 40
+      }
+    },
+    "rich_text_v2_n36A6U": {
       "type": "rich-text-v2",
       "blocks": {
-        "heading_GAN7ad": {
+        "heading_ixNKMQ": {
           "type": "heading",
           "settings": {
             "heading": "How Our Ancestors THRIVED Before Big Pharma & Processed Foods"
           }
         },
-        "contnet_qyf84r": {
+        "contnet_z4NW84": {
           "type": "contnet",
           "settings": {
             "content": "<p>Beef organs have always been a cherished and sought after food source.</p><p>They were the most prized parts - given to warriors, pregnant women, and leaders.</p>"
           }
         },
-        "image_XtPDpE": {
+        "image_yUPrGy": {
           "type": "image",
           "settings": {
             "image": "shopify://shop_images/Gemini_Generated_Image_od8cpcod8cpcod8c_1_1.png"
           }
         },
-        "contnet_eb7JXX": {
+        "contnet_y8PrVj": {
           "type": "contnet",
           "settings": {
             "content": "<p>Beef organs have always been a cherished and sought after food source.</p><p>But in the last 100 years, we've moved away from eating organs.</p>"
           }
         },
-        "colored_content_gYEnJV": {
+        "colored_content_anJWdw": {
           "type": "colored-content",
           "settings": {
             "content": "<p><strong>Why? Because big pharma & big processed food companies have changed the way we treat our health and get nutrition.</strong></p><p><strong>They don't want you to treat the root cause of almost every health issue…</strong></p>",
             "text_color": "#005eb8"
           }
         },
-        "contnet_LEy7nH": {
+        "contnet_m3P8BK": {
           "type": "contnet",
           "settings": {
             "content": "<p>They want you to treat the symptoms with more lab-made pharmaceuticals and more processed comfort foods that ultimately result in billions of dollars in profits.</p><p>OR... they want to sell you individual synthetic vitamins, multivitamins, greens powders... that your body will likely never absorb.</p>"
@@ -488,12 +539,12 @@
         }
       },
       "block_order": [
-        "heading_GAN7ad",
-        "contnet_qyf84r",
-        "image_XtPDpE",
-        "contnet_eb7JXX",
-        "colored_content_gYEnJV",
-        "contnet_LEy7nH"
+        "heading_ixNKMQ",
+        "contnet_z4NW84",
+        "image_yUPrGy",
+        "contnet_y8PrVj",
+        "colored_content_anJWdw",
+        "contnet_m3P8BK"
       ],
       "name": "Rich text v2",
       "settings": {
@@ -505,59 +556,59 @@
         "padding_bottom_mobile": 40
       }
     },
-    "for_everyone_cards_B6XL8W": {
+    "for_everyone_cards_c4mKci": {
       "type": "for-everyone-cards",
       "blocks": {
-        "item_mWetWC": {
+        "item_cpBjHn": {
           "type": "item",
           "settings": {
             "card": "left",
             "text": "You want overnight results (real nutrition takes time)"
           }
         },
-        "item_RWmNQU": {
+        "item_7X66VR": {
           "type": "item",
           "settings": {
             "card": "left",
             "text": "You won't take 6 capsules daily (consistency matters)"
           }
         },
-        "item_p36aH4": {
+        "item_xiBhid": {
           "type": "item",
           "settings": {
             "card": "left",
             "text": "You think cheap synthetic vitamins work (they don't)"
           }
         },
-        "item_9Bc9tF": {
+        "item_8hW4qi": {
           "type": "item",
           "settings": {
             "card": "left",
             "text": "You're just looking for the cheapest option"
           }
         },
-        "item_Dw8gjR": {
+        "item_iUAYFd": {
           "type": "item",
           "settings": {
             "card": "right",
             "text": "You're tired of supplements that don't work"
           }
         },
-        "item_R46EKc": {
+        "item_TTJ333": {
           "type": "item",
           "settings": {
             "card": "right",
             "text": "You want <strong>ONE</strong> product that replaces your whole stack"
           }
         },
-        "item_iM7HNw": {
+        "item_LVy3cc": {
           "type": "item",
           "settings": {
             "card": "right",
             "text": "You believe in ancestral wisdom backed by science"
           }
         },
-        "item_GgaqqV": {
+        "item_agM6xW": {
           "type": "item",
           "settings": {
             "card": "right",
@@ -566,14 +617,14 @@
         }
       },
       "block_order": [
-        "item_mWetWC",
-        "item_RWmNQU",
-        "item_p36aH4",
-        "item_9Bc9tF",
-        "item_Dw8gjR",
-        "item_R46EKc",
-        "item_iM7HNw",
-        "item_GgaqqV"
+        "item_cpBjHn",
+        "item_7X66VR",
+        "item_xiBhid",
+        "item_8hW4qi",
+        "item_iUAYFd",
+        "item_TTJ333",
+        "item_LVy3cc",
+        "item_agM6xW"
       ],
       "name": "For everyone cards",
       "settings": {
@@ -677,10 +728,10 @@
         "padding_bottom_mobile": 60
       }
     },
-    "image_text_blocks_9ECwVP": {
+    "image_text_blocks_YcDLAT": {
       "type": "image-text-blocks",
       "blocks": {
-        "item_qxdHct": {
+        "item_TEUnHY": {
           "type": "item",
           "settings": {
             "image": "shopify://shop_images/Frame_1982249481.png",
@@ -705,7 +756,7 @@
             "body_strong_size_mobile": 16
           }
         },
-        "item_AwGy7y": {
+        "item_BycQGL": {
           "type": "item",
           "settings": {
             "image": "shopify://shop_images/Frame_1982249471.png",
@@ -732,8 +783,8 @@
         }
       },
       "block_order": [
-        "item_qxdHct",
-        "item_AwGy7y"
+        "item_TEUnHY",
+        "item_BycQGL"
       ],
       "name": "Image text blocks",
       "settings": {
@@ -748,37 +799,171 @@
         "padding_bottom_mobile": 40
       }
     },
-    "image_with_text_extra_LyfWnU": {
-      "type": "image-with-text-extra",
-      "custom_css": [
-        "@media (max-width: 768px) {.image-with-text-extra__text {text-align: center; } .image-with-text-extra__title {max-width: 90%; margin-inline: auto; }}"
+    "icons_grid_eLebyP": {
+      "type": "icons-grid",
+      "blocks": {
+        "icon_dVKC34": {
+          "type": "icon",
+          "settings": {
+            "media_title": "You Eat <strong>Heart</strong>",
+            "media_image": "shopify://shop_images/afdf3fd499e236d91cb70ac499d8fb1499b62742.png",
+            "media_image_width": 31,
+            "info_title": "You Support",
+            "info_description": "<p>Your heart + energy <br/>(CoQ10)</p>"
+          }
+        },
+        "icon_eYMJyj": {
+          "type": "icon",
+          "settings": {
+            "media_title": "You Eat <strong>Liver</strong>",
+            "media_image": "shopify://shop_images/4ed25d1f4f28614a93cde7afa7396146ae0e9388.png",
+            "media_image_width": 53,
+            "info_title": "You Support",
+            "info_description": "<p>Your liver + energy <br/>(B12, Vit A)</p>"
+          }
+        },
+        "icon_ymACQW": {
+          "type": "icon",
+          "settings": {
+            "media_title": "You Eat <strong>Kidney</strong>",
+            "media_image": "shopify://shop_images/6a75bb275af2f08639699ea9839d60214fa519fb.png",
+            "media_image_width": 62,
+            "info_title": "You Support",
+            "info_description": "<p>Your kidneys + hair <br/>(Selenium)</p>"
+          }
+        },
+        "icon_qLpwiV": {
+          "type": "icon",
+          "settings": {
+            "media_title": "You Eat <strong>Thymus</strong>",
+            "media_image": "shopify://shop_images/d8aee77e783e7b5088ecc850bac130feac3eab2d.png",
+            "media_image_width": 27,
+            "info_title": "You Support",
+            "info_description": "<p>Your immune system <br/>(T-cells)</p>"
+          }
+        },
+        "icon_FqGMTU": {
+          "type": "icon",
+          "settings": {
+            "media_title": "You Eat <strong>Lung</strong>",
+            "media_image": "shopify://shop_images/d37e57f6c04643af3510ad946742d782fe9d7389.png",
+            "media_image_width": 43,
+            "info_title": "You Eat Spleen",
+            "info_description": "<p>Your blood <br/>(Heme iron)</p>"
+          }
+        },
+        "icon_X8FTb6": {
+          "type": "icon",
+          "settings": {
+            "media_title": "You Eat <strong>Spleen</strong>",
+            "media_image": "shopify://shop_images/24777268339ab16c50b759d43c5f56694ec7e2ef.png",
+            "media_image_width": 38,
+            "info_title": "You Support",
+            "info_description": "<p>Your blood <br/>(Heme iron)</p>"
+          }
+        },
+        "icon_GQm49T": {
+          "type": "icon",
+          "settings": {
+            "media_title": "You Eat <strong>Bone Marrow</strong>",
+            "media_image": "shopify://shop_images/Asset_1_4x_3.png",
+            "media_image_width": 100,
+            "info_title": "You Support",
+            "info_description": "<p>Your bones + <br/>recovery (Stem cells)</p>"
+          }
+        },
+        "icon_Hz9gh8": {
+          "type": "icon",
+          "settings": {
+            "media_title": "You Eat <strong>Trachea</strong>",
+            "media_image": "shopify://shop_images/Asset_7_3x_8426da11-1c36-42e0-8d90-ba20ce5c0e9c.png",
+            "media_image_width": 50,
+            "info_title": "You Support",
+            "info_description": "<p>Your joints <br/>(Chondroitin)</p>"
+          }
+        }
+      },
+      "block_order": [
+        "icon_dVKC34",
+        "icon_eYMJyj",
+        "icon_ymACQW",
+        "icon_qLpwiV",
+        "icon_FqGMTU",
+        "icon_X8FTb6",
+        "icon_GQm49T",
+        "icon_Hz9gh8"
       ],
-      "name": "Image with text Extra",
+      "name": "Icons grid",
       "settings": {
-        "color_scheme": "",
-        "gradient_background": "linear-gradient(180deg, rgba(255, 255, 255, 1), rgba(239, 247, 255, 1) 100%)",
-        "custom_background_position": false,
-        "position_x": "56%",
-        "position_y": "-117px",
-        "position_x_mobile": "13%",
-        "position_y_mobile": "-60px",
-        "custom_max_height": "455",
-        "image": "shopify://shop_images/Frame_1982249503_1.png",
-        "image_position": "right",
-        "image_position_mobile": "text-first",
-        "title": "Sourced From The End Of \nThe Earth",
-        "text": "<p>The liver is a filter. If the cow eats toxins, the liver traps them. <strong>That's why the source matters more than anything.</strong></p><p><strong>Folqs Primal Eight Beef Organ Complex comes exclusively from New Zealand — the purest place on the planet.</strong></p>",
-        "highlight_color": "#005eb8",
-        "padding_top": 50,
-        "padding_bottom": 50,
-        "padding_top_mobile": 40,
-        "padding_bottom_mobile": 40
+        "subheading": "Not supplementation. Restoration.",
+        "heading": "Eat Heart. Support Your Heart.",
+        "description": "For 200,000 years, humans knew: to heal a specific organ, eat that organ. Modern science confirms it.",
+        "background_image_desktop": "shopify://shop_images/Why_First-day_5cd6b86d-ad5d-4954-a84d-f7a1e4cbeef8.png",
+        "background_image_mobile": "shopify://shop_images/4_4595827f-6128-43de-bb50-9166988322cd.png",
+        "padding_top": 120,
+        "padding_bottom": 90,
+        "padding_top_mobile": 66,
+        "padding_bottom_mobile": 40,
+        "constrain_width": false,
+        "max_width": 700,
+        "columns_desktop": 2,
+        "columns_mobile": 1,
+        "subheading_background": "#005eb8",
+        "subheading_color": "#005eb8"
       }
     },
-    "consistent_use_timeline_NGqgMm": {
+    "comparison_cost_yPb7AR": {
+      "type": "comparison-cost",
+      "blocks": {
+        "comparison_block_7FFENB": {
+          "type": "comparison-block",
+          "settings": {
+            "comparison_heading": "<p>Folqs <br/>Primal Eight</p>",
+            "comparison_heading_color": "#005eb8",
+            "comparison_tag": "$2/Serving",
+            "comparison_tag_color": "#ffffff",
+            "comparison_tag_background": "#005eb8",
+            "comparison_position_mobile": "left"
+          }
+        },
+        "image_NaxRPh": {
+          "type": "image",
+          "settings": {
+            "image_desktop": "shopify://shop_images/Group_1982248297_1.png"
+          }
+        },
+        "comparison_block_9e3kT7": {
+          "type": "comparison-block",
+          "settings": {
+            "comparison_heading": "<p>Daily <br/>Products:</p>",
+            "comparison_heading_color": "#eb2913",
+            "comparison_tag": "$85/Serving",
+            "comparison_tag_color": "#ffffff",
+            "comparison_tag_background": "#eb2913",
+            "comparison_position_mobile": "right"
+          }
+        }
+      },
+      "block_order": [
+        "comparison_block_7FFENB",
+        "image_NaxRPh",
+        "comparison_block_9e3kT7"
+      ],
+      "name": "Comparison cost",
+      "settings": {
+        "heading": "One Serving vs. The Entire Grocery Aisle",
+        "background_image_desktop": "shopify://shop_images/Why_First-day_1_a0a373a1-48ad-4417-814a-c8d4475c6f96.png",
+        "background_image_mobile": "shopify://shop_images/2_b3b32334-6f34-4c98-87d1-ebe904de5aea.png",
+        "tagline_text": "Stop grazing like a herbivore. Feed yourself like a predator.",
+        "tagline_color": "#005eb8",
+        "constrain_width": true,
+        "max_width": 700
+      }
+    },
+    "consistent_use_timeline_keK8N7": {
       "type": "consistent-use-timeline",
       "blocks": {
-        "step_GUabBV": {
+        "step_xwkApE": {
           "type": "step",
           "name": "Timeline step 1",
           "settings": {
@@ -823,7 +1008,7 @@
             "card_offset_mobile": 0
           }
         },
-        "step_Tk9Gxb": {
+        "step_mJ7zEE": {
           "type": "step",
           "name": "Timeline step 2",
           "settings": {
@@ -868,7 +1053,7 @@
             "card_offset_mobile": 0
           }
         },
-        "step_UEDf8g": {
+        "step_XFy6n6": {
           "type": "step",
           "name": "Timeline step 3",
           "settings": {
@@ -913,7 +1098,7 @@
             "card_offset_mobile": 0
           }
         },
-        "step_BRxUta": {
+        "step_ghLwBX": {
           "type": "step",
           "name": "Timeline step 4",
           "settings": {
@@ -960,10 +1145,10 @@
         }
       },
       "block_order": [
-        "step_GUabBV",
-        "step_Tk9Gxb",
-        "step_UEDf8g",
-        "step_BRxUta"
+        "step_xwkApE",
+        "step_mJ7zEE",
+        "step_XFy6n6",
+        "step_ghLwBX"
       ],
       "name": "Consistent use timeline",
       "settings": {
@@ -1020,108 +1205,488 @@
         "padding_bottom_mobile": 60
       }
     },
-    "video_reviews_grid_9RPqtz": {
-      "type": "video-reviews-grid",
+    "product_compare_tabe_new_UXdaEN": {
+      "type": "product-compare-tabe-new",
       "blocks": {
-        "review_m8kLAV": {
-          "type": "review",
+        "table_head_FWbXnB": {
+          "type": "table_head",
           "settings": {
-            "video": "shopify://files/videos/content-1024784_a3de2e32-4ef1-4aa8-a1df-4074e92b1bc3.mp4",
-            "author": "Madison",
-            "rating": 5
+            "best_choise_badge": "shopify://shop_images/Group_1404.svg",
+            "main_image": "shopify://shop_images/Frame_691314152_3.webp",
+            "main_text": "Folqs",
+            "second_image": "shopify://shop_images/Frame_691314152.webp",
+            "second_text": "Ancestral",
+            "third_image": "shopify://shop_images/Frame_691314152_1.webp",
+            "third_text": "Heart & Soil",
+            "fourth_image": "shopify://shop_images/Frame_691314152_2_1f38b513-39db-40f3-ac38-839a428371a4.png",
+            "fourth_text": "Primal Queen"
           }
         },
-        "review_VPfhYQ": {
-          "type": "review",
+        "table_row_T4JH7U": {
+          "type": "table_row",
           "settings": {
-            "video": "shopify://files/videos/folqsvideo_cae820ff-cdca-4b2d-b6d4-59fb94b170aa.mp4",
-            "poster": "shopify://shop_images/Rectangle_572.png",
-            "author": "Chloe",
-            "rating": 5
+            "row_text": "# of Organs",
+            "main_checkmark": false,
+            "main_checkmark_text": "8",
+            "second_icon_type": "none",
+            "second_checkmark_text": "5",
+            "third_icon_type": "none",
+            "third_checkmark_text": "5",
+            "fourth_icon_type": "none",
+            "fourth_checkmark_text": "5"
           }
         },
-        "review_Eg7nCm": {
-          "type": "review",
+        "table_row_cmJRJA": {
+          "type": "table_row",
           "settings": {
-            "video": "shopify://files/videos/Copy of Zach Pierce PersonalT.MOV",
-            "author": "Ethan",
-            "rating": 5
+            "row_text": "Total Dose",
+            "main_checkmark": false,
+            "main_checkmark_text": "3,000mg",
+            "second_icon_type": "none",
+            "second_checkmark_text": "3,000mg",
+            "third_icon_type": "none",
+            "third_checkmark_text": "3,000mg",
+            "fourth_icon_type": "none",
+            "fourth_checkmark_text": "337mg"
           }
         },
-        "review_fFkJk3": {
-          "type": "review",
+        "table_row_NnVLhj": {
+          "type": "table_row",
           "settings": {
-            "video": "shopify://files/videos/Colostrum Powder - Folqs (1)_6fa9a225-5b35-4c3c-a36d-53b5a5ecb901.mov",
-            "poster": "shopify://shop_images/IMG_7292.heic",
-            "author": "Lucas",
-            "rating": 5
+            "row_text": "Thymus",
+            "main_checkmark": true,
+            "main_checkmark_text": "",
+            "second_icon_type": "error",
+            "second_checkmark_text": "",
+            "third_icon_type": "error",
+            "third_checkmark_text": "",
+            "fourth_icon_type": "error",
+            "fourth_checkmark_text": ""
+          }
+        },
+        "table_row_9Qc9nr": {
+          "type": "table_row",
+          "settings": {
+            "row_text": "Lung",
+            "main_checkmark": true,
+            "main_checkmark_text": "",
+            "second_icon_type": "error",
+            "second_checkmark_text": "",
+            "third_icon_type": "error",
+            "third_checkmark_text": "",
+            "fourth_icon_type": "error",
+            "fourth_checkmark_text": ""
+          }
+        },
+        "table_row_CaQJxB": {
+          "type": "table_row",
+          "settings": {
+            "row_text": "Bone Marrow",
+            "main_checkmark": true,
+            "main_checkmark_text": "",
+            "second_icon_type": "error",
+            "second_checkmark_text": "",
+            "third_icon_type": "error",
+            "third_checkmark_text": "",
+            "fourth_icon_type": "error",
+            "fourth_checkmark_text": ""
+          }
+        },
+        "table_row_DnXzy8": {
+          "type": "table_row",
+          "settings": {
+            "row_text": "New Zealand & USA",
+            "main_checkmark": true,
+            "main_checkmark_text": "",
+            "second_icon_type": "checkmark",
+            "second_checkmark_text": "",
+            "third_icon_type": "checkmark",
+            "third_checkmark_text": "",
+            "fourth_icon_type": "none",
+            "fourth_checkmark_text": "USA"
+          }
+        },
+        "reviews_hFFMnk": {
+          "type": "reviews",
+          "settings": {
+            "button_text": "Try Folqs Today",
+            "button_text_mobile": "Try Folqs Today",
+            "button_url": "shopify://collections/bovine-colostrum",
+            "show_rating": true,
+            "rating_image": "shopify://shop_images/Frame_1982248617_ae763e95-dcaa-41b5-8ee4-b3360da1cfde.png",
+            "rating_text": "over 25,254 Five Star Reviews",
+            "rating_text_mobile": "over 25,254 Reviews"
+          }
+        },
+        "table_cost_idpcQz": {
+          "type": "table_cost",
+          "settings": {
+            "cost_text": "Capsule Size",
+            "main_icon": "shopify://shop_images/Frame_1982249512.svg",
+            "main_icon_mobile": "shopify://shop_images/Frame_1982249510.svg",
+            "second_icon": "shopify://shop_images/Frame_1982249512_1.svg",
+            "second_icon_mobile": "shopify://shop_images/Frame_1982249511.svg",
+            "third_icon": "shopify://shop_images/Frame_1982249513.svg",
+            "third_icon_mobile": "shopify://shop_images/Frame_1982249511.svg",
+            "fourth_icon": "shopify://shop_images/Frame_1982249512_2.svg",
+            "fourth_icon_mobile": "shopify://shop_images/Frame_1982249510_1.svg"
           }
         }
       },
       "block_order": [
-        "review_m8kLAV",
-        "review_VPfhYQ",
-        "review_Eg7nCm",
-        "review_fFkJk3"
+        "table_head_FWbXnB",
+        "table_row_T4JH7U",
+        "table_row_cmJRJA",
+        "table_row_NnVLhj",
+        "table_row_9Qc9nr",
+        "table_row_CaQJxB",
+        "table_row_DnXzy8",
+        "reviews_hFFMnk",
+        "table_cost_idpcQz"
       ],
-      "name": "Video Reviews Grid",
       "settings": {
         "enable_v3_styles": false,
-        "style_type": "new",
-        "extra_styles": true,
-        "rating": 5,
-        "title": "",
-        "subtitle": "Hear Directly from Our Customers",
-        "style_subtitle": false,
-        "body_text": "Why Colostrum\nIs the Talk of the Town",
-        "load_count": 5,
-        "prev_background": "#fff",
-        "background": "#fff",
-        "padding_top": 0,
-        "padding_bottom": 0,
-        "padding_top_mobile": 0,
-        "padding_bottom_mobile": 0
+        "color_scheme": "scheme-80f39c49-7f30-40e9-a9dc-77cba862682a",
+        "section_label": "More organs. Higher doses. Complete nutrition.",
+        "section_label_color": "#ff6a13",
+        "section_title": "Why Folqs Primal Eight Beats The Competition",
+        "section_subtitle": "",
+        "section_text": "",
+        "section_text_mobile": "",
+        "cta_text": "",
+        "cta_link": "shopify://pages/colostrum-benefits-2",
+        "section_background": "linear-gradient(180deg, rgba(255, 255, 255, 1), rgba(254, 239, 232, 1) 60%, rgba(254, 239, 232, 1) 100%)",
+        "section_background_mobile": "",
+        "mushroom_styles": "",
+        "section_padding_top": 100,
+        "section_padding_bottom": 100,
+        "section_padding_top_mobile": 70,
+        "section_padding_bottom_mobile": 70,
+        "custom_colors": true,
+        "table_borders": "#c0c5d0",
+        "table_td": "rgba(0,0,0,0)",
+        "table_td_odd": "rgba(0,0,0,0)",
+        "table_main_product_background": "#005eb8",
+        "table_main_product_svg": "#a0ea7d",
+        "table_other_brand_svg": "#df5454"
       }
     },
-    "faq_with_image_b8RXyx": {
+    "cost_comparison_breakdown_3NM9A6": {
+      "type": "cost-comparison-breakdown",
+      "blocks": {
+        "expense_heading_9dqPYJ": {
+          "type": "expense_heading",
+          "settings": {
+            "expense_heading": "<p>What you're probably <br/>spending now monthly:</p>"
+          }
+        },
+        "expense_item_ifmBfE": {
+          "type": "expense_item",
+          "settings": {
+            "expense_item_label": "Multivitamin",
+            "expense_item_price": "$30"
+          }
+        },
+        "expense_item_fe7ymj": {
+          "type": "expense_item",
+          "settings": {
+            "expense_item_label": "B-Complex",
+            "expense_item_price": "$20"
+          }
+        },
+        "expense_item_FY9Xq4": {
+          "type": "expense_item",
+          "settings": {
+            "expense_item_label": "CoQ10",
+            "expense_item_price": "$35"
+          }
+        },
+        "expense_item_cTkWjj": {
+          "type": "expense_item",
+          "settings": {
+            "expense_item_label": "Collagen",
+            "expense_item_price": "$40"
+          }
+        },
+        "expense_item_TYAfGe": {
+          "type": "expense_item",
+          "settings": {
+            "expense_item_label": "Iron supplement",
+            "expense_item_price": "$15"
+          }
+        },
+        "expense_product_mzBTXP": {
+          "type": "expense_product",
+          "settings": {
+            "expense_product_color": "",
+            "expense_product_name": "Traditional Supplements",
+            "expense_product_price": "$140/month"
+          }
+        }
+      },
+      "block_order": [
+        "expense_heading_9dqPYJ",
+        "expense_item_ifmBfE",
+        "expense_item_fe7ymj",
+        "expense_item_FY9Xq4",
+        "expense_item_cTkWjj",
+        "expense_item_TYAfGe",
+        "expense_product_mzBTXP"
+      ],
+      "name": "Cost Comparison Breakdown",
+      "settings": {
+        "background_image_desktop": "shopify://shop_images/product_1.png",
+        "background_image_mobile": "shopify://shop_images/2_1.png",
+        "heading": "The Real Cost of <strong>NOT</strong> Taking Folqs Primal Eight",
+        "subheading": "All 8 organs. Everything above. In a form your body actually uses.",
+        "product_image_desktop": "shopify://shop_images/c7fec5d9c483e953dfeb2a6d1710c7bc22d7c1cb.png",
+        "product_image_mobile": "shopify://shop_images/Frame_1982249514_1.png",
+        "banner_title": "Folqs Primal Eight",
+        "banner_price": "$47/month",
+        "button_label": "Try Folqs Today",
+        "button_url": "shopify://collections",
+        "button_background": "#ff6a13",
+        "button_color": "#ffffff",
+        "review_image": "shopify://shop_images/Frame_1982248617_1_759a88ee-c48e-4582-84b3-56f780ff7077.png",
+        "review_rating": "shopify://shop_images/stars_1.png",
+        "review_text_desktop": "over 25,254 Five Star Reviews",
+        "review_text_mobile": "over  1,571 Reviews",
+        "badge_background": "#005eb8",
+        "badge_color": "#ffffff",
+        "badge_content": "<p>The question isn't whether you can afford Folqs Primal Eight.</p><p><strong>It's whether you can afford to skip it.</strong></p>",
+        "badge_max_width": "218px",
+        "badge_position_x": "calc(100% - 150px)",
+        "badge_position_y": "-45%"
+      }
+    },
+    "image_with_text_extra_8pHgwD": {
+      "type": "image-with-text-extra",
+      "custom_css": [
+        "@media (max-width: 768px) {.image-with-text-extra__text {text-align: center; } .image-with-text-extra__title {max-width: 90%; margin-inline: auto; }}"
+      ],
+      "name": "Image with text Extra",
+      "settings": {
+        "color_scheme": "",
+        "gradient_background": "linear-gradient(180deg, rgba(255, 255, 255, 1), rgba(239, 247, 255, 1) 100%)",
+        "custom_background_position": false,
+        "position_x": "56%",
+        "position_y": "-117px",
+        "position_x_mobile": "13%",
+        "position_y_mobile": "-60px",
+        "custom_max_height": "455",
+        "image": "shopify://shop_images/Frame_1982249503_1.png",
+        "image_position": "right",
+        "image_position_mobile": "text-first",
+        "title": "Sourced From The End Of \nThe Earth",
+        "text": "<p>The liver is a filter. If the cow eats toxins, the liver traps them. <strong>That's why the source matters more than anything.</strong></p><p><strong>Folqs Primal Eight Beef Organ Complex comes exclusively from New Zealand — the purest place on the planet.</strong></p>",
+        "highlight_color": "#005eb8",
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 40
+      }
+    },
+    "info_slider_gAN8hD": {
+      "type": "info-slider",
+      "blocks": {
+        "slide_BxFbYm": {
+          "type": "slide",
+          "settings": {
+            "title": "Beef Liver",
+            "small_image": "shopify://shop_images/Group_1982248143.png",
+            "main_image": "shopify://shop_images/Frame_1982248959.png",
+            "content": "<p><strong>70X MORE B12</strong> </p><p>than eggs*</p>"
+          }
+        },
+        "slide_MEggCt": {
+          "type": "slide",
+          "settings": {
+            "title": "Beef Heart",
+            "small_image": "shopify://shop_images/Group_1982248143_038b052f-2f4f-4b5b-a07d-069f3bafa541.png",
+            "main_image": "shopify://shop_images/Frame_1982248959_3cbbef7a-e7a8-4cbc-a21c-9950618b1b30.png",
+            "content": "<p><strong>120X MORE CoQ10</strong></p><p>than spinach*</p>"
+          }
+        },
+        "slide_YRkbFm": {
+          "type": "slide",
+          "settings": {
+            "title": "Beef Kidney",
+            "small_image": "shopify://shop_images/Group_1982248143_1.png",
+            "main_image": "shopify://shop_images/Frame_1982248959_1.png",
+            "content": "<p><strong>15X MORE Selenium </strong></p><p>than tuna*</p>"
+          }
+        },
+        "slide_PdWmhB": {
+          "type": "slide",
+          "settings": {
+            "title": "Beef Thymus",
+            "small_image": "shopify://shop_images/Group_1982248143_131a7da9-1b0a-4882-9461-71478b164b0b.png",
+            "main_image": "shopify://shop_images/Frame_1982248959_c4d61f06-32a9-4b59-894b-7eddd47c98ba.png",
+            "content": "<p><strong>100X MORE Thymic peptides </strong></p><p>than any food*</p>"
+          }
+        },
+        "slide_T33jUg": {
+          "type": "slide",
+          "settings": {
+            "title": "Beef Lungs",
+            "small_image": "shopify://shop_images/Group_1982248143_aedb9836-04fc-45aa-a727-712787810733.png",
+            "main_image": "shopify://shop_images/Frame_1982248959_ad422638-cc03-45ba-9884-58ba641b9d14.png",
+            "content": "<p><strong>5X MORE Vitamin C</strong></p><p>than apples*</p>"
+          }
+        },
+        "slide_6xkHfP": {
+          "type": "slide",
+          "settings": {
+            "title": "Beef Spleen",
+            "small_image": "shopify://shop_images/Group_1982248143_8e1c7a68-32b1-4794-aaf8-f2eb1f517893.png",
+            "main_image": "shopify://shop_images/Frame_1982248959_86302324-0b91-4fb7-9d37-69a83e1fd5aa.png",
+            "content": "<p><strong>50X MORE Iron </strong></p><p>than spinach*</p>"
+          }
+        },
+        "slide_DjGCyW": {
+          "type": "slide",
+          "settings": {
+            "title": "Beef Bone Marrow",
+            "small_image": "shopify://shop_images/Group_1982248143_1_deb77f2c-2f8e-4f10-afa4-8f1d6d862c55.png",
+            "main_image": "shopify://shop_images/Frame_1982248959_1_9b647fef-c2b2-453b-a3a3-fee987dbfd77.png",
+            "content": "<p><strong>10X MORE Collagen </strong></p><p>than bone broth*</p>"
+          }
+        },
+        "slide_Jbx9M7": {
+          "type": "slide",
+          "settings": {
+            "title": "Beef Trachea",
+            "small_image": "shopify://shop_images/Group_1982248143_ace66d0a-85a0-4d01-a277-ee71fd24358e.png",
+            "main_image": "shopify://shop_images/Frame_1982248959_480e2d87-74fc-4e11-9388-14b61a597654.png",
+            "content": "<p>25X MORE Chondroitin </p><p>than shellfish*</p>"
+          }
+        }
+      },
+      "block_order": [
+        "slide_BxFbYm",
+        "slide_MEggCt",
+        "slide_YRkbFm",
+        "slide_PdWmhB",
+        "slide_T33jUg",
+        "slide_6xkHfP",
+        "slide_DjGCyW",
+        "slide_Jbx9M7"
+      ],
+      "name": "Info slider",
+      "settings": {
+        "heading": "PRIMAL8 Nutrient Density Comparison",
+        "bg_image_desk": "shopify://shop_images/Frame_2c6ff473-fbd4-4264-865d-e0e995e89597.svg",
+        "bg_image_mob": "shopify://shop_images/Frame_1_4a0463ff-34da-4a69-8f26-55fb039ba95b.svg",
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "padding_top_mobile": 20,
+        "padding_bottom_mobile": 40
+      }
+    },
+    "landing_testimonials_slider_v4_rTnk9d": {
+      "type": "landing-testimonials-slider-v4",
+      "blocks": {
+        "testimonial_GwJatV": {
+          "type": "testimonial",
+          "settings": {
+            "image_1": "shopify://shop_images/Frame_1982249124.png",
+            "image_mobile_1": "shopify://shop_images/Frame_1982249124.png",
+            "enable_50_width_1": false,
+            "image_2": "shopify://shop_images/Frame_1982249125_abc8240a-3d33-4533-ad2f-ace7b687d5d0.png",
+            "image_mobile_2": "shopify://shop_images/Frame_1982249125_abc8240a-3d33-4533-ad2f-ace7b687d5d0.png",
+            "enable_50_width_2": false,
+            "author": "Patricia J.",
+            "heading": "“Quality You Can Smell”",
+            "content": "Tried another popular brand and didn't notice any benefits. Switched to Folqs and immediately noticed the rich yellow color and amazing smell versus the white, odorless powder I used before. We just had a baby, and my wife's breast milk smells exactly like Folqs - that's when I knew this was real quality."
+          }
+        },
+        "testimonial_4RDeKU": {
+          "type": "testimonial",
+          "settings": {
+            "image_1": "shopify://shop_images/Frame_1982249126_eb7d1ed9-4f6e-49f4-9aaf-9f5afde78f3a.png",
+            "image_mobile_1": "shopify://shop_images/Frame_1982249126_eb7d1ed9-4f6e-49f4-9aaf-9f5afde78f3a.png",
+            "enable_50_width_1": false,
+            "image_2": "shopify://shop_images/Frame_1982249127_9498ae89-4d64-4eeb-a7e9-d2b847c4f2df.png",
+            "image_mobile_2": "shopify://shop_images/Frame_1982249127_9498ae89-4d64-4eeb-a7e9-d2b847c4f2df.png",
+            "enable_50_width_2": true,
+            "author": "Rebecca K.",
+            "heading": "“Tastes Great, Feels Right”",
+            "content": "This product is so amazing I love the taste & usually I'm not a fan of powders! I've been using it for 2 months & its helped my gut health so much!!"
+          }
+        },
+        "testimonial_Fdf3AM": {
+          "type": "testimonial",
+          "settings": {
+            "image_1": "shopify://shop_images/Frame_1982249128_f65187bd-53d7-4cf8-9491-6c8f9bf11f69.png",
+            "image_mobile_1": "shopify://shop_images/Frame_1982249128_f65187bd-53d7-4cf8-9491-6c8f9bf11f69.png",
+            "enable_50_width_1": true,
+            "enable_50_width_2": false,
+            "author": "Navid G.",
+            "heading": "“Best Purchase in Years”",
+            "content": "Folqs colostrum is the best product I have bought online in years. It has changed my life. I can't imagine using anything in my body but this product and yes, I've tried the other one. It looks like sugar compared to Folqs and I'm not kidding. Try it"
+          }
+        }
+      },
+      "block_order": [
+        "testimonial_GwJatV",
+        "testimonial_4RDeKU",
+        "testimonial_Fdf3AM"
+      ],
+      "name": "Landing Testimonials Slider v4",
+      "settings": {
+        "image_bg_mobile": "shopify://shop_images/2025-11-02_10.14.07.png",
+        "enable_slide_extra_styles": true,
+        "extra_styles": false,
+        "padding_top": 50,
+        "padding_bottom": 50,
+        "padding_top_mobile": 40,
+        "padding_bottom_mobile": 26,
+        "title": "<p><strong>Taste It.  Feel It.  Keep It.</strong></p>",
+        "title_mobile": "<p><strong>See Why Our Customers</strong></p><p><strong>Love Us</strong></p>",
+        "mobile_review_image": "shopify://shop_images/Frame_1982248617_55acd6ab-359c-4c51-ad96-a06fdd02ebd3.png",
+        "mobile_review_subtitle": "over  1,571 Reviews",
+        "subtitle": "Over 1,571 Five Star Reviews"
+      }
+    },
+    "faq_with_image_q7CVVE": {
       "type": "faq-with-image",
       "blocks": {
-        "question_HEhpcE": {
+        "question_993e6M": {
           "type": "question",
           "settings": {
             "title": "Do you have a money-back guarantee?",
             "answer": "<p>Absolutely! We fully stand behind our colostrum. If you’re not completely satisfied, we’ll happily offer you a full <strong>refund within 90 days of your purchase</strong> — no questions asked. Just contact our team at <a href=\"mailto:help@folqs.co\" target=\"_blank\" title=\"mailto:help@folqs.co\">help@folqs.co</a> </p>"
           }
         },
-        "question_rNqDXn": {
+        "question_7zwX3R": {
           "type": "question",
           "settings": {
             "title": "Do you use cold-chain processing like other brands?",
             "answer": "<p>Actually, “cold-chain processing” isn’t a recognized USDA practice—it’s mostly marketing hype. We use standard gentle pasteurization (161°F for 15 seconds) to guarantee safety, purity, and effectiveness.</p>"
           }
         },
-        "question_WDeraA": {
+        "question_XhV6e4": {
           "type": "question",
           "settings": {
             "title": "Do you use heat processing?",
             "answer": "<p>Yes, we gently pasteurize our colostrum at 161°F for 15 seconds. This ensures our colostrum meets USDA dairy standards, keeping it safe and pure for you.</p>"
           }
         },
-        "question_KAwLYG": {
+        "question_kbCWNx": {
           "type": "question",
           "settings": {
             "title": "Is the bovine colostrum free of glyphosate residue and heavy metals?",
             "answer": "<p>Absolutely! Every batch is carefully tested for heavy metals to ensure purity and safety. We’ve also independently tested for glyphosate residue—no detectable levels were found, reinforcing our high standards for quality.</p>"
           }
         },
-        "question_ECMyFk": {
+        "question_4d9PCU": {
           "type": "question",
           "settings": {
             "title": "Are your cows injected with mRNA shots?",
             "answer": "<p>Nope! Our cows have not received any mRNA injections. Currently, there are no USDA-approved mRNA vaccines in use for cattle commercially, so you can be confident in the purity and quality of our colostrum.</p>"
           }
         },
-        "question_PzptNt": {
+        "question_hXrdpi": {
           "type": "question",
           "settings": {
             "title": "I’m lactose intolerant—can I still take your colostrum?",
@@ -1130,12 +1695,12 @@
         }
       },
       "block_order": [
-        "question_HEhpcE",
-        "question_rNqDXn",
-        "question_WDeraA",
-        "question_KAwLYG",
-        "question_ECMyFk",
-        "question_PzptNt"
+        "question_993e6M",
+        "question_7zwX3R",
+        "question_XhV6e4",
+        "question_kbCWNx",
+        "question_4d9PCU",
+        "question_hXrdpi"
       ],
       "name": "FAQ with image",
       "settings": {
@@ -1150,7 +1715,7 @@
         "title": "<p>Your Questions Answered</p>",
         "subtitle": "FAQ",
         "tagline": "",
-        "image": "shopify://shop_images/Meghan_Frosceno.webp",
+        "image": "shopify://shop_images/aa23de7270ea305136b4a71e3a05d17266ab5651.png",
         "is_first_open": true,
         "active_title_color": "#000000",
         "default_title_color": "#000000",
@@ -1161,10 +1726,10 @@
         "padding_bottom_mobile": 70
       }
     },
-    "1745495841fb304005": {
+    "apps_fWzNMj": {
       "type": "apps",
       "blocks": {
-        "stamped_reviews_main_widget_UepjcT": {
+        "stamped_reviews_main_widget_kaztkc": {
           "type": "shopify://apps/stamped-reviews/blocks/main-widget/a103faaf-2125-4b0e-89fa-de5149736723",
           "settings": {
             "take_questions": 20,
@@ -1179,99 +1744,29 @@
         }
       },
       "block_order": [
-        "stamped_reviews_main_widget_UepjcT"
+        "stamped_reviews_main_widget_kaztkc"
       ],
       "settings": {
         "include_margins": true
       }
-    },
-    "benefits_marquee_L44pDg": {
-      "type": "benefits-marquee",
-      "blocks": {
-        "text_label_nBkPxW": {
-          "type": "text_label",
-          "settings": {
-            "text": "CLINICALLY STUDIED INGREDIENTS"
-          }
-        },
-        "text_label_8LWthG": {
-          "type": "text_label",
-          "settings": {
-            "text": "MADE IN USA"
-          }
-        },
-        "text_label_xE6NeK": {
-          "type": "text_label",
-          "settings": {
-            "text": "RICH IN ANTIOXODANTS"
-          }
-        },
-        "text_label_cRGNFb": {
-          "type": "text_label",
-          "settings": {
-            "text": "NO SYNTHETIC FILLERS"
-          }
-        },
-        "text_label_rn48C3": {
-          "type": "text_label",
-          "settings": {
-            "text": "ENHANCED WITH ADAPTOGENS"
-          }
-        },
-        "text_label_LV8r9K": {
-          "type": "text_label",
-          "settings": {
-            "text": "NO ADDED SUGAR"
-          }
-        }
-      },
-      "block_order": [
-        "text_label_nBkPxW",
-        "text_label_8LWthG",
-        "text_label_xE6NeK",
-        "text_label_cRGNFb",
-        "text_label_rn48C3",
-        "text_label_LV8r9K"
-      ],
-      "settings": {
-        "background": "#005EB8",
-        "color_text": "#ffffff",
-        "autoscroll": false,
-        "padding_top": 0,
-        "padding_bottom": 0,
-        "padding_top_mobile": 0,
-        "padding_bottom_mobile": 0,
-        "decor_label": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"10\" height=\"8\" viewbox=\"0 0 10 8\" fill=\"none\">\n<path d=\"M3.5775 7.58352C3.3775 7.58352 3.1875 7.50352 3.0475 7.36352L0.2175 4.53352C-0.0725 4.24352 -0.0725 3.76352 0.2175 3.47352C0.5075 3.18352 0.9875 3.18352 1.2775 3.47352L3.5775 5.77352L8.7175 0.633516C9.0075 0.343516 9.4875 0.343516 9.7775 0.633516C10.0675 0.923516 10.0675 1.40352 9.7775 1.69352L4.1075 7.36352C3.9675 7.50352 3.7775 7.58352 3.5775 7.58352Z\" fill=\"white\"></path>\n</svg>"
-      }
-    },
-    "landing_footer_yAYryS": {
-      "type": "landing-footer",
-      "name": "Landing Footer",
-      "settings": {
-        "hide_primary_footer": true,
-        "color_scheme": "scheme-ea079204-4b8c-4bc5-9aa1-4a98e412e983",
-        "logo": "shopify://shop_images/logo-transparent-folqs.svg",
-        "contacts": "<p><a href=\"mailto:help@folqs.co\" title=\"mailto:help@folqs.co\">help@folqs.co</a></p><p>800 N KING ST STE 304 1909,</p><p>WILMINGTON, DE 19801800-975-4495<br/><br/></p>",
-        "show_socials": true,
-        "information": "<p>* Individual Results May Vary. These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure or prevent any disease.</p><p>The content on this website is intended solely for informational purposes and should not be considered a replacement for professional medical advice from your doctor or healthcare provider. Do not use this information to diagnose or treat any health condition or to prescribe medication. Be sure to thoroughly review all product information. If you have, or think you may have, a medical issue, please consult your healthcare provider immediately.</p><p>** Offer valid for new subscribers only.</p>",
-        "menu": "policies"
-      }
     }
   },
   "order": [
-    "main",
-    "announcement_line_ejR6aE",
-    "landing_product_alternative_qf7wHE",
-    "highlighted_cards_grid_wnjVET",
-    "rich_text_v2_6Gqfdg",
-    "for_everyone_cards_B6XL8W",
-    "image_text_blocks_9ECwVP",
-    "image_with_text_extra_LyfWnU",
-    "consistent_use_timeline_NGqgMm",
-    "video_reviews_grid_9RPqtz",
-    "faq_with_image_b8RXyx",
-    "1745495841fb304005",
-    "benefits_marquee_L44pDg",
-    "landing_footer_yAYryS"
+    "landing_product_alternative_ntjzLG",
+    "highlighted_cards_grid_8ipMit",
+    "accordion_slider_Wkzm3E",
+    "rich_text_v2_n36A6U",
+    "for_everyone_cards_c4mKci",
+    "image_text_blocks_YcDLAT",
+    "icons_grid_eLebyP",
+    "comparison_cost_yPb7AR",
+    "consistent_use_timeline_keK8N7",
+    "product_compare_tabe_new_UXdaEN",
+    "cost_comparison_breakdown_3NM9A6",
+    "image_with_text_extra_8pHgwD",
+    "info_slider_gAN8hD",
+    "landing_testimonials_slider_v4_rTnk9d",
+    "faq_with_image_q7CVVE",
+    "apps_fWzNMj"
   ]
 }
