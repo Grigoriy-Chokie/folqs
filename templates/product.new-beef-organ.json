@@ -471,7 +471,7 @@
         "content_HDiqRT"
       ],
       "custom_css": [
-        ".accordion__slider-subtitle {color: #FF6A13; background: #FF6A1326;}"
+        ".accordion__slider-subtitle {color: #ff6a13; background: #ff6a1326;}"
       ],
       "name": "Accordion slider",
       "settings": {
@@ -534,7 +534,7 @@
         "contnet_m3P8BK": {
           "type": "contnet",
           "settings": {
-            "content": "<p>They want you to treat the symptoms with more lab-made pharmaceuticals and more processed comfort foods that ultimately result in billions of dollars in profits.</p><p>OR... they want to sell you individual synthetic vitamins, multivitamins, greens powders... that your body will likely never absorb.</p>"
+            "content": "<p>They want you to treat the symptoms with more lab-made pharmaceuticals and more processed comfort foods that ultimately result in billions of dollars in profits.</p><p><br/>OR... they want to sell you individual synthetic vitamins, multivitamins, greens powders... that your body will likely never absorb.</p>"
           }
         }
       },
