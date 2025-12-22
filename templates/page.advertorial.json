@@ -26,14 +26,14 @@
         "image_KY4HKG": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Frame_1982248781_1.png",
+            "image": "shopify:\/\/shop_images\/Frame_1982248781_1.png",
             "full_width_mobile": true
           }
         },
         "text_cYVKPP": {
           "type": "text",
           "settings": {
-            "text": "<p>I started turning my camera off on Zoom calls.<br/><br/>Not because of bad wifi. Because I couldn't stand looking at my face in that little box for another second.<br/><br/>At 34, every morning meeting was the same: Join call. See my face. Immediate panic about the texture on my forehead, the redness around my nose, the dullness that no amount of ring light could fix. Camera off. \"Sorry, tech issues!\"<br/><br/>My coworkers probably thought I was hiding a messy apartment.<br/><br/>I was hiding my face.<br/><br/>And here's the pathetic part:<em><strong> I'd spent $3,247 on skincare that year</strong></em> trying to fix it.<br/><br/>Creams that cost more per ounce than caviar. Serums with ingredient lists like chemistry textbooks. That jade roller everyone swore would \"transform\" my complexion.<br/><br/>Nothing worked.</p>",
+            "text": "<p>I started turning my camera off on Zoom calls.<br\/><br\/>Not because of bad wifi. Because I couldn't stand looking at my face in that little box for another second.<br\/><br\/>At 34, every morning meeting was the same: Join call. See my face. Immediate panic about the texture on my forehead, the redness around my nose, the dullness that no amount of ring light could fix. Camera off. \"Sorry, tech issues!\"<br\/><br\/>My coworkers probably thought I was hiding a messy apartment.<br\/><br\/>I was hiding my face.<br\/><br\/>And here's the pathetic part:<em><strong> I'd spent $3,247 on skincare that year<\/strong><\/em> trying to fix it.<br\/><br\/>Creams that cost more per ounce than caviar. Serums with ingredient lists like chemistry textbooks. That jade roller everyone swore would \"transform\" my complexion.<br\/><br\/>Nothing worked.<\/p>",
             "text_type": "default",
             "special_text_type": "type_2",
             "buller_color": "blue"
@@ -42,7 +42,7 @@
         "text_LWbGeR": {
           "type": "text",
           "settings": {
-            "text": "<h2>The Breaking Point</h2><p>Tuesday morning. 9 AM client call. Important one.<br/><br/>I joined with my camera on because I had to—I was presenting. For the next hour, I watched myself talk in that tiny square while trying to focus on my pitch.<br/><br/>All I could see was my inflamed chin. The weird bumpy texture. The uneven tone that $200 worth of color-corrector couldn't hide.<br/><br/>After the call, I sat at my desk and just... broke.</p><h3>Not pretty crying. Ugly, frustrated, \"what-the-hell-is-wrong-with-me\" crying.</h3><p>My boyfriend walked past my home office. \"You okay?\"<br/><br/>\"I look like I'm allergic to my own face.\"<br/><br/>That afternoon, I finally called Dr. Rebecca Chen - the dermatologist my friend wouldn't shut up about. Three weeks out for an appointment.<br/><br/>I took it.</p>",
+            "text": "<h2>The Breaking Point<\/h2><p>Tuesday morning. 9 AM client call. Important one.<br\/><br\/>I joined with my camera on because I had to—I was presenting. For the next hour, I watched myself talk in that tiny square while trying to focus on my pitch.<br\/><br\/>All I could see was my inflamed chin. The weird bumpy texture. The uneven tone that $200 worth of color-corrector couldn't hide.<br\/><br\/>After the call, I sat at my desk and just... broke.<\/p><h3>Not pretty crying. Ugly, frustrated, \"what-the-hell-is-wrong-with-me\" crying.<\/h3><p>My boyfriend walked past my home office. \"You okay?\"<br\/><br\/>\"I look like I'm allergic to my own face.\"<br\/><br\/>That afternoon, I finally called Dr. Rebecca Chen - the dermatologist my friend wouldn't shut up about. Three weeks out for an appointment.<br\/><br\/>I took it.<\/p>",
             "text_type": "default",
             "special_text_type": "none",
             "buller_color": "blue"
@@ -51,14 +51,14 @@
         "image_hC7XC8": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Frame_1982248744_1.png",
+            "image": "shopify:\/\/shop_images\/Frame_1982248744_1.png",
             "full_width_mobile": false
           }
         },
         "text_iLj6Xw": {
           "type": "text",
           "settings": {
-            "text": "<h2>\"Show Me Your Gut, Not Your Face\"</h2><p>Dr. Chen's office was different. No perfect model posters. Instead, a huge digestive system diagram on the wall.<br/><br/>Weird, right?<br/><br/>I sat down ready for a prescription. Instead:<br/><br/><strong>\"When's the last time you thought about your gut health?\"<br/><br/></strong>I laughed. \"I'm here for my face. I can't turn my camera on at work anymore.\"<br/><br/>\"I know. But tell me—bloating? Gas? Food sensitivities you didn't have five years ago?\"<br/><br/>How did she know?<br/><br/>\"Here's what nobody tells you,\" she said, leaning forward. <strong>\"Your skin isn't the problem. It's the messenger.\"<br/><br/></strong>She pulled up a diagram showing two gut linings—one smooth, one looking like Swiss cheese.<br/><br/>\"This is what I see in 80% of patients with inflammatory skin. Your gut lining is permeable. Food particles and toxins leak into your bloodstream. Your body sees them as invaders and launches an immune response. <strong>And here's the kicker—70% of your immune system lives in your gut. When that barrier breaks down, inflammation doesn't stay local. It goes systemic. And your skin, as your largest organ, bears the brunt.\"<br/><br/></strong>My stomach dropped. \"So everything I've been doing—\"<br/><br/>\"Is like mopping the floor while the sink overflows.\"<br/><br/><strong>Fuck.</strong></p>",
+            "text": "<h2>\"Show Me Your Gut, Not Your Face\"<\/h2><p>Dr. Chen's office was different. No perfect model posters. Instead, a huge digestive system diagram on the wall.<br\/><br\/>Weird, right?<br\/><br\/>I sat down ready for a prescription. Instead:<br\/><br\/><strong>\"When's the last time you thought about your gut health?\"<br\/><br\/><\/strong>I laughed. \"I'm here for my face. I can't turn my camera on at work anymore.\"<br\/><br\/>\"I know. But tell me—bloating? Gas? Food sensitivities you didn't have five years ago?\"<br\/><br\/>How did she know?<br\/><br\/>\"Here's what nobody tells you,\" she said, leaning forward. <strong>\"Your skin isn't the problem. It's the messenger.\"<br\/><br\/><\/strong>She pulled up a diagram showing two gut linings—one smooth, one looking like Swiss cheese.<br\/><br\/>\"This is what I see in 80% of patients with inflammatory skin. Your gut lining is permeable. Food particles and toxins leak into your bloodstream. Your body sees them as invaders and launches an immune response. <strong>And here's the kicker—70% of your immune system lives in your gut. When that barrier breaks down, inflammation doesn't stay local. It goes systemic. And your skin, as your largest organ, bears the brunt.\"<br\/><br\/><\/strong>My stomach dropped. \"So everything I've been doing—\"<br\/><br\/>\"Is like mopping the floor while the sink overflows.\"<br\/><br\/><strong>Fuck.<\/strong><\/p>",
             "text_type": "default",
             "special_text_type": "none",
             "buller_color": "blue"
@@ -67,14 +67,14 @@
         "image_dQwymc": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Frame_1982248957_3.png",
+            "image": "shopify:\/\/shop_images\/Frame_1982248957_3.png",
             "full_width_mobile": false
           }
         },
         "text_hkEEex": {
           "type": "text",
           "settings": {
-            "text": "<h2>The Supplement That Sounded Insane</h2><p>\"I'm recommending something that'll sound strange,\" Dr. Chen said, pulling out a white container.<br/><br/><strong>\"Bovine colostrum.\"</strong><br/><br/>\"Bovine... like from cows?\"<br/><br/>\"First milk from mother cows within six hours of birth. The most concentrated gut-healing compound in nature.\"<br/><br/>I could feel my face grimacing. \"You want me to drink... cow breast milk?\"<br/><br/>\"Think about newborns—perfect skin, pristine gut lining. Colostrum literally builds and seals the digestive system from scratch. It has immunoglobulins that strengthen your gut barrier, growth factors that repair damaged tissue, compounds that calm immune overreactions. <strong>And unlike probiotics, which are like throwing seeds on concrete, colostrum actually rebuilds the foundation those bacteria need to survive.\"<br/><br/>I was so skeptical I almost walked out.<br/><br/></strong>This felt very \"celery juice and chakras.\" Very Instagram wellness guru. Not scientific.<br/><br/>But then she said: \"Sarah, you've spent over three thousand dollars treating the symptom. Give me 90 days and $60 a month to treat the cause. <strong>If nothing changes, I'll personally refund you and buy you the fanciest face cream in this office.\"<br/><br/></strong>What did I have to lose?</p>",
+            "text": "<h2>The Supplement That Sounded Insane<\/h2><p>\"I'm recommending something that'll sound strange,\" Dr. Chen said, pulling out a white container.<br\/><br\/><strong>\"Bovine colostrum.\"<\/strong><br\/><br\/>\"Bovine... like from cows?\"<br\/><br\/>\"First milk from mother cows within six hours of birth. The most concentrated gut-healing compound in nature.\"<br\/><br\/>I could feel my face grimacing. \"You want me to drink... cow breast milk?\"<br\/><br\/>\"Think about newborns—perfect skin, pristine gut lining. Colostrum literally builds and seals the digestive system from scratch. It has immunoglobulins that strengthen your gut barrier, growth factors that repair damaged tissue, compounds that calm immune overreactions. <strong>And unlike probiotics, which are like throwing seeds on concrete, colostrum actually rebuilds the foundation those bacteria need to survive.\"<br\/><br\/>I was so skeptical I almost walked out.<br\/><br\/><\/strong>This felt very \"celery juice and chakras.\" Very Instagram wellness guru. Not scientific.<br\/><br\/>But then she said: \"Sarah, you've spent over three thousand dollars treating the symptom. Give me 90 days and $60 a month to treat the cause. <strong>If nothing changes, I'll personally refund you and buy you the fanciest face cream in this office.\"<br\/><br\/><\/strong>What did I have to lose?<\/p>",
             "text_type": "default",
             "special_text_type": "none",
             "buller_color": "blue"
@@ -83,14 +83,14 @@
         "image_UhFx8r": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Frame_1982248957_4.png",
+            "image": "shopify:\/\/shop_images\/Frame_1982248957_4.png",
             "full_width_mobile": false
           }
         },
         "text_VH86Fq": {
           "type": "text",
           "settings": {
-            "text": "<h2>What Actually Happened</h2><p>I ordered it that night out of desperation.<br/><br/>I documented everything: daily photos (same lighting, no makeup), symptom journal, zero skincare changes.</p><ul><li><strong>Week 1-3: Nothing</strong></li></ul><p>Same skin. Same camera-off shame.<br/><br/>My boyfriend kept asking if it was working. \"It's cow placenta water. No, it's not working.\"<br/><br/>I almost quit four times.</p><ul><li><strong>Week 4: Wait...</strong></li></ul><p>I had a video call and forgot to turn my camera off immediately. Thirty minutes in, I realized—I hadn't looked at my face once.<br/><br/>Not because I was busy. Because my skin didn't feel angry and tight anymore.<br/><br/>The constant low-level inflammation had... turned down?</p><ul><li><strong>Week 5: The Promotion I Didn't Expect</strong></li></ul><p>My boss pulled me into a 1-on-1. \"We want you to lead the new enterprise client pitch. The six-figure one.\"<br/><br/>I froze. This was the high-visibility project I'd been passed over for twice.<br/><br/>\"You've seemed so much more confident in meetings lately. More present. We need that energy for this pitch.\"</p><h3><strong>She had no idea what changed. But I did.</strong></h3>",
+            "text": "<h2>What Actually Happened<\/h2><p>I ordered it that night out of desperation.<br\/><br\/>I documented everything: daily photos (same lighting, no makeup), symptom journal, zero skincare changes.<\/p><ul><li><strong>Week 1-3: Nothing<\/strong><\/li><\/ul><p>Same skin. Same camera-off shame.<br\/><br\/>My boyfriend kept asking if it was working. \"It's cow placenta water. No, it's not working.\"<br\/><br\/>I almost quit four times.<\/p><ul><li><strong>Week 4: Wait...<\/strong><\/li><\/ul><p>I had a video call and forgot to turn my camera off immediately. Thirty minutes in, I realized—I hadn't looked at my face once.<br\/><br\/>Not because I was busy. Because my skin didn't feel angry and tight anymore.<br\/><br\/>The constant low-level inflammation had... turned down?<\/p><ul><li><strong>Week 5: The Promotion I Didn't Expect<\/strong><\/li><\/ul><p>My boss pulled me into a 1-on-1. \"We want you to lead the new enterprise client pitch. The six-figure one.\"<br\/><br\/>I froze. This was the high-visibility project I'd been passed over for twice.<br\/><br\/>\"You've seemed so much more confident in meetings lately. More present. We need that energy for this pitch.\"<\/p><h3><strong>She had no idea what changed. But I did.<\/strong><\/h3>",
             "text_type": "default",
             "special_text_type": "type_1",
             "buller_color": "blue"
@@ -99,14 +99,14 @@
         "image_CnwpAk": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Frame_1982248957_5.png",
+            "image": "shopify:\/\/shop_images\/Frame_1982248957_5.png",
             "full_width_mobile": false
           }
         },
         "text_hkJFPP": {
           "type": "text",
           "settings": {
-            "text": "<ul><li><strong>Week 8: The Transformation</strong></li></ul><p>My chin—breaking out monthly for three years—was clear.<br/><br/>That bumpy forehead texture? Gone.<br/><br/>The redness I'd been color-correcting for years? Disappeared.<br/><br/>I joined a team call, camera on, and actually forgot to worry about my face.<br/><br/><strong>For the first time in two years, I was present in the meeting instead of monitoring myself in that tiny box.</strong></p><ul><li><strong>Week 12: Full Circle</strong></li></ul><p>I led that enterprise pitch. Camera on from minute one. Fifty people watching.<br/><br/>Afterward, the CEO messaged me directly: \"Outstanding presentation. You commanded that room.\"<br/><br/>I stared at the message and realized—<strong>six months ago, I would've turned down this opportunity because of my skin.<br/><br/></strong>Now? I'd just closed the biggest deal of my career.</p>",
+            "text": "<ul><li><strong>Week 8: The Transformation<\/strong><\/li><\/ul><p>My chin—breaking out monthly for three years—was clear.<br\/><br\/>That bumpy forehead texture? Gone.<br\/><br\/>The redness I'd been color-correcting for years? Disappeared.<br\/><br\/>I joined a team call, camera on, and actually forgot to worry about my face.<br\/><br\/><strong>For the first time in two years, I was present in the meeting instead of monitoring myself in that tiny box.<\/strong><\/p><ul><li><strong>Week 12: Full Circle<\/strong><\/li><\/ul><p>I led that enterprise pitch. Camera on from minute one. Fifty people watching.<br\/><br\/>Afterward, the CEO messaged me directly: \"Outstanding presentation. You commanded that room.\"<br\/><br\/>I stared at the message and realized—<strong>six months ago, I would've turned down this opportunity because of my skin.<br\/><br\/><\/strong>Now? I'd just closed the biggest deal of my career.<\/p>",
             "text_type": "default",
             "special_text_type": "type_1",
             "buller_color": "blue"
@@ -115,8 +115,8 @@
         "image_rnTRJy": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Frame_691314082_3.png",
-            "image_mobile": "shopify://shop_images/Frame_691314082_4.png",
+            "image": "shopify:\/\/shop_images\/Frame_691314082_3.png",
+            "image_mobile": "shopify:\/\/shop_images\/Frame_691314082_4.png",
             "full_width_mobile": false
           }
         },
@@ -135,7 +135,7 @@
         "text_4FNmrq": {
           "type": "text",
           "settings": {
-            "text": "<p>I still use vitamin C and sunscreen. But I'm not desperately buying products at midnight hoping the next $180 cream is \"the one.\"</p><h3><strong>Because it was never about the cream.</strong></h3><p>My skin works because my gut works.</p>",
+            "text": "<p>I still use vitamin C and sunscreen. But I'm not desperately buying products at midnight hoping the next $180 cream is \"the one.\"<\/p><h3><strong>Because it was never about the cream.<\/strong><\/h3><p>My skin works because my gut works.<\/p>",
             "text_type": "default",
             "special_text_type": "none",
             "buller_color": "blue"
@@ -144,7 +144,7 @@
         "text_firCYm": {
           "type": "text",
           "settings": {
-            "text": "<h4><strong>The unexpected bonuses:</strong></h4><ul><li>No 3 PM crash</li><li>Zero bloating after meals</li><li>Can eat dairy again</li><li>Seasonal allergies gone</li><li>Stronger hair and nails</li></ul>",
+            "text": "<h4><strong>The unexpected bonuses:<\/strong><\/h4><ul><li>No 3 PM crash<\/li><li>Zero bloating after meals<\/li><li>Can eat dairy again<\/li><li>Seasonal allergies gone<\/li><li>Stronger hair and nails<\/li><\/ul>",
             "text_type": "in_box",
             "special_text_type": "none",
             "buller_color": "blue"
@@ -153,7 +153,7 @@
         "text_exbbCE": {
           "type": "text",
           "settings": {
-            "text": "<p>Fix the foundation. Everything else follows.</p>",
+            "text": "<p>Fix the foundation. Everything else follows.<\/p>",
             "text_type": "default",
             "special_text_type": "none",
             "buller_color": "blue"
@@ -162,7 +162,7 @@
         "text_JKtJqC": {
           "type": "text",
           "settings": {
-            "text": "<h4>The Research:</h4><ul><li>Journal of Clinical Medicine (2020): Intestinal barrier dysfunction directly linked to inflammatory skin conditions</li><li>World Journal of Gastroenterology (2018): Colostrum significantly improved gut permeability markers in human trials</li><li>Nutrients (2021): Growth factors in colostrum support tissue repair and immune modulation</li></ul>",
+            "text": "<h4>The Research:<\/h4><ul><li>Journal of Clinical Medicine (2020): Intestinal barrier dysfunction directly linked to inflammatory skin conditions<\/li><li>World Journal of Gastroenterology (2018): Colostrum significantly improved gut permeability markers in human trials<\/li><li>Nutrients (2021): Growth factors in colostrum support tissue repair and immune modulation<\/li><\/ul>",
             "text_type": "quote",
             "special_text_type": "none",
             "buller_color": "blue"
@@ -171,7 +171,7 @@
         "text_UNrTNE": {
           "type": "text",
           "settings": {
-            "text": "<h2><strong>Not All Colostrum Works</strong></h2><h3><strong>Quality matters massively. Dr. Chen's non-negotiables:</strong></h3><ul><li><strong>Grass-fed, pasture-raised</strong> (nutrient density)</li><li><strong>Collected within 6 hours</strong> (maximum bioactives)</li><li><strong>Low-temperature processed </strong>(preserves growth factors)</li><li><strong>Third-party tested</strong> (no antibiotics/hormones)</li><li><strong>&gt;25% immunoglobulin content</strong></li></ul>",
+            "text": "<h2><strong>Not All Colostrum Works<\/strong><\/h2><h3><strong>Quality matters massively. Dr. Chen's non-negotiables:<\/strong><\/h3><ul><li><strong>Grass-fed, pasture-raised<\/strong> (nutrient density)<\/li><li><strong>Collected within 6 hours<\/strong> (maximum bioactives)<\/li><li><strong>Low-temperature processed <\/strong>(preserves growth factors)<\/li><li><strong>Third-party tested<\/strong> (no antibiotics\/hormones)<\/li><li><strong>&gt;25% immunoglobulin content<\/strong><\/li><\/ul>",
             "text_type": "list",
             "special_text_type": "none",
             "buller_color": "blue"
@@ -180,7 +180,7 @@
         "text_XU9LiA": {
           "type": "text",
           "settings": {
-            "text": "<p>The $19 Amazon stuff doesn't meet these standards. This isn't where you cut corners.</p>",
+            "text": "<p>The $19 Amazon stuff doesn't meet these standards. This isn't where you cut corners.<\/p>",
             "text_type": "default",
             "special_text_type": "none",
             "buller_color": "blue"
@@ -189,15 +189,15 @@
         "image_6LN3Et": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Table_2.png",
-            "image_mobile": "shopify://shop_images/Table_3.png",
+            "image": "shopify:\/\/shop_images\/Table_2.png",
+            "image_mobile": "shopify:\/\/shop_images\/Table_3.png",
             "full_width_mobile": false
           }
         },
         "text_rinWcJ": {
           "type": "text",
           "settings": {
-            "text": "<h2><strong>What I'm NOT Saying</strong></h2><p>I'm not saying throw away your skincare. Keep your sunscreen and vitamin C.<br/><br/>I'm not saying this is instant magic. It took 90 days and patience.<br/><br/><strong>But I AM saying:</strong><br/><br/>If you've spent hundreds on skincare with minimal results...<br/><br/>If you're turning your camera off because you can't stand seeing your face...<br/><br/>If you're avoiding opportunities because of how you look...<br/><br/><strong>Maybe you've been treating the wrong organ.<br/><br/></strong>For me, colostrum was the missing piece.<br/><br/>My skin is clearer and calmer than it's been in a decade. And I spend 75% less maintaining it.<br/><br/>But the real win? <strong>I'm back on camera. Leading pitches. Taking opportunities I would've hidden from six months ago.</strong></p>",
+            "text": "<h2><strong>What I'm NOT Saying<\/strong><\/h2><p>I'm not saying throw away your skincare. Keep your sunscreen and vitamin C.<br\/><br\/>I'm not saying this is instant magic. It took 90 days and patience.<br\/><br\/><strong>But I AM saying:<\/strong><br\/><br\/>If you've spent hundreds on skincare with minimal results...<br\/><br\/>If you're turning your camera off because you can't stand seeing your face...<br\/><br\/>If you're avoiding opportunities because of how you look...<br\/><br\/><strong>Maybe you've been treating the wrong organ.<br\/><br\/><\/strong>For me, colostrum was the missing piece.<br\/><br\/>My skin is clearer and calmer than it's been in a decade. And I spend 75% less maintaining it.<br\/><br\/>But the real win? <strong>I'm back on camera. Leading pitches. Taking opportunities I would've hidden from six months ago.<\/strong><\/p>",
             "text_type": "default",
             "special_text_type": "none",
             "buller_color": "blue"
@@ -206,7 +206,7 @@
         "text_MXw7re": {
           "type": "text",
           "settings": {
-            "text": "<h2><strong>Ready to Fix the Foundation?</strong></h2><h3>I use Folqs because it meets every quality standard:</h3><ul><li>100% grass-fed & pasture-raised</li><li>Collected within 6 hours of birth</li><li>Low-temperature processed</li><li>Third-party tested for purity</li><li>&gt;25% immunoglobulin content</li><li>Zero hormones, antibiotics, or fillers</li></ul>",
+            "text": "<h2><strong>Ready to Fix the Foundation?<\/strong><\/h2><h3>I use Folqs because it meets every quality standard:<\/h3><ul><li>100% grass-fed & pasture-raised<\/li><li>Collected within 6 hours of birth<\/li><li>Low-temperature processed<\/li><li>Third-party tested for purity<\/li><li>&gt;25% immunoglobulin content<\/li><li>Zero hormones, antibiotics, or fillers<\/li><\/ul>",
             "text_type": "list",
             "special_text_type": "none",
             "buller_color": "green"
@@ -215,17 +215,17 @@
         "card_gFeqkd": {
           "type": "card",
           "settings": {
-            "icon": "shopify://shop_images/Frame_1982248779_3.png",
+            "icon": "shopify:\/\/shop_images\/Frame_1982248779_3.png",
             "title": "The \"Sarah Promise\":",
-            "text": "<p><em><strong>Try it 90 days</strong></em><strong>. If your skin isn't noticeably better, full refund + $25 gift card for your time.</strong><br/><br/>I'm that confident because I lived this transformation.<br/></p>",
+            "text": "<p><em><strong>Try it 90 days<\/strong><\/em><strong>. If your skin isn't noticeably better, full refund + $25 gift card for your time.<\/strong><br\/><br\/>I'm that confident because I lived this transformation.<br\/><\/p>",
             "btn_text": "START YOUR 90-DAY TRANSFORMATION - RISK FREE",
-            "btn_link": "shopify://products/bovine-colostrum",
+            "btn_link": "shopify:\/\/products\/bovine-colostrum",
             "info": "47 bottles left at this price",
-            "firts_badge_icon": "shopify://shop_images/certificate-award-achievement-business-honor-bank-security-svgrepo-com_1.svg",
+            "firts_badge_icon": "shopify:\/\/shop_images\/certificate-award-achievement-business-honor-bank-security-svgrepo-com_1.svg",
             "firts_badge_text": "Third-party testing",
-            "second_badge_icon": "shopify://shop_images/shield-safety-protection-defense-guard-security-secure-svgrepo-com_1.svg",
+            "second_badge_icon": "shopify:\/\/shop_images\/shield-safety-protection-defense-guard-security-secure-svgrepo-com_1.svg",
             "second_badge_text": "Secure Checkout",
-            "third_badge_icon": "shopify://shop_images/money-back-business-warranty-satisfaction-marketing-guaranted-svgrepo-com_1.svg",
+            "third_badge_icon": "shopify:\/\/shop_images\/money-back-business-warranty-satisfaction-marketing-guaranted-svgrepo-com_1.svg",
             "third_badge_text": "money-back guarantee"
           }
         },
@@ -271,7 +271,7 @@
         "cstm_breadcrumbs_title": "Health & Benefits",
         "cstm_breadcrumbs_url": "#",
         "title": "I Spent $3,000 on Skincare Last Year. Then a Dermatologist Told Me I Was Treating the Wrong Organ.",
-        "icon": "shopify://shop_images/Frame_1982248779_2.png",
+        "icon": "shopify:\/\/shop_images\/Frame_1982248779_2.png",
         "name": "Written by Sarah Mitchell",
         "read_time": "5 min read",
         "share_on_facebook_link": "",

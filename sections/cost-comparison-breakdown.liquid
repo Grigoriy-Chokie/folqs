@@ -1,0 +1,328 @@
+{{ 'section-cost-comparison-breakdown.css' | asset_url | stylesheet_tag }}
+
+{%- liquid
+  assign deco_images = section.blocks | where: 'type', 'deco'
+-%}
+
+{% style %}
+  #shopify-section-{{ section.id }} {
+    --cost-comparison-breakdown-background: url("{{ section.settings.background_image_desktop | image_url }}");
+    --cost-comparison-breakdown-button-background: {{ section.settings.button_background }};
+    --cost-comparison-breakdown-button-color: {{ section.settings.button_color }};
+    --cost-comparison-breakdown-badge-background: {{ section.settings.badge_background }};
+    --cost-comparison-breakdown-badge-color: {{ section.settings.badge_color }};
+    --cost-comparison-breakdown-badge-max-width: {{ section.settings.badge_max_width }};
+    --cost-comparison-breakdown-badge-position-top: {{ section.settings.badge_position_x }};
+    --cost-comparison-breakdown-badge-position-left: {{ section.settings.badge_position_y }};
+
+    @media screen and (max-width: 768px) {
+      --cost-comparison-breakdown-background: url("{{ section.settings.background_image_mobile | image_url }}");
+    }
+  }
+{% endstyle %}
+
+<div class="cost-comparison-breakdown__container">
+  {%- unless section.settings.heading == blank -%}
+    <h2 class="cost-comparison-breakdown__heading">{{ section.settings.heading }}</h2>
+  {%- endunless -%}
+
+  {%- unless section.settings.subheading == blank -%}
+    <p class="cost-comparison-breakdown__subheading cost-comparison-breakdown--desktop">
+      {{ section.settings.subheading }}
+    </p>
+  {%- endunless -%}
+
+  <div class="cost-comparison-breakdown__flex">
+    {%- unless section.settings.product_image_desktop == blank -%}
+      <div class="cost-comparison-breakdown__image-wrapper">
+        <picture>
+          {%- unless section.settings.product_image_mobile == blank -%}
+            <source srcset="{{ section.settings.product_image_mobile | image_url }}" media="(max-width: 768px)">
+          {%- endunless -%}
+
+          {{ section.settings.product_image_desktop
+             | image_url: width: section.settings.product_image.width 
+             | image_tag: class: 'cost-comparison-breakdown__image'  }}
+        </picture>
+
+        {%- unless section.settings.badge_content == blank -%}
+          <div class="cost-comparison-breakdown__badge">
+            {{ section.settings.badge_content }}
+          </div>
+        {%- endunless -%}
+      </div>
+    {%- endunless -%}
+
+    {%- unless section.settings.subheading == blank -%}
+      <p class="cost-comparison-breakdown__subheading cost-comparison-breakdown--mobile">
+        {{ section.settings.subheading }}
+      </p>
+    {%- endunless -%}
+
+    <div class="cost-comparison-breakdown__right-content">
+      {%- if section.blocks.size > 0 -%}
+        <div class="cost-comparison-breakdown__expense-table">
+          {%- for block in section.blocks -%}
+            {%- case block.type -%}
+              {%- when 'expense_heading' -%}
+                <div class="expense-table__heading-wrapper">{{ block.settings.expense_heading }}</div>
+                
+              {%- when 'expense_item' -%}
+                <div class="expense-table__item">
+                  <p class="expense-table__item-label">{{ block.settings.expense_item_label }}</p>
+
+                  <p class="expense-table__item-price">{{ block.settings.expense_item_price }}</p>
+                </div>
+
+              {%- when 'expense_product' -%}
+                <div class="expense-table__product">
+                  <p class="expense-table__product-name">{{ block.settings.expense_product_name }}</p>
+
+                  <p class="expense-table__product-price">{{ block.settings.expense_product_price }}</p>
+                </div>
+            {%- endcase -%}
+          {%- endfor -%}
+        </div>
+      {%- endif -%}
+
+      {%- if section.settings.banner_title != blank or section.settings.banner_price != blank -%}
+        <div class="cost-comparison-breakdown__banner">
+          <p class="banner__title">{{ section.settings.banner_title }}</p>
+
+          <p class="banner__price">{{ section.settings.banner_price }}</p>
+        </div>
+      {%- endif -%}
+    </div>
+  </div>
+
+  {%- if section.settings.button_label != blank and section.settings.button_url != blank -%}
+    <a class="cost-comparison-breakdown__button" href="{{ section.settings.button_url }}">
+      {{ section.settings.button_label }}
+
+      {{ 'icon-landing-button-arrow.svg' | inline_asset_content }}
+    </a>
+  {%- endif -%}
+
+  <div class="cost-comparison-breakdown__review">
+    {%- unless section.settings.review_image == blank -%}
+      <div class="review__avatar-wrapper">
+        {{ section.settings.review_image 
+           | image_url: width: section.settings.review_image.width 
+           | image_tag: class: 'cost-comparison-breakdown__image', loading: 'lazy' }}
+      </div>
+    {%- endunless -%}
+
+    {%- unless section.settings.review_rating == blank -%}
+      <div class="review__rating-wrapper">
+        {{ section.settings.review_rating 
+           | image_url: width: section.settings.review_rating.width 
+           | image_tag: class: 'cost-comparison-breakdown__image', loading: 'lazy' }}
+      </div>
+    {%- endunless -%}
+
+    {%- unless section.settings.review_text_desktop == blank -%}
+      {%- assign review_text_mobile = section.settings.review_text_mobile | default: section.settings.review_text_desktop -%}
+      
+      <p class="review__text">
+        <span class="cost-comparison-breakdown--desktop">{{ section.settings.review_text_desktop }}</span>
+        <span class="cost-comparison-breakdown--mobile">{{ review_text_mobile }}</span>
+      </p>
+    {%- endunless -%}
+  </div>
+</div>
+
+{% schema %}
+{
+  "name": "Cost Comparison Breakdown",
+  "tag": "section",
+  "class": "cost-comparison-breakdown",
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "background_image_desktop",
+      "label": "Background image desktop"
+    },
+    {
+      "type": "image_picker",
+      "id": "background_image_mobile",
+      "label": "Background image mobile"
+    },
+    {
+      "type": "header",
+      "content": "Content"
+    },
+    {
+      "type": "inline_richtext",
+      "id": "heading",
+      "label": "Heading",
+    },
+    {
+      "type": "text",
+      "id": "subheading",
+      "label": "Subheading",
+    },
+    {
+      "type": "image_picker",
+      "id": "product_image_desktop",
+      "label": "Product image desktop"
+    },
+    {
+      "type": "image_picker",
+      "id": "product_image_mobile",
+      "label": "Product image mobile"
+    },
+    {
+      "type": "header",
+      "content": "Banner"
+    },
+    {
+      "type": "text",
+      "id": "banner_title",
+      "label": "Title",
+    },
+    {
+      "type": "text",
+      "id": "banner_price",
+      "label": "Price",
+    },
+    {
+      "type": "header",
+      "content": "Button"
+    },
+    {
+      "type": "text",
+      "id": "button_label",
+      "label": "Label",
+      "default": "Try Folqs Today"
+    },
+    {
+      "type": "url",
+      "id": "button_url",
+      "label": "Url"
+    },
+    {
+      "type": "color",
+      "id": "button_background",
+      "label": "Background color"
+    },
+    {
+      "type": "color",
+      "id": "button_color",
+      "label": "Text color"
+    },
+    {
+      "type": "header",
+      "content": "Review block"
+    },
+    {
+      "type": "image_picker",
+      "id": "review_image",
+      "label": "Review image"
+    },
+    {
+      "type": "image_picker",
+      "id": "review_rating",
+      "label": "Review rating"
+    },
+    {
+      "type": "text",
+      "id": "review_text_desktop",
+      "label": "Review text desktop"
+    },
+    {
+      "type": "text",
+      "id": "review_text_mobile",
+      "label": "Review text mobile"
+    },
+    {
+      "type": "header",
+      "content": "Badge"
+    },
+    {
+      "type": "color",
+      "id": "badge_background",
+      "label": "Background color"
+    },
+    {
+      "type": "color",
+      "id": "badge_color",
+      "label": "Text color"
+    },
+    {
+      "type": "richtext",
+      "id": "badge_content",
+      "label": "Content"
+    },
+    {
+      "type": "text",
+      "id": "badge_max_width",
+      "label": "Max width"
+    },
+    {
+      "type": "text",
+      "id": "badge_position_x",
+      "label": "Position X"
+    },
+    {
+      "type": "text",
+      "id": "badge_position_y",
+      "label": "Position Y"
+    },
+  ],
+  "blocks": [
+    {
+      "type": "expense_heading",
+      "name": "Expense heading",
+      "settings": [
+        {
+          "type": "richtext",
+          "id": "expense_heading",
+          "label": "Heading"
+        }
+      ]
+    },
+    {
+      "type": "expense_item",
+      "name": "Expense item",
+      "settings": [
+        {
+          "type": "text",
+          "id": "expense_item_label",
+          "label": "Item name",
+        },
+        {
+          "type": "text",
+          "id": "expense_item_price",
+          "label": "Price",
+        }
+      ]
+    },
+    {
+      "type": "expense_product",
+      "name": "Expense product",
+      "settings": [
+        {
+          "type": "color",
+          "id": "expense_product_color",
+          "label": "Text color"
+        },
+        {
+          "type": "text",
+          "id": "expense_product_name",
+          "label": "Name"
+        },
+        {
+          "type": "text",
+          "id": "expense_product_price",
+          "label": "Price"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Cost Comparison Breakdown",
+    }
+  ]
+}
+{% endschema %}

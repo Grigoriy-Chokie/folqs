@@ -33,7 +33,7 @@
         "text_6JAJjM": {
           "type": "text",
           "settings": {
-            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>"
+            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>"
           }
         },
         "button_jexaPM": {
@@ -91,10 +91,10 @@
         "percentage_island_8Y8h8N"
       ],
       "settings": {
-        "list_of_badges": "ellipse_1.svg///Gut Healh, api_1.svg///Immune System, api_1.svg///Overall Health, api_1.svg///Overall Health, api_1.svg///Overall Health",
+        "list_of_badges": "ellipse_1.svg\/\/\/Gut Healh, api_1.svg\/\/\/Immune System, api_1.svg\/\/\/Overall Health, api_1.svg\/\/\/Overall Health, api_1.svg\/\/\/Overall Health",
         "button_label": "Learn more",
-        "main_text": "<p>MicrobiomeX® Flavobiotic Citrus Complex, rich in citrus-derived flavonoids hesperidin and naringin, is formulated to boost gut health significantly. These compounds reach the colon with high bioavailability, where they are actively metabolized by the gut microbiota, fostering a well-balanced microbial environment conducive to digestive and overall health.</p>",
-        "main_text_hidden": "<h2>What to Expect</h2><ul><li>Anticipate a notable increase in beneficial gut bacteria, contributing to improved digestion and gut health.</li><li>Expect reductions in markers of colon inflammation, which may alleviate discomfort and promote gut comfort.</li><li>Look forward to an increase in mucosal protection due to a significant boost in secretory IgA levels, fortifying the gut’s defense system.</li></ul>",
+        "main_text": "<p>MicrobiomeX® Flavobiotic Citrus Complex, rich in citrus-derived flavonoids hesperidin and naringin, is formulated to boost gut health significantly. These compounds reach the colon with high bioavailability, where they are actively metabolized by the gut microbiota, fostering a well-balanced microbial environment conducive to digestive and overall health.<\/p>",
+        "main_text_hidden": "<h2>What to Expect<\/h2><ul><li>Anticipate a notable increase in beneficial gut bacteria, contributing to improved digestion and gut health.<\/li><li>Expect reductions in markers of colon inflammation, which may alleviate discomfort and promote gut comfort.<\/li><li>Look forward to an increase in mucosal protection due to a significant boost in secretory IgA levels, fortifying the gut’s defense system.<\/li><\/ul>",
         "show_page_title": true
       }
     },
@@ -104,7 +104,7 @@
         "ingredient_jQFn4Y": {
           "type": "ingredient",
           "settings": {
-            "img": "shopify://shop_images/Rectangle_15_24.png",
+            "img": "shopify:\/\/shop_images\/Rectangle_15_24.png",
             "title": "MicrobiomeX® Flavobiotic Citrus Complex",
             "subtitle": "",
             "info": "250 mg"
@@ -122,7 +122,7 @@
         "heading": "",
         "sub_heading": "",
         "name_button": "",
-        "url_button": "/"
+        "url_button": "\/"
       }
     }
   },

@@ -16,7 +16,7 @@
           "type": "account_tab",
           "settings": {
             "title": "Addresses",
-            "link": "/account/addresses",
+            "link": "\/account\/addresses",
             "target_blank": false
           }
         },
@@ -24,7 +24,7 @@
           "type": "account_tab",
           "settings": {
             "title": "Order history",
-            "link": "/account",
+            "link": "\/account",
             "target_blank": false
           }
         },
@@ -32,7 +32,7 @@
           "type": "account_tab",
           "settings": {
             "title": "My Subscription",
-            "link": "/tools/recurring/login",
+            "link": "\/tools\/recurring\/login",
             "target_blank": false
           }
         },
@@ -40,7 +40,7 @@
           "type": "account_tab",
           "settings": {
             "title": "My Rewards",
-            "link": "https://folqs.refr.cc/join/default",
+            "link": "https:\/\/folqs.refr.cc\/join\/default",
             "target_blank": true
           }
         }
@@ -63,7 +63,7 @@
       "type": "main-account",
       "settings": {
         "button_label": "SHOP NOW",
-        "button_url": "/#product-information__reviews--2",
+        "button_url": "\/#product-information__reviews--2",
         "are_only_orders_shown": true,
         "padding_top": 60,
         "padding_bottom": 60

@@ -33,7 +33,7 @@
         "text_6JAJjM": {
           "type": "text",
           "settings": {
-            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>"
+            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>"
           }
         },
         "button_jexaPM": {
@@ -89,10 +89,10 @@
         "percentage_island_8Y8h8N"
       ],
       "settings": {
-        "list_of_badges": "///Bone Strength, ///Mental Clarity, ///Immune Boost, ///Metabolic Health",
+        "list_of_badges": "\/\/\/Bone Strength, \/\/\/Mental Clarity, \/\/\/Immune Boost, \/\/\/Metabolic Health",
         "button_label": "Learn more",
-        "main_text": "<p>Our vitamins, selected for their high bioavailability, play a vital role in supporting various bodily functions, energizing cells, and protecting against age-related changes. Tailored to meet the unique needs of the aging population, these vitamins contribute to a strong, energetic, and healthy life, addressing specific wellness concerns with precision and efficacy.</p>",
-        "main_text_hidden": "<h2>What to Expect</h2><ul><li>Expect to feel sharper, with B-vitamins supporting cognitive function.</li><li>With Vitamin C and D3, anticipate enhanced immune and circulatory system function.</li><li>Rely on our vitamins to assist in maintaining your body’s energetic rhythm.</li></ul>",
+        "main_text": "<p>Our vitamins, selected for their high bioavailability, play a vital role in supporting various bodily functions, energizing cells, and protecting against age-related changes. Tailored to meet the unique needs of the aging population, these vitamins contribute to a strong, energetic, and healthy life, addressing specific wellness concerns with precision and efficacy.<\/p>",
+        "main_text_hidden": "<h2>What to Expect<\/h2><ul><li>Expect to feel sharper, with B-vitamins supporting cognitive function.<\/li><li>With Vitamin C and D3, anticipate enhanced immune and circulatory system function.<\/li><li>Rely on our vitamins to assist in maintaining your body’s energetic rhythm.<\/li><\/ul>",
         "show_page_title": true
       }
     },
@@ -102,7 +102,7 @@
         "ingredient_jQFn4Y": {
           "type": "ingredient",
           "settings": {
-            "img": "shopify://shop_images/Rectangle_15_897465fe-c8fb-45af-9f56-153d04f97d4a.png",
+            "img": "shopify:\/\/shop_images\/Rectangle_15_897465fe-c8fb-45af-9f56-153d04f97d4a.png",
             "title": "Vitamin A",
             "subtitle": "as natural beta-carotene",
             "info": "1,5 mg"
@@ -111,7 +111,7 @@
         "ingredient_wdLMhn": {
           "type": "ingredient",
           "settings": {
-            "img": "shopify://shop_images/Rectangle_15_1.png",
+            "img": "shopify:\/\/shop_images\/Rectangle_15_1.png",
             "title": "Ascorbic acid ",
             "subtitle": "from Acerola Cherry",
             "info": "150 mg"
@@ -120,7 +120,7 @@
         "ingredient_zVA3MV": {
           "type": "ingredient",
           "settings": {
-            "img": "shopify://shop_images/Rectangle_15_2.png",
+            "img": "shopify:\/\/shop_images\/Rectangle_15_2.png",
             "title": "Vitamin D3",
             "subtitle": "as plant-sourced Cholecalciferol VegD3®",
             "info": "20 mcg"
@@ -129,7 +129,7 @@
         "ingredient_JGzimG": {
           "type": "ingredient",
           "settings": {
-            "img": "shopify://shop_images/Rectangle_15_3.png",
+            "img": "shopify:\/\/shop_images\/Rectangle_15_3.png",
             "title": "Vitamin E",
             "subtitle": "as d-alpha-tocopheryl acetate",
             "info": "20 mg"
@@ -138,7 +138,7 @@
         "ingredient_NqVkxr": {
           "type": "ingredient",
           "settings": {
-            "img": "shopify://shop_images/Rectangle_15_4.png",
+            "img": "shopify:\/\/shop_images\/Rectangle_15_4.png",
             "title": "Vitamin B1",
             "subtitle": "as Thiamine HCl and Thiamine Cocarboxylase",
             "info": "4 mg total"
@@ -147,7 +147,7 @@
         "ingredient_bzfiMx": {
           "type": "ingredient",
           "settings": {
-            "img": "shopify://shop_images/Rectangle_15_5.png",
+            "img": "shopify:\/\/shop_images\/Rectangle_15_5.png",
             "title": "Riboflavin",
             "subtitle": "Vitamin B-2 and as Riboflavin 5 Phosphate",
             "info": "6 mg total"
@@ -156,7 +156,7 @@
         "ingredient_YPcnLb": {
           "type": "ingredient",
           "settings": {
-            "img": "shopify://shop_images/Rectangle_15_6.png",
+            "img": "shopify:\/\/shop_images\/Rectangle_15_6.png",
             "title": "Vitamin B3",
             "subtitle": "as Niacinamide",
             "info": "40 mg NE"
@@ -165,7 +165,7 @@
         "ingredient_FBGiTz": {
           "type": "ingredient",
           "settings": {
-            "img": "shopify://shop_images/Rectangle_15_10.png",
+            "img": "shopify:\/\/shop_images\/Rectangle_15_10.png",
             "title": "Vitamin B5",
             "subtitle": "Pantothenic Acid as d-calcium pantothenate",
             "info": "15 mg"
@@ -174,7 +174,7 @@
         "ingredient_TzJACx": {
           "type": "ingredient",
           "settings": {
-            "img": "shopify://shop_images/Rectangle_15_11.png",
+            "img": "shopify:\/\/shop_images\/Rectangle_15_11.png",
             "title": "Vitamin B6",
             "subtitle": "as pyridoxine HCl and pyridoxal-5-phosphate",
             "info": "6 mg total"
@@ -183,7 +183,7 @@
         "ingredient_kgLWGV": {
           "type": "ingredient",
           "settings": {
-            "img": "shopify://shop_images/Rectangle_15_12.png",
+            "img": "shopify:\/\/shop_images\/Rectangle_15_12.png",
             "title": "Folate",
             "subtitle": "as L-5-Methyltetrahydrofolate Calcium",
             "info": "500 mcg DFE"
@@ -192,7 +192,7 @@
         "ingredient_Pt4gXm": {
           "type": "ingredient",
           "settings": {
-            "img": "shopify://shop_images/Rectangle_15_13.png",
+            "img": "shopify:\/\/shop_images\/Rectangle_15_13.png",
             "title": "Vitamin B7",
             "subtitle": "Biotin",
             "info": "100 mcg"
@@ -201,7 +201,7 @@
         "ingredient_nVKAKR": {
           "type": "ingredient",
           "settings": {
-            "img": "shopify://shop_images/Rectangle_15_14.png",
+            "img": "shopify:\/\/shop_images\/Rectangle_15_14.png",
             "title": "Vitamin B-12 ",
             "subtitle": "as Methylcobalamin",
             "info": "120 mcg"
@@ -210,7 +210,7 @@
         "ingredient_Pn7tz6": {
           "type": "ingredient",
           "settings": {
-            "img": "shopify://shop_images/Rectangle_15_15.png",
+            "img": "shopify:\/\/shop_images\/Rectangle_15_15.png",
             "title": "MenaQ7® Natural Menaquinone",
             "subtitle": "Vitamin K2",
             "info": "120 mcg"
@@ -240,7 +240,7 @@
         "heading": "",
         "sub_heading": "",
         "name_button": "",
-        "url_button": "/"
+        "url_button": "\/"
       }
     }
   },

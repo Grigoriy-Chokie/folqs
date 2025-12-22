@@ -25,7 +25,7 @@
         "text_n8JpVi": {
           "type": "text",
           "settings": {
-            "text": "<p><a href=\"mailto:help@folqs.co\" target=\"_blank\">help@folqs.co</a></p>"
+            "text": "<p><a href=\"mailto:help@folqs.co\" target=\"_blank\">help@folqs.co<\/a><\/p>"
           }
         }
       },

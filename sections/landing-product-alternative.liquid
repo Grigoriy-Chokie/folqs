@@ -199,9 +199,10 @@
                         {%- render 'icon-rating-extra' -%}
                     {%- endcase -%}
                   </span>
-                  {% if block.settings.text != blank %}
+                  {% if block.settings.text != blank or block.settings.inline_richtext != blank %}
                     <span class="product-information__reviews-text">
-                    {{- block.settings.text -}}</span>
+                  {{- block.settings.text -}}</span>
+                  {{ block.settings.inline_richtext }}
                   {% endif %}
                 </{{ tag }}>
             {% endcase %}
@@ -252,6 +253,9 @@
                 </span>
                 {% if block.settings.text != blank %}
                   <span class="product-information__reviews-text">{{- block.settings.text -}}</span>
+                {% endif %}
+                {% if block.settings.inline_richtext != blank %}
+                  <span class="product-information__reviews-inline_richtext">{{ block.settings.inline_richtext }}</span>
                 {% endif %}
               </{{ tag }}>
             {%- when 'title' -%}
@@ -496,12 +500,50 @@
                 {% if block.settings.text != blank %}
                   <span class="product-information__reviews-text">{{- block.settings.text -}}</span>
                 {% endif %}
+                {% if block.settings.inline_richtext != blank %}
+                  <span class="product-information__reviews-text">{{ block.settings.inline_richtext }}</span>
+                {% endif %}
                 {% if block.settings.additional_text %}
                   <div class="product-information__reviews-additional_text">
                     {{ block.settings.additional_text }}
                   </div>
                 {% endif %}
               </{{ tag }}>
+            {% when 'icon_container' %}
+              <div 
+                class="product-information__icon-container"
+                style="
+                  --background: {{ block.settings.background }};
+                  --border-color: {{ block.settings.border_color }};
+                  --text-color: {{ block.settings.text_color }}
+                "
+              >
+                <ul class="product-information__icon-container-group list-unstyled">
+                  {% for i in (1..3) %}
+                    {% liquid 
+                      assign icon_id = 'icon_' | append: i
+                      assign title_id = 'title_' | append: i
+                      assign subtitle_id = 'subtitle_' | append: i
+                      assign icon = block.settings[icon_id]
+                      assign title = block.settings[title_id]
+                      assign subtitle = block.settings[subtitle_id]
+                    %}
+                    {% if icon != blank or title != blank or subtitle != blank %}
+                      <li class="product-information__icon-container-item">
+                        {% if icon != blank %}
+                          {{ icon | image_url: width: icon.width | image_tag: alt: icon.alt }}
+                        {% endif %}
+                        {% if title != blank %}
+                          <h2>{{ title }}</h2>
+                        {% endif %}
+                        {% if subtitle != blank %}
+                          <p>{{ subtitle }}</p>
+                        {% endif %}
+                      </li>
+                    {% endif %}
+                  {% endfor %}
+                </ul>
+              </div>
             {%- when 'feature' -%}
               {%- unless has_features -%}
                 {%- assign features = section.blocks | where: 'type', 'feature' -%}
@@ -849,7 +891,7 @@
                         {% endif %}
                       </label>
                     {% endif %}
-                    {% if block.settings.gift_info != false and buy_buttons_block.settings.gift_product and buy_buttons_block.settings.gift_product != blank %}
+                    {% if block.settings.gift_info != false %}
                       <div 
                         class="product-gift__info-block"
                         style="--background: {{ block.settings.gift_item_background }};--text: {{ block.settings.gift_text_color }};--price: {{ block.settings.gift_price_color }}"
@@ -873,6 +915,7 @@
                               {% endif %}
                             </div>
                           </li>
+                          {% if buy_buttons_block.settings.gift_product and buy_buttons_block.settings.gift_product != blank %}
                            <li class="product-gift__info-item">
                             {% if block.settings.icon != blank %}
                               <div class="product-gift__item-icon">
@@ -882,13 +925,14 @@
                             <div class="product-gift__container">
                               <div class="product-gift__text-info">
                                 <h2 class="product-gift__title">{{ block.settings.info_title | default: buy_buttons_block.settings.gift_product.title }}</h2>
-                          <p class="product-gift__price">{% if block.settings.product_price != blank %}{{ block.settings.product_price | money }}{% else %}{{ buy_buttons_block.settings.gift_product.price | money }}{% endif %}</p>
+                                <p class="product-gift__price">{% if block.settings.product_price != blank %}{{ block.settings.product_price | money }}{% else %}{{ buy_buttons_block.settings.gift_product.price | money }}{% endif %}</p>
                               </div>
-                                <div class="product-gift__icon">
-                                  {{ block.settings.product_image | default: buy_buttons_block.settings.gift_product.featured_image |  image_url: width: 1000 | image_tag }}
-                                </div>
+                              <div class="product-gift__icon">
+                                {{ block.settings.product_image | default: buy_buttons_block.settings.gift_product.featured_image |  image_url: width: 1000 | image_tag }}
+                              </div>
                             </div>                      
                           </li>
+                          {% endif %}
                         </ul>
                       </div>
                     {% endif %}
@@ -1383,6 +1427,79 @@
       ]
     },
     {
+      "name": "Icon Container",
+      "type": "icon_container",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "icon_1",
+          "label": "First Icon"
+        },
+        {
+          "type": "text",
+          "id": "title_1",
+          "label": "First Title"
+        },
+        {
+          "type": "text",
+          "id": "subtitle_1",
+          "label": "First Subtitle"
+        },
+        {
+          "type": "image_picker",
+          "id": "icon_2",
+          "label": "Second Icon"
+        },
+        {
+          "type": "text",
+          "id": "title_2",
+          "label": "Second Title"
+        },
+        {
+          "type": "text",
+          "id": "subtitle_2",
+          "label": "Second Subtitle"
+        },
+         {
+          "type": "image_picker",
+          "id": "icon_3",
+          "label": "Third Icon"
+        },
+        {
+          "type": "text",
+          "id": "title_3",
+          "label": "Third Title"
+        },
+        {
+          "type": "text",
+          "id": "subtitle_3",
+          "label": "Third Subtitle"
+        },
+        {
+          "type": "header",
+          "content": "Color Group"
+        },
+        {
+          "type": "color",
+          "id": "background",
+          "label": "Background",
+          "default": "#EEF7FF"
+        },
+        {
+          "type": "color",
+          "id": "border_color",
+          "label": "Border Color",
+          "default": "#8FBAE3"
+        },
+        {
+          "type": "color",
+          "id": "text_color",
+          "label": "Text Color",
+          "default": "#000"
+        }
+      ]
+    },
+    {
       "name": "Guarantee",
       "type": "guarantee",
       "limit": 1,
@@ -1514,6 +1631,11 @@
           "id": "text",
           "label": "Text",
           "default": "3,500+ Five Star Reviews"
+        },
+        {
+          "type": "inline_richtext",
+          "id": "inline_richtext",
+          "label": "Inline Richtext"
         },
         {
           "type": "richtext",

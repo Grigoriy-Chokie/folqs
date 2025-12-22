@@ -26,37 +26,37 @@
         "image_3XJK4i": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Rectangle_579.png"
+            "image": "shopify:\/\/shop_images\/Rectangle_579.png"
           }
         },
         "image_WD4MXM": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/2_7e605c66-44c5-44b3-980a-93775096cab9.png"
+            "image": "shopify:\/\/shop_images\/2_7e605c66-44c5-44b3-980a-93775096cab9.png"
           }
         },
         "image_QyJprf": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/3_0635a080-d8f3-4312-a59e-f357d1eb0e7f.png"
+            "image": "shopify:\/\/shop_images\/3_0635a080-d8f3-4312-a59e-f357d1eb0e7f.png"
           }
         },
         "image_3AK48i": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Group_1982248394.png"
+            "image": "shopify:\/\/shop_images\/Group_1982248394.png"
           }
         },
         "image_rxpG3t": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/6.png"
+            "image": "shopify:\/\/shop_images\/6.png"
           }
         },
         "title_CWEqDz": {
           "type": "title",
           "settings": {
-            "text": "<p><strong>An Ancient Superfood</strong><br/>for Modern Lifestyle</p>",
+            "text": "<p><strong>An Ancient Superfood<\/strong><br\/>for Modern Lifestyle<\/p>",
             "highlighted_color": "#005eb8",
             "text_mobile": ""
           }
@@ -67,14 +67,14 @@
             "show_desktop_position": false,
             "stars_type": "yellow",
             "text": "3,547",
-            "additional_text": "<p></p>",
+            "additional_text": "<p><\/p>",
             "url": ""
           }
         },
         "feature_gFiHij": {
           "type": "feature",
           "settings": {
-            "icon": "shopify://shop_images/heart_1_1.svg",
+            "icon": "shopify:\/\/shop_images\/heart_1_1.svg",
             "title": "Immunity*",
             "title_mobile": "",
             "text": "",
@@ -84,7 +84,7 @@
         "feature_FjQLW4": {
           "type": "feature",
           "settings": {
-            "icon": "shopify://shop_images/stomach_1_dd9ce58a-4601-406a-b2e9-8ca0a7825b77.svg",
+            "icon": "shopify:\/\/shop_images\/stomach_1_dd9ce58a-4601-406a-b2e9-8ca0a7825b77.svg",
             "title": "Gut Health*",
             "title_mobile": "",
             "text": "",
@@ -94,7 +94,7 @@
         "feature_TPdXkN": {
           "type": "feature",
           "settings": {
-            "icon": "shopify://shop_images/protection_1_ba1d0188-949e-4769-b804-9d9ef0b9f840.svg",
+            "icon": "shopify:\/\/shop_images\/protection_1_ba1d0188-949e-4769-b804-9d9ef0b9f840.svg",
             "title": "Skin and Hair*",
             "title_mobile": "",
             "text": "",
@@ -164,21 +164,21 @@
         "payment_icons_7EyFAK": {
           "type": "payment_icons",
           "settings": {
-            "image_1": "shopify://shop_images/01.png",
-            "image_2": "shopify://shop_images/01_95e05833-8204-4267-b344-4f31058acfd5.png",
-            "image_3": "shopify://shop_images/01_2.png",
-            "image_4": "shopify://shop_images/01_6_134eee02-14e4-4d93-9618-32d37514334d.png",
-            "image_5": "shopify://shop_images/01_4.png",
-            "image_6": "shopify://shop_images/01_6.png",
-            "image_7": "shopify://shop_images/01_8.png",
-            "image_8": "shopify://shop_images/01_7.png"
+            "image_1": "shopify:\/\/shop_images\/01.png",
+            "image_2": "shopify:\/\/shop_images\/01_95e05833-8204-4267-b344-4f31058acfd5.png",
+            "image_3": "shopify:\/\/shop_images\/01_2.png",
+            "image_4": "shopify:\/\/shop_images\/01_6_134eee02-14e4-4d93-9618-32d37514334d.png",
+            "image_5": "shopify:\/\/shop_images\/01_4.png",
+            "image_6": "shopify:\/\/shop_images\/01_6.png",
+            "image_7": "shopify:\/\/shop_images\/01_8.png",
+            "image_8": "shopify:\/\/shop_images\/01_7.png"
           }
         },
         "review_with_usp_jBe7ae": {
           "type": "review_with_usp",
           "settings": {
             "title": "Join 10,000+ Satisfied Customers",
-            "image": "shopify://shop_images/Frame_1982248617.png",
+            "image": "shopify:\/\/shop_images\/Frame_1982248617.png",
             "stars_url": "",
             "extra_styles": false,
             "style": "default"
@@ -188,7 +188,7 @@
           "type": "collapsible_row",
           "settings": {
             "question": "What is Colostrum",
-            "answer": "<p>Colostrum is nature’s very first gift — an incredibly nutrient-rich milk produced by mammals to help newborns get a strong, healthy start. Humans can benefit from its powerful properties too, as <strong>colostrum naturally contains antibodies, growth factors, and essential nutrients</strong> that may support:</p><ul><li>Healthy immune system function*</li><li>Digestive comfort and gut health*</li><li>Muscle and tissue recovery*</li><li>Joint flexibility and mobility*</li><li>Skin, hair, and nail health*</li><li>Overall vitality and wellness*</li></ul>",
+            "answer": "<p>Colostrum is nature’s very first gift — an incredibly nutrient-rich milk produced by mammals to help newborns get a strong, healthy start. Humans can benefit from its powerful properties too, as <strong>colostrum naturally contains antibodies, growth factors, and essential nutrients<\/strong> that may support:<\/p><ul><li>Healthy immune system function*<\/li><li>Digestive comfort and gut health*<\/li><li>Muscle and tissue recovery*<\/li><li>Joint flexibility and mobility*<\/li><li>Skin, hair, and nail health*<\/li><li>Overall vitality and wellness*<\/li><\/ul>",
             "default_list": false
           }
         },
@@ -196,7 +196,7 @@
           "type": "collapsible_row",
           "settings": {
             "question": "Health Benefits",
-            "answer": "<ul><li>Supports Immune Health*</li><li>Promotes Gut Health and Digestive Balance*</li><li>Aids in Post-Workout Recovery and Tissue Support*</li><li>Helps Maintain a Healthy Microbiome*</li><li>Encourages Joint and Muscle Wellness*</li><li>Promotes Skin, Hair, and Nail Vitality*</li><li>Supports Healthy Aging and Longevity*</li><li>Enhances Overall Resilience and Wellness*</li></ul><p><em>*Individual Results May Vary</em></p>",
+            "answer": "<ul><li>Supports Immune Health*<\/li><li>Promotes Gut Health and Digestive Balance*<\/li><li>Aids in Post-Workout Recovery and Tissue Support*<\/li><li>Helps Maintain a Healthy Microbiome*<\/li><li>Encourages Joint and Muscle Wellness*<\/li><li>Promotes Skin, Hair, and Nail Vitality*<\/li><li>Supports Healthy Aging and Longevity*<\/li><li>Enhances Overall Resilience and Wellness*<\/li><\/ul><p><em>*Individual Results May Vary<\/em><\/p>",
             "default_list": false
           }
         },
@@ -204,7 +204,7 @@
           "type": "collapsible_row",
           "settings": {
             "question": "Product Features",
-            "answer": "<ul><li><strong>First-Day Milking Full-Fat, Non-Stripped </strong></li><li><strong>Grass-Fed Cows – USA Farms </strong></li><li><strong>Calf-First Ethical Sourcing </strong></li><li><strong>Rich in Immunoglobulins (IgG, IgA) </strong></li><li><strong>High in Growth Factors </strong></li><li><strong>Loaded with Prebiotics and Proline-Rich Polypeptides (PRPs) </strong></li><li><strong>Free from Additives and Fillers </strong></li><li><strong>Third-Party Tested for Purity and Quality </strong></li></ul><p><em>Individual results may vary. These statements are not intended to diagnose, treat, cure, or prevent any disease.</em></p>",
+            "answer": "<ul><li><strong>First-Day Milking Full-Fat, Non-Stripped <\/strong><\/li><li><strong>Grass-Fed Cows – USA Farms <\/strong><\/li><li><strong>Calf-First Ethical Sourcing <\/strong><\/li><li><strong>Rich in Immunoglobulins (IgG, IgA) <\/strong><\/li><li><strong>High in Growth Factors <\/strong><\/li><li><strong>Loaded with Prebiotics and Proline-Rich Polypeptides (PRPs) <\/strong><\/li><li><strong>Free from Additives and Fillers <\/strong><\/li><li><strong>Third-Party Tested for Purity and Quality <\/strong><\/li><\/ul><p><em>Individual results may vary. These statements are not intended to diagnose, treat, cure, or prevent any disease.<\/em><\/p>",
             "default_list": true
           }
         },
@@ -212,7 +212,7 @@
           "type": "collapsible_row",
           "settings": {
             "question": "Ingredients",
-            "answer": "<ul><li><strong>Immunoglobulins (IgG, IgA, IgM): </strong>Antibodies that are naturally present in colostrum.</li><li><strong>Proline-Rich Polypeptides (PRPs): </strong>Specialized proteins unique to colostrum.</li><li><strong>Lactoferrin:</strong> A beneficial protein sourced from milk.</li><li><strong>Growth Factors (IGF-1, IGF-2):</strong> Bioactive substances inherent in colostrum.</li><li><strong>Cytokines</strong>: Cell-signaling molecules found in nature.</li><li><strong>Prebiotics:</strong> Dietary fibers supporting everyday nutrition.<br/><strong>Vitamins & Minerals:</strong> Fundamental nutrients for daily wellbeing.<br/><strong>Essential Amino Acids:</strong> Core building blocks vital for nutrition.</li><li><strong>Fatty Acids:</strong> Nutrients naturally contributing to balanced nutrition.</li></ul><p><em>Individual results may vary. These statements are not intended to diagnose, treat, cure, or prevent any disease.</em></p>",
+            "answer": "<ul><li><strong>Immunoglobulins (IgG, IgA, IgM): <\/strong>Antibodies that are naturally present in colostrum.<\/li><li><strong>Proline-Rich Polypeptides (PRPs): <\/strong>Specialized proteins unique to colostrum.<\/li><li><strong>Lactoferrin:<\/strong> A beneficial protein sourced from milk.<\/li><li><strong>Growth Factors (IGF-1, IGF-2):<\/strong> Bioactive substances inherent in colostrum.<\/li><li><strong>Cytokines<\/strong>: Cell-signaling molecules found in nature.<\/li><li><strong>Prebiotics:<\/strong> Dietary fibers supporting everyday nutrition.<br\/><strong>Vitamins & Minerals:<\/strong> Fundamental nutrients for daily wellbeing.<br\/><strong>Essential Amino Acids:<\/strong> Core building blocks vital for nutrition.<\/li><li><strong>Fatty Acids:<\/strong> Nutrients naturally contributing to balanced nutrition.<\/li><\/ul><p><em>Individual results may vary. These statements are not intended to diagnose, treat, cure, or prevent any disease.<\/em><\/p>",
             "default_list": true
           }
         },
@@ -220,14 +220,14 @@
           "type": "collapsible_row",
           "settings": {
             "question": "No Artificial Anything",
-            "answer": "<ul><li><strong>No Hormones</strong></li><li><strong>No Antibiotics </strong></li><li><strong>No Additives or Fillers </strong></li><li><strong>No Artificial Flavors or Sweeteners </strong></li><li><strong>No GMO IngredientsNo Preservatives </strong></li><li><strong>No High-Heat Processing </strong></li><li><strong>No Pesticides or Harmful Chemicals </strong></li><li><strong>No Synthetic Ingredients</strong></li></ul>",
+            "answer": "<ul><li><strong>No Hormones<\/strong><\/li><li><strong>No Antibiotics <\/strong><\/li><li><strong>No Additives or Fillers <\/strong><\/li><li><strong>No Artificial Flavors or Sweeteners <\/strong><\/li><li><strong>No GMO IngredientsNo Preservatives <\/strong><\/li><li><strong>No High-Heat Processing <\/strong><\/li><li><strong>No Pesticides or Harmful Chemicals <\/strong><\/li><li><strong>No Synthetic Ingredients<\/strong><\/li><\/ul>",
             "default_list": true
           }
         },
         "sticky_add_WLPcWC": {
           "type": "sticky-add",
           "settings": {
-            "image": "shopify://shop_images/Fabula_Coffee_Bag_Medium_USDA_1.png",
+            "image": "shopify:\/\/shop_images\/Fabula_Coffee_Bag_Medium_USDA_1.png",
             "title": "First-Day Bovine Colostum",
             "reviews_text": "3,547",
             "button_background_color": "#ef0009",
@@ -299,10 +299,10 @@
         "table_head_FWbXnB": {
           "type": "table_head",
           "settings": {
-            "best_choise_badge": "shopify://shop_images/table-badge.png",
-            "main_image": "shopify://shop_images/table-main.png",
+            "best_choise_badge": "shopify:\/\/shop_images\/table-badge.png",
+            "main_image": "shopify:\/\/shop_images\/table-main.png",
             "main_text": "Folqs",
-            "second_image": "shopify://shop_images/table-other.png",
+            "second_image": "shopify:\/\/shop_images\/table-other.png",
             "second_text": "Other Brand",
             "third_text": ""
           }
@@ -434,42 +434,42 @@
           "type": "question",
           "settings": {
             "title": "Do you have a money-back guarantee?",
-            "answer": "<p>Absolutely! We fully stand behind our colostrum. If you’re not completely satisfied, we’ll happily offer you a full <strong>refund within 90 days of your purchase</strong> — no questions asked. Just contact our team at <a href=\"mailto:help@folqs.co\" target=\"_blank\" title=\"mailto:help@folqs.co\">help@folqs.co</a> </p>"
+            "answer": "<p>Absolutely! We fully stand behind our colostrum. If you’re not completely satisfied, we’ll happily offer you a full <strong>refund within 90 days of your purchase<\/strong> — no questions asked. Just contact our team at <a href=\"mailto:help@folqs.co\" target=\"_blank\" title=\"mailto:help@folqs.co\">help@folqs.co<\/a> <\/p>"
           }
         },
         "question_rNqDXn": {
           "type": "question",
           "settings": {
             "title": "Do you use cold-chain processing like other brands?",
-            "answer": "<p>Actually, “cold-chain processing” isn’t a recognized USDA practice—it’s mostly marketing hype. We use standard gentle pasteurization (161°F for 15 seconds) to guarantee safety, purity, and effectiveness.</p>"
+            "answer": "<p>Actually, “cold-chain processing” isn’t a recognized USDA practice—it’s mostly marketing hype. We use standard gentle pasteurization (161°F for 15 seconds) to guarantee safety, purity, and effectiveness.<\/p>"
           }
         },
         "question_WDeraA": {
           "type": "question",
           "settings": {
             "title": "Do you use heat processing?",
-            "answer": "<p>Yes, we gently pasteurize our colostrum at 161°F for 15 seconds. This ensures our colostrum meets USDA dairy standards, keeping it safe and pure for you.</p>"
+            "answer": "<p>Yes, we gently pasteurize our colostrum at 161°F for 15 seconds. This ensures our colostrum meets USDA dairy standards, keeping it safe and pure for you.<\/p>"
           }
         },
         "question_KAwLYG": {
           "type": "question",
           "settings": {
             "title": "Is the bovine colostrum free of glyphosate residue and heavy metals?",
-            "answer": "<p>Absolutely! Every batch is carefully tested for heavy metals to ensure purity and safety. We’ve also independently tested for glyphosate residue—no detectable levels were found, reinforcing our high standards for quality.</p>"
+            "answer": "<p>Absolutely! Every batch is carefully tested for heavy metals to ensure purity and safety. We’ve also independently tested for glyphosate residue—no detectable levels were found, reinforcing our high standards for quality.<\/p>"
           }
         },
         "question_ECMyFk": {
           "type": "question",
           "settings": {
             "title": "Are your cows injected with mRNA shots?",
-            "answer": "<p>Nope! Our cows have not received any mRNA injections. Currently, there are no USDA-approved mRNA vaccines in use for cattle commercially, so you can be confident in the purity and quality of our colostrum.</p>"
+            "answer": "<p>Nope! Our cows have not received any mRNA injections. Currently, there are no USDA-approved mRNA vaccines in use for cattle commercially, so you can be confident in the purity and quality of our colostrum.<\/p>"
           }
         },
         "question_PzptNt": {
           "type": "question",
           "settings": {
             "title": "I’m lactose intolerant—can I still take your colostrum?",
-            "answer": "<p>Our colostrum contains about 300 mg of lactose per 3g serving—far less than the approximately 12,000–13,000 mg found in an 8 oz glass of milk. While this amount is very small, individual sensitivity varies. We recommend starting with a small serving to determine your own comfort level or consulting with your healthcare provider before use.</p>"
+            "answer": "<p>Our colostrum contains about 300 mg of lactose per 3g serving—far less than the approximately 12,000–13,000 mg found in an 8 oz glass of milk. While this amount is very small, individual sensitivity varies. We recommend starting with a small serving to determine your own comfort level or consulting with your healthcare provider before use.<\/p>"
           }
         }
       },
@@ -489,10 +489,10 @@
         "rounded": false,
         "previous_background": "#FFF",
         "current_background": "linear-gradient(0deg, rgba(249, 249, 249, 1) 48.56%, rgba(255, 255, 255, 1) 100%)",
-        "title": "<p>Your Questions Answered</p>",
+        "title": "<p>Your Questions Answered<\/p>",
         "subtitle": "FAQ",
         "tagline": "",
-        "image": "shopify://shop_images/Meghan_Frosceno_1.png",
+        "image": "shopify:\/\/shop_images\/Meghan_Frosceno_1.png",
         "is_first_open": true,
         "active_title_color": "#000000",
         "default_title_color": "#000000",
@@ -509,8 +509,8 @@
         "review_m8kLAV": {
           "type": "review",
           "settings": {
-            "video": "shopify://files/videos/content-1024784_a3de2e32-4ef1-4aa8-a1df-4074e92b1bc3.mp4",
-            "poster": "shopify://shop_images/Meghan_Frosceno_1_c091e13e-d724-4c2b-97f8-b448aabcfabd.png",
+            "video": "shopify:\/\/files\/videos\/content-1024784_a3de2e32-4ef1-4aa8-a1df-4074e92b1bc3.mp4",
+            "poster": "shopify:\/\/shop_images\/Meghan_Frosceno_1_c091e13e-d724-4c2b-97f8-b448aabcfabd.png",
             "author": "Megan Frosc",
             "rating": 5
           }
@@ -518,8 +518,8 @@
         "review_VPfhYQ": {
           "type": "review",
           "settings": {
-            "video": "shopify://files/videos/folqsvideo_cae820ff-cdca-4b2d-b6d4-59fb94b170aa.mp4",
-            "poster": "shopify://shop_images/Rectangle_572.png",
+            "video": "shopify:\/\/files\/videos\/folqsvideo_cae820ff-cdca-4b2d-b6d4-59fb94b170aa.mp4",
+            "poster": "shopify:\/\/shop_images\/Rectangle_572.png",
             "author": "John Dou",
             "rating": 5
           }
@@ -527,7 +527,7 @@
         "review_Eg7nCm": {
           "type": "review",
           "settings": {
-            "video": "shopify://files/videos/copy_F06D3DD4-834C-4055-B979-88D46739B332_b9fe5f0e-224d-4527-bce0-745b66c8ef3e.mov",
+            "video": "shopify:\/\/files\/videos\/copy_F06D3DD4-834C-4055-B979-88D46739B332_b9fe5f0e-224d-4527-bce0-745b66c8ef3e.mov",
             "author": "John Dou",
             "rating": 5
           }
@@ -535,7 +535,7 @@
         "review_736CFE": {
           "type": "review",
           "settings": {
-            "video": "shopify://files/videos/v12044gd0000cuqls3nog65gt42ho8p0.mp4",
+            "video": "shopify:\/\/files\/videos\/v12044gd0000cuqls3nog65gt42ho8p0.mp4",
             "author": "John Dou",
             "rating": 5
           }
@@ -543,8 +543,8 @@
         "review_fFkJk3": {
           "type": "review",
           "settings": {
-            "video": "shopify://files/videos/Colostrum Powder - Folqs (1)_6fa9a225-5b35-4c3c-a36d-53b5a5ecb901.mov",
-            "poster": "shopify://shop_images/IMG_7292.heic",
+            "video": "shopify:\/\/files\/videos\/Colostrum Powder - Folqs (1)_6fa9a225-5b35-4c3c-a36d-53b5a5ecb901.mov",
+            "poster": "shopify:\/\/shop_images\/IMG_7292.heic",
             "author": "John Dou",
             "rating": 5
           }
@@ -579,7 +579,7 @@
       "type": "apps",
       "blocks": {
         "stamped_reviews_main_widget_UepjcT": {
-          "type": "shopify://apps/stamped-reviews/blocks/main-widget/a103faaf-2125-4b0e-89fa-de5149736723",
+          "type": "shopify:\/\/apps\/stamped-reviews\/blocks\/main-widget\/a103faaf-2125-4b0e-89fa-de5149736723",
           "settings": {
             "take_questions": 0,
             "animation": true,

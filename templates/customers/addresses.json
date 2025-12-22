@@ -16,21 +16,21 @@
           "type": "account_tab",
           "settings": {
             "title": "Addresses",
-            "link": "/account/addresses"
+            "link": "\/account\/addresses"
           }
         },
         "account_tab_HdfBpV": {
           "type": "account_tab",
           "settings": {
             "title": "Order history",
-            "link": "/account"
+            "link": "\/account"
           }
         },
         "account_tab_87J7zd": {
           "type": "account_tab",
           "settings": {
             "title": "My Subscription",
-            "link": "/tools/recurring/login"
+            "link": "\/tools\/recurring\/login"
           }
         },
         "account_tab_QfWPxm": {
@@ -38,7 +38,7 @@
           "disabled": true,
           "settings": {
             "title": "My Rewards",
-            "link": "https://folqs.referralcandy.com/"
+            "link": "https:\/\/folqs.referralcandy.com\/"
           }
         }
       },

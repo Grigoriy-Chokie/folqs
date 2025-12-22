@@ -650,6 +650,10 @@
     gap: 6px;
 }
 
+.product-gift__info-list:not(:has(.product-gift__info-item:nth-child(2))) .product-gift__info-item {
+    width: 100%;
+}
+
 .product-gift__info-item {
     width: 50%;
     background: var(--background);
@@ -872,3 +876,88 @@
     }
 }
 
+.product-information__reviews-text strong {
+    color: #FF6A13;
+    font-weight: 400;
+}
+
+@media screen and (max-width: 440px) {
+    .icon-text-blocks:has(.icon-text-block:nth-child(5)) .icon-text-block {
+        min-width: auto;
+        max-width: 75px;
+    }
+}
+
+.product-information__icon-container-group:not(:has(li)) {
+    display: none;
+}
+
+.product-information__icon-container {
+    border-radius: 12px;
+    border: 1px solid var(--border-color);
+    background: var(--background);
+    padding: 16px 5px;
+}
+
+.product-information__icon-container-group {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 20px;
+}
+.product-information__icon-container-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.product-information__icon-container-item h2 {
+    color: var(--text-color);
+    text-align: center;
+    font-variant-numeric: lining-nums proportional-nums;
+    font-family: var(--font-dm-sans);
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: 110%;
+    text-transform: uppercase;
+
+    margin: 0;
+    margin-top: 10px;
+}
+
+.product-information__icon-container p {
+    color: var(--text-color);
+    text-align: center;
+    font-variant-numeric: lining-nums proportional-nums;
+    font-family: var(--font-dm-sans);
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 110%;
+
+    margin: 0;
+}
+
+@media screen and (max-width: 749px) {
+
+    .product-information__icon-container-group {
+        gap: 7px;
+    }
+
+    .product-information__icon-container-item img {
+        width: 20px;
+        height: 20px;
+    }
+
+    .product-information__icon-container-item h2,
+    .product-information__icon-container-item p {
+        font-size: 9px;
+        line-height: 110%;
+    }
+
+    .product-information__icon-container-item p {
+        margin-top: 2px;
+    }
+}

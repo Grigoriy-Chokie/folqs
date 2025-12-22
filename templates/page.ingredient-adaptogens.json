@@ -30,7 +30,7 @@
         "text_6JAJjM": {
           "type": "text",
           "settings": {
-            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>"
+            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>"
           }
         },
         "button_jexaPM": {
@@ -63,10 +63,10 @@
     "ingredient_content_hUfQb8": {
       "type": "ingredient-content",
       "settings": {
-        "list_of_badges": "///Stress Resilience, ///Immune Empowerment, ///Cognitive Enhancement",
+        "list_of_badges": "\/\/\/Stress Resilience, \/\/\/Immune Empowerment, \/\/\/Cognitive Enhancement",
         "button_label": "Learn more",
-        "main_text": "<p>This adaptogen and immune support ensemble features potent extracts from some of nature's most revered medicinal mushrooms, alongside Maca Root, known for their powerful adaptogenic properties. These extracts help the body manage stress, enhance immune function, and support overall vitality. They're particularly beneficial for the middle-aged to elderly demographics who are looking to maintain an active lifestyle and fortify their natural defenses.</p>",
-        "main_text_hidden": "<h2>What to Expect</h2><ul><li>With Maca Root extract, anticipate improved stamina and vitality, helping to combat daily stress and fatigue.</li><li>Mushroom extracts like Reishi, Chaga, Maitake, Shiitake, and Lion's Mane are renowned for their immune-boosting properties, readying the body to fend off pathogens.</li><li>Lion's Mane is specifically praised for its support of brain health, potentially aiding in maintaining cognitive function.</li></ul>",
+        "main_text": "<p>This adaptogen and immune support ensemble features potent extracts from some of nature's most revered medicinal mushrooms, alongside Maca Root, known for their powerful adaptogenic properties. These extracts help the body manage stress, enhance immune function, and support overall vitality. They're particularly beneficial for the middle-aged to elderly demographics who are looking to maintain an active lifestyle and fortify their natural defenses.<\/p>",
+        "main_text_hidden": "<h2>What to Expect<\/h2><ul><li>With Maca Root extract, anticipate improved stamina and vitality, helping to combat daily stress and fatigue.<\/li><li>Mushroom extracts like Reishi, Chaga, Maitake, Shiitake, and Lion's Mane are renowned for their immune-boosting properties, readying the body to fend off pathogens.<\/li><li>Lion's Mane is specifically praised for its support of brain health, potentially aiding in maintaining cognitive function.<\/li><\/ul>",
         "show_page_title": true
       }
     },
@@ -76,7 +76,7 @@
         "ingredient_jQFn4Y": {
           "type": "ingredient",
           "settings": {
-            "img": "shopify://shop_images/Rectangle_15_25.png",
+            "img": "shopify:\/\/shop_images\/Rectangle_15_25.png",
             "title": "Maca Root Extract 10:1",
             "subtitle": "Lepidium meyenii",
             "info": "100 mg"
@@ -85,7 +85,7 @@
         "ingredient_wdLMhn": {
           "type": "ingredient",
           "settings": {
-            "img": "shopify://shop_images/Rectangle_15_26.png",
+            "img": "shopify:\/\/shop_images\/Rectangle_15_26.png",
             "title": "Reishi Mushroom Extract",
             "subtitle": "Ganoderma",
             "info": "5 mg"
@@ -94,7 +94,7 @@
         "ingredient_zVA3MV": {
           "type": "ingredient",
           "settings": {
-            "img": "shopify://shop_images/Rectangle_15_27.png",
+            "img": "shopify:\/\/shop_images\/Rectangle_15_27.png",
             "title": "Chaga Mushroom Extract ",
             "subtitle": "Inonotus",
             "info": "5 mg"
@@ -103,7 +103,7 @@
         "ingredient_JGzimG": {
           "type": "ingredient",
           "settings": {
-            "img": "shopify://shop_images/Rectangle_15_28.png",
+            "img": "shopify:\/\/shop_images\/Rectangle_15_28.png",
             "title": "Maitake Mushroom Extract 4:1",
             "subtitle": "Grifola frondosa",
             "info": "5 mg"
@@ -112,7 +112,7 @@
         "ingredient_NqVkxr": {
           "type": "ingredient",
           "settings": {
-            "img": "shopify://shop_images/Rectangle_15_29.png",
+            "img": "shopify:\/\/shop_images\/Rectangle_15_29.png",
             "title": "Shiitake Mushroom",
             "subtitle": "Lentinus Edodes",
             "info": "5 mg"
@@ -121,7 +121,7 @@
         "ingredient_bzfiMx": {
           "type": "ingredient",
           "settings": {
-            "img": "shopify://shop_images/Rectangle_15_30.png",
+            "img": "shopify:\/\/shop_images\/Rectangle_15_30.png",
             "title": "Lion's Mane Mushroom",
             "subtitle": "Hericium erinaceus",
             "info": "100 mg"
@@ -144,7 +144,7 @@
         "heading": "",
         "sub_heading": "",
         "name_button": "",
-        "url_button": "/"
+        "url_button": "\/"
       }
     }
   },

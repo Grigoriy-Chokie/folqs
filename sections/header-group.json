@@ -16,17 +16,17 @@
       "disabled": true,
       "name": "Reverse counter",
       "settings": {
-        "background": "shopify://shop_images/Background_1.webp",
-        "background_mobile": "shopify://shop_images/Background_1_1.png",
+        "background": "shopify:\/\/shop_images\/Background_1.webp",
+        "background_mobile": "shopify:\/\/shop_images\/Background_1_1.png",
         "timer_style": "secondary",
         "show_days": true,
-        "logo": "shopify://shop_images/Group_1982248111.png",
-        "logo_mobile": "shopify://shop_images/Group_1982248111_1.png",
+        "logo": "shopify:\/\/shop_images\/Group_1982248111.png",
+        "logo_mobile": "shopify:\/\/shop_images\/Group_1982248111_1.png",
         "event_date": "2025-09-01",
         "timer_text": "",
         "button_text": "Get 40% off",
         "button_url": "#landing-product-7687131496502",
-        "second_button_url": "https://folqs.co/products/bovine-colostrum",
+        "second_button_url": "https:\/\/folqs.co\/products\/bovine-colostrum",
         "templates": "colostrum-first-food",
         "button_color": "#ff6a13"
       }
@@ -37,7 +37,7 @@
         "announcement-bar-0": {
           "type": "announcement",
           "settings": {
-            "text": "<p>FREE SHIPPING ON ALL ORDERS</p>",
+            "text": "<p>FREE SHIPPING ON ALL ORDERS<\/p>",
             "link": "",
             "pages": "page.bovine-colostrum-v3"
           }
@@ -45,7 +45,7 @@
         "announcement_HiYjGe": {
           "type": "announcement",
           "settings": {
-            "text": "<p>48% OFF Black Friday Sale<br/> Free Frother + Free Shipping</p>",
+            "text": "<p>48% OFF Black Friday Sale<br\/> Free Frother + Free Shipping<\/p>",
             "link": "",
             "pages": ""
           }
@@ -88,9 +88,9 @@
         "name_main_button": "Try it Risk Free",
         "name_default_button": "Shop",
         "url_main_button": "#landing-product",
-        "hide_main_button_templates": "customers/account|customers/activate_account|customers/addresses|customers/login|customers/order|customers/registercustomers/reset_password|product.bovine-landing-fabula|product|product.bovine-landing-folqs-gift",
+        "hide_main_button_templates": "customers\/account|customers\/activate_account|customers\/addresses|customers\/login|customers\/order|customers\/registercustomers\/reset_password|product.bovine-landing-fabula|product|product.bovine-landing-folqs-gift",
         "link_default_button": "#landing-product",
-        "icon": "shopify://shop_images/fast_1.svg",
+        "icon": "shopify:\/\/shop_images\/fast_1.svg",
         "icon_text": "Free Shipping",
         "logo_position": "middle-center",
         "menu": "main-menu",
@@ -111,7 +111,7 @@
         "padding_top": 7,
         "padding_bottom": 7,
         "hide_on_templates": "page.bovine-landing-fabula",
-        "advertorial_logo": "shopify://shop_images/Frame_85.png",
+        "advertorial_logo": "shopify:\/\/shop_images\/Frame_85.png",
         "advertorial_title": "Advertorial"
       }
     }

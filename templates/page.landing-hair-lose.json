@@ -15,7 +15,7 @@
         "image_CcxpUP": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Product_image--2.png"
+            "image": "shopify:\/\/shop_images\/Product_image--2.png"
           }
         },
         "reviews_KFJ8Gm": {
@@ -24,14 +24,14 @@
             "show_desktop_position": false,
             "stars_type": "orange_small",
             "text": "1,571",
-            "additional_text": "<p></p>",
+            "additional_text": "<p><\/p>",
             "url": ""
           }
         },
         "title_7mwHjM": {
           "type": "title",
           "settings": {
-            "text": "<p><strong>Complete Daily Nutrition</strong><br/>for Overall Wellness</p>",
+            "text": "<p><strong>Complete Daily Nutrition<\/strong><br\/>for Overall Wellness<\/p>",
             "highlighted_color": "#000000",
             "text_mobile": ""
           }
@@ -39,8 +39,8 @@
         "feature_NAR8T7": {
           "type": "feature",
           "settings": {
-            "icon": "shopify://shop_images/151a6aff_e45a9a2c-5a7a-4f0e-8579-4917226f278f_1.svg",
-            "title": "Nutritional \nSupport",
+            "icon": "shopify:\/\/shop_images\/151a6aff_e45a9a2c-5a7a-4f0e-8579-4917226f278f_1.svg",
+            "title": "Nutritional\u2028\nSupport",
             "title_mobile": "",
             "text": "",
             "hide_on_mobile": false
@@ -49,8 +49,8 @@
         "feature_QdXP6h": {
           "type": "feature",
           "settings": {
-            "icon": "shopify://shop_images/151a6aff_1_1.svg",
-            "title": "Energy \nSupport",
+            "icon": "shopify:\/\/shop_images\/151a6aff_1_1.svg",
+            "title": "Energy\u2028\nSupport",
             "title_mobile": "",
             "text": "",
             "hide_on_mobile": false
@@ -59,8 +59,8 @@
         "feature_aGft8w": {
           "type": "feature",
           "settings": {
-            "icon": "shopify://shop_images/151a6aff_2_1.svg",
-            "title": "Immune \nSupport",
+            "icon": "shopify:\/\/shop_images\/151a6aff_2_1.svg",
+            "title": "Immune\u2028\nSupport",
             "title_mobile": "",
             "text": "",
             "hide_on_mobile": false
@@ -129,20 +129,20 @@
         "payment_icons_Q4wmDd": {
           "type": "payment_icons",
           "settings": {
-            "image_1": "shopify://shop_images/01_2.svg",
-            "image_2": "shopify://shop_images/01_2446f476-2747-40f5-8598-ea10963e79c8.svg",
-            "image_3": "shopify://shop_images/01_8.svg",
-            "image_4": "shopify://shop_images/01.svg",
-            "image_5": "shopify://shop_images/01_6.svg",
-            "image_6": "shopify://shop_images/01_6_3510059f-5f9a-4836-8d88-fc8f05e603cd.svg",
-            "image_7": "shopify://shop_images/01_4.svg",
-            "image_8": "shopify://shop_images/01_7.svg"
+            "image_1": "shopify:\/\/shop_images\/01_2.svg",
+            "image_2": "shopify:\/\/shop_images\/01_2446f476-2747-40f5-8598-ea10963e79c8.svg",
+            "image_3": "shopify:\/\/shop_images\/01_8.svg",
+            "image_4": "shopify:\/\/shop_images\/01.svg",
+            "image_5": "shopify:\/\/shop_images\/01_6.svg",
+            "image_6": "shopify:\/\/shop_images\/01_6_3510059f-5f9a-4836-8d88-fc8f05e603cd.svg",
+            "image_7": "shopify:\/\/shop_images\/01_4.svg",
+            "image_8": "shopify:\/\/shop_images\/01_7.svg"
           }
         },
         "guarantee_q6TCRy": {
           "type": "guarantee",
           "settings": {
-            "icon": "shopify://shop_images/shield-check-svgrepo-com_1_1.svg",
+            "icon": "shopify:\/\/shop_images\/shield-check-svgrepo-com_1_1.svg",
             "title": "90-Day Money-Back Guarantee",
             "text": "That’s how confident we are in our product. If you’re not completely satisfied within 90 days, you’re fully covered by our 100% money-back guarantee."
           }
@@ -151,7 +151,7 @@
           "type": "review_with_usp",
           "settings": {
             "title": "Join 10,000+ Satisfied Customers",
-            "image": "shopify://shop_images/Frame_1982248617_1.png",
+            "image": "shopify:\/\/shop_images\/Frame_1982248617_1.png",
             "stars_url": "",
             "extra_styles": true,
             "style": "default"
@@ -216,10 +216,10 @@
           "type": "reviews",
           "settings": {
             "review_type": "alternative",
-            "image_1": "shopify://shop_images/Karla_Monteiro_1.webp",
+            "image_1": "shopify:\/\/shop_images\/Karla_Monteiro_1.webp",
             "show_rating_1": true,
             "title_1": "",
-            "text_1": "<p><strong>“I have been using Folqs for 4 months. Life changer.Will never stop.”</strong></p>",
+            "text_1": "<p><strong>“I have been using Folqs for 4 months. Life changer.Will never stop.”<\/strong><\/p>",
             "author_1": "Mike L.",
             "verified_1": true,
             "show_second_review": false,
@@ -232,7 +232,7 @@
             "button_text_mobile": "Try Folqs Today",
             "button_url": "#landing-product-7687131496502",
             "show_rating": true,
-            "rating_image": "shopify://shop_images/Frame_1982248617_1.png",
+            "rating_image": "shopify:\/\/shop_images\/Frame_1982248617_1.png",
             "rating_text": "over 1,571 Five Star Reviews",
             "rating_text_mobile": "over 1,571 Reviews"
           }
@@ -259,8 +259,8 @@
         "testimonial_PwcWr9": {
           "type": "testimonial",
           "settings": {
-            "image_1": "shopify://shop_images/Meghan_Frosceno.webp",
-            "image_2": "shopify://shop_images/Karla_Monteiro.webp",
+            "image_1": "shopify:\/\/shop_images\/Meghan_Frosceno.webp",
+            "image_2": "shopify:\/\/shop_images\/Karla_Monteiro.webp",
             "author": "Patricia J.",
             "heading": "“Quality You Can Smell”",
             "content": "Tried another popular brand and didn't notice any benefits. Switched to Folqs and immediately noticed the rich yellow color and amazing smell versus the white, odorless powder I used before. We just had a baby, and my wife's breast milk smells exactly like Folqs - that's when I knew this was real quality."
@@ -269,8 +269,8 @@
         "testimonial_PwcWr7": {
           "type": "testimonial",
           "settings": {
-            "image_1": "shopify://shop_images/Erica_Barbosa_dos_Santos_49d1a6d8-8b7f-4d18-b53c-9f783886b13f.png",
-            "image_2": "shopify://shop_images/Meghan_Frosceno_05504e77-00f9-40fa-b1ee-d7ba9b0b8cdb.png",
+            "image_1": "shopify:\/\/shop_images\/Erica_Barbosa_dos_Santos_49d1a6d8-8b7f-4d18-b53c-9f783886b13f.png",
+            "image_2": "shopify:\/\/shop_images\/Meghan_Frosceno_05504e77-00f9-40fa-b1ee-d7ba9b0b8cdb.png",
             "author": "Rebecca K.",
             "heading": "“Tastes Great, Feels Right”",
             "content": "This product is so amazing I love the taste & usually I'm not a fan of powders! I've been using it for 2 months & its helped my gut health so much!!"
@@ -279,8 +279,8 @@
         "testimonial_PwcWr8": {
           "type": "testimonial",
           "settings": {
-            "image_1": "shopify://shop_images/Meghan_Frosceno.webp",
-            "image_2": "shopify://shop_images/Karla_Monteiro.webp",
+            "image_1": "shopify:\/\/shop_images\/Meghan_Frosceno.webp",
+            "image_2": "shopify:\/\/shop_images\/Karla_Monteiro.webp",
             "author": "Navid G.",
             "heading": "“Best Purchase in Years”",
             "content": "Folqs colostrum is the best product I have bought online in years. It has changed my life. I can't imagine using anything in my body but this product and yes, I've tried the other one. It looks like sugar compared to Folqs and I'm not kidding. Try it"
@@ -300,7 +300,7 @@
         "padding_bottom": 50,
         "padding_top_mobile": 72,
         "padding_bottom_mobile": 0,
-        "title": "<p>Taste It.  Feel It.  Keep It.</p>",
+        "title": "<p>Taste It.  Feel It.  Keep It.<\/p>",
         "subtitle": "Over 1,571 Five Star Reviews"
       }
     },
@@ -310,31 +310,31 @@
         "image_CcxpUP": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/main-colostrum-with-20-off.png"
+            "image": "shopify:\/\/shop_images\/main-colostrum-with-20-off.png"
           }
         },
         "image_bwi8C3": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Beyond_Ordinary.jpg"
+            "image": "shopify:\/\/shop_images\/Beyond_Ordinary.jpg"
           }
         },
         "image_jRW3WQ": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Frame_1982248583.png"
+            "image": "shopify:\/\/shop_images\/Frame_1982248583.png"
           }
         },
         "image_kYDGem": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/2_de69781a-7174-4619-b945-6410d87fbc47.png"
+            "image": "shopify:\/\/shop_images\/2_de69781a-7174-4619-b945-6410d87fbc47.png"
           }
         },
         "image_hXDHhw": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Frame_1982248599.png"
+            "image": "shopify:\/\/shop_images\/Frame_1982248599.png"
           }
         },
         "reviews_KFJ8Gm": {
@@ -343,14 +343,14 @@
             "show_desktop_position": false,
             "stars_type": "orange_small",
             "text": "1,571",
-            "additional_text": "<p></p>",
+            "additional_text": "<p><\/p>",
             "url": ""
           }
         },
         "title_7mwHjM": {
           "type": "title",
           "settings": {
-            "text": "<p><strong>An Ancient Superfood</strong></p><p>for Modern Lifestyle</p>",
+            "text": "<p><strong>An Ancient Superfood<\/strong><\/p><p>for Modern Lifestyle<\/p>",
             "highlighted_color": "#000000",
             "text_mobile": ""
           }
@@ -358,8 +358,8 @@
         "feature_NAR8T7": {
           "type": "feature",
           "settings": {
-            "icon": "shopify://shop_images/heart_1_15f1886a-35df-467f-a1c3-89fa3377c24c.svg",
-            "title": "Helps \nImmunity",
+            "icon": "shopify:\/\/shop_images\/heart_1_15f1886a-35df-467f-a1c3-89fa3377c24c.svg",
+            "title": "Helps\u2028\nImmunity",
             "title_mobile": "",
             "text": "",
             "hide_on_mobile": false
@@ -368,7 +368,7 @@
         "feature_QdXP6h": {
           "type": "feature",
           "settings": {
-            "icon": "shopify://shop_images/stomach_1_deb1ab60-f70e-4c3f-b382-87fb8cb0e410.svg",
+            "icon": "shopify:\/\/shop_images\/stomach_1_deb1ab60-f70e-4c3f-b382-87fb8cb0e410.svg",
             "title": "Supports\nGut Health",
             "title_mobile": "",
             "text": "",
@@ -378,9 +378,9 @@
         "feature_aGft8w": {
           "type": "feature",
           "settings": {
-            "icon": "shopify://shop_images/protection_1_a8300882-f943-4bed-bce2-d61187d7d78d.svg",
-            "title": "Nurtures \nSkin and Hair",
-            "title_mobile": "For Skin  and Hair",
+            "icon": "shopify:\/\/shop_images\/protection_1_a8300882-f943-4bed-bce2-d61187d7d78d.svg",
+            "title": "Nurtures\u2028\nSkin and Hair",
+            "title_mobile": "For Skin\u2028 and Hair",
             "text": "",
             "hide_on_mobile": false
           }
@@ -448,20 +448,20 @@
         "payment_icons_Q4wmDd": {
           "type": "payment_icons",
           "settings": {
-            "image_1": "shopify://shop_images/01_2.svg",
-            "image_2": "shopify://shop_images/01_2446f476-2747-40f5-8598-ea10963e79c8.svg",
-            "image_3": "shopify://shop_images/01_8.svg",
-            "image_4": "shopify://shop_images/01.svg",
-            "image_5": "shopify://shop_images/01_6.svg",
-            "image_6": "shopify://shop_images/01_6_3510059f-5f9a-4836-8d88-fc8f05e603cd.svg",
-            "image_7": "shopify://shop_images/01_4.svg",
-            "image_8": "shopify://shop_images/01_7.svg"
+            "image_1": "shopify:\/\/shop_images\/01_2.svg",
+            "image_2": "shopify:\/\/shop_images\/01_2446f476-2747-40f5-8598-ea10963e79c8.svg",
+            "image_3": "shopify:\/\/shop_images\/01_8.svg",
+            "image_4": "shopify:\/\/shop_images\/01.svg",
+            "image_5": "shopify:\/\/shop_images\/01_6.svg",
+            "image_6": "shopify:\/\/shop_images\/01_6_3510059f-5f9a-4836-8d88-fc8f05e603cd.svg",
+            "image_7": "shopify:\/\/shop_images\/01_4.svg",
+            "image_8": "shopify:\/\/shop_images\/01_7.svg"
           }
         },
         "guarantee_q6TCRy": {
           "type": "guarantee",
           "settings": {
-            "icon": "shopify://shop_images/shield-check-svgrepo-com_1_1.svg",
+            "icon": "shopify:\/\/shop_images\/shield-check-svgrepo-com_1_1.svg",
             "title": "90-Day Money-Back Guarantee",
             "text": "That’s how confident we are in our product. If you’re not completely satisfied within 90 days, you’re fully covered by our 100% money-back guarantee."
           }
@@ -470,7 +470,7 @@
           "type": "review_with_usp",
           "settings": {
             "title": "Join 10,000+ Satisfied Customers",
-            "image": "shopify://shop_images/Frame_1982248617_1.png",
+            "image": "shopify:\/\/shop_images\/Frame_1982248617_1.png",
             "stars_url": "",
             "extra_styles": true,
             "style": "default"
@@ -538,7 +538,7 @@
         "title_MEm8iT": {
           "type": "title",
           "settings": {
-            "title": "<p><strong>5 Reasons Hair Loss Starts in Your Gut — Not on Your Head</strong><br/></p><p></p>",
+            "title": "<p><strong>5 Reasons Hair Loss Starts in Your Gut — Not on Your Head<\/strong><br\/><\/p><p><\/p>",
             "block_order_mobile": 2,
             "title_size": "large",
             "custom_strong_style": false,
@@ -548,7 +548,7 @@
         "richtext_mNhRyT": {
           "type": "richtext",
           "settings": {
-            "text": "<p><strong>Fix your gut, and your hair follows. </strong>Because healthy hair starts where you’d least expect — in your gut.</p>",
+            "text": "<p><strong>Fix your gut, and your hair follows. <\/strong>Because healthy hair starts where you’d least expect — in your gut.<\/p>",
             "block_order_mobile": 2,
             "show_on": "desktop-only",
             "text_shadow": "0 4px 4px rgba(0, 0, 0, 0.25)"
@@ -568,15 +568,15 @@
         "reviews_cta_8YJggQ": {
           "type": "reviews_cta",
           "settings": {
-            "reviews_image": "shopify://shop_images/landing-ancient-hero-reviews-image.png",
-            "reviews_stars": "shopify://shop_images/landing-ancient-hero-reviews-stars.png",
+            "reviews_image": "shopify:\/\/shop_images\/landing-ancient-hero-reviews-image.png",
+            "reviews_stars": "shopify:\/\/shop_images\/landing-ancient-hero-reviews-stars.png",
             "reviews_text": "over 1,571 Five Star Reviews",
             "reviews_text_mobile": "over 1,571 Reviews",
             "cta_text": "Try Folqs Today",
             "cta_link": "#landing-product-7687131496502",
             "cta_background": "#FF6A13",
             "reviews_background": "",
-            "guarantee_icon": "shopify://shop_images/shield-check-svgrepo-com_1_1_91210598-cb27-4d51-9c42-6ae6069f1f3e.svg",
+            "guarantee_icon": "shopify:\/\/shop_images\/shield-check-svgrepo-com_1_1_91210598-cb27-4d51-9c42-6ae6069f1f3e.svg",
             "guarantee_text": "90-Day Money-Back Guarantee",
             "block_order_mobile": 4
           }
@@ -591,8 +591,8 @@
       "name": "Landing hero banner",
       "settings": {
         "banner_style": "default",
-        "image_desktop": "shopify://shop_images/Group_1982248109_1.png",
-        "image_mobile": "shopify://shop_images/Group_1982248110_2.png",
+        "image_desktop": "shopify:\/\/shop_images\/Group_1982248109_1.png",
+        "image_mobile": "shopify:\/\/shop_images\/Group_1982248110_2.png",
         "image_position_desktop": "end",
         "image_order_mobile": 1,
         "background": "linear-gradient(180deg, rgba(255, 255, 255, 1), rgba(254, 239, 232, 1) 20%, rgba(254, 239, 232, 1) 100%)",
@@ -610,35 +610,35 @@
         "icon_R8KiCn": {
           "type": "icon",
           "settings": {
-            "icon": "shopify://shop_images/USA_svg_fe59b454-ed69-4e53-9df2-86491cfe83d8.svg",
+            "icon": "shopify:\/\/shop_images\/USA_svg_fe59b454-ed69-4e53-9df2-86491cfe83d8.svg",
             "cta_icon": ""
           }
         },
         "icon_3LaPi9": {
           "type": "icon",
           "settings": {
-            "icon": "shopify://shop_images/GMP_svg_aa7e356d-79e3-4ea5-abf1-e352fe29e0ea.svg",
+            "icon": "shopify:\/\/shop_images\/GMP_svg_aa7e356d-79e3-4ea5-abf1-e352fe29e0ea.svg",
             "cta_icon": ""
           }
         },
         "icon_xmFnwA": {
           "type": "icon",
           "settings": {
-            "icon": "shopify://shop_images/LAB_svg_2d6f0d3e-dcd5-4c0c-ac09-2f5d868e863a.svg",
+            "icon": "shopify:\/\/shop_images\/LAB_svg_2d6f0d3e-dcd5-4c0c-ac09-2f5d868e863a.svg",
             "cta_icon": ""
           }
         },
         "icon_9xt7MC": {
           "type": "icon",
           "settings": {
-            "icon": "shopify://shop_images/FDA_svg_cf4c2210-4744-41d5-9beb-8af795371f2c.svg",
+            "icon": "shopify:\/\/shop_images\/FDA_svg_cf4c2210-4744-41d5-9beb-8af795371f2c.svg",
             "cta_icon": ""
           }
         },
         "icon_xWnYpg": {
           "type": "icon",
           "settings": {
-            "icon": "shopify://shop_images/NSF_svg_d83c2e00-9f5f-4b89-8073-0a9c59cc95df.svg",
+            "icon": "shopify:\/\/shop_images\/NSF_svg_d83c2e00-9f5f-4b89-8073-0a9c59cc95df.svg",
             "cta_icon": ""
           }
         }
@@ -653,7 +653,7 @@
       "name": "Icons with text grid",
       "settings": {
         "color_scheme": "scheme-611357f8-d7cc-4a12-abb9-4b68e552670b",
-        "text": "Folqs is everything you need  for healthy hair",
+        "text": "Folqs is everything you need \u2028for healthy hair",
         "text_auto_width": false,
         "padding_top": 30,
         "padding_bottom": 30,
@@ -667,37 +667,37 @@
         "image_rYFdVL": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Meghan_Frosceno_1_e5e1ce1f-26bd-4e5c-9379-275722091ef8.png"
+            "image": "shopify:\/\/shop_images\/Meghan_Frosceno_1_e5e1ce1f-26bd-4e5c-9379-275722091ef8.png"
           }
         },
         "image_nheCGn": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Karla_Monteiro_2.png"
+            "image": "shopify:\/\/shop_images\/Karla_Monteiro_2.png"
           }
         },
         "image_Npbzfj": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Erica_Barbosa_dos_Santos_8f4ec1b5-fdaa-4eda-bfeb-26f0f34bbf5a.png"
+            "image": "shopify:\/\/shop_images\/Erica_Barbosa_dos_Santos_8f4ec1b5-fdaa-4eda-bfeb-26f0f34bbf5a.png"
           }
         },
         "image_RmfCnd": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Meghan_Frosceno_2.png"
+            "image": "shopify:\/\/shop_images\/Meghan_Frosceno_2.png"
           }
         },
         "image_Vidimt": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Diana_Patterson_13e11d6b-3179-4a27-8d9b-c78c4989b411.png"
+            "image": "shopify:\/\/shop_images\/Diana_Patterson_13e11d6b-3179-4a27-8d9b-c78c4989b411.png"
           }
         },
         "image_PVjQM6": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Karla_Monteiro_3.png"
+            "image": "shopify:\/\/shop_images\/Karla_Monteiro_3.png"
           }
         },
         "review_4cdHPL": {
@@ -762,17 +762,17 @@
       "settings": {
         "color_scheme": "",
         "gradient_background": "linear-gradient(180deg, #FFF 0%,  \nrgba(255, 106, 19, .1) 30%, rgba(255, 106, 19, .1) 70%, #fff 100%)",
-        "image_background": "shopify://shop_images/Group_1982248105_1.svg",
+        "image_background": "shopify:\/\/shop_images\/Group_1982248105_1.svg",
         "custom_background_position": false,
         "position_x": "",
         "position_y": "",
         "position_x_mobile": "",
         "position_y_mobile": "",
         "custom_max_height": "",
-        "image": "shopify://shop_images/d1f4r-ezgif.com-optimize_1.gif",
+        "image": "shopify:\/\/shop_images\/d1f4r-ezgif.com-optimize_1.gif",
         "image_position": "left",
         "title": "What is Colostrum?",
-        "text": "<p>Colostrum is nature’s very first gift—an incredibly nutrient-rich milk produced by mammals to help newborns get a strong, healthy start.</p><p>Brimming with essential immunoglobulins, growth factors, and nutrients, it <strong>may support immunity, aid digestion,</strong> and <strong>encourage the body’s natural recovery processes.</strong> For people, colostrum can offer similar benefits, potentially <strong>helping to bolster</strong> our defenses, <strong>promote</strong> gut health, and <strong>nurture</strong> overall wellness in a natural way.</p>",
+        "text": "<p>Colostrum is nature’s very first gift—an incredibly nutrient-rich milk produced by mammals to help newborns get a strong, healthy start.<\/p><p>Brimming with essential immunoglobulins, growth factors, and nutrients, it <strong>may support immunity, aid digestion,<\/strong> and <strong>encourage the body’s natural recovery processes.<\/strong> For people, colostrum can offer similar benefits, potentially <strong>helping to bolster<\/strong> our defenses, <strong>promote<\/strong> gut health, and <strong>nurture<\/strong> overall wellness in a natural way.<\/p>",
         "highlight_color": "#ff6a13",
         "padding_top": 100,
         "padding_bottom": 100,
@@ -798,11 +798,11 @@
           "type": "image_with_text",
           "settings": {
             "add_background_icon": false,
-            "image": "shopify://shop_images/AdobeStock_472050751-ezgif.com-optimize_ed686f07-c2ad-4255-8c7e-ad49962dd13f.gif",
+            "image": "shopify:\/\/shop_images\/AdobeStock_472050751-ezgif.com-optimize_ed686f07-c2ad-4255-8c7e-ad49962dd13f.gif",
             "image_position": "right",
             "title": "Reason 1",
             "subtitle": "Repairs Your Gut Lining — the Root Cause of Hair Loss",
-            "text": "<p>A damaged gut can’t absorb the nutrients your hair needs. <strong>Growth factors found in Colostrum can help rebuild the gut wall so your body can finally deliver those nutrients to your follicles.</strong></p>",
+            "text": "<p>A damaged gut can’t absorb the nutrients your hair needs. <strong>Growth factors found in Colostrum can help rebuild the gut wall so your body can finally deliver those nutrients to your follicles.<\/strong><\/p>",
             "display_list": false,
             "list_title_1": "",
             "list_text_1": "",
@@ -816,11 +816,11 @@
           "type": "image_with_text",
           "settings": {
             "add_background_icon": true,
-            "image": "shopify://shop_images/reason-2-hair-lose.png",
+            "image": "shopify:\/\/shop_images\/reason-2-hair-lose.png",
             "image_position": "left",
             "title": "Reason 2",
             "subtitle": "Calms Inflammation That Damages Hair Follicles",
-            "text": "<p>Gut inflammation blocks growth and weakens follicles. <strong>Colostrum’s natural anti-inflammatories help calm the gut and restore healthy hair growth.</strong></p>",
+            "text": "<p>Gut inflammation blocks growth and weakens follicles. <strong>Colostrum’s natural anti-inflammatories help calm the gut and restore healthy hair growth.<\/strong><\/p>",
             "display_list": false,
             "list_title_1": "",
             "list_text_1": "",
@@ -838,7 +838,7 @@
             "button_text": "Try Folqs Colostrum Risk-Free Today",
             "button_url": "#landing-product-7687131496502",
             "is_show_reviews": true,
-            "rating_image": "shopify://shop_images/Frame_1982248617_1.png",
+            "rating_image": "shopify:\/\/shop_images\/Frame_1982248617_1.png",
             "rating_text": "over 25,254 Five Star Reviews",
             "rating_text_mobile": "over 25,254 Reviews",
             "text_weight": "bold",
@@ -853,7 +853,7 @@
             "button_text": "Try Folqs Today",
             "button_url": "#landing-product-7687131496502",
             "is_show_reviews": true,
-            "rating_image": "shopify://shop_images/Frame_1982248617_1.png",
+            "rating_image": "shopify:\/\/shop_images\/Frame_1982248617_1.png",
             "rating_text": "over 25,254 Five Star Reviews",
             "rating_text_mobile": "over 25,254 Reviews",
             "text_weight": "bold",
@@ -864,11 +864,11 @@
           "type": "image_with_text",
           "settings": {
             "add_background_icon": false,
-            "image": "shopify://shop_images/reason-3-hair-lose.png",
+            "image": "shopify:\/\/shop_images\/reason-3-hair-lose.png",
             "image_position": "right",
             "title": "Reason 3",
             "subtitle": "Balances Hormones That Control Shedding and Regrowth",
-            "text": "<p>A balanced gut helps steady cortisol and other hormones, protecting follicles and supporting natural regrowth.</p>",
+            "text": "<p>A balanced gut helps steady cortisol and other hormones, protecting follicles and supporting natural regrowth.<\/p>",
             "display_list": false,
             "list_title_1": "",
             "list_text_1": "",
@@ -882,32 +882,32 @@
           "type": "image_with_text",
           "settings": {
             "add_background_icon": false,
-            "image": "shopify://shop_images/reason-4-hair-lose.png",
+            "image": "shopify:\/\/shop_images\/reason-4-hair-lose.png",
             "image_position": "left",
             "title": "Reason 4",
             "subtitle": "Improves Hair Strength and Reduces Breakage",
-            "text": "<p>Once your gut heals, nutrients finally reach your follicles — rebuilding strength and reducing thinning.</p>",
+            "text": "<p>Once your gut heals, nutrients finally reach your follicles — rebuilding strength and reducing thinning.<\/p>",
             "display_list": false,
-            "list_icon_1": "shopify://shop_images/stomach_1_0a346f6d-e22c-47be-b722-87f6fa845acd.svg",
+            "list_icon_1": "shopify:\/\/shop_images\/stomach_1_0a346f6d-e22c-47be-b722-87f6fa845acd.svg",
             "list_title_1": "For your gut",
-            "list_text_1": "<p><strong>Prebiotics and growth factors feed beneficial bacteria and strengthen the intestinal lining, easing digestion and reducing bloating</strong></p>",
-            "list_icon_2": "shopify://shop_images/heart_1_2d703788-0e32-4bd6-a60e-50dc001000e1.svg",
+            "list_text_1": "<p><strong>Prebiotics and growth factors feed beneficial bacteria and strengthen the intestinal lining, easing digestion and reducing bloating<\/strong><\/p>",
+            "list_icon_2": "shopify:\/\/shop_images\/heart_1_2d703788-0e32-4bd6-a60e-50dc001000e1.svg",
             "list_title_2": "For immunity",
-            "list_text_2": "<p><strong>Antibodies and lactoferrin provide immediate immune support and regulate your immune response</strong></p>",
-            "list_icon_3": "shopify://shop_images/protection_1_388e0b1c-1450-4eca-beb2-5820565516ef.svg",
+            "list_text_2": "<p><strong>Antibodies and lactoferrin provide immediate immune support and regulate your immune response<\/strong><\/p>",
+            "list_icon_3": "shopify:\/\/shop_images\/protection_1_388e0b1c-1450-4eca-beb2-5820565516ef.svg",
             "list_title_3": "For beauty",
-            "list_text_3": "<p><strong>Growth factors nourish hair follicles, skin cells and nails, promoting a healthy, radiant appearance</strong></p>"
+            "list_text_3": "<p><strong>Growth factors nourish hair follicles, skin cells and nails, promoting a healthy, radiant appearance<\/strong><\/p>"
           }
         },
         "image_with_text_hWbJWL": {
           "type": "image_with_text",
           "settings": {
             "add_background_icon": false,
-            "image": "shopify://shop_images/reason-5-hair-lose.png",
+            "image": "shopify:\/\/shop_images\/reason-5-hair-lose.png",
             "image_position": "right",
             "title": "Reason 5",
             "subtitle": "Revives a Healthy Scalp Environment",
-            "text": "<p>Restoring gut balance improves nutrient flow and circulation to the scalp, creating the ideal conditions for stronger, fuller hair growth.</p>",
+            "text": "<p>Restoring gut balance improves nutrient flow and circulation to the scalp, creating the ideal conditions for stronger, fuller hair growth.<\/p>",
             "display_list": false,
             "list_title_1": "",
             "list_text_1": "",
@@ -921,10 +921,10 @@
           "type": "reviews",
           "settings": {
             "review_type": "default",
-            "image_1": "shopify://shop_images/Karla_Monteiro_hair-lose.png",
+            "image_1": "shopify:\/\/shop_images\/Karla_Monteiro_hair-lose.png",
             "show_rating_1": true,
-            "title_1": "<p>“Thousands are Already Taking Control”</p>",
-            "text_1": "<p>\"I was losing handfuls of hair every day—it was embarrassing and terrifying. Folqs Colostrum stopped the shedding and gave me back my confidence. I wish I found it sooner!\"</p>",
+            "title_1": "<p>“Thousands are Already Taking Control”<\/p>",
+            "text_1": "<p>\"I was losing handfuls of hair every day—it was embarrassing and terrifying. Folqs Colostrum stopped the shedding and gave me back my confidence. I wish I found it sooner!\"<\/p>",
             "author_1": "Rebecca K.",
             "verified_1": true,
             "show_second_review": false,
@@ -937,7 +937,7 @@
             "button_text_mobile": "Try Folqs Today",
             "button_url": "#landing-product-7687131496502",
             "show_rating": true,
-            "rating_image": "shopify://shop_images/Frame_1982248617_1.png",
+            "rating_image": "shopify:\/\/shop_images\/Frame_1982248617_1.png",
             "rating_text": "over 1,571 Five Star Reviews",
             "rating_text_mobile": "over 1,571 Reviews"
           }
@@ -970,31 +970,31 @@
         "image_CcxpUP": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Welcome_Kit_Black_Friday-min_1_affb3a95-9528-4fec-a740-b8e6dd5a7f94.png"
+            "image": "shopify:\/\/shop_images\/Welcome_Kit_Black_Friday-min_1_affb3a95-9528-4fec-a740-b8e6dd5a7f94.png"
           }
         },
         "image_bwi8C3": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Beyond_Ordinary.jpg"
+            "image": "shopify:\/\/shop_images\/Beyond_Ordinary.jpg"
           }
         },
         "image_jRW3WQ": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Frame_1982248583.png"
+            "image": "shopify:\/\/shop_images\/Frame_1982248583.png"
           }
         },
         "image_kYDGem": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/2_de69781a-7174-4619-b945-6410d87fbc47.png"
+            "image": "shopify:\/\/shop_images\/2_de69781a-7174-4619-b945-6410d87fbc47.png"
           }
         },
         "image_hXDHhw": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Frame_1982248599.png"
+            "image": "shopify:\/\/shop_images\/Frame_1982248599.png"
           }
         },
         "reviews_KFJ8Gm": {
@@ -1003,14 +1003,14 @@
             "show_desktop_position": false,
             "stars_type": "orange_small",
             "text": "1,571",
-            "additional_text": "<p></p>",
+            "additional_text": "<p><\/p>",
             "url": ""
           }
         },
         "title_7mwHjM": {
           "type": "title",
           "settings": {
-            "text": "<p><strong>An Ancient Superfood</strong></p><p>for Modern Lifestyle</p>",
+            "text": "<p><strong>An Ancient Superfood<\/strong><\/p><p>for Modern Lifestyle<\/p>",
             "highlighted_color": "#000000",
             "text_mobile": ""
           }
@@ -1018,7 +1018,7 @@
         "feature_NAR8T7": {
           "type": "feature",
           "settings": {
-            "icon": "shopify://shop_images/Group_----1.svg",
+            "icon": "shopify:\/\/shop_images\/Group_----1.svg",
             "title": "Stimulates\nHair Follicles",
             "title_mobile": "",
             "text": "",
@@ -1028,8 +1028,8 @@
         "feature_QdXP6h": {
           "type": "feature",
           "settings": {
-            "icon": "shopify://shop_images/Group_----2.svg",
-            "title": "Revitalizes \nScalp Health",
+            "icon": "shopify:\/\/shop_images\/Group_----2.svg",
+            "title": "Revitalizes\u2028\nScalp Health",
             "title_mobile": "",
             "text": "",
             "hide_on_mobile": false
@@ -1038,7 +1038,7 @@
         "feature_aGft8w": {
           "type": "feature",
           "settings": {
-            "icon": "shopify://shop_images/Group_-----3.svg",
+            "icon": "shopify:\/\/shop_images\/Group_-----3.svg",
             "title": "Enhances Hair\nStrength & Thickness",
             "title_mobile": "",
             "text": "",
@@ -1073,11 +1073,11 @@
             "popup_text_color": "#101825",
             "popup_icon_color": "#ff6a13",
             "gift_info": true,
-            "icon": "shopify://shop_images/gift-svgrepo-com_1_1.svg",
-            "shipping_icon": "shopify://shop_images/Frame_1982248779.png",
+            "icon": "shopify:\/\/shop_images\/gift-svgrepo-com_1_1.svg",
+            "shipping_icon": "shopify:\/\/shop_images\/Frame_1982248779.png",
             "info_title": "FREE Frother",
             "product_price": "2099",
-            "product_image": "shopify://shop_images/Frame_1982248778_2.png",
+            "product_image": "shopify:\/\/shop_images\/Frame_1982248778_2.png",
             "gift_item_background": "#fdf6f2",
             "gift_text_color": "#101828",
             "gift_price_color": "#8c95a2",
@@ -1112,20 +1112,20 @@
         "payment_icons_Q4wmDd": {
           "type": "payment_icons",
           "settings": {
-            "image_1": "shopify://shop_images/01_2.svg",
-            "image_2": "shopify://shop_images/01_2446f476-2747-40f5-8598-ea10963e79c8.svg",
-            "image_3": "shopify://shop_images/01_8.svg",
-            "image_4": "shopify://shop_images/01.svg",
-            "image_5": "shopify://shop_images/01_6.svg",
-            "image_6": "shopify://shop_images/01_6_3510059f-5f9a-4836-8d88-fc8f05e603cd.svg",
-            "image_7": "shopify://shop_images/01_4.svg",
-            "image_8": "shopify://shop_images/01_7.svg"
+            "image_1": "shopify:\/\/shop_images\/01_2.svg",
+            "image_2": "shopify:\/\/shop_images\/01_2446f476-2747-40f5-8598-ea10963e79c8.svg",
+            "image_3": "shopify:\/\/shop_images\/01_8.svg",
+            "image_4": "shopify:\/\/shop_images\/01.svg",
+            "image_5": "shopify:\/\/shop_images\/01_6.svg",
+            "image_6": "shopify:\/\/shop_images\/01_6_3510059f-5f9a-4836-8d88-fc8f05e603cd.svg",
+            "image_7": "shopify:\/\/shop_images\/01_4.svg",
+            "image_8": "shopify:\/\/shop_images\/01_7.svg"
           }
         },
         "guarantee_q6TCRy": {
           "type": "guarantee",
           "settings": {
-            "icon": "shopify://shop_images/shield-check-svgrepo-com_1_1.svg",
+            "icon": "shopify:\/\/shop_images\/shield-check-svgrepo-com_1_1.svg",
             "title": "90-Day Money-Back Guarantee",
             "text": "That’s how confident we are in our product. If you’re not completely satisfied within 90 days, you’re fully covered by our 100% money-back guarantee."
           }
@@ -1134,7 +1134,7 @@
           "type": "review_with_usp",
           "settings": {
             "title": "Join 10,000+ Satisfied Customers",
-            "image": "shopify://shop_images/Frame_1982248617_1.png",
+            "image": "shopify:\/\/shop_images\/Frame_1982248617_1.png",
             "stars_url": "",
             "extra_styles": true,
             "style": "default"
@@ -1199,8 +1199,8 @@
       "type": "media-with-text-video",
       "disabled": true,
       "settings": {
-        "main_content_desktop": "<h2>5.Thousands of People Swear by Colostrum — Here’s Why</h2><p>People everywhere are raving about the real, noticeable results they’re experiencing with colostrum.</p><p><strong>From improved digestion and steady energy to radiant skin and mental clarity</strong>, colostrum’s 200+ bioactive nutrients work deep within your body to support better health and well-being at every level. *</p>",
-        "video": "shopify://files/videos/d1f4r.mp4",
+        "main_content_desktop": "<h2>5.Thousands of People Swear by Colostrum — Here’s Why<\/h2><p>People everywhere are raving about the real, noticeable results they’re experiencing with colostrum.<\/p><p><strong>From improved digestion and steady energy to radiant skin and mental clarity<\/strong>, colostrum’s 200+ bioactive nutrients work deep within your body to support better health and well-being at every level. *<\/p>",
+        "video": "shopify:\/\/files\/videos\/d1f4r.mp4",
         "mobile_gap": "40",
         "main_content_mobile": "",
         "button_text": "Get 30% OFF Immune Revival",
@@ -1224,7 +1224,7 @@
             "image_position": "left",
             "title": "Reason",
             "subtitle": "Subtitle",
-            "text": "<p>Text</p>",
+            "text": "<p>Text<\/p>",
             "display_list": false,
             "list_title_1": "",
             "list_text_1": "",
@@ -1271,73 +1271,73 @@
         "facebook_review_649aKh": {
           "type": "facebook_review",
           "settings": {
-            "image": "shopify://shop_images/fb-diane-marie-taylor.png"
+            "image": "shopify:\/\/shop_images\/fb-diane-marie-taylor.png"
           }
         },
         "facebook_review_cpdz4A": {
           "type": "facebook_review",
           "settings": {
-            "image": "shopify://shop_images/fb-van-chou.png"
+            "image": "shopify:\/\/shop_images\/fb-van-chou.png"
           }
         },
         "facebook_review_gCJUk4": {
           "type": "facebook_review",
           "settings": {
-            "image": "shopify://shop_images/fb-patricia-junio.png"
+            "image": "shopify:\/\/shop_images\/fb-patricia-junio.png"
           }
         },
         "facebook_review_dBhxeH": {
           "type": "facebook_review",
           "settings": {
-            "image": "shopify://shop_images/fb-rebecca-glesby.png"
+            "image": "shopify:\/\/shop_images\/fb-rebecca-glesby.png"
           }
         },
         "facebook_review_FaUXVc": {
           "type": "facebook_review",
           "settings": {
-            "image": "shopify://shop_images/fb-leslie-aiello.png"
+            "image": "shopify:\/\/shop_images\/fb-leslie-aiello.png"
           }
         },
         "facebook_review_eCH4mX": {
           "type": "facebook_review",
           "settings": {
-            "image": "shopify://shop_images/fb-constance-pedzall.png"
+            "image": "shopify:\/\/shop_images\/fb-constance-pedzall.png"
           }
         },
         "facebook_review_7kzbRJ": {
           "type": "facebook_review",
           "settings": {
-            "image": "shopify://shop_images/fb-deana-desOrmeaux.png"
+            "image": "shopify:\/\/shop_images\/fb-deana-desOrmeaux.png"
           }
         },
         "facebook_review_xVN76A": {
           "type": "facebook_review",
           "settings": {
-            "image": "shopify://shop_images/fb-delores-robleto-sodosky.png"
+            "image": "shopify:\/\/shop_images\/fb-delores-robleto-sodosky.png"
           }
         },
         "facebook_review_Hx3M9i": {
           "type": "facebook_review",
           "settings": {
-            "image": "shopify://shop_images/facebook-com_8.png"
+            "image": "shopify:\/\/shop_images\/facebook-com_8.png"
           }
         },
         "instagram_review_3WUmjt": {
           "type": "instagram_review",
           "settings": {
-            "image": "shopify://shop_images/inst-kusmatt720.png"
+            "image": "shopify:\/\/shop_images\/inst-kusmatt720.png"
           }
         },
         "instagram_review_4gBRWw": {
           "type": "instagram_review",
           "settings": {
-            "image": "shopify://shop_images/inst-laraleka1.png"
+            "image": "shopify:\/\/shop_images\/inst-laraleka1.png"
           }
         },
         "instagram_review_7mRejB": {
           "type": "instagram_review",
           "settings": {
-            "image": "shopify://shop_images/inst-LA-stropoli.png"
+            "image": "shopify:\/\/shop_images\/inst-LA-stropoli.png"
           }
         }
       },
@@ -1374,42 +1374,42 @@
           "type": "question",
           "settings": {
             "title": "Do you offer a money-back guarantee? ",
-            "answer": "<p>Absolutely! We fully stand behind our colostrum. If you’re not completely satisfied, we’ll happily offer you a full refund within 90 days of your purchase — no questions asked. Just contact our team at <a href=\"mailto:help@folqs.co\" title=\"mailto:help@folqs.co\">help@folqs.co</a> </p>"
+            "answer": "<p>Absolutely! We fully stand behind our colostrum. If you’re not completely satisfied, we’ll happily offer you a full refund within 90 days of your purchase — no questions asked. Just contact our team at <a href=\"mailto:help@folqs.co\" title=\"mailto:help@folqs.co\">help@folqs.co<\/a> <\/p>"
           }
         },
         "question_kUyh7w": {
           "type": "question",
           "settings": {
             "title": "Will Colostrum interact negatively with my GLP-1 medication?",
-            "answer": "<p>Colostrum is a natural superfood, not a drug, and there are no known negative interactions with GLP-1 medications like Ozempic or Wegovy. However, we always recommend consulting with your healthcare provider if you have any medical concerns.</p>"
+            "answer": "<p>Colostrum is a natural superfood, not a drug, and there are no known negative interactions with GLP-1 medications like Ozempic or Wegovy. However, we always recommend consulting with your healthcare provider if you have any medical concerns.<\/p>"
           }
         },
         "question_bwR4YE": {
           "type": "question",
           "settings": {
             "title": "Can Colostrum benefit other aspects of my health, beyond hair?",
-            "answer": "<p>Absolutely! Besides supporting hair health, colostrum enhances immunity, strengthens gut health, boosts overall vitality, and helps your body naturally recover from stress and inflammation often associated with rapid weight loss.</p>"
+            "answer": "<p>Absolutely! Besides supporting hair health, colostrum enhances immunity, strengthens gut health, boosts overall vitality, and helps your body naturally recover from stress and inflammation often associated with rapid weight loss.<\/p>"
           }
         },
         "question_FdJLBQ": {
           "type": "question",
           "settings": {
             "title": "Can I mix these with coffee, smoothies, or other drinks?",
-            "answer": "<p>Yes! Our powders mix well with a variety of beverages. However, we recommend avoiding hot liquids to help preserve the potency of the nutrients.</p><p>For the best experience, try mixing with:</p><ul><li>Smoothies and protein shakes</li><li>Iced coffee or cold brew</li><li>Water or cold milk</li><li>Juice or other cold beverages</li></ul>"
+            "answer": "<p>Yes! Our powders mix well with a variety of beverages. However, we recommend avoiding hot liquids to help preserve the potency of the nutrients.<\/p><p>For the best experience, try mixing with:<\/p><ul><li>Smoothies and protein shakes<\/li><li>Iced coffee or cold brew<\/li><li>Water or cold milk<\/li><li>Juice or other cold beverages<\/li><\/ul>"
           }
         },
         "question_mGRVRH": {
           "type": "question",
           "settings": {
             "title": "How long does shipping take?",
-            "answer": "<p>Orders are shipped within 1 business day and typically delivered within 3-5 business days depending on your location. You'll receive tracking information via email once your order ships so you can monitor its progress.</p>"
+            "answer": "<p>Orders are shipped within 1 business day and typically delivered within 3-5 business days depending on your location. You'll receive tracking information via email once your order ships so you can monitor its progress.<\/p>"
           }
         },
         "question_Grz8c8": {
           "type": "question",
           "settings": {
             "title": "Can I cancel my subscription anytime?",
-            "answer": "<p>Yes, you can cancel your subscription anytime with no questions asked. You can easily cancel through your online account or simply email our support team at <a href=\"mailto:help@folqs.co\"><span style=\"text-decoration:underline\">help@folqs.co </span></a>and we'll be happy to help you right away.</p>"
+            "answer": "<p>Yes, you can cancel your subscription anytime with no questions asked. You can easily cancel through your online account or simply email our support team at <a href=\"mailto:help@folqs.co\"><span style=\"text-decoration:underline\">help@folqs.co <\/span><\/a>and we'll be happy to help you right away.<\/p>"
           }
         }
       },
@@ -1430,11 +1430,11 @@
         "rounded": false,
         "previous_background": "#FFF",
         "current_background": "linear-gradient(180deg, rgba(255, 255, 255, 1), rgba(244, 250, 255, 1) 40%, rgba(244, 250, 255, 1) 60%, rgba(255, 255, 255, 1) 100%)",
-        "decor_image_desktop": "shopify://shop_images/Group_1982248105.svg",
-        "title": "<p>Your Questions Answered</p>",
+        "decor_image_desktop": "shopify:\/\/shop_images\/Group_1982248105.svg",
+        "title": "<p>Your Questions Answered<\/p>",
         "subtitle": "FAQ",
         "tagline": "",
-        "image": "shopify://shop_images/Meghan_Frosceno_d953ae7f-d3ab-4374-8784-414d1e2c5446.png",
+        "image": "shopify:\/\/shop_images\/Meghan_Frosceno_d953ae7f-d3ab-4374-8784-414d1e2c5446.png",
         "is_first_open": true,
         "active_title_color": "#000000",
         "default_title_color": "#000000",
@@ -1495,7 +1495,7 @@
         "padding_bottom": 0,
         "padding_top_mobile": 0,
         "padding_bottom_mobile": 0,
-        "decor_label": "<svg xmlns=\"http://www.w3.org/2000/svg\" width=\"10\" height=\"8\" viewbox=\"0 0 10 8\" fill=\"none\">\n  <path d=\"M3.58 7.32473C3.38 7.32473 3.19 7.24473 3.05 7.10473L0.220002 4.27473C-0.0699975 3.98473 -0.0699975 3.50473 0.220002 3.21473C0.510002 2.92473 0.990002 2.92473 1.28 3.21473L3.58 5.51473L8.72 0.374727C9.01 0.0847266 9.49 0.0847266 9.78 0.374727C10.07 0.664727 10.07 1.14473 9.78 1.43473L4.11 7.10473C3.97 7.24473 3.78 7.32473 3.58 7.32473Z\" fill=\"white\"></path>\n</svg>"
+        "decor_label": "<svg xmlns=\"http:\/\/www.w3.org\/2000\/svg\" width=\"10\" height=\"8\" viewbox=\"0 0 10 8\" fill=\"none\">\n  <path d=\"M3.58 7.32473C3.38 7.32473 3.19 7.24473 3.05 7.10473L0.220002 4.27473C-0.0699975 3.98473 -0.0699975 3.50473 0.220002 3.21473C0.510002 2.92473 0.990002 2.92473 1.28 3.21473L3.58 5.51473L8.72 0.374727C9.01 0.0847266 9.49 0.0847266 9.78 0.374727C10.07 0.664727 10.07 1.14473 9.78 1.43473L4.11 7.10473C3.97 7.24473 3.78 7.32473 3.58 7.32473Z\" fill=\"white\"><\/path>\n<\/svg>"
       }
     },
     "landing_footer_yAYryJ": {
@@ -1504,10 +1504,10 @@
       "settings": {
         "hide_primary_footer": false,
         "color_scheme": "scheme-ea079204-4b8c-4bc5-9aa1-4a98e412e983",
-        "logo": "shopify://shop_images/logo-transparent-folqs.svg",
-        "contacts": "<p><a href=\"mailto:help@folqs.co\" title=\"mailto:help@folqs.co\">help@folqs.co</a></p><p>800 N KING ST STE 304 1909,</p><p>WILMINGTON, DE 19801800-975-4495<br/><br/></p>",
+        "logo": "shopify:\/\/shop_images\/logo-transparent-folqs.svg",
+        "contacts": "<p><a href=\"mailto:help@folqs.co\" title=\"mailto:help@folqs.co\">help@folqs.co<\/a><\/p><p>800 N KING ST STE 304 1909,<\/p><p>WILMINGTON, DE 19801800-975-4495<br\/><br\/><\/p>",
         "show_socials": true,
-        "information": "<p>* Individual Results May Vary. These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure or prevent any disease.</p><p>The content on this website is intended solely for informational purposes and should not be considered a replacement for professional medical advice from your doctor or healthcare provider. Do not use this information to diagnose or treat any health condition or to prescribe medication. Be sure to thoroughly review all product information. If you have, or think you may have, a medical issue, please consult your healthcare provider immediately.</p><p>** Offer valid for new subscribers only.</p>",
+        "information": "<p>* Individual Results May Vary. These statements have not been evaluated by the Food and Drug Administration. This product is not intended to diagnose, treat, cure or prevent any disease.<\/p><p>The content on this website is intended solely for informational purposes and should not be considered a replacement for professional medical advice from your doctor or healthcare provider. Do not use this information to diagnose or treat any health condition or to prescribe medication. Be sure to thoroughly review all product information. If you have, or think you may have, a medical issue, please consult your healthcare provider immediately.<\/p><p>** Offer valid for new subscribers only.<\/p>",
         "menu": "policies"
       }
     },
@@ -1515,7 +1515,7 @@
       "type": "custom-liquid",
       "name": "t:sections.custom-liquid.presets.name",
       "settings": {
-        "custom_liquid": "<style>\n.announcement-bar-section .utility-bar{\n  background: #000 !important;\n}\n</style>",
+        "custom_liquid": "<style>\n.announcement-bar-section .utility-bar{\n  background: #000 !important;\n}\n<\/style>",
         "color_scheme": "",
         "padding_top": 0,
         "padding_bottom": 0

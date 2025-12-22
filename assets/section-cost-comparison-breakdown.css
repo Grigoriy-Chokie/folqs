@@ -1,0 +1,294 @@
+.cost-comparison-breakdown {
+  font-family: DM Sans;
+  background: var(--cost-comparison-breakdown-background);
+  background-repeat: no-repeat;
+  background-size: cover;
+  position: relative;
+  padding: 50px 0;
+
+  & .cost-comparison-breakdown--mobile {
+    display: none;
+  }
+
+  & .cost-comparison-breakdown__container {
+    max-width: 1278px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  & .cost-comparison-breakdown__heading {
+    font-family: DM Sans;
+    font-size: 40px;
+    font-weight: 600;
+    line-height: 120%;
+    text-align: center;
+    margin: 0;
+
+    & > strong {
+      font-weight: 600;
+      color: #FF6A13;
+    }
+  }
+
+  & .cost-comparison-breakdown__subheading {
+    font-size: 16px;
+    line-height: 160%;
+    text-align: center;
+    margin: 0;
+    margin-top: 30px;
+  }
+
+  & .cost-comparison-breakdown__flex {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 764px;
+    margin: auto;
+    gap: 80px;
+    padding-top: 30px;
+  }
+
+  & .cost-comparison-breakdown__image-wrapper {
+    flex-basis: 51%;
+    position: relative;
+  }
+
+  & .cost-comparison-breakdown__image {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+  }
+
+  & .cost-comparison-breakdown__right-content {
+    flex-basis: 49%;
+  }
+
+  & .cost-comparison-breakdown__expense-table {
+    background-color: #fff;
+    border: 1px solid #31374126;
+    border-radius: 8px;
+    padding: 30px 10px;
+
+    & .expense-table__heading-wrapper > p {
+      text-align: center;
+      font-weight: 600;
+      font-size: 18px;
+      line-height: 130%;
+      margin: 0;
+      margin-bottom: 20px;
+    }
+
+    & .expense-table__item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 0 17px;
+      padding: 6px 0;
+      border-top: 1px solid #31374126;
+
+      & > p {
+        margin: 0;
+        font-size: 15px;
+      }
+    }
+
+    & .expense-table__product {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin: 15px 7px 0;
+      padding: 0 1.5px;
+      position: relative;
+      
+      &::after {
+        content: "";
+        height: 1px;
+        position: absolute;
+        top: 50%;
+        left: 0;
+        right: 0;
+        transform: translateY(-50%);
+        background-color: #EB2913;
+      }
+
+      & > p {
+        margin: 0;
+        font-size: 15px;
+        font-weight: 600;
+        color: #EB2913;
+      }
+    }
+  }
+
+  & .cost-comparison-breakdown__banner {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 21px 10px;
+    margin-top: 10px;
+    background-color: #00A30B;
+    border-radius: 8px;
+
+    & > p {
+      font-size: 20px;
+      font-weight: 600;
+      line-height: 150%;
+      margin: 0;
+    }
+
+    & .banner__title {
+      color: #FFFFFF;
+    }
+
+    & .banner__price {
+      padding: 0 3px;
+      background-color: #FFFFFF;
+      color: #000;
+      border-radius: 5px;
+    }
+  }
+
+  & .cost-comparison-breakdown__button {
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+    gap: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: var(--cost-comparison-breakdown-button-background);
+    color: var(--cost-comparison-breakdown-button-color);
+    max-width: 360px;
+    width: 100%;
+    margin: auto;
+    margin-top: 30px;
+    padding: 11px;
+    border-radius: 60px;
+    transition: scale 0.15s linear;
+  }
+
+  & .cost-comparison-breakdown__button:hover {
+    scale: 1.02;
+  }
+
+  & .cost-comparison-breakdown__review {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 25px;
+    gap: 8px;
+
+    & .review__avatar-wrapper {
+      max-width: 65px;
+      width: 100%;
+    }
+
+    & .review__rating-wrapper {
+      max-width: 92px;
+      width: 100%;
+    }
+
+    & .review__text {
+      font-size: 15px;
+      line-height: 150%;
+      margin: 0;
+    }
+  }
+
+  & .cost-comparison-breakdown__badge {
+    position: absolute;
+    top: var(--cost-comparison-breakdown-badge-position-top);
+    left: var(--cost-comparison-breakdown-badge-position-left);
+    width: var(--cost-comparison-breakdown-badge-max-width);
+    height: var(--cost-comparison-breakdown-badge-max-width);
+    font-size: 15px;
+    gap: 17px;
+    display: flex;
+    border-radius: 100%;
+    align-items: center;
+    flex-direction: column;
+    justify-content: center;
+    padding: 30px 21px;
+    background-color: var(--cost-comparison-breakdown-badge-background);
+    color: var(--cost-comparison-breakdown-badge-color);
+
+    & > p {
+      text-align: center;
+      margin: 0;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    padding: 40px 0;
+
+    & .cost-comparison-breakdown--desktop {
+      display: none;
+    }
+
+    & .cost-comparison-breakdown--mobile {
+      display: block;
+    }
+
+    & .cost-comparison-breakdown__heading {
+      font-size: 26px;
+    }
+
+    & .cost-comparison-breakdown__subheading {
+      margin: 0;
+      text-align: left;
+    }
+
+    & .cost-comparison-breakdown__flex {
+      gap: 30px;
+      align-items: unset;
+      flex-direction: column-reverse;
+      padding-top: 170px;
+    }
+
+    & .cost-comparison-breakdown__image-wrapper {
+      background: radial-gradient(circle,rgba(255, 106, 19, 0.7) 0%, rgba(255, 255, 255, 0) 60%);
+      background-position: center;
+    }
+
+    & .cost-comparison-breakdown__banner {
+      & .banner__title {
+        font-size: 18px;
+      }
+
+      & .banner__price {
+        padding: 0;
+        border-radius: 0;
+        font-size: 18px;
+      }
+    }
+
+    & .cost-comparison-breakdown__badge {
+      position: static;
+      width: 100%;
+      height: 100%;
+      border-radius: 8px;
+    }
+
+    & .cost-comparison-breakdown__badge {
+      padding: 20px 30px;
+      font-size: 18px;
+
+      & p:first-child::after {
+        content: "";
+        display: block;
+        width: 50%;
+        height: 1px;
+        margin: auto;
+        margin-top: 15px;
+        background-color: #fff;
+      }
+    }
+
+    & .cost-comparison-breakdown__button {
+      margin: 30px 10px 0;
+      max-width: unset;
+      width: calc(100% - 20px);
+    }
+  }
+}

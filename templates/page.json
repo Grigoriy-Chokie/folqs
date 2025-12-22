@@ -16,21 +16,21 @@
           "type": "account_tab",
           "settings": {
             "title": "Addresses",
-            "link": "/account/addresses"
+            "link": "\/account\/addresses"
           }
         },
         "account_tab_QYRDVt": {
           "type": "account_tab",
           "settings": {
             "title": "Order history",
-            "link": "/account"
+            "link": "\/account"
           }
         },
         "account_tab_L7TEPV": {
           "type": "account_tab",
           "settings": {
             "title": "My Subscription",
-            "link": "/tools/recurring/login"
+            "link": "\/tools\/recurring\/login"
           }
         }
       },
@@ -61,8 +61,8 @@
       "type": "media-with-text-video",
       "disabled": true,
       "settings": {
-        "main_content_desktop": "<h2>5.Thousands of People Swear by Colostrum — Here’s Why</h2><p>People everywhere are raving about the real, noticeable results they’re experiencing with colostrum.</p><p><strong>From improved digestion and steady energy to radiant skin and mental clarity</strong>, colostrum’s 200+ bioactive nutrients work deep within your body to support better health and well-being at every level. *</p>",
-        "video": "shopify://files/videos/d1f4r.mp4",
+        "main_content_desktop": "<h2>5.Thousands of People Swear by Colostrum — Here’s Why<\/h2><p>People everywhere are raving about the real, noticeable results they’re experiencing with colostrum.<\/p><p><strong>From improved digestion and steady energy to radiant skin and mental clarity<\/strong>, colostrum’s 200+ bioactive nutrients work deep within your body to support better health and well-being at every level. *<\/p>",
+        "video": "shopify:\/\/files\/videos\/d1f4r.mp4",
         "mobile_gap": "40",
         "main_content_mobile": "",
         "button_text": "Get 30% OFF Immune Revival",

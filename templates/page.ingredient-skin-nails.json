@@ -30,7 +30,7 @@
         "text_6JAJjM": {
           "type": "text",
           "settings": {
-            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>"
+            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>"
           }
         },
         "button_jexaPM": {
@@ -63,10 +63,10 @@
     "ingredient_content_hUfQb8": {
       "type": "ingredient-content",
       "settings": {
-        "list_of_badges": "///Joint Comfort, ///Mobility, ///Skin, ///Nails & Hair, ///Tissue Repair, ///Body Structural Intergity",
+        "list_of_badges": "\/\/\/Joint Comfort, \/\/\/Mobility, \/\/\/Skin, \/\/\/Nails & Hair, \/\/\/Tissue Repair, \/\/\/Body Structural Intergity",
         "button_label": "Learn more",
-        "main_text": "<p>This category is designed to support the structural elements of the body, including joints, skin, hair, and nails, through a potent blend of ingredients. Glucosamine and chondroitin are well-known for their joint support, aiding in cartilage health and joint lubrication. Bovine collagen provides the essential building blocks for skin and nail vitality, while MSM supports overall tissue repair and reduces inflammation. Boswellia extract adds an anti-inflammatory component, further supporting joint health and comfort.</p>",
-        "main_text_hidden": "<h2>What to Expect</h2><ul><li>Experience enhanced joint mobility and reduced discomfort, thanks to the synergistic effects of glucosamine and chondroitin.</li><li>Expect improvements in skin hydration, elasticity, and nail strength from the high-dose bovine collagen.</li><li>MSM and Boswellia extract work together to modulate inflammation, aiding in the relief of joint pain and supporting overall structural health.</li></ul>",
+        "main_text": "<p>This category is designed to support the structural elements of the body, including joints, skin, hair, and nails, through a potent blend of ingredients. Glucosamine and chondroitin are well-known for their joint support, aiding in cartilage health and joint lubrication. Bovine collagen provides the essential building blocks for skin and nail vitality, while MSM supports overall tissue repair and reduces inflammation. Boswellia extract adds an anti-inflammatory component, further supporting joint health and comfort.<\/p>",
+        "main_text_hidden": "<h2>What to Expect<\/h2><ul><li>Experience enhanced joint mobility and reduced discomfort, thanks to the synergistic effects of glucosamine and chondroitin.<\/li><li>Expect improvements in skin hydration, elasticity, and nail strength from the high-dose bovine collagen.<\/li><li>MSM and Boswellia extract work together to modulate inflammation, aiding in the relief of joint pain and supporting overall structural health.<\/li><\/ul>",
         "show_page_title": true
       }
     },
@@ -76,7 +76,7 @@
         "ingredient_jQFn4Y": {
           "type": "ingredient",
           "settings": {
-            "img": "shopify://shop_images/Rectangle_15_36.png",
+            "img": "shopify:\/\/shop_images\/Rectangle_15_36.png",
             "title": "Glucosamine Sulfate 2KCl",
             "subtitle": "",
             "info": "300 mg"
@@ -85,7 +85,7 @@
         "ingredient_wdLMhn": {
           "type": "ingredient",
           "settings": {
-            "img": "shopify://shop_images/Rectangle_15_37.png",
+            "img": "shopify:\/\/shop_images\/Rectangle_15_37.png",
             "title": "Bovine Collagen",
             "subtitle": "",
             "info": "5000 mg"
@@ -94,7 +94,7 @@
         "ingredient_zVA3MV": {
           "type": "ingredient",
           "settings": {
-            "img": "shopify://shop_images/Rectangle_15_38.png",
+            "img": "shopify:\/\/shop_images\/Rectangle_15_38.png",
             "title": "Chondroitin Sulfate",
             "subtitle": "",
             "info": "300 mg"
@@ -103,7 +103,7 @@
         "ingredient_JGzimG": {
           "type": "ingredient",
           "settings": {
-            "img": "shopify://shop_images/Rectangle_15_39.png",
+            "img": "shopify:\/\/shop_images\/Rectangle_15_39.png",
             "title": "Methyl-sulfonylmethane",
             "subtitle": "MSM",
             "info": "200 mg"
@@ -112,7 +112,7 @@
         "ingredient_bzfiMx": {
           "type": "ingredient",
           "settings": {
-            "img": "shopify://shop_images/Rectangle_15_40.png",
+            "img": "shopify:\/\/shop_images\/Rectangle_15_40.png",
             "title": "Boswellia Serrata Extract",
             "subtitle": "std. to 65% boswellic acid",
             "info": "25 mg"
@@ -134,7 +134,7 @@
         "heading": "",
         "sub_heading": "",
         "name_button": "",
-        "url_button": "/"
+        "url_button": "\/"
       }
     }
   },

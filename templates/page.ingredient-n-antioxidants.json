@@ -30,7 +30,7 @@
         "text_6JAJjM": {
           "type": "text",
           "settings": {
-            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>"
+            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>"
           }
         },
         "button_jexaPM": {
@@ -83,10 +83,10 @@
         "percentage_island_8Y8h8N"
       ],
       "settings": {
-        "list_of_badges": "///Skin Resilience, ///Eye Health, ///Cardiovascular Support, ///Comprehensive Anti-Inflammatory, ///Vascular and Circulatory Health, ///UV Protection",
+        "list_of_badges": "\/\/\/Skin Resilience, \/\/\/Eye Health, \/\/\/Cardiovascular Support, \/\/\/Comprehensive Anti-Inflammatory, \/\/\/Vascular and Circulatory Health, \/\/\/UV Protection",
         "button_label": "Learn more",
-        "main_text": "<p>This blend of natural antioxidants and anti-inflammatory agents is crafted to combat oxidative stress and inflammation, key contributors to aging and disease. Astaxanthin, known for its superior antioxidant capacity, supports skin resilience against UV rays. Lutein, crucial for eye health, filters harmful light wavelengths. Lycopene, a potent antioxidant, supports cardiovascular health. Resveratrol, often associated with the benefits of red wine, promotes heart health and longevity. Rutin, with its vascular benefits, supports blood vessel strength and integrity.</p>",
-        "main_text_hidden": "<h2>What to Expect</h2><ul><li>Expect enhanced protection against environmental stressors with astaxanthin and lutein, supporting skin and eye health.</li><li>Lycopene and resveratrol contribute to a robust cardiovascular system, supporting heart function and vascular health.</li><li>Experience reduced inflammation and strengthened blood vessels, thanks to the combined effects of rutin and the antioxidant blend.</li></ul>",
+        "main_text": "<p>This blend of natural antioxidants and anti-inflammatory agents is crafted to combat oxidative stress and inflammation, key contributors to aging and disease. Astaxanthin, known for its superior antioxidant capacity, supports skin resilience against UV rays. Lutein, crucial for eye health, filters harmful light wavelengths. Lycopene, a potent antioxidant, supports cardiovascular health. Resveratrol, often associated with the benefits of red wine, promotes heart health and longevity. Rutin, with its vascular benefits, supports blood vessel strength and integrity.<\/p>",
+        "main_text_hidden": "<h2>What to Expect<\/h2><ul><li>Expect enhanced protection against environmental stressors with astaxanthin and lutein, supporting skin and eye health.<\/li><li>Lycopene and resveratrol contribute to a robust cardiovascular system, supporting heart function and vascular health.<\/li><li>Experience reduced inflammation and strengthened blood vessels, thanks to the combined effects of rutin and the antioxidant blend.<\/li><\/ul>",
         "show_page_title": true
       }
     },
@@ -96,7 +96,7 @@
         "ingredient_jQFn4Y": {
           "type": "ingredient",
           "settings": {
-            "img": "shopify://shop_images/Rectangle_15_31.png",
+            "img": "shopify:\/\/shop_images\/Rectangle_15_31.png",
             "title": "Astaxanthin",
             "subtitle": "from Haematococcus pluviialis",
             "info": "3 mg"
@@ -105,7 +105,7 @@
         "ingredient_wdLMhn": {
           "type": "ingredient",
           "settings": {
-            "img": "shopify://shop_images/Rectangle_15_32.png",
+            "img": "shopify:\/\/shop_images\/Rectangle_15_32.png",
             "title": "Lutein",
             "subtitle": "",
             "info": "4 mg"
@@ -114,7 +114,7 @@
         "ingredient_zVA3MV": {
           "type": "ingredient",
           "settings": {
-            "img": "shopify://shop_images/Rectangle_15_33.png",
+            "img": "shopify:\/\/shop_images\/Rectangle_15_33.png",
             "title": "Lycopene",
             "subtitle": "from tomato peel extract",
             "info": "2 mg"
@@ -123,7 +123,7 @@
         "ingredient_JGzimG": {
           "type": "ingredient",
           "settings": {
-            "img": "shopify://shop_images/Rectangle_15_34.png",
+            "img": "shopify:\/\/shop_images\/Rectangle_15_34.png",
             "title": "Resveratrol",
             "subtitle": "Polygonum Cuspidatum Root Extract",
             "info": "75 mg"
@@ -132,7 +132,7 @@
         "ingredient_bzfiMx": {
           "type": "ingredient",
           "settings": {
-            "img": "shopify://shop_images/Rectangle_15_35.png",
+            "img": "shopify:\/\/shop_images\/Rectangle_15_35.png",
             "title": "Rutin Powder",
             "subtitle": "from Sophora japonica",
             "info": "150 mg"
@@ -154,7 +154,7 @@
         "heading": "",
         "sub_heading": "",
         "name_button": "",
-        "url_button": "/"
+        "url_button": "\/"
       }
     }
   },

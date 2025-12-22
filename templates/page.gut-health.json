@@ -12,7 +12,7 @@
     "advertorial_header_GTiLfb": {
       "type": "advertorial-header",
       "settings": {
-        "logo": "shopify://shop_images/Group_2_05a99976-39c5-49a0-b115-bb83ef57f7c7.svg",
+        "logo": "shopify:\/\/shop_images\/Group_2_05a99976-39c5-49a0-b115-bb83ef57f7c7.svg",
         "text": "Advertorial",
         "text_link": "",
         "is_sticky": true
@@ -36,14 +36,14 @@
           "type": "breadcrumbs",
           "settings": {
             "name_link": "Home",
-            "url_link": "/"
+            "url_link": "\/"
           }
         },
         "breadcrumbs_kGtEp6": {
           "type": "breadcrumbs",
           "settings": {
             "name_link": "Health & Benefits",
-            "url_link": "/"
+            "url_link": "\/"
           }
         },
         "breadcrumbs_pirpB9": {
@@ -60,7 +60,7 @@
             "padding_bottom": 0,
             "padding_top_mobile": 0,
             "padding_bottom_mobile": 0,
-            "title": "<p>Breaking News: New Discovery Reveals the Real Root Cause of Gut Issues—and How to Fix It Naturally</p>"
+            "title": "<p>Breaking News: New Discovery Reveals the Real Root Cause of Gut Issues—and How to Fix It Naturally<\/p>"
           }
         },
         "text_LbkRqD": {
@@ -70,7 +70,7 @@
             "padding_bottom": 0,
             "padding_top_mobile": 24,
             "padding_bottom_mobile": 0,
-            "text": "<p>Top health experts share the breakthrough that's helping thousands heal their gut in just weeks.</p>"
+            "text": "<p>Top health experts share the breakthrough that's helping thousands heal their gut in just weeks.<\/p>"
           }
         },
         "information_q3LJjD": {
@@ -83,7 +83,7 @@
             "article_by": "Article by:",
             "author_name": "Laura L. MD",
             "updated": "Updated",
-            "date": "12 August 2024 at 6:48 AM / 7 min. read"
+            "date": "12 August 2024 at 6:48 AM \/ 7 min. read"
           }
         },
         "media_6M6anA": {
@@ -95,28 +95,28 @@
             "padding_bottom_mobile": 0,
             "background_1": "linear-gradient(180deg, rgba(24, 119, 242, 1), rgba(24, 119, 242, 1) 100%)",
             "color_text_1": "#ffffff",
-            "link_1": "/",
-            "icon_1": "shopify://shop_images/SSO_Icon_058d4543-4863-4445-b461-e9438f36a3f9.svg",
+            "link_1": "\/",
+            "icon_1": "shopify:\/\/shop_images\/SSO_Icon_058d4543-4863-4445-b461-e9438f36a3f9.svg",
             "count_review_1": 656,
             "background_2": "linear-gradient(180deg, rgba(37, 211, 102, 1), rgba(37, 211, 102, 1) 100%)",
             "color_text_2": "#ffffff",
-            "link_2": "/",
-            "icon_2": "shopify://shop_images/Social_Icons.svg",
+            "link_2": "\/",
+            "icon_2": "shopify:\/\/shop_images\/Social_Icons.svg",
             "count_review_2": 122,
             "background_3": "radial-gradient(rgba(0, 0, 0, 1), rgba(0, 0, 0, 1) 98%)",
             "color_text_3": "#ffffff",
-            "link_3": "/",
-            "icon_3": "shopify://shop_images/twiter.svg",
+            "link_3": "\/",
+            "icon_3": "shopify:\/\/shop_images\/twiter.svg",
             "count_review_3": 14,
             "background_4": "linear-gradient(90deg, #FDB421 0%, #F62148 47.5%, #F61B97 100%)",
             "color_text_4": "#ffffff",
-            "link_4": "/",
-            "icon_4": "shopify://shop_images/instagram.svg",
+            "link_4": "\/",
+            "icon_4": "shopify:\/\/shop_images\/instagram.svg",
             "count_review_4": 214,
             "background_5": "#E60019",
             "color_text_5": "#ffffff",
-            "link_5": "/",
-            "icon_5": "shopify://shop_images/pinterest.svg",
+            "link_5": "\/",
+            "icon_5": "shopify:\/\/shop_images\/pinterest.svg",
             "count_review_5": 67
           }
         },
@@ -127,7 +127,7 @@
             "padding_bottom": 0,
             "padding_top_mobile": 24,
             "padding_bottom_mobile": 0,
-            "image": "shopify://shop_images/Rectangle_513_2f1f0822-b38f-4f01-a5d0-9a870dbc9ccc.png",
+            "image": "shopify:\/\/shop_images\/Rectangle_513_2f1f0822-b38f-4f01-a5d0-9a870dbc9ccc.png",
             "use_original_ratio": false,
             "full_width_mobile": true
           }
@@ -139,7 +139,7 @@
             "padding_bottom": 0,
             "padding_top_mobile": 24,
             "padding_bottom_mobile": 0,
-            "text": "<p>Are you tired of <strong>constant bloating, digestive discomfort,</strong> and <strong>food sensitivities?</strong> For years, doctors recommended probiotics as the miracle cure for gut health. But shocking new research reveals they might be <strong>damaging the digestive system. </strong></p><p><strong>Here’s the truth that is often overlooked when it comes to gut health:</strong></p><p>Gut health can be fixed for good by providing the body with one key thing it needs. That means <strong>less bloating, fewer food sensitivities, and less digestive discomfort</strong>, leading to lasting relief and a <strong>perfectly functioning gut.</strong></p>"
+            "text": "<p>Are you tired of <strong>constant bloating, digestive discomfort,<\/strong> and <strong>food sensitivities?<\/strong> For years, doctors recommended probiotics as the miracle cure for gut health. But shocking new research reveals they might be <strong>damaging the digestive system. <\/strong><\/p><p><strong>Here’s the truth that is often overlooked when it comes to gut health:<\/strong><\/p><p>Gut health can be fixed for good by providing the body with one key thing it needs. That means <strong>less bloating, fewer food sensitivities, and less digestive discomfort<\/strong>, leading to lasting relief and a <strong>perfectly functioning gut.<\/strong><\/p>"
           }
         },
         "text_L7bThh": {
@@ -149,7 +149,7 @@
             "padding_bottom": 0,
             "padding_top_mobile": 40,
             "padding_bottom_mobile": 0,
-            "text": "<h3><strong> </strong><em><strong>The Hidden Problem</strong></em><strong> Affecting Your Gut Every Day</strong></h3><p>Stress, processed foods, and the modern lifestyle are throwing your gut off balance every day.</p><p><strong>The result?</strong></p>"
+            "text": "<h3><strong> <\/strong><em><strong>The Hidden Problem<\/strong><\/em><strong> Affecting Your Gut Every Day<\/strong><\/h3><p>Stress, processed foods, and the modern lifestyle are throwing your gut off balance every day.<\/p><p><strong>The result?<\/strong><\/p>"
           }
         },
         "image_VycR4n": {
@@ -159,8 +159,8 @@
             "padding_bottom": 0,
             "padding_top_mobile": 24,
             "padding_bottom_mobile": 0,
-            "image": "shopify://shop_images/Frame_1982248681.png",
-            "image_mobile": "shopify://shop_images/Frame_198224868112.png",
+            "image": "shopify:\/\/shop_images\/Frame_1982248681.png",
+            "image_mobile": "shopify:\/\/shop_images\/Frame_198224868112.png",
             "use_original_ratio": true,
             "full_width_mobile": false
           }
@@ -172,7 +172,7 @@
             "padding_bottom": 0,
             "padding_top_mobile": 0,
             "padding_bottom_mobile": 0,
-            "image": "shopify://shop_images/Rectangle_114344.png",
+            "image": "shopify:\/\/shop_images\/Rectangle_114344.png",
             "use_original_ratio": false,
             "full_width_mobile": true
           }
@@ -184,7 +184,7 @@
             "padding_bottom": 0,
             "padding_top_mobile": 24,
             "padding_bottom_mobile": 0,
-            "text": "<h3><strong>Probiotics might only mask the symptoms and, over time, could lead to dependence on external bacteria.</strong></h3><p>The real problem gets worse and worse, and you’re trapped in a <strong>cycle of digestive discomfort with no end in sight.</strong></p><p><strong>We've been sold the story that probiotics are the magic fix for gut health.</strong></p><p>The truth is, probiotics introduce billions of foreign bacteria into your gut, but they <strong>don’t address the real root cause of gut problems. </strong>That’s the bad news nobody has been telling us.</p>"
+            "text": "<h3><strong>Probiotics might only mask the symptoms and, over time, could lead to dependence on external bacteria.<\/strong><\/h3><p>The real problem gets worse and worse, and you’re trapped in a <strong>cycle of digestive discomfort with no end in sight.<\/strong><\/p><p><strong>We've been sold the story that probiotics are the magic fix for gut health.<\/strong><\/p><p>The truth is, probiotics introduce billions of foreign bacteria into your gut, but they <strong>don’t address the real root cause of gut problems. <\/strong>That’s the bad news nobody has been telling us.<\/p>"
           }
         },
         "text_tTLQV3": {
@@ -194,7 +194,7 @@
             "padding_bottom": 0,
             "padding_top_mobile": 40,
             "padding_bottom_mobile": 0,
-            "text": "<h3><strong>The Revolutionary Discovery Changing Lives</strong></h3><p><strong><br/>But here’s the good news:</strong></p><p>A revolutionary new approach has just been discovered that<strong> helps your gut restore its own natural balance.</strong> And it’s already changing lives.</p><p>Research suggests that the gut can naturally rebalance itself if it has the<strong> one key ingredient that most people are missing</strong>—and it’s not probiotics.</p><p><strong>And prebiotics might be even worse</strong>, potentially contributing to bloating and gut discomfort.</p><p>Fad diets can help in the short term, but they don’t solve the real root cause of gut issues, and the problem just gets worse.</p>"
+            "text": "<h3><strong>The Revolutionary Discovery Changing Lives<\/strong><\/h3><p><strong><br\/>But here’s the good news:<\/strong><\/p><p>A revolutionary new approach has just been discovered that<strong> helps your gut restore its own natural balance.<\/strong> And it’s already changing lives.<\/p><p>Research suggests that the gut can naturally rebalance itself if it has the<strong> one key ingredient that most people are missing<\/strong>—and it’s not probiotics.<\/p><p><strong>And prebiotics might be even worse<\/strong>, potentially contributing to bloating and gut discomfort.<\/p><p>Fad diets can help in the short term, but they don’t solve the real root cause of gut issues, and the problem just gets worse.<\/p>"
           }
         },
         "image_KPWcgM": {
@@ -205,8 +205,8 @@
             "padding_bottom": 0,
             "padding_top_mobile": 24,
             "padding_bottom_mobile": 0,
-            "image": "shopify://shop_images/Frame_1982248683.png",
-            "image_mobile": "shopify://shop_images/Frame_1982248683_d957531e-7622-4e8a-bfa1-bb5a12bef3c7.png",
+            "image": "shopify:\/\/shop_images\/Frame_1982248683.png",
+            "image_mobile": "shopify:\/\/shop_images\/Frame_1982248683_d957531e-7622-4e8a-bfa1-bb5a12bef3c7.png",
             "use_original_ratio": true,
             "full_width_mobile": true
           }
@@ -218,7 +218,7 @@
             "padding_bottom": 0,
             "padding_top_mobile": 40,
             "padding_bottom_mobile": 0,
-            "text": "<h3><strong>Introducing Flavobiotics: The \"Gut Miracle\" Solution</strong></h3><p>After years of research, an expert team discovered a <strong>natural compound derived from citrus fruits </strong>that gives your gut exactly what it needs to heal itself.<br/><br/>This new “gut miracle” solution is called <strong>Flavobiotics.</strong></p>"
+            "text": "<h3><strong>Introducing Flavobiotics: The \"Gut Miracle\" Solution<\/strong><\/h3><p>After years of research, an expert team discovered a <strong>natural compound derived from citrus fruits <\/strong>that gives your gut exactly what it needs to heal itself.<br\/><br\/>This new “gut miracle” solution is called <strong>Flavobiotics.<\/strong><\/p>"
           }
         },
         "text_z8cWJg": {
@@ -229,7 +229,7 @@
             "padding_bottom": 0,
             "padding_top_mobile": 0,
             "padding_bottom_mobile": 0,
-            "text": "<p><strong>So how do you find a supplement that ticks all these boxes and actually delivers the results you need?</strong></p>"
+            "text": "<p><strong>So how do you find a supplement that ticks all these boxes and actually delivers the results you need?<\/strong><\/p>"
           }
         },
         "text_jkn36h": {
@@ -239,7 +239,7 @@
             "padding_bottom": 0,
             "padding_top_mobile": 40,
             "padding_bottom_mobile": 0,
-            "text": "<h4><strong>Provides Gut Health Support on Three Levels</strong></h4>"
+            "text": "<h4><strong>Provides Gut Health Support on Three Levels<\/strong><\/h4>"
           }
         },
         "image_z3XBjW": {
@@ -249,8 +249,8 @@
             "padding_bottom": 0,
             "padding_top_mobile": 24,
             "padding_bottom_mobile": 0,
-            "image": "shopify://shop_images/Group_1982248329.png",
-            "image_mobile": "shopify://shop_images/Group_1982248331.png",
+            "image": "shopify:\/\/shop_images\/Group_1982248329.png",
+            "image_mobile": "shopify:\/\/shop_images\/Group_1982248331.png",
             "use_original_ratio": true,
             "full_width_mobile": false
           }
@@ -262,7 +262,7 @@
             "padding_bottom": 0,
             "padding_top_mobile": 24,
             "padding_bottom_mobile": 0,
-            "text": "<p>Unlike probiotics that flood your gut with external bacteria, <strong>Flavobiotics</strong> work by supporting your body’s ability to <strong>naturally grow its own beneficial bacteria, significantly boosting it.</strong></p><p>They also <strong>reduce inflammation and strengthen the gut lining</strong>, which means less bloating and discomfort.</p><p>Clinical research suggests that Flavobiotics may address the root cause of common gut issues like bloating, poor digestion, and inflammation,<strong> helping your gut restore its natural balance</strong> and providing long-term relief rather than just masking symptoms.</p>"
+            "text": "<p>Unlike probiotics that flood your gut with external bacteria, <strong>Flavobiotics<\/strong> work by supporting your body’s ability to <strong>naturally grow its own beneficial bacteria, significantly boosting it.<\/strong><\/p><p>They also <strong>reduce inflammation and strengthen the gut lining<\/strong>, which means less bloating and discomfort.<\/p><p>Clinical research suggests that Flavobiotics may address the root cause of common gut issues like bloating, poor digestion, and inflammation,<strong> helping your gut restore its natural balance<\/strong> and providing long-term relief rather than just masking symptoms.<\/p>"
           }
         },
         "text_9y6xWV": {
@@ -272,7 +272,7 @@
             "padding_bottom": 0,
             "padding_top_mobile": 40,
             "padding_bottom_mobile": 0,
-            "text": "<h3><em><strong>Folqs</strong></em><strong>: The All-in-One Gut Health Solution</strong></h3><p><br/>The team behind the discovery of Flavobiotics worked with the <strong>Gut Health Department at Maastricht University</strong> in the Netherlands to develop a way to harness the power of this “gut miracle” in a way that anyone can use.</p><p>And after hundreds of hours of work, they’ve created <strong>MicrobiomeX®—a citrus flavonoid complex</strong> that uses the power of this new Flavobiotic discovery to restore your gut’s natural balance.</p><p>But here’s what makes this solution more powerful and permanent than anything else: gut health requires more than just a single solution.</p><p>That’s why this team of experts developed a <strong>multivitamin specifically focused on gut health</strong> but designed to<strong> support your entire body.</strong></p>"
+            "text": "<h3><em><strong>Folqs<\/strong><\/em><strong>: The All-in-One Gut Health Solution<\/strong><\/h3><p><br\/>The team behind the discovery of Flavobiotics worked with the <strong>Gut Health Department at Maastricht University<\/strong> in the Netherlands to develop a way to harness the power of this “gut miracle” in a way that anyone can use.<\/p><p>And after hundreds of hours of work, they’ve created <strong>MicrobiomeX®—a citrus flavonoid complex<\/strong> that uses the power of this new Flavobiotic discovery to restore your gut’s natural balance.<\/p><p>But here’s what makes this solution more powerful and permanent than anything else: gut health requires more than just a single solution.<\/p><p>That’s why this team of experts developed a <strong>multivitamin specifically focused on gut health<\/strong> but designed to<strong> support your entire body.<\/strong><\/p>"
           }
         },
         "text_jAzGNQ": {
@@ -282,7 +282,7 @@
             "padding_bottom": 0,
             "padding_top_mobile": 40,
             "padding_bottom_mobile": 0,
-            "text": "<h3><strong>Why </strong><em><strong>Folqs</strong></em><strong> Is the Perfect Solution</strong></h3><p>In addition to <strong>MicrobiomeX®</strong>, it’s powered by<strong> 40 other essential ingredients</strong> that work together to<strong> enhance both your gut and full-body wellness.</strong></p>"
+            "text": "<h3><strong>Why <\/strong><em><strong>Folqs<\/strong><\/em><strong> Is the Perfect Solution<\/strong><\/h3><p>In addition to <strong>MicrobiomeX®<\/strong>, it’s powered by<strong> 40 other essential ingredients<\/strong> that work together to<strong> enhance both your gut and full-body wellness.<\/strong><\/p>"
           }
         },
         "text_Vp8bcf": {
@@ -293,7 +293,7 @@
             "padding_bottom": 0,
             "padding_top_mobile": 24,
             "padding_bottom_mobile": 0,
-            "text": "<p><strong>Provides Gut Health Support on Three Levels</strong></p>"
+            "text": "<p><strong>Provides Gut Health Support on Three Levels<\/strong><\/p>"
           }
         },
         "image_iJiJT6": {
@@ -304,7 +304,7 @@
             "padding_bottom": 0,
             "padding_top_mobile": 24,
             "padding_bottom_mobile": 0,
-            "image": "shopify://shop_images/image_4.png",
+            "image": "shopify:\/\/shop_images\/image_4.png",
             "use_original_ratio": true,
             "full_width_mobile": true
           }
@@ -316,7 +316,7 @@
             "padding_bottom": 0,
             "padding_top_mobile": 24,
             "padding_bottom_mobile": 0,
-            "image": "shopify://shop_images/Group_1982248292.png",
+            "image": "shopify:\/\/shop_images\/Group_1982248292.png",
             "use_original_ratio": true,
             "full_width_mobile": true
           }
@@ -328,7 +328,7 @@
             "padding_bottom": 0,
             "padding_top_mobile": 24,
             "padding_bottom_mobile": 0,
-            "text": "<p>In addition to <strong>MicrobiomeX®</strong>, it’s powered by<strong> 40 other essential ingredients</strong> that work together to<strong> enhance both your gut and full-body wellness.</strong></p><p>Folqs includes key vitamins like <strong>Vitamin D for immune function, B vitamins for energy metabolism, and Zinc for repair and recovery</strong>—all crucial to ensuring your body operates in harmony. Medicinal mushrooms like <strong>Reishi, Chaga, and Lion’s Mane</strong> provide additional support for <strong>reducing inflammation and boosting overall vitality.</strong></p>"
+            "text": "<p>In addition to <strong>MicrobiomeX®<\/strong>, it’s powered by<strong> 40 other essential ingredients<\/strong> that work together to<strong> enhance both your gut and full-body wellness.<\/strong><\/p><p>Folqs includes key vitamins like <strong>Vitamin D for immune function, B vitamins for energy metabolism, and Zinc for repair and recovery<\/strong>—all crucial to ensuring your body operates in harmony. Medicinal mushrooms like <strong>Reishi, Chaga, and Lion’s Mane<\/strong> provide additional support for <strong>reducing inflammation and boosting overall vitality.<\/strong><\/p>"
           }
         },
         "button_kiCi99": {
@@ -351,7 +351,7 @@
             "padding_bottom": 0,
             "padding_top_mobile": 40,
             "padding_bottom_mobile": 0,
-            "text": "<h3><strong>Backed by Science and Trusted by Thousands</strong></h3><p>Folqs is more than just a multivitamin—it’s a <strong>science-backed solution</strong> for total body wellness. Every ingredient has been carefully selected by Marcelo to help your body function at its best, no matter what life throws at you.</p><p>With <em><strong>Folqs</strong></em>, you’re not just filling nutritional gaps. You’re giving your body everything it needs to <strong>restore</strong> its natural balance and <strong>thrive</strong>—all with just <strong>one single scoop</strong> per day.</p>"
+            "text": "<h3><strong>Backed by Science and Trusted by Thousands<\/strong><\/h3><p>Folqs is more than just a multivitamin—it’s a <strong>science-backed solution<\/strong> for total body wellness. Every ingredient has been carefully selected by Marcelo to help your body function at its best, no matter what life throws at you.<\/p><p>With <em><strong>Folqs<\/strong><\/em>, you’re not just filling nutritional gaps. You’re giving your body everything it needs to <strong>restore<\/strong> its natural balance and <strong>thrive<\/strong>—all with just <strong>one single scoop<\/strong> per day.<\/p>"
           }
         },
         "image_XT9GM6": {
@@ -362,7 +362,7 @@
             "padding_bottom": 0,
             "padding_top_mobile": 24,
             "padding_bottom_mobile": 0,
-            "image": "shopify://shop_images/Group_1982248300_1.png",
+            "image": "shopify:\/\/shop_images\/Group_1982248300_1.png",
             "use_original_ratio": false,
             "full_width_mobile": true
           }
@@ -375,7 +375,7 @@
             "padding_bottom": 0,
             "padding_top_mobile": 24,
             "padding_bottom_mobile": 0,
-            "text": "<p><strong>No more juggling multiple supplements. No more guessing about ingredient quality.</strong></p>"
+            "text": "<p><strong>No more juggling multiple supplements. No more guessing about ingredient quality.<\/strong><\/p>"
           }
         },
         "button_pNt7Qg": {
@@ -438,7 +438,7 @@
         "main_review_Fr3bfJ": {
           "type": "main_review",
           "settings": {
-            "image": "shopify://shop_images/content-731890_1.png",
+            "image": "shopify:\/\/shop_images\/content-731890_1.png",
             "title": "Incredible results just in weeks!",
             "text": "I was honestly surprised by how well Folqs worked. I didn’t expect a multivitamin with MicrobiomeX® to have such a big impact on my gut health, but within weeks, my bloating disappeared, and I feel so much better overall.",
             "name_location": "Sarah, 45 | Indianapolis, LC",
@@ -448,7 +448,7 @@
         "main_review_mLER4k": {
           "type": "main_review",
           "settings": {
-            "image": "shopify://shop_images/content-731890_1-1.png",
+            "image": "shopify:\/\/shop_images\/content-731890_1-1.png",
             "title": "Folqs cleared up the constant gut discomfort.",
             "text": "Folqs with MicrobiomeX® cleared up the constant gas and discomfort I’d been dealing with for years. After just a few weeks, my digestion felt smoother, and I noticed a big improvement in how I felt overall",
             "name_location": "Sarah, 45 | Indianapolis, LC",
@@ -458,29 +458,29 @@
         "secondary_review_FGGnDV": {
           "type": "secondary_review",
           "settings": {
-            "image": "shopify://shop_images/reviews-l-deck-1.png",
-            "image_mobile": "shopify://shop_images/reviews-l-mob-1.png"
+            "image": "shopify:\/\/shop_images\/reviews-l-deck-1.png",
+            "image_mobile": "shopify:\/\/shop_images\/reviews-l-mob-1.png"
           }
         },
         "secondary_review_4myKqc": {
           "type": "secondary_review",
           "settings": {
-            "image": "shopify://shop_images/reviews-l-deck-2.png",
-            "image_mobile": "shopify://shop_images/reviews-l-mob-2.png"
+            "image": "shopify:\/\/shop_images\/reviews-l-deck-2.png",
+            "image_mobile": "shopify:\/\/shop_images\/reviews-l-mob-2.png"
           }
         },
         "secondary_review_mxmEBH": {
           "type": "secondary_review",
           "settings": {
-            "image": "shopify://shop_images/reviews-l-deck-3.png",
-            "image_mobile": "shopify://shop_images/reviews-l-mob-3.png"
+            "image": "shopify:\/\/shop_images\/reviews-l-deck-3.png",
+            "image_mobile": "shopify:\/\/shop_images\/reviews-l-mob-3.png"
           }
         },
         "secondary_review_r9dtfX": {
           "type": "secondary_review",
           "settings": {
-            "image": "shopify://shop_images/reviews-l-deck-4.png",
-            "image_mobile": "shopify://shop_images/Group_1982248312_1.png"
+            "image": "shopify:\/\/shop_images\/reviews-l-deck-4.png",
+            "image_mobile": "shopify:\/\/shop_images\/Group_1982248312_1.png"
           }
         }
       },
@@ -494,9 +494,9 @@
       ],
       "settings": {
         "title": "What Real Users Are Saying About Folqs",
-        "text": "<p>Thousands of people have already made the switch to <strong>Folqs Multivitamin Longevity Powder</strong> and are experiencing <strong>real results:</strong></p>",
+        "text": "<p>Thousands of people have already made the switch to <strong>Folqs Multivitamin Longevity Powder<\/strong> and are experiencing <strong>real results:<\/strong><\/p>",
         "additional_title": "In fact, in a recent customer survey:",
-        "additional_text": "<p><strong>- 91%</strong> reported <strong>less bloating  </strong></p><p><strong>- 87% </strong>had more <strong>regular digestion  </strong></p><p><strong>- 84% </strong>experienced <strong>higher energy levels</strong></p>"
+        "additional_text": "<p><strong>- 91%<\/strong> reported <strong>less bloating  <\/strong><\/p><p><strong>- 87% <\/strong>had more <strong>regular digestion  <\/strong><\/p><p><strong>- 84% <\/strong>experienced <strong>higher energy levels<\/strong><\/p>"
       }
     },
     "article_banner_Mfe3hK": {
@@ -509,7 +509,7 @@
             "padding_bottom": 0,
             "padding_top_mobile": 0,
             "padding_bottom_mobile": 0,
-            "text": "<h3><strong>Imagine Life Without Digestive Discomfort</strong></h3><p><strong>Imagine living completely free of digestive discomfort for good.</strong></p><p><strong>No more bloating after meals.</strong></p><p><strong>You’ll enjoy smooth digestion, more energy, mental clarity, and even clearer skin.</strong></p>"
+            "text": "<h3><strong>Imagine Life Without Digestive Discomfort<\/strong><\/h3><p><strong>Imagine living completely free of digestive discomfort for good.<\/strong><\/p><p><strong>No more bloating after meals.<\/strong><\/p><p><strong>You’ll enjoy smooth digestion, more energy, mental clarity, and even clearer skin.<\/strong><\/p>"
           }
         },
         "image_PRBmFx": {
@@ -519,7 +519,7 @@
             "padding_bottom": 0,
             "padding_top_mobile": 24,
             "padding_bottom_mobile": 0,
-            "image": "shopify://shop_images/Rectangle_1143123.png",
+            "image": "shopify:\/\/shop_images\/Rectangle_1143123.png",
             "use_original_ratio": false,
             "full_width_mobile": true
           }
@@ -531,7 +531,7 @@
             "padding_bottom": 0,
             "padding_top_mobile": 24,
             "padding_bottom_mobile": 0,
-            "text": "<p>This approach works to reset your gut health by targeting the root cause, offering more than just a short-term solution.</p><h3><strong>Limited Stock Available—Act Now</strong></h3><p>Now is the time to reclaim your gut health.</p><p><strong>Due to high demand and the premium quality of our ingredients, supply is limited and selling out fast.</strong></p>"
+            "text": "<p>This approach works to reset your gut health by targeting the root cause, offering more than just a short-term solution.<\/p><h3><strong>Limited Stock Available—Act Now<\/strong><\/h3><p>Now is the time to reclaim your gut health.<\/p><p><strong>Due to high demand and the premium quality of our ingredients, supply is limited and selling out fast.<\/strong><\/p>"
           }
         },
         "image_Hh7EwM": {
@@ -541,8 +541,8 @@
             "padding_bottom": 0,
             "padding_top_mobile": 24,
             "padding_bottom_mobile": 0,
-            "image": "shopify://shop_images/Frame_1982248697.png",
-            "image_mobile": "shopify://shop_images/Frame_1982248698.png",
+            "image": "shopify:\/\/shop_images\/Frame_1982248697.png",
+            "image_mobile": "shopify:\/\/shop_images\/Frame_1982248698.png",
             "use_original_ratio": true,
             "full_width_mobile": false
           }
@@ -555,7 +555,7 @@
             "padding_bottom": 0,
             "padding_top_mobile": 24,
             "padding_bottom_mobile": 0,
-            "image": "shopify://shop_images/Frame_1982248950.png",
+            "image": "shopify:\/\/shop_images\/Frame_1982248950.png",
             "use_original_ratio": true,
             "full_width_mobile": true
           }
@@ -567,7 +567,7 @@
             "padding_bottom": 0,
             "padding_top_mobile": 24,
             "padding_bottom_mobile": 0,
-            "text": "<p>To get access to this all-natural gut rejuvenating solution, <strong>claim your supply now before it’s gone.</strong></p>"
+            "text": "<p>To get access to this all-natural gut rejuvenating solution, <strong>claim your supply now before it’s gone.<\/strong><\/p>"
           }
         },
         "text_xehMxa": {
@@ -578,7 +578,7 @@
             "padding_bottom": 0,
             "padding_top_mobile": 24,
             "padding_bottom_mobile": 0,
-            "text": "<h3><strong>Your Risk-Free Guarantee</strong></h3><p>The expert team behind this solution is so confident in their formula that they offer a <strong>365-day, 100% money-back guarantee.</strong></p>"
+            "text": "<h3><strong>Your Risk-Free Guarantee<\/strong><\/h3><p>The expert team behind this solution is so confident in their formula that they offer a <strong>365-day, 100% money-back guarantee.<\/strong><\/p>"
           }
         },
         "text_GqAB9N": {
@@ -589,7 +589,7 @@
             "padding_bottom": 0,
             "padding_top_mobile": 24,
             "padding_bottom_mobile": 0,
-            "text": "<h3><strong>Take Control of Your Health—Before It’s Too Late</strong></h3><p>You can keep using supplements that don’t deliver results, or worse, are harming your health… <strong>Or</strong> you can try <em><strong>Folqs Multivitamin Longevity Powder</strong></em> — the all-in-one solution that provides everything your body needs to function at its best.</p>"
+            "text": "<h3><strong>Take Control of Your Health—Before It’s Too Late<\/strong><\/h3><p>You can keep using supplements that don’t deliver results, or worse, are harming your health… <strong>Or<\/strong> you can try <em><strong>Folqs Multivitamin Longevity Powder<\/strong><\/em> — the all-in-one solution that provides everything your body needs to function at its best.<\/p>"
           }
         },
         "text_jp646y": {
@@ -600,7 +600,7 @@
             "padding_bottom": 0,
             "padding_top_mobile": 24,
             "padding_bottom_mobile": 0,
-            "text": "<p>But remember, <strong>there are only 123 units left,</strong> and they’re selling fast.</p>"
+            "text": "<p>But remember, <strong>there are only 123 units left,<\/strong> and they’re selling fast.<\/p>"
           }
         }
       },
@@ -629,11 +629,11 @@
         "padding_bottom": 24,
         "padding_top_mobile": 24,
         "padding_bottom_mobile": 24,
-        "link_title": "<p>Click Here to Claim Your</p><p>Folqs Supply Now Before It’s Gone</p>",
-        "link_title_mobile": "<p>Claim Your</p><p>Folqs Supply</p>",
+        "link_title": "<p>Click Here to Claim Your<\/p><p>Folqs Supply Now Before It’s Gone<\/p>",
+        "link_title_mobile": "<p>Claim Your<\/p><p>Folqs Supply<\/p>",
         "richtext": "",
-        "icon": "shopify://shop_images/shopping-cart-svgrepo-com-2_1.svg",
-        "link": "shopify://pages/offer"
+        "icon": "shopify:\/\/shop_images\/shopping-cart-svgrepo-com-2_1.svg",
+        "link": "shopify:\/\/pages\/offer"
       }
     },
     "article_banner_nAE3Qm": {
@@ -646,7 +646,7 @@
             "padding_bottom": 0,
             "padding_top_mobile": 24,
             "padding_bottom_mobile": 0,
-            "text": "<h3><strong>Your Risk-Free Guarantee</strong></h3><p>The expert team behind this solution is so confident in their formula that they offer a <strong>365-day, 100% money-back guarantee.</strong></p>"
+            "text": "<h3><strong>Your Risk-Free Guarantee<\/strong><\/h3><p>The expert team behind this solution is so confident in their formula that they offer a <strong>365-day, 100% money-back guarantee.<\/strong><\/p>"
           }
         }
       },
@@ -663,9 +663,9 @@
     "guarantee_Ma79ew": {
       "type": "guarantee",
       "settings": {
-        "image": "shopify://shop_images/Rectangle_399_f6ccda8b-9cfd-419a-8b4b-8050138a66c6.png",
+        "image": "shopify:\/\/shop_images\/Rectangle_399_f6ccda8b-9cfd-419a-8b4b-8050138a66c6.png",
         "title": "Try Folqs Completely Risk-Free with Our 365-Day Guarantee",
-        "text": "<p>Here’s the best part: Folqs comes with a <strong>365-day, 100% money-back guarantee</strong>. You can try it for a full year, and if you don’t feel more energy, sharper focus, or better health, we’ll refund every penny — <strong>no questions asked.</strong></p>",
+        "text": "<p>Here’s the best part: Folqs comes with a <strong>365-day, 100% money-back guarantee<\/strong>. You can try it for a full year, and if you don’t feel more energy, sharper focus, or better health, we’ll refund every penny — <strong>no questions asked.<\/strong><\/p>",
         "padding_top": 54,
         "padding_bottom": 54,
         "background_color": "#fef8ee",
@@ -683,7 +683,7 @@
             "padding_bottom": 0,
             "padding_top_mobile": 24,
             "padding_bottom_mobile": 0,
-            "text": "<p>You have an entire year to <strong>experience the lifechanging</strong> <strong>benefits</strong> of perfect gut health, risk-free.</p>"
+            "text": "<p>You have an entire year to <strong>experience the lifechanging<\/strong> <strong>benefits<\/strong> of perfect gut health, risk-free.<\/p>"
           }
         },
         "text_3bEwWV": {
@@ -693,7 +693,7 @@
             "padding_bottom": 0,
             "padding_top_mobile": 40,
             "padding_bottom_mobile": 0,
-            "text": "<h3><strong>This Is Your Crossroads Moment</strong></h3><p>Imagine waking up energized, with smooth digestion, clear thinking, and <strong>never worrying again about what you eat.</strong></p><p>Many users report<strong> less bloating, fatigue, and skin problems</strong> after just a few weeks of use.</p>"
+            "text": "<h3><strong>This Is Your Crossroads Moment<\/strong><\/h3><p>Imagine waking up energized, with smooth digestion, clear thinking, and <strong>never worrying again about what you eat.<\/strong><\/p><p>Many users report<strong> less bloating, fatigue, and skin problems<\/strong> after just a few weeks of use.<\/p>"
           }
         },
         "text_9F8FmJ": {
@@ -703,7 +703,7 @@
             "padding_bottom": 0,
             "padding_top_mobile": 24,
             "padding_bottom_mobile": 0,
-            "text": "<h3><strong>Take Action Now Before It's Too Late</strong></h3><p>Many users have wondered, “<strong>I’ve tried other gut supplements, why is this one going to work?”</strong></p><p><strong>And here’s why:</strong></p><p><em><strong>Folqs</strong></em> doesn’t just add bacteria. <strong>It helps your gut rebuild its own ecosystem.</strong></p><p><strong>It fixes gut problems at the source.</strong></p><p>One scoop includes everything your body needs to be energized and working at its best, and with our <strong>365-day guarantee</strong>, there’s zero risk in taking action right now.</p>"
+            "text": "<h3><strong>Take Action Now Before It's Too Late<\/strong><\/h3><p>Many users have wondered, “<strong>I’ve tried other gut supplements, why is this one going to work?”<\/strong><\/p><p><strong>And here’s why:<\/strong><\/p><p><em><strong>Folqs<\/strong><\/em> doesn’t just add bacteria. <strong>It helps your gut rebuild its own ecosystem.<\/strong><\/p><p><strong>It fixes gut problems at the source.<\/strong><\/p><p>One scoop includes everything your body needs to be energized and working at its best, and with our <strong>365-day guarantee<\/strong>, there’s zero risk in taking action right now.<\/p>"
           }
         }
       },
@@ -733,12 +733,12 @@
             "order_mobile": 2,
             "badge_text": "MOST POPULAR",
             "title": "3 Bags",
-            "image": "shopify://shop_images/Group_1982248332.png",
+            "image": "shopify:\/\/shop_images\/Group_1982248332.png",
             "price_original": "$89.99",
             "price_per_bag": "$59.00",
             "price_per_serving": "$0.89",
             "additional_info": "",
-            "usp_icon": "shopify://shop_images/shield-tick.svg",
+            "usp_icon": "shopify:\/\/shop_images\/shield-tick.svg",
             "usp_text": "365-Day Money-Back Guarantee",
             "recently_sold_text": "🔥Recently Sold: 371🔥"
           }
@@ -754,12 +754,12 @@
             "order_mobile": 1,
             "badge_text": "BIGGEST SAVINGS",
             "title": "6 Bags",
-            "image": "shopify://shop_images/Group_19822483312.png",
+            "image": "shopify:\/\/shop_images\/Group_19822483312.png",
             "price_original": "$89.99",
             "price_per_bag": "$49.00",
             "price_per_serving": "$0.89",
-            "additional_info": "<p><strong>+ FREE SHIPPING</strong></p>",
-            "usp_icon": "shopify://shop_images/shield-tick.svg",
+            "additional_info": "<p><strong>+ FREE SHIPPING<\/strong><\/p>",
+            "usp_icon": "shopify:\/\/shop_images\/shield-tick.svg",
             "usp_text": "365-Day Money-Back Guarantee",
             "recently_sold_text": "🔥Recently Sold: 594🔥"
           }
@@ -775,12 +775,12 @@
             "order_mobile": 3,
             "badge_text": "STARTER ORDER",
             "title": "1 Bag",
-            "image": "shopify://shop_images/Group_1415_490974f4-814f-432b-8594-7fe1d94e0b6a.png",
+            "image": "shopify:\/\/shop_images\/Group_1415_490974f4-814f-432b-8594-7fe1d94e0b6a.png",
             "price_original": "",
             "price_per_bag": "$89.00",
             "price_per_serving": "$0.89",
             "additional_info": "",
-            "usp_icon": "shopify://shop_images/shield-tick.svg",
+            "usp_icon": "shopify:\/\/shop_images\/shield-tick.svg",
             "usp_text": "365-Day Money-Back Guarantee",
             "recently_sold_text": "🔥Recently Sold: 76🔥"
           }
@@ -801,11 +801,11 @@
         "padding_bottom": 40,
         "padding_top_mobile": 24,
         "padding_bottom_mobile": 60,
-        "link_title": "<p>Click Here to Claim Your</p><p>Folqs Supply Now Before It’s Gone</p>",
-        "link_title_mobile": "<p>Claim Your</p><p>Folqs Supply</p>",
-        "richtext": "<p><strong>P.S.</strong> Remember, you’re covered by our <strong>365-day money-back guarantee</strong> — so there’s absolutely no risk in trying Folqs. But with limited stock, this could be your last chance to get it before it's sold out.</p>",
-        "icon": "shopify://shop_images/shopping-cart-svgrepo-com-2_1.svg",
-        "link": "shopify://pages/offer"
+        "link_title": "<p>Click Here to Claim Your<\/p><p>Folqs Supply Now Before It’s Gone<\/p>",
+        "link_title_mobile": "<p>Claim Your<\/p><p>Folqs Supply<\/p>",
+        "richtext": "<p><strong>P.S.<\/strong> Remember, you’re covered by our <strong>365-day money-back guarantee<\/strong> — so there’s absolutely no risk in trying Folqs. But with limited stock, this could be your last chance to get it before it's sold out.<\/p>",
+        "icon": "shopify:\/\/shop_images\/shopping-cart-svgrepo-com-2_1.svg",
+        "link": "shopify:\/\/pages\/offer"
       }
     },
     "list_icons_MkNnLH": {
@@ -814,31 +814,31 @@
         "icon_YJfyPa": {
           "type": "icon",
           "settings": {
-            "icon": "shopify://shop_images/FDA_5b4c3055-0ab9-422f-b965-d97413454fec.svg"
+            "icon": "shopify:\/\/shop_images\/FDA_5b4c3055-0ab9-422f-b965-d97413454fec.svg"
           }
         },
         "icon_RNd6EW": {
           "type": "icon",
           "settings": {
-            "icon": "shopify://shop_images/nsf_2b327b21-b6ad-4f2c-853a-8fb731059938.svg"
+            "icon": "shopify:\/\/shop_images\/nsf_2b327b21-b6ad-4f2c-853a-8fb731059938.svg"
           }
         },
         "icon_maHBTA": {
           "type": "icon",
           "settings": {
-            "icon": "shopify://shop_images/Group_ea569bf0-e3f4-4713-b68a-6f63027a9806.svg"
+            "icon": "shopify:\/\/shop_images\/Group_ea569bf0-e3f4-4713-b68a-6f63027a9806.svg"
           }
         },
         "icon_WXJg4y": {
           "type": "icon",
           "settings": {
-            "icon": "shopify://shop_images/gmp_4f883f47-9458-45b5-81bb-7f739338a686.svg"
+            "icon": "shopify:\/\/shop_images\/gmp_4f883f47-9458-45b5-81bb-7f739338a686.svg"
           }
         },
         "icon_dfirRx": {
           "type": "icon",
           "settings": {
-            "icon": "shopify://shop_images/tested.svg"
+            "icon": "shopify:\/\/shop_images\/tested.svg"
           }
         }
       },
@@ -856,7 +856,7 @@
         "padding_top_mobile": 30,
         "padding_bottom_mobile": 60,
         "title": "",
-        "richtext": "<p><strong>P.S. </strong>Remember, you’re covered by our <strong>365-day money-back guarantee</strong> — so there’s absolutely no risk in trying Folqs. But with limited stock, this could be your last chance to get it before it's sold out.</p>",
+        "richtext": "<p><strong>P.S. <\/strong>Remember, you’re covered by our <strong>365-day money-back guarantee<\/strong> — so there’s absolutely no risk in trying Folqs. But with limited stock, this could be your last chance to get it before it's sold out.<\/p>",
         "background": ""
       }
     }

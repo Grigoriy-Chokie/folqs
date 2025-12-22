@@ -24,9 +24,9 @@
         "title_6H8HGR": {
           "type": "title",
           "settings": {
-            "text": "<p>An Ancient Superfood for Modern Lifestyle</p>",
+            "text": "<p>An Ancient Superfood for Modern Lifestyle<\/p>",
             "highlighted_color": "#005eb8",
-            "text_mobile": "<strong>An Ancient Superfood </strong>for Modern Lifestyle"
+            "text_mobile": "<strong>An Ancient Superfood <\/strong>for Modern Lifestyle"
           }
         },
         "reviews_PMt77M": {
@@ -42,7 +42,7 @@
         "feature_z6BHRN": {
           "type": "feature",
           "settings": {
-            "icon": "shopify://shop_images/heart_1-1.svg",
+            "icon": "shopify:\/\/shop_images\/heart_1-1.svg",
             "title": "Helps \nImmunity",
             "title_mobile": "",
             "text": "",
@@ -52,7 +52,7 @@
         "feature_BUNiay": {
           "type": "feature",
           "settings": {
-            "icon": "shopify://shop_images/human-brain_1-1.svg",
+            "icon": "shopify:\/\/shop_images\/human-brain_1-1.svg",
             "title": "Supports \nGut Health",
             "title_mobile": "",
             "text": "",
@@ -62,7 +62,7 @@
         "feature_3EwyDH": {
           "type": "feature",
           "settings": {
-            "icon": "shopify://shop_images/health-podcast_1-1.png",
+            "icon": "shopify:\/\/shop_images\/health-podcast_1-1.png",
             "title": "Nurtures Skin \nand Hair",
             "title_mobile": "Nurtures \nSkin and Hair",
             "text": "",
@@ -134,7 +134,7 @@
           "type": "rating",
           "disabled": true,
           "settings": {
-            "rating_image": "shopify://shop_images/Frame_1982248617_6ec22493-8a52-4a66-b741-b766e092d8e6.png",
+            "rating_image": "shopify:\/\/shop_images\/Frame_1982248617_6ec22493-8a52-4a66-b741-b766e092d8e6.png",
             "rating_text": "over 1,571 Five Star Reviews",
             "rating_text_mobile": "over 1,571 Reviews"
           }
@@ -149,19 +149,19 @@
         "image_6xEbkd": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/DIA2973_1_abf99200-21db-4f45-87ab-95cea36d4924.jpg"
+            "image": "shopify:\/\/shop_images\/DIA2973_1_abf99200-21db-4f45-87ab-95cea36d4924.jpg"
           }
         },
         "image_rCmRK4": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/2_de69781a-7174-4619-b945-6410d87fbc47.png"
+            "image": "shopify:\/\/shop_images\/2_de69781a-7174-4619-b945-6410d87fbc47.png"
           }
         },
         "image_VyQdck": {
           "type": "image",
           "settings": {
-            "image": "shopify://shop_images/Post2.png"
+            "image": "shopify:\/\/shop_images\/Post2.png"
           }
         }
       },
@@ -222,35 +222,35 @@
           "type": "item",
           "settings": {
             "question": "Health Benefits",
-            "answer": "<ul><li>Supports Immune Health</li><li>Promotes Gut Health and Digestive Balance</li><li>Aids in Post-Workout Recovery and Tissue Support</li><li>Helps Maintain a Healthy Microbiome</li><li>Encourages Joint and Muscle Wellness</li><li>Promotes Skin, Hair, and Nail Vitality</li><li>Supports Healthy Aging and Longevity</li><li>Enhances Overall Resilience and Wellness<br/><br/>*Individual Results May Vary</li></ul>"
+            "answer": "<ul><li>Supports Immune Health<\/li><li>Promotes Gut Health and Digestive Balance<\/li><li>Aids in Post-Workout Recovery and Tissue Support<\/li><li>Helps Maintain a Healthy Microbiome<\/li><li>Encourages Joint and Muscle Wellness<\/li><li>Promotes Skin, Hair, and Nail Vitality<\/li><li>Supports Healthy Aging and Longevity<\/li><li>Enhances Overall Resilience and Wellness<br\/><br\/>*Individual Results May Vary<\/li><\/ul>"
           }
         },
         "item_Ejjype": {
           "type": "item",
           "settings": {
             "question": "How To Use",
-            "answer": "<p>Simply mix <strong>one scoop</strong> of Folqs Bovine Colostrum<strong> with 6–8 oz of cold or room-temperature water, coffee, or a smoothie, </strong>and stir until it’s fully blended. Prefer a quicker option? </p><p>Take it dry by scooping the powder directly into your mouth, letting it interact with your mucosal surfaces before swallowing. Just avoid hot liquids to keep its powerful bioactive compounds intact. Take it anytime — whatever works best for you!</p>"
+            "answer": "<p>Simply mix <strong>one scoop<\/strong> of Folqs Bovine Colostrum<strong> with 6–8 oz of cold or room-temperature water, coffee, or a smoothie, <\/strong>and stir until it’s fully blended. Prefer a quicker option? <\/p><p>Take it dry by scooping the powder directly into your mouth, letting it interact with your mucosal surfaces before swallowing. Just avoid hot liquids to keep its powerful bioactive compounds intact. Take it anytime — whatever works best for you!<\/p>"
           }
         },
         "item_FcyMYd": {
           "type": "item",
           "settings": {
             "question": "Product Features",
-            "answer": "<ul><li>First-Day Milking</li><li>Full-Fat, Non-Stripped</li><li>Grass-Fed Cows – USA Farms</li><li>Calf-First Ethical Sourcing</li><li>Rich in Immunoglobulins (IgG, IgA)</li><li>High in Growth Factors</li><li>Loaded with Prebiotics and Proline-Rich Polypeptides (PRPs)</li><li>No Artificial Additives or Fillers</li><li>Third-Party Tested for Purity and Quality</li></ul><p><em>*Individual results may vary. These statements are not intended to diagnose, treat, cure, or prevent any disease.</em></p>"
+            "answer": "<ul><li>First-Day Milking<\/li><li>Full-Fat, Non-Stripped<\/li><li>Grass-Fed Cows – USA Farms<\/li><li>Calf-First Ethical Sourcing<\/li><li>Rich in Immunoglobulins (IgG, IgA)<\/li><li>High in Growth Factors<\/li><li>Loaded with Prebiotics and Proline-Rich Polypeptides (PRPs)<\/li><li>No Artificial Additives or Fillers<\/li><li>Third-Party Tested for Purity and Quality<\/li><\/ul><p><em>*Individual results may vary. These statements are not intended to diagnose, treat, cure, or prevent any disease.<\/em><\/p>"
           }
         },
         "item_y9ChVc": {
           "type": "item",
           "settings": {
             "question": "Ingredients",
-            "answer": "<p><strong>- Immunoglobulins (IgG, IgA, IgM)</strong>: Naturally occurring proteins that <strong>support overall wellness</strong></p><p><strong>- Proline-Rich Polypeptides (PRPs)</strong>: <strong>Help maintain immune balance</strong></p><p><strong>- Lactoferrin</strong>: A natural protein <strong>known for its supportive properties</strong></p><p><strong>- Growth Factors (IGF-1, IGF-2)</strong>: Naturally occurring compounds that <strong>support recovery</strong></p><p><strong>- Cytokines</strong>: <strong>Naturally present</strong> signaling molecules</p><p><strong>- Prebiotics</strong>: <strong>Naturally support</strong> digestive health</p><p><strong>- Vitamins and Minerals</strong>: Provide <strong>essential nutrients</strong> for general health</p><p><strong>- Essential Amino Acids</strong>: Building blocks that <strong>support the body’s natural processes</strong></p><p><strong>- Fatty Acids</strong>: <strong>Naturally contribute</strong> to energy and wellness</p><p><em>*Individual results may vary. These statements are not intended to diagnose, treat, cure, or prevent any disease.</em></p>"
+            "answer": "<p><strong>- Immunoglobulins (IgG, IgA, IgM)<\/strong>: Naturally occurring proteins that <strong>support overall wellness<\/strong><\/p><p><strong>- Proline-Rich Polypeptides (PRPs)<\/strong>: <strong>Help maintain immune balance<\/strong><\/p><p><strong>- Lactoferrin<\/strong>: A natural protein <strong>known for its supportive properties<\/strong><\/p><p><strong>- Growth Factors (IGF-1, IGF-2)<\/strong>: Naturally occurring compounds that <strong>support recovery<\/strong><\/p><p><strong>- Cytokines<\/strong>: <strong>Naturally present<\/strong> signaling molecules<\/p><p><strong>- Prebiotics<\/strong>: <strong>Naturally support<\/strong> digestive health<\/p><p><strong>- Vitamins and Minerals<\/strong>: Provide <strong>essential nutrients<\/strong> for general health<\/p><p><strong>- Essential Amino Acids<\/strong>: Building blocks that <strong>support the body’s natural processes<\/strong><\/p><p><strong>- Fatty Acids<\/strong>: <strong>Naturally contribute<\/strong> to energy and wellness<\/p><p><em>*Individual results may vary. These statements are not intended to diagnose, treat, cure, or prevent any disease.<\/em><\/p>"
           }
         },
         "item_hX6rdx": {
           "type": "item",
           "settings": {
             "question": "No Artificial Anything",
-            "answer": "<p>\t•\tNo Hormones</p><p>\t•\tNo Antibiotics</p><p>\t•\tNo Additives or Fillers</p><p>\t•\tNo Artificial Flavors or Sweeteners</p><p>\t•\tNo GMO Ingredients</p><p>\t•\tNo Preservatives</p><p>\t•\tNo High-Heat Processing</p><p>\t•\tNo Pesticides or Harmful Chemicals</p><p>\t•\tNo Synthetic Ingredients</p>"
+            "answer": "<p>\t•\tNo Hormones<\/p><p>\t•\tNo Antibiotics<\/p><p>\t•\tNo Additives or Fillers<\/p><p>\t•\tNo Artificial Flavors or Sweeteners<\/p><p>\t•\tNo GMO Ingredients<\/p><p>\t•\tNo Preservatives<\/p><p>\t•\tNo High-Heat Processing<\/p><p>\t•\tNo Pesticides or Harmful Chemicals<\/p><p>\t•\tNo Synthetic Ingredients<\/p>"
           }
         },
         "item_DiP99h": {
@@ -258,7 +258,7 @@
           "disabled": true,
           "settings": {
             "question": "Quality Control",
-            "answer": "<p>Lorem ipsum dolor sit amet consectetur. Ultricies ornare adipiscing lorem amet sit. Consequat amet eu sed imperdiet nec dui. Tempus eget nec nulla diam donec dolor convallis ultrices diam.</p>"
+            "answer": "<p>Lorem ipsum dolor sit amet consectetur. Ultricies ornare adipiscing lorem amet sit. Consequat amet eu sed imperdiet nec dui. Tempus eget nec nulla diam donec dolor convallis ultrices diam.<\/p>"
           }
         }
       },
@@ -295,7 +295,7 @@
         "text_twJwE6": {
           "type": "text",
           "settings": {
-            "text": "<p>Colostrum is nature’s very first gift—an incredibly nutrient-rich milk produced by mammals to help newborns get a strong, healthy start. </p><p>Brimming with essential immunoglobulins, growth factors, and nutrients, it <strong>may support immunity</strong>, <strong>aid digestion</strong>, and <strong>encourage the body’s natural recovery processes</strong>. For people, colostrum can offer similar benefits, potentially <strong>helping to bolster</strong> our defenses, <strong>promote</strong> gut health, and <strong>nurture</strong> overall wellness in a natural way.</p>",
+            "text": "<p>Colostrum is nature’s very first gift—an incredibly nutrient-rich milk produced by mammals to help newborns get a strong, healthy start. <\/p><p>Brimming with essential immunoglobulins, growth factors, and nutrients, it <strong>may support immunity<\/strong>, <strong>aid digestion<\/strong>, and <strong>encourage the body’s natural recovery processes<\/strong>. For people, colostrum can offer similar benefits, potentially <strong>helping to bolster<\/strong> our defenses, <strong>promote<\/strong> gut health, and <strong>nurture<\/strong> overall wellness in a natural way.<\/p>",
             "text_style": "body"
           }
         }
@@ -305,8 +305,8 @@
         "text_twJwE6"
       ],
       "settings": {
-        "video": "shopify://files/videos/d1f4r.mp4",
-        "image": "shopify://shop_images/Video_relative.png",
+        "video": "shopify:\/\/files\/videos\/d1f4r.mp4",
+        "image": "shopify:\/\/shop_images\/Video_relative.png",
         "image_fit": "cover",
         "height": "medium",
         "desktop_image_width": "medium",
@@ -342,35 +342,35 @@
         "block_chQK8M": {
           "type": "block",
           "settings": {
-            "heading": "<p>Helps Strengthen Immunity</p>",
+            "heading": "<p>Helps Strengthen Immunity<\/p>",
             "subheading": ""
           }
         },
         "block_VaAzUm": {
           "type": "block",
           "settings": {
-            "heading": "<p>Supports Gut Health</p>",
+            "heading": "<p>Supports Gut Health<\/p>",
             "subheading": ""
           }
         },
         "block_HxGgyj": {
           "type": "block",
           "settings": {
-            "heading": "<p>Eases Occasional Bloating</p>",
+            "heading": "<p>Eases Occasional Bloating<\/p>",
             "subheading": ""
           }
         },
         "block_XGB9n8": {
           "type": "block",
           "settings": {
-            "heading": "<p>Encourages Healthy Hair & Nails</p>",
+            "heading": "<p>Encourages Healthy Hair & Nails<\/p>",
             "subheading": ""
           }
         },
         "block_yFBWUF": {
           "type": "block",
           "settings": {
-            "heading": "<p>Promotes Focus & Mood</p>",
+            "heading": "<p>Promotes Focus & Mood<\/p>",
             "subheading": ""
           }
         }
@@ -383,11 +383,11 @@
         "block_yFBWUF"
       ],
       "settings": {
-        "title": "<p>Benefits You Can See</p>",
+        "title": "<p>Benefits You Can See<\/p>",
         "title_mobile": "",
         "title_position": "top",
-        "image": "shopify://shop_images/530fa0afbf4a55f46d7cba46c5dac806.jpg",
-        "icon_blocks": "shopify://shop_images/check_1_05310d80-5154-44ed-81e8-16261e39af0f.svg",
+        "image": "shopify:\/\/shop_images\/530fa0afbf4a55f46d7cba46c5dac806.jpg",
+        "icon_blocks": "shopify:\/\/shop_images\/check_1_05310d80-5154-44ed-81e8-16261e39af0f.svg",
         "button_label": "Try Folqs",
         "button_url": "",
         "button_background": "#FF6A13",
@@ -410,7 +410,7 @@
         "text_pLfjiP": {
           "type": "text",
           "settings": {
-            "text": "<p>Think of your body as a well-protected fortress, with a natural barrier lining your sinuses, lungs, and gut—your first line of defense against everyday pollutants and processed foods. Over time, this barrier can weaken, allowing unwanted particles to slip through.</p><p><strong><br/>Folqs Colostrum</strong> helps reinforce that natural protection. It’s formulated with <strong>prebiotics</strong> to nurture gut balance, <strong>immunoglobulins</strong> to support your immune defenses, and <strong>antioxidants</strong> to maintain healthy cells. Together, these nutrients support your body’s natural barriers, so you can feel stronger, healthier, and more resilient.</p>",
+            "text": "<p>Think of your body as a well-protected fortress, with a natural barrier lining your sinuses, lungs, and gut—your first line of defense against everyday pollutants and processed foods. Over time, this barrier can weaken, allowing unwanted particles to slip through.<\/p><p><strong><br\/>Folqs Colostrum<\/strong> helps reinforce that natural protection. It’s formulated with <strong>prebiotics<\/strong> to nurture gut balance, <strong>immunoglobulins<\/strong> to support your immune defenses, and <strong>antioxidants<\/strong> to maintain healthy cells. Together, these nutrients support your body’s natural barriers, so you can feel stronger, healthier, and more resilient.<\/p>",
             "text_style": "body"
           }
         }
@@ -420,8 +420,8 @@
         "text_pLfjiP"
       ],
       "settings": {
-        "video": "shopify://files/videos/colostrum.mp4",
-        "image": "shopify://shop_images/Frame_1982248665.png",
+        "video": "shopify:\/\/files\/videos\/colostrum.mp4",
+        "image": "shopify:\/\/shop_images\/Frame_1982248665.png",
         "image_fit": "cover",
         "height": "adapt",
         "desktop_image_width": "medium",
@@ -453,7 +453,7 @@
         "text_ncQHnG": {
           "type": "text",
           "settings": {
-            "text": "<p>At Folqs, we believe in delivering colostrum just as nature intended. Our colostrum is collected from grass-fed cows in the U.S. during the precious first-day milking, when it contains a higher concentration of nutrients and bioactive compounds. Unlike other brands, we keep it full-fat and unstripped, preserving its natural profile.</p><p><br/>We also source our colostrum responsibly with a commitment to putting calves first, ensuring they receive what they need. By maintaining its integrity, we’re able to share colostrum that <strong>supports immunity</strong>, <strong>nurtures gut health</strong>, and <strong>encourages overall wellness</strong>—straight from nature.</p>",
+            "text": "<p>At Folqs, we believe in delivering colostrum just as nature intended. Our colostrum is collected from grass-fed cows in the U.S. during the precious first-day milking, when it contains a higher concentration of nutrients and bioactive compounds. Unlike other brands, we keep it full-fat and unstripped, preserving its natural profile.<\/p><p><br\/>We also source our colostrum responsibly with a commitment to putting calves first, ensuring they receive what they need. By maintaining its integrity, we’re able to share colostrum that <strong>supports immunity<\/strong>, <strong>nurtures gut health<\/strong>, and <strong>encourages overall wellness<\/strong>—straight from nature.<\/p>",
             "text_style": "body"
           }
         }
@@ -463,7 +463,7 @@
         "text_ncQHnG"
       ],
       "settings": {
-        "image": "shopify://shop_images/Video_relative_1.png",
+        "image": "shopify:\/\/shop_images\/Video_relative_1.png",
         "image_fit": "cover",
         "height": "adapt",
         "desktop_image_width": "medium",
@@ -488,7 +488,7 @@
         "ups_L4fVJF": {
           "type": "ups",
           "settings": {
-            "icon": "shopify://shop_images/shield-tick_1489816c-d5ec-4487-8536-ca7a6a30724c.svg",
+            "icon": "shopify:\/\/shop_images\/shield-tick_1489816c-d5ec-4487-8536-ca7a6a30724c.svg",
             "title": "90-Day Money-Back Guarantee"
           }
         }
@@ -518,10 +518,10 @@
         "row_4QBeDH": {
           "type": "row",
           "settings": {
-            "image": "shopify://shop_images/Screenshot_2024-12-02_at_7.52.26_PM.png",
+            "image": "shopify:\/\/shop_images\/Screenshot_2024-12-02_at_7.52.26_PM.png",
             "caption": "",
             "heading": "Feel Lighter and More Balanced",
-            "text": "<p>Many users experience a lighter, more comfortable gut. <strong>†</strong></p>",
+            "text": "<p>Many users experience a lighter, more comfortable gut. <strong>†<\/strong><\/p>",
             "button_label": "",
             "button_link": ""
           }
@@ -529,10 +529,10 @@
         "row_6ar68z": {
           "type": "row",
           "settings": {
-            "image": "shopify://shop_images/Screenshot_2024-12-02_at_7.52.54_PM.png",
+            "image": "shopify:\/\/shop_images\/Screenshot_2024-12-02_at_7.52.54_PM.png",
             "caption": "",
             "heading": "Promote Stronger, Fuller-Looking Hair",
-            "text": "<p>Helps nourish hair, supporting stronger, healthier-looking strands and a more vibrant appearance. <strong>†</strong></p>",
+            "text": "<p>Helps nourish hair, supporting stronger, healthier-looking strands and a more vibrant appearance. <strong>†<\/strong><\/p>",
             "button_label": "",
             "button_link": ""
           }
@@ -540,10 +540,10 @@
         "row_NUMJq6": {
           "type": "row",
           "settings": {
-            "image": "shopify://shop_images/Screenshot_2024-12-02_at_7.53.31_PM.png",
+            "image": "shopify:\/\/shop_images\/Screenshot_2024-12-02_at_7.53.31_PM.png",
             "caption": "",
             "heading": "Nourish for Healthy-Looking Skin",
-            "text": "<p>Supports skin health, helping it appear more balanced and radiant. <strong>†</strong></p>",
+            "text": "<p>Supports skin health, helping it appear more balanced and radiant. <strong>†<\/strong><\/p>",
             "button_label": "",
             "button_link": ""
           }
@@ -672,11 +672,11 @@
       ],
       "settings": {
         "title": "Why Folqs is a Better Choice",
-        "image": "shopify://shop_images/Group_1982248324_d4e82434-e4d7-4c4d-a9ae-d7972bbc4b77.png",
-        "image_mobile": "shopify://shop_images/Group_1982248324_d4e82434-e4d7-4c4d-a9ae-d7972bbc4b77.png",
+        "image": "shopify:\/\/shop_images\/Group_1982248324_d4e82434-e4d7-4c4d-a9ae-d7972bbc4b77.png",
+        "image_mobile": "shopify:\/\/shop_images\/Group_1982248324_d4e82434-e4d7-4c4d-a9ae-d7972bbc4b77.png",
         "button_text": "Try it Risk-Free",
         "button_url": "#shopify-section-template--17100723355702__landing_product_alternative_xejNda",
-        "icon": "shopify://shop_images/shield-tick_1489816c-d5ec-4487-8536-ca7a6a30724c.svg",
+        "icon": "shopify:\/\/shop_images\/shield-tick_1489816c-d5ec-4487-8536-ca7a6a30724c.svg",
         "subtext": "90-Day Money-Back Guarantee",
         "padding_top": 50,
         "padding_bottom": 50,
@@ -690,7 +690,7 @@
         "review_iMDjdG": {
           "type": "review",
           "settings": {
-            "video": "shopify://files/videos/Colostrum Powder - Folqs (1)_6fa9a225-5b35-4c3c-a36d-53b5a5ecb901.mov",
+            "video": "shopify:\/\/files\/videos\/Colostrum Powder - Folqs (1)_6fa9a225-5b35-4c3c-a36d-53b5a5ecb901.mov",
             "author": "John Dou",
             "rating": 5
           }
@@ -698,7 +698,7 @@
         "review_Bi4fz8": {
           "type": "review",
           "settings": {
-            "video": "shopify://files/videos/content-1024784_a3de2e32-4ef1-4aa8-a1df-4074e92b1bc3.mp4",
+            "video": "shopify:\/\/files\/videos\/content-1024784_a3de2e32-4ef1-4aa8-a1df-4074e92b1bc3.mp4",
             "author": "John Dou",
             "rating": 5
           }
@@ -706,7 +706,7 @@
         "review_jiwCiF": {
           "type": "review",
           "settings": {
-            "video": "shopify://files/videos/copy_F06D3DD4-834C-4055-B979-88D46739B332_b9fe5f0e-224d-4527-bce0-745b66c8ef3e.mov",
+            "video": "shopify:\/\/files\/videos\/copy_F06D3DD4-834C-4055-B979-88D46739B332_b9fe5f0e-224d-4527-bce0-745b66c8ef3e.mov",
             "author": "John Dou",
             "rating": 5
           }
@@ -714,7 +714,7 @@
         "review_CkjbYn": {
           "type": "review",
           "settings": {
-            "video": "shopify://files/videos/folqsvideo_cae820ff-cdca-4b2d-b6d4-59fb94b170aa.mp4",
+            "video": "shopify:\/\/files\/videos\/folqsvideo_cae820ff-cdca-4b2d-b6d4-59fb94b170aa.mp4",
             "author": "John Dou",
             "rating": 5
           }
@@ -752,7 +752,7 @@
           "type": "review",
           "settings": {
             "type_buyer": false,
-            "video": "shopify://files/videos/Colostrum Powder - Folqs (1).mov",
+            "video": "shopify:\/\/files\/videos\/Colostrum Powder - Folqs (1).mov",
             "name": "",
             "rating_buyer": 5,
             "speed_anim": 5
@@ -762,7 +762,7 @@
           "type": "review",
           "settings": {
             "type_buyer": false,
-            "video": "shopify://files/videos/content-1024784.mp4",
+            "video": "shopify:\/\/files\/videos\/content-1024784.mp4",
             "name": "",
             "rating_buyer": 5,
             "speed_anim": 5
@@ -772,7 +772,7 @@
           "type": "review",
           "settings": {
             "type_buyer": true,
-            "video": "shopify://files/videos/copy_F06D3DD4-834C-4055-B979-88D46739B332.mov",
+            "video": "shopify:\/\/files\/videos\/copy_F06D3DD4-834C-4055-B979-88D46739B332.mov",
             "name": "Elaine G.",
             "rating_buyer": 5,
             "speed_anim": 30
@@ -782,7 +782,7 @@
           "type": "review",
           "settings": {
             "type_buyer": true,
-            "video": "shopify://files/videos/folqsvideo.mp4",
+            "video": "shopify:\/\/files\/videos\/folqsvideo.mp4",
             "name": "Caitlin W.",
             "rating_buyer": 5,
             "speed_anim": 60
@@ -793,7 +793,7 @@
           "disabled": true,
           "settings": {
             "type_buyer": false,
-            "video": "shopify://files/videos/compressed-video5.mp4",
+            "video": "shopify:\/\/files\/videos\/compressed-video5.mp4",
             "name": "",
             "rating_buyer": 5,
             "speed_anim": 5
@@ -804,7 +804,7 @@
           "disabled": true,
           "settings": {
             "type_buyer": false,
-            "video": "shopify://files/videos/compressed-video6.mp4",
+            "video": "shopify:\/\/files\/videos\/compressed-video6.mp4",
             "name": "",
             "rating_buyer": 5,
             "speed_anim": 5
@@ -844,7 +844,7 @@
           "type": "review",
           "settings": {
             "title": "Goodbye to Bloating",
-            "body": "<p>I’ve been using this for a month now, and the difference is incredible. My digestion feels so much better, and I no longer deal with the constant bloating I used to have. This is now a permanent part of my routine!</p>",
+            "body": "<p>I’ve been using this for a month now, and the difference is incredible. My digestion feels so much better, and I no longer deal with the constant bloating I used to have. This is now a permanent part of my routine!<\/p>",
             "author": "Sara S.",
             "verified": "Verified Buyer"
           }
@@ -853,7 +853,7 @@
           "type": "review",
           "settings": {
             "title": "Energy All Day!",
-            "body": "<p>As a mom of three, I’m always exhausted and running on fumes. I started taking this hoping for a small boost, but I’ve been amazed—my energy levels are steady all day, and I even feel like I’m sleeping better!</p>",
+            "body": "<p>As a mom of three, I’m always exhausted and running on fumes. I started taking this hoping for a small boost, but I’ve been amazed—my energy levels are steady all day, and I even feel like I’m sleeping better!<\/p>",
             "author": "Jessica M.",
             "verified": "Verified Buyer"
           }
@@ -862,7 +862,7 @@
           "type": "review",
           "settings": {
             "title": "Skin Looks Glowing",
-            "body": "<p>My skin has always been super sensitive, and I didn’t expect this to make such a difference. After a month, I’ve noticed fewer breakouts and a healthy glow I haven’t seen in years. It’s like a little secret weapon for self-care!</p>",
+            "body": "<p>My skin has always been super sensitive, and I didn’t expect this to make such a difference. After a month, I’ve noticed fewer breakouts and a healthy glow I haven’t seen in years. It’s like a little secret weapon for self-care!<\/p>",
             "author": "Maria S.",
             "verified": "Verified Buyer"
           }
@@ -871,7 +871,7 @@
           "type": "review",
           "settings": {
             "title": "Comfort After Meals",
-            "body": "<p>I’m retired and have been dealing with occasional gut discomfort for years. This has really helped me feel more balanced and comfortable, especially after meals. I feel like I can enjoy food again without worrying!</p>",
+            "body": "<p>I’m retired and have been dealing with occasional gut discomfort for years. This has really helped me feel more balanced and comfortable, especially after meals. I feel like I can enjoy food again without worrying!<\/p>",
             "author": "Frank D.",
             "verified": "Verified Buyer"
           }
@@ -880,7 +880,7 @@
           "type": "review",
           "settings": {
             "title": "Recovery Made Easier",
-            "body": "<p>I’m a fitness coach, and I’ve been using this to support my recovery after workouts. Not only do I feel less sore, but my overall energy and focus have improved—I recommend it to my clients now too!</p>",
+            "body": "<p>I’m a fitness coach, and I’ve been using this to support my recovery after workouts. Not only do I feel less sore, but my overall energy and focus have improved—I recommend it to my clients now too!<\/p>",
             "author": "Taylor S.",
             "verified": "Verified Buyer"
           }
@@ -900,7 +900,7 @@
         "subtitle": "",
         "button_text": "Try it Risk-Free",
         "button_link": "#shopify-section-template--17100723355702__landing_product_alternative_xejNda",
-        "icon": "shopify://shop_images/shield-tick_1489816c-d5ec-4487-8536-ca7a6a30724c.svg",
+        "icon": "shopify:\/\/shop_images\/shield-tick_1489816c-d5ec-4487-8536-ca7a6a30724c.svg",
         "icon_text": "90-Day Money-Back Guarantee",
         "text_bottom": "† Individual results may vary. The experiences shared by customers are unique to them and are not guaranteed for everyone. Consistency and individual factors play a significant role in achieving desired outcomes.",
         "padding_top": 0,

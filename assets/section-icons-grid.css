@@ -1,0 +1,114 @@
+.icons-grid {
+  font-family: DM Sans;
+  background: var(--icons-grid-background-image);
+  background-size: cover;
+  background-repeat: no-repeat;
+  padding: 60px 0;
+
+  & .icons-grid__container {
+    max-width: 1278px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+
+  & .icons-grid__subheading {
+    display: inline;
+    background-color: rgb(var(--icons-grid-subheading-background-rgb) / 20%);
+    color: var(--icons-grid-subheading-color);
+    font-weight: 600;
+    font-size: 20px;
+  }
+
+  & .icons-grid__heading {
+    font-size: 40px;
+    margin: 0;
+    margin-top: 10px;
+    font-weight: 600;
+    font-family: DM Sans;
+  }
+
+  & .icons-grid__description {
+    font-size: 16px;
+    line-height: 170%;
+    margin: 0;
+    margin-top: 30px;
+  }
+
+  & .icons-grid__info {
+    text-align: center;
+  }
+
+  & .icons-grid__grid {
+    display: grid;
+    grid-template-columns: repeat(var(--icons-grid-columns), 1fr);
+    gap: 30px;
+    max-width: 700px;
+    margin: auto;
+    margin-top: 20px;
+  }
+
+  & .icons-grid__block {
+    display: grid;
+    grid-template-columns: 0.8fr 1fr;
+    background-color: #fff;
+    border-radius: 8px;
+    row-gap: 10px;
+    text-align: center;
+    align-items: center;
+    padding: 12px 10px;
+    font-size: 16px;
+
+    & .icons-grid__media-title {
+      margin: 0;
+      font-weight: 600;
+      line-height: 120%;
+
+      & > strong {
+        color: #005EB8;
+      }
+    }
+
+    & .icons-grid__media-image {
+      display: block;
+      max-width: var(--icons-grid-block-image-width);
+      width: 100%;
+      height: auto;
+      object-fit: contain;
+      margin: auto;
+    }
+
+    & .icons-grid__info-title {
+      margin: 0;
+      color: #00A30B;
+      font-weight: 600;
+    }
+
+    & .icons-grid__info-description > p {
+      margin: 0;
+      line-height: 150%;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    padding: 40px 0;
+
+    & .icons-grid__subheading {
+      font-size: 18px;
+      line-height: 130%;
+    }
+
+    & .icons-grid__heading {
+      font-size: 26px;
+      line-height: 130%;
+    }
+
+    & .icons-grid__description {
+      margin-top: 12px;
+    }
+    
+    & .icons-grid__grid {
+      gap: 10px;
+      margin-top: 30px;
+    }
+  }
+}

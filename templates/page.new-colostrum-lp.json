@@ -16,7 +16,7 @@
           "type": "account_tab",
           "settings": {
             "title": "Addresses",
-            "link": "/account/addresses",
+            "link": "\/account\/addresses",
             "target_blank": false
           }
         },
@@ -24,7 +24,7 @@
           "type": "account_tab",
           "settings": {
             "title": "Order history",
-            "link": "/account",
+            "link": "\/account",
             "target_blank": false
           }
         },
@@ -32,7 +32,7 @@
           "type": "account_tab",
           "settings": {
             "title": "My Subscription",
-            "link": "/tools/recurring/login",
+            "link": "\/tools\/recurring\/login",
             "target_blank": false
           }
         }
@@ -66,8 +66,8 @@
       "type": "media-with-text-video",
       "disabled": true,
       "settings": {
-        "main_content_desktop": "<h2>5.Thousands of People Swear by Colostrum — Here’s Why</h2><p>People everywhere are raving about the real, noticeable results they’re experiencing with colostrum.</p><p><strong>From improved digestion and steady energy to radiant skin and mental clarity</strong>, colostrum’s 200+ bioactive nutrients work deep within your body to support better health and well-being at every level. *</p>",
-        "video": "shopify://files/videos/d1f4r.mp4",
+        "main_content_desktop": "<h2>5.Thousands of People Swear by Colostrum — Here’s Why<\/h2><p>People everywhere are raving about the real, noticeable results they’re experiencing with colostrum.<\/p><p><strong>From improved digestion and steady energy to radiant skin and mental clarity<\/strong>, colostrum’s 200+ bioactive nutrients work deep within your body to support better health and well-being at every level. *<\/p>",
+        "video": "shopify:\/\/files\/videos\/d1f4r.mp4",
         "mobile_gap": "40",
         "main_content_mobile": "",
         "button_text": "Get 30% OFF Immune Revival",
@@ -90,9 +90,9 @@
             "button_label": "UNLOCK YOUR TRUE POWER",
             "button_link": "",
             "button_color": "#FF6A13",
-            "first_benefit_image": "shopify://shop_images/shield-svgrepo-com_1.svg",
+            "first_benefit_image": "shopify:\/\/shop_images\/shield-svgrepo-com_1.svg",
             "first_benefit_text": "365-Day Money Back Guarantee",
-            "second_benefit_image": "shopify://shop_images/fast-delivery1-svgrepo-com_1.svg",
+            "second_benefit_image": "shopify:\/\/shop_images\/fast-delivery1-svgrepo-com_1.svg",
             "second_benefit_text": "Free Shipping*"
           }
         }
@@ -102,9 +102,9 @@
       ],
       "name": "Our belief",
       "settings": {
-        "image": "shopify://shop_images/Frame_1982249130.png",
-        "title": "<h2>Our Belief:</h2><h3>Colostrum Superfoods Are a VITAL Part of Any Woman's Diet And Need To Be Consumed With EVERY Meal.</h3>",
-        "text": "<p>But let's be honest, sourcing real colostrum is nearly impossible.</p><p>And if you've ever tried other gut supplements, you know how much it sucks to keep taking something that doesn't work. We got rid of all that bogus.</p><p><em>Two scoops a day unleashes your inner goddess</em> - and don't forget to use your free frother whenever you need to make your golden latte on the go.</p><p>After all, we're not staying at home all day, are we queens?</p>",
+        "image": "shopify:\/\/shop_images\/Frame_1982249130.png",
+        "title": "<h2>Our Belief:<\/h2><h3>Colostrum Superfoods Are a VITAL Part of Any Woman's Diet And Need To Be Consumed With EVERY Meal.<\/h3>",
+        "text": "<p>But let's be honest, sourcing real colostrum is nearly impossible.<\/p><p>And if you've ever tried other gut supplements, you know how much it sucks to keep taking something that doesn't work. We got rid of all that bogus.<\/p><p><em>Two scoops a day unleashes your inner goddess<\/em> - and don't forget to use your free frother whenever you need to make your golden latte on the go.<\/p><p>After all, we're not staying at home all day, are we queens?<\/p>",
         "image_position": "row-reverse",
         "text_align": "left",
         "padding_desktop_top": 80,

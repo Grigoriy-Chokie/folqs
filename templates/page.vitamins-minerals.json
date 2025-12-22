@@ -30,7 +30,7 @@
         "text_6JAJjM": {
           "type": "text",
           "settings": {
-            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>"
+            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>"
           }
         },
         "button_jexaPM": {
@@ -83,10 +83,10 @@
         "percentage_island_8Y8h8N"
       ],
       "settings": {
-        "list_of_badges": "ellipse_1.svg///Gut Healh, api_1.svg///Immune System, api_1.svg///Overall Health, api_1.svg///Overall Health, api_1.svg///Overall Health",
+        "list_of_badges": "ellipse_1.svg\/\/\/Gut Healh, api_1.svg\/\/\/Immune System, api_1.svg\/\/\/Overall Health, api_1.svg\/\/\/Overall Health, api_1.svg\/\/\/Overall Health",
         "button_label": "Learn more",
-        "main_text": "<p>Lorem ipsum dolor sit amet consectetur. Sed aliquam dapibus lorem aliquam lobortis vitae eros non morbi. Enim mattis cursus ultricies mattis. Lorem ipsum dolor sit amet consectetur. Sed aliquam dapibus lorem aliquam lobortis vitae eros non morbi. Enim mattis cursus ultricies mattis.</p>",
-        "main_text_hidden": "<h2>What to Expect</h2><ul><li>Rhodiola and folate to help keep you feeling mentally sharp and focused* </li><li>CoQ10 and spirulina to support healthy circulation and metabolism* </li><li>Vitamin C and zinc to support the function of the immune system*</li></ul>",
+        "main_text": "<p>Lorem ipsum dolor sit amet consectetur. Sed aliquam dapibus lorem aliquam lobortis vitae eros non morbi. Enim mattis cursus ultricies mattis. Lorem ipsum dolor sit amet consectetur. Sed aliquam dapibus lorem aliquam lobortis vitae eros non morbi. Enim mattis cursus ultricies mattis.<\/p>",
+        "main_text_hidden": "<h2>What to Expect<\/h2><ul><li>Rhodiola and folate to help keep you feeling mentally sharp and focused* <\/li><li>CoQ10 and spirulina to support healthy circulation and metabolism* <\/li><li>Vitamin C and zinc to support the function of the immune system*<\/li><\/ul>",
         "show_page_title": true
       }
     },
@@ -96,7 +96,7 @@
         "ingredient_jQFn4Y": {
           "type": "ingredient",
           "settings": {
-            "img": "shopify://shop_images/Rectangle_15_2874860b-04b4-4efc-a64d-8bb5a00f40a2.png",
+            "img": "shopify:\/\/shop_images\/Rectangle_15_2874860b-04b4-4efc-a64d-8bb5a00f40a2.png",
             "title": "Veg D3",
             "info": "20mcg"
           }
@@ -104,7 +104,7 @@
         "ingredient_wdLMhn": {
           "type": "ingredient",
           "settings": {
-            "img": "shopify://shop_images/Rectangle_15_46268477-bb81-482a-a04b-b9dfcec96aba.png",
+            "img": "shopify:\/\/shop_images\/Rectangle_15_46268477-bb81-482a-a04b-b9dfcec96aba.png",
             "title": "Methyl-cobalamin",
             "info": ""
           }
@@ -112,7 +112,7 @@
         "ingredient_zVA3MV": {
           "type": "ingredient",
           "settings": {
-            "img": "shopify://shop_images/Rectangle_15_1512a3d4-99ee-4e8e-b5a2-b5a1d4b2db8b.png",
+            "img": "shopify:\/\/shop_images\/Rectangle_15_1512a3d4-99ee-4e8e-b5a2-b5a1d4b2db8b.png",
             "title": "Beta Carotene",
             "info": "1.5mg"
           }
@@ -120,7 +120,7 @@
         "ingredient_JGzimG": {
           "type": "ingredient",
           "settings": {
-            "img": "shopify://shop_images/Rectangle_15_01b5da44-d55f-4ca7-b76b-140b2ea0ec4a.png",
+            "img": "shopify:\/\/shop_images\/Rectangle_15_01b5da44-d55f-4ca7-b76b-140b2ea0ec4a.png",
             "title": "B1",
             "info": "as 50% thiamine pyrophosphate"
           }
@@ -140,7 +140,7 @@
         "heading": "",
         "sub_heading": "",
         "name_button": "",
-        "url_button": "/"
+        "url_button": "\/"
       }
     }
   },

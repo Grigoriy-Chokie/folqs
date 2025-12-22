@@ -30,7 +30,7 @@
         "text_6JAJjM": {
           "type": "text",
           "settings": {
-            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>"
+            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>"
           }
         },
         "button_jexaPM": {
@@ -83,10 +83,10 @@
         "percentage_island_8Y8h8N"
       ],
       "settings": {
-        "list_of_badges": "///Mitochondrial Support, ///Antioxidant Protection, ///Cardiovascular Wellness, ///Cellular Detoxification",
+        "list_of_badges": "\/\/\/Mitochondrial Support, \/\/\/Antioxidant Protection, \/\/\/Cardiovascular Wellness, \/\/\/Cellular Detoxification",
         "button_label": "Learn more",
-        "main_text": "<p>This blend is specifically curated to support cellular vitality and cardiovascular well-being. CoQ10, particularly in the CAVAQ10® formulation, is crucial for energy production in cells and has notable benefits for heart health. PQQ contributes to mitochondrial biogenesis, enhancing cellular energy. Gynostemma extract is recognized for its cardiovascular benefits, including supporting healthy blood pressure. R-Alpha Lipoic Acid is involved in energy metabolism and has antioxidant properties, while Fulvic Acid is known for its electrolyte balancing and nutrient transportation roles, supporting overall cellular function.</p>",
-        "main_text_hidden": "<h2>What to Expect</h2><ul><li>PQQ's role in generating new mitochondria translates to enhanced cellular energy levels and vitality.</li><li>Expect R-Alpha Lipoic Acid and CoQ10 to provide a shield against oxidative stress, supporting cellular longevity.</li><li>Gynostemma extract aids in maintaining cardiovascular health, potentially supporting blood pressure and circulatory health.</li><li>Fulvic Acid's contribution to nutrient absorption and detoxification promotes overall cellular cleanliness and efficiency.</li></ul>",
+        "main_text": "<p>This blend is specifically curated to support cellular vitality and cardiovascular well-being. CoQ10, particularly in the CAVAQ10® formulation, is crucial for energy production in cells and has notable benefits for heart health. PQQ contributes to mitochondrial biogenesis, enhancing cellular energy. Gynostemma extract is recognized for its cardiovascular benefits, including supporting healthy blood pressure. R-Alpha Lipoic Acid is involved in energy metabolism and has antioxidant properties, while Fulvic Acid is known for its electrolyte balancing and nutrient transportation roles, supporting overall cellular function.<\/p>",
+        "main_text_hidden": "<h2>What to Expect<\/h2><ul><li>PQQ's role in generating new mitochondria translates to enhanced cellular energy levels and vitality.<\/li><li>Expect R-Alpha Lipoic Acid and CoQ10 to provide a shield against oxidative stress, supporting cellular longevity.<\/li><li>Gynostemma extract aids in maintaining cardiovascular health, potentially supporting blood pressure and circulatory health.<\/li><li>Fulvic Acid's contribution to nutrient absorption and detoxification promotes overall cellular cleanliness and efficiency.<\/li><\/ul>",
         "show_page_title": true
       }
     },
@@ -96,7 +96,7 @@
         "ingredient_jQFn4Y": {
           "type": "ingredient",
           "settings": {
-            "img": "shopify://shop_images/Rectangle_15_41.png",
+            "img": "shopify:\/\/shop_images\/Rectangle_15_41.png",
             "title": "CoQ10",
             "subtitle": "as CAVAQ10® Complex",
             "info": "30 mg"
@@ -105,7 +105,7 @@
         "ingredient_wdLMhn": {
           "type": "ingredient",
           "settings": {
-            "img": "shopify://shop_images/Rectangle_15_42.png",
+            "img": "shopify:\/\/shop_images\/Rectangle_15_42.png",
             "title": "Pyrroloquinoline Quinone Disodium Salt",
             "subtitle": "PQQ",
             "info": "4 mg"
@@ -114,7 +114,7 @@
         "ingredient_zVA3MV": {
           "type": "ingredient",
           "settings": {
-            "img": "shopify://shop_images/Rectangle_15_43.png",
+            "img": "shopify:\/\/shop_images\/Rectangle_15_43.png",
             "title": "Gynostemma Extract (Leaf)",
             "subtitle": "Gynostemma pentaphyllum",
             "info": "350 mg"
@@ -123,7 +123,7 @@
         "ingredient_JGzimG": {
           "type": "ingredient",
           "settings": {
-            "img": "shopify://shop_images/Rectangle_15_44.png",
+            "img": "shopify:\/\/shop_images\/Rectangle_15_44.png",
             "title": "R-Alpha Lipoic Acid",
             "subtitle": "",
             "info": "150 mg"
@@ -132,7 +132,7 @@
         "ingredient_bzfiMx": {
           "type": "ingredient",
           "settings": {
-            "img": "shopify://shop_images/Rectangle_15_45.png",
+            "img": "shopify:\/\/shop_images\/Rectangle_15_45.png",
             "title": "Fulvic Acid",
             "subtitle": "",
             "info": "500 mg"
@@ -154,7 +154,7 @@
         "heading": "",
         "sub_heading": "",
         "name_button": "",
-        "url_button": "/"
+        "url_button": "\/"
       }
     }
   },

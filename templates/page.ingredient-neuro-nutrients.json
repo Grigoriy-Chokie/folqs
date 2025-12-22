@@ -30,7 +30,7 @@
         "text_6JAJjM": {
           "type": "text",
           "settings": {
-            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>"
+            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>"
           }
         },
         "button_jexaPM": {
@@ -63,10 +63,10 @@
     "ingredient_content_hUfQb8": {
       "type": "ingredient-content",
       "settings": {
-        "list_of_badges": "///Mental Clarity, ///Mood Support, ///Cognitive Resilience,",
+        "list_of_badges": "\/\/\/Mental Clarity, \/\/\/Mood Support, \/\/\/Cognitive Resilience,",
         "button_label": "Learn more",
-        "main_text": "<p>Neuro-nutrients like choline and inositol are key players in brain health, contributing to cognitive function, nerve integrity, and cellular messaging. These components are essential for maintaining the structural integrity of cell membranes, particularly in brain cells, and play a role in neurotransmitter synthesis which is vital for memory, mood, muscle control, and other brain and nervous system activities.</p>",
-        "main_text_hidden": "<h2>What to Expect</h2><ul><li>Choline bitartrate contributes to the production of acetylcholine, a neurotransmitter that supports memory and cognitive speed.</li><li>Inositol is involved in the modulation of serotonin, an important neurotransmitter for mood regulation. </li><li>Adequate levels of both choline and inositol are associated with neuroprotective effects, supporting brain health over time.</li></ul>",
+        "main_text": "<p>Neuro-nutrients like choline and inositol are key players in brain health, contributing to cognitive function, nerve integrity, and cellular messaging. These components are essential for maintaining the structural integrity of cell membranes, particularly in brain cells, and play a role in neurotransmitter synthesis which is vital for memory, mood, muscle control, and other brain and nervous system activities.<\/p>",
+        "main_text_hidden": "<h2>What to Expect<\/h2><ul><li>Choline bitartrate contributes to the production of acetylcholine, a neurotransmitter that supports memory and cognitive speed.<\/li><li>Inositol is involved in the modulation of serotonin, an important neurotransmitter for mood regulation. <\/li><li>Adequate levels of both choline and inositol are associated with neuroprotective effects, supporting brain health over time.<\/li><\/ul>",
         "show_page_title": true
       }
     },
@@ -76,7 +76,7 @@
         "ingredient_jQFn4Y": {
           "type": "ingredient",
           "settings": {
-            "img": "shopify://shop_images/Rectangle_15_22.png",
+            "img": "shopify:\/\/shop_images\/Rectangle_15_22.png",
             "title": "Choline bitartrate",
             "subtitle": "",
             "info": "25 mg"
@@ -85,7 +85,7 @@
         "ingredient_NqVkxr": {
           "type": "ingredient",
           "settings": {
-            "img": "shopify://shop_images/Rectangle_15_23.png",
+            "img": "shopify:\/\/shop_images\/Rectangle_15_23.png",
             "title": "Inositol",
             "subtitle": "",
             "info": "25 mg"
@@ -104,7 +104,7 @@
         "heading": "",
         "sub_heading": "",
         "name_button": "",
-        "url_button": "/"
+        "url_button": "\/"
       }
     }
   },

@@ -30,7 +30,7 @@
         "text_6JAJjM": {
           "type": "text",
           "settings": {
-            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.</p>"
+            "text": "<p>Share information about your brand with your customers. Describe a product, make announcements, or welcome customers to your store.<\/p>"
           }
         },
         "button_jexaPM": {
@@ -83,10 +83,10 @@
         "percentage_island_8Y8h8N"
       ],
       "settings": {
-        "list_of_badges": "///Heart Rhythm, ///Bone Density, ///Cellular Longevity, ///Metabolic Balance",
+        "list_of_badges": "\/\/\/Heart Rhythm, \/\/\/Bone Density, \/\/\/Cellular Longevity, \/\/\/Metabolic Balance",
         "button_label": "Learn more",
-        "main_text": "<p>Our mineral formula is designed for maximum bioavailability, supporting cellular, skeletal, and metabolic health effectively. Magnesium aids heart and muscle function, while Calcium strengthens bones. Trace minerals like Manganese, Zinc, and Selenium, in their most absorbable forms, protect cellular health. Chromium, essential for blood sugar regulation, maintains metabolic balance. This blend offers daily support against the natural effects of aging, providing essential nutrients your body needs.</p>",
-        "main_text_hidden": "<h2>What to Expect</h2><ul><li>Expect an improvement in heart rhythm and potential blood pressure regulation, contributing to overall cardiovascular health.</li><li>Anticipate a more vigilant immune system, capable of effectively warding off infections and supporting overall immune health.</li><li>A crucial element in maintaining blood sugar levels, chromium supplementation can lead to better metabolic balance and energy regulation.</li><li>This trace mineral is vital for bone formation and maintaining proper enzyme function, contributing to overall well-being.</li></ul>",
+        "main_text": "<p>Our mineral formula is designed for maximum bioavailability, supporting cellular, skeletal, and metabolic health effectively. Magnesium aids heart and muscle function, while Calcium strengthens bones. Trace minerals like Manganese, Zinc, and Selenium, in their most absorbable forms, protect cellular health. Chromium, essential for blood sugar regulation, maintains metabolic balance. This blend offers daily support against the natural effects of aging, providing essential nutrients your body needs.<\/p>",
+        "main_text_hidden": "<h2>What to Expect<\/h2><ul><li>Expect an improvement in heart rhythm and potential blood pressure regulation, contributing to overall cardiovascular health.<\/li><li>Anticipate a more vigilant immune system, capable of effectively warding off infections and supporting overall immune health.<\/li><li>A crucial element in maintaining blood sugar levels, chromium supplementation can lead to better metabolic balance and energy regulation.<\/li><li>This trace mineral is vital for bone formation and maintaining proper enzyme function, contributing to overall well-being.<\/li><\/ul>",
         "show_page_title": true
       }
     },
@@ -96,7 +96,7 @@
         "ingredient_jQFn4Y": {
           "type": "ingredient",
           "settings": {
-            "img": "shopify://shop_images/Rectangle_15_16.png",
+            "img": "shopify:\/\/shop_images\/Rectangle_15_16.png",
             "title": "Magnesium",
             "subtitle": "as Magnesium Bisglycinate Chelate",
             "info": "100 mg"
@@ -105,7 +105,7 @@
         "ingredient_wdLMhn": {
           "type": "ingredient",
           "settings": {
-            "img": "shopify://shop_images/Rectangle_15_17.png",
+            "img": "shopify:\/\/shop_images\/Rectangle_15_17.png",
             "title": "Calcium",
             "subtitle": "as calcium citrate",
             "info": "100 mg"
@@ -114,7 +114,7 @@
         "ingredient_zVA3MV": {
           "type": "ingredient",
           "settings": {
-            "img": "shopify://shop_images/Rectangle_15_18.png",
+            "img": "shopify:\/\/shop_images\/Rectangle_15_18.png",
             "title": "Manganese",
             "subtitle": "as manganese citrate",
             "info": "2 mg"
@@ -123,7 +123,7 @@
         "ingredient_JGzimG": {
           "type": "ingredient",
           "settings": {
-            "img": "shopify://shop_images/Rectangle_15_19.png",
+            "img": "shopify:\/\/shop_images\/Rectangle_15_19.png",
             "title": "Zinc",
             "subtitle": "as Zinc Glycinate Chelate",
             "info": "15 mg"
@@ -132,7 +132,7 @@
         "ingredient_NqVkxr": {
           "type": "ingredient",
           "settings": {
-            "img": "shopify://shop_images/Rectangle_15_20.png",
+            "img": "shopify:\/\/shop_images\/Rectangle_15_20.png",
             "title": "Selenium",
             "subtitle": "as Selenocysteine",
             "info": "40 mcg"
@@ -141,7 +141,7 @@
         "ingredient_bzfiMx": {
           "type": "ingredient",
           "settings": {
-            "img": "shopify://shop_images/Rectangle_15_21.png",
+            "img": "shopify:\/\/shop_images\/Rectangle_15_21.png",
             "title": "Chromium",
             "subtitle": "as chromium polynicotinate",
             "info": "100 mcg"
@@ -164,7 +164,7 @@
         "heading": "",
         "sub_heading": "",
         "name_button": "",
-        "url_button": "/"
+        "url_button": "\/"
       }
     }
   },

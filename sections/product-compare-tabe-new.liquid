@@ -1,0 +1,742 @@
+{{ 'section-product-compare-table-new.css' | asset_url | stylesheet_tag }}
+
+{% render 'section-paddings',
+  padding_top: section.settings.section_padding_top,
+  padding_bottom: section.settings.section_padding_bottom,
+  padding_top_mobile: section.settings.section_padding_top_mobile,
+  padding_bottom_mobile: section.settings.section_padding_bottom_mobile
+%}
+
+{% if section.settings.mushroom_styles != blank %}
+  {% assign mushroom_style_templates = section.settings.mushroom_styles |  newline_to_br |  split: '<br />' %}
+{% endif %}
+
+{%- style -%}
+  #shopify-section-{{ section.id }} {
+    background: {{ section.settings.section_background }};
+  }
+
+  {% if section.settings.section_background_mobile != blank %}
+    @media screen and (max-width: 768px) {
+      #shopify-section-{{ section.id }} {
+        background: {{ section.settings.section_background_mobile }};
+      }
+    }
+  {% endif %}
+
+  .{{ section.id }}-padding {
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+{%- endstyle -%}
+
+{% liquid
+  assign section_label = section.settings.section_label
+  assign section_title = section.settings.section_title
+  assign section_subtitle = section.settings.section_subtitle
+  assign section_text = section.settings.section_text
+  assign section_text_mobile = section.settings.section_text_mobile
+  assign v3_styles = section.settings.enable_v3_styles
+
+  assign table_head_block = section.blocks | find: 'type', 'table_head'
+  assign table_head_third_text = table_head_block.settings.third_text
+%}
+
+{% if section.settings.background_image_desktop != blank %}
+  <style>
+    @media screen and (min-width: 991px) {
+      #shopify-section-{{ section.id }} {
+        background: url("{{ section.settings.background_image_desktop | img_url: 'master' }}") center center/cover no-repeat;
+      }
+    }
+
+    @media screen and (min-width: 1480px) {
+      #shopify-section-{{ section.id }} {
+        background-position-y: top !important;
+      }
+    }
+  </style>
+{% endif %}
+
+
+<div class="why-folqs-new__wrapper
+  color-{{ section.settings.color_scheme }}
+  section-{{ section.id }}--padding
+  why-folqs-new__wrapper--mushroom
+  {% if v3_styles %}why-folqs-new__wrapper-v3{% endif %}
+  ">
+  <div class="why-folqs-new">
+    <div class="why-folqs-new__header">
+      {%- if section_label != blank -%}
+        <span style="--label-color: {{ section.settings.section_label_color }}">{{ section_label }}</span>
+      {%- endif -%}
+      {%- unless section_title == blank -%}
+        <h2>{{ section_title }}</h2>
+      {%- endunless -%}
+      {%- unless section_subtitle == blank -%}
+        <h3>{{ section_subtitle }}</h3>
+      {%- endunless -%}
+      {%- unless section_text_mobile == blank -%}
+        <p class="mobile">{{ section_text_mobile }}</p>
+      {%- endunless -%}
+      {%- unless section_text == blank -%}
+        <p>{{ section_text }}</p>
+      {%- endunless -%}
+    </div>
+    {%- if section.blocks.size > 0 -%}
+      <div 
+        class="why-folqs-new__benefits-table {% if section.settings.custom_colors != false %}why-folqs-new__benefits-table--custom{% endif %}"
+        style="
+          --table-td: {{ section.settings.table_td }};
+          --table-td-odd: {{ section.settings.table_td_odd }};
+          --main-product-background: {{ section.settings.table_main_product_background }};
+          --main-product-svg: {{ section.settings.table_main_product_svg }};
+          --other-brand-svg: {{ section.settings.table_other_brand_svg }};
+          --table-borders: {{ section.settings.table_borders }};
+        "
+      >
+        <table>
+          {%- for block in section.blocks -%}
+            {%- if block.type == 'table_head' -%}
+              <thead>
+                <tr>
+                  <th>
+                    {%- if block.settings.best_choise_badge != blank -%}
+                      <div class="benefits-table__best-choise-badge">
+                        {{ block.settings.best_choise_badge |  image_url: width: 334 |  image_tag  }}
+                      </div>
+                    {%- endif -%}
+                  </th>
+                  <th class="benefits-table__main-product">
+                    {%- unless block.settings.main_image == blank -%}
+                      {{ block.settings.main_image | image_url: width: 1000 | image_tag }}
+                    {%- endunless -%}
+                    <p>{{ block.settings.main_text | newline_to_br }}</p>
+                  </th>
+                  <th>
+                    <div class="benefits-table__other-product">
+                      {%- unless block.settings.second_image == blank -%}
+                        {{ block.settings.second_image | image_url: width: 1000 | image_tag }}
+                      {%- endunless -%}
+                      <p>{{ block.settings.second_text | newline_to_br }}</p>
+                    </div>
+                  </th>
+                  {%- if table_head_third_text != blank -%}
+                    <th>
+                      <div class="benefits-table__other-product">
+                        {%- unless block.settings.third_image == blank -%}
+                          {{ block.settings.third_image | image_url: width: 1000 | image_tag }}
+                        {%- endunless -%}
+                        <p>{{ block.settings.third_text | newline_to_br }}</p>
+                      </div>
+                    </th>
+                {%- endif -%}
+                  <th>
+                    <div class="benefits-table__other-product">
+                      {%- unless block.settings.fourth_image == blank -%}
+                        {{ block.settings.fourth_image | image_url: width: 1000 | image_tag }}
+                      {%- endunless -%}
+                      <p>{{ block.settings.fourth_text | newline_to_br }}</p>
+                    </div>
+                  </th>
+                </tr>
+              </thead>
+              {% break %}
+            {%- endif -%}
+          {%- endfor -%}
+          <tbody>
+            {%- for block in section.blocks -%}
+              {%- case block.type -%}
+                {%- when 'table_cost' -%}
+                  <tr class="benefits-table__cost">
+                    <td>{{ block.settings.cost_text }}</td>
+                    <td>
+                      {% if block.settings.main_icon != blank %}
+                        {{ block.settings.main_icon | image_url: width: block.settings.main_icon.width | image_tag: alt: block.settings.main_icon.alt }}
+                        {% if block.settings.main_icon_mobile != blank %}
+                          <span>
+                            {{ block.settings.main_icon_mobile | image_url: width: block.settings.main_icon_mobile.width | image_tag: alt: block.settings.main_icon_mobile.alt }}
+                          </span>
+                        {% endif %}
+                      {% endif %}
+                    </td>
+                    <td>
+                      {% if block.settings.second_icon %}
+                        {{ block.settings.second_icon | image_url: width: block.settings.second_icon.width | image_tag: alt: block.settings.second_icon.alt }}
+                        {% if block.settings.second_icon_mobile != blank %}
+                          <span>
+                            {{ block.settings.second_icon_mobile | image_url: width: block.settings.second_icon_mobile.width | image_tag: alt: block.settings.second_icon_mobile.alt }}
+                          </span>
+                        {% endif %}
+                      {% endif %}
+                    </td>
+                    <td>
+                      {% if block.settings.third_icon != blank %}
+                      {{ block.settings.third_icon | image_url: width: block.settings.third_icon.width | image_tag: alt: block.settings.third_icon.alt }}
+                        {% if block.settings.third_icon_mobile != blank %}
+                          <span>
+                            {{ block.settings.third_icon_mobile | image_url: width: block.settings.third_icon_mobile.width | image_tag: alt: block.settings.third_icon_mobile.alt }}
+                          </span>
+                        {% endif %}
+                      {% endif %}
+                    </td>
+                    <td>
+                      {% if block.settings.fourth_icon != blank %}
+                        {{ block.settings.fourth_icon | image_url: width: block.settings.fourth_icon.width | image_tag: alt: block.settings.fourth_icon.alt }}
+                        {% if block.settings.fourth_icon_mobile != blank %}
+                          <span>
+                            {{ block.settings.fourth_icon_mobile | image_url: width: block.settings.fourth_icon_mobile.width | image_tag: alt: block.settings.fourth_icon_mobile.alt }}
+                          </span>
+                        {% endif %}
+                      {% endif %}
+                    </td>
+                  </tr>
+                {% when 'table_row' %}
+                  <tr>
+                    <td>{{ block.settings.row_text }}</td>
+                    <td>
+                      {%- if block.settings.main_checkmark -%}
+                        {%- render 'icon-circle-checkmark', color: '#ffffff' -%}
+                      {%- endif -%}
+                      {%- if block.settings.main_checkmark_text != blank -%}
+                        <p class="benefits-table__checkmark-text">{{ block.settings.main_checkmark_text }}</p>
+                      {%- endif -%}
+                    </td>
+                    <td>
+                      {%- if block.settings.second_icon_type == 'checkmark' -%}
+                        {%- render 'icon-circle-checkmark-new' -%}
+                      {%- endif -%}
+                      {%- if block.settings.second_icon_type == 'error' -%}
+                        {%- render 'icon-circle-crossmark-new', -%}
+                      {%- endif -%}
+                      {%- if block.settings.second_checkmark_text != blank -%}
+                        <p class="benefits-table__checkmark-text">{{ block.settings.second_checkmark_text }}</p>
+                      {%- endif -%}
+                    </td>
+                    
+                      <td>
+                        {%- if block.settings.third_icon_type == 'checkmark' -%}
+                        {%- render 'icon-circle-checkmark-new' -%}
+                          {%- endif -%}
+                        {%- if block.settings.third_icon_type == 'error' -%}
+                          {%- render 'icon-circle-crossmark-new' -%}
+                        {%- endif -%}
+                        {%- if block.settings.third_checkmark_text != blank -%}
+                          <p class="benefits-table__checkmark-text">{{ block.settings.third_checkmark_text }}</p>
+                        {%- endif -%}
+                      </td>
+                    
+                    
+                    <td>
+                      {%- if block.settings.fourth_icon_type == 'checkmark' -%}
+                        {%- render 'icon-circle-checkmark-new' -%}
+                      {%- endif -%}
+                      {%- if block.settings.fourth_icon_type == 'error' -%}
+                        {%- render 'icon-circle-crossmark-new' -%}
+                      {%- endif -%}
+                      {%- if block.settings.fourth_checkmark_text != blank -%}
+                        <p class="benefits-table__checkmark-text">{{ block.settings.fourth_checkmark_text }}</p>
+                      {%- endif -%}
+                    </td>
+                    
+                  </tr>
+              {%- endcase -%}
+            {%- endfor -%}
+          </tbody>
+        </table>
+      </div>
+    {%- endif -%}
+  </div>
+  {% if section.settings.cta_link != blank and section.settings.cta_text != blank %}
+    <div class="why-folqs-new__button-container">
+      <a href="{{ section.settings.cta_link }}" class="why-folqs-new__button main-hero__link">
+        {{- section.settings.cta_text -}}
+      </a>
+    </div>
+  {% endif %}
+  {% for block in section.blocks %}
+    {% if block.type == 'reviews' %}
+      {%- if block.settings.button_text != blank or block.settings.show_rating -%}
+        <div class="reviews-block__cta-block page-width">
+          {%- unless block.settings.button_text == blank -%}
+            <a href="{{ block.settings.button_url }}" class="cta-block__button button">
+              <span class="button__text">
+                {{ block.settings.button_text }}
+              </span>
+              {% unless block.settings.button_text_mobile == blank %}
+                <span class="button__text-mobile">
+                  {{ block.settings.button_text_mobile }}
+                </span>
+              {% endunless %}
+              {%- render 'icon-cta-arrow' -%}
+            </a>
+          {%- endunless -%}
+          {%- if block.settings.show_rating -%}
+            <div class="image-with-text-list__rating-block">
+              {%- unless block.settings.rating_image == blank -%}
+                <div class="rating-block__image">
+                  {{ block.settings.rating_image | image_url: height: 60 | image_tag }}
+                </div>
+              {%- endunless -%}
+              <div class="rating-block__stars">{%- render 'icon-rating-extra' -%}</div>
+              {%- unless block.settings.rating_text == blank -%}
+                <p class="rating-block__text">{{ block.settings.rating_text }}</p>
+                <p class="rating-block__text--mobile">{{ block.settings.rating_text_mobile }}</p>
+              {%- endunless -%}
+            </div>
+          {%- endif -%}
+        </div>
+      {%- endif -%}
+    {% endif %}
+  {% endfor %}
+</div>
+
+{% schema %}
+{
+  "name": "Product compare table new",
+  "tag": "section",
+  "class": "product-compare-table",
+  "limit": 1,
+  "blocks": [
+    {
+      "name": "Reviews",
+      "type": "reviews",
+      "settings": [
+        {
+          "type": "header",
+          "content": "Button"
+        },
+        {
+          "type": "text",
+          "id": "button_text",
+          "label": "Button text",
+          "default": "Try Folqs Today"
+        },
+        {
+          "type": "text",
+          "id": "button_text_mobile",
+          "label": "Button text mobile",
+          "default": "Try Folqs Today"
+        },
+        {
+          "type": "url",
+          "id": "button_url",
+          "label": "Button URL"
+        },
+        {
+          "type": "header",
+          "content": "Rating"
+        },
+        {
+          "type": "checkbox",
+          "id": "show_rating",
+          "label": "Show rating",
+          "default": false
+        },
+        {
+          "type": "image_picker",
+          "id": "rating_image",
+          "label": "Image"
+        },
+        {
+          "type": "text",
+          "id": "rating_text",
+          "label": "Text",
+          "default": "over 25,254 Five Star Reviews"
+        },
+        {
+          "type": "text",
+          "id": "rating_text_mobile",
+          "label": "Text",
+          "default": "over 25,254 Reviews"
+        }
+      ]
+    },
+    {
+      "name": "Table head",
+      "type": "table_head",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "best_choise_badge",
+          "label": "Best choise badge"
+        },
+        {
+          "type": "image_picker",
+          "id": "main_image",
+          "label": "Main image"
+        },
+        {
+          "type": "textarea",
+          "id": "main_text",
+          "label": "Main text",
+          "default": "Fabula Collagen"
+        },
+        {
+          "type": "image_picker",
+          "id": "second_image",
+          "label": "Second image"
+        },
+        {
+          "type": "textarea",
+          "id": "second_text",
+          "label": "Second text",
+          "default": "Vital Proteins"
+        },
+        {
+          "type": "image_picker",
+          "id": "third_image",
+          "label": "Third image"
+        },
+        {
+          "type": "textarea",
+          "id": "third_text",
+          "label": "Third text",
+          "default": "Ancient Nutrition"
+        },
+         {
+          "type": "image_picker",
+          "id": "fourth_image",
+          "label": "Fourth image"
+        },
+        {
+          "type": "textarea",
+          "id": "fourth_text",
+          "label": "Third text",
+          "default": "Ancient Nutrition"
+        }
+      ]
+    },
+    {
+      "name": "Cost",
+      "type": "table_cost",
+      "limit": 1,
+      "settings": [
+        {
+          "type": "text",
+          "id": "cost_text",
+          "label": "Cost text",
+          "default": "Cost (per serving)"
+        },
+        {
+          "type": "image_picker",
+          "id": "main_icon",
+          "label": "Main Icon"
+        },
+        {
+          "type": "image_picker",
+          "id": "main_icon_mobile",
+          "label": "Main Icon Mobile"
+        },
+        {
+          "type": "image_picker",
+          "id": "second_icon",
+          "label": "Second Icon"
+        },
+         {
+          "type": "image_picker",
+          "id": "second_icon_mobile",
+          "label": "Second Icon Mobile"
+        },
+        {
+          "type": "image_picker",
+          "id": "third_icon",
+          "label": "Third Icon"
+        },
+         {
+          "type": "image_picker",
+          "id": "third_icon_mobile",
+          "label": "Third Icon Mobile"
+        },
+        {
+          "type": "image_picker",
+          "id": "fourth_icon",
+          "label": "Fourth Icon"
+        },
+         {
+          "type": "image_picker",
+          "id": "fourth_icon_mobile",
+          "label": "Fourth Icon Mobile"
+        }
+      ]
+    },
+    {
+      "name": "Table row",
+      "type": "table_row",
+      "settings": [
+        {
+          "type": "text",
+          "id": "row_text",
+          "label": "Row text",
+          "default": "Row text"
+        },
+        {
+          "type": "checkbox",
+          "id": "main_checkmark",
+          "label": "Main checkmark",
+          "default": true
+        },
+        {
+          "type": "text",
+          "id": "main_checkmark_text",
+          "label": "Main checkmark text"
+        },
+        {
+          "type": "select",
+          "id": "second_icon_type",
+          "label": "Second Icon Type",
+          "options": [
+            {
+              "value": "none",
+              "label": "None"
+            },
+            {
+              "value": "checkmark",
+              "label": "Checkmark"
+            },
+            {
+              "value": "error",
+              "label": "Error Checkmark"
+            }
+          ],
+          "default": "checkmark"
+        },
+        {
+          "type": "text",
+          "id": "second_checkmark_text",
+          "label": "Second checkmark text"
+        },
+        {
+          "type": "select",
+          "id": "third_icon_type",
+          "label": "Third Icon Type",
+          "options": [
+            {
+              "value": "none",
+              "label": "None"
+            },
+            {
+              "value": "checkmark",
+              "label": "Checkmark"
+            },
+            {
+              "value": "error",
+              "label": "Error Checkmark"
+            }
+          ],
+          "default": "checkmark"
+        },
+        {
+          "type": "text",
+          "id": "third_checkmark_text",
+          "label": "Third checkmark text"
+        },
+        {
+          "type": "select",
+          "id": "fourth_icon_type",
+          "label": "Fourth Icon Type",
+          "options": [
+            {
+              "value": "none",
+              "label": "None"
+            },
+            {
+              "value": "checkmark",
+              "label": "Checkmark"
+            },
+            {
+              "value": "error",
+              "label": "Error Checkmark"
+            }
+          ],
+          "default": "checkmark"
+        },
+        {
+          "type": "text",
+          "id": "fourth_checkmark_text",
+          "label": "Fourth checkmark text"
+        }
+      ]
+    }
+  ],
+  "settings": [
+    {
+      "type": "image_picker",
+      "id": "background_image_desktop",
+      "label": "Background image desktop"
+    },
+    {
+      "type": "checkbox",
+      "id": "enable_v3_styles",
+      "label": "Enable v3 styles",
+      "default": false
+    },
+     {
+      "type": "color_scheme",
+      "id": "color_scheme",
+      "label": "t:sections.all.colors.label",
+      "default": "scheme-1"
+    },
+    {
+      "type": "text",
+      "id": "section_label",
+      "label": "Label"
+    },
+    {
+      "type": "color",
+      "id": "section_label_color",
+      "label": "Label Color"
+    },
+    {
+      "type": "text",
+      "id": "section_title",
+      "label": "Title",
+      "default": "Why Fabula Collagen"
+    },
+    {
+      "type": "text",
+      "id": "section_subtitle",
+      "label": "Subtitle",
+      "default": "Is your #1 options for Collagen this year"
+    },
+    {
+      "type": "text",
+      "id": "section_text",
+      "label": "Text",
+      "default": "The future of coffee is better tasting, hassle-free, and ready to make - anywhere and anytime."
+    },
+    {
+      "type": "text",
+      "id": "section_text_mobile",
+      "label": "Text mobile"
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "CTA text"
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "CTA link"
+    },
+    {
+      "type": "header",
+      "content": "Background color"
+    },
+    {
+      "type": "color_background",
+      "id": "section_background",
+      "label": "Section backbround",
+      "default": "#FFFFFF"
+    },
+    {
+      "type": "color_background",
+      "id": "section_background_mobile",
+      "label": "Section backbround mobile"
+    },
+    {
+      "type": "header",
+      "content": "Section paddings"
+    },
+    {
+      "type": "header",
+      "content": "Additional styles"
+    },
+    {
+      "type": "text",
+      "id": "mushroom_styles",
+      "label": "Mushroom template styles",
+      "info": "Write templates suffix where this styles should apply. Use new line for separate templates."
+    },
+    {
+      "type": "range",
+      "id": "section_padding_top",
+      "label": "Section padding top",
+      "unit": "px",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 70
+    },
+    {
+      "type": "range",
+      "id": "section_padding_bottom",
+      "label": "Section padding bottom",
+      "unit": "px",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 80
+    },
+    {
+      "type": "range",
+      "id": "section_padding_top_mobile",
+      "label": "Section padding top (mobile)",
+      "unit": "px",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 40
+    },
+    {
+      "type": "range",
+      "id": "section_padding_bottom_mobile",
+      "label": "Section padding bottom (mobile)",
+      "unit": "px",
+      "min": 0,
+      "max": 100,
+      "step": 1,
+      "default": 50
+    },
+    {
+      "type": "checkbox",
+      "id": "custom_colors",
+      "label": "Custom Color Settings",
+      "default": false
+    },
+    {
+      "type": "color",
+      "id": "table_borders",
+      "label": "Table borders",
+      "visible_if": "{{ section.settings.custom_colors != false }}"
+    },
+    {
+      "type": "color",
+      "id": "table_td",
+      "label": "Table td",
+      "visible_if": "{{ section.settings.custom_colors != false }}"
+    },
+    {
+      "type": "color",
+      "id": "table_td_odd",
+      "label": "Table td odd",
+      "visible_if": "{{ section.settings.custom_colors != false }}"
+    },
+    {
+      "type": "color",
+      "id": "table_main_product_background",
+      "label": "Main Product Background",
+      "visible_if": "{{ section.settings.custom_colors != false }}"
+    },
+    {
+      "type": "color",
+      "id": "table_main_product_svg",
+      "label": "Main Product SVG",
+      "visible_if": "{{ section.settings.custom_colors != false }}"
+    },
+    {
+      "type": "color",
+      "id": "table_other_brand_svg",
+      "label": "Other Brand SVG",
+      "visible_if": "{{ section.settings.custom_colors != false }}"
+    }
+  ],
+  "presets": [
+    {
+      "name": "Product compare table new"
+    }
+  ]
+}
+{% endschema %}
